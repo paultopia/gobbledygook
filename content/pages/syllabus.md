@@ -1,0 +1,2 @@
+title: Syllabus!
+Syllabus goes here.
