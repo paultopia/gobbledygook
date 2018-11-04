@@ -92,4 +92,4 @@ The first few weeks will be spent on computation; subsequent weeks will be spent
 
 Basic ideas of programming, units of computation, functions and loops. Computational logic and legal logic, law as computation.
 
-For **Monday**, read the [Introduction to Python on this site]({filename}../lessons/python_intro.md). Watch the video **link tbd** on getting started with Azure Notebooks and Github, and follow those instructions, run Lesson 0 notebook **link tbd** to make sure everything is working, and read pages 1-55 of Python for Everybody.
+For **Monday**, read the [Introduction to Python on this site]({filename}../Lessons/python_intro.md). Watch the video **link tbd** on getting started with Azure Notebooks and Github, and follow those instructions, run Lesson 0 notebook **link tbd** to make sure everything is working, and read pages 1-55 of Python for Everybody.

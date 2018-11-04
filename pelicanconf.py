@@ -36,10 +36,8 @@ AUTHOR_FEED_RSS = None
 # Blogroll
 LINKS = (('University of Iowa College of Law', 'https://law.uiowa.edu/'),
          ('Paul Gowder', 'https://gowder.io'),
-         ('Python Documentation', 'http://python.org/'),)
-
-# Social widget
-SOCIAL = (('Course Github', 'https://github.com/paultopia/quantitative-methods-for-lawyers/'),
+         ('Python Documentation', 'http://python.org/'),
+         ('Course Github', 'https://github.com/paultopia/quantitative-methods-for-lawyers/'),
           ('Microsoft Azure Notebooks', 'https://notebooks.azure.com/'),)
 
 DEFAULT_PAGINATION = 10
