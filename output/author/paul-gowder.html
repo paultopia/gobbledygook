@@ -16,23 +16,23 @@
                 <nav><ul>
                     <li><a href="/pages/manifesto.html">Manifesto</a></li>
                     <li><a href="/pages/syllabus.html">Syllabus</a></li>
-                    <li><a href="/category/lessons.html">lessons</a></li>
+                    <li><a href="/category/lessons.html">Lessons</a></li>
                     <li><a href="/category/testing.html">Testing</a></li>
                 </ul></nav>
         </header><!-- /#banner -->
 
             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="/test-notebook.html">Test notebook</a></h1>
+                    <h1 class="entry-title"><a href="/lesson-11-introduction-to-programming-1.html">Lesson 1.1: Introduction to Programming 1</a></h1>
 <footer class="post-info">
-        <abbr class="published" title="2018-10-22T16:27:00-05:00">
-                Published: Mon 22 October 2018
+        <abbr class="published" title="2018-11-04T00:00:00-05:00">
+                Published: Sun 04 November 2018
         </abbr>
 
         <address class="vcard author">
                 By                         <a class="url fn" href="/author/paul-gowder.html">Paul Gowder</a>
         </address>
-<p>In <a href="/category/testing.html">Testing</a>.</p>
+<p>In <a href="/category/lessons.html">Lessons</a>.</p>
 
 </footer><!-- /.post-info --><style type="text/css">/*!
 *
@@ -1183,12 +1183,34 @@ h6:hover .anchor-link {
 
 .ansi-bold { font-weight: bold; }
 </style><body>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In this first week of the course, we're going to cover some core concepts of computer programming. With this, we will build a foundation to do more interesting things in the coming weeks.</p>
+<h2 id="What-is-Computer-Programming?">What is Computer Programming?<a class="anchor-link" href="#What-is-Computer-Programming?">&#182;</a></h2><p>Computers basically just do one thing: they complete very simple operations at astonishing speed.</p>
+<p>For example, suppose you wanted to calculate the thousandth number of the <a href="https://www.mathsisfun.com/numbers/fibonacci-sequence.html">Fibonacci Sequence</a> --- the sequence of numbers such that starts with 0 and 1, and then each subsequent number is the sum of the previous two numbers.  For example:</p>
+<p>0 1 1 2 3 5 8 13</p>
+<p>Don't go on until you are satisfied you know what the next number is.</p>
+<p>As you can imagine, it would take a fairly long time to calculate it by hand.  However, a computer can do it in less than a second. I'll show you:</p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;hello pelican&quot;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">digit</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">first</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">second</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">while</span> <span class="n">digit</span> <span class="o">&lt;</span> <span class="mi">1001</span><span class="p">:</span>
+    <span class="n">answer</span> <span class="o">=</span> <span class="n">first</span> <span class="o">+</span> <span class="n">second</span>
+    <span class="n">first</span> <span class="o">=</span> <span class="n">second</span>
+    <span class="n">second</span> <span class="o">=</span> <span class="n">answer</span>
+    <span class="n">digit</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;the &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">digit</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;th number in the Fibonacci sequence is: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">answer</span><span class="p">))</span>
+    
 </pre></div>
 
     </div>
@@ -1205,7 +1227,7 @@ h6:hover .anchor-link {
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>hello pelican
+<pre>the 1000th number in the Fibonacci sequence is: 26863810024485359386146727202142923967616609318986952340123175997617981700247881689338369654483356564191827856161443356312976673642210350324634850410377680367334151172899169723197082763985615764450078474174626
 </pre>
 </div>
 </div>
@@ -1214,361 +1236,258 @@ h6:hover .anchor-link {
 </div>
 
 </div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
-</pre></div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This is obviously not a number you would want to try to compute by hand, or even using a pocket calculator! (Incidentally, if you looked up a list of those numbers and found a different result, try comparing it to the 999th number. People seem to differ on whether to start counting from 0 or 1 in enumerating the Fibonacci sequence.)</p>
+<p>Everything that computers do---including the system you're reading this on right now---is built up by doing very simple ("primitive") operations many many times. The way it works is that programmers build those primitives---basic arithmetic operations and pushing things around in memory, basically---into more complicated pieces of functionality. Then the next programmer can use that complicated piece of functionality (often called an "abstraction") and build some of those up into something more complicated, and so on, and so on.</p>
+<p>We will start at a much higher level, but you'll learn to do that yourself!</p>
+<p>Let's start by breaking down the Fibonacci sequence code above:</p>
 
-    </div>
-</div>
-</div>
+<pre><code>digit = 3
+first = 0
+second = 1
+while digit &lt; 1001:
+    answer = first + second
+    first = second
+    second = answer
+    digit += 1
+print("the " + str(digit - 1) + "th number in the Fibonacci sequence is: " + str(answer))</code></pre>
+<p>The first three lines are <strong>variable assignments</strong> --- they give a name to some piece of data. In this case, we've given the name <code>digit</code> to the number 3, and so forth. Once we give a name to some piece of data, we can refer to that name and get back that data---and we can change the data attached to the name as well.</p>
+<p>It's good to use descriptive names, so anyone else reading your code (or future you) can tell what you're trying to do.  Here, I used names meant to track exactly what we're doing: the  <code>digit</code> starts at 3 because we start calculating at the third digit of the Fibonacci sequence (we know the first two already). Likewise, <code>first</code> and <code>second</code> represent the two numbers we need to add up to get the third.</p>
+<p><code>while digit &lt; 1001:</code></p>
+<p>The 4th line starts a <strong>while loop</strong>.  Remember how I said that computers are really good at doing the same thing over and over?  The most basic mechanism for doing so is the loop, which is just programmer-speak for "execute a list of instructions repeatedly."</p>
+<p>The structure ("syntax") of the while loop in Python (it's different in other languages) is:</p>
+<ol>
+<li><p>The keyword <code>while</code> at the start of the line.</p>
+</li>
+<li><p>An <em>expression</em> evaluating to a <em>boolean</em> after that.  (I'll explain what the italicized terms mean in a moment.)  This is known as the condition.</p>
+</li>
+<li><p>A colon at the end of the line.</p>
+</li>
+<li><p>An indented series of lines ("block") containing <em>statements</em>, known as the "body" of the loop.</p>
+</li>
+</ol>
+<p>The way it works is that each of the statements in the indented block will be executed in sequence so long as the condition is true.</p>
+<p>Thus, the English translation of the Python <code>while digit &lt; 1001:</code> is "go look up the value of the <code>digit</code> variable. So long as it is less than 1001, execute all the indented statements  that follow."</p>
+<p>Let's talk about some of those vocabulary words.</p>
+<p>First, most of what you can write in Python can be divided into expressions and statements. Essentially (and I'm simplifying a bit here), an <strong>expression</strong> is like algebra: it's a representation of some value, and its value can be substituted in for it. For example <code>1 + 1</code> is an expression, and 2 can seamlessly be substituted in for it. We say that an expression <strong>evaluates</strong> to its value: <code>1 + 1</code> evaluates to 2.</p>
+<p>In <code>while digit &lt; 1001</code> the <code>digit &lt; 1001</code> part is an expression. It evaluates to a special type of result, known as a <strong>boolean</strong>.  In Python, the two boolean values are <strong>True</strong> and <strong>False</strong> and they mean pretty much what you would expect them to mean. So <code>digit &lt; 1001</code> tells the computer "go look up the value of <code>digit</code> and see if it's less than 1001. If so, replace the value of this expression by <code>True</code>; otherwise, replace it with <code>False</code>.</p>
+<p><strong>Statements</strong> can be seen as instructions to the computer. They aren't meant to be evaluated to some value, but are meant to bring something about in the world inside the computer's head. We've seen a lot of statements already: the variable assignments we've looked at are all statements. They don't calculate anything, they just tell the computer "hold onto this name for this quantity."</p>
+<p>If we wrote a line like <code>my_sum = 1 + 1</code> we would have an expression and a statement. What happens is that first the expression <code>1 + 1</code> is evaluated to 2, and then that value is assigned to the variable <code>my_sum</code>.  We always read variable assignments right to left: evaluate all the stuff on the right side of the equals sign, and then assign whatever we get out of it to the name on the left side.</p>
+<p>Generally, you can have a lot of expressions in a line --- you could say something like <code>weird_quantity = 5 * (9 + 28) * 2015 / 99</code> and that's fine. Generally, you don't have more than one statement in a line.</p>
+<p>Sometimes, expressions do something (like statements do) in addition to evaluating to a value. Those are called <em>side-effects</em> but don't worry about that for now.</p>
+<p>Ok, let's keep going!  You should be able to figure out what <code>answer = first + second</code> means--- it assigns the variable <code>answer</code> to the expression <code>first + second</code>.  It looks up the values of <code>first</code> and <code>second</code> and sums them. You should see that <code>answer</code> get the value 1.</p>
+<p>The next two lines introduce one of the main reasons we use variables. As the name suggests, it's because they can <em>vary</em>.</p>
 
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">warnings</span>
-<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">)</span>
-
-<span class="n">sns</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s2">&quot;darkgrid&quot;</span><span class="p">)</span>
-<span class="n">iris</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s2">&quot;iris&quot;</span><span class="p">)</span>
-
-<span class="c1"># Subset the iris dataset by species</span>
-<span class="n">setosa</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;species == &#39;setosa&#39;&quot;</span><span class="p">)</span>
-<span class="n">virginica</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;species == &#39;virginica&#39;&quot;</span><span class="p">)</span>
-
-<span class="c1"># Set up the figure</span>
-<span class="n">f</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="s2">&quot;equal&quot;</span><span class="p">)</span>
-
-<span class="c1"># Draw the two density plots</span>
-<span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">setosa</span><span class="o">.</span><span class="n">sepal_width</span><span class="p">,</span> <span class="n">setosa</span><span class="o">.</span><span class="n">sepal_length</span><span class="p">,</span>
-                 <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;Reds&quot;</span><span class="p">,</span> <span class="n">shade</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">shade_lowest</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">virginica</span><span class="o">.</span><span class="n">sepal_width</span><span class="p">,</span> <span class="n">virginica</span><span class="o">.</span><span class="n">sepal_length</span><span class="p">,</span>
-                 <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;Blues&quot;</span><span class="p">,</span> <span class="n">shade</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">shade_lowest</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-
-<span class="c1"># Add labels to the plot</span>
-<span class="n">red</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">color_palette</span><span class="p">(</span><span class="s2">&quot;Reds&quot;</span><span class="p">)[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
-<span class="n">blue</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">color_palette</span><span class="p">(</span><span class="s2">&quot;Blues&quot;</span><span class="p">)[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">2.5</span><span class="p">,</span> <span class="mf">8.2</span><span class="p">,</span> <span class="s2">&quot;virginica&quot;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">blue</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">3.8</span><span class="p">,</span> <span class="mf">4.5</span><span class="p">,</span> <span class="s2">&quot;setosa&quot;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">red</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[3]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.text.Text at 0x11c0e8898&gt;</pre>
-</div>
-
-</div>
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-
-<div class="output_png output_subarea ">
-<img src="data:image/png;base64,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
-"
->
-</div>
-
-</div>
+<pre><code>first = second
+second = answer</code></pre>
+<p>We're reassigning our variables here!  Remember, we do variable assignment right to left. So what this means is "take the value currently attached to the name <code>second</code> and assign it to <code>first</code>, then take the variable currently attached to the name <code>answer</code> and assign it to <code>second.</code></p>
+<p>Think about how this works in terms of the first few digits of the Fibonacci sequence. Consider the following table, where the first row is the digit we're on (first, second, etc.) and the second row is the value:</p>
+<table>
+<thead><tr>
+<th></th>
+<th></th>
+<th>\/</th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+<td>6</td>
+<td>7</td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>5</td>
+<td>8</td>
+</tr>
+<tr>
+<td>^1</td>
+<td>^2</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Let's imagine an arrow poing to the digit we're trying to sort out. So when we start, the arrow is pointing at 3 (the variable <code>digit</code>), because we're trying to calculate the third digit. We calculate that digit by looking to the first number of the two immediately preceeding numbers (the variable <code>first</code>, represented in the table by ^1), and adding it to the second number of the two immediately preceeding (the variable <code>second</code>, represented in the table by ^2), giving us the total (variable <code>answer</code>).</p>
+<p>But we're not done yet, because we still have 997 more numbers to calculate. So how do we calculate the 4th digit?  Well, we need to add the last two digits again... the number that used to be in the variable <code>second</code> is the first digit we'll add the next time, and the current digit (variable <code>answer</code>) is the second one.  In order to tell the computer that's going to happen, we reassign those variables.</p>
+<p>The last line of our loop <code>digit += 1</code> is a special syntax for <em>incrementing</em> the value of a variable---it just says "replace the value of <code>digit</code> with its own value plus 1." In our chart above, that just means moving the digit forward.</p>
+<p>So, here's a representation of out computer's memory at the start of the indented block:</p>
+<table>
+<thead><tr>
+<th></th>
+<th></th>
+<th>\/</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>^1</td>
+<td>^2</td>
+</tr>
+</tbody>
+</table>
+<p>And here's a representation of out computer's memory at the end of the indented block:</p>
+<table>
+<thead><tr>
+<th></th>
+<th></th>
+<th></th>
+<th>\/</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>^1</td>
+<td>^2</td>
+</tr>
+</tbody>
+</table>
+<p>The arrow indicating what digit we're about to calculate has moved to the 4th place, and the arrows indicating what digits we're going to sum up have moved to the second and third, plus we've added an answer for the latter.</p>
+<p>And finally, the magic of loops kicks in. Now that we're at the end of our indented block, the computer jumps back up to the start of the while loop.</p>
+<p>First, it checks the condition again. Is <code>digit</code> still less than 1001?  Yes, it is. It's 4 now, instead of 3, but that's lots less than 1001. So now, we go back into the body of the loop, this time using the new values of our variables!</p>
+<p>After another iteration of the loop, here's what the computer knows:</p>
+<table>
+<thead><tr>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th>\/</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>2</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>^1</td>
+<td>^2</td>
+</tr>
+</tbody>
+</table>
+<p>And then it keeps doing that, again and again, moving the arrow up top each time, at blinding speed.</p>
+<p>Now let's think of what happens after it calculates the 1000th digit.  Here's where we are:</p>
+<table>
+<thead><tr>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th>\/</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+<td>...</td>
+<td>999</td>
+<td>1000</td>
+<td>1001</td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>...</td>
+<td>lots</td>
+<td>lots</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>...</td>
+<td>^1</td>
+<td>^2</td>
+</tr>
+</tbody>
+</table>
+<p>This time, when it goes back to the start of the loop, it tests the condition and finds that it's <code>False</code>. <code>digit</code> isn't under 1001 any more!</p>
+<p>So now, it jumps out of the while loop and goes to the next line:</p>
+<p><code>print("the " + str(digit - 1) + "th number in the Fibonacci sequence is: " + str(answer))</code></p>
+<p>This line calls the <code>print()</code> function, which instructs the computer to print to the screen (not to a paper printer!) the expression inside the parentheses. (We'll talk about functions and what the parentheses do in a little bit.)</p>
+<p>The stuff inside the parentheses is a <strong>string</strong>---that is, an piece of text that the computer represents in memory, made up of <strong>characters</strong>.  Typically we tell Python to hold onto a string by surrounding it with quotes (single or double both work, but they have to match). These are called <strong>string literals</strong>. Like:</p>
+<p><code>my_sentence = "Hi, I am Gowder's sentence."</code></p>
+<p>But you can also create strings out of expressions, and use them in other expressions. One of the neat things that you can do with strings is <strong>concatenate</strong> them, that is, use the plus sign to sort of add them together, so that <code>"the cat " + "in the hat"</code> evaluates to <code>"the cat in the hat"</code>.</p>
+<p>So what that last line does is look up the last value that <code>answer</code> got (which is the 1000th digit, because we haven't calculated the 1001th yet), convert that into a string with the <code>str()</code> function (turning it from, e.g., <code>12345</code> into <code>"12345"</code>---this matters!), does the same with <code>digit</code>, and then concatenates them all together with the string literals there into one big string, which we print to the screen so that we can learn the answer to our math puzzle!</p>
 
 </div>
 </div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Now-you-try!">Now you try!<a class="anchor-link" href="#Now-you-try!">&#182;</a></h2><p>We're at the end of our first handout. There are a couple more in this lesson, but, before you go onto the next one, try using a loop to calculate a different quantity!</p>
+<p>As you might remember from your early schooling, the factorial of a number, denoted n!, is the product of that number and all the positive integers before it. For example, 5! = 1x2x3x4x5 = 120</p>
+<p>In the next cell, use a loop to calculate 1000 factorial.</p>
 
 </div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
-
-    </div>
 </div>
-</div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
@@ -1620,6 +1539,30 @@ HQYjEZEOg5GISOf/A8PrJDuSgJBRAAAAAElFTkSuQmCC
                     <h1>Other articles</h1>
                     <hr />
                     <ol id="posts-list" class="hfeed">
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/test-notebook.html" rel="bookmark"
+                           title="Permalink to Test notebook">Test notebook</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2018-10-22T16:27:00-05:00">
+                Published: Mon 22 October 2018
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/paul-gowder.html">Paul Gowder</a>
+        </address>
+<p>In <a href="/category/testing.html">Testing</a>.</p>
+
+</footer><!-- /.post-info -->                
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+                <a class="readmore" href="/test-notebook.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
 
             <li><article class="hentry">
                 <header>
