@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 
 AUTHOR = 'Paul Gowder'
 SITENAME = 'Sociological Gobbledygook'
-SITEURL = 'https://sociologicalgobbledygook.com/'
+# SITEURL = 'https://sociologicalgobbledygook.com/'
 
 MARKUP = ('md', 'ipynb')
 PLUGIN_PATHS = ['./plugins']
