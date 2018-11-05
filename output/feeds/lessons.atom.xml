@@ -1,0 +1,1622 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Sociological Gobbledygook - Lessons</title><link href="https://sociologicalgobbledygook.com/" rel="alternate"></link><link href="https://sociologicalgobbledygook.com/feeds/lessons.atom.xml" rel="self"></link><id>https://sociologicalgobbledygook.com/</id><updated>2018-11-04T00:00:00-05:00</updated><entry><title>Lesson 1.1: Introduction to Programming 1</title><link href="https://sociologicalgobbledygook.com/lesson-11-introduction-to-programming-1.html" rel="alternate"></link><published>2018-11-04T00:00:00-05:00</published><updated>2018-11-04T00:00:00-05:00</updated><author><name>Paul Gowder</name></author><id>tag:sociologicalgobbledygook.com,2018-11-04:/lesson-11-introduction-to-programming-1.html</id><summary type="html">
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;In this first week of the course, we're going to cover some core concepts of computer programming. With this, we will build a foundation to do more interesting things in the coming weeks.&lt;/p&gt;
+&lt;h2 id="What-is-Computer-Programming?"&gt;What is Computer Programming?&lt;a class="anchor-link" href="#What-is-Computer-Programming?"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Computers basically just do one thing: they complete very simple operations at astonishing speed.&lt;/p&gt;
+&lt;p&gt;For example, suppose you wanted to calculate the thousandth number of the &lt;a href="https://www.mathsisfun.com/numbers/fibonacci-sequence.html"&gt;Fibonacci Sequence&lt;/a&gt;</summary><content type="html">&lt;style type="text/css"&gt;/*!
+*
+* IPython notebook
+*
+*/
+/* CSS font colors for translated ANSI escape sequences */
+/* The color values are a mix of
+   http://www.xcolors.net/dl/baskerville-ivorylight and
+   http://www.xcolors.net/dl/euphrasia */
+.ansi-black-fg {
+  color: #3E424D;
+}
+.ansi-black-bg {
+  background-color: #3E424D;
+}
+.ansi-black-intense-fg {
+  color: #282C36;
+}
+.ansi-black-intense-bg {
+  background-color: #282C36;
+}
+.ansi-red-fg {
+  color: #E75C58;
+}
+.ansi-red-bg {
+  background-color: #E75C58;
+}
+.ansi-red-intense-fg {
+  color: #B22B31;
+}
+.ansi-red-intense-bg {
+  background-color: #B22B31;
+}
+.ansi-green-fg {
+  color: #00A250;
+}
+.ansi-green-bg {
+  background-color: #00A250;
+}
+.ansi-green-intense-fg {
+  color: #007427;
+}
+.ansi-green-intense-bg {
+  background-color: #007427;
+}
+.ansi-yellow-fg {
+  color: #DDB62B;
+}
+.ansi-yellow-bg {
+  background-color: #DDB62B;
+}
+.ansi-yellow-intense-fg {
+  color: #B27D12;
+}
+.ansi-yellow-intense-bg {
+  background-color: #B27D12;
+}
+.ansi-blue-fg {
+  color: #208FFB;
+}
+.ansi-blue-bg {
+  background-color: #208FFB;
+}
+.ansi-blue-intense-fg {
+  color: #0065CA;
+}
+.ansi-blue-intense-bg {
+  background-color: #0065CA;
+}
+.ansi-magenta-fg {
+  color: #D160C4;
+}
+.ansi-magenta-bg {
+  background-color: #D160C4;
+}
+.ansi-magenta-intense-fg {
+  color: #A03196;
+}
+.ansi-magenta-intense-bg {
+  background-color: #A03196;
+}
+.ansi-cyan-fg {
+  color: #60C6C8;
+}
+.ansi-cyan-bg {
+  background-color: #60C6C8;
+}
+.ansi-cyan-intense-fg {
+  color: #258F8F;
+}
+.ansi-cyan-intense-bg {
+  background-color: #258F8F;
+}
+.ansi-white-fg {
+  color: #C5C1B4;
+}
+.ansi-white-bg {
+  background-color: #C5C1B4;
+}
+.ansi-white-intense-fg {
+  color: #A1A6B2;
+}
+.ansi-white-intense-bg {
+  background-color: #A1A6B2;
+}
+.ansi-default-inverse-fg {
+  color: #FFFFFF;
+}
+.ansi-default-inverse-bg {
+  background-color: #000000;
+}
+.ansi-bold {
+  font-weight: bold;
+}
+.ansi-underline {
+  text-decoration: underline;
+}
+/* The following styles are deprecated an will be removed in a future version */
+.ansibold {
+  font-weight: bold;
+}
+.ansi-inverse {
+  outline: 0.5px dotted;
+}
+/* use dark versions for foreground, to improve visibility */
+.ansiblack {
+  color: black;
+}
+.ansired {
+  color: darkred;
+}
+.ansigreen {
+  color: darkgreen;
+}
+.ansiyellow {
+  color: #c4a000;
+}
+.ansiblue {
+  color: darkblue;
+}
+.ansipurple {
+  color: darkviolet;
+}
+.ansicyan {
+  color: steelblue;
+}
+.ansigray {
+  color: gray;
+}
+/* and light for background, for the same reason */
+.ansibgblack {
+  background-color: black;
+}
+.ansibgred {
+  background-color: red;
+}
+.ansibggreen {
+  background-color: green;
+}
+.ansibgyellow {
+  background-color: yellow;
+}
+.ansibgblue {
+  background-color: blue;
+}
+.ansibgpurple {
+  background-color: magenta;
+}
+.ansibgcyan {
+  background-color: cyan;
+}
+.ansibggray {
+  background-color: gray;
+}
+div.cell {
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  border-radius: 2px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  border-width: 1px;
+  border-style: solid;
+  border-color: transparent;
+  width: 100%;
+  padding: 5px;
+  /* This acts as a spacer between cells, that is outside the border */
+  margin: 0px;
+  outline: none;
+  position: relative;
+  overflow: visible;
+}
+div.cell:before {
+  position: absolute;
+  display: block;
+  top: -1px;
+  left: -1px;
+  width: 5px;
+  height: calc(100% +  2px);
+  content: '';
+  background: transparent;
+}
+div.cell.jupyter-soft-selected {
+  border-left-color: #E3F2FD;
+  border-left-width: 1px;
+  padding-left: 5px;
+  border-right-color: #E3F2FD;
+  border-right-width: 1px;
+  background: #E3F2FD;
+}
+@media print {
+  div.cell.jupyter-soft-selected {
+    border-color: transparent;
+  }
+}
+div.cell.selected,
+div.cell.selected.jupyter-soft-selected {
+  border-color: #ababab;
+}
+div.cell.selected:before,
+div.cell.selected.jupyter-soft-selected:before {
+  position: absolute;
+  display: block;
+  top: -1px;
+  left: -1px;
+  width: 5px;
+  height: calc(100% +  2px);
+  content: '';
+  background: #42A5F5;
+}
+@media print {
+  div.cell.selected,
+  div.cell.selected.jupyter-soft-selected {
+    border-color: transparent;
+  }
+}
+.edit_mode div.cell.selected {
+  border-color: #66BB6A;
+}
+.edit_mode div.cell.selected:before {
+  position: absolute;
+  display: block;
+  top: -1px;
+  left: -1px;
+  width: 5px;
+  height: calc(100% +  2px);
+  content: '';
+  background: #66BB6A;
+}
+@media print {
+  .edit_mode div.cell.selected {
+    border-color: transparent;
+  }
+}
+.prompt {
+  /* This needs to be wide enough for 3 digit prompt numbers: In[100]: */
+  min-width: 14ex;
+  /* This padding is tuned to match the padding on the CodeMirror editor. */
+  padding: 0.4em;
+  margin: 0px;
+  font-family: monospace;
+  text-align: right;
+  /* This has to match that of the the CodeMirror class line-height below */
+  line-height: 1.21429em;
+  /* Don't highlight prompt number selection */
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  /* Use default cursor */
+  cursor: default;
+}
+@media (max-width: 540px) {
+  .prompt {
+    text-align: left;
+  }
+}
+div.inner_cell {
+  min-width: 0;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  /* Old browsers */
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  box-flex: 1;
+  /* Modern browsers */
+  flex: 1;
+}
+/* input_area and input_prompt must match in top border and margin for alignment */
+div.input_area {
+  border: 1px solid #cfcfcf;
+  border-radius: 2px;
+  background: #f7f7f7;
+  line-height: 1.21429em;
+}
+/* This is needed so that empty prompt areas can collapse to zero height when there
+   is no content in the output_subarea and the prompt. The main purpose of this is
+   to make sure that empty JavaScript output_subareas have no height. */
+div.prompt:empty {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+div.unrecognized_cell {
+  padding: 5px 5px 5px 0px;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+div.unrecognized_cell .inner_cell {
+  border-radius: 2px;
+  padding: 5px;
+  font-weight: bold;
+  color: red;
+  border: 1px solid #cfcfcf;
+  background: #eaeaea;
+}
+div.unrecognized_cell .inner_cell a {
+  color: inherit;
+  text-decoration: none;
+}
+div.unrecognized_cell .inner_cell a:hover {
+  color: inherit;
+  text-decoration: none;
+}
+@media (max-width: 540px) {
+  div.unrecognized_cell &gt; div.prompt {
+    display: none;
+  }
+}
+div.code_cell {
+  /* avoid page breaking on code cells when printing */
+}
+@media print {
+  div.code_cell {
+    page-break-inside: avoid;
+  }
+}
+/* any special styling for code cells that are currently running goes here */
+div.input {
+  page-break-inside: avoid;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+@media (max-width: 540px) {
+  div.input {
+    /* Old browsers */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-box-align: stretch;
+    display: -moz-box;
+    -moz-box-orient: vertical;
+    -moz-box-align: stretch;
+    display: box;
+    box-orient: vertical;
+    box-align: stretch;
+    /* Modern browsers */
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+/* input_area and input_prompt must match in top border and margin for alignment */
+div.input_prompt {
+  color: #303F9F;
+  border-top: 1px solid transparent;
+}
+div.input_area &gt; div.highlight {
+  margin: 0.4em;
+  border: none;
+  padding: 0px;
+  background-color: transparent;
+}
+div.input_area &gt; div.highlight &gt; pre {
+  margin: 0px;
+  border: none;
+  padding: 0px;
+  background-color: transparent;
+}
+/* The following gets added to the &lt;head&gt; if it is detected that the user has a
+ * monospace font with inconsistent normal/bold/italic height.  See
+ * notebookmain.js.  Such fonts will have keywords vertically offset with
+ * respect to the rest of the text.  The user should select a better font.
+ * See: https://github.com/ipython/ipython/issues/1503
+ *
+ * .CodeMirror span {
+ *      vertical-align: bottom;
+ * }
+ */
+.CodeMirror {
+  line-height: 1.21429em;
+  /* Changed from 1em to our global default */
+  font-size: 14px;
+  height: auto;
+  /* Changed to auto to autogrow */
+  background: none;
+  /* Changed from white to allow our bg to show through */
+}
+.CodeMirror-scroll {
+  /*  The CodeMirror docs are a bit fuzzy on if overflow-y should be hidden or visible.*/
+  /*  We have found that if it is visible, vertical scrollbars appear with font size changes.*/
+  overflow-y: hidden;
+  overflow-x: auto;
+}
+.CodeMirror-lines {
+  /* In CM2, this used to be 0.4em, but in CM3 it went to 4px. We need the em value because */
+  /* we have set a different line-height and want this to scale with that. */
+  /* Note that this should set vertical padding only, since CodeMirror assumes
+       that horizontal padding will be set on CodeMirror pre */
+  padding: 0.4em 0;
+}
+.CodeMirror-linenumber {
+  padding: 0 8px 0 4px;
+}
+.CodeMirror-gutters {
+  border-bottom-left-radius: 2px;
+  border-top-left-radius: 2px;
+}
+.CodeMirror pre {
+  /* In CM3 this went to 4px from 0 in CM2. This sets horizontal padding only,
+    use .CodeMirror-lines for vertical */
+  padding: 0 0.4em;
+  border: 0;
+  border-radius: 0;
+}
+.CodeMirror-cursor {
+  border-left: 1.4px solid black;
+}
+@media screen and (min-width: 2138px) and (max-width: 4319px) {
+  .CodeMirror-cursor {
+    border-left: 2px solid black;
+  }
+}
+@media screen and (min-width: 4320px) {
+  .CodeMirror-cursor {
+    border-left: 4px solid black;
+  }
+}
+/*
+
+Original style from softwaremaniacs.org (c) Ivan Sagalaev &lt;Maniac@SoftwareManiacs.Org&gt;
+Adapted from GitHub theme
+
+*/
+.highlight-base {
+  color: #000;
+}
+.highlight-variable {
+  color: #000;
+}
+.highlight-variable-2 {
+  color: #1a1a1a;
+}
+.highlight-variable-3 {
+  color: #333333;
+}
+.highlight-string {
+  color: #BA2121;
+}
+.highlight-comment {
+  color: #408080;
+  font-style: italic;
+}
+.highlight-number {
+  color: #080;
+}
+.highlight-atom {
+  color: #88F;
+}
+.highlight-keyword {
+  color: #008000;
+  font-weight: bold;
+}
+.highlight-builtin {
+  color: #008000;
+}
+.highlight-error {
+  color: #f00;
+}
+.highlight-operator {
+  color: #AA22FF;
+  font-weight: bold;
+}
+.highlight-meta {
+  color: #AA22FF;
+}
+/* previously not defined, copying from default codemirror */
+.highlight-def {
+  color: #00f;
+}
+.highlight-string-2 {
+  color: #f50;
+}
+.highlight-qualifier {
+  color: #555;
+}
+.highlight-bracket {
+  color: #997;
+}
+.highlight-tag {
+  color: #170;
+}
+.highlight-attribute {
+  color: #00c;
+}
+.highlight-header {
+  color: blue;
+}
+.highlight-quote {
+  color: #090;
+}
+.highlight-link {
+  color: #00c;
+}
+/* apply the same style to codemirror */
+.cm-s-ipython span.cm-keyword {
+  color: #008000;
+  font-weight: bold;
+}
+.cm-s-ipython span.cm-atom {
+  color: #88F;
+}
+.cm-s-ipython span.cm-number {
+  color: #080;
+}
+.cm-s-ipython span.cm-def {
+  color: #00f;
+}
+.cm-s-ipython span.cm-variable {
+  color: #000;
+}
+.cm-s-ipython span.cm-operator {
+  color: #AA22FF;
+  font-weight: bold;
+}
+.cm-s-ipython span.cm-variable-2 {
+  color: #1a1a1a;
+}
+.cm-s-ipython span.cm-variable-3 {
+  color: #333333;
+}
+.cm-s-ipython span.cm-comment {
+  color: #408080;
+  font-style: italic;
+}
+.cm-s-ipython span.cm-string {
+  color: #BA2121;
+}
+.cm-s-ipython span.cm-string-2 {
+  color: #f50;
+}
+.cm-s-ipython span.cm-meta {
+  color: #AA22FF;
+}
+.cm-s-ipython span.cm-qualifier {
+  color: #555;
+}
+.cm-s-ipython span.cm-builtin {
+  color: #008000;
+}
+.cm-s-ipython span.cm-bracket {
+  color: #997;
+}
+.cm-s-ipython span.cm-tag {
+  color: #170;
+}
+.cm-s-ipython span.cm-attribute {
+  color: #00c;
+}
+.cm-s-ipython span.cm-header {
+  color: blue;
+}
+.cm-s-ipython span.cm-quote {
+  color: #090;
+}
+.cm-s-ipython span.cm-link {
+  color: #00c;
+}
+.cm-s-ipython span.cm-error {
+  color: #f00;
+}
+.cm-s-ipython span.cm-tab {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAMCAYAAAAkuj5RAAAAAXNSR0IArs4c6QAAAGFJREFUSMft1LsRQFAQheHPowAKoACx3IgEKtaEHujDjORSgWTH/ZOdnZOcM/sgk/kFFWY0qV8foQwS4MKBCS3qR6ixBJvElOobYAtivseIE120FaowJPN75GMu8j/LfMwNjh4HUpwg4LUAAAAASUVORK5CYII=);
+  background-position: right;
+  background-repeat: no-repeat;
+}
+div.output_wrapper {
+  /* this position must be relative to enable descendents to be absolute within it */
+  position: relative;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  z-index: 1;
+}
+/* class for the output area when it should be height-limited */
+div.output_scroll {
+  /* ideally, this would be max-height, but FF barfs all over that */
+  height: 24em;
+  /* FF needs this *and the wrapper* to specify full width, or it will shrinkwrap */
+  width: 100%;
+  overflow: auto;
+  border-radius: 2px;
+  -webkit-box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.8);
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.8);
+  display: block;
+}
+/* output div while it is collapsed */
+div.output_collapsed {
+  margin: 0px;
+  padding: 0px;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+div.out_prompt_overlay {
+  height: 100%;
+  padding: 0px 0.4em;
+  position: absolute;
+  border-radius: 2px;
+}
+div.out_prompt_overlay:hover {
+  /* use inner shadow to get border that is computed the same on WebKit/FF */
+  -webkit-box-shadow: inset 0 0 1px #000;
+  box-shadow: inset 0 0 1px #000;
+  background: rgba(240, 240, 240, 0.5);
+}
+div.output_prompt {
+  color: #D84315;
+}
+/* This class is the outer container of all output sections. */
+div.output_area {
+  padding: 0px;
+  page-break-inside: avoid;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+div.output_area .MathJax_Display {
+  text-align: left !important;
+}
+div.output_area 
+div.output_area 
+div.output_area img,
+div.output_area svg {
+  max-width: 100%;
+  height: auto;
+}
+div.output_area img.unconfined,
+div.output_area svg.unconfined {
+  max-width: none;
+}
+div.output_area .mglyph &gt; img {
+  max-width: none;
+}
+/* This is needed to protect the pre formating from global settings such
+   as that of bootstrap */
+.output {
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+@media (max-width: 540px) {
+  div.output_area {
+    /* Old browsers */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-box-align: stretch;
+    display: -moz-box;
+    -moz-box-orient: vertical;
+    -moz-box-align: stretch;
+    display: box;
+    box-orient: vertical;
+    box-align: stretch;
+    /* Modern browsers */
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+div.output_area pre {
+  margin: 0;
+  padding: 1px 0 1px 0;
+  border: 0;
+  vertical-align: baseline;
+  color: black;
+  background-color: transparent;
+  border-radius: 0;
+}
+/* This class is for the output subarea inside the output_area and after
+   the prompt div. */
+div.output_subarea {
+  overflow-x: auto;
+  padding: 0.4em;
+  /* Old browsers */
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  box-flex: 1;
+  /* Modern browsers */
+  flex: 1;
+  max-width: calc(100% - 14ex);
+}
+div.output_scroll div.output_subarea {
+  overflow-x: visible;
+}
+/* The rest of the output_* classes are for special styling of the different
+   output types */
+/* all text output has this class: */
+div.output_text {
+  text-align: left;
+  color: #000;
+  /* This has to match that of the the CodeMirror class line-height below */
+  line-height: 1.21429em;
+}
+/* stdout/stderr are 'text' as well as 'stream', but execute_result/error are *not* streams */
+div.output_stderr {
+  background: #fdd;
+  /* very light red background for stderr */
+}
+div.output_latex {
+  text-align: left;
+}
+/* Empty output_javascript divs should have no height */
+div.output_javascript:empty {
+  padding: 0;
+}
+.js-error {
+  color: darkred;
+}
+/* raw_input styles */
+div.raw_input_container {
+  line-height: 1.21429em;
+  padding-top: 5px;
+}
+pre.raw_input_prompt {
+  /* nothing needed here. */
+}
+input.raw_input {
+  font-family: monospace;
+  font-size: inherit;
+  color: inherit;
+  width: auto;
+  /* make sure input baseline aligns with prompt */
+  vertical-align: baseline;
+  /* padding + margin = 0.5em between prompt and cursor */
+  padding: 0em 0.25em;
+  margin: 0em 0.25em;
+}
+input.raw_input:focus {
+  box-shadow: none;
+}
+p.p-space {
+  margin-bottom: 10px;
+}
+div.output_unrecognized {
+  padding: 5px;
+  font-weight: bold;
+  color: red;
+}
+div.output_unrecognized a {
+  color: inherit;
+  text-decoration: none;
+}
+div.output_unrecognized a:hover {
+  color: inherit;
+  text-decoration: none;
+}
+.rendered_html {
+  color: #000;
+  /* any extras will just be numbers: */
+}
+
+
+
+.rendered_html :link {
+  text-decoration: underline;
+}
+.rendered_html :visited {
+  text-decoration: underline;
+}
+
+
+
+
+
+
+.rendered_html h1:first-child {
+  margin-top: 0.538em;
+}
+.rendered_html h2:first-child {
+  margin-top: 0.636em;
+}
+.rendered_html h3:first-child {
+  margin-top: 0.777em;
+}
+.rendered_html h4:first-child {
+  margin-top: 1em;
+}
+.rendered_html h5:first-child {
+  margin-top: 1em;
+}
+.rendered_html h6:first-child {
+  margin-top: 1em;
+}
+.rendered_html ul:not(.list-inline),
+.rendered_html ol:not(.list-inline) {
+  padding-left: 2em;
+}
+
+
+
+
+
+
+
+
+.rendered_html * + ul {
+  margin-top: 1em;
+}
+.rendered_html * + ol {
+  margin-top: 1em;
+}
+
+
+
+
+
+.rendered_html pre,
+
+
+
+
+.rendered_html tr,
+.rendered_html th,
+
+
+.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
+}
+.rendered_html * + table {
+  margin-top: 1em;
+}
+
+.rendered_html * + p {
+  margin-top: 1em;
+}
+
+.rendered_html * + img {
+  margin-top: 1em;
+}
+.rendered_html img,
+
+.rendered_html img.unconfined,
+
+
+.rendered_html * + .alert {
+  margin-top: 1em;
+}
+[dir="rtl"] 
+div.text_cell {
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+@media (max-width: 540px) {
+  div.text_cell &gt; div.prompt {
+    display: none;
+  }
+}
+div.text_cell_render {
+  /*font-family: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;*/
+  outline: none;
+  resize: none;
+  width: inherit;
+  border-style: none;
+  padding: 0.5em 0.5em 0.5em 0.4em;
+  color: #000;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+a.anchor-link:link {
+  text-decoration: none;
+  padding: 0px 20px;
+  visibility: hidden;
+}
+h1:hover .anchor-link,
+h2:hover .anchor-link,
+h3:hover .anchor-link,
+h4:hover .anchor-link,
+h5:hover .anchor-link,
+h6:hover .anchor-link {
+  visibility: visible;
+}
+.text_cell.rendered .input_area {
+  display: none;
+}
+.text_cell.rendered 
+.text_cell.rendered .rendered_html tr,
+.text_cell.rendered .rendered_html th,
+.text_cell.rendered 
+.text_cell.unrendered .text_cell_render {
+  display: none;
+}
+.text_cell .dropzone .input_area {
+  border: 2px dashed #bababa;
+  margin: -1px;
+}
+.cm-header-1,
+.cm-header-2,
+.cm-header-3,
+.cm-header-4,
+.cm-header-5,
+.cm-header-6 {
+  font-weight: bold;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.cm-header-1 {
+  font-size: 185.7%;
+}
+.cm-header-2 {
+  font-size: 157.1%;
+}
+.cm-header-3 {
+  font-size: 128.6%;
+}
+.cm-header-4 {
+  font-size: 110%;
+}
+.cm-header-5 {
+  font-size: 100%;
+  font-style: italic;
+}
+.cm-header-6 {
+  font-size: 100%;
+  font-style: italic;
+}
+&lt;/style&gt;
+&lt;style type="text/css"&gt;.highlight .hll { background-color: #ffffcc }
+.highlight  { background: #f8f8f8; }
+.highlight .c { color: #408080; font-style: italic } /* Comment */
+.highlight .err { border: 1px solid #FF0000 } /* Error */
+.highlight .k { color: #008000; font-weight: bold } /* Keyword */
+.highlight .o { color: #666666 } /* Operator */
+.highlight .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
+.highlight .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #BC7A00 } /* Comment.Preproc */
+.highlight .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
+.highlight .c1 { color: #408080; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #408080; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #A00000 } /* Generic.Deleted */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #FF0000 } /* Generic.Error */
+.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.highlight .gi { color: #00A000 } /* Generic.Inserted */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.highlight .gt { color: #0044DD } /* Generic.Traceback */
+.highlight .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: #008000 } /* Keyword.Pseudo */
+.highlight .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #B00040 } /* Keyword.Type */
+.highlight .m { color: #666666 } /* Literal.Number */
+.highlight .s { color: #BA2121 } /* Literal.String */
+.highlight .na { color: #7D9029 } /* Name.Attribute */
+.highlight .nb { color: #008000 } /* Name.Builtin */
+.highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+.highlight .no { color: #880000 } /* Name.Constant */
+.highlight .nd { color: #AA22FF } /* Name.Decorator */
+.highlight .ni { color: #999999; font-weight: bold } /* Name.Entity */
+.highlight .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #0000FF } /* Name.Function */
+.highlight .nl { color: #A0A000 } /* Name.Label */
+.highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+.highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
+.highlight .nv { color: #19177C } /* Name.Variable */
+.highlight .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mb { color: #666666 } /* Literal.Number.Bin */
+.highlight .mf { color: #666666 } /* Literal.Number.Float */
+.highlight .mh { color: #666666 } /* Literal.Number.Hex */
+.highlight .mi { color: #666666 } /* Literal.Number.Integer */
+.highlight .mo { color: #666666 } /* Literal.Number.Oct */
+.highlight .sa { color: #BA2121 } /* Literal.String.Affix */
+.highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
+.highlight .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
+.highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+.highlight .s2 { color: #BA2121 } /* Literal.String.Double */
+.highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+.highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
+.highlight .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+.highlight .sx { color: #008000 } /* Literal.String.Other */
+.highlight .sr { color: #BB6688 } /* Literal.String.Regex */
+.highlight .s1 { color: #BA2121 } /* Literal.String.Single */
+.highlight .ss { color: #19177C } /* Literal.String.Symbol */
+.highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.highlight .fm { color: #0000FF } /* Name.Function.Magic */
+.highlight .vc { color: #19177C } /* Name.Variable.Class */
+.highlight .vg { color: #19177C } /* Name.Variable.Global */
+.highlight .vi { color: #19177C } /* Name.Variable.Instance */
+.highlight .vm { color: #19177C } /* Name.Variable.Magic */
+.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */&lt;/style&gt;
+&lt;style type="text/css"&gt;
+/* Temporary definitions which will become obsolete with Notebook release 5.0 */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-bold { font-weight: bold; }
+&lt;/style&gt;&lt;body&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;In this first week of the course, we're going to cover some core concepts of computer programming. With this, we will build a foundation to do more interesting things in the coming weeks.&lt;/p&gt;
+&lt;h2 id="What-is-Computer-Programming?"&gt;What is Computer Programming?&lt;a class="anchor-link" href="#What-is-Computer-Programming?"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Computers basically just do one thing: they complete very simple operations at astonishing speed.&lt;/p&gt;
+&lt;p&gt;For example, suppose you wanted to calculate the thousandth number of the &lt;a href="https://www.mathsisfun.com/numbers/fibonacci-sequence.html"&gt;Fibonacci Sequence&lt;/a&gt; --- the sequence of numbers such that starts with 0 and 1, and then each subsequent number is the sum of the previous two numbers.  For example:&lt;/p&gt;
+&lt;p&gt;0 1 1 2 3 5 8 13&lt;/p&gt;
+&lt;p&gt;Don't go on until you are satisfied you know what the next number is.&lt;/p&gt;
+&lt;p&gt;As you can imagine, it would take a fairly long time to calculate it by hand.  However, a computer can do it in less than a second. I'll show you:&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[1]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;digit&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;
+&lt;span class="n"&gt;first&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;
+&lt;span class="n"&gt;second&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;
+&lt;span class="k"&gt;while&lt;/span&gt; &lt;span class="n"&gt;digit&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt; &lt;span class="mi"&gt;1001&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="n"&gt;answer&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;first&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;second&lt;/span&gt;
+    &lt;span class="n"&gt;first&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;second&lt;/span&gt;
+    &lt;span class="n"&gt;second&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;answer&lt;/span&gt;
+    &lt;span class="n"&gt;digit&lt;/span&gt; &lt;span class="o"&gt;+=&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;
+&lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;the &amp;quot;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="nb"&gt;str&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;digit&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;th number in the Fibonacci sequence is: &amp;quot;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="nb"&gt;str&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;answer&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+    
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;
+
+    &lt;div class="prompt"&gt;&lt;/div&gt;
+
+
+&lt;div class="output_subarea output_stream output_stdout output_text"&gt;
+&lt;pre&gt;the 1000th number in the Fibonacci sequence is: 26863810024485359386146727202142923967616609318986952340123175997617981700247881689338369654483356564191827856161443356312976673642210350324634850410377680367334151172899169723197082763985615764450078474174626
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;This is obviously not a number you would want to try to compute by hand, or even using a pocket calculator! (Incidentally, if you looked up a list of those numbers and found a different result, try comparing it to the 999th number. People seem to differ on whether to start counting from 0 or 1 in enumerating the Fibonacci sequence.)&lt;/p&gt;
+&lt;p&gt;Everything that computers do---including the system you're reading this on right now---is built up by doing very simple ("primitive") operations many many times. The way it works is that programmers build those primitives---basic arithmetic operations and pushing things around in memory, basically---into more complicated pieces of functionality. Then the next programmer can use that complicated piece of functionality (often called an "abstraction") and build some of those up into something more complicated, and so on, and so on.&lt;/p&gt;
+&lt;p&gt;We will start at a much higher level, but you'll learn to do that yourself!&lt;/p&gt;
+&lt;p&gt;Let's start by breaking down the Fibonacci sequence code above:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;digit = 3
+first = 0
+second = 1
+while digit &amp;lt; 1001:
+    answer = first + second
+    first = second
+    second = answer
+    digit += 1
+print("the " + str(digit - 1) + "th number in the Fibonacci sequence is: " + str(answer))&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The first three lines are &lt;strong&gt;variable assignments&lt;/strong&gt; --- they give a name to some piece of data. In this case, we've given the name &lt;code&gt;digit&lt;/code&gt; to the number 3, and so forth. Once we give a name to some piece of data, we can refer to that name and get back that data---and we can change the data attached to the name as well.&lt;/p&gt;
+&lt;p&gt;It's good to use descriptive names, so anyone else reading your code (or future you) can tell what you're trying to do.  Here, I used names meant to track exactly what we're doing: the  &lt;code&gt;digit&lt;/code&gt; starts at 3 because we start calculating at the third digit of the Fibonacci sequence (we know the first two already). Likewise, &lt;code&gt;first&lt;/code&gt; and &lt;code&gt;second&lt;/code&gt; represent the two numbers we need to add up to get the third.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;while digit &amp;lt; 1001:&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;The 4th line starts a &lt;strong&gt;while loop&lt;/strong&gt;.  Remember how I said that computers are really good at doing the same thing over and over?  The most basic mechanism for doing so is the loop, which is just programmer-speak for "execute a list of instructions repeatedly."&lt;/p&gt;
+&lt;p&gt;The structure ("syntax") of the while loop in Python (it's different in other languages) is:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;The keyword &lt;code&gt;while&lt;/code&gt; at the start of the line.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;An &lt;em&gt;expression&lt;/em&gt; evaluating to a &lt;em&gt;boolean&lt;/em&gt; after that.  (I'll explain what the italicized terms mean in a moment.)  This is known as the condition.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;A colon at the end of the line.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;An indented series of lines ("block") containing &lt;em&gt;statements&lt;/em&gt;, known as the "body" of the loop.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;The way it works is that each of the statements in the indented block will be executed in sequence so long as the condition is true.&lt;/p&gt;
+&lt;p&gt;Thus, the English translation of the Python &lt;code&gt;while digit &amp;lt; 1001:&lt;/code&gt; is "go look up the value of the &lt;code&gt;digit&lt;/code&gt; variable. So long as it is less than 1001, execute all the indented statements  that follow."&lt;/p&gt;
+&lt;p&gt;Let's talk about some of those vocabulary words.&lt;/p&gt;
+&lt;p&gt;First, most of what you can write in Python can be divided into expressions and statements. Essentially (and I'm simplifying a bit here), an &lt;strong&gt;expression&lt;/strong&gt; is like algebra: it's a representation of some value, and its value can be substituted in for it. For example &lt;code&gt;1 + 1&lt;/code&gt; is an expression, and 2 can seamlessly be substituted in for it. We say that an expression &lt;strong&gt;evaluates&lt;/strong&gt; to its value: &lt;code&gt;1 + 1&lt;/code&gt; evaluates to 2.&lt;/p&gt;
+&lt;p&gt;In &lt;code&gt;while digit &amp;lt; 1001&lt;/code&gt; the &lt;code&gt;digit &amp;lt; 1001&lt;/code&gt; part is an expression. It evaluates to a special type of result, known as a &lt;strong&gt;boolean&lt;/strong&gt;.  In Python, the two boolean values are &lt;strong&gt;True&lt;/strong&gt; and &lt;strong&gt;False&lt;/strong&gt; and they mean pretty much what you would expect them to mean. So &lt;code&gt;digit &amp;lt; 1001&lt;/code&gt; tells the computer "go look up the value of &lt;code&gt;digit&lt;/code&gt; and see if it's less than 1001. If so, replace the value of this expression by &lt;code&gt;True&lt;/code&gt;; otherwise, replace it with &lt;code&gt;False&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Statements&lt;/strong&gt; can be seen as instructions to the computer. They aren't meant to be evaluated to some value, but are meant to bring something about in the world inside the computer's head. We've seen a lot of statements already: the variable assignments we've looked at are all statements. They don't calculate anything, they just tell the computer "hold onto this name for this quantity."&lt;/p&gt;
+&lt;p&gt;If we wrote a line like &lt;code&gt;my_sum = 1 + 1&lt;/code&gt; we would have an expression and a statement. What happens is that first the expression &lt;code&gt;1 + 1&lt;/code&gt; is evaluated to 2, and then that value is assigned to the variable &lt;code&gt;my_sum&lt;/code&gt;.  We always read variable assignments right to left: evaluate all the stuff on the right side of the equals sign, and then assign whatever we get out of it to the name on the left side.&lt;/p&gt;
+&lt;p&gt;Generally, you can have a lot of expressions in a line --- you could say something like &lt;code&gt;weird_quantity = 5 * (9 + 28) * 2015 / 99&lt;/code&gt; and that's fine. Generally, you don't have more than one statement in a line.&lt;/p&gt;
+&lt;p&gt;Sometimes, expressions do something (like statements do) in addition to evaluating to a value. Those are called &lt;em&gt;side-effects&lt;/em&gt; but don't worry about that for now.&lt;/p&gt;
+&lt;p&gt;Ok, let's keep going!  You should be able to figure out what &lt;code&gt;answer = first + second&lt;/code&gt; means--- it assigns the variable &lt;code&gt;answer&lt;/code&gt; to the expression &lt;code&gt;first + second&lt;/code&gt;.  It looks up the values of &lt;code&gt;first&lt;/code&gt; and &lt;code&gt;second&lt;/code&gt; and sums them. You should see that &lt;code&gt;answer&lt;/code&gt; get the value 1.&lt;/p&gt;
+&lt;p&gt;The next two lines introduce one of the main reasons we use variables. As the name suggests, it's because they can &lt;em&gt;vary&lt;/em&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;first = second
+second = answer&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;We're reassigning our variables here!  Remember, we do variable assignment right to left. So what this means is "take the value currently attached to the name &lt;code&gt;second&lt;/code&gt; and assign it to &lt;code&gt;first&lt;/code&gt;, then take the variable currently attached to the name &lt;code&gt;answer&lt;/code&gt; and assign it to &lt;code&gt;second.&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Think about how this works in terms of the first few digits of the Fibonacci sequence. Consider the following table, where the first row is the digit we're on (first, second, etc.) and the second row is the value:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;\/&lt;/th&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;td&gt;5&lt;/td&gt;
+&lt;td&gt;6&lt;/td&gt;
+&lt;td&gt;7&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;td&gt;5&lt;/td&gt;
+&lt;td&gt;8&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;^1&lt;/td&gt;
+&lt;td&gt;^2&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Let's imagine an arrow poing to the digit we're trying to sort out. So when we start, the arrow is pointing at 3 (the variable &lt;code&gt;digit&lt;/code&gt;), because we're trying to calculate the third digit. We calculate that digit by looking to the first number of the two immediately preceeding numbers (the variable &lt;code&gt;first&lt;/code&gt;, represented in the table by ^1), and adding it to the second number of the two immediately preceeding (the variable &lt;code&gt;second&lt;/code&gt;, represented in the table by ^2), giving us the total (variable &lt;code&gt;answer&lt;/code&gt;).&lt;/p&gt;
+&lt;p&gt;But we're not done yet, because we still have 997 more numbers to calculate. So how do we calculate the 4th digit?  Well, we need to add the last two digits again... the number that used to be in the variable &lt;code&gt;second&lt;/code&gt; is the first digit we'll add the next time, and the current digit (variable &lt;code&gt;answer&lt;/code&gt;) is the second one.  In order to tell the computer that's going to happen, we reassign those variables.&lt;/p&gt;
+&lt;p&gt;The last line of our loop &lt;code&gt;digit += 1&lt;/code&gt; is a special syntax for &lt;em&gt;incrementing&lt;/em&gt; the value of a variable---it just says "replace the value of &lt;code&gt;digit&lt;/code&gt; with its own value plus 1." In our chart above, that just means moving the digit forward.&lt;/p&gt;
+&lt;p&gt;So, here's a representation of out computer's memory at the start of the indented block:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;\/&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;^1&lt;/td&gt;
+&lt;td&gt;^2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;And here's a representation of out computer's memory at the end of the indented block:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;\/&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;^1&lt;/td&gt;
+&lt;td&gt;^2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;The arrow indicating what digit we're about to calculate has moved to the 4th place, and the arrows indicating what digits we're going to sum up have moved to the second and third, plus we've added an answer for the latter.&lt;/p&gt;
+&lt;p&gt;And finally, the magic of loops kicks in. Now that we're at the end of our indented block, the computer jumps back up to the start of the while loop.&lt;/p&gt;
+&lt;p&gt;First, it checks the condition again. Is &lt;code&gt;digit&lt;/code&gt; still less than 1001?  Yes, it is. It's 4 now, instead of 3, but that's lots less than 1001. So now, we go back into the body of the loop, this time using the new values of our variables!&lt;/p&gt;
+&lt;p&gt;After another iteration of the loop, here's what the computer knows:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;\/&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;td&gt;5&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;^1&lt;/td&gt;
+&lt;td&gt;^2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;And then it keeps doing that, again and again, moving the arrow up top each time, at blinding speed.&lt;/p&gt;
+&lt;p&gt;Now let's think of what happens after it calculates the 1000th digit.  Here's where we are:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;\/&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;td&gt;5&lt;/td&gt;
+&lt;td&gt;...&lt;/td&gt;
+&lt;td&gt;999&lt;/td&gt;
+&lt;td&gt;1000&lt;/td&gt;
+&lt;td&gt;1001&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;td&gt;...&lt;/td&gt;
+&lt;td&gt;lots&lt;/td&gt;
+&lt;td&gt;lots&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;...&lt;/td&gt;
+&lt;td&gt;^1&lt;/td&gt;
+&lt;td&gt;^2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;This time, when it goes back to the start of the loop, it tests the condition and finds that it's &lt;code&gt;False&lt;/code&gt;. &lt;code&gt;digit&lt;/code&gt; isn't under 1001 any more!&lt;/p&gt;
+&lt;p&gt;So now, it jumps out of the while loop and goes to the next line:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;print("the " + str(digit - 1) + "th number in the Fibonacci sequence is: " + str(answer))&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;This line calls the &lt;code&gt;print()&lt;/code&gt; function, which instructs the computer to print to the screen (not to a paper printer!) the expression inside the parentheses. (We'll talk about functions and what the parentheses do in a little bit.)&lt;/p&gt;
+&lt;p&gt;The stuff inside the parentheses is a &lt;strong&gt;string&lt;/strong&gt;---that is, an piece of text that the computer represents in memory, made up of &lt;strong&gt;characters&lt;/strong&gt;.  Typically we tell Python to hold onto a string by surrounding it with quotes (single or double both work, but they have to match). These are called &lt;strong&gt;string literals&lt;/strong&gt;. Like:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;my_sentence = "Hi, I am Gowder's sentence."&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;But you can also create strings out of expressions, and use them in other expressions. One of the neat things that you can do with strings is &lt;strong&gt;concatenate&lt;/strong&gt; them, that is, use the plus sign to sort of add them together, so that &lt;code&gt;"the cat " + "in the hat"&lt;/code&gt; evaluates to &lt;code&gt;"the cat in the hat"&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;So what that last line does is look up the last value that &lt;code&gt;answer&lt;/code&gt; got (which is the 1000th digit, because we haven't calculated the 1001th yet), convert that into a string with the &lt;code&gt;str()&lt;/code&gt; function (turning it from, e.g., &lt;code&gt;12345&lt;/code&gt; into &lt;code&gt;"12345"&lt;/code&gt;---this matters!), does the same with &lt;code&gt;digit&lt;/code&gt;, and then concatenates them all together with the string literals there into one big string, which we print to the screen so that we can learn the answer to our math puzzle!&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="Now-you-try!"&gt;Now you try!&lt;a class="anchor-link" href="#Now-you-try!"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;We're at the end of our first handout. There are a couple more in this lesson, but, before you go onto the next one, try using a loop to calculate a different quantity!&lt;/p&gt;
+&lt;p&gt;As you might remember from your early schooling, the factorial of a number, denoted n!, is the product of that number and all the positive integers before it. For example, 5! = 1x2x3x4x5 = 120&lt;/p&gt;
+&lt;p&gt;In the next cell, use a loop to calculate 1000 factorial.&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[&amp;nbsp;]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt; 
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+ 
+
+&lt;/body&gt;
+&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = '//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: 'center'," +
+        "    displayIndent: '0em'," +
+        "    showMathMenu: true," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['$','$'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        " linebreaks: { automatic: true, width: '95% container' }, " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
+        "    } " +
+        "}); ";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;
+</content></entry><entry><title>Lesson 2.1 Why Statistics for Lawyers?</title><link href="https://sociologicalgobbledygook.com/lesson-21-why-statistics-for-lawyers.html" rel="alternate"></link><published>2018-11-03T00:00:00-05:00</published><updated>2018-11-03T00:00:00-05:00</updated><author><name>Paul Gowder</name></author><id>tag:sociologicalgobbledygook.com,2018-11-03:/lesson-21-why-statistics-for-lawyers.html</id><summary type="html">&lt;p&gt;The brunt of this course will be devoted to statistics and exploratory data analysis. &lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Exploratory data analysis&lt;/em&gt; is just looking at data to see what you see.  We will spend some time, for example, looking at how to see the shape of data and what that can tell you about …&lt;/p&gt;</summary><content type="html">&lt;p&gt;The brunt of this course will be devoted to statistics and exploratory data analysis. &lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Exploratory data analysis&lt;/em&gt; is just looking at data to see what you see.  We will spend some time, for example, looking at how to see the shape of data and what that can tell you about the world, how to shape investigations with it. &lt;/p&gt;
+&lt;p&gt;But the heavy stuff all falls under the rubric of &lt;em&gt;statistics&lt;/em&gt;---and my hope is to convince you by the end of the course that it needn't be quite so heavy as lawyers have traditionally feared. &lt;/p&gt;
+&lt;p&gt;So what's the point of statistics?  There are really two points to statistics: first, to allow us to quantify our confidence in our understanding of reality, and second, to help us tease out cause and effect. Let's motivate our exploration of statistics with a few examples. &lt;/p&gt;
+&lt;h3&gt;You Be the Scientist&lt;/h3&gt;
+&lt;p&gt;First, suppose you're a scientist and you think you've invented a cure for the common cold. How do you test it and make sure it works?&lt;/p&gt;
+&lt;p&gt;You might start by experimenting on yourself. That has a pretty long tradition in science, actually---&lt;a href="https://www.nobelprize.org/prizes/themes/marie-and-pierre-curie-and-the-discovery-of-polonium-and-radium/"&gt;Marie and Pierre Curie&lt;/a&gt;, for example, experimented on themselves to learn about how radiation worked (and suffered very severe radiation poisoning as a result). &lt;/p&gt;
+&lt;p&gt;But, if you're going to take on the risk of hurting yourself,  you should be sure that you're learning something as a result! Suppose you take the drug, and then you get well the next day. You might conclude that the drug cured you, but it could also just be that the cold was about to run its natural course. The drug could have done nothing... or it could have even made it worse---maybe if you hadn't taken it, you would have gotten better that evening. &lt;/p&gt;
+&lt;p&gt;The problem is that you'd really like to know how quickly you would have gotten better if you hadn't taken the medicine. But you can never know that, because you did take the medicine. We can never see the &lt;em&gt;counterfactual&lt;/em&gt; case of what would have happened if we had done something different. That inability has spawned countless speculative takes on history: what would have happened if Japan had never attacked Pearl Harbor and brought America into the war? Would we all be speaking German? Nobody can know. &lt;/p&gt;
+&lt;p&gt;So you decide to try the next best thing: your old college roommate also has a cold, and, as you learned from your undergraduate days, you're pretty good at talking your poor roommate into doing dumb things. So you decide, he'll take the medicine, and you'll go untreated, and you'll see who gets well faster. This is a scientific experiment, and you're the control group.  &lt;/p&gt;
+&lt;p&gt;Alas, it's a pretty lousy scientific experiment. How do you know that you and your friend don't heal at different paces? Or maybe s/he took some other medicine beforehand and, not wanting to disappoint you, didn't report that fact? Maybe being the kind of person who is willing to participate in someone's wild-west-style science experiment also makes you more likely to heal faster (something about stress and cortisol levels, perhaps). What you should have done was recruit a bunch of other participants, and then randomly assign some of them to a treatment group and some to a control group. &lt;/p&gt;
+&lt;p&gt;The discipline of statistics will guide our hypothetical scientist in designing that experiment and evaluating its results. For example: &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Recruiting a large number of experimental participants and delivering treatment to them is difficult, expensive and potentially risky (what if our drug turns out to have nasty side effects). We'd like to recruit as few people as possible in order to get reliable results. The discipline of &lt;em&gt;statistical power analysis&lt;/em&gt; can tell us how many people we need to recruit in order to be able to detect the effect we think we have.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Suppose we see an effect. People who take the medicine get well, on average, a day faster than people who don't. How do we tell if that's a real effect, as opposed to just a coincidence based on idiosyncratic properties of the group of people who we happened to recruit? We use statistical tools like &lt;em&gt;hypothesis testing&lt;/em&gt; in order to figure out how confident we can be that the results we see represent a real biological phenomenon (although we can never be completely confident). &lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Experiments in the Law&lt;/h3&gt;
+&lt;p&gt;It turns out that experimental research can be involved in building a legal case as well. The example I like best (partly because of my own history as a civil rights lawyer) is discrimination testing. This is a technique that investigators use in a number of contexts, perhaps most prominently in the housing context. The &lt;a href="https://www.justice.gov/crt/fair-housing-testing-program-1"&gt;Department of Justice&lt;/a&gt; as well as &lt;a href="https://www.huduser.gov/portal/periodicals/em/spring14/highlight3.html"&gt;nonprofit fair housing organizations&lt;/a&gt; often use testing to investigate claims of housing discrimination. (You may have been introduced to the concept of discrimination testers in your Professional Responsibility class, in the course of discussing the controversial disciplinary case &lt;a href="https://law.justia.com/cases/oregon/supreme-court/2000/s45801.html"&gt;In re Gatti&lt;/a&gt;, 8 P.3d 966 (Ore. 2000) (under Oregon professional responsibility rules, lawyer may not misrepresent identity for the purposes of conducting investigation into alleged wrongdoing), which was seen as a potential threat to the practice of discrimination testing.)&lt;/p&gt;
+&lt;p&gt;Here's roughly how housing discrimination testing works: suppose there's reason to believe that an apartment complex discriminates against African-American rental applicants, say, by telling every African-American tenant that there are no vacancies. The investigating organization sends a white couple and an African-American couple, who are trained to behave similarly in other relevant respects, to inquire about apartments. If the two couples are given different information about the existence of vacancies, the organization concludes that it must be because of their race---and has concrete evidence of illegal discrimination. &lt;/p&gt;
+&lt;p&gt;One thing that you may have noticed is that I did not describe a large-scale study in the last paragraph. Indeed, these testing organizations typically use numbers of testers that would be unlikely to support a statistically generalizable result (they tend to operate on tight budgets). Yet (as we will discuss in more detail later on) that does not mean that this evidence is not relevant or persuasive. For example, the court in &lt;a href="https://law.justia.com/cases/federal/district-courts/FSupp2/156/413/2318127/"&gt;United States v. Garden Homes Mgmt., Corp.&lt;/a&gt;, 156 F. Supp. 2d 413 (D.N.J. 2001) rejected a motion for summary judgment, holding that the evidence of three paired tests like those described above was sufficient to create an issue of fact on whether or not the defendant maintained a practice of discrimination. As the court said: &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;While, in the abstract, three fair housing tests might not necessarily reflect Defendants' rental practices, the tests at issue are particularly probative. They all occurred within one month and yielded virtually identical results. The timing and uniform results of these tests give rise to a permissible inference that racial discrimination is not a sporadic event but, instead, is part of the way that Defendants do business.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;There are a number of ways we might interpret this. We might think that juries are entitled to make their own inferences about the evidence independent of the way that a statistician would think about it, or we might think---as the court seemed to suggest in &lt;a href="https://www.leagle.com/decision/20071702564fsupp2d113811598"&gt;Southern California Housing Rights Center v. Krug&lt;/a&gt;, 564 F.Supp.2d 1138 (C.D., Cal., 2007)---that the behavior exhibited by landlords in these tests are themselves acts of discrimination in violation of the Fair Housing Act, independent of the fact that no tester actually intended to rent. See generally &lt;a href="https://supreme.justia.com/cases/federal/us/455/363/"&gt;Havens Realty Corp. v. Coleman&lt;/a&gt;, 455 U.S. 363 (1982) (tester has independent right to accurate information, sufficient to support standing under Fair Housing Act). At any rate, we will discuss this further down the road.&lt;/p&gt;
+&lt;h3&gt;From Experiments to Observations&lt;/h3&gt;
+&lt;p&gt;Statistical evidence of discrimination will actually be a big theme of this course. (It's one of the most prominent and interesting ways in which statistics is used in the law.) However, most of the statistical evidence we see in the law is what's known as &lt;em&gt;observational&lt;/em&gt;---rather than randomly assigning people to treatment and control groups, or otherwise controlling the delivery of the treatment to people. (Indeed, even the housing tests probably can't be seen as randomized controlled trials in the fullest sense as the ideal from experimental science, as race cannot be randomly assigned to people---although we do have scientific studies where researchers have managed to come close to that, such as &lt;a href="https://www.aeaweb.org/articles?id=10.1257/0002828042002561"&gt;a famous study&lt;/a&gt; where resumes with stereotypically racialized names were sent to employers.)&lt;/p&gt;
+&lt;p&gt;For example, a number of cities have filed lawsuits against mortgage lenders, alleging that they engaged in discrimination by steering borrowers of color to higher interest-rate loans. These cities have not (as far as I know) conducted tests by, for example, sending applicants of different races in to apply for loans. Rather, they've conducted a statistical analysis of the terms of the loans offered in their communities, and filed lawsuits on the basis of a disparity across races---finding that borrowers of color typically ended up with worse loans.&lt;/p&gt;
+&lt;p&gt;The worry about such statistical evidence is that it might be &lt;em&gt;confounded&lt;/em&gt; by &lt;em&gt;omitted variables&lt;/em&gt;. This is just a fancy stats-person way of saying what we said before about the medical test. Suppose that the city filing the suit has a lot of racial segregation and concentrated poverty---it might be the case that the victims of that segregation get worse loan terms because they've suffered financial disadvantage affecting their creditworthiness, not because of intentional discrimination by the lender. &lt;/p&gt;
+&lt;p&gt;As alternative to randomization (also known as "experimental controls"), researchers use "statistical controls" to try to solve this problem. We will spend a lot of time on statistical controls in this course, so here's just a taste now. &lt;/p&gt;
+&lt;p&gt;Imagine an &lt;a href="https://www.law.cornell.edu/uscode/text/29/621"&gt;Age Discrimination in Employment Act&lt;/a&gt; lawsuit, in which the plaintiff alleges that during layoffs at a firm, older workers had a substantially higher chance of being let go. Just such a lawsuit has recently &lt;a href="https://www.bostonglobe.com/metro/2018/09/17/laid-off-older-workers-file-age-discrimination-complaint-against-ibm/EsCuULOUfUpZjxK5er2y8L/story.html"&gt;been filed against IBM&lt;/a&gt;. 
+In such a lawsuit, the employer will invariably claim that the older workers aren't being fired because of their ages---rather, they'll claim that, for example, the company choose to retain workers with more relevant skills, and if that happened to fall harder on older workers, it's just because they failed to keep their skills up to date. (This seems to be IBM's basic defense in the noted suit.) How should the plaintiff's lawyer use statistics to try to prove their case?&lt;/p&gt;
+&lt;p&gt;Here's one tool they might try. You'll probably remember the equation for a line from your high school geometry classes: &lt;/p&gt;
+&lt;div class="math"&gt;$$y=ax+b$$&lt;/div&gt;
+&lt;p&gt;Just to refresh your memory: you can graph a line by starting at b, the intercept, and then just getting the rest of the points from that formula, i.e., when the point is at 1 on the x axis, it's at &lt;span class="math"&gt;\(a + b\)&lt;/span&gt; on the y axis, when it's at 2 on the x axis, it's at &lt;span class="math"&gt;\(2a+b\)&lt;/span&gt; on the y axis, and so forth. &lt;/p&gt;
+&lt;p&gt;In statistics, we can go the other way: we can take a bunch of data and try, using mathematical techniques that we'll look at later, to find the line that best describes it. This is easier to think about when the y axis takes on more than two values, so let's think of it as salary (for a moment) rather than whether someone was fired or not. Also, let's follow the conventions of statistics and put the intercept first, plus sneak some Greek letters in there. &lt;/p&gt;
+&lt;p&gt;So, if plaintiff is claiming that the older an employee is, the lower a raise they got last year, then we can collect a dataset of all the employees and their raises, and then set the percentage raise last year to be y and the employee's age to be x.  Then we can use those mathematical techniques that I just hinted at (patience!) to find the &lt;em&gt;regression line&lt;/em&gt; that best fits the data.  That means finding estimates for the &lt;em&gt;coefficients&lt;/em&gt; alpha and beta in:&lt;/p&gt;
+&lt;div class="math"&gt;$$y = \alpha + \beta x$$&lt;/div&gt;
+&lt;p&gt;If beta is negative, that suggests that older workers are indeed getting smaller raises. Then we can use more statistical techniques which we will learn to discern whether it is negative enough to be &lt;em&gt;significant&lt;/em&gt;---to give us confidence that lower raises are genuinely due to age rather than to chance.&lt;/p&gt;
+&lt;p&gt;But wait!  The employer still has that argument about skills and such. It turns out that regression analysis allows us to take account of those arguments. Let's say that an employee's level of skill is represented by how many training courses they took last year. What we really want to do is compare apples to apples---to compare older employees who took, say, 10 training courses last year to younger employees who took 10 courses, and older employees who took 9 courses to younger employees who took 9 courses, and so on. &lt;/p&gt;
+&lt;p&gt;It turns out that you can extend our equation to draw a line to include more x variables. So let's say &lt;span class="math"&gt;\(x_1\)&lt;/span&gt; is the employee's age, and &lt;span class="math"&gt;\(x_2\)&lt;/span&gt; is the number of training courses the employee took last year.  Then we can find the best values of &lt;span class="math"&gt;\(\beta_1\)&lt;/span&gt;, &lt;span class="math"&gt;\(\beta_2\)&lt;/span&gt;, and &lt;span class="math"&gt;\(\alpha\)&lt;/span&gt; in the following:&lt;/p&gt;
+&lt;div class="math"&gt;$$y = \alpha + \beta_1 x_1 + \beta_2 x_2 $$&lt;/div&gt;
+&lt;p&gt;It turns out that (subject to some caveats and pitfalls on which we shall spend some time), the value of &lt;span class="math"&gt;\(\beta_1\)&lt;/span&gt; will be a good estimate of the effect of age on pay raises &lt;em&gt;holding the number of training courses constant&lt;/em&gt;---so it gives us the apples-to-apples comparison we're looking for. And, within some limits, we can keep adding variables as the employer comes up with more and more excuses for the lower salary.&lt;/p&gt;
+&lt;p&gt;Anyway, we'll be spending quite a bit of time on regression analysis, this is just a taste for now. You will hopefully be able to see that being able to make sense of these concepts will help you in your practice. This is just an introduction, we'll dig in much deeper in the weeks to come.&lt;/p&gt;
+&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width &lt; 768) ? "left" : align;
+        indent = (screen.width &lt; 768) ? "0em" : indent;
+        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;</content><category term="statistics"></category><category term="week2"></category><category term="conceptual"></category></entry><entry><title>Introduction to Python</title><link href="https://sociologicalgobbledygook.com/introduction-to-python.html" rel="alternate"></link><published>2018-10-22T00:00:00-05:00</published><updated>2018-10-22T00:00:00-05:00</updated><author><name>Paul Gowder</name></author><id>tag:sociologicalgobbledygook.com,2018-10-22:/introduction-to-python.html</id><summary type="html">&lt;p&gt;In this class, we will be using the &lt;a href="https://www.python.org/"&gt;Python&lt;/a&gt; programming language. In this first week, we will have a basic introduction to Python and to the fundamentals of computer programming. &lt;/p&gt;
+&lt;p&gt;Before we get started programming, we have to set up a system to write our code and get the computer …&lt;/p&gt;</summary><content type="html">&lt;p&gt;In this class, we will be using the &lt;a href="https://www.python.org/"&gt;Python&lt;/a&gt; programming language. In this first week, we will have a basic introduction to Python and to the fundamentals of computer programming. &lt;/p&gt;
+&lt;p&gt;Before we get started programming, we have to set up a system to write our code and get the computer to read it. Most introductory Python texts, including the texts we'll be working with, ask you to install an "interpreter"---a program on your own computer that can read and execute Python code. &lt;strong&gt;We won't be doing that here.&lt;/strong&gt; (Feel free to install one and experiment, but it won't be officially supported by the course.)&lt;/p&gt;
+&lt;p&gt;Instead, all your code will run in the cloud. We'll be using a free service by Microsoft called &lt;a href="https://notebooks.azure.com/"&gt;Azure Notebooks&lt;/a&gt;. This service will let you type in and execute your code online, through your web browser. This has some very large advantages: &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;You don't have to install anything locally, which can be problematic (especially for Windows users), and I don't have to try to debug your local installations.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Azure Notebooks runs on notebook software called &lt;a href="http://jupyter.org/"&gt;Jupyter&lt;/a&gt; which is built for data analysis (all the cool data scientist kiddos use it), so it has lots of nice facilities for exploring data and code incrementally, visualizing data, displaying tables, etc. &lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In addition, I will ask you to make use of the free &lt;a href="https://github.com/"&gt;Github&lt;/a&gt; service to "clone" (copy) assignments, which will be in notebook files that you can just run on Azure, as well as to turn those assignments in. &lt;/p&gt;
+&lt;p&gt;There's an introductory video (&lt;strong&gt;link to be added&lt;/strong&gt;) which shows you how to sign up for these services and some basic usage. Please watch that video, follow the steps, and also run the first notebook (assignment 0) before the first class.  In addition, please read pages 1-55 of Python for Everybody. (Don't worry if everything isn't super clear yet, we'll go over the same material in class.)&lt;/p&gt;</content><category term="python"></category><category term="code"></category><category term="week0"></category><category term="setup"></category></entry></feed>

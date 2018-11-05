@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <title>Sociological Gobbledygook - week2</title>
+        <link rel="stylesheet" href="https://sociologicalgobbledygook.com/theme/css/main.css" />
+        <link href="https://sociologicalgobbledygook.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Sociological Gobbledygook Atom Feed" />
+
+        <!--[if IE]>
+            <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="https://sociologicalgobbledygook.com/">Sociological Gobbledygook </a></h1>
+                <nav><ul>
+                    <li><a href="https://sociologicalgobbledygook.com/pages/manifesto.html">Manifesto</a></li>
+                    <li><a href="https://sociologicalgobbledygook.com/pages/syllabus.html">Syllabus</a></li>
+                    <li><a href="https://sociologicalgobbledygook.com/category/lessons.html">Lessons</a></li>
+                    <li><a href="https://sociologicalgobbledygook.com/category/welcome.html">Welcome</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+
+            <aside id="featured" class="body">
+                <article>
+                    <h1 class="entry-title"><a href="https://sociologicalgobbledygook.com/lesson-21-why-statistics-for-lawyers.html">Lesson 2.1 Why Statistics for Lawyers?</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2018-11-03T00:00:00-05:00">
+                Published: Sat 03 November 2018
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="https://sociologicalgobbledygook.com/author/paul-gowder.html">Paul Gowder</a>
+        </address>
+<p>In <a href="https://sociologicalgobbledygook.com/category/lessons.html">Lessons</a>.</p>
+<p>tags: <a href="https://sociologicalgobbledygook.com/tag/statistics.html">statistics</a> <a href="https://sociologicalgobbledygook.com/tag/week2.html">week2</a> <a href="https://sociologicalgobbledygook.com/tag/conceptual.html">conceptual</a> </p>
+</footer><!-- /.post-info --><p>The brunt of this course will be devoted to statistics and exploratory data analysis. </p>
+<p><em>Exploratory data analysis</em> is just looking at data to see what you see.  We will spend some time, for example, looking at how to see the shape of data and what that can tell you about the world, how to shape investigations with it. </p>
+<p>But the heavy stuff all falls under the rubric of <em>statistics</em>---and my hope is to convince you by the end of the course that it needn't be quite so heavy as lawyers have traditionally feared. </p>
+<p>So what's the point of statistics?  There are really two points to statistics: first, to allow us to quantify our confidence in our understanding of reality, and second, to help us tease out cause and effect. Let's motivate our exploration of statistics with a few examples. </p>
+<h3>You Be the Scientist</h3>
+<p>First, suppose you're a scientist and you think you've invented a cure for the common cold. How do you test it and make sure it works?</p>
+<p>You might start by experimenting on yourself. That has a pretty long tradition in science, actually---<a href="https://www.nobelprize.org/prizes/themes/marie-and-pierre-curie-and-the-discovery-of-polonium-and-radium/">Marie and Pierre Curie</a>, for example, experimented on themselves to learn about how radiation worked (and suffered very severe radiation poisoning as a result). </p>
+<p>But, if you're going to take on the risk of hurting yourself,  you should be sure that you're learning something as a result! Suppose you take the drug, and then you get well the next day. You might conclude that the drug cured you, but it could also just be that the cold was about to run its natural course. The drug could have done nothing... or it could have even made it worse---maybe if you hadn't taken it, you would have gotten better that evening. </p>
+<p>The problem is that you'd really like to know how quickly you would have gotten better if you hadn't taken the medicine. But you can never know that, because you did take the medicine. We can never see the <em>counterfactual</em> case of what would have happened if we had done something different. That inability has spawned countless speculative takes on history: what would have happened if Japan had never attacked Pearl Harbor and brought America into the war? Would we all be speaking German? Nobody can know. </p>
+<p>So you decide to try the next best thing: your old college roommate also has a cold, and, as you learned from your undergraduate days, you're pretty good at talking your poor roommate into doing dumb things. So you decide, he'll take the medicine, and you'll go untreated, and you'll see who gets well faster. This is a scientific experiment, and you're the control group.  </p>
+<p>Alas, it's a pretty lousy scientific experiment. How do you know that you and your friend don't heal at different paces? Or maybe s/he took some other medicine beforehand and, not wanting to disappoint you, didn't report that fact? Maybe being the kind of person who is willing to participate in someone's wild-west-style science experiment also makes you more likely to heal faster (something about stress and cortisol levels, perhaps). What you should have done was recruit a bunch of other participants, and then randomly assign some of them to a treatment group and some to a control group. </p>
+<p>The discipline of statistics will guide our hypothetical scientist in designing that experiment and evaluating its results. For example: </p>
+<ul>
+<li>
+<p>Recruiting a large number of experimental participants and delivering treatment to them is difficult, expensive and potentially risky (what if our drug turns out to have nasty side effects). We'd like to recruit as few people as possible in order to get reliable results. The discipline of <em>statistical power analysis</em> can tell us how many people we need to recruit in order to be able to detect the effect we think we have.</p>
+</li>
+<li>
+<p>Suppose we see an effect. People who take the medicine get well, on average, a day faster than people who don't. How do we tell if that's a real effect, as opposed to just a coincidence based on idiosyncratic properties of the group of people who we happened to recruit? We use statistical tools like <em>hypothesis testing</em> in order to figure out how confident we can be that the results we see represent a real biological phenomenon (although we can never be completely confident). </p>
+</li>
+</ul>
+<h3>Experiments in the Law</h3>
+<p>It turns out that experimental research can be involved in building a legal case as well. The example I like best (partly because of my own history as a civil rights lawyer) is discrimination testing. This is a technique that investigators use in a number of contexts, perhaps most prominently in the housing context. The <a href="https://www.justice.gov/crt/fair-housing-testing-program-1">Department of Justice</a> as well as <a href="https://www.huduser.gov/portal/periodicals/em/spring14/highlight3.html">nonprofit fair housing organizations</a> often use testing to investigate claims of housing discrimination. (You may have been introduced to the concept of discrimination testers in your Professional Responsibility class, in the course of discussing the controversial disciplinary case <a href="https://law.justia.com/cases/oregon/supreme-court/2000/s45801.html">In re Gatti</a>, 8 P.3d 966 (Ore. 2000) (under Oregon professional responsibility rules, lawyer may not misrepresent identity for the purposes of conducting investigation into alleged wrongdoing), which was seen as a potential threat to the practice of discrimination testing.)</p>
+<p>Here's roughly how housing discrimination testing works: suppose there's reason to believe that an apartment complex discriminates against African-American rental applicants, say, by telling every African-American tenant that there are no vacancies. The investigating organization sends a white couple and an African-American couple, who are trained to behave similarly in other relevant respects, to inquire about apartments. If the two couples are given different information about the existence of vacancies, the organization concludes that it must be because of their race---and has concrete evidence of illegal discrimination. </p>
+<p>One thing that you may have noticed is that I did not describe a large-scale study in the last paragraph. Indeed, these testing organizations typically use numbers of testers that would be unlikely to support a statistically generalizable result (they tend to operate on tight budgets). Yet (as we will discuss in more detail later on) that does not mean that this evidence is not relevant or persuasive. For example, the court in <a href="https://law.justia.com/cases/federal/district-courts/FSupp2/156/413/2318127/">United States v. Garden Homes Mgmt., Corp.</a>, 156 F. Supp. 2d 413 (D.N.J. 2001) rejected a motion for summary judgment, holding that the evidence of three paired tests like those described above was sufficient to create an issue of fact on whether or not the defendant maintained a practice of discrimination. As the court said: </p>
+<blockquote>
+<p>While, in the abstract, three fair housing tests might not necessarily reflect Defendants' rental practices, the tests at issue are particularly probative. They all occurred within one month and yielded virtually identical results. The timing and uniform results of these tests give rise to a permissible inference that racial discrimination is not a sporadic event but, instead, is part of the way that Defendants do business.</p>
+</blockquote>
+<p>There are a number of ways we might interpret this. We might think that juries are entitled to make their own inferences about the evidence independent of the way that a statistician would think about it, or we might think---as the court seemed to suggest in <a href="https://www.leagle.com/decision/20071702564fsupp2d113811598">Southern California Housing Rights Center v. Krug</a>, 564 F.Supp.2d 1138 (C.D., Cal., 2007)---that the behavior exhibited by landlords in these tests are themselves acts of discrimination in violation of the Fair Housing Act, independent of the fact that no tester actually intended to rent. See generally <a href="https://supreme.justia.com/cases/federal/us/455/363/">Havens Realty Corp. v. Coleman</a>, 455 U.S. 363 (1982) (tester has independent right to accurate information, sufficient to support standing under Fair Housing Act). At any rate, we will discuss this further down the road.</p>
+<h3>From Experiments to Observations</h3>
+<p>Statistical evidence of discrimination will actually be a big theme of this course. (It's one of the most prominent and interesting ways in which statistics is used in the law.) However, most of the statistical evidence we see in the law is what's known as <em>observational</em>---rather than randomly assigning people to treatment and control groups, or otherwise controlling the delivery of the treatment to people. (Indeed, even the housing tests probably can't be seen as randomized controlled trials in the fullest sense as the ideal from experimental science, as race cannot be randomly assigned to people---although we do have scientific studies where researchers have managed to come close to that, such as <a href="https://www.aeaweb.org/articles?id=10.1257/0002828042002561">a famous study</a> where resumes with stereotypically racialized names were sent to employers.)</p>
+<p>For example, a number of cities have filed lawsuits against mortgage lenders, alleging that they engaged in discrimination by steering borrowers of color to higher interest-rate loans. These cities have not (as far as I know) conducted tests by, for example, sending applicants of different races in to apply for loans. Rather, they've conducted a statistical analysis of the terms of the loans offered in their communities, and filed lawsuits on the basis of a disparity across races---finding that borrowers of color typically ended up with worse loans.</p>
+<p>The worry about such statistical evidence is that it might be <em>confounded</em> by <em>omitted variables</em>. This is just a fancy stats-person way of saying what we said before about the medical test. Suppose that the city filing the suit has a lot of racial segregation and concentrated poverty---it might be the case that the victims of that segregation get worse loan terms because they've suffered financial disadvantage affecting their creditworthiness, not because of intentional discrimination by the lender. </p>
+<p>As alternative to randomization (also known as "experimental controls"), researchers use "statistical controls" to try to solve this problem. We will spend a lot of time on statistical controls in this course, so here's just a taste now. </p>
+<p>Imagine an <a href="https://www.law.cornell.edu/uscode/text/29/621">Age Discrimination in Employment Act</a> lawsuit, in which the plaintiff alleges that during layoffs at a firm, older workers had a substantially higher chance of being let go. Just such a lawsuit has recently <a href="https://www.bostonglobe.com/metro/2018/09/17/laid-off-older-workers-file-age-discrimination-complaint-against-ibm/EsCuULOUfUpZjxK5er2y8L/story.html">been filed against IBM</a>. 
+In such a lawsuit, the employer will invariably claim that the older workers aren't being fired because of their ages---rather, they'll claim that, for example, the company choose to retain workers with more relevant skills, and if that happened to fall harder on older workers, it's just because they failed to keep their skills up to date. (This seems to be IBM's basic defense in the noted suit.) How should the plaintiff's lawyer use statistics to try to prove their case?</p>
+<p>Here's one tool they might try. You'll probably remember the equation for a line from your high school geometry classes: </p>
+<div class="math">$$y=ax+b$$</div>
+<p>Just to refresh your memory: you can graph a line by starting at b, the intercept, and then just getting the rest of the points from that formula, i.e., when the point is at 1 on the x axis, it's at <span class="math">\(a + b\)</span> on the y axis, when it's at 2 on the x axis, it's at <span class="math">\(2a+b\)</span> on the y axis, and so forth. </p>
+<p>In statistics, we can go the other way: we can take a bunch of data and try, using mathematical techniques that we'll look at later, to find the line that best describes it. This is easier to think about when the y axis takes on more than two values, so let's think of it as salary (for a moment) rather than whether someone was fired or not. Also, let's follow the conventions of statistics and put the intercept first, plus sneak some Greek letters in there. </p>
+<p>So, if plaintiff is claiming that the older an employee is, the lower a raise they got last year, then we can collect a dataset of all the employees and their raises, and then set the percentage raise last year to be y and the employee's age to be x.  Then we can use those mathematical techniques that I just hinted at (patience!) to find the <em>regression line</em> that best fits the data.  That means finding estimates for the <em>coefficients</em> alpha and beta in:</p>
+<div class="math">$$y = \alpha + \beta x$$</div>
+<p>If beta is negative, that suggests that older workers are indeed getting smaller raises. Then we can use more statistical techniques which we will learn to discern whether it is negative enough to be <em>significant</em>---to give us confidence that lower raises are genuinely due to age rather than to chance.</p>
+<p>But wait!  The employer still has that argument about skills and such. It turns out that regression analysis allows us to take account of those arguments. Let's say that an employee's level of skill is represented by how many training courses they took last year. What we really want to do is compare apples to apples---to compare older employees who took, say, 10 training courses last year to younger employees who took 10 courses, and older employees who took 9 courses to younger employees who took 9 courses, and so on. </p>
+<p>It turns out that you can extend our equation to draw a line to include more x variables. So let's say <span class="math">\(x_1\)</span> is the employee's age, and <span class="math">\(x_2\)</span> is the number of training courses the employee took last year.  Then we can find the best values of <span class="math">\(\beta_1\)</span>, <span class="math">\(\beta_2\)</span>, and <span class="math">\(\alpha\)</span> in the following:</p>
+<div class="math">$$y = \alpha + \beta_1 x_1 + \beta_2 x_2 $$</div>
+<p>It turns out that (subject to some caveats and pitfalls on which we shall spend some time), the value of <span class="math">\(\beta_1\)</span> will be a good estimate of the effect of age on pay raises <em>holding the number of training courses constant</em>---so it gives us the apples-to-apples comparison we're looking for. And, within some limits, we can keep adding variables as the employer comes up with more and more excuses for the lower salary.</p>
+<p>Anyway, we'll be spending quite a bit of time on regression analysis, this is just a taste for now. You will hopefully be able to see that being able to make sense of these concepts will help you in your practice. This is just an introduction, we'll dig in much deeper in the weeks to come.</p>
+<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width < 768) ? "left" : align;
+        indent = (screen.width < 768) ? "0em" : indent;
+        linebreak = (screen.width < 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+</script>                </article>
+            </aside><!-- /#featured -->
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://law.uiowa.edu/">University of Iowa College of Law</a></li>
+                            <li><a href="https://gowder.io">Paul Gowder</a></li>
+                            <li><a href="http://python.org/">Python Documentation</a></li>
+                            <li><a href="https://github.com/paultopia/quantitative-methods-for-lawyers/">Course Github</a></li>
+                            <li><a href="https://notebooks.azure.com/">Microsoft Azure Notebooks</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+                            <li><a href="https://sociologicalgobbledygook.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>
