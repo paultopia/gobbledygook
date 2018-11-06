@@ -117,4 +117,4 @@ Basic ideas of programming, units of computation, functions and loops. Computati
 
 For **Monday**, read the [Introduction to Python on this site]({filename}../Lessons/python_intro.md) and the [first Python lesson]({filename}../Lessons/basic_intro.ipynb). Watch the video **link tbd** on getting started with Azure Notebooks and Github, and follow those instructions, run Lesson 0 notebook **link tbd** to make sure everything is working, and read pages 1-55 of Python for Everybody. Then clone the course Github and complete the exercise at the end of the first Python lesson notebook (factorial); you don't need to turn it in, but we'll talk about it in class.
 
-For **Tuesday**, [**tbd, probably DataCamp videos plus the next couple python lessons**]. 
+For **Tuesday**, [**tbd, probably DataCamp videos plus the next couple python lessons**]. Next couple lessons will be functions/conditionals/more loops, and accessing external resources (filesystem, libraries, and a tiny bit of network.)  (maybe have them sign up for an api key from Harvard's new case.law project and use that.)
