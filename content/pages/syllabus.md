@@ -21,23 +21,46 @@ This course is not advised for students with substantial statistical or computat
 
 - [Course Github repository](https://github.com/paultopia/quantitative-methods-for-lawyers) (I will explain how to use this in the beginning of the semester.)
 
-We will use several freely available books, including: 
 
-- Charles Severance, [Python For Everybody](https://www.py4e.com/book) --- available for free online, or for print purchase.
+## Readings 
 
-**Additional TBD**
+#### Texts
 
-### Recommended additional reading
+The main readings for this course will be drawn from [Charles Severance, Python for Everybody](https://www.py4e.com/book), which is available for free online, and [Michael Finkelstein & Bruce Levin, Statistics for Lawyers](https://link.springer.com/book/10.1007%2F978-1-4419-5985-0) which should be free to download as PDF through our library's subscription. (You may have to be on the campus network to download it; you might also have to search for it through the library's directory.) We will also (probably) be using some excerpts from the [Federal Judicial Center's Reference Manual on Scientific Evidence](https://www.fjc.gov/content/reference-manual-scientific-evidence-third-edition-1) In addition, we'll make use of some videos and exercises from [DataCamp](https://www.datacamp.com/), which has free accounts available for educational purposes; I'm in the process of signing our class up for that access.  There will also be copious readings written by me available online on the public-facing website, and some copyrighted stuff that I can't distribute publicly on ICON.
 
-If you would like more written material to support your learning in this course, I recommend the following books: 
+I am committed to only assigning resources which are free to students. However, the nature of this material is that sometimes one explanation will just "click" where another might not.  So in addition to the assigned readings, I offer you this list of additional, non-free, readings which you might consult for a different perspective on the material---or for deeper engagement and exploration.  
 
-#### Basic
+### Bonus Reading Suggestions: Statistics
 
-John Guttag, Introduction to Computation and Programming Using Python
+I really like the Aspen textbook by Lawless, Robbennolt and Ulen, [Empirical Methods in Law](http://www.aspenlawschool.com/books/empirical_methods/). It has very good clear explanations of a number of research methods topics, and is not overly math-y. If you want to dig deeper into stats and empirical research in law, I highl recommend it.  I also recommend Lee Epstein & Andrew Martin, [An Introduction to Empirical Legal Research](https://global.oup.com/academic/product/an-introduction-to-empirical-legal-research-9780199669066?cc=us&lang=en&). 
 
-#### Advanced 
+If you want to do serious research on your own, you will need to move to more advanced texts, but the direction you go will depend on the particular kind of research you want to conduct. For expermental research, especially experimental research out in the world (like the kinds of things done by discrimination testers, about which we will talk), a classic text is Gerber & Green [Field Experiments: Design, Analysis and Interpretation](https://global.oup.com/academic/product/an-introduction-to-empirical-legal-research-9780199669066?cc=us&lang=en&); if you are more interested in observational research, I really like Angrist & Pischke, [Mastering Metrics](http://masteringmetrics.com/). Both of those books are rather-more math-y than the others (or our class).
 
-- Lee Epstein & Andrew Martin, An Introduction to Empirical Legal Research
+Some other books that might be of interest to you, though I haven't reviewed them as closely and can't as enthusiastially endorse, include:
+
+- Peter Bruce & Andrew Bruce, Practical Statistics for Data Scientists
+
+- Michael A. Bailey, Real Stats: Using Econometrics for Political Science and Public Policy
+
+- Charles Wheelan, Naked Statistics: Stripping the Dread from the Data
+
+- Uri Bram, Thinking Statistically
+
+
+### Bonus Reading Suggestions: Python Programming
+
+My favorite introductory Python book (not free) is John Guttag, [Introduction to Computation and Programming Using Python](https://mitpress.mit.edu/books/introduction-computation-and-programming-using-python-revised-and-expanded-edition).  This book is also the basis for a wonderful electronic [course by almost the same name MIT on EdX](https://www.edx.org/course/introduction-to-computer-science-and-programming-using-python) --- and you can go through the course for free, and without buying the book.  I really do think that course (and the second course in the same series) is an amazing way to learn Python, and programming in general.
+
+Blessedly, there are a lot of good introductory Python programming books out there which are also available online for free. One of my favorites is Al Sweigart, [Automate the Boring Stuff with Python](https://automatetheboringstuff.com). For more advanced (and non-free) learning, I really love Luciano Ramalho's [Fluent Python](http://shop.oreilly.com/product/0636920032519.do), although by the time you need that you should be looking at building fairly substantial programs. 
+
+On the whole, it is better to use a Python book that is based on Python 3, not Python 2. 
+
+
+### Bonus Reading Suggestions: General Learning
+
+I highly recommend Barbara Oakley's book [A Mind for Numbers](https://barbaraoakley.com/books/a-mind-for-numbers/), which is basically a self-help book on the psychology of learning difficult things---which can help you not just in math-y classes but in law school and other classes in general. There's an online course based on her book on Coursera, called [Learning How to Learn](https://www.coursera.org/learn/learning-how-to-learn); I've never looked at that course but everyone who has done so has raved about it. 
+
+
 
 ## Evaluation
 
@@ -90,6 +113,8 @@ The first few weeks will be spent on computation; subsequent weeks will be spent
 
 ### Week 1 
 
-Basic ideas of programming, units of computation, functions and loops. Computational logic and legal logic, law as computation.
+Basic ideas of programming, units of computation, functions and loops. Computational logic and legal logic, law as computation. We will front-load the quantity of reading a little heavily to get us started quickly, but it'll ease off as we move on to more conceptually difficult material.
 
-For **Monday**, read the [Introduction to Python on this site]({filename}../Lessons/python_intro.md). Watch the video **link tbd** on getting started with Azure Notebooks and Github, and follow those instructions, run Lesson 0 notebook **link tbd** to make sure everything is working, and read pages 1-55 of Python for Everybody.
+For **Monday**, read the [Introduction to Python on this site]({filename}../Lessons/python_intro.md) and the [first Python lesson]({filename}../Lessons/basic_intro.ipynb). Watch the video **link tbd** on getting started with Azure Notebooks and Github, and follow those instructions, run Lesson 0 notebook **link tbd** to make sure everything is working, and read pages 1-55 of Python for Everybody. Then clone the course Github and complete the exercise at the end of the first Python lesson notebook (factorial); you don't need to turn it in, but we'll talk about it in class.
+
+For **Tuesday**, [**tbd, probably DataCamp videos plus the next couple python lessons**]. 
