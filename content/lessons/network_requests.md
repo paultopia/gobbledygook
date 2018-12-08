@@ -2,8 +2,6 @@ title: Getting Data from the Internet With Python
 tags: python, code, networking, internet
 date: 2018-12-06
 
-# WORK IN PROGRESS
-
 In addition to reading files locally, you can also read them over the internet. 
 
 When you use a web browser like Chrome to go to a URL ("uniform resource locator," or web address) like https://sociologicalgobbledygook.com, what you're actually doing is sending a request using the HTTPS protocol (which is the same at the HTTP protocol, but with some more encryption on top). HTTP stands for "hypertext transfer protocol," and it was originally designed for the web.  There are other protocols---you may have seen FTP, for example, which stands for "file transfer protocol," and "SMTP" which stands for "simple mail transfer protocol," but HTTP/S is by far the most important. It turns out that people make information other than web pages available through that protocol, which you can request the same way you request a web page. And you don't need a web browser to do it.
@@ -67,7 +65,7 @@ Programmers talk a lot about APIs.  API stands for "application programming inte
 
 Internet resources also have APIs.  The API of an internet resource typically describes the endpoints you can make requests to, the format those requests have to be in, and the kind of data you'll get back. 
 
-For example, there's a wonderful service called [Courtlistener](https://www.courtlistener.com/) that contains massive amounts of case and court data from the American legal system. [The documentation for their API](https://www.courtlistener.com/api/rest-info/#jurisdiction-endpoint) explains how to get that information via programming.  
+For example, there's a wonderful service called [Courtlistener](https://www.courtlistener.com/) that contains massive amounts of case and court data from the American legal system. [The documentation for their API](https://www.courtlistener.com/api/rest-info/#jurisdiction-endpoint) explains how to get that information via programming. (The Courtlistener API is very complicated, and we won't be working with it too much in this class, but you should know it's out there.)
 
 Suppose I wanted to get some information from Courtlistener---say, I wanted to know the date that their database of Supreme Court opinions started.  Here's what I'd do. 
 
@@ -77,7 +75,7 @@ Suppose I wanted to get some information from Courtlistener---say, I wanted to k
 
 ```
 import requests
-headers = {"Authorization": "Token 12345"}
+my_headers = {"Authorization": "Token 12345"}
 ```
 
 Then I'd make a request to the endpoint that has the basic information about the Supreme Court data they have.  As it turns out, that is https://www.courtlistener.com/api/rest/v3/courts/scotus/ 
@@ -85,16 +83,28 @@ Then I'd make a request to the endpoint that has the basic information about the
 So my next few lines of code would be: 
 
 ```
-scotusresponse = requests.get("https://www.courtlistener.com/api/rest/v3/courts/scotus/", headers=headers}
+scotusresponse = requests.get("https://www.courtlistener.com/api/rest/v3/courts/scotus/", headers=my_headers}
 print(scotusresponse.json()["start_date"])
 ```
 
-
+And that would (assuming my untested code is correct) give me the answer I wanted.  Try it yourself!
 
 
 #### JSON format 
 
+You'll notice that `scotusresponse.json` call in the code above. What's that? 
+
+JSON is a plain-text data format that is very popular on the internet. If you look at a JSON file, it looks like a bunch of nested Python lists and dictionaries---and that's because that's basically what it is. Actually, it's almost identical to the syntax for the JavaScript equivalent of lists and dictionaries, because it's derived from JavaScript (JSON stands for JavaScript Object Notation). For the most part, if you want to write Python lists and dictionaries to disk, you'll want to use JSON format. 
+
+There's a built-in Python library called, unsurprisingly, "json" that has has functionality to read and write JSON files from disk or from strings in memory. But if you receive data from the network in JSON format using Requests, you can call the `.json()` method on the response that you receive, and it'll kindly parse the JSON for you. ("Parse" means turn it from its representation as a JSON-formatted string into ordinary Python lists and dictionaries.)
+
+So, when you call the courts endpoint, Courtlistener sends back data in JSON format by default. So calling the `.json()` method will turn that into a Python dict, and then, by looking at the documentation, we can see that the `start_date` key is the right one to look for in that dict to get the information we need---and there it is!
+
+That's a lot to absorb right now---don't worry, we'll get some more practice with fetching data using code in class. 
 
 ### Further information
 
-The most comprehensive and reliable source of information on all things HTTP is the Mozilla Developer's Network (MDN); further details on most of the information here can be found on [their page on HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP). 
+- The most comprehensive and reliable source of information on all things HTTP is the Mozilla Developer's Network (MDN); further details on most of the information here can be found on [their page on HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP). 
+
+- To learn more about Python's built-in JSON library, you can use the [PYMOTW page on the subject](https://pymotw.com/3/json/). 
+
