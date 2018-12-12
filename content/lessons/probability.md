@@ -307,7 +307,9 @@ Here's still another way to think of the problem: suppose instead of 3 doors, th
 
 ## Application: Expected Value
 
-Economists define the expected value of a risk as the sum of the probabilities of every possible result of that risk, multiplied by their value. For example, suppose you buy a lottery ticket with a 1% chance of a $10,000 payoff and a 10% chance of a $100 payoff, and otherwise you get nothing. Then the expected value is $.01 * 10000 + .1 * 100 = $110.$
+Economists define the expected value of a risk as the sum of the probabilities of every possible result of that risk, multiplied by their value. For example, suppose you buy a lottery ticket with a 1% chance of a 10,000 dollar payoff and a 10% chance of a 100 dollar payoff, and otherwise you get nothing. Then the expected value is: 
+
+$$.01 * 10000 + .1 * 100 = $110.$$
 
 For purposes of valuing options, outcomes with identical expected values are usually treated as equal. For example, it would be roughly equivalent to pay $110 (give up a 100% chance at $110) for that lottery ticket, because that trade is equal expected value. (This is not to say that any actual person would be willing to make that trade. Some people are "risk averse" -- they might only be willing to pay, say, $100 for that lottery ticket, because they don't want to take the risk of ending up with nothing. Others, like gamblers, might be risk-seeking: people in Vegas regularly pay more than the expected value for the lotteries they play.)
 

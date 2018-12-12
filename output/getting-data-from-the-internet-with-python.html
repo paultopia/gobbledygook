@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
         <meta charset="utf-8" />
-        <title>Sociological Gobbledygook - code</title>
+        <title>Getting Data from the Internet With Python</title>
         <link rel="stylesheet" href="https://sociologicalgobbledygook.com/theme/css/main.css" />
         <link href="https://sociologicalgobbledygook.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Sociological Gobbledygook Atom Feed" />
 
@@ -17,14 +17,19 @@
                 <nav><ul>
                     <li><a href="https://sociologicalgobbledygook.com/pages/manifesto.html">Manifesto</a></li>
                     <li><a href="https://sociologicalgobbledygook.com/pages/syllabus.html">Syllabus</a></li>
-                    <li><a href="https://sociologicalgobbledygook.com/category/lessons.html">Lessons</a></li>
+                    <li class="active"><a href="https://sociologicalgobbledygook.com/category/lessons.html">Lessons</a></li>
                     <li><a href="https://sociologicalgobbledygook.com/category/welcome.html">Welcome</a></li>
                 </ul></nav>
         </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="https://sociologicalgobbledygook.com/getting-data-from-the-internet-with-python.html" rel="bookmark"
+           title="Permalink to Getting Data from the Internet With Python">Getting Data from the Internet With Python</a></h1>
+    </header>
 
-            <aside id="featured" class="body">
-                <article>
-                    <h1 class="entry-title"><a href="https://sociologicalgobbledygook.com/getting-data-from-the-internet-with-python.html">Getting Data from the Internet With Python</a></h1>
+    <div class="entry-content">
 <footer class="post-info">
         <abbr class="published" title="2018-12-06T00:00:00-06:00">
                 Published: Thu 06 December 2018
@@ -35,7 +40,7 @@
         </address>
 <p>In <a href="https://sociologicalgobbledygook.com/category/lessons.html">Lessons</a>.</p>
 <p>tags: <a href="https://sociologicalgobbledygook.com/tag/python.html">python</a> <a href="https://sociologicalgobbledygook.com/tag/code.html">code</a> <a href="https://sociologicalgobbledygook.com/tag/networking.html">networking</a> <a href="https://sociologicalgobbledygook.com/tag/internet.html">internet</a> </p>
-</footer><!-- /.post-info --><p>In addition to reading files locally, you can also read them over the internet. </p>
+</footer><!-- /.post-info -->      <p>In addition to reading files locally, you can also read them over the internet. </p>
 <p>When you use a web browser like Chrome to go to a URL ("uniform resource locator," or web address) like https://sociologicalgobbledygook.com, what you're actually doing is sending a request using the HTTPS protocol (which is the same at the HTTP protocol, but with some more encryption on top). HTTP stands for "hypertext transfer protocol," and it was originally designed for the web.  There are other protocols---you may have seen FTP, for example, which stands for "file transfer protocol," and "SMTP" which stands for "simple mail transfer protocol," but HTTP/S is by far the most important. It turns out that people make information other than web pages available through that protocol, which you can request the same way you request a web page. And you don't need a web browser to do it.</p>
 <p>HTTP requests are made up of "verbs," which are just capitalized (by convention) words that describe what you want to do. Servers out on the internet will ask you to use one verb or another in order to access their resources. The two most important verbs are GET and POST. </p>
 <h3>GET requests</h3>
@@ -104,37 +109,11 @@ print(scotusresponse.json()[&quot;start_date&quot;])
 <li>
 <p>To learn more about Python's built-in JSON library, you can use the <a href="https://pymotw.com/3/json/">PYMOTW page on the subject</a>. </p>
 </li>
-</ul>                </article>
-            </aside><!-- /#featured -->
-                <section id="content" class="body">
-                    <h1>Other articles</h1>
-                    <hr />
-                    <ol id="posts-list" class="hfeed">
+</ul>
+    </div><!-- /.entry-content -->
 
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="https://sociologicalgobbledygook.com/introduction-to-python.html" rel="bookmark"
-                           title="Permalink to Introduction to Python">Introduction to Python</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2018-10-22T00:00:00-05:00">
-                Published: Mon 22 October 2018
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="https://sociologicalgobbledygook.com/author/paul-gowder.html">Paul Gowder</a>
-        </address>
-<p>In <a href="https://sociologicalgobbledygook.com/category/lessons.html">Lessons</a>.</p>
-<p>tags: <a href="https://sociologicalgobbledygook.com/tag/python.html">python</a> <a href="https://sociologicalgobbledygook.com/tag/code.html">code</a> <a href="https://sociologicalgobbledygook.com/tag/week0.html">week0</a> <a href="https://sociologicalgobbledygook.com/tag/setup.html">setup</a> </p>
-</footer><!-- /.post-info -->                <p>In this class, we will be using the <a href="https://www.python.org/">Python</a> programming language. In this first week, we will have a basic introduction to Python and to the fundamentals of computer programming. </p>
-<p>Before we get started programming, we have to set up a system to write our code and get the computer …</p>
-                <a class="readmore" href="https://sociologicalgobbledygook.com/introduction-to-python.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-                </ol><!-- /#posts-list -->
-                </section><!-- /#content -->
+  </article>
+</section>
         <section id="extras" class="body">
                 <div class="blogroll">
                         <h2>links</h2>

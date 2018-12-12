@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
         <meta charset="utf-8" />
-        <title>Sociological Gobbledygook - conceptual</title>
+        <title>Hypothesis Testing: Conceptual Introduction (draft)</title>
         <link rel="stylesheet" href="https://sociologicalgobbledygook.com/theme/css/main.css" />
         <link href="https://sociologicalgobbledygook.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Sociological Gobbledygook Atom Feed" />
 
@@ -17,14 +17,19 @@
                 <nav><ul>
                     <li><a href="https://sociologicalgobbledygook.com/pages/manifesto.html">Manifesto</a></li>
                     <li><a href="https://sociologicalgobbledygook.com/pages/syllabus.html">Syllabus</a></li>
-                    <li><a href="https://sociologicalgobbledygook.com/category/lessons.html">Lessons</a></li>
+                    <li class="active"><a href="https://sociologicalgobbledygook.com/category/lessons.html">Lessons</a></li>
                     <li><a href="https://sociologicalgobbledygook.com/category/welcome.html">Welcome</a></li>
                 </ul></nav>
         </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="https://sociologicalgobbledygook.com/hypothesis-testing-conceptual-introduction-draft.html" rel="bookmark"
+           title="Permalink to Hypothesis Testing: Conceptual Introduction (draft)">Hypothesis Testing: Conceptual Introduction (draft)</a></h1>
+    </header>
 
-            <aside id="featured" class="body">
-                <article>
-                    <h1 class="entry-title"><a href="https://sociologicalgobbledygook.com/hypothesis-testing-conceptual-introduction-draft.html">Hypothesis Testing: Conceptual Introduction (draft)</a></h1>
+    <div class="entry-content">
 <footer class="post-info">
         <abbr class="published" title="2018-12-09T00:00:00-06:00">
                 Published: Sun 09 December 2018
@@ -35,7 +40,7 @@
         </address>
 <p>In <a href="https://sociologicalgobbledygook.com/category/lessons.html">Lessons</a>.</p>
 <p>tags: <a href="https://sociologicalgobbledygook.com/tag/statistics.html">statistics</a> <a href="https://sociologicalgobbledygook.com/tag/conceptual.html">conceptual</a> </p>
-</footer><!-- /.post-info --><p>Now that we understand distributions and the central limit theorem, we’re in a good position to make sense of the notion of a hypothesis test. It’s actually very simple. </p>
+</footer><!-- /.post-info -->      <p>Now that we understand distributions and the central limit theorem, we’re in a good position to make sense of the notion of a hypothesis test. It’s actually very simple. </p>
 <p>Suppose you do an experiment. Let’s say you want to find out whether a company is engaging in racial discrimination in interviewing, so you manufacture a bunch of resumes and then send them out with randomly changed names, street addresses (in a racially segregated city), and other markers of racial identification. This is a kind of study that <a href="https://www.aeaweb.org/articles?id=10.1257/0002828042002561">economists actually do</a>. </p>
 <p>Now suppose you find out that, say, white-appearing resumes get interviews 10% of the time, while black-appearing resumes get interviews 8% of the time.  Is this fact alone enough to show that the company engages in discrimination? </p>
 <p>Well, one worry you might have is that this difference is just the result of bad luck.  Maybe, just by sheer coincidence, more of the black-appearing resumes landed on harsher recruiters’ desks, or showed up in the mail just before lunch, when people were hungry and impatient and crabby. You need statistics to quantify the likelihood that the difference you saw was just the result of chance. </p>
@@ -53,37 +58,11 @@
 <p>The story I just told is a very conventional, classical, approach to hypothesis testing. Unfortunately, it tends to be misinterpreted and misused a lot. We’ll talk more down the line about how this goes wrong, but here is one quick warning to start with</p>
 <h3>Watch out for p-hacking.</h3>
 <p>What happens if you take a bunch of samples? For example, suppose you have 20 different ways to formulate the null hypothesis or to analyze the data, and you try them all. 19 of them don’t turn out to be significant at an 0.05 level, but one of them does. Does this mean you have a real result?  You should be able to see that it probably doesn’t: if an 0.05 significance level means that you should see a result this extreme 5% of the time even if the null hypothesis is true, well, dude, you just did 20 tests, and you saw it once... that is 5% of the time! You have effectively no evidence here. </p>
-<p>People intentionally or unintentionally cheat like this all the time---it’s called <strong>p-hacking</strong>.  Another way of p-hacking is to not have a "stopping rule"---to analyze the data while you’re collecting it, and then to stop collecting data when you see a significant result. Many scientists "preregister" their studies by publicly committing to the data they will collect and the analyses they will run in advance. This is a good practice to head off p-hacking. <a href="https://www.methodspace.com/primer-p-hacking/">This blog post has a good explanation of p-hacking and preregistration</a> (And actually, even if you don’t cheat like this, the chances that you incorrectly rejected the null hypothesis even with a p value of 0.05 is still substantially higher than 5%, because of Bayes Rule: see <a href="http://blog.minitab.com/blog/adventures-in-statistics-2/not-all-p-values-are-created-equal">this blog post</a> for an explanation of why.)</p>                </article>
-            </aside><!-- /#featured -->
-                <section id="content" class="body">
-                    <h1>Other articles</h1>
-                    <hr />
-                    <ol id="posts-list" class="hfeed">
+<p>People intentionally or unintentionally cheat like this all the time---it’s called <strong>p-hacking</strong>.  Another way of p-hacking is to not have a "stopping rule"---to analyze the data while you’re collecting it, and then to stop collecting data when you see a significant result. Many scientists "preregister" their studies by publicly committing to the data they will collect and the analyses they will run in advance. This is a good practice to head off p-hacking. <a href="https://www.methodspace.com/primer-p-hacking/">This blog post has a good explanation of p-hacking and preregistration</a> (And actually, even if you don’t cheat like this, the chances that you incorrectly rejected the null hypothesis even with a p value of 0.05 is still substantially higher than 5%, because of Bayes Rule: see <a href="http://blog.minitab.com/blog/adventures-in-statistics-2/not-all-p-values-are-created-equal">this blog post</a> for an explanation of why.)</p>
+    </div><!-- /.entry-content -->
 
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="https://sociologicalgobbledygook.com/lesson-21-why-statistics-for-lawyers.html" rel="bookmark"
-                           title="Permalink to Lesson 2.1 Why Statistics for Lawyers?">Lesson 2.1 Why Statistics for Lawyers?</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2018-11-03T00:00:00-05:00">
-                Published: Sat 03 November 2018
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="https://sociologicalgobbledygook.com/author/paul-gowder.html">Paul Gowder</a>
-        </address>
-<p>In <a href="https://sociologicalgobbledygook.com/category/lessons.html">Lessons</a>.</p>
-<p>tags: <a href="https://sociologicalgobbledygook.com/tag/statistics.html">statistics</a> <a href="https://sociologicalgobbledygook.com/tag/week2.html">week2</a> <a href="https://sociologicalgobbledygook.com/tag/conceptual.html">conceptual</a> </p>
-</footer><!-- /.post-info -->                <p>The brunt of this course will be devoted to statistics and exploratory data analysis. </p>
-<p><em>Exploratory data analysis</em> is just looking at data to see what you see.  We will spend some time, for example, looking at how to see the shape of data and what that can tell you about …</p>
-                <a class="readmore" href="https://sociologicalgobbledygook.com/lesson-21-why-statistics-for-lawyers.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-                </ol><!-- /#posts-list -->
-                </section><!-- /#content -->
+  </article>
+</section>
         <section id="extras" class="body">
                 <div class="blogroll">
                         <h2>links</h2>
