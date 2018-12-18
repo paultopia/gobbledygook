@@ -76,6 +76,22 @@ Here’s what this all comes down to:
 
 Further readings, if you’d like to learn more: 
 
+- F. Perry Wilson [The P-Value is a Hoax, But Here's How to Fix it](https://www.medpagetoday.com/Blogs/TheMethodsMan/52171)---This is an amazing concrete illustration with actual numbers of the point above about base rates.  Actually, you know what?  That's so good I'm going to quote it at length: 
+
+> Let's say that there are 100,000 hypotheses out there -- floating in the ether. Some of the hypotheses are true, some are false (this is how science works, right?). It turns out that it's the proportion of true hypotheses that dictates how much of the medical literature is nonsense, not the p-value. Let me prove it.
+
+> Let's say that of our 100,000 hypotheses, 10%, or 10,000 are true. I may be a bit of a pessimist but I think I'm being pretty generous here. OK -- how many false positives will there be? Well, of the 90,000 false hypotheses, 5% (there's the p-value!) will end up appearing true in the study by chance alone. Five percent of 90,000 is 4,500 false positive studies. How many true positives will there be? Well, we have 10,000 true hypotheses -- but not all the studies will be positive. The number of positive studies will depend on how adequately "powered" they are, and power is usually set at around 80%, meaning that 8,000 of those true hypotheses will be discovered to be true when tested, while 2,000 will be missed.
+
+> So of our 100,000 hypotheses, we have a total of 12,500 positive studies. 4,500 of those 12,500 are false positives. That's 36%. [...]
+
+> Let that sink in. Despite the comforting nature of the 0.05 threshold for the p-value, 36% of the positive studies you read may be false.
+
+> This depends critically on the number of true hypotheses by the way. If I drop the number of true hypotheses to 5%, keeping everything else the same, then 55% of the positive studies you read are wrong. It's a disaster.
+
+(n.b.: we'll talk about the "power" thing later on in the class.)
+
 - Minitab blog, "[How to Correctly Interpret P Values](http://blog.minitab.com/blog/adventures-in-statistics-2/how-to-correctly-interpret-p-values)" (Minitab is a statistical software package, and the editor of its blog is on a lovely quest to comprehensibly explain the whole p-value thing).
 
-- John Ioannidis, "[Why Most Published Research Findings are False](https://journals.plos.org/plosmedicine/article?id=10.1371/journal.pmed.0020124)" (a bit complicated/advanced for this class, but covers a lot of other bad nonsense that happens in science too).
+- 538 blog post [complaining that nobody can explain p-values comprehensibly](https://fivethirtyeight.com/features/not-even-scientists-can-easily-explain-p-values/). (Mostly included because the best explanation the 538 blogger could find was from Stuart Buck... who is not only a lawyer, he was actually my law school classmate. Lawyers can understand this stuff!) 
+
+- John Ioannidis, "[Why Most Published Research Findings are False](https://journals.plos.org/plosmedicine/article?id=10.1371/journal.pmed.0020124)" (sort of a more complicated and less clear version of the Perry Wilson blog post above).
