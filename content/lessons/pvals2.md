@@ -10,7 +10,8 @@ Pause for a moment and ask yourself the following question: **Does that mean the
 
 Incidentally, that’s called a "Type I error" in some circles: the error of incorrectly rejecting the null hypothesis, a.k.a. (if you’re sensible and don’t like double negatives) convincing yourself that you’re seeing a real effect when you’re not. So the question above could be rephrased: "Is the p-value the probability of making a Type I error?"  A Type II error is the opposite: failing to reject the null hypothesis when you oughta, or, in other words, seeing a real effect and not realizing it. There’s a particularly good meme that captures this distinction and makes it impossible to forget:
 
-![Type I and Type II errors](https://4.bp.blogspot.com/-wmZzvsY_Tec/Vws0f4MJn9I/AAAAAAAAORs/gipKxA7aDboP0gx2vSmyQS_ZoVBPzqaWA/s1600/Type%2BI%2Band%2BII%2Berror.jpg)
+<img src="https://4.bp.blogspot.com/-wmZzvsY_Tec/Vws0f4MJn9I/AAAAAAAAORs/gipKxA7aDboP0gx2vSmyQS_ZoVBPzqaWA/s1600/Type%2BI%2Band%2BII%2Berror.jpg" alt="Type I and Type II errors" width="100%"/>
+
 
 So, what’s your answer?  I’ll make some more space just to make sure you have a chance to figure it out for yourself...
 
@@ -42,11 +43,11 @@ The answer to my question is **no.** Here’s why.
 
 If you go back to the definition I gave you of p-values, you’ll see that it’s really a conditional probability. The p value is the probability of seeing the data in your sample, conditional on the null hypothesis being true. In symbols: 
 
-$$PValue = p(DataSeen|NullHypothesis)$$
+$$PValue = P(DataSeen|NullHypothesis)$$
 
 But what you'd really like to know is the probability of making a Type I error--the probability of making a mistake and declaring that you’ve discovered something that isn’t. Unfortunately, that can be rephrased as **the probability of the null hypothesis being true, conditional on seeing your data!**  In symbols: 
 
-$$P(TypeIError) = p(NullHypothesis|DataSeen)$$
+$$P(TypeIError) = P(NullHypothesis|DataSeen)$$
 
 By now, you should know that you can’t flip conditional probabilities around like that. Yet this is an incredibly common mistake--even actual statistics teachers sometimes slip up and say that the p-value is the probability of making a Type I error.  It isn’t!  Never say this! Never think this! Never respect anyone who does say or think it!
 
@@ -62,7 +63,7 @@ What does that mean?  Well, first of all, it means that in order to even take a 
 
 Second, you’d need to have some idea of the base rate of the data you observed in your sample (the denominator above). If it’s low, then that makes it more likely that we’re making a Type I error. Recall from our probability lesson that we can calculate that via the [law of total probability](https://en.m.wikipedia.org/wiki/Law_of_total_probability) as follows: 
 
-$$P(DataSeen) = P(DataSeen|NullHypothesis) \cdot P(NullHypothesis) + P(DataSeen|AlternativeHypothesis) \cdot P(AlternativeHypothesis)$$
+$$P(DataSeen) = P(DataSeen|NullHypothesis) \cdot P(NullHypothesis) + \\P(DataSeen|AlternativeHypothesis) \cdot P(AlternativeHypothesis)$$
 
 How can that value be low? Well, one important way is that $P(DataSeen|AlternativeHypothesis)$ could be low. In other words: sure, it might be that it’s really unlikely that you’d see the data you saw if your null hypothesis were true. But what if it’s *even more unlikely* that you’d see the data you saw if your alternative hypothesis were true! (A low p-value means that the data you saw would come up pretty rarely in that null distribution.  But what if it would come up even more rarely in every other plausible distribution?)
 

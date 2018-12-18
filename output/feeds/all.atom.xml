@@ -1,5 +1,123 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Sociological Gobbledygook</title><link href="https://sociologicalgobbledygook.com/" rel="alternate"></link><link href="https://sociologicalgobbledygook.com/feeds/all.atom.xml" rel="self"></link><id>https://sociologicalgobbledygook.com/</id><updated>2018-12-09T00:00:00-06:00</updated><entry><title>Hypothesis Testing: Conceptual Introduction (draft)</title><link href="https://sociologicalgobbledygook.com/hypothesis-testing-conceptual-introduction-draft.html" rel="alternate"></link><published>2018-12-09T00:00:00-06:00</published><updated>2018-12-09T00:00:00-06:00</updated><author><name>Paul Gowder</name></author><id>tag:sociologicalgobbledygook.com,2018-12-09:/hypothesis-testing-conceptual-introduction-draft.html</id><summary type="html">&lt;p&gt;Now that we understand distributions and the central limit theorem, we’re in a good position to make sense of the notion of a hypothesis test. It’s actually very simple. &lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Sociological Gobbledygook</title><link href="https://sociologicalgobbledygook.com/" rel="alternate"></link><link href="https://sociologicalgobbledygook.com/feeds/all.atom.xml" rel="self"></link><id>https://sociologicalgobbledygook.com/</id><updated>2018-12-10T00:00:00-06:00</updated><entry><title>P-Values and Bayes Rule (draft)</title><link href="https://sociologicalgobbledygook.com/p-values-and-bayes-rule-draft.html" rel="alternate"></link><published>2018-12-10T00:00:00-06:00</published><updated>2018-12-10T00:00:00-06:00</updated><author><name>Paul Gowder</name></author><id>tag:sociologicalgobbledygook.com,2018-12-10:/p-values-and-bayes-rule-draft.html</id><summary type="html">&lt;p&gt;Recall from the previous lesson what a p-value is: it’s the probability of observing a value of your statistic as extreme (as far away from the null hypothesis statistic) as you in fact observed, if the null hypothesis were true.  &lt;/p&gt;
+&lt;p&gt;In other words, if you’re doing a (two-sided …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Recall from the previous lesson what a p-value is: it’s the probability of observing a value of your statistic as extreme (as far away from the null hypothesis statistic) as you in fact observed, if the null hypothesis were true.  &lt;/p&gt;
+&lt;p&gt;In other words, if you’re doing a (two-sided) z test, your statistic is the mean, your null hypothesis mean is &lt;span class="math"&gt;\(\mu\)&lt;/span&gt;, and the mean you observe in your sample is &lt;span class="math"&gt;\(\bar{x}\)&lt;/span&gt;, then the p-value is the probability of getting a mean at least &lt;span class="math"&gt;\(\mu - \bar{x}\)&lt;/span&gt; units away from the mean when randomly sampling from a normal distribution with mean &lt;span class="math"&gt;\(\mu\)&lt;/span&gt; and standard deviation estimated by the formula for the standard deviation of a sample. (We’ll talk about that formula later, but if you want a sneak preview, check out &lt;a href="https://www.khanacademy.org/math/statistics-probability/summarizing-quantitative-data/variance-standard-deviation-sample/a/population-and-sample-standard-deviation-review"&gt;this Khan Academy article&lt;/a&gt;.) If the p-value is below a predetermined level, often 0.05, then we say that there’s a statistically significant result. &lt;/p&gt;
+&lt;p&gt;Pause for a moment and ask yourself the following question: &lt;strong&gt;Does that mean the p-value is the probability of incorrectly rejecting the null hypothesis?&lt;/strong&gt; Don’t go on until you have an answer, and can explain why you have that answer. This is very important.&lt;/p&gt;
+&lt;p&gt;Incidentally, that’s called a "Type I error" in some circles: the error of incorrectly rejecting the null hypothesis, a.k.a. (if you’re sensible and don’t like double negatives) convincing yourself that you’re seeing a real effect when you’re not. So the question above could be rephrased: "Is the p-value the probability of making a Type I error?"  A Type II error is the opposite: failing to reject the null hypothesis when you oughta, or, in other words, seeing a real effect and not realizing it. There’s a particularly good meme that captures this distinction and makes it impossible to forget:&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://4.bp.blogspot.com/-wmZzvsY_Tec/Vws0f4MJn9I/AAAAAAAAORs/gipKxA7aDboP0gx2vSmyQS_ZoVBPzqaWA/s1600/Type%2BI%2Band%2BII%2Berror.jpg" alt="Type I and Type II errors" width="100%"/&gt;&lt;/p&gt;
+&lt;p&gt;So, what’s your answer?  I’ll make some more space just to make sure you have a chance to figure it out for yourself...&lt;/p&gt;
+&lt;p&gt;.&lt;/p&gt;
+&lt;p&gt;.&lt;/p&gt;
+&lt;p&gt;.&lt;/p&gt;
+&lt;p&gt;.&lt;/p&gt;
+&lt;p&gt;.&lt;/p&gt;
+&lt;p&gt;.&lt;/p&gt;
+&lt;p&gt;.&lt;/p&gt;
+&lt;p&gt;.&lt;/p&gt;
+&lt;p&gt;.&lt;/p&gt;
+&lt;p&gt;.&lt;/p&gt;
+&lt;p&gt;.&lt;/p&gt;
+&lt;p&gt;.&lt;/p&gt;
+&lt;p&gt;The answer to my question is &lt;strong&gt;no.&lt;/strong&gt; Here’s why.&lt;/p&gt;
+&lt;p&gt;If you go back to the definition I gave you of p-values, you’ll see that it’s really a conditional probability. The p value is the probability of seeing the data in your sample, conditional on the null hypothesis being true. In symbols: &lt;/p&gt;
+&lt;div class="math"&gt;$$PValue = P(DataSeen|NullHypothesis)$$&lt;/div&gt;
+&lt;p&gt;But what you'd really like to know is the probability of making a Type I error--the probability of making a mistake and declaring that you’ve discovered something that isn’t. Unfortunately, that can be rephrased as &lt;strong&gt;the probability of the null hypothesis being true, conditional on seeing your data!&lt;/strong&gt;  In symbols: &lt;/p&gt;
+&lt;div class="math"&gt;$$P(TypeIError) = P(NullHypothesis|DataSeen)$$&lt;/div&gt;
+&lt;p&gt;By now, you should know that you can’t flip conditional probabilities around like that. Yet this is an incredibly common mistake--even actual statistics teachers sometimes slip up and say that the p-value is the probability of making a Type I error.  It isn’t!  Never say this! Never think this! Never respect anyone who does say or think it!&lt;/p&gt;
+&lt;p&gt;Here’s why this matters. In reality, many, many studies with a "statistically significant" p-value are likely to nonetheless be Type I errors. The reason is because the actual probability of a Type I error depends on the prior likelihood that the null hypothesis was false in the first place, as well as on how likely it is that you'd see your data (in other words, on the base rate). Let’s flesh this out some more with Bayes Rule. Remember it? &lt;/p&gt;
+&lt;div class="math"&gt;$$P(B|A) = \frac{P(A|B) \cdot P(B)}{P(A)}$$&lt;/div&gt;
+&lt;p&gt;As applied here, plugging in our concepts from above:&lt;/p&gt;
+&lt;div class="math"&gt;$$P(TypeIError) \frac{PValue \cdot P(NullHypothesis)}{P(DataSeen)}$$&lt;/div&gt;
+&lt;p&gt;What does that mean?  Well, first of all, it means that in order to even take a wild guess at how likely it is that we’re making a Type I error, we have to know how likely our null hypothesis is (in Bayesian terms, we have to have a prior probability in our heads about it). If we have strong prior reason to believe our null hypothesis--if our alternative hypothesis, or the research finding we’re trying to test out, is really crazy, then we ought to conclude that it’s more likely that we’re making a Type I error, even in the face of a statistically significant p-value. For example, if you think you’ve provided evidence for psychic abilities, as &lt;a href="https://www.theguardian.com/science/head-quarters/2016/oct/31/did-a-memory-experiment-really-show-evidence-for-psychic-abilities"&gt;occasionally shows up in psychology journals&lt;/a&gt;, you should probably estimate your probability of making a Type I error as quite high, because your prior on Dr. Xavier running around somewhere controlling stuff &lt;em&gt;with his miiiiiind&lt;/em&gt; is pretty small (or at least oughta be).&lt;/p&gt;
+&lt;p&gt;Second, you’d need to have some idea of the base rate of the data you observed in your sample (the denominator above). If it’s low, then that makes it more likely that we’re making a Type I error. Recall from our probability lesson that we can calculate that via the &lt;a href="https://en.m.wikipedia.org/wiki/Law_of_total_probability"&gt;law of total probability&lt;/a&gt; as follows: &lt;/p&gt;
+&lt;div class="math"&gt;$$P(DataSeen) = P(DataSeen|NullHypothesis) \cdot P(NullHypothesis) + \\P(DataSeen|AlternativeHypothesis) \cdot P(AlternativeHypothesis)$$&lt;/div&gt;
+&lt;p&gt;How can that value be low? Well, one important way is that &lt;span class="math"&gt;\(P(DataSeen|AlternativeHypothesis)\)&lt;/span&gt; could be low. In other words: sure, it might be that it’s really unlikely that you’d see the data you saw if your null hypothesis were true. But what if it’s &lt;em&gt;even more unlikely&lt;/em&gt; that you’d see the data you saw if your alternative hypothesis were true! (A low p-value means that the data you saw would come up pretty rarely in that null distribution.  But what if it would come up even more rarely in every other plausible distribution?)&lt;/p&gt;
+&lt;p&gt;Here’s what this all comes down to: &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Often we don’t really know these other terms that go into the Bayes Rule equation to go from p-values to probabilities of Type I errors. &lt;/li&gt;
+&lt;li&gt;Sometimes, prior theories of how the world works (like psychic powers not being real) can give us broad guesses for those other terms, which can give us a rough idea of how confident we should be in our results. This is part of why statistics folks look down on the practice of "data-mining," a.k.a., hunting through data without a theory looking for significant results. &lt;/li&gt;
+&lt;li&gt;The only way to be really confident that empirical results are real is by replicating them--by getting significant results again and again from different samples. &lt;/li&gt;
+&lt;li&gt;Don’t trust that a result is real just because it has a statistically significant p-value!&lt;/li&gt;
+&lt;li&gt;If some expert witness shows you a p-value of 0.05 and says "there's a 95% chance the null is false," you should laugh derisively at them and then fire them if they're your expert or cross examine them into oblivion if they're someone else's.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Further readings, if you’d like to learn more: &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;F. Perry Wilson &lt;a href="https://www.medpagetoday.com/Blogs/TheMethodsMan/52171"&gt;The P-Value is a Hoax, But Here's How to Fix it&lt;/a&gt;---This is an amazing concrete illustration with actual numbers of the point above about base rates.  Actually, you know what?  That's so good I'm going to quote it at length: &lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Let's say that there are 100,000 hypotheses out there -- floating in the ether. Some of the hypotheses are true, some are false (this is how science works, right?). It turns out that it's the proportion of true hypotheses that dictates how much of the medical literature is nonsense, not the p-value. Let me prove it.&lt;/p&gt;
+&lt;p&gt;Let's say that of our 100,000 hypotheses, 10%, or 10,000 are true. I may be a bit of a pessimist but I think I'm being pretty generous here. OK -- how many false positives will there be? Well, of the 90,000 false hypotheses, 5% (there's the p-value!) will end up appearing true in the study by chance alone. Five percent of 90,000 is 4,500 false positive studies. How many true positives will there be? Well, we have 10,000 true hypotheses -- but not all the studies will be positive. The number of positive studies will depend on how adequately "powered" they are, and power is usually set at around 80%, meaning that 8,000 of those true hypotheses will be discovered to be true when tested, while 2,000 will be missed.&lt;/p&gt;
+&lt;p&gt;So of our 100,000 hypotheses, we have a total of 12,500 positive studies. 4,500 of those 12,500 are false positives. That's 36%. [...]&lt;/p&gt;
+&lt;p&gt;Let that sink in. Despite the comforting nature of the 0.05 threshold for the p-value, 36% of the positive studies you read may be false.&lt;/p&gt;
+&lt;p&gt;This depends critically on the number of true hypotheses by the way. If I drop the number of true hypotheses to 5%, keeping everything else the same, then 55% of the positive studies you read are wrong. It's a disaster.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;(n.b.: we'll talk about the "power" thing later on in the class.)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Minitab blog, "&lt;a href="http://blog.minitab.com/blog/adventures-in-statistics-2/how-to-correctly-interpret-p-values"&gt;How to Correctly Interpret P Values&lt;/a&gt;" (Minitab is a statistical software package, and the editor of its blog is on a lovely quest to comprehensibly explain the whole p-value thing).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;538 blog post &lt;a href="https://fivethirtyeight.com/features/not-even-scientists-can-easily-explain-p-values/"&gt;complaining that nobody can explain p-values comprehensibly&lt;/a&gt;. (Mostly included because the best explanation the 538 blogger could find was from Stuart Buck... who is not only a lawyer, he was actually my law school classmate. Lawyers can understand this stuff!) &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;John Ioannidis, "&lt;a href="https://journals.plos.org/plosmedicine/article?id=10.1371/journal.pmed.0020124"&gt;Why Most Published Research Findings are False&lt;/a&gt;" (sort of a more complicated and less clear version of the Perry Wilson blog post above).&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width &lt; 768) ? "left" : align;
+        indent = (screen.width &lt; 768) ? "0em" : indent;
+        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;</content><category term="statistics"></category><category term="conceptual"></category></entry><entry><title>Hypothesis Testing: Conceptual Introduction (draft)</title><link href="https://sociologicalgobbledygook.com/hypothesis-testing-conceptual-introduction-draft.html" rel="alternate"></link><published>2018-12-09T00:00:00-06:00</published><updated>2018-12-09T00:00:00-06:00</updated><author><name>Paul Gowder</name></author><id>tag:sociologicalgobbledygook.com,2018-12-09:/hypothesis-testing-conceptual-introduction-draft.html</id><summary type="html">&lt;p&gt;Now that we understand distributions and the central limit theorem, we’re in a good position to make sense of the notion of a hypothesis test. It’s actually very simple. &lt;/p&gt;
 &lt;p&gt;Suppose you do an experiment. Let’s say you want to find out whether a company is engaging in …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Now that we understand distributions and the central limit theorem, we’re in a good position to make sense of the notion of a hypothesis test. It’s actually very simple. &lt;/p&gt;
 &lt;p&gt;Suppose you do an experiment. Let’s say you want to find out whether a company is engaging in racial discrimination in interviewing, so you manufacture a bunch of resumes and then send them out with randomly changed names, street addresses (in a racially segregated city), and other markers of racial identification. This is a kind of study that &lt;a href="https://www.aeaweb.org/articles?id=10.1257/0002828042002561"&gt;economists actually do&lt;/a&gt;. &lt;/p&gt;
 &lt;p&gt;Now suppose you find out that, say, white-appearing resumes get interviews 10% of the time, while black-appearing resumes get interviews 8% of the time.  Is this fact alone enough to show that the company engages in discrimination? &lt;/p&gt;
