@@ -166,7 +166,7 @@ Between week 1 and week 2, go through chapters 1-3 of DataCamp's [Introduction t
 
 For **Monday**, read libraries [link tbd] and error handling [link tbd] on this site.  
 
-For **Tuesday** read [Files and Strings]({filename}../Lessons/files-and-strings.ipynb) and [Network Requests]({filename}../Lessons/network_requests) on this site. 
+For **Tuesday** read [Files and Strings]({filename}../Lessons/files-and-strings.ipynb) and [Network Requests]({filename}../Lessons/network_requests.md) on this site. 
 
 
 ### Week 3
