@@ -156,7 +156,7 @@ In the first day of class, we will get everyone set up with the different servic
 
 On Monday evening, read clone the course Github and complete the exercise at the end of the first Python lesson notebook (factorial); you don't need to turn it in, but let me know if you can't complete it; we'll look at people's solutions on Tuesday and use this as our test to make sure everyone is set up and functional.
 
-For **Tuesday**, read the functions in Python lesson on this side [link tbd] the more control flow lesson on this site [link tbd], and the lists, tuples, and dictionaries lesson on this site [link tbd]. Also read the Software Carpentry lessons on [functions](http://swcarpentry.github.io/python-novice-inflammation/06-func/index.html) and [making choices](http://swcarpentry.github.io/python-novice-inflammation/05-cond/index.html). [Python for everybody TBD].
+For **Tuesday**, read the [functions and scope]({filename}../Lessons/functions.ipynb), control flow [link tbd], simple data types [link tbd], and compound data types [link tbd] lessons on this site. Also read the Software Carpentry lessons on [functions](http://swcarpentry.github.io/python-novice-inflammation/06-func/index.html) and [making choices](http://swcarpentry.github.io/python-novice-inflammation/05-cond/index.html). [Python for everybody TBD].
 
 ### Week 2
 
