@@ -148,7 +148,7 @@ The first few weeks will be spent on computation; subsequent weeks will be spent
 
 ### Week 1 
 
-Coverage: Basic ideas of programming, units of computation, functions and loops. Computational logic and legal logic, law as computation. We will front-load the quantity of reading a little heavily to get us started quickly, but it'll ease off as we move on to more conceptually difficult material. (Also, I know the reading seems like a lot, but it goes faster than cases in 1L year!)
+Coverage: Basic ideas of programming, units of computation, functions and loops. Computational logic and legal logic, law as computation. We will front-load the quantity of reading a little heavily to get us started quickly, but it'll ease off as we move on to more conceptually difficult material. (Also, I know the reading seems like a lot, but it goes faster than cases in 1L year!)  In particular, don't feel obliged to fully absorb everything from Python for Everybody on the first reading. Just read it quickly so you get a feel for the terrain, and then more carefully read the stuff posted on this site, then dig back into Python for Everybody to fill out the details.
 
 For **Monday**, read the [Introduction to Python on this site]({filename}../Lessons/python_intro.md) and the [first Python lesson]({filename}../Lessons/basic_intro.ipynb). Read pages 1-55 of Python for Everybody. Also read the [Software Carpentry lesson on loops](http://swcarpentry.github.io/python-novice-inflammation/02-loop/index.html).
 
@@ -156,13 +156,14 @@ In the first day of class, we will get everyone set up with the different servic
 
 On Monday evening, read clone the course Github and complete the exercise at the end of the first Python lesson notebook (factorial); you don't need to turn it in, but let me know if you can't complete it; we'll look at people's solutions on Tuesday and use this as our test to make sure everyone is set up and functional.
 
-For **Tuesday**, read the [functions and scope]({filename}../Lessons/functions.ipynb), control flow [link tbd], simple data types [link tbd], and compound data types [link tbd] lessons on this site. Also read the Software Carpentry lessons on [functions](http://swcarpentry.github.io/python-novice-inflammation/06-func/index.html) and [making choices](http://swcarpentry.github.io/python-novice-inflammation/05-cond/index.html). [Python for everybody TBD].
+For **Tuesday**, read the [functions and scope]({filename}../Lessons/functions.ipynb), [more loops and control flow]({filename}../Lessons/control_flow.ipynb), [simple data types]({filename}../Lessons/simple_data_types.ipynb), and [complex data types]({filename}../Lessons/complex_data_types.ipynb)  lessons on this site. Also read the Software Carpentry lessons on [functions](http://swcarpentry.github.io/python-novice-inflammation/06-func/index.html) and [making choices](http://swcarpentry.github.io/python-novice-inflammation/05-cond/index.html). [Python for everybody TBD].
+
 
 ### Week 2
 
 Coverage: using Python to get access to other people's code, libraries. Accessing the filesystem and the internet from Python. Error handling. Strings.
 
-Between week 1 and week 2, go through chapters 1-3 of DataCamp's [Introduction to Python](https://www.datacamp.com/courses/intro-to-python-for-data-science) course. You don't need to do chapter 4 (about the Numpy library) right now, though you can if you want to. 
+Between week 1 and week 2, go through chapters 1-3 of DataCamp's [Introduction to Python](https://www.datacamp.com/courses/intro-to-python-for-data-science) course. You don't need to do chapter 4 (about the Numpy library) right now, though you can if you want to. Also read pg. 56-126 of Python for Everybody.  
 
 For **Monday**, read libraries [link tbd] and error handling [link tbd] on this site.  
 
