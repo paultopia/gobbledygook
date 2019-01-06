@@ -55,7 +55,7 @@ Some other books that might be of interest to you, though I haven't reviewed the
 
 ### Bonus Reading Suggestions: Python Programming
 
-My favorite introductory Python book (not free) is John Guttag, [Introduction to Computation and Programming Using Python](https://mitpress.mit.edu/books/introduction-computation-and-programming-using-python-revised-and-expanded-edition).  This book is also the basis for a wonderful electronic [course by almost the same name MIT on EdX](https://www.edx.org/course/introduction-to-computer-science-and-programming-using-python) --- and you can go through the course for free, and without buying the book.  I really do think that course (and the second course in the same series) is an amazing way to learn Python, and programming in general.
+My favorite introductory Python book (not free) is John Guttag, [Introduction to Computation and Programming Using Python](https://mitpress.mit.edu/books/introduction-computation-and-programming-using-python-revised-and-expanded-edition).  This book is also the basis for a wonderful electronic [course by almost the same name from MIT on EdX](https://www.edx.org/course/introduction-to-computer-science-and-programming-using-python) --- and you can go through the course for free, and without buying the book.  I really do think that course (and the second course in the same series) is an amazing way to learn Python, and programming in general.
 
 Blessedly, there are a lot of good introductory Python programming books out there which are also available online for free. One of my favorites is Al Sweigart, [Automate the Boring Stuff with Python](https://automatetheboringstuff.com). For more advanced (and non-free) learning, I really love Luciano Ramalho's [Fluent Python](http://shop.oreilly.com/product/0636920032519.do), although by the time you need that you should be looking at building fairly substantial programs. 
 
@@ -68,13 +68,13 @@ I highly recommend Barbara Oakley's book [A Mind for Numbers](https://barbaraoak
 
 ## How Class Will Go
 
-This course is structured as a "flipped class": there won't be many (or possibly any) lectures (or Socratic interrogation). Rather, you will consume the talking kind of instruction outside of the classroom, primarily through readings and through some third-party videos (I won't be making many/any videos myself, mainly because I'm terrible at video). Classroom time will mostly be a lab format: I will demonstrate the practical usage of the things you've learned about outside of class, and (more commonly) assign exercises for you to carry out, with the opportunity to work together to figure them out and with me looming over your shoulder to help. 
+This course is structured as a "flipped class": there won't be many (or possibly any) lectures (or Socratic interrogation). Rather, you will consume the talking kind of instruction outside of the classroom, primarily through readings and through some third-party videos. Classroom time will mostly be a lab format: I will demonstrate the practical usage of the things you've learned about outside of class, and (more commonly) assign exercises for you to carry out, with the opportunity to work together to figure them out and with me looming over your shoulder to help. 
 
 Please bring a computer to every class. Mac, Linux, or Windows computers will work best. Chromebooks and tablets will work less well, though we can get them to work if need be. 
 
 The coverage, pace, and workload in this class will be a continuing work in progress. Because this class isn't taught a lot in law schools, there is not much collective wisdom on how to do it successfully, and I expect to have to adapt the assignments and the pace to accommodate how readily the class takes to the material. So don't expect the assignments at the bottom of this document to be stable. They will change. Possibly lots. 
 
-After the first couple of weeks, I will also begin to give you a bit more rope in terms of your use of our-of-class assignments: often, I'll assign overlapping readings/exercises (like something I've written, plus something in one of our texts, plus some videos online, which cover the same material). Everything I assign from  sociologicalgobbledygook.com will be mandatory, but you will be able to treat some of the overlapping material as optional, to use or not use depending on how you, individually, best learn. However, please don't start doing that until we get a few weeks in; the repetition will be particularly beneficial in the beginning of the course, when we're learning programming. 
+After the first couple of weeks, I will also begin to give you a bit more rope in terms of your use of out-of-class assignments: often, I'll assign overlapping readings/exercises (like something I've written, plus something in one of our texts, plus some videos online, which cover the same material). Everything I assign from  sociologicalgobbledygook.com will be mandatory, but you will be able to treat some of the overlapping material as optional, to use or not use depending on how you, individually, best learn. However, please don't start doing that until we get a few weeks in; the repetition will be particularly beneficial in the beginning of the course, when we're learning programming. 
 
 ### Class Platforms
 
@@ -90,7 +90,7 @@ I'll walk you through getting access to these resources on the first day of clas
 
 In addition, every session will be recorded on Panopto and available on ICON; we'll also use ICON to administer some quizzes (probably), turn in assignments, and distribute materials which (for copyright reasons, etc.) we're not allowed to distribute outside of the class. 
 
-This class is intended in part to produce resources which will be available to the legal profession at large in order to help your fellow lawyers understand code and stats as well; accordingly, many of the reading assignments will be to lessons posted on this website at sociologicalgobbledygook.com. Those assignments will also be available on the course GitHub repository, and sometimes you will find it useful to get the assignments there in order to execute and mess around with the code yourself. 
+This class is intended in part to produce resources which will be available to the legal profession at large in order to help your fellow lawyers understand code and stats as well; accordingly, many of the reading assignments will be to lessons posted on this website at sociologicalgobbledygook.com. Those assignments will also be available on the course GitHub repository; you will find it useful to get the assignments there in order to execute and mess around with the code yourself. 
 
 
 ## Evaluation
@@ -148,7 +148,7 @@ The first few weeks will be spent on computation; subsequent weeks will be spent
 
 ### Week 1 
 
-Coverage: Basic ideas of programming, units of computation, functions and loops. Computational logic and legal logic, law as computation. We will front-load the quantity of reading a little heavily to get us started quickly, but it'll ease off as we move on to more conceptually difficult material. (Also, I know the reading seems like a lot, but it goes faster than cases in 1L year!)
+Coverage: Basic ideas of programming, units of computation, functions and loops. Computational logic and legal logic, law as computation. We will front-load the quantity of reading a little heavily to get us started quickly, but it'll ease off as we move on to more conceptually difficult material. (Also, I know the reading seems like a lot, but it goes faster than cases in 1L year!)  In particular, don't feel obliged to fully absorb everything from Python for Everybody on the first reading. Just read it quickly so you get a feel for the terrain, and then more carefully read the stuff posted on this site, then dig back into Python for Everybody to fill out the details.
 
 For **Monday**, read the [Introduction to Python on this site]({filename}../Lessons/python_intro.md) and the [first Python lesson]({filename}../Lessons/basic_intro.ipynb). Read pages 1-55 of Python for Everybody. Also read the [Software Carpentry lesson on loops](http://swcarpentry.github.io/python-novice-inflammation/02-loop/index.html).
 
@@ -156,17 +156,18 @@ In the first day of class, we will get everyone set up with the different servic
 
 On Monday evening, read clone the course Github and complete the exercise at the end of the first Python lesson notebook (factorial); you don't need to turn it in, but let me know if you can't complete it; we'll look at people's solutions on Tuesday and use this as our test to make sure everyone is set up and functional.
 
-For **Tuesday**, read the functions in Python lesson on this side [link tbd] the more control flow lesson on this site [link tbd], and the lists, tulles, and dictionaries lesson on this site [link tbd]. Also read the Software Carpentry lessons on [functions](http://swcarpentry.github.io/python-novice-inflammation/06-func/index.html) and [making choices](http://swcarpentry.github.io/python-novice-inflammation/05-cond/index.html). [Python for everybody TBD].
+For **Tuesday**, read the [functions and scope]({filename}../Lessons/functions.ipynb), [more loops and control flow]({filename}../Lessons/control_flow.ipynb), [simple data types]({filename}../Lessons/simple_data_types.ipynb), and [complex data types]({filename}../Lessons/complex_data_types.ipynb)  lessons on this site. Also read the Software Carpentry lessons on [functions](http://swcarpentry.github.io/python-novice-inflammation/06-func/index.html) and [making choices](http://swcarpentry.github.io/python-novice-inflammation/05-cond/index.html). [Python for everybody TBD].
+
 
 ### Week 2
 
 Coverage: using Python to get access to other people's code, libraries. Accessing the filesystem and the internet from Python. Error handling. Strings.
 
-Between week 1 and week 2, go through chapters 1-3 of DataCamp's [Introduction to Python](https://www.datacamp.com/courses/intro-to-python-for-data-science) course. You don't need to do chapter 4 (about the Numpy library) right now, though you can if you want to. 
+Between week 1 and week 2, go through chapters 1-3 of DataCamp's [Introduction to Python](https://www.datacamp.com/courses/intro-to-python-for-data-science) course. You don't need to do chapter 4 (about the Numpy library) right now, though you can if you want to. Also read pg. 56-126 of Python for Everybody.  
 
 For **Monday**, read libraries [link tbd] and error handling [link tbd] on this site.  
 
-For **Tuesday** read [Files and Strings]({filename}../Lessons/files-and-strings.ipynb) and [Network Requests]({filename}../Lessons/network_requests) on this site. 
+For **Tuesday** read [Files and Strings]({filename}../Lessons/files-and-strings.ipynb) and [Network Requests]({filename}../Lessons/network_requests.md) on this site. 
 
 
 ### Week 3

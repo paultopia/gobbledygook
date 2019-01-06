@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
         <meta charset="utf-8" />
-        <title>Sociological Gobbledygook - Lessons</title>
+        <title>Simple Data Types (draft)</title>
         <link rel="stylesheet" href="https://sociologicalgobbledygook.com/theme/css/main.css" />
         <link href="https://sociologicalgobbledygook.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Sociological Gobbledygook Atom Feed" />
 
@@ -21,10 +21,15 @@
                     <li><a href="https://sociologicalgobbledygook.com/category/welcome.html">Welcome</a></li>
                 </ul></nav>
         </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="https://sociologicalgobbledygook.com/simple-data-types-draft.html" rel="bookmark"
+           title="Permalink to Simple Data Types (draft)">Simple Data Types (draft)</a></h1>
+    </header>
 
-            <aside id="featured" class="body">
-                <article>
-                    <h1 class="entry-title"><a href="https://sociologicalgobbledygook.com/more-loops-and-control-flow-draft.html">More Loops and Control Flow (draft)</a></h1>
+    <div class="entry-content">
 <footer class="post-info">
         <abbr class="published" title="2018-12-21T00:00:00-06:00">
                 Published: Fri 21 December 2018
@@ -35,7 +40,7 @@
         </address>
 <p>In <a href="https://sociologicalgobbledygook.com/category/lessons.html">Lessons</a>.</p>
 <p>tags: <a href="https://sociologicalgobbledygook.com/tag/python.html">python</a> <a href="https://sociologicalgobbledygook.com/tag/programming.html">programming</a> </p>
-</footer><!-- /.post-info --><style type="text/css">/*!
+</footer><!-- /.post-info -->      <style type="text/css">/*!
 *
 * IPython notebook
 *
@@ -1187,8 +1192,17 @@ h6:hover .anchor-link {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>In this lesson, we'll think about more ways to direct Python to do things repeatedly, or conditionally.</p>
-<p>Let's start with more loops. I showed you the while loop before, remember?</p>
+<p>In Python, the data you work with (like the things assigned to variables) have <em>types</em>, which specify the kinds of data they are and the things you can do with them.</p>
+<p>A good way to understand this is to think about the difference between letters and numbers. While we can write both down, there are different things we can do to them.  It wouldn't make sense (except in an algebra context) to multiply and divide letters; it would't make sense to talk about a capital and a lowercase number 3.</p>
+<p>Exactly the same idea exists in programming. Numbers and letters are different things, and you can do different stuff to them.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Strings">Strings<a class="anchor-link" href="#Strings">&#182;</a></h2><p>In Python, letters are made into <em>strings</em>.  Usually, we write strings in python programs by enclosing them in quotes---single or double quotes, it doesn't make a difference (but we need to be consistent within a single string, and the other kind of quote just becomes an ordinary letter).  Here are some strings:</p>
 
 </div>
 </div>
@@ -1198,10 +1212,114 @@ h6:hover .anchor-link {
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">number</span> <span class="o">=</span> <span class="mi">10</span>
-<span class="k">while</span> <span class="n">number</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
-    <span class="n">number</span> <span class="o">=</span> <span class="n">number</span> <span class="o">-</span> <span class="mi">1</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="s2">&quot;I&#39;m a string.&quot;</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[1]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&#34;I&#39;m a string.&#34;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="s1">&#39;I am a string too, but I have trouble using contractions.&#39;</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[2]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&#39;I am a string too, but I have trouble using contractions.&#39;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="s2">&quot;It&#39;s easy for me to use contractions, because I&#39;ve been surrounded by double quotes, so I can use single quotes inside.&quot;</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[5]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&#34;It&#39;s easy for me to use contractions, because I&#39;ve been surrounded by double quotes, so I can use single quotes inside.&#34;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Backslashes have special functions inside strings: they're used as <em>escape characters</em> to allow you to include special kinds of letters.  For example, the special character <code>\n</code> stands for a newline.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Dear Students: </span><span class="se">\n\n</span><span class="s2">Everybody gets an A!  Congratulations! </span><span class="se">\n\n</span><span class="s2">Just kidding. </span><span class="se">\n\n</span><span class="s2">-Evil Professor&quot;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -1218,16 +1336,13 @@ h6:hover .anchor-link {
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>10
-9
-8
-7
-6
-5
-4
-3
-2
-1
+<pre>Dear Students: 
+
+Everybody gets an A!  Congratulations! 
+
+Just kidding. 
+
+-Evil Professor
 </pre>
 </div>
 </div>
@@ -1239,18 +1354,320 @@ h6:hover .anchor-link {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>There's another kind of loop, called a <code>for</code> loop, which is a little bit more complex. Here's how one looks:</p>
+<p>Similarly, you can use backslashes to escape quotes in strings.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">letter</span> <span class="ow">in</span> <span class="s2">&quot;cat&quot;</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">letter</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">quotestring</span> <span class="o">=</span> <span class="s2">&quot;And then she said </span><span class="se">\&quot;</span><span class="s2">sic &#39;em, Rover!</span><span class="se">\&quot;</span><span class="s2"> but Rover failed to sic.&quot;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">quotestring</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>And then she said &#34;sic &#39;em, Rover!&#34; but Rover failed to sic.
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>You can also create multiline strings by enclosing them in triple quotes (again, of either kind).</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">Hi there!</span>
+
+<span class="s1">I&#39;m a really long string over lots of lines.</span>
+
+<span class="s1">I can go on for as long as I want.  That makes me the coolest string.  Aren&#39;t those other strings... </span>
+
+<span class="s1">well...</span>
+
+<span class="s1">kinda lame?</span>
+<span class="s1">&#39;&#39;&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>
+Hi there!
+
+I&#39;m a really long string over lots of lines.
+
+I can go on for as long as I want.  That makes me the coolest string.  Aren&#39;t those other strings... 
+
+well...
+
+kinda lame?
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>A common feature that you might want is to combine multiple strings, or to substitute variables into strings.</p>
+<p>The easy but kind of awkward way to combine strings is just to use the plus string to <em>concatenate</em> them.  Imagine that you're doing a mail-merge function, for example. Here's how we might do it.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">concatenated_mail_merge</span><span class="p">(</span><span class="n">list_of_names</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">list_of_names</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Dear &quot;</span> <span class="o">+</span> <span class="n">name</span> <span class="o">+</span> <span class="s2">&quot;:</span><span class="se">\n</span><span class="s2">Send me the money you owe me or I&#39;ll sue!!&quot;</span><span class="p">)</span>
+
+<span class="n">concatenated_mail_merge</span><span class="p">([</span><span class="s2">&quot;John&quot;</span><span class="p">,</span> <span class="s2">&quot;Paul&quot;</span><span class="p">,</span> <span class="s2">&quot;George&quot;</span><span class="p">,</span> <span class="s2">&quot;Ringo&quot;</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Dear John:
+Send me the money you owe me or I&#39;ll sue!!
+Dear Paul:
+Send me the money you owe me or I&#39;ll sue!!
+Dear George:
+Send me the money you owe me or I&#39;ll sue!!
+Dear Ringo:
+Send me the money you owe me or I&#39;ll sue!!
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>But that gets very un-ergonomic.  Here's a better way to do it.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">cleaner_mail_merge</span><span class="p">(</span><span class="n">list_of_names</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">list_of_names</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Dear </span><span class="si">{}</span><span class="s2">:</span><span class="se">\n</span><span class="s2">Thank you for the money, now I won&#39;t sue you.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
+
+<span class="n">cleaner_mail_merge</span><span class="p">([</span><span class="s2">&quot;Peter&quot;</span><span class="p">,</span> <span class="s2">&quot;Paul&quot;</span><span class="p">,</span> <span class="s2">&quot;Mary&quot;</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Dear Peter:
+Thank you for the money, now I won&#39;t sue you.
+Dear Paul:
+Thank you for the money, now I won&#39;t sue you.
+Dear Mary:
+Thank you for the money, now I won&#39;t sue you.
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>format()</code> is one example of a <em>string method</em>.  A string method is a special kind of function that you call only on a string, which you call by putting a period and then the function call after it.  Most types in Python have their own special methods (and we'll learn a bit more about why this is the case when we learn what object-oriented programming is).</p>
+<p>Here are some more string methods, which should be self-explanatory.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;shouting&quot;</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>SHOUTING
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;WHISPERING&quot;</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>whispering
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;this is a long long string&quot;</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;long&quot;</span><span class="p">,</span> <span class="s2">&quot;short&quot;</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>this is a short short string
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>There are lots of others, and you should go look at the <a href="https://docs.python.org/3.6/library/stdtypes.html#string-methods">documentation</a> to see a list of them.</p>
+<p>Another important feature of strings is that you can treat them like a sequence of individual letters.  And you can use what's known as subset notation to get at individual letters or groups.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">mystring</span> <span class="o">=</span> <span class="s2">&quot;cats are the best&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mystring</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 </pre></div>
 
     </div>
@@ -1268,8 +1685,6 @@ h6:hover .anchor-link {
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>c
-a
-t
 </pre>
 </div>
 </div>
@@ -1281,641 +1696,17 @@ t
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Here's how that works: some kinds of data types in Python are known as <em>iterables</em> (we'll look at what those are a bit later). Basically, that's anything that can be represented as a list of something else. So "cat" for example can be represented as a list of letters c, a, and t.</p>
-<p>Let's go into the details.</p>
-<ul>
-<li><p>The <code>for</code> keyword starts our for loop.</p>
-</li>
-<li><p>Next comes a variable name, which gets assigned to every element of the iterator in the body of the loop. Here the variable is <code>letter</code></p>
-</li>
-<li><p>Next comes the keyword <code>in</code>.</p>
-</li>
-<li><p>Next comes the iterator we're iterating over, and then a colon as usual to start a block.</p>
-</li>
-<li><p>Finally, the body of the loop, indented as usual.</p>
-</li>
-</ul>
-<p>The for loop will loop over each element of the iterator, applying the body of the loop to each element.</p>
-<p>Importantly, loops (for loops or while loops) don't create their own scopes. That means that they can accidentally overwrite the value of some other variable in the scope that the loop is in.  For example:</p>
+<p>Everything in Python starts counting at 0, so <code>mystring[0]</code> means "get me the first letter in the string at mystring.  You can also do ranges:</p>
 
 </div>
 </div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">letter</span> <span class="o">=</span> <span class="s2">&quot;Dear Sir or Madam:</span><span class="se">\n</span><span class="s2">I am a very good lawyer. Please give me a job.</span><span class="se">\n\n</span><span class="s2">-You.&quot;</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;letter is: &quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">letter</span><span class="p">)</span>
-
-<span class="k">for</span> <span class="n">letter</span> <span class="ow">in</span> <span class="s2">&quot;meow&quot;</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">letter</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;now, letter is: &quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">letter</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>letter is: 
-Dear Sir or Madam:
-I am a very good lawyer. Please give me a job.
-
--You.
-M
-E
-O
-W
-now, letter is: 
-w
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>A common use of for loops is to do something a specified number of times. In order to do so, we use the built-in <code>range()</code> function, which produces an iterator that starts at 0 and goes up to the number <em>before</em> the number you pass to it.  (Actually, <code>range()</code> technically isn't a function, but we'll treat it like one here. See the Python docs if you want more.)</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>0
-1
-2
-3
-4
-5
-6
-7
-8
-9
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">ruby_slipper</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;There&#39;s no place like home!&quot;</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>There&#39;s no place like home!
-There&#39;s no place like home!
-There&#39;s no place like home!
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><code>range()</code> actually takes 3 arguments, <code>start</code>, <code>stop</code>, and <code>step</code>. Start is the number to start at, and has a default value of 0.  Stop is the number to stop at. Step is the number to go by, and has a default value of 1. That means that you can do more complicated ranges by supplying values in place of those defaults.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>5
-6
-7
-8
-9
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>0
-2
-4
-6
-8
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>10
-9
-8
-7
-6
-5
-4
-3
-2
-1
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Conditions">Conditions<a class="anchor-link" href="#Conditions">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>One thing you'll often find yourself wanting to do is to test whether something is, or is not, the case, and then have your program do different actions depending on the result.  For example, suppose you wanted to know whether a number was even or odd? Here's how you'd find out.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">odd_or_even</span><span class="p">(</span><span class="n">number</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">number</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="k">return</span> <span class="s2">&quot;Zero isn&#39;t even or odd.&quot;</span>
-    <span class="k">elif</span> <span class="n">number</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="k">return</span> <span class="s2">&quot;Even!&quot;</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="k">return</span> <span class="s2">&quot;Odd!&quot;</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">odd_or_even</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Odd!
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">odd_or_even</span><span class="p">(</span><span class="mi">100</span><span class="p">))</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Even!
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">odd_or_even</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Zero isn&#39;t even or odd.
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">odd_or_even</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">))</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Odd!
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>So let's go over that.  We know what defining a function looks like already, that was the last lesson. So let's look at the body.</p>
-<p>The first line of the body can pretty much be read straight off: if the number is equal to 0, then do the thing in the indented block to follow; in this case, return a scolding about trying to pretend that 0 is even or odd.</p>
-<p>The second line in the body starts with a weird keyword, <code>elif</code> .  That's just a quirky Python shorthand for "else if".  It gives you a second alternative.  If that alternative is true, then run the code in the indented block to follow.  You can have as many <code>elif</code> statements as you want in a conditional.</p>
-<p>Incidentally, the <code>%</code> symbol is known as "modulo."  It basically means the same as the remainder in division, so what this block is asking is whether the remainder of the number divided by 2 is equal to 0 or not; if it is, then that means it's divisible by 2, i.e., even.</p>
-<p>The final line is the last alternative, which starts with the keyword <code>else</code>. That is what happens if nothing in the <code>if</code> or <code>elif</code>s above is true.</p>
-<p>Here are some things you should know about these conditionals:</p>
-<ul>
-<li>The different conditions are checked in order, and they stop after a match is found.  What that means is that changing the order can change the behavior.</li>
-</ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[14]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">broken_odd_or_even</span><span class="p">(</span><span class="n">number</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">number</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="k">return</span> <span class="s2">&quot;Even!&quot;</span>
-    <span class="k">elif</span> <span class="n">number</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="k">return</span> <span class="s2">&quot;Zero isn&#39;t even or odd.&quot;</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="k">return</span> <span class="s2">&quot;Odd!&quot;</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">broken_odd_or_even</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Even!
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>We got the wrong answer because we checked the wrong thing first. $0/2 = 0$ with no remainder, so the first condition is true, which means that it never gets to test the second condition, the conditional just resolves.</p>
-<ul>
-<li>The stuff after an <code>if</code> or an <code>elif</code> or an <code>else</code> is an expression that evaluates to a <em>boolean</em>. A boolean is just one of the special values <code>True</code> or <code>False</code>.  <code>10 % 2 == 0</code> evaluates to <code>True</code>, whereas <code>5 % 2 == 0</code> evaluates to <code>False</code></li>
-</ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[15]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="mi">10</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[15]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>True</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[16]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">==</span> <span class="mi">3</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[16]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>False</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[17]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="mi">5</span> <span class="o">&gt;</span> <span class="mi">10</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[17]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>False</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[18]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="mi">10</span> <span class="o">&gt;</span> <span class="mi">5</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[18]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>True</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="mi">10</span> <span class="o">&gt;</span> <span class="mi">10</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="s2">&quot;abcdef&quot;</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>
 </pre></div>
 
     </div>
@@ -1934,7 +1725,7 @@ There&#39;s no place like home!
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>False</pre>
+<pre>&#39;abc&#39;</pre>
 </div>
 
 </div>
@@ -1942,13 +1733,23 @@ There&#39;s no place like home!
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Like the <code>range()</code> function we looked at before, the subset notation allows us to specify a start and an end, and then it gives us from the start through <em>one before</em> the end.  So in our example above, we got the 0th, the 1st, and the 2nd letters in the string.</p>
+<p>As you noticed, the elements of the subset are separated by colons.  We can add a third <em>step</em> element, again, just like in range.</p>
+
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="mi">10</span> <span class="o">&gt;=</span> <span class="mi">10</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">mystring</span> <span class="o">=</span> <span class="s2">&quot;abcdefghij&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mystring</span><span class="p">[</span><span class="mi">3</span><span class="p">:</span><span class="mi">5</span><span class="p">])</span>
 </pre></div>
 
     </div>
@@ -1961,7 +1762,1208 @@ There&#39;s no place like home!
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[20]:</div>
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>de
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">mystring</span><span class="p">[:</span><span class="mi">5</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>abcde
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">mystring</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">:</span><span class="mi">2</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>acegi
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">mystring</span><span class="p">[</span><span class="mi">5</span><span class="p">:</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>fedcb
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">reverse_string</span><span class="p">(</span><span class="n">mystring</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">mystring</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">reverse_string</span><span class="p">(</span><span class="n">mystring</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[25]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&#39;jihgfedcba&#39;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[26]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">reverse_string</span><span class="p">(</span><span class="s2">&quot;cat&quot;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[26]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&#39;tac&#39;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Lots of legal data is in string form (think about the texts of cases!) so we'll be spending quite a bit of time thinking about strings through this course. This is just a taste.</p>
+<h2 id="Numbers-(integers-and-floats)">Numbers (integers and floats)<a class="anchor-link" href="#Numbers-(integers-and-floats)">&#182;</a></h2><p>There are actually two kinds of numbers in Python.  The simplest are integers (or ints), or whole numbers, without a decimal.  Like 1, 2, and 3.  You can do what you would normally expect with them.</p>
+<p>In earlier versions of Python, you couldn't divide two integers and get a decimal, you'd get another integer, even if they didn't divide evenly. So you'd divide 5 by 2 and get 2.  This isn't a problem in Python 3, but be careful if you end up using Python 2 somehow (not a good idea)</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[27]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="mi">5</span> <span class="o">/</span> <span class="mi">2</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[27]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>2.5</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[32]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[32]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>2</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[34]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="mi">5</span><span class="o">*</span><span class="mi">2</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[34]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>10</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[35]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="mi">5</span> <span class="o">**</span> <span class="mi">2</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[35]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>25</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[36]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="mi">2</span> <span class="o">**</span> <span class="mi">3</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[36]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>8</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[37]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">-</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[37]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>0</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[38]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="mi">2</span> <span class="o">+</span> <span class="o">-</span><span class="mi">2</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[38]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>0</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>All numbers in Python are represented in binary "under the hood."  What that means is that decimal numbers, called <em>floats</em>, aren't actually exact.  They're just approximations, because decimal floats can't be exactly represented in binary. The <a href="https://docs.python.org/3/tutorial/floatingpoint.html">Python Documentation</a> has a nice explanation of the fact, and here's an example:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[39]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">==</span> <span class="mf">0.3</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[39]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>False</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[41]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="mf">1.2</span><span class="o">-</span><span class="mf">1.0</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[41]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>0.19999999999999996</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This can actually be a problem when you're doing math, especially with small numbers, and especially repeatedly, as floating point inaccuracy can compound on itself and give freakishly wrong results.</p>
+<p>Programmers who fail to take this problem into account can kill people. Seriously: during the first Iraq war, a Patriot missile <a href="http://www-users.math.umn.edu/~arnold/disasters/patriot.html">failed to intercept an Iraqi Scud</a> because of floating point math errors, causing the death of 28 American soldiers.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The easiest fix for this is to not do anything important with floating point arithmetic.</p>
+<ul>
+<li><p>For some uses (like calculations with money) you can just use integers.  For example, instead of doing math with dollars and cents, just use cents and multiply everything by 100.</p>
+</li>
+<li><p>Most languages have <em>numerics libraries</em> to mitigate floating point problems for applications where you need accurate decimals (like stats!). In Python, we use <a href="http://www.numpy.org/">Numpy</a> for this, and later on in the course we'll give it some work to do. Most of the stats packages you'll ever see in Python are built on Numpy, and the implementers are (obviously) aware of the problems with floating point calculations, so they work around them.</p>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Ints and floats can be converted to one another, though obviously going from float to int loses data.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[42]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">float</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[42]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>1.0</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[43]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">int</span><span class="p">(</span><span class="mf">1.5</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[43]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>1</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[45]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">int</span><span class="p">(</span><span class="mf">1.9</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[45]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>1</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>As you can see, converting a float to an int just truncates it.</p>
+<p>You can also read numbers from strings.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[46]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">int</span><span class="p">(</span><span class="s2">&quot;1&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[46]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>2</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[47]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">float</span><span class="p">(</span><span class="s2">&quot;1.5&quot;</span><span class="p">)</span> <span class="o">*</span> <span class="mi">3</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[47]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>4.5</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>And you can convert floats and ints to strings.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[48]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">str</span><span class="p">(</span><span class="mf">1.5</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[48]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&#39;1.5&#39;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Other-Basic-Types">Other Basic Types<a class="anchor-link" href="#Other-Basic-Types">&#182;</a></h2><p>We've already seen the special <em>boolean</em> values <code>True</code> and <code>False</code>.  We've also seen the special value <code>None</code>, which represents nothing, and usually is seen when you assign the result of a function that doesn't return anything to a variable.</p>
+<p>As a follow-up on our conditionals lesson, this is a good time to introduce the concept of compound conditionals that evaluate to a boolean.  You can sort of represent basic logic this way, using the operators <code>and</code>, <code>or</code> and <code>not</code>. They work about how you'd expect (and, just like in math, you can use parantheses to organize compound expressions and make your intention clear.)</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[50]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">if</span> <span class="s2">&quot;cat&quot;</span> <span class="ow">and</span> <span class="s2">&quot;dog&quot;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;pet store&quot;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>pet store
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Remember how I said that values in Python can be Truthy or Falsey?  Well, it turns out that the way <a href="https://docs.python.org/3.6/library/stdtypes.html#truth-value-testing">these boolean operators</a> work is that they return the stuff that they work with, and then that's evaluated for truthiness or falsiness. They don't actually evaluate to a boolean (I lied to you a moment ago.)  So, if we look at what <code>"cat" and "dog"</code> actually returns:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[51]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="s2">&quot;cat&quot;</span> <span class="ow">and</span> <span class="s2">&quot;dog&quot;</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[51]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&#39;dog&#39;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>What happened there is that <code>and</code> tries to return the first falsey value it sees, or the last value if it doesn't see a falsey value.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[52]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="mi">0</span> <span class="ow">and</span> <span class="s2">&quot;dog&quot;</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[52]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>0</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[53]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="s2">&quot;dog&quot;</span> <span class="ow">and</span> <span class="mi">0</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[53]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>0</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[54]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="mi">0</span> <span class="ow">and</span> <span class="kc">False</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[54]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>0</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Similarly, <code>or</code> returns the first truthey value it sees, or the last value if it doesn't see any.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[55]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="s2">&quot;cat&quot;</span> <span class="ow">or</span> <span class="s2">&quot;dog&quot;</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[55]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&#39;cat&#39;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[56]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="s2">&quot;cat&quot;</span> <span class="ow">or</span> <span class="mi">0</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[56]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&#39;cat&#39;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[57]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="mi">0</span> <span class="ow">or</span> <span class="s2">&quot;cat&quot;</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[57]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&#39;cat&#39;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[58]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kc">None</span> <span class="ow">or</span> <span class="kc">False</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[58]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>False</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>not</code> is actually a bit more honest: it figures out whether the value it's applied to is truthy or falsey and then returns the opposite boolean.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[59]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="ow">not</span> <span class="mi">0</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[59]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>True</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[60]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="ow">not</span> <span class="s2">&quot;cat&quot;</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[60]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>False</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[61]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="ow">not</span> <span class="p">(</span><span class="s2">&quot;cat&quot;</span> <span class="ow">and</span> <span class="mi">0</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[61]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>True</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[62]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kc">False</span> <span class="ow">or</span> <span class="p">(</span><span class="ow">not</span> <span class="p">(</span><span class="mi">0</span> <span class="ow">or</span> <span class="kc">False</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[62]:</div>
 
 
 
@@ -1979,412 +2981,9 @@ There&#39;s no place like home!
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>You should be able to figure out the basic comparison operators for those examples. It's important to know that double equals <code>==</code> is used for comparision, while single equals <code>=</code> is used to assign something to a variable. It's a common mistake to mix them up (I still do it myself sometimes).</p>
-<ul>
-<li>In Python you can use other things to stand in for booleans in conditionals. The rules are that most values act like <code>True</code> except for <code>None</code>, <code>0</code>, <code>False</code> itself (of course), strings with no characters in them, and empty compound data structures like lists and dictionaries (which we'll talk about later).  Things that can stand in for <code>True</code> are colloquially known as "truthy", while things that stand in for <code>False</code> are known as "falsy</li>
-</ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[21]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">if</span> <span class="mi">0</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;truthy&quot;</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;falsy&quot;</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>falsy
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[22]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># I&#39;m too lazy to keep typing that, so let&#39;s stick it in a function</span>
-<span class="k">def</span> <span class="nf">truthy_or_falsy</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">value</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;truthy&quot;</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;falsy&quot;</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[23]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">truthy_or_falsy</span><span class="p">(</span><span class="s2">&quot;1&quot;</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>truthy
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[24]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">truthy_or_falsy</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>falsy
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[25]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">truthy_or_falsy</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>falsy
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[26]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">truthy_or_falsy</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>truthy
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[27]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">truthy_or_falsy</span><span class="p">(</span><span class="s2">&quot;cat&quot;</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>truthy
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[28]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">truthy_or_falsy</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>falsy
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[29]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">truthy_or_falsy</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>truthy
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[30]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">truthy_or_falsy</span><span class="p">([])</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>falsy
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li>You can omit the "else" statement in a conditional, what this just means is that if it doesn't meet a condition, it just won't do anything.  For example: </li>
-</ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[31]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">if</span> <span class="mi">0</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I&#39;m not doing anything&quot;</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[32]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">if</span> <span class="mi">0</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;please can I do something?&quot;</span><span class="p">)</span>
-<span class="k">elif</span> <span class="kc">None</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I really want to do something, but I can&#39;t!!&quot;</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Functions end their execution whenever they see a <code>return</code> statement (this is known as "sort-circuiting"), so if you have a conditional with returns in a function, then it never sees the rest of the function.</p>
-<p>A common idiom in Python is to take advantage of this last feature and just put the last alternative as a return statement outside of the conditional. For example, we could rewrite our <code>odd_or_even</code> function as follows:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[33]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">odd_or_even</span><span class="p">(</span><span class="n">number</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">number</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="k">return</span> <span class="s2">&quot;Zero isn&#39;t even or odd.&quot;</span>
-    <span class="k">elif</span> <span class="n">number</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="k">return</span> <span class="s2">&quot;Even!&quot;</span>
-    <span class="k">return</span> <span class="s2">&quot;Odd!&quot;</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>This function will work exactly the same.</p>
-<ul>
-<li><p>If it gets 0, it'll go down the first branch, return on the spot and never see the rest of the return statements.</p>
-</li>
-<li><p>If it doesn't get 0, but does get a number divisible by 2, it'll go down the second branch, and ditto.</p>
-</li>
-<li><p>If it doesn't get 0 or a number divisible by 2, it won't go down either branch of the conditional. But there's another line in the function!  And since it didn't return in the conditional, it gets to that line, which tells it to return "Odd!"</p>
-</li>
-</ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Now-you-try!">Now you try!<a class="anchor-link" href="#Now-you-try!">&#182;</a></h3><p>I'd like you to try and write a function, <code>fizzbuzz()</code>, that takes a number, and returns:</p>
-<ul>
-<li><p>"Fizz" if the number is divisible by 3 and not 5,</p>
-</li>
-<li><p>"Buzz" if the number is divisible by 5 and not 3,</p>
-</li>
-<li><p>"FizzBuzz" if the number is divisible by 5 and 3", and</p>
-</li>
-<li><p>the number itself, if it isn't divisible by 5 or 3.</p>
-</li>
-</ul>
-<p>Then I'd like you to print the result of that function for the numbers 1-100.</p>
+<p>See if you can figure out why that last expression evaluated to True.  Then figure out what this will evaluate to:</p>
+<p><code>"cat" and (not ("dog" or (not False)))</code></p>
+<p>Then give it a look and see if you're right!  This is looking all very LSAT-ey, isn't it?</p>
 
 </div>
 </div>
@@ -2420,246 +3019,11 @@ There&#39;s no place like home!
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
 </script>
-                </article>
-            </aside><!-- /#featured -->
-                <section id="content" class="body">
-                    <h1>Other articles</h1>
-                    <hr />
-                    <ol id="posts-list" class="hfeed">
 
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="https://sociologicalgobbledygook.com/simple-data-types-draft.html" rel="bookmark"
-                           title="Permalink to Simple Data Types (draft)">Simple Data Types (draft)</a></h1>
-                </header>
+    </div><!-- /.entry-content -->
 
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2018-12-21T00:00:00-06:00">
-                Published: Fri 21 December 2018
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="https://sociologicalgobbledygook.com/author/paul-gowder.html">Paul Gowder</a>
-        </address>
-<p>In <a href="https://sociologicalgobbledygook.com/category/lessons.html">Lessons</a>.</p>
-<p>tags: <a href="https://sociologicalgobbledygook.com/tag/python.html">python</a> <a href="https://sociologicalgobbledygook.com/tag/programming.html">programming</a> </p>
-</footer><!-- /.post-info -->                
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>In Python, the data you work with (like the things assigned to variables) have <em>types</em>, which specify the kinds of data they are and the things you can do with them.</p>
-<p>A good way to understand this is to think about the difference between letters and numbers. While we can write both down, there are different things we can do to them.  It wouldn't make sense (except in an algebra context) to multiply and divide letters; it would't make sense to talk about a capital and a lowercase number 3.</p>
-                <a class="readmore" href="https://sociologicalgobbledygook.com/simple-data-types-draft.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="https://sociologicalgobbledygook.com/functions-and-scope.html" rel="bookmark"
-                           title="Permalink to Functions and Scope">Functions and Scope</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2018-12-20T00:00:00-06:00">
-                Published: Thu 20 December 2018
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="https://sociologicalgobbledygook.com/author/paul-gowder.html">Paul Gowder</a>
-        </address>
-<p>In <a href="https://sociologicalgobbledygook.com/category/lessons.html">Lessons</a>.</p>
-<p>tags: <a href="https://sociologicalgobbledygook.com/tag/python.html">python</a> <a href="https://sociologicalgobbledygook.com/tag/programming.html">programming</a> </p>
-</footer><!-- /.post-info -->                
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Recall how in the first Python lesson we looked at the <code>while</code> loop and saw how it allows us to repeat instructions to the computer as many times as you want.</p>
-<p>The next step up from a loop is a function, which allows us to wrap up a series of commands into a single command on its own. Let's take a look at an example.</p>
-                <a class="readmore" href="https://sociologicalgobbledygook.com/functions-and-scope.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="https://sociologicalgobbledygook.com/p-values-and-bayes-rule-draft.html" rel="bookmark"
-                           title="Permalink to P-Values and Bayes Rule (draft)">P-Values and Bayes Rule (draft)</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2018-12-10T00:00:00-06:00">
-                Published: Mon 10 December 2018
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="https://sociologicalgobbledygook.com/author/paul-gowder.html">Paul Gowder</a>
-        </address>
-<p>In <a href="https://sociologicalgobbledygook.com/category/lessons.html">Lessons</a>.</p>
-<p>tags: <a href="https://sociologicalgobbledygook.com/tag/statistics.html">statistics</a> <a href="https://sociologicalgobbledygook.com/tag/conceptual.html">conceptual</a> </p>
-</footer><!-- /.post-info -->                <p>Recall from the previous lesson what a p-value is: it’s the probability of observing a value of your statistic as extreme (as far away from the null hypothesis statistic) as you in fact observed, if the null hypothesis were true.  </p>
-<p>In other words, if you’re doing a (two-sided …</p>
-                <a class="readmore" href="https://sociologicalgobbledygook.com/p-values-and-bayes-rule-draft.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="https://sociologicalgobbledygook.com/hypothesis-testing-conceptual-introduction-draft.html" rel="bookmark"
-                           title="Permalink to Hypothesis Testing: Conceptual Introduction (draft)">Hypothesis Testing: Conceptual Introduction (draft)</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2018-12-09T00:00:00-06:00">
-                Published: Sun 09 December 2018
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="https://sociologicalgobbledygook.com/author/paul-gowder.html">Paul Gowder</a>
-        </address>
-<p>In <a href="https://sociologicalgobbledygook.com/category/lessons.html">Lessons</a>.</p>
-<p>tags: <a href="https://sociologicalgobbledygook.com/tag/statistics.html">statistics</a> <a href="https://sociologicalgobbledygook.com/tag/conceptual.html">conceptual</a> </p>
-</footer><!-- /.post-info -->                <p>Now that we understand distributions and the central limit theorem, we’re in a good position to make sense of the notion of a hypothesis test. It’s actually very simple. </p>
-<p>Suppose you do an experiment. Let’s say you want to find out whether a company is engaging in …</p>
-                <a class="readmore" href="https://sociologicalgobbledygook.com/hypothesis-testing-conceptual-introduction-draft.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="https://sociologicalgobbledygook.com/lesson-22-the-basics-of-probability.html" rel="bookmark"
-                           title="Permalink to Lesson 2.2 The Basics of Probability">Lesson 2.2 The Basics of Probability</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2018-12-08T00:00:00-06:00">
-                Published: Sat 08 December 2018
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="https://sociologicalgobbledygook.com/author/paul-gowder.html">Paul Gowder</a>
-        </address>
-<p>In <a href="https://sociologicalgobbledygook.com/category/lessons.html">Lessons</a>.</p>
-<p>tags: <a href="https://sociologicalgobbledygook.com/tag/statistics.html">statistics</a> <a href="https://sociologicalgobbledygook.com/tag/week2.html">week2</a> <a href="https://sociologicalgobbledygook.com/tag/probability.html">probability</a> </p>
-</footer><!-- /.post-info -->                <h2>What is Probability?</h2>
-<p>Probability is the mathematical representation of the likelihood of an event under a given set of circumstances (conditions) in a given period of time. We will say, for example, that the probability of winning the jackpot in the lottery from buying one ticket this week is some …</p>
-                <a class="readmore" href="https://sociologicalgobbledygook.com/lesson-22-the-basics-of-probability.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="https://sociologicalgobbledygook.com/getting-data-from-the-internet-with-python.html" rel="bookmark"
-                           title="Permalink to Getting Data from the Internet With Python">Getting Data from the Internet With Python</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2018-12-06T00:00:00-06:00">
-                Published: Thu 06 December 2018
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="https://sociologicalgobbledygook.com/author/paul-gowder.html">Paul Gowder</a>
-        </address>
-<p>In <a href="https://sociologicalgobbledygook.com/category/lessons.html">Lessons</a>.</p>
-<p>tags: <a href="https://sociologicalgobbledygook.com/tag/python.html">python</a> <a href="https://sociologicalgobbledygook.com/tag/code.html">code</a> <a href="https://sociologicalgobbledygook.com/tag/networking.html">networking</a> <a href="https://sociologicalgobbledygook.com/tag/internet.html">internet</a> </p>
-</footer><!-- /.post-info -->                <p>In addition to reading files locally, you can also read them over the internet. </p>
-<p>When you use a web browser like Chrome to go to a URL ("uniform resource locator," or web address) like https://sociologicalgobbledygook.com, what you're actually doing is sending a request using the HTTPS protocol (which …</p>
-                <a class="readmore" href="https://sociologicalgobbledygook.com/getting-data-from-the-internet-with-python.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="https://sociologicalgobbledygook.com/introduction-to-distributions.html" rel="bookmark"
-                           title="Permalink to Introduction to Distributions">Introduction to Distributions</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2018-12-03T00:00:00-06:00">
-                Published: Mon 03 December 2018
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="https://sociologicalgobbledygook.com/author/paul-gowder.html">Paul Gowder</a>
-        </address>
-<p>In <a href="https://sociologicalgobbledygook.com/category/lessons.html">Lessons</a>.</p>
-<p>tags: <a href="https://sociologicalgobbledygook.com/tag/distributions.html">distributions</a> <a href="https://sociologicalgobbledygook.com/tag/statistics.html">statistics</a> </p>
-</footer><!-- /.post-info -->                
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="What's-a-Distribution,-Anyway?">What's a Distribution, Anyway?<a class="anchor-link" href="#What's-a-Distribution,-Anyway?">&#182;</a></h2><p>Statistics people often talk about distributions, like a normal distribution. Here's what they mean: suppose you could see all of the instances of the thing you're trying to study. What kind of pattern would their values have? That's the distribution.</p>
-<p>For example, suppose you expect that most of the values of the thing you care about will be clustered around some average value. IQ is a good example: most IQs in the population are around 100, and then as values get further away from 100 in either direction, the fraction of the total number of instances that takes that range of values gets smaller. There are lots of folks with an IQ between 85 and 115, fewer between 70 and 85 on one side, and 115 and 130, many fewer between 55 and 70 or 130 and 145, and a (proportionally) truly tiny number between 40-55 or 145-160.</p>
-                <a class="readmore" href="https://sociologicalgobbledygook.com/introduction-to-distributions.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="https://sociologicalgobbledygook.com/the-normal-distribution-and-the-central-limit-theorem.html" rel="bookmark"
-                           title="Permalink to The Normal Distribution and the Central Limit Theorem">The Normal Distribution and the Central Limit Theorem</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2018-12-03T00:00:00-06:00">
-                Published: Mon 03 December 2018
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="https://sociologicalgobbledygook.com/author/paul-gowder.html">Paul Gowder</a>
-        </address>
-<p>In <a href="https://sociologicalgobbledygook.com/category/lessons.html">Lessons</a>.</p>
-<p>tags: <a href="https://sociologicalgobbledygook.com/tag/distributions.html">distributions</a> <a href="https://sociologicalgobbledygook.com/tag/statistics.html">statistics</a> </p>
-</footer><!-- /.post-info -->                
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The main reason scientists like the normal distribution so much is because of a little thing called the <strong>central limit theorem (CLT)</strong>.</p>
-<p>I'm not going to walk you through a tedious proof of the CLT; instead, we'll just look at some graphs and talk about some intuition.</p>
-<p>The core idea of the CLT is this: imagine there is a quantity of interest out there in the world, and it is distributed according to any arbitrary distribution, and you want to know the mean. For example, suppose you are interested in knowing the average income in the United States. We known, empirically, that incomes tend to be distributed according to a lognormal distribution.</p>
-                <a class="readmore" href="https://sociologicalgobbledygook.com/the-normal-distribution-and-the-central-limit-theorem.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="https://sociologicalgobbledygook.com/files-and-how-computers-represent-data.html" rel="bookmark"
-                           title="Permalink to Files and How Computers Represent Data">Files and How Computers Represent Data</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2018-11-30T00:00:00-06:00">
-                Published: Fri 30 November 2018
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="https://sociologicalgobbledygook.com/author/paul-gowder.html">Paul Gowder</a>
-        </address>
-<p>In <a href="https://sociologicalgobbledygook.com/category/lessons.html">Lessons</a>.</p>
-<p>tags: <a href="https://sociologicalgobbledygook.com/tag/python.html">python</a> <a href="https://sociologicalgobbledygook.com/tag/programming.html">programming</a> </p>
-</footer><!-- /.post-info -->                
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>In this lesson, we're going to learn how to open files and work with data from the disk. We'll start with the mechanical process of opening text files, and then move on to learn a little bit more about different kinds of data you'll see.</p>
-<p>Here's the basic method of opening and reading text files. Suppose I have a file called hello.txt in my working directory.  (Your working directory is the directory you run Python from on your hard drive.  For those of you using Azure Notebooks, this should be your library, but talk to me if you see a file there and can't read it from Python.)</p>
-                <a class="readmore" href="https://sociologicalgobbledygook.com/files-and-how-computers-represent-data.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-                </ol><!-- /#posts-list -->
-<p class="paginator">
-    Page 1 / 2
-        <a href="https://sociologicalgobbledygook.com/category/lessons2.html">&raquo;</a>
-</p>
-                </section><!-- /#content -->
+  </article>
+</section>
         <section id="extras" class="body">
                 <div class="blogroll">
                         <h2>links</h2>
