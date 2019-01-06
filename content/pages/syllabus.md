@@ -165,7 +165,7 @@ Coverage: using Python to get access to other people's code, libraries. Accessin
 
 Between week 1 and week 2, go through chapters 1-3 of DataCamp's [Introduction to Python](https://www.datacamp.com/courses/intro-to-python-for-data-science) course. You don't need to do chapter 4 (about the Numpy library) right now, though you can if you want to. Also read pg. 56-126 of Python for Everybody.  
 
-For **Monday**, read [Libraries]({filename}../Lessons/libraries.md) [Errors]({filename}../Lessons/errors.ipynb) on this site.  
+For **Monday**, read [Libraries]({filename}../Lessons/libraries.md) and [Errors]({filename}../Lessons/errors.ipynb) on this site.  
 
 For **Tuesday** read [Files and Strings]({filename}../Lessons/files-and-strings.ipynb) and [Network Requests]({filename}../Lessons/network_requests.md) on this site. 
 
