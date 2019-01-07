@@ -1,5 +1,5 @@
 title: Syllabus
-
+save_as: index.html
 
 # Introduction to Quantitative & Computational Legal Reasoning  (LAW:8645)
 
