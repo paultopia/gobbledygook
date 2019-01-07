@@ -194,7 +194,7 @@ Watch: Peter Donnelly's TED talk [How Statistics Fools Juries](https://www.ted.c
 
 Initial explorations into data with data visualization in Python. Basic properties of data, measures of central tendency, exploratory data analysis.
 
-Read: [Introduction to stats]({filename}../Lessons/intro-stats.md), [Exploring data]({filename}../Lessons/exploratory-intro.ipynb)
+Read: [Introduction to stats]({filename}../Lessons/intro-stats.md), [Exploring data]({filename}../Lessons/exploratory_intro.ipynb)
 
 ### Week 6
 
