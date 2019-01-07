@@ -192,6 +192,8 @@ Initial explorations into data with data visualization in Python. Basic properti
 
 Probability distributions, central limit theorem, hypothesis testing. 
 
+Read these two excellent blog posts by a Google data scientist: [Statistics for People in a Hurry](https://towardsdatascience.com/statistics-for-people-in-a-hurry-a9613c0ed0b) and [Never Start With a Hypothesis](https://towardsdatascience.com/hypothesis-testing-decoded-for-movers-and-shakers-bfc2bc34da41) (In addition to the other reading which will be added in a bit.)
+
 Problem set 2 due.
 
 ### Week 7
@@ -202,7 +204,7 @@ Focused legal application: audit tests in discrimination cases.
 
 ### Week 8
 
-P-values, p-hacking, publication bias, the replication crisis in psychology, and other terrible pitfalls of scientific research.  
+P-values, p-hacking, publication bias, the replication crisis in psychology, power and underpoweredness, multiple comparisons, and other terrible pitfalls of scientific research.  
 
 Discussion: what are the legal implications of scientific failures?
 
