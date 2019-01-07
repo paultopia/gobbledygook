@@ -72,9 +72,7 @@ This course is structured as a "flipped class": there won't be many (or possibly
 
 Please bring a computer to every class. Mac, Linux, or Windows computers will work best. Chromebooks and tablets will work less well, though we can get them to work if need be. 
 
-The coverage, pace, and workload in this class will be a continuing work in progress. Because this class isn't taught a lot in law schools, there is not much collective wisdom on how to do it successfully, and I expect to have to adapt the assignments and the pace to accommodate how readily the class takes to the material. So don't expect the assignments at the bottom of this document to be stable. They will change. Possibly lots. 
-
-After the first couple of weeks, I will also begin to give you a bit more rope in terms of your use of out-of-class assignments: often, I'll assign overlapping readings/exercises (like something I've written, plus something in one of our texts, plus some videos online, which cover the same material). Everything I assign from  sociologicalgobbledygook.com will be mandatory, but you will be able to treat some of the overlapping material as optional, to use or not use depending on how you, individually, best learn. However, please don't start doing that until we get a few weeks in; the repetition will be particularly beneficial in the beginning of the course, when we're learning programming. 
+The coverage, pace, and workload in this class will be a continuing work in progress. Because this class isn't taught a lot in law schools, there is not much collective wisdom on how to do it successfully, and I expect to have to adapt the assignments and the pace to accommodate how readily the class takes to the material. So don't expect the assignments at the bottom of this document to be stable. They will change. Possibly lots. I haven't even written the assignments beyond a few weeks out, because I expect that they'd need to be radically changed. In other words, **this course is experimental**---I'll do my best to make it worth your while, but I disclaim all warranties about how well it will work this first time around. 
 
 ### Class Platforms
 
@@ -88,7 +86,7 @@ The nature of this class is such that we will not be able to limit ourselves jus
 
 I'll walk you through getting access to these resources on the first day of class.
 
-In addition, every session will be recorded on Panopto and available on ICON; we'll also use ICON to administer some quizzes (probably), turn in assignments, and distribute materials which (for copyright reasons, etc.) we're not allowed to distribute outside of the class. 
+In addition, every session will be recorded on Panopto and available on ICON; we'll also use ICON to administer some quizzes (probably), turn in assignments, and distribute materials which (for copyright reasons, etc.) we're not allowed to distribute outside of the class. Also, you will use the discussion feature of ICON to share information and ask questions out of class.
 
 This class is intended in part to produce resources which will be available to the legal profession at large in order to help your fellow lawyers understand code and stats as well; accordingly, many of the reading assignments will be to lessons posted on this website at sociologicalgobbledygook.com. Those assignments will also be available on the course GitHub repository; you will find it useful to get the assignments there in order to execute and mess around with the code yourself. 
 
@@ -121,7 +119,9 @@ Also, please contact me or the dean of students as soon as humanly possible if y
 
 ## Office Hours, Contacts, etc.
 
-I will maintain office hours (**TBD: Add this.**). I'm also happy to make appointments at other times, and you're always free to drop by when my door is open. I'm very good at replying to e-mail and very bad at checking telephone messages.
+I will maintain office hours Mon., Tue. 10-30am to noon, and 2:30-3:30pm. I'm also happy to make appointments at other times, and you're always free to drop by when my door is open. I'm very good at replying to e-mail and very bad at checking telephone messages.
+
+That being said, I **very strongly encourage you to ask substantive questions in a way that will be accessible to your fellow students**.  This means using the copious time that will be made available in class time for that purpose, as well as making use of the discussion forum on ICON (in which I will very actively participate).  If you have a question, it's almost certainly the case that several other people do too.
 
 ## Some schedule notes
 
@@ -144,7 +144,9 @@ By the end of the course, you should be able to:
 
 ## Coverage by Week
 
-The first few weeks will be spent on computation; subsequent weeks will be spent on data analysis and statistics. 
+The first few weeks will be spent on computation; subsequent weeks will be spent on data analysis and statistics. As we get further into the future, the below becomes more subject to change, obviously. 
+
+I fully expect that we won't get to the material in the last few weeks, unless we somehow move at rocket speed. They're more aspirational topics. Everything past week 3 will probably be shuffled around several times as I see how fast the class progresses.
 
 ### Week 1 
 
@@ -156,7 +158,7 @@ In the first day of class, we will get everyone set up with the different servic
 
 On Monday evening, read clone the course Github and complete the exercise at the end of the first Python lesson notebook (factorial); you don't need to turn it in, but let me know if you can't complete it; we'll look at people's solutions on Tuesday and use this as our test to make sure everyone is set up and functional.
 
-For **Tuesday**, read the [functions and scope]({filename}../Lessons/functions.ipynb), [more loops and control flow]({filename}../Lessons/control_flow.ipynb), [simple data types]({filename}../Lessons/simple_data_types.ipynb), and [complex data types]({filename}../Lessons/complex_data_types.ipynb)  lessons on this site. Also read the Software Carpentry lessons on [functions](http://swcarpentry.github.io/python-novice-inflammation/06-func/index.html) and [making choices](http://swcarpentry.github.io/python-novice-inflammation/05-cond/index.html). [Python for everybody TBD].
+For **Tuesday**, read the [functions and scope]({filename}../Lessons/functions.ipynb), [more loops and control flow]({filename}../Lessons/control_flow.ipynb), [simple data types]({filename}../Lessons/simple_data_types.ipynb), and [complex data types]({filename}../Lessons/complex_data_types.ipynb)  lessons on this site. Also read the Software Carpentry lessons on [functions](http://swcarpentry.github.io/python-novice-inflammation/06-func/index.html) and [making choices](http://swcarpentry.github.io/python-novice-inflammation/05-cond/index.html).
 
 
 ### Week 2
@@ -165,11 +167,73 @@ Coverage: using Python to get access to other people's code, libraries. Accessin
 
 Between week 1 and week 2, go through chapters 1-3 of DataCamp's [Introduction to Python](https://www.datacamp.com/courses/intro-to-python-for-data-science) course. You don't need to do chapter 4 (about the Numpy library) right now, though you can if you want to. Also read pg. 56-126 of Python for Everybody.  
 
-For **Monday**, read [Libraries]({filename}../Lessons/libraries.md) and [Errors]({filename}../Lessons/errors.ipynb) on this site.  
-
-For **Tuesday** read [Files and Strings]({filename}../Lessons/files-and-strings.ipynb) and [Network Requests]({filename}../Lessons/network_requests.md) on this site. 
+Monday is a holiday (MLK day).  For **Tuesday**, read [Libraries]({filename}../Lessons/libraries.md), [Errors]({filename}../Lessons/errors.ipynb), [Files and Strings]({filename}../Lessons/files-and-strings.ipynb) and [Network Requests]({filename}../Lessons/network_requests.md) on this site. 
 
 
 ### Week 3
 
 Coverage: Regular expressions. Simulation and why you might want to do it. A very light introduction to object-oriented programming. Initial explorations into legal data.
+
+(Reading TBD)
+
+Problem set 1 due.
+
+### Week 4
+
+Basic probability math. Bayes rule and conditional probability.
+
+Focused legal application: probabilistic causation in torts.
+
+### Week 5
+
+Initial explorations into data with data visualization in Python. Basic properties of data, measures of central tendency, exploratory data analysis
+
+### Week 6
+
+Probability distributions, central limit theorem, hypothesis testing. 
+
+Problem set 2 due.
+
+### Week 7
+
+Experiments, random assignment.  Causation and correlation.
+
+Focused legal application: audit tests in discrimination cases.
+
+### Week 8
+
+P-values, p-hacking, publication bias, the replication crisis in psychology, and other terrible pitfalls of scientific research.  
+
+Discussion: what are the legal implications of scientific failures?
+
+### Week 9
+
+Regression analysis. Linear regression
+
+Focused legal application: statistical evidence of discrimination.
+
+### Week 10
+
+How regression analysis can go horribly wrong.  Assumptions of regression.  Failures of regression assumptions. Simpson's paradox.
+
+Problem set 3 due.
+
+### Week 11
+
+Focus week: re-analyze real-life data. Critique expert witness reports and/or statistical findings in research. 
+
+### Week 12
+
+Research design, alternatives to regression (like logistic regression), practicalities of good research
+
+### Week 13
+
+Machine learning: what is it that fancy data science people actually do with their time?  Prediction vs inference and statistical epistemology.
+
+### Week 14
+
+Algorithmic accountability. Discrimination by computer, and legal implications of statistical discrimination (intentional racial profiling and unintentional racial profiling).  Natural language processing, if time permits. 
+
+### Final exam period
+
+Problem set 4 due (no standard final exam). 
