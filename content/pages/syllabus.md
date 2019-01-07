@@ -15,6 +15,8 @@ This course will review basic principles of probability, statistics, and computa
 
 This course is not advised for students with substantial statistical or computational backgrounds---it is designed as a beginner course. Nor will it prepare students to be competent empirical researchers or computer programmers---the goal is to give students the capacity to critically evaluate and understand statistical reasoning, and to use computational methods to do so (as well as in their legal practices more generally). Focus will be on breadth rather than depth, as well as legal applications.
 
+Introduction to Quantitative and Computational Legal Reasoning is experimental. This syllabus is not a contract; I reserve the right to make radical changes in how the course operates throughout the semester, depending on how student learning progresses.
+
 ## Course Materials
 
 - Course website: [https://sociologicalgobbledygook.com/](https://sociologicalgobbledygook.com/) 
@@ -93,7 +95,7 @@ This class is intended in part to produce resources which will be available to t
 
 ## Evaluation
 
-Evaluation will be primarily based on four problem sets. The first two will be computer programming-based, and will be worth 17.5% of the grade each; the last two will be probability and statistics based and will be worth 27.5% of the grade each.  
+Evaluation will be primarily based on four problem sets. The first two will be computer programming-based, and will be worth 17.5% of the grade each. The third will be probability and statistics based and will be worth 25% of the grade.  The fourth will be comprehensive, with emphasis on the statistics side, and will be worth 30% of the grade.
 
 The weird fractions are to accommodate 10% of the grade which will be based on classroom participation and preparation, and which is meant to enforce the flipped classroom format. Students who get full credit for that 10% will complete the simple out-of-class tasks which I will periodically assign, pass the easy in-class pop-quizzes which I will periodically announce, and participate in good faith in collective problem-solving in the classroom. (This is an effort-based 10%, not a performance-based 10%.) 
 
@@ -107,7 +109,7 @@ Problem sets should be your own work. You are allowed to discuss the general app
 
 For example: "I solved that problem by writing a loop over the list of cases" is acceptable. "Look at this code I wrote" is not. 
 
-Students will be asked to agree to an honor code on the first day of class.
+Students will be asked to agree to an honor code.
 
 Collaboration on in-class tasks and on homework assignments that are not one of the official problem sets is highly encouraged and probably necessary. 
 
@@ -144,7 +146,7 @@ By the end of the course, you should be able to:
 
 ## Coverage by Week
 
-The first few weeks will be spent on computation; subsequent weeks will be spent on data analysis and statistics. As we get further into the future, the below becomes more subject to change, obviously. 
+The first few weeks will be spent on computation; subsequent weeks will be spent on data analysis and statistics. As we get further into the future, the below becomes more subject to change, obviously. (From week 3 onward, reading is still being added.)
 
 I fully expect that we won't get to the material in the last few weeks, unless we somehow move at rocket speed. They're more aspirational topics. Everything past week 3 will probably be shuffled around several times as I see how fast the class progresses.
 
@@ -184,17 +186,26 @@ Basic probability math. Bayes rule and conditional probability.
 
 Focused legal application: probabilistic causation in torts.
 
+Read: the [Arbital Guide to Bayes Rule](https://arbital.com/p/bayes_rule/?l=1zq) (start at the basic version and move up from there as you desire), [the Probability lesson]({filename}../lessons/probability.md) on this site.
+
+Watch: Peter Donnelly's TED talk [How Statistics Fools Juries](https://www.ted.com/talks/peter_donnelly_shows_how_stats_fool_juries)
+
 ### Week 5
 
-Initial explorations into data with data visualization in Python. Basic properties of data, measures of central tendency, exploratory data analysis
+Initial explorations into data with data visualization in Python. Basic properties of data, measures of central tendency, exploratory data analysis.
+
+Read: [Introduction to stats]({filename}../lessons/intro-stats.md), [Exploring data]({filename}../lessons/exploratory-intro.ipynb)
 
 ### Week 6
 
 Probability distributions, central limit theorem, hypothesis testing. 
 
-Read these two excellent blog posts by a Google data scientist: [Statistics for People in a Hurry](https://towardsdatascience.com/statistics-for-people-in-a-hurry-a9613c0ed0b) and [Never Start With a Hypothesis](https://towardsdatascience.com/hypothesis-testing-decoded-for-movers-and-shakers-bfc2bc34da41) (In addition to the other reading which will be added in a bit.)
+Read: [Distributions]({filename}../lessons/distributions.ipynb), [The Normal Distribtion]({filename}../lessons/normal_clt.ipynb), and [Hypothesis Testing]({filename}../lessons/hypothesis-testing-intro.md).
+
+Also read these two excellent blog posts by a Google data scientist: [Statistics for People in a Hurry](https://towardsdatascience.com/statistics-for-people-in-a-hurry-a9613c0ed0b) and [Never Start With a Hypothesis](https://towardsdatascience.com/hypothesis-testing-decoded-for-movers-and-shakers-bfc2bc34da41).
 
 Problem set 2 due.
+
 
 ### Week 7
 
@@ -205,6 +216,8 @@ Focused legal application: audit tests in discrimination cases.
 ### Week 8
 
 P-values, p-hacking, publication bias, the replication crisis in psychology, power and underpoweredness, multiple comparisons, and other terrible pitfalls of scientific research.  
+
+Read: [P-Values and Bayes Rule]({filename}../lessons/pvals2.md), Peter Norvig's blog post [Warning Signs in Experimental Design and Interpretation](http://norvig.com/experiment-design.html). 
 
 Discussion: what are the legal implications of scientific failures?
 
