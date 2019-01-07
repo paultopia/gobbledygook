@@ -186,7 +186,7 @@ Basic probability math. Bayes rule and conditional probability.
 
 Focused legal application: probabilistic causation in torts.
 
-Read: the [Arbital Guide to Bayes Rule](https://arbital.com/p/bayes_rule/?l=1zq) (start at the basic version and move up from there as you desire), [the Probability lesson]({filename}../lessons/probability.md) on this site.
+Read: the [Arbital Guide to Bayes Rule](https://arbital.com/p/bayes_rule/?l=1zq) (start at the basic version and move up from there as you desire), [the Probability lesson]({filename}../Lessons/probability.md) on this site.
 
 Watch: Peter Donnelly's TED talk [How Statistics Fools Juries](https://www.ted.com/talks/peter_donnelly_shows_how_stats_fool_juries)
 
@@ -194,13 +194,13 @@ Watch: Peter Donnelly's TED talk [How Statistics Fools Juries](https://www.ted.c
 
 Initial explorations into data with data visualization in Python. Basic properties of data, measures of central tendency, exploratory data analysis.
 
-Read: [Introduction to stats]({filename}../lessons/intro-stats.md), [Exploring data]({filename}../lessons/exploratory-intro.ipynb)
+Read: [Introduction to stats]({filename}../Lessons/intro-stats.md), [Exploring data]({filename}../Lessons/exploratory-intro.ipynb)
 
 ### Week 6
 
 Probability distributions, central limit theorem, hypothesis testing. 
 
-Read: [Distributions]({filename}../lessons/distributions.ipynb), [The Normal Distribtion]({filename}../lessons/normal_clt.ipynb), and [Hypothesis Testing]({filename}../lessons/hypothesis-testing-intro.md).
+Read: [Distributions]({filename}../Lessons/distributions.ipynb), [The Normal Distribtion]({filename}../Lessons/normal_clt.ipynb), and [Hypothesis Testing]({filename}../Lessons/hypothesis-testing-intro.md).
 
 Also read these two excellent blog posts by a Google data scientist: [Statistics for People in a Hurry](https://towardsdatascience.com/statistics-for-people-in-a-hurry-a9613c0ed0b) and [Never Start With a Hypothesis](https://towardsdatascience.com/hypothesis-testing-decoded-for-movers-and-shakers-bfc2bc34da41).
 
@@ -217,7 +217,7 @@ Focused legal application: audit tests in discrimination cases.
 
 P-values, p-hacking, publication bias, the replication crisis in psychology, power and underpoweredness, multiple comparisons, and other terrible pitfalls of scientific research.  
 
-Read: [P-Values and Bayes Rule]({filename}../lessons/pvals2.md), Peter Norvig's blog post [Warning Signs in Experimental Design and Interpretation](http://norvig.com/experiment-design.html). 
+Read: [P-Values and Bayes Rule]({filename}../Lessons/pvals2.md), Peter Norvig's blog post [Warning Signs in Experimental Design and Interpretation](http://norvig.com/experiment-design.html). 
 
 Discussion: what are the legal implications of scientific failures?
 
