@@ -51,6 +51,22 @@ $$P(TypeIError) = P(NullHypothesis|DataSeen)$$
 
 By now, you should know that you can’t flip conditional probabilities around like that. Yet this is an incredibly common mistake--even actual statistics teachers sometimes slip up and say that the p-value is the probability of making a Type I error.  It isn’t!  Never say this! Never think this! Never respect anyone who does say or think it!
 
+Here's an intuitive way of thinking about the problem. A statistically significant p-value means "if the null hypothesis were true, it would be unlikely that I'd have seen a sample that looks like that." There are some [328 million](https://www.census.gov/popclock/) U.S. citizens, and 535 members of Congress. So, if you randomly sample 100 Americans without replacement, it's really unlikely that they're all going to be members of Congress.  
+
+How unlikely? Well, we'll want the number of possible samples of 100 members of Congress, divided by the number of possible 100-person samples: that's ${535\choose 100)$ divided by ${328,000,000\choose 100)$ which is... a lot. Let's not try and do this by hand, eh?  (The parens mean, e.g., "535 choose 100"---see [this explanation](https://math.stackexchange.com/questions/1688391/probability-of-picking-4-red-balls) of the general process of reasoning here. Here's the [Python function](https://docs.scipy.org/doc/scipy/reference/generated/scipy.special.comb.html#scipy.special.comb) we're going to use.). This produces a probability so small that we have to use a fancy arbitrary precision math library called `mpmath` to get it to actually do the division. 
+
+```
+from scipy.special import comb 
+import mpmath 
+numerator = mpmath.mpf(comb(535, 100, exact=True)) 
+denominator = mpmath.mpf(comb(328000000, 100, exact=True)) 
+numerator/denominator
+```
+
+And we get `9.0061113088164994e-584` which, in real human speak, is .9 with 584 zeroes between the decimal point and the 9... that is, significantly less likely than picking a particular atom in randomly sampling from every atom in the known universe. 
+
+So if I'm sampling Americans, it's vanishingly unlikely that that I get a sample with 100 members of Congress. $P(Draw100Congress|Draw100Americans)$ is that tiny number up above.  But it obviously does not follow that $P(Draw100Americans|Draw100Congress)$ is small. Indeed that second probability statement is 1, or damn close to it (even though the Constitution requires members of Congress be citizens, you might imagine some incredibly unlikely event like someone getting elected to Congress after successfully deceiving the public about his/her citizenship status). In other words, I *absolutely cannot* infer from the unlikelihood of getting all members of Congress in my sample of Americans that it is unlikely that I had sampled Americans, given that I saw all members of Congress (Incidentally, I adapted this example from Cohen, 1994, [The Earth is Round (p<.05)](http://psycnet.apa.org/doiLanding?doi=10.1037%2F0003-066X.49.12.997), who in turn adapted it from Pollard & Richardson, 1987, ["On the Probability of Making Type I Errors"](http://psycnet.apa.org/record/1987-30223-001).)  
+
 Here’s why this matters. In reality, many, many studies with a "statistically significant" p-value are likely to nonetheless be Type I errors. The reason is because the actual probability of a Type I error depends on the prior likelihood that the null hypothesis was false in the first place, as well as on how likely it is that you'd see your data (in other words, on the base rate). Let’s flesh this out some more with Bayes Rule. Remember it? 
 
 $$P(B|A) = \frac{P(A|B) \cdot P(B)}{P(A)}$$
@@ -65,7 +81,9 @@ Second, you’d need to have some idea of the base rate of the data you observed
 
 $$P(DataSeen) = P(DataSeen|NullHypothesis) \cdot P(NullHypothesis) + \\P(DataSeen|AlternativeHypothesis) \cdot P(AlternativeHypothesis)$$
 
-How can that value be low? Well, one important way is that $P(DataSeen|AlternativeHypothesis)$ could be low. In other words: sure, it might be that it’s really unlikely that you’d see the data you saw if your null hypothesis were true. But what if it’s *even more unlikely* that you’d see the data you saw if your alternative hypothesis were true! (A low p-value means that the data you saw would come up pretty rarely in that null distribution.  But what if it would come up even more rarely in every other plausible distribution?)
+How can that value be low? Well, one important way is that $P(DataSeen|AlternativeHypothesis)$ could be low. In other words: sure, it might be that it’s really unlikely that you’d see the data you saw if your null hypothesis were true. But what if it’s *even more unlikely* that you’d see the data you saw if your alternative hypothesis were true?! A low p-value means that the data you saw would come up pretty rarely in that null distribution.  But what if it would come up even more rarely in every other plausible distribution? This is the lesson of our Congress example: $P(Draw100Congress|Draw100Foreigners)$ is much smaller even than the tiny number we got for $P(Draw100Congress|Draw100Americans)$.
+
+What this suggests is that the construction of the hypotheses really matter. Let's return to the Congress example. Suppose my null hypothesis was "this sample was constructed from the general population of Americans," and the alternative hypothesis was "this sample was constructed from the population of people found in the U.S. Capitol on the day of the State of the Union Address." Well, now, it seems like maybe the composition of our sample tells us something useful.  Because $P(Draw100Congress|Draw100FromCapitol)$ is probably pretty big, relatively speaking.
 
 Here’s what this all comes down to: 
 
