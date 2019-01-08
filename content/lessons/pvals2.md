@@ -114,3 +114,5 @@ Further readings, if you’d like to learn more:
 - 538 blog post [complaining that nobody can explain p-values comprehensibly](https://fivethirtyeight.com/features/not-even-scientists-can-easily-explain-p-values/). (Mostly included because the best explanation the 538 blogger could find was from Stuart Buck... who is not only a lawyer, he was actually my law school classmate. Lawyers can understand this stuff!) 
 
 - John Ioannidis, "[Why Most Published Research Findings are False](https://journals.plos.org/plosmedicine/article?id=10.1371/journal.pmed.0020124)" (sort of a more complicated and less clear version of the Perry Wilson blog post above).
+
+- David Papineau, "[Thomas Bayes and the Crisis in Science](https://www.the-tls.co.uk/articles/public/thomas-bayes-science-crisis/)", Times Literary Supplement.
