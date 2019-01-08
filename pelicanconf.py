@@ -14,6 +14,8 @@ IPYNB_USE_METACELL = True
 
 THEME = 'notmyidea-mod'
 
+MATH_JAX={"mathjax_font": "typewriter", 'color':'blue','align':"left"}
+
 PATH = 'content'
 
 TIMEZONE = 'America/Chicago'

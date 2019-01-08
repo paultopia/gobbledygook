@@ -56,6 +56,18 @@
 <p>But what you'd really like to know is the probability of making a Type I error--the probability of making a mistake and declaring that you’ve discovered something that isn’t. Unfortunately, that can be rephrased as <strong>the probability of the null hypothesis being true, conditional on seeing your data!</strong>  In symbols: </p>
 <div class="math">$$P(TypeIError) = P(NullHypothesis|DataSeen)$$</div>
 <p>By now, you should know that you can’t flip conditional probabilities around like that. Yet this is an incredibly common mistake--even actual statistics teachers sometimes slip up and say that the p-value is the probability of making a Type I error.  It isn’t!  Never say this! Never think this! Never respect anyone who does say or think it!</p>
+<p>Here's an intuitive way of thinking about the problem. A statistically significant p-value means "if the null hypothesis were true, it would be unlikely that I'd have seen a sample that looks like that." There are some <a href="https://www.census.gov/popclock/">328 million</a> U.S. citizens, and 535 members of Congress. So, if you randomly sample 100 Americans without replacement, it's really unlikely that they're all going to be members of Congress.  </p>
+<p>How unlikely? Well, we'll want the number of possible samples of 100 members of Congress, divided by the number of possible 100-person samples: that's <span class="math">\({535\choose 100}\)</span> divided by <span class="math">\({328,000,000\choose 100}\)</span> which is... a lot. Let's not try and do this by hand, eh?  (The parens mean, e.g., "535 choose 100"---see <a href="https://math.stackexchange.com/questions/1688391/probability-of-picking-4-red-balls">this explanation</a> of the general process of reasoning here. Here's the <a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.special.comb.html#scipy.special.comb">Python function</a> we're going to use.). This produces a probability so small that we have to use a fancy arbitrary precision math library called <code>mpmath</code> to get it to actually do the division. </p>
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.special</span> <span class="kn">import</span> <span class="n">comb</span> 
+<span class="kn">import</span> <span class="nn">mpmath</span> 
+<span class="n">numerator</span> <span class="o">=</span> <span class="n">mpmath</span><span class="o">.</span><span class="n">mpf</span><span class="p">(</span><span class="n">comb</span><span class="p">(</span><span class="mi">535</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="n">exact</span><span class="o">=</span><span class="bp">True</span><span class="p">))</span> 
+<span class="n">denominator</span> <span class="o">=</span> <span class="n">mpmath</span><span class="o">.</span><span class="n">mpf</span><span class="p">(</span><span class="n">comb</span><span class="p">(</span><span class="mi">328000000</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="n">exact</span><span class="o">=</span><span class="bp">True</span><span class="p">))</span> 
+<span class="n">numerator</span><span class="o">/</span><span class="n">denominator</span>
+</pre></div>
+
+
+<p>And we get <code>9.0061113088164994e-584</code> which, in real human speak, is .9 with 584 zeroes between the decimal point and the 9... that is, significantly less likely than picking a particular atom in randomly sampling from every atom in the known universe. </p>
+<p>So if I'm sampling Americans, it's vanishingly unlikely that that I get a sample with 100 members of Congress. <span class="math">\(P(Draw100Congress|Draw100Americans)\)</span> is that tiny number up above.  But it obviously does not follow that <span class="math">\(P(Draw100Americans|Draw100Congress)\)</span> is small. Indeed that second probability statement is 1, or damn close to it (even though the Constitution requires members of Congress be citizens, you might imagine some incredibly unlikely event like someone getting elected to Congress after successfully deceiving the public about his/her citizenship status). In other words, I <em>absolutely cannot</em> infer from the unlikelihood of getting all members of Congress in my sample of Americans that it is unlikely that I had sampled Americans, given that I saw all members of Congress (Incidentally, I adapted this example from Cohen, 1994, <a href="http://psycnet.apa.org/doiLanding?doi=10.1037%2F0003-066X.49.12.997">The Earth is Round (p&lt;.05)</a>, who in turn adapted it from Pollard &amp; Richardson, 1987, <a href="http://psycnet.apa.org/record/1987-30223-001">"On the Probability of Making Type I Errors"</a>.)  </p>
 <p>Here’s why this matters. In reality, many, many studies with a "statistically significant" p-value are likely to nonetheless be Type I errors. The reason is because the actual probability of a Type I error depends on the prior likelihood that the null hypothesis was false in the first place, as well as on how likely it is that you'd see your data (in other words, on the base rate). Let’s flesh this out some more with Bayes Rule. Remember it? </p>
 <div class="math">$$P(B|A) = \frac{P(A|B) \cdot P(B)}{P(A)}$$</div>
 <p>As applied here, plugging in our concepts from above:</p>
@@ -63,7 +75,8 @@
 <p>What does that mean?  Well, first of all, it means that in order to even take a wild guess at how likely it is that we’re making a Type I error, we have to know how likely our null hypothesis is (in Bayesian terms, we have to have a prior probability in our heads about it). If we have strong prior reason to believe our null hypothesis--if our alternative hypothesis, or the research finding we’re trying to test out, is really crazy, then we ought to conclude that it’s more likely that we’re making a Type I error, even in the face of a statistically significant p-value. For example, if you think you’ve provided evidence for psychic abilities, as <a href="https://www.theguardian.com/science/head-quarters/2016/oct/31/did-a-memory-experiment-really-show-evidence-for-psychic-abilities">occasionally shows up in psychology journals</a>, you should probably estimate your probability of making a Type I error as quite high, because your prior on Dr. Xavier running around somewhere controlling stuff <em>with his miiiiiind</em> is pretty small (or at least oughta be).</p>
 <p>Second, you’d need to have some idea of the base rate of the data you observed in your sample (the denominator above). If it’s low, then that makes it more likely that we’re making a Type I error. Recall from our probability lesson that we can calculate that via the <a href="https://en.m.wikipedia.org/wiki/Law_of_total_probability">law of total probability</a> as follows: </p>
 <div class="math">$$P(DataSeen) = P(DataSeen|NullHypothesis) \cdot P(NullHypothesis) + \\P(DataSeen|AlternativeHypothesis) \cdot P(AlternativeHypothesis)$$</div>
-<p>How can that value be low? Well, one important way is that <span class="math">\(P(DataSeen|AlternativeHypothesis)\)</span> could be low. In other words: sure, it might be that it’s really unlikely that you’d see the data you saw if your null hypothesis were true. But what if it’s <em>even more unlikely</em> that you’d see the data you saw if your alternative hypothesis were true! (A low p-value means that the data you saw would come up pretty rarely in that null distribution.  But what if it would come up even more rarely in every other plausible distribution?)</p>
+<p>How can that value be low? Well, one important way is that <span class="math">\(P(DataSeen|AlternativeHypothesis)\)</span> could be low. In other words: sure, it might be that it’s really unlikely that you’d see the data you saw if your null hypothesis were true. But what if it’s <em>even more unlikely</em> that you’d see the data you saw if your alternative hypothesis were true?! A low p-value means that the data you saw would come up pretty rarely in that null distribution.  But what if it would come up even more rarely in every other plausible distribution? This is the lesson of our Congress example: <span class="math">\(P(Draw100Congress|Draw100Foreigners)\)</span> is much smaller even than the tiny number we got for <span class="math">\(P(Draw100Congress|Draw100Americans)\)</span>.</p>
+<p>What this suggests is that the construction of the hypotheses really matter. Let's return to the Congress example. Suppose my null hypothesis was "this sample was constructed from the general population of Americans," and the alternative hypothesis was "this sample was constructed from the population of people found in the U.S. Capitol on the day of the State of the Union Address." Well, now, it seems like maybe the composition of our sample tells us something useful.  Because <span class="math">\(P(Draw100Congress|Draw100FromCapitol)\)</span> is probably pretty big, relatively speaking.</p>
 <p>Here’s what this all comes down to: </p>
 <ul>
 <li>Often we don’t really know these other terms that go into the Bayes Rule equation to go from p-values to probabilities of Type I errors. </li>
@@ -94,9 +107,12 @@
 <li>
 <p>John Ioannidis, "<a href="https://journals.plos.org/plosmedicine/article?id=10.1371/journal.pmed.0020124">Why Most Published Research Findings are False</a>" (sort of a more complicated and less clear version of the Perry Wilson blog post above).</p>
 </li>
+<li>
+<p>David Papineau, "<a href="https://www.the-tls.co.uk/articles/public/thomas-bayes-science-crisis/">Thomas Bayes and the Crisis in Science</a>", Times Literary Supplement.</p>
+</li>
 </ul>
 <script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-    var align = "center",
+    var align = "left",
         indent = "0em",
         linebreak = "false";
 
@@ -127,24 +143,24 @@
         "        preview: 'TeX'," +
         "    }, " +
         "    'HTML-CSS': { " +
-        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'blue ! important'} }," +
         "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
         "    }, " +
         "}); " +
-        "if ('default' !== 'default') {" +
+        "if ('Typewriter' !== 'default') {" +
             "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
                 "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['normal'].fonts.unshift('MathJax_Typewriter');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_Typewriter-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_Typewriter-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_Typewriter-italic');" +
             "});" +
             "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
                 "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['normal'].fonts.unshift('MathJax_Typewriter');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_Typewriter-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_Typewriter-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_Typewriter-italic');" +
             "});" +
         "}";
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);

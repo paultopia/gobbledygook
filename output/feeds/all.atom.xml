@@ -12128,6 +12128,18 @@ h6:hover .anchor-link {
 &lt;p&gt;But what you'd really like to know is the probability of making a Type I error--the probability of making a mistake and declaring that you’ve discovered something that isn’t. Unfortunately, that can be rephrased as &lt;strong&gt;the probability of the null hypothesis being true, conditional on seeing your data!&lt;/strong&gt;  In symbols: &lt;/p&gt;
 &lt;div class="math"&gt;$$P(TypeIError) = P(NullHypothesis|DataSeen)$$&lt;/div&gt;
 &lt;p&gt;By now, you should know that you can’t flip conditional probabilities around like that. Yet this is an incredibly common mistake--even actual statistics teachers sometimes slip up and say that the p-value is the probability of making a Type I error.  It isn’t!  Never say this! Never think this! Never respect anyone who does say or think it!&lt;/p&gt;
+&lt;p&gt;Here's an intuitive way of thinking about the problem. A statistically significant p-value means "if the null hypothesis were true, it would be unlikely that I'd have seen a sample that looks like that." There are some &lt;a href="https://www.census.gov/popclock/"&gt;328 million&lt;/a&gt; U.S. citizens, and 535 members of Congress. So, if you randomly sample 100 Americans without replacement, it's really unlikely that they're all going to be members of Congress.  &lt;/p&gt;
+&lt;p&gt;How unlikely? Well, we'll want the number of possible samples of 100 members of Congress, divided by the number of possible 100-person samples: that's &lt;span class="math"&gt;\({535\choose 100}\)&lt;/span&gt; divided by &lt;span class="math"&gt;\({328,000,000\choose 100}\)&lt;/span&gt; which is... a lot. Let's not try and do this by hand, eh?  (The parens mean, e.g., "535 choose 100"---see &lt;a href="https://math.stackexchange.com/questions/1688391/probability-of-picking-4-red-balls"&gt;this explanation&lt;/a&gt; of the general process of reasoning here. Here's the &lt;a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.special.comb.html#scipy.special.comb"&gt;Python function&lt;/a&gt; we're going to use.). This produces a probability so small that we have to use a fancy arbitrary precision math library called &lt;code&gt;mpmath&lt;/code&gt; to get it to actually do the division. &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;scipy.special&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;comb&lt;/span&gt; 
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;mpmath&lt;/span&gt; 
+&lt;span class="n"&gt;numerator&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;mpmath&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;mpf&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;comb&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;535&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;100&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;exact&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt; 
+&lt;span class="n"&gt;denominator&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;mpmath&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;mpf&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;comb&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;328000000&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;100&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;exact&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt; 
+&lt;span class="n"&gt;numerator&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;denominator&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;And we get &lt;code&gt;9.0061113088164994e-584&lt;/code&gt; which, in real human speak, is .9 with 584 zeroes between the decimal point and the 9... that is, significantly less likely than picking a particular atom in randomly sampling from every atom in the known universe. &lt;/p&gt;
+&lt;p&gt;So if I'm sampling Americans, it's vanishingly unlikely that that I get a sample with 100 members of Congress. &lt;span class="math"&gt;\(P(Draw100Congress|Draw100Americans)\)&lt;/span&gt; is that tiny number up above.  But it obviously does not follow that &lt;span class="math"&gt;\(P(Draw100Americans|Draw100Congress)\)&lt;/span&gt; is small. Indeed that second probability statement is 1, or damn close to it (even though the Constitution requires members of Congress be citizens, you might imagine some incredibly unlikely event like someone getting elected to Congress after successfully deceiving the public about his/her citizenship status). In other words, I &lt;em&gt;absolutely cannot&lt;/em&gt; infer from the unlikelihood of getting all members of Congress in my sample of Americans that it is unlikely that I had sampled Americans, given that I saw all members of Congress (Incidentally, I adapted this example from Cohen, 1994, &lt;a href="http://psycnet.apa.org/doiLanding?doi=10.1037%2F0003-066X.49.12.997"&gt;The Earth is Round (p&amp;lt;.05)&lt;/a&gt;, who in turn adapted it from Pollard &amp;amp; Richardson, 1987, &lt;a href="http://psycnet.apa.org/record/1987-30223-001"&gt;"On the Probability of Making Type I Errors"&lt;/a&gt;.)  &lt;/p&gt;
 &lt;p&gt;Here’s why this matters. In reality, many, many studies with a "statistically significant" p-value are likely to nonetheless be Type I errors. The reason is because the actual probability of a Type I error depends on the prior likelihood that the null hypothesis was false in the first place, as well as on how likely it is that you'd see your data (in other words, on the base rate). Let’s flesh this out some more with Bayes Rule. Remember it? &lt;/p&gt;
 &lt;div class="math"&gt;$$P(B|A) = \frac{P(A|B) \cdot P(B)}{P(A)}$$&lt;/div&gt;
 &lt;p&gt;As applied here, plugging in our concepts from above:&lt;/p&gt;
@@ -12135,7 +12147,8 @@ h6:hover .anchor-link {
 &lt;p&gt;What does that mean?  Well, first of all, it means that in order to even take a wild guess at how likely it is that we’re making a Type I error, we have to know how likely our null hypothesis is (in Bayesian terms, we have to have a prior probability in our heads about it). If we have strong prior reason to believe our null hypothesis--if our alternative hypothesis, or the research finding we’re trying to test out, is really crazy, then we ought to conclude that it’s more likely that we’re making a Type I error, even in the face of a statistically significant p-value. For example, if you think you’ve provided evidence for psychic abilities, as &lt;a href="https://www.theguardian.com/science/head-quarters/2016/oct/31/did-a-memory-experiment-really-show-evidence-for-psychic-abilities"&gt;occasionally shows up in psychology journals&lt;/a&gt;, you should probably estimate your probability of making a Type I error as quite high, because your prior on Dr. Xavier running around somewhere controlling stuff &lt;em&gt;with his miiiiiind&lt;/em&gt; is pretty small (or at least oughta be).&lt;/p&gt;
 &lt;p&gt;Second, you’d need to have some idea of the base rate of the data you observed in your sample (the denominator above). If it’s low, then that makes it more likely that we’re making a Type I error. Recall from our probability lesson that we can calculate that via the &lt;a href="https://en.m.wikipedia.org/wiki/Law_of_total_probability"&gt;law of total probability&lt;/a&gt; as follows: &lt;/p&gt;
 &lt;div class="math"&gt;$$P(DataSeen) = P(DataSeen|NullHypothesis) \cdot P(NullHypothesis) + \\P(DataSeen|AlternativeHypothesis) \cdot P(AlternativeHypothesis)$$&lt;/div&gt;
-&lt;p&gt;How can that value be low? Well, one important way is that &lt;span class="math"&gt;\(P(DataSeen|AlternativeHypothesis)\)&lt;/span&gt; could be low. In other words: sure, it might be that it’s really unlikely that you’d see the data you saw if your null hypothesis were true. But what if it’s &lt;em&gt;even more unlikely&lt;/em&gt; that you’d see the data you saw if your alternative hypothesis were true! (A low p-value means that the data you saw would come up pretty rarely in that null distribution.  But what if it would come up even more rarely in every other plausible distribution?)&lt;/p&gt;
+&lt;p&gt;How can that value be low? Well, one important way is that &lt;span class="math"&gt;\(P(DataSeen|AlternativeHypothesis)\)&lt;/span&gt; could be low. In other words: sure, it might be that it’s really unlikely that you’d see the data you saw if your null hypothesis were true. But what if it’s &lt;em&gt;even more unlikely&lt;/em&gt; that you’d see the data you saw if your alternative hypothesis were true?! A low p-value means that the data you saw would come up pretty rarely in that null distribution.  But what if it would come up even more rarely in every other plausible distribution? This is the lesson of our Congress example: &lt;span class="math"&gt;\(P(Draw100Congress|Draw100Foreigners)\)&lt;/span&gt; is much smaller even than the tiny number we got for &lt;span class="math"&gt;\(P(Draw100Congress|Draw100Americans)\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;What this suggests is that the construction of the hypotheses really matter. Let's return to the Congress example. Suppose my null hypothesis was "this sample was constructed from the general population of Americans," and the alternative hypothesis was "this sample was constructed from the population of people found in the U.S. Capitol on the day of the State of the Union Address." Well, now, it seems like maybe the composition of our sample tells us something useful.  Because &lt;span class="math"&gt;\(P(Draw100Congress|Draw100FromCapitol)\)&lt;/span&gt; is probably pretty big, relatively speaking.&lt;/p&gt;
 &lt;p&gt;Here’s what this all comes down to: &lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Often we don’t really know these other terms that go into the Bayes Rule equation to go from p-values to probabilities of Type I errors. &lt;/li&gt;
@@ -12166,9 +12179,12 @@ h6:hover .anchor-link {
 &lt;li&gt;
 &lt;p&gt;John Ioannidis, "&lt;a href="https://journals.plos.org/plosmedicine/article?id=10.1371/journal.pmed.0020124"&gt;Why Most Published Research Findings are False&lt;/a&gt;" (sort of a more complicated and less clear version of the Perry Wilson blog post above).&lt;/p&gt;
 &lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;David Papineau, "&lt;a href="https://www.the-tls.co.uk/articles/public/thomas-bayes-science-crisis/"&gt;Thomas Bayes and the Crisis in Science&lt;/a&gt;", Times Literary Supplement.&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-    var align = "center",
+    var align = "left",
         indent = "0em",
         linebreak = "false";
 
@@ -12199,24 +12215,24 @@ h6:hover .anchor-link {
         "        preview: 'TeX'," +
         "    }, " +
         "    'HTML-CSS': { " +
-        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'blue ! important'} }," +
         "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
         "    }, " +
         "}); " +
-        "if ('default' !== 'default') {" +
+        "if ('Typewriter' !== 'default') {" +
             "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
                 "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['normal'].fonts.unshift('MathJax_Typewriter');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_Typewriter-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_Typewriter-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_Typewriter-italic');" +
             "});" +
             "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
                 "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['normal'].fonts.unshift('MathJax_Typewriter');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_Typewriter-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_Typewriter-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_Typewriter-italic');" +
             "});" +
         "}";
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
@@ -12451,7 +12467,7 @@ h6:hover .anchor-link {
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-    var align = "center",
+    var align = "left",
         indent = "0em",
         linebreak = "false";
 
@@ -12482,24 +12498,24 @@ h6:hover .anchor-link {
         "        preview: 'TeX'," +
         "    }, " +
         "    'HTML-CSS': { " +
-        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'blue ! important'} }," +
         "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
         "    }, " +
         "}); " +
-        "if ('default' !== 'default') {" +
+        "if ('Typewriter' !== 'default') {" +
             "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
                 "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['normal'].fonts.unshift('MathJax_Typewriter');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_Typewriter-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_Typewriter-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_Typewriter-italic');" +
             "});" +
             "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
                 "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['normal'].fonts.unshift('MathJax_Typewriter');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_Typewriter-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_Typewriter-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_Typewriter-italic');" +
             "});" +
         "}";
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
@@ -22415,7 +22431,7 @@ In such a lawsuit, the employer will invariably claim that the older workers are
 &lt;p&gt;It turns out that (subject to some caveats and pitfalls on which we shall spend some time), the value of &lt;span class="math"&gt;\(\beta_1\)&lt;/span&gt; will be a good estimate of the effect of age on pay raises &lt;em&gt;holding the number of training courses constant&lt;/em&gt;---so it gives us the apples-to-apples comparison we're looking for. And, within some limits, we can keep adding variables as the employer comes up with more and more excuses for the lower salary.&lt;/p&gt;
 &lt;p&gt;Anyway, we'll be spending quite a bit of time on regression analysis, this is just a taste for now. You will hopefully be able to see that being able to make sense of these concepts will help you in your practice. This is just an introduction, we'll dig in much deeper in the weeks to come.&lt;/p&gt;
 &lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-    var align = "center",
+    var align = "left",
         indent = "0em",
         linebreak = "false";
 
@@ -22446,24 +22462,24 @@ In such a lawsuit, the employer will invariably claim that the older workers are
         "        preview: 'TeX'," +
         "    }, " +
         "    'HTML-CSS': { " +
-        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'blue ! important'} }," +
         "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
         "    }, " +
         "}); " +
-        "if ('default' !== 'default') {" +
+        "if ('Typewriter' !== 'default') {" +
             "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
                 "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['normal'].fonts.unshift('MathJax_Typewriter');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_Typewriter-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_Typewriter-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_Typewriter-italic');" +
             "});" +
             "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
                 "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['normal'].fonts.unshift('MathJax_Typewriter');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_Typewriter-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_Typewriter-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_Typewriter-italic');" +
             "});" +
         "}";
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
