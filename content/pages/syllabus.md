@@ -176,7 +176,9 @@ Monday is a holiday (MLK day).  For **Tuesday**, read [Libraries]({filename}../L
 
 Coverage: Regular expressions. Simulation and why you might want to do it. A very light introduction to object-oriented programming. Initial explorations into legal data.
 
-(Reading TBD)
+Read Automate the Boring Stuff With Python chapters [6 (strings)](https://automatetheboringstuff.com/chapter6/) and [7 (regular expressions)](https://automatetheboringstuff.com/chapter7/)
+
+(Further reading TBD)
 
 Problem set 1 due.
 
