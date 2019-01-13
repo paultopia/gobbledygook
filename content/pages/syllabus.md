@@ -21,7 +21,9 @@ Introduction to Quantitative and Computational Legal Reasoning is experimental. 
 
 - Course website: [https://sociologicalgobbledygook.com/](https://sociologicalgobbledygook.com/) 
 
-- [Course Github repository](https://github.com/paultopia/quantitative-methods-for-lawyers) (I will explain how to use this in the beginning of the semester.)
+- [Course Github repository](https://github.com/paultopia/quantitative-methods-for-lawyers) (I will explain how to use this in the beginning of the semester, currently it's a bit messy)
+
+- [Separate assignments Github repository](https://github.com/paultopia/gobbledygook_lessons) (for ease of finding assignments)
 
 
 ## Readings 
@@ -158,7 +160,7 @@ For **Monday**, read the [Introduction to Python on this site]({filename}../Less
 
 In the first day of class, we will get everyone set up with the different services and installation options for the software we need in the course, and, if there's time, demonstrate some basic programming ideas and work through some exercises.
 
-On Monday evening, read clone the course Github and complete the exercise at the end of the first Python lesson notebook (factorial); you don't need to turn it in, but let me know if you can't complete it; we'll look at people's solutions on Tuesday and use this as our test to make sure everyone is set up and functional.
+On Monday evening, clone the [course assignments Github repository](https://github.com/paultopia/gobbledygook_lessons) and complete the factorial exercise at the end of the first Python lesson notebook (basic_intro.ipynb); you don't need to turn it in, but let me know if you can't complete it; we'll look at people's solutions on Tuesday and use this as our test to make sure everyone is set up and functional.
 
 For **Tuesday**, read the [functions and scope]({filename}../Lessons/functions.ipynb), [more loops and control flow]({filename}../Lessons/control_flow.ipynb), [simple data types]({filename}../Lessons/simple_data_types.ipynb), and [complex data types]({filename}../Lessons/complex_data_types.ipynb)  lessons on this site. Also read the Software Carpentry lessons on [functions](http://swcarpentry.github.io/python-novice-inflammation/06-func/index.html) and [making choices](http://swcarpentry.github.io/python-novice-inflammation/05-cond/index.html).
 
