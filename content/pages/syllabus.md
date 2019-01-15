@@ -169,7 +169,7 @@ For **Tuesday**, read the [functions and scope]({filename}../Lessons/functions.i
 
 Coverage: using Python to get access to other people's code, libraries. Accessing the filesystem and the internet from Python. Error handling. Strings.
 
-Between week 1 and week 2, go through chapters 1-3 of DataCamp's [Introduction to Python](https://www.datacamp.com/courses/intro-to-python-for-data-science) course. You don't need to do chapter 4 (about the Numpy library) right now, though you can if you want to. Also read pg. 56-126 of Python for Everybody.  
+Between week 1 and week 2, go through chapters 1-3 of DataCamp's [Introduction to Python](https://www.datacamp.com/courses/intro-to-python-for-data-science) course. You don't need to do chapter 4 (about the Numpy library) right now, though you can if you want to. Also read pg. 56-126 of Python for Everybody and [my brief notes from week 1]({filename}../Lessons/post-week1-notes.md).
 
 Monday is a holiday (MLK day).  For **Tuesday**, read [Libraries]({filename}../Lessons/libraries.md), [Errors]({filename}../Lessons/errors.ipynb), [Files and Strings]({filename}../Lessons/files-and-strings.ipynb) and [Network Requests]({filename}../Lessons/network_requests.md) on this site. 
 
