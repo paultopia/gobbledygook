@@ -1,5 +1,5 @@
 title: Getting Data from the Internet With Python
-tags: python, code, networking, internet
+tags: python, programming, networking, internet, week2
 date: 2018-12-06
 
 In addition to reading files locally, you can also read them over the internet. 

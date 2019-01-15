@@ -1,5 +1,5 @@
 title: Introduction to Python and setup.
-tags: python, code, week1, setup
+tags: python, programming, week1, setup
 date: 2018-10-22
 
 In this class, we will be using the [Python](https://www.python.org/) programming language. In this first week, we will have a basic introduction to Python and to the fundamentals of computer programming. 

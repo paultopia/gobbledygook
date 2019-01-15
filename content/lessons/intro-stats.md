@@ -1,5 +1,5 @@
-title: Lesson 2.1 Why Statistics for Lawyers? 
-tags: statistics, week2, conceptual
+title: Why Statistics for Lawyers? 
+tags: statistics, week4, conceptual
 date: 2018-11-03
 
 The brunt of this course will be devoted to statistics and exploratory data analysis. 
