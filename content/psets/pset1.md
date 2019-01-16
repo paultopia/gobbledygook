@@ -25,7 +25,15 @@ Write a function named `rps` that plays rock, paper, scissors with a human.  It 
 
 **Rules and definitions for this problem:**
 
-- rps must accept input in uppercase, lowercase, and any weird mixed-up case the user types in, it must also accept input with any number of spaces before or after the word. For example, `rock` `Rock` `ROCK` `     rock` and `rOcK   ` are all acceptable input.  
+- rps must accept input in uppercase, lowercase, and any weird mixed-up case the user types in, it must also accept input with any number of spaces before or after the word. For example, all of the following are acceptable input:
+
+```
+rock
+Rock
+ROCK
+            rock
+rOcK
+```
 
 - If the user tries to enter anything other than rock, paper, or scissors, it should print the message `"Please enter rock, paper, or scissors."` and then ask the user for input again.
 
