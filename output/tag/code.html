@@ -3,158 +3,88 @@
 <head>
         <meta charset="utf-8" />
         <title>Sociological Gobbledygook - code</title>
-        <link rel="stylesheet" href="https://sociologicalgobbledygook.com/theme/css/main.css" />
-        <link rel="stylesheet" href="https://sociologicalgobbledygook.com/theme/css/juptyer-fix.css" />
-        <link href="https://sociologicalgobbledygook.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Sociological Gobbledygook Atom Feed" />
+        <link rel="stylesheet" href="/theme/css/main.css" />
+        <link rel="stylesheet" href="/theme/css/juptyer-fix.css" />
 </head>
 
 <body id="index" class="home">
         <header id="banner" class="body">
-                <h1><a href="https://sociologicalgobbledygook.com/">Sociological Gobbledygook </a></h1>
+                <h1><a href="/">Sociological Gobbledygook </a></h1>
                 <nav><ul>
-                    <li><a href="https://sociologicalgobbledygook.com/pages/manifesto.html">Manifesto</a></li>
-                    <li><a href="https://sociologicalgobbledygook.com/pages/syllabus.html">Syllabus</a></li>
-                    <li><a href="https://sociologicalgobbledygook.com/category/lessons.html">Lessons</a></li>
-                    <li><a href="https://sociologicalgobbledygook.com/category/welcome.html">Welcome</a></li>
+                    <li><a href="/pages/manifesto.html">Manifesto</a></li>
+                    <li><a href="/pages/syllabus.html">Syllabus</a></li>
+                    <li><a href="/category/lessons.html">Lessons</a></li>
+                    <li><a href="/category/psets.html">psets</a></li>
+                    <li><a href="/category/welcome.html">Welcome</a></li>
                 </ul></nav>
         </header><!-- /#banner -->
 
             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="https://sociologicalgobbledygook.com/getting-data-from-the-internet-with-python.html">Getting Data from the Internet With Python</a></h1>
-<footer class="post-info">
-        <abbr class="published" title="2018-12-06T00:00:00-06:00">
-                Published: Thu 06 December 2018
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="https://sociologicalgobbledygook.com/author/paul-gowder.html">Paul Gowder</a>
-        </address>
-<p>In <a href="https://sociologicalgobbledygook.com/category/lessons.html">Lessons</a>.</p>
-<p>tags: <a href="https://sociologicalgobbledygook.com/tag/python.html">python</a> <a href="https://sociologicalgobbledygook.com/tag/code.html">code</a> <a href="https://sociologicalgobbledygook.com/tag/networking.html">networking</a> <a href="https://sociologicalgobbledygook.com/tag/internet.html">internet</a> </p>
-</footer><!-- /.post-info --><p>In addition to reading files locally, you can also read them over the internet. </p>
-<p>When you use a web browser like Chrome to go to a URL ("uniform resource locator," or web address) like https://sociologicalgobbledygook.com, what you're actually doing is sending a request using the HTTPS protocol (which is the same at the HTTP protocol, but with some more encryption on top). HTTP stands for "hypertext transfer protocol," and it was originally designed for the web.  There are other protocols---you may have seen FTP, for example, which stands for "file transfer protocol," and "SMTP" which stands for "simple mail transfer protocol," but HTTP/S is by far the most important. It turns out that people make information other than web pages available through that protocol, which you can request the same way you request a web page. And you don't need a web browser to do it.</p>
-<p>HTTP requests are made up of "verbs," which are just capitalized (by convention) words that describe what you want to do. Servers out on the internet will ask you to use one verb or another in order to access their resources. The two most important verbs are GET and POST. </p>
-<h3>GET requests</h3>
-<p>A GET request is the basic request of the web. When you send a GET request to a URL, you're asking for the resources associated with that location. (Sometimes, internet people use the word "endpoint" to mean a specific location on a server.).  Ordinary web access through a browser is made up of GET requests: when you type  "https://sociologicalgobbledygook.com" into your browser, you make a GET request to the route endpoint of that website. </p>
-<p>You can send data to a server via a GET request. When you do, the data is actually built into the URL itself.  If you've ever seen a URL like https://sociologicalgobbledygook.com/catinfo?cat=Leonidas&amp;info=cutenessquotient then you've seen data being sent to the server that way. The stuff after the question mark is known as a "query string," and it is a collection of key-value pairs much like a Python dictionary. The URL above translates to "hey server at sociologicalgobbledygook.com, I'd like to tell your 'catinfo' endpoint that the cat is 'Leonidas' and the info is 'cutenessquotient'." Typically, the server will use that data to find some information and generate a response to send back. For example, the catinfo endpoint might be programmed to connect to a database containing information about cats, so that the server will look up Leonidas in that database and find his cuteness quotient (it's <em>INFINITY</em> in case you were curious), and then send that information back to you.</p>
-<p>That being said, in most cases you won't want to write your own query strings to send data via GET requests. There are complicated rules for how query strings are composed (because there are a bunch of things that aren't allowed in them, like spaces). Instead, you'll use code written by someone else to translate a more useful format into a query string before sending them along. </p>
-<h3>POST requests</h3>
-<p>POST requests are designed for sending more substantial data to a server. For example, suppose you run a service that allows people to upload files over the web: you'd tell them to submit those files via a POST request. You can also send longer text data through a POST request, and lots of other things besides. Typically, when you see a form on a web page (like a registration form, or a survey), the information that you fill in there gets sent to the server in a POST request. POST requests come in a variety of formats, but the most common and important is "multipart/form-data"---when in doubt, it's safe to assume that this is what you're sending. </p>
-<p>I'll explain how to send a POST request below.</p>
-<h3>Headers</h3>
-<p>In addition to the content, or "body," of a request, HTTP requests also have headers. You can think of this like the headers of a document, they tend to contain metadata, or information about the information inside, such as the size of the data being sent. For the most part, you don't need to worry about headers, but there are a couple of important pieces of information that they tend to contain.  First, they often contain authentication information: many servers will require you to send a username and password, or a "token" (a special string issued by the server that identifies you, sort of like the server's equivalent of a social security number) in a particular format in the headers in order to be allowed to get access to the data they have. Second, they often contain a description of the type of content being sent. For example, if you send text, it might contain information about the character encoding (we'll learn about that in a subsequent lesson) that the text is in. If you send a file, it might contain information about the format the file is in.  More about formats and encodings below. </p>
-<h3>Responses</h3>
-<p>Ok, so you've sent a GET or a POST request to a server somewhere. The thing you get back is called a response. It has several parts. </p>
-<p>First is a response code: a 3-digit number saying, in broad terms, what the server thinks of your response. Have you ever navigated to a web page that doesn't exist and gotten a 404 error?  404 is a response code that means exactly what you think it means: that the server can't find the endpoint you asked for (or the webpage you asked for). Generally, any response code in the 400s is the server's way of telling you that you screwed up---another common one is 403, which means "forbidden"---typically returned by a server when you ask for something that requires authentication, but you haven't given it the password or whatever other authentication resource it wants in a form that it recognizes. 401 means roughly the same thing. </p>
-<p>Typically, the response code you want to get is 200, which means "ok." Anything in the 200 range is going to be a desired response code.  If you get anything in the 500 range, it usually signifies a programming error on the server side (i.e., not your fault). </p>
-<p>The response will also contain information about the format of the content inside, though its Content-Type header.  A response often has <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers">other headers too</a>, but Content-Type tends to be the most important (along with Content-Encoding), as they will tell you what kind of content you're getting back, which is information that tends to be necessary in order to do anything with it!</p>
-<h3>The Requests library</h3>
-<p>Probably the most popular way to work with HTTP requests in Python is through a library called <a href="http://docs.python-requests.org/en/master/">Requests</a>, which makes it very easy to send requests and deal with responses. It's a third party library (not distributed with Python itself), but it comes pre-installed for you on Azure Notebooks, and also will already be installed if you've followed the personal machine installation instructions for this course and installed the Anaconda distribution. </p>
-<p>To get access to the Requests library if it's installed, you can just use the import command.  Enter the following line of code: </p>
-<p><code>import requests</code></p>
-<p>Then you'll have a collection of useful functions available to you in the requests namespace. The most important are <code>requests.get</code> and <code>requests.post</code> which, as you might expect, allow you to send GET and POST requests. </p>
-<p>Suppose you wanted to get the home page for this course.  You could run </p>
-<p><code>response = requests.get("https://sociologicalgobbledygook.com")</code></p>
-<p>This will assign the HTTP response from the server for the course home page to a variable called "response."  This variable is an object provided by the Requests library that contains a bunch of useful methods and attributes. These include: </p>
-<p><code>response.text</code> will give you the text of the webpage, in this case, a string of HTML code. 
-<code>response.status_code</code> will give you the status code of the response. Hopefully it's 200. 
-<code>response.headers</code> will give you a Dictionary containing all the headers of the response. So you can find out things like the Content-Type by asking for <code>response.headers["Content-Type"]</code>. </p>
-<p>Requests also lets you send data with your get and post requests. Take a look at the Requests documentation to see how. It's pretty straightforward: <a href="http://docs.python-requests.org/en/master/user/quickstart/#passing-parameters-in-urls">here's how to send ordinary data in a GET request</a> and <a href="http://docs.python-requests.org/en/master/user/quickstart/#more-complicated-post-requests">here's how to send ordinary data in a POST request</a>.</p>
-<h3>APIs</h3>
-<p>Programmers talk a lot about APIs.  API stands for "application programming interface," and just means a set of commands that programmers make for other programmers to use.  Software has an API---for example, the fact that Requests gives you get and post functions is part of the API of the Requests library. </p>
-<p>Internet resources also have APIs.  The API of an internet resource typically describes the endpoints you can make requests to, the format those requests have to be in, and the kind of data you'll get back. </p>
-<p>For example, there's a wonderful service called <a href="https://www.courtlistener.com/">Courtlistener</a> that contains massive amounts of case and court data from the American legal system. <a href="https://www.courtlistener.com/api/rest-info/#jurisdiction-endpoint">The documentation for their API</a> explains how to get that information via programming. (The Courtlistener API is very complicated, and we won't be working with it too much in this class, but you should know it's out there.)</p>
-<p>Suppose I wanted to get some information from Courtlistener---say, I wanted to know the date that their database of Supreme Court opinions started.  Here's what I'd do. </p>
-<ol>
-<li>
-<p>First, I'd sign up for an API key on the Courtlistener website. It's free for individual use, but you have to actually sign up, they don't just let you access things willy-nilly</p>
-</li>
-<li>
-<p>The documentation for the Courtlistener API gives instructions for how to authenticate with API keys---can you see where?  So I'd want to create some headers of the appropriate format, which <a href="http://docs.python-requests.org/en/master/user/quickstart/#custom-headers">Requests lets you do pretty easily</a>.  Let's suppose my API key were "12345."  Here's what I'd do: </p>
-</li>
-</ol>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
-<span class="n">my_headers</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Authorization&quot;</span><span class="p">:</span> <span class="s2">&quot;Token 12345&quot;</span><span class="p">}</span>
-</pre></div>
-
-
-<p>Then I'd make a request to the endpoint that has the basic information about the Supreme Court data they have.  As it turns out, that is https://www.courtlistener.com/api/rest/v3/courts/scotus/ </p>
-<p>So my next few lines of code would be: </p>
-<div class="highlight"><pre><span></span>scotusresponse = requests.get(&quot;https://www.courtlistener.com/api/rest/v3/courts/scotus/&quot;, headers=my_headers}
-print(scotusresponse.json()[&quot;start_date&quot;])
-</pre></div>
-
-
-<p>And that would (assuming my untested code is correct) give me the answer I wanted.  Try it yourself!</p>
-<h4>JSON format</h4>
-<p>You'll notice that <code>scotusresponse.json</code> call in the code above. What's that? </p>
-<p>JSON is a plain-text data format that is very popular on the internet. If you look at a JSON file, it looks like a bunch of nested Python lists and dictionaries---and that's because that's basically what it is. Actually, it's almost identical to the syntax for the JavaScript equivalent of lists and dictionaries, because it's derived from JavaScript (JSON stands for JavaScript Object Notation). For the most part, if you want to write Python lists and dictionaries to disk, you'll want to use JSON format. </p>
-<p>There's a built-in Python library called, unsurprisingly, "json" that has has functionality to read and write JSON files from disk or from strings in memory. But if you receive data from the network in JSON format using Requests, you can call the <code>.json()</code> method on the response that you receive, and it'll kindly parse the JSON for you. ("Parse" means turn it from its representation as a JSON-formatted string into ordinary Python lists and dictionaries.)</p>
-<p>So, when you call the courts endpoint, Courtlistener sends back data in JSON format by default. So calling the <code>.json()</code> method will turn that into a Python dict, and then, by looking at the documentation, we can see that the <code>start_date</code> key is the right one to look for in that dict to get the information we need---and there it is!</p>
-<p>That's a lot to absorb right now---don't worry, we'll get some more practice with fetching data using code in class. </p>
-<h3>Further information</h3>
-<ul>
-<li>
-<p>The most comprehensive and reliable source of information on all things HTTP is the Mozilla Developer's Network (MDN); further details on most of the information here can be found on <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP">their page on HTTP</a>. </p>
-</li>
-<li>
-<p>To learn more about Python's built-in JSON library, you can use the <a href="https://pymotw.com/3/json/">PYMOTW page on the subject</a>. </p>
-</li>
-</ul>                </article>
-            </aside><!-- /#featured -->
-                <section id="content" class="body">
-                    <h1>Other articles</h1>
-                    <hr />
-                    <ol id="posts-list" class="hfeed">
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="https://sociologicalgobbledygook.com/introduction-to-python-and-setup.html" rel="bookmark"
-                           title="Permalink to Introduction to Python and setup.">Introduction to Python and setup.</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2018-10-22T00:00:00-05:00">
-                Published: Mon 22 October 2018
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="https://sociologicalgobbledygook.com/author/paul-gowder.html">Paul Gowder</a>
-        </address>
-<p>In <a href="https://sociologicalgobbledygook.com/category/lessons.html">Lessons</a>.</p>
-<p>tags: <a href="https://sociologicalgobbledygook.com/tag/python.html">python</a> <a href="https://sociologicalgobbledygook.com/tag/code.html">code</a> <a href="https://sociologicalgobbledygook.com/tag/week1.html">week1</a> <a href="https://sociologicalgobbledygook.com/tag/setup.html">setup</a> </p>
-</footer><!-- /.post-info -->                <p>In this class, we will be using the <a href="https://www.python.org/">Python</a> programming language. In this first week, we will have a basic introduction to Python and to the fundamentals of computer programming. </p>
-<p>Before we get started programming, we have to set up a system to write our code and get the computer …</p>
-                <a class="readmore" href="https://sociologicalgobbledygook.com/introduction-to-python-and-setup.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="https://sociologicalgobbledygook.com/using-libraries-in-python.html" rel="bookmark"
-                           title="Permalink to Using libraries in Python">Using libraries in Python</a></h1>
-                </header>
-
-                <div class="entry-content">
+                    <h1 class="entry-title"><a href="/using-libraries-in-python.html">Using libraries in Python</a></h1>
 <footer class="post-info">
         <abbr class="published" title="2018-10-03T00:00:00-05:00">
                 Published: Wed 03 October 2018
         </abbr>
 
         <address class="vcard author">
-                By                         <a class="url fn" href="https://sociologicalgobbledygook.com/author/paul-gowder.html">Paul Gowder</a>
+                By                         <a class="url fn" href="/author/paul-gowder.html">Paul Gowder</a>
         </address>
-<p>In <a href="https://sociologicalgobbledygook.com/category/lessons.html">Lessons</a>.</p>
-<p>tags: <a href="https://sociologicalgobbledygook.com/tag/python.html">python</a> <a href="https://sociologicalgobbledygook.com/tag/code.html">code</a> <a href="https://sociologicalgobbledygook.com/tag/week2.html">week2</a> </p>
-</footer><!-- /.post-info -->                <p>Programming would be incredibly time consuming if you couldn't reuse code. You've seen the basic form of code reuse already---the function, which allows you to lock up a transformation from some data to some other data, give it a name, and then apply it repeatedly, and to arbitrary data. </p>
-<p>Well …</p>
-                <a class="readmore" href="https://sociologicalgobbledygook.com/using-libraries-in-python.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-                </ol><!-- /#posts-list -->
-                </section><!-- /#content -->
+<p>In <a href="/category/lessons.html">Lessons</a>.</p>
+<p>tags: <a href="/tag/python.html">python</a> <a href="/tag/code.html">code</a> <a href="/tag/week2.html">week2</a> </p>
+</footer><!-- /.post-info --><p>Programming would be incredibly time consuming if you couldn't reuse code. You've seen the basic form of code reuse already---the function, which allows you to lock up a transformation from some data to some other data, give it a name, and then apply it repeatedly, and to arbitrary data. </p>
+<p>Well, it would also be super time-consuming if you couldn't use other people's code. There are many <em>libraries</em> (also called "packages" or "modules," but note that these terms can <a href="https://stackoverflow.com/questions/19198166/whats-the-difference-between-a-module-and-a-library-in-python">be a little ambiguous</a>) in Python that represent useful code written by other people.  Many of them are built into the standard distribution of Python---indeed, a lot of the reason that Python is such a popular programming language is that it comes with a lot of libraries, it's what's called a "batteries included" language. But you can get lots of libraries that aren't included with Python as well, from the <a href="https://pypi.org">Python Package Index</a>.</p>
+<p>When you use a library, you have access to the variables it provides (and the stuff those variables point to). For example, a library might provide specialized kinds of data, like a string containing information about the version of Python you're using. It might provide functions that you can call. It might even provide classes (we'll talk about those later). </p>
+<h2>Using Libraries</h2>
+<p>In order to use a library, you must <code>import</code> it. </p>
+<p>The most straightforward way to import a library is to just type <code>import</code> then its name.  For example, suppose you wanted to find out what the current working directory is?  (The current working directory is the directory on your hard drive that Python thinks you're "in," for example, where it will save files generated by your code if you don't specify another location.). Well, if you <a href="https://docs.python.org/3/library/os.html">the documentation for that library</a>, you will see that the built-in <code>os</code> library provides a function called <code>getcwd()</code> which gives you the name of the current working directory.  So you'd run the following code:</p>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="k">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">())</span>
+</pre></div>
+
+
+<p>As you may have guessed, when you import a library, it creates what's known as a <em>namespace</em>---what that means is that you can't just refer what it provides by the name of the variable (or "name") on its own. You have to preface it by putting the name of the library and a period.  This is a good thing. Otherwise, you could accidentally overwrite names that you've used somewhere else, or names that Python provides in the standard library. </p>
+<p>For example, the <code>json</code> module provides a function called <code>load()</code> that allows you to load files in JSON format and turn them into Python data that your code can use. But, as you might imagine, "load" is a pretty common name, and other libraries might use it as well. If it wasn't for the namespacing functionality, if you imported the <code>json</code> library you couldn't use any other library providing a function with the name "load," because when you imported <code>json</code> it would overwrite whatever any other library had assigned to that name. This would be pretty bad. </p>
+<p>What if you don't want to refer to a function (or string, or whatever) from within its namespace?  Well, then you can import it into a global namespace like this: </p>
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">os</span> <span class="kn">import</span> <span class="n">getcwd</span>
+<span class="k">print</span><span class="p">(</span><span class="n">getcwd</span><span class="p">())</span>
+</pre></div>
+
+
+<p>The <code>from [library] import [name]</code> form just imports the specified names from a module directly into the global namespace. What this means is that <code>getcwd()</code> will become available to you without prefacing it with the <code>os</code> namespace... but no other names from the <code>os</code> library will be available, just the specific one you chose to import.</p>
+<p>(You could import all the names in the library into the global namespace with <code>from os import *</code> but that's usually a terrible idea that will lead to all sorts of bugs in your code.)</p>
+<p>You can also rename libraries on import. For example, you might do this if a library has a really long name that's hard to type or you want to rename it to something you'll remember more easily. For example:</p>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span> <span class="kn">as</span> <span class="nn">library_with_the_cwd_function</span>
+<span class="k">print</span><span class="p">(</span><span class="n">library_with_the_cwd_function</span><span class="o">.</span><span class="n">getcwd</span><span class="p">())</span>
+</pre></div>
+
+
+<p>This is something that people in the data science world do a lot for some reason. People import the <code>numpy</code> library as <code>np</code> by convention, for example, and <code>pandas</code> gets imported as <code>pd</code>.  I don't know why this custom started, but it's pretty much universal among data types who use Python. (And Numpy and Pandas are both super important, so you'll be seeing this a lot.) </p>
+<p>If you really want, you can also rename specific names, as in: </p>
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">os</span> <span class="kn">import</span> <span class="n">getcwd</span> <span class="k">as</span> <span class="n">working_directory</span>
+<span class="k">print</span><span class="p">(</span><span class="n">working_directory</span><span class="p">())</span>
+</pre></div>
+
+
+<p>Further reading on importing: this <a href="https://www.digitalocean.com/community/tutorials/how-to-import-modules-in-python-3">Digital Ocean tutorial</a> is pretty good.  </p>
+<h2>Installing Libraries</h2>
+<p>You shouldn't have to install libraries in this course if you've followed the instructions I've given. Both Azure Notebooks and the Anaconda distribution contain all the libraries that we will be using.  </p>
+<p>However, if you do want to dig into Python programming further and need to install libraries down the road, here are some tips.</p>
+<ul>
+<li>
+<p>First, the Anaconda distribution comes with a command line program called "conda."  You can install lots of libraries from the special Anaconda package repository with <code>conda install [libraryname]</code> at the package. </p>
+</li>
+<li>
+<p>The standard program to install things is called "pip."  Again, <code>pip install [libraryname]</code> at the command line will do you.</p>
+</li>
+<li>
+<p>A common and very obnoxious problem that happens with libraries is having incompatible versions of multiple libraries that need to work together. Usually, to avoid this, Python programmers create what's known as virtual environments, collections of libraries that live together and don't talk to other environments on their machines. This is way beyond the scope of the course (and the ecosystem of tools to do it changes rapidly), but if you get into using a bunch of packages, you should really look into doing this, or you'll get yourself into a mess sooner or later.</p>
+</li>
+<li>
+<p>You should usually be careful installing libraries that you don't have confidence in (aren't widely known, etc.). They might execute malicious code. This is a security problem that a lot of people are worrying about, and it's actually been a problem a few times---most recently in a library for the JavaScript programming language, which got millions of downloads and then <a href="https://snyk.io/blog/malicious-code-found-in-npm-package-event-stream/">got caught stealing bitcoin</a>. So be careful. </p>
+</li>
+</ul>                </article>
+            </aside><!-- /#featured -->
         <section id="extras" class="body">
                 <div class="blogroll">
                         <h2>links</h2>
@@ -166,13 +96,6 @@ print(scotusresponse.json()[&quot;start_date&quot;])
                             <li><a href="https://notebooks.azure.com/">Microsoft Azure Notebooks</a></li>
                         </ul>
                 </div><!-- /.blogroll -->
-                <div class="social">
-                        <h2>social</h2>
-                        <ul>
-                            <li><a href="https://sociologicalgobbledygook.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
-
-                        </ul>
-                </div><!-- /.social -->
         </section><!-- /#extras -->
 
         <footer id="contentinfo" class="body">

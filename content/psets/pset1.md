@@ -72,7 +72,7 @@ Specifically, write a function, named `calculate_days`, that takes two parameter
 
 You may write a version of `calculate_days` that does not take into account weekends and holidays for half credit.  The half credit version also does not need to provide output in precisely the format specified above, although it should still output a string that is recognizably a date and is comprehensible to an ordinary lawyer. 
 
-## Problem 4 (40 points): Cite Finder
+## Problem 3 (40 points): Cite Finder
 
 Write a function, named `cite_finder`, that takes one parameter, `case`, a string with a citation to an Illinois Supreme Court case, and returns the following: 
 

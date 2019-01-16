@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <title>Sociological Gobbledygook - psets</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+        <link rel="stylesheet" href="/theme/css/juptyer-fix.css" />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">Sociological Gobbledygook </a></h1>
+                <nav><ul>
+                    <li><a href="/pages/manifesto.html">Manifesto</a></li>
+                    <li><a href="/pages/syllabus.html">Syllabus</a></li>
+                    <li><a href="/category/lessons.html">Lessons</a></li>
+                    <li><a href="/category/psets.html">psets</a></li>
+                    <li><a href="/category/welcome.html">Welcome</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+
+            <aside id="featured" class="body">
+                <article>
+                    <h1 class="entry-title"><a href="/problem-set-1.html">Problem Set 1</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2018-01-16T00:00:00-06:00">
+                Published: Tue 16 January 2018
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/paul-gowder.html">Paul Gowder</a>
+        </address>
+<p>In <a href="/category/psets.html">psets</a>.</p>
+<p>tags: <a href="/tag/psets.html">psets</a> </p>
+</footer><!-- /.post-info --><p>This problem set is worth 17.5% of the grade in this course. It is due on Friday, February 1, at 5pm, via a dropbox in ICON that I shall set up for the purpose. </p>
+<p>There are three problems on this set, one relatively small/easy one worth 20 points, and two large/difficult ones worth 40 points each; the large problems also contain alternative versions that can be done for half credit.  Subsequent problem sets will probably have more problems in them. </p>
+<p><strong>How to turn in this problem set</strong>: each of the problems asks you to write a single Python function which carries out a designated operation.  You should include working code for each of these functions in a single Jupyter Notebook file, entitled <code>lastname_ps1.ipynb</code> (obviously with your last name), which you will turn in to the dropbox on ICON.</p>
+<ul>
+<li>For each of the problems, you need not package all of your code in a single function. For example, you may write helper functions, import libraries outside of your function, etc.  However, you must turn in a single Jupyter Notebook file with all the code that makes your functions work as well as the functions themselves.  I expect to be able to run all the cells in the notebook you turn in, and, at the end, have a working function for each problem, so that I can call those functions with appropriate input and get the correct result. In all cases, your functions should return <code>None</code> if they receive inappropriate input. </li>
+</ul>
+<h2>HONOR CODE</h2>
+<p>Each student must agree to the following honor code; if you do not agree to this honor code, do not turn in this problem set and drop the course. </p>
+<p><em>I will not solicit, receive, or provide any unauthorized assistance on this or any problem set in this course. I understand that unauthorized assistance includes seeing the work of any other student, including code, calculations, data analysis, or answers to problems. Students are permitted to discuss their general strategies for solving problems with one another, help one another understand lesson material or documentation for Python libraries, and the like, or other conversation short of sharing actual answers, calculations, data analysis, or code. Students are not permitted to seek or receive assistance or advice whatsoever from any person not enrolled in this course---this prohibition includes asking for help on public online forums such as stackoverflow.com, although students are free to search such websites and learn from preexisting discussions in which they are not participants.</em></p>
+<p><em>If I have any doubt about the permissibility of any kind of assistance, I will seek a ruling from the professor. I will report any violations of this honor code of which I am aware. Violating this honor code is grounds for immediate disenrollment from this course, or other sanctions as provided for by College of Law and University policy on academic dishonesty.</em></p>
+<h2>Problem 1 (20 points): Rock, Paper, Scissors</h2>
+<p>Write a function named <code>rps</code> that plays rock, paper, scissors with a human.  It should first select randomly between rock, scissors, and paper, keeping that selection secret, then ask the user for input (no cheating and doing it the other way around!). After the user provides the appropriate input, it should decide who won or if there's a tie by the standard means (rock beats scissors beats paper beats rock) and reveal both its choice and the winner to the user.</p>
+<p><strong>Rules and definitions for this problem:</strong></p>
+<ul>
+<li>
+<p>rps must accept input in uppercase, lowercase, and any weird mixed-up case the user types in, it must also accept input with any number of spaces before or after the word. For example, <code>rock</code> <code>Rock</code> <code>ROCK</code> <code>rock</code> and <code>rOcK</code> are all acceptable input.  </p>
+</li>
+<li>
+<p>If the user tries to enter anything other than rock, paper, or scissors, it should print the message <code>"Please enter rock, paper, or scissors."</code> and then ask the user for input again.</p>
+</li>
+<li>
+<p>The response must be of the form <code>"I picked [rock/paper/scissors]. [You/I/Nobody] won!"</code></p>
+</li>
+</ul>
+<p><strong>Example correct input and output:</strong></p>
+<p>(arrow symbols designate things the computer prints out)</p>
+<div class="highlight"><pre><span></span>rps()
+# computer picks rock in the background
+-&gt; Pick rock, paper or scissors!
+# User types in &quot;rocK&quot;
+-&gt; I picked rock. Nobody won!
+</pre></div>
+
+
+<h2>Problem 2 (40 points): Date Calculator</h2>
+<p>Rule 6 of the Federal Rules of Civil Procedure specifies a procedure for calculating the various dates (like the date to file a reply to a complaint) under the rules. Reduce that procedure to code. </p>
+<p>Specifically, write a function, named <code>calculate_days</code>, that takes two parameters: <code>num_days</code> which is the number of days to count, and <code>start_date</code> which is the date to begin counting from (for example, the date from which a complaint is served, triggering the clock for a reply). It should return the correct due date under FRCP 6. </p>
+<p><strong>Rules and definitions for this problem:</strong></p>
+<ul>
+<li>
+<p><code>start_date</code> should have a default value of the current date when the script is run, in the time zone of the computer on which it is run. I should, in other words, be able to call <code>calculate_days(10)</code> and get a FRCP 6-compliant date ten days from the date on which I call the function.</p>
+</li>
+<li>
+<p>Dates should be passed into the function as strings in the form MM-DD-YYYY, for example, <code>"12-27-2017"</code>.  It should output dates as strings in plain English in a form like <code>"Tue, January 02, 2018"</code>. </p>
+</li>
+<li>
+<p>Your calculation needs to take into account weekends and federal holidays that have a fixed date (New Years, Christmas, Veterans Day, and Independence day). It does not need to take into account holidays that have a weird date like "the fourth Monday in March" or whatever (e.g. Memorial Day, Thanksgiving). Also, it doesn't need to take into account "observed" holidays, for example, federal workers getting Monday off if Veterans Day happens to fall on a Sunday. </p>
+</li>
+<li>
+<p>However, you can receive five bonus points for correctly handling floating holidays like Memorial Day, and another 5 bonus points for correctly handling holidays where the statute says that if it falls on a Sunday it's observed on a Monday/if it falls on a Saturday, it's observed on a Sunday.</p>
+</li>
+<li>
+<p><em>Hint:</em> look into the built-in Python library <code>datetime</code>. There are lots of tutorials about how to use it.</p>
+</li>
+</ul>
+<p><strong>Example correct input and output:</strong></p>
+<p><code>calculate_days(3, "01-16-2019")</code> should return <code>Mon, January 21, 2019</code></p>
+<p><code>calculate_days(19, "06-15-2019")</code> should return <code>Fri, July 05, 2019</code></p>
+<h3>Half credit version of problem 2</h3>
+<p>You may write a version of <code>calculate_days</code> that does not take into account weekends and holidays for half credit.  The half credit version also does not need to provide output in precisely the format specified above, although it should still output a string that is recognizably a date and is comprehensible to an ordinary lawyer. </p>
+<h2>Problem 4 (40 points): Cite Finder</h2>
+<p>Write a function, named <code>cite_finder</code>, that takes one parameter, <code>case</code>, a string with a citation to an Illinois Supreme Court case, and returns the following: </p>
+<p>A.  <code>None</code>, if the citation does not correspond to an actual case.</p>
+<p>B. An empty list, if the citation corresponds to an actual case, but the text of that case does not include any citations to the U.S. Supreme Court.</p>
+<p>C.  A Python <code>list</code> of unique U.S. Supreme Court citations that appear in the text of the case, if the citation corresponds to an actual case and the case contains any U.S. Supreme Court citation.  </p>
+<p><strong>Rules and definitions for this problem:</strong></p>
+<ul>
+<li>
+<p>"Unique" means a citation to a specific case from a specific reporter. </p>
+</li>
+<li>
+<p>"Citation to an Illinois Supreme Court case" means a string reflecting a citation to the official reporter of the Illinois Supreme Court, in the form <code>12 Ill. 345</code> or <code>12 Ill.2d 345</code>. </p>
+</li>
+<li>
+<p>"U.S. Supreme Court citation" means any full citation (not supra, id, etc.) from the official U.S. Supreme Court reporter as abbreviated <code>U.S.</code>. Party names, years, and page numbers need not be included. Archaic citations (like to Cranch), S.Ct., and L.Ed. Citations should not be included. Subsequent cites/pin cites to a case of the form <code>123 U.S. at 456</code> should not be included.</p>
+</li>
+<li>
+<p>"Text" of a case includes all opinions (majority, concurrence, dissent, etc.) but does not include syllabus or any other content. </p>
+</li>
+<li>
+<p>Your function must use the <a href="https://case.law">Caselaw Access Project (case.law) API</a>. </p>
+</li>
+<li>
+<p>The list must be sorted using Python’s built-in list sorting functionality with default options.</p>
+</li>
+<li>
+<p>Each citation must appear only once.</p>
+</li>
+</ul>
+<p><strong>Example correct input and output:</strong></p>
+<ul>
+<li>
+<p><code>cite_finder("231 Ill.2d 474")</code> should return <code>['387 U.S. 136', '419 U.S. 102', '424 U.S. 1', '429 U.S. 252', '508 U.S. 520', '509 U.S. 43']</code></p>
+</li>
+<li>
+<p><code>cite_finder("231 Ill.2d 475")</code> should return <code>None</code></p>
+</li>
+<li>
+<p><code>cite_finder("215 Ill.2d 219")</code> should return <code>['339 U.S. 594', '387 U.S. 136', '467 U.S. 837', '538 U.S. 803']</code></p>
+</li>
+</ul>
+<h3>Half credit version of problem 3:</h3>
+<p>You may get half credit on this problem by writing a function, called <code>justice_finder</code>, which takes an Illinois Supreme Court citation as defined above and returns a list of every justice who wrote an opinion. This must also use the Caselaw Access Project API.</p>
+<p>Example correct input and output for half-credit version: </p>
+<ul>
+<li><code>cite_finder("231 Ill.2d 474")</code> should return <code>['JUSTICE THOMAS', 'JUSTICE FREEMAN,']</code></li>
+</ul>                </article>
+            </aside><!-- /#featured -->
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://law.uiowa.edu/">University of Iowa College of Law</a></li>
+                            <li><a href="https://gowder.io">Paul Gowder</a></li>
+                            <li><a href="http://python.org/">Python Documentation</a></li>
+                            <li><a href="https://github.com/paultopia/quantitative-methods-for-lawyers/">Course Github</a></li>
+                            <li><a href="https://notebooks.azure.com/">Microsoft Azure Notebooks</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+            <address id="about" class="vcard body">
+                
+
+                All content is (c) 2018-9 by <a href="https://gowder.io">Paul Gowder</a> and licensed under a <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International license</a>.  On the technical side, the site is powered by <a href="http://getpelican.com/">Pelican</a>, the theme is a modified version of one by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>.
+            </address><!-- /#about -->
+
+                
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

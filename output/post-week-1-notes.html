@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <title>Post-Week 1 Notes</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+        <link rel="stylesheet" href="/theme/css/juptyer-fix.css" />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">Sociological Gobbledygook </a></h1>
+                <nav><ul>
+                    <li><a href="/pages/manifesto.html">Manifesto</a></li>
+                    <li><a href="/pages/syllabus.html">Syllabus</a></li>
+                    <li class="active"><a href="/category/lessons.html">Lessons</a></li>
+                    <li><a href="/category/psets.html">psets</a></li>
+                    <li><a href="/category/welcome.html">Welcome</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="/post-week-1-notes.html" rel="bookmark"
+           title="Permalink to Post-Week 1 Notes">Post-Week 1 Notes</a></h1>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2018-01-15T00:00:00-06:00">
+                Published: Mon 15 January 2018
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/paul-gowder.html">Paul Gowder</a>
+        </address>
+<p>In <a href="/category/lessons.html">Lessons</a>.</p>
+<p>tags: <a href="/tag/week2.html">week2</a> </p>
+</footer><!-- /.post-info -->      <p>Well, we've survived our first week of Sociological Gobbledygook (and one room change---which we're keeping, BTW).  We've learned the basic mechanics of programming, and, more importantly, we've worked on building a mental model for how talking to a computer works by completing a number of exercises.  </p>
+<p>For the in-class time in week 2, expect more of the same, lots of exercises---but now they're going to get a little bit more complicated.  I'll also be pushing out the reading for week 3 soon. </p>
+<p>By now, everyone should have a working Azure notebooks setup and a Github account; you should also have received an invitation e-mail to join DataCamp. I encourage you to take advantage of DataCamp beyond the stuff I've assigned: you have free access to all their lessons for the duration of the class period, but it usually costs $30/month, so milk it for all it's worth while you can. And let me know if there are any problems.</p>
+<p>When I add new lessons, we'll have to talk a little bit more about how git works to enable you to pull the changes into your local version of them in Azure notebooks; please remind me to talk about that in class if I haven't gotten instructions posted by the beginning of next week...</p>
+<p>Finally, a quick note: I've noticed a few people taking notes in the class, including snippets of code, in Microsoft Word.  Word is not a great choice for writing code, because it saves in a format that mucks around with the text encoding (and also might screw you up by using things like autocorrect), so there's a good chance that you won't just be able to run code saved in Word anywhere else.  I recommend using a professional-quality text editor ("text editor" is in opposition to "word processor," so also don't use Pages, WordPerfect, Google Docs, OpenOffice, etc.; text editors are also sometimes called "code editors.")</p>
+<p>Another reason to use a good text editor is that they all have packages that you can use to extend their functionality, for example to give them the power to take Python code files and highlight different elements (so, for example, strings are in a different color), auto-complete variable names to avoid typoes, and such.  Also, because they save in "plain text" format (you'll soon learn that there's really no such thing as plain text, but they save in as close as you need to plain text), you can use them to just create code files that you can send directly to a Python interpreter to run on your local machine. This is difficult to do in a word processor.</p>
+<p>Here are my suggestions, and some notes on each of them: </p>
+<ul>
+<li><a href="https://atom.io">Atom</a> is probably the best beginner-friendly free text editor. It's available for all major operating systems. The one downside is that (for programmer-laziness reasons that I'll explain below in case you're curious) it tends to be a big battery drain, so I wouldn't leave it running outside of class/without plugging in.</li>
+<li><a href="https://code.visualstudio.com">VS Code</a> is Microsoft's version of Atom---they're extremely similar (I suspect including similar battery drain problems, though, because of my visceral hatred of all things Microsoft I haven't used it for long enough to see myself), but some people prefer the one over the other. It's also totally cross-platform.</li>
+<li>For Mac users only, <a href="https://www.barebones.com/products/bbedit/">BBEdit</a> is an excellent text editor with a free and a paid version, where the free version works totally fine for any uses you'll need. There's also <a href="https://www.sublimetext.com">Sublime Text</a> which is actually by far the best Mac-specific editor (in my opinion), but is not free---it costs something like 70 bucks, although they will let you use it without paying so long as you're willing to put up with period annoying nag message pop-ups. Many people also use <a href="https://macromates.com">TextMate</a>, but I've never tried it.</li>
+<li>For Windows-specific applications, most people seem to recommend <a href="https://notepad-plus-plus.org">Notepad++</a> which is free. I've never use it (though I think it's installed on some of our university computers), but it's very popular, so it's probably good. Apparently there's also a Sublime Text for Windows (which I just disovered); if it's stable it's doubtless amazing. </li>
+<li>If you're using Linux, you probably already have a text editor you like; if not, talk to me or try <a href="https://wiki.gnome.org/Apps/Gedit">Gedit</a>. </li>
+</ul>
+<hr>
+
+<p><em>explanation of the battery drain problem:</em> a lot of programmers who don't want to write separate code for different operating systems use a cross-platform framework called <a href="https://electronjs.org">Electron</a> to do it instead. Both Atom and VS Code are written in Electron. The problem with Electron is that it uses web browser technologies to get it to work on both platforms, so, essentially, it just runs a bunch of instances of Chrome in order to display documents. Chrome is a really heavy program that itself draws a ton of power, and Electron apps do it too.  Incidentally, Slack is also an Electron app, so if someone's made you use that and you've noticed it nuking your battery, that's why. </p>
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://law.uiowa.edu/">University of Iowa College of Law</a></li>
+                            <li><a href="https://gowder.io">Paul Gowder</a></li>
+                            <li><a href="http://python.org/">Python Documentation</a></li>
+                            <li><a href="https://github.com/paultopia/quantitative-methods-for-lawyers/">Course Github</a></li>
+                            <li><a href="https://notebooks.azure.com/">Microsoft Azure Notebooks</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+            <address id="about" class="vcard body">
+                
+
+                All content is (c) 2018-9 by <a href="https://gowder.io">Paul Gowder</a> and licensed under a <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International license</a>.  On the technical side, the site is powered by <a href="http://getpelican.com/">Pelican</a>, the theme is a modified version of one by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>.
+            </address><!-- /#about -->
+
+                
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>
