@@ -47,8 +47,24 @@ rOcK
 rps()
 # computer picks rock in the background
 -> Pick rock, paper or scissors!
-# User types in "rocK"
+# User types in "rocK    "
 -> I picked rock. Nobody won!
+
+rps()
+# computer picks paper in the background
+-> Pick rock, paper or scissors!
+# User types in "Scissors"
+-> I picked paper. You won!
+
+rps()
+# computer picks rock in the background
+-> Pick rock, paper or scissors!
+# User types in "sledgehammer"
+-> Please enter rock, paper, or scissors.
+# User types in "hand grenade"
+-> Please enter rock, paper, or scissors.
+# User types in "  scissors "
+-> I picked rock. I won!
 ```
 
 
