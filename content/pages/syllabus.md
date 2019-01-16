@@ -182,7 +182,7 @@ Read Automate the Boring Stuff With Python chapters [6 (strings)](https://automa
 
 (Further reading TBD)
 
-Problem set 1 due.
+[Problem set 1]({filename}../psets/pset1.md) due Friday, February 1, at 5pm Central time.
 
 ### Week 4
 
