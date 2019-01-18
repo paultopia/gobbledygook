@@ -131,7 +131,7 @@ class MontySimulation(object):
 ```
 
 
-I've added some comments to the code to make it a bit more readable, but I won't explain it line by line (maybe in class).  I want you to try to make sense of it, and then figure out how to run it.  (I'll post an explanation of hwo to run it in after a few lines of whitespace
+I've added some comments to the code to make it a bit more readable, but I won't explain it line by line (maybe in class).  I want you to try to make sense of it, and then figure out how to run it.  (I'll post an explanation of how to run it after a few lines of whitespace.)
 
 ...
 

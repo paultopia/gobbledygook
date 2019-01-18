@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <title>Simulation for fun and profit</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+        <link rel="stylesheet" href="/theme/css/juptyer-fix.css" />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">Sociological Gobbledygook </a></h1>
+                <nav><ul>
+                    <li><a href="/pages/manifesto.html">Manifesto</a></li>
+                    <li><a href="/pages/syllabus.html">Syllabus</a></li>
+                    <li class="active"><a href="/category/lessons.html">Lessons</a></li>
+                    <li><a href="/category/psets.html">psets</a></li>
+                    <li><a href="/category/welcome.html">Welcome</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="/simulation-for-fun-and-profit.html" rel="bookmark"
+           title="Permalink to Simulation for fun and profit">Simulation for fun and profit</a></h1>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2018-01-16T00:00:00-06:00">
+                Published: Tue 16 January 2018
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/paul-gowder.html">Paul Gowder</a>
+        </address>
+<p>In <a href="/category/lessons.html">Lessons</a>.</p>
+<p>tags: <a href="/tag/programming.html">programming</a> <a href="/tag/conceptual.html">conceptual</a> <a href="/tag/python.html">python</a> </p>
+</footer><!-- /.post-info -->      <p>One really useful thing that you can do with programming skills is simulate things that you don't fully understand. This is something that hard science people do all the time: it turns out that there are some kinds of problems that aren't solvable in a deductive, analytic kind of way, but if you can write a simulation of some of the broad influences on the problem, then you can sometimes get a good idea what's going on. </p>
+<p>For example, John Conway's famous <a href="https://en.m.wikipedia.org/wiki/Conway's_Game_of_Life">Game of Life</a> can be understood as a representation of an evolutionary process and has been the object of tons of study via computer simulation.  </p>
+<p>In statistics there are many many examples of simulation that actually help people learn more about data.  For example, there's a technique called the "bootstrap" that involves taking your data and generating synthetic samples from it via simulation, which statisticans can use to squeeze out more information from the original data.  There's also a wide array of techniques called <a href="https://en.m.wikipedia.org/wiki/Monte_Carlo_method">Monte Carlo</a> simulations in statistics that can be used to do freakishly powerful stuff. Simulation is great.</p>
+<p>However, for our purposes in this class, the most useful thing about simulations is how they allow us to explore how probability affects real-world results. It turns out that a lot of truths in probability are very counterintuitive to our unaided imagines, but are really easy to simulate using a computer, and, due to a very happy mathematical fact called the law of large numbers (which we'll learn more about in the stats section of the course), as you repeat a probabilistic simulation a lot of times (which a computer can do very fast), you're likely, in many cases, to be able to observe behavior that reflects the aggregate behavior that we'd expect to see in the real world. </p>
+<p>Here's an example.  There's a very famous probability problem called "Monty Hall." I have some more details about it in a later lesson, but here's the crux of it. There was an old game show called "Let's Make a Deal" (Monty Hall was the host) and one the games they played involved presenting the contestant with three closed doors. Behind one of the door was a car, and behind the other two was a booby prize, like a goat or something. (I dunno, goats are cute, I'd be cool with that.) </p>
+<p>The contestant would choose a door, and then Monty Hall would open one of the remaining doors not chosen by the contestant and reveal a goat.  Then Monty Hall would ask the contestant: do they want to change with their original door, or do they want to switch?  Then, after the contestant makes their final choice, Monty reveals what's behind the door they landed on, and the contestant gets the prize. </p>
+<p>Pause for a moment, and think about the game.  Can you figure out a good strategy for it?  Should the contestant always stick with their original door?  Should they always switch?  Should they flip a coin?  Does it matter at all?  Think about it, and try to justify your answer.  I'll be back below...</p>
+<p>...</p>
+<p>...</p>
+<p>...</p>
+<p>...</p>
+<p>...</p>
+<p>...</p>
+<p>...</p>
+<p>...</p>
+<p>...</p>
+<p>...</p>
+<p>...</p>
+<p>...</p>
+<p>...</p>
+<p>...</p>
+<p>...</p>
+<p>...</p>
+<p>...</p>
+<p>...</p>
+<p>...</p>
+<p>...</p>
+<p>...</p>
+<p>...</p>
+<p>Almost everyone who hasn't seen this problem concludes that it doesn't matter---stick, switch, flip a coin, either way, you have a 1 in 3 chance of getting the car.  Actually, this is wrong---the correct strategy is to always switch to the last closed door after Monty opens a door with a goat. (But don't feel bad if you didn't realize that, like I said, almost nobody who doesn't know the problem realizes that, including math professors.)</p>
+<p>Suppose you don't believe me.  This is really counterintuitive!  How can it possibly make a difference, we start the game with one goat and three doors?!!!?!??  Well, this is a probability problem, so we can simulate it---and taking a look at the results might convince you that maybe I'm telling you the truth after all.</p>
+<p>Here's some code to simulate the Monty Hall problem.  It uses object-oriented programming concepts; please see the lesson about object-orientation to understand what's going on here. It turns out that object-oriented programming, as a style of writing code, is really well suited to simulations, because you can do things like make a player and its strategies one class, and a round of the game another class, and then just have them interact in order to produce your result.  </p>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+
+<span class="k">class</span> <span class="nc">Round</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">doors</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">car</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">doors</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">pick</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">door</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">player_choice</span> <span class="o">=</span> <span class="n">door</span>
+
+    <span class="k">def</span> <span class="nf">open_door</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">available_to_open</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">doors</span> <span class="k">if</span> <span class="n">x</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">player_choice</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">car</span><span class="p">]]</span>
+        <span class="k">return</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">available_to_open</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">evaluate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">player_choice</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">car</span>  <span class="c1"># true if player chose the car, false if not!</span>
+
+
+<span class="k">class</span> <span class="nc">Player</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">strategy</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">strategy</span> <span class="o">=</span> <span class="n">strategy</span>
+
+    <span class="k">def</span> <span class="nf">first_pick</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">doors</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">]</span>
+        <span class="n">first_choice</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">doors</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">first_choice</span> <span class="o">=</span> <span class="n">first_choice</span>
+        <span class="k">return</span> <span class="n">first_choice</span>
+
+    <span class="k">def</span> <span class="nf">final_pick</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">open_door</span><span class="p">):</span>
+        <span class="n">switch_choice</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">]</span> <span class="k">if</span> <span class="n">x</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">first_choice</span><span class="p">,</span> <span class="n">open_door</span><span class="p">]][</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">strategy</span> <span class="o">==</span> <span class="s2">&quot;stick&quot;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">first_choice</span>
+        <span class="k">elif</span> <span class="n">strategy</span> <span class="o">==</span> <span class="s2">&quot;switch&quot;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">switch_choice</span>
+        <span class="k">else</span><span class="p">:</span>  <span class="c1"># default strategy is assumed to be &quot;random&quot;</span>
+            <span class="k">return</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">first_choice</span><span class="p">,</span> <span class="n">switch_choice</span><span class="p">])</span>
+
+
+<span class="k">class</span> <span class="nc">MontySimulation</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">player</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">player</span> <span class="o">=</span> <span class="n">player</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wins</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="k">def</span> <span class="nf">report</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">percentage_won</span> <span class="o">=</span> <span class="mi">100</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">wins</span> <span class="o">/</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">rounds</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Player with {} in {} rounds won {}</span><span class="si">% o</span><span class="s2">f rounds&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">player</span><span class="o">.</span><span class="n">strategy</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">rounds</span><span class="p">,</span> <span class="n">percentage_won</span><span class="p">))</span>
+
+    <span class="k">def</span> <span class="nf">play</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rounds</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">rounds</span> <span class="o">=</span> <span class="n">rounds</span>
+        <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">rounds</span><span class="p">):</span>
+            <span class="n">current_round</span> <span class="o">=</span> <span class="n">Round</span><span class="p">()</span>
+            <span class="n">first_pick</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">player</span><span class="o">.</span><span class="n">first_pick</span><span class="p">()</span>
+            <span class="n">current_round</span><span class="o">.</span><span class="n">pick</span><span class="p">(</span><span class="n">first_pick</span><span class="p">)</span>
+            <span class="n">opened</span> <span class="o">=</span> <span class="n">current_round</span><span class="o">.</span><span class="n">open_door</span><span class="p">()</span>
+            <span class="n">final_pick</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">player</span><span class="o">.</span><span class="n">final_pick</span><span class="p">(</span><span class="n">opened</span><span class="p">)</span>
+            <span class="n">current_round</span><span class="o">.</span><span class="n">pick</span><span class="p">(</span><span class="n">final_pick</span><span class="p">)</span>  <span class="c1"># it&#39;s perfectly ok to call the method a second time to reset the instance variable to the final result</span>
+            <span class="n">won</span> <span class="o">=</span> <span class="n">current_round</span><span class="o">.</span><span class="n">evaluate</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">won</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">wins</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">report</span><span class="p">()</span>
+</pre></div>
+
+
+<p>I've added some comments to the code to make it a bit more readable, but I won't explain it line by line (maybe in class).  I want you to try to make sense of it, and then figure out how to run it.  (I'll post an explanation of hwo to run it in after a few lines of whitespace</p>
+<p>...</p>
+<p>...</p>
+<p>...</p>
+<p>...</p>
+<p>...</p>
+<p>...</p>
+<p>...</p>
+<p>...</p>
+<p>...</p>
+<p>...</p>
+<p>...</p>
+<p>...</p>
+<p>...</p>
+<p>...</p>
+<p>...</p>
+<p>...</p>
+<p>...</p>
+<p>...</p>
+<p>...</p>
+<p>...</p>
+<p>...</p>
+<p>...</p>
+<p>Here's a good way to run this code, at 10000 times per strategy, which should run very quickly and is highly likely to produce reports reflecting the underlying probabilities of winning.  As you can see if you run this code, switching is a much better strategy than sticking!</p>
+<div class="highlight"><pre><span></span>strategies = [&quot;stick&quot;, &quot;switch&quot;, &quot;random&quot;]
+for strategy in strategies:
+    player = Player(strategy)
+    game = MontySimulation(player)
+    game.play(10000)
+</pre></div>
+
+
+<p>We will talk about Monty Hall later on in the course, and I'll give you the mathematical reasoning behind the correct strategy. </p>
+<p>Incidentally, while object-oriented programming is a good match for simulation, it isn't necessary. To prove it, here's <a href="https://github.com/paultopia/math4ls/blob/master/montyhall/src/montyhall/core.cljs">another Monty Hall simulation</a> I wrote a couple years in a programming language that doesn't even support object-oriented programming. The part that does the simulation actually comes out shorter than the example above (although the linked code also generates a webpage to see the simulation live, which you can <a href="http://paul-gowder.com/montyhall/">play with here if you want</a>). If you want to see what the same simulation looks like in another language, go check it out... I'll bet you can understand the broad outlines, even though you've never been exposed to the other language. </p>
+<p>In the remainder of this class, I will liberally use simulation to demonstrate important concepts in probability and statistics. I encourage you to poke around in those simulations, change their assumptions (for example, can you figure out a way to change the rules of Monty Hall to change the player's optimal strategy?  If you can, simulate it to check!), and poke around the edges in order to get a feel for the knowledge they represent. I think you'll find that being able to dig your hands into a probability/statistics process will make it more understandable and intuitive than just looking at some mathematical proof. </p>
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://law.uiowa.edu/">University of Iowa College of Law</a></li>
+                            <li><a href="https://gowder.io">Paul Gowder</a></li>
+                            <li><a href="http://python.org/">Python Documentation</a></li>
+                            <li><a href="https://github.com/paultopia/quantitative-methods-for-lawyers/">Course Github</a></li>
+                            <li><a href="https://notebooks.azure.com/">Microsoft Azure Notebooks</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+            <address id="about" class="vcard body">
+                
+
+                All content is (c) 2018-9 by <a href="https://gowder.io">Paul Gowder</a> and licensed under a <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International license</a>.  On the technical side, the site is powered by <a href="http://getpelican.com/">Pelican</a>, the theme is a modified version of one by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>.
+            </address><!-- /#about -->
+
+                
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

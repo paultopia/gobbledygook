@@ -46,9 +46,17 @@
 <p>Write a function named <code>rps</code> that plays rock, paper, scissors with a human.  It should first select randomly between rock, scissors, and paper, keeping that selection secret, then ask the user for input (no cheating and doing it the other way around!). After the user provides the appropriate input, it should decide who won or if there's a tie by the standard means (rock beats scissors beats paper beats rock) and reveal both its choice and the winner to the user.</p>
 <p><strong>Rules and definitions for this problem:</strong></p>
 <ul>
-<li>
-<p>rps must accept input in uppercase, lowercase, and any weird mixed-up case the user types in, it must also accept input with any number of spaces before or after the word. For example, <code>rock</code> <code>Rock</code> <code>ROCK</code> <code>rock</code> and <code>rOcK</code> are all acceptable input.  </p>
-</li>
+<li>rps must accept input in uppercase, lowercase, and any weird mixed-up case the user types in, it must also accept input with any number of spaces before or after the word. For example, all of the following are acceptable input:</li>
+</ul>
+<div class="highlight"><pre><span></span>rock
+Rock
+ROCK
+            rock
+rOcK
+</pre></div>
+
+
+<ul>
 <li>
 <p>If the user tries to enter anything other than rock, paper, or scissors, it should print the message <code>"Please enter rock, paper, or scissors."</code> and then ask the user for input again.</p>
 </li>
@@ -61,8 +69,24 @@
 <div class="highlight"><pre><span></span>rps()
 # computer picks rock in the background
 -&gt; Pick rock, paper or scissors!
-# User types in &quot;rocK&quot;
+# User types in &quot;rocK    &quot;
 -&gt; I picked rock. Nobody won!
+
+rps()
+# computer picks paper in the background
+-&gt; Pick rock, paper or scissors!
+# User types in &quot;Scissors&quot;
+-&gt; I picked paper. You won!
+
+rps()
+# computer picks rock in the background
+-&gt; Pick rock, paper or scissors!
+# User types in &quot;sledgehammer&quot;
+-&gt; Please enter rock, paper, or scissors.
+# User types in &quot;hand grenade&quot;
+-&gt; Please enter rock, paper, or scissors.
+# User types in &quot;  scissors &quot;
+-&gt; I picked rock. I won!
 </pre></div>
 
 
@@ -92,7 +116,7 @@
 <p><code>calculate_days(19, "06-15-2019")</code> should return <code>Fri, July 05, 2019</code></p>
 <h3>Half credit version of problem 2</h3>
 <p>You may write a version of <code>calculate_days</code> that does not take into account weekends and holidays for half credit.  The half credit version also does not need to provide output in precisely the format specified above, although it should still output a string that is recognizably a date and is comprehensible to an ordinary lawyer. </p>
-<h2>Problem 4 (40 points): Cite Finder</h2>
+<h2>Problem 3 (40 points): Cite Finder</h2>
 <p>Write a function, named <code>cite_finder</code>, that takes one parameter, <code>case</code>, a string with a citation to an Illinois Supreme Court case, and returns the following: </p>
 <p>A.  <code>None</code>, if the citation does not correspond to an actual case.</p>
 <p>B. An empty list, if the citation corresponds to an actual case, but the text of that case does not include any citations to the U.S. Supreme Court.</p>
