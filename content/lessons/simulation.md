@@ -1,5 +1,5 @@
 title: Simulation for fun and profit 
-tags: programming, conceptual, python
+tags: programming, conceptual, python, week3, object-oriented
 date: 2018-01-16
 
 One really useful thing that you can do with programming skills is simulate things that you don't fully understand. This is something that hard science people do all the time: it turns out that there are some kinds of problems that aren't solvable in a deductive, analytic kind of way, but if you can write a simulation of some of the broad influences on the problem, then you can sometimes get a good idea what's going on. 
