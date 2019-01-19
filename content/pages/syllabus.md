@@ -176,11 +176,11 @@ Monday is a holiday (MLK day).  For **Tuesday**, read [Libraries]({filename}../L
 
 ### Week 3
 
-Coverage: Regular expressions. Simulation and why you might want to do it. A very light introduction to object-oriented programming. Initial explorations into legal data.
+Coverage: Regular expressions. Simulation and why you might want to do it. A very light introduction to object-oriented programming. 
 
-Read Automate the Boring Stuff With Python chapters [6 (strings)](https://automatetheboringstuff.com/chapter6/) and [7 (regular expressions)](https://automatetheboringstuff.com/chapter7/)
+Read Automate the Boring Stuff With Python chapters [6 (strings)](https://automatetheboringstuff.com/chapter6/) and [7 (regular expressions)](https://automatetheboringstuff.com/chapter7/) as well as Python for Everybody pp. 127-140 and 171-184 (chapters 11 and 14). 
 
-(Further reading TBD)
+On this site, read [Regular Expressions]({filename}../Lessons/regex.ipynb), Object-Oriented Programming (link TBD), and [Simulations]({filename}../Lessons/simulation.md).  
 
 [Problem set 1]({filename}../psets/pset1.md) due Friday, February 1, at 5pm Central time.
 
