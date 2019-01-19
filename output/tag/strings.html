@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
         <meta charset="utf-8" />
-        <title>Sociological Gobbledygook - python</title>
+        <title>Sociological Gobbledygook - strings</title>
         <link rel="stylesheet" href="/theme/css/main.css" />
         <link rel="stylesheet" href="/theme/css/juptyer-fix.css" />
 </head>
@@ -21,7 +21,7 @@
 
             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="/object-oriented-programming.html">Object-Oriented Programming</a></h1>
+                    <h1 class="entry-title"><a href="/regular-expressions.html">Regular Expressions</a></h1>
 <footer class="post-info">
         <abbr class="published" title="2019-01-18T00:00:00-06:00">
                 Published: Fri 18 January 2019
@@ -31,7 +31,7 @@
                 By                         <a class="url fn" href="/author/paul-gowder.html">Paul Gowder</a>
         </address>
 <p>In <a href="/category/lessons.html">Lessons</a>.</p>
-<p>tags: <a href="/tag/python.html">python</a> <a href="/tag/programming.html">programming</a> <a href="/tag/week3.html">week3</a> <a href="/tag/object-oriented.html">object-oriented</a> </p>
+<p>tags: <a href="/tag/python.html">python</a> <a href="/tag/programming.html">programming</a> <a href="/tag/week3.html">week3</a> <a href="/tag/regex.html">regex</a> <a href="/tag/strings.html">strings</a> </p>
 </footer><!-- /.post-info --><style type="text/css">/*!
 *
 * IPython notebook
@@ -1184,12 +1184,10 @@ h6:hover .anchor-link {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Object-oriented programming</strong> (OOP) isn't all that special, it's just a particular style of programming that Python is particularly well designed for.  This is a short lesson, we won't cover the theory of OOP, or features you might hear about elsewhere like "inheritance"---see your reading in the P4E book for more.</p>
-<p>However, we have to say something about OOP in order to enable you to work with many Python libraries, which expect you to be able to instantiate objects and work with them.  So here's the short version.</p>
-<p>OOP is another kind of mental model for programming. It mostly is useful for organizing the abstractions in your code.  One of the key ideas is that groups of related data and functionality can be tied together in the form of objects.</p>
-<p>A <strong>class</strong> is an abstract description of a kind of object. A class declaration will say what kind of things an object of that sort can do.</p>
-<p>An <strong>instance</strong> is an actual object that you create and make use of in the computer's memory.</p>
-<p>Let's look at a trivial example of a class</p>
+<p>Regular expressions (or "regex"/"regexes") are one of the most powerful programming tools for lawyers. Essentially, regular expressions are a powerful specialized programming language built into other languages like Python, which allow you to express complicated text searching operations.</p>
+<p>The utility of this for lawyers should be obvious: lawyers have to deal with lots and lots and lots of documents, and sometimes need to search through those documents for specific information. If those documents are in electronic form, regular expressions can provide you with a much more powerful way of searching than what is built into ordinary applications.</p>
+<p>Here's a simple example.  Suppose you've got a bunch of files. And suppose you're trying to find any document that contains a reference to specific dollar amounts---invoices, e-mails with discussions of financial matters, etc. One of the things you might do is search for anything in the usual format for representing dollars, i.e., a number with two digits after the decimal point, and, say, 1-8 digits before the decimal, maybe with commas in there.  (Let's suppose that you don't expect any bigger amounts of money to be at issue.)</p>
+<p>First, let's create some pretend data.  In a real task, we'd probably have these files on disk somewhere, or in a database, and we'd open every file, search it, and save the document if it matched. Also, for this technique to be useful in a real task, we'd usually have hundreds or thousands of dollars. For the purposes of demonstration, however, we can put a handful of fake texts in memory.</p>
 
 </div>
 </div>
@@ -1199,25 +1197,48 @@ h6:hover .anchor-link {
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Dog</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">temperament</span><span class="o">=</span><span class="s2">&quot;normal&quot;</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">temperament</span> <span class="o">=</span> <span class="n">temperament</span>
-        
-    <span class="k">def</span> <span class="nf">bark</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">volume</span><span class="o">=</span><span class="s2">&quot;loud&quot;</span><span class="p">):</span>
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">temperament</span> <span class="o">==</span> <span class="s2">&quot;vicious&quot;</span><span class="p">:</span>
-            <span class="n">sound</span> <span class="o">=</span> <span class="s2">&quot;snarl!!!&quot;</span>
-        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">temperament</span> <span class="o">==</span> <span class="s2">&quot;timid&quot;</span><span class="p">:</span>
-            <span class="n">sound</span> <span class="o">=</span> <span class="s2">&quot;wimper?&quot;</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">sound</span> <span class="o">=</span> <span class="s2">&quot;woof.&quot;</span>
-        <span class="k">if</span> <span class="n">volume</span> <span class="o">==</span> <span class="s2">&quot;loud&quot;</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="n">sound</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="n">sound</span><span class="p">)</span>
-            
-    <span class="k">def</span> <span class="nf">meet_cat</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">temperament</span> <span class="o">=</span> <span class="s2">&quot;timid&quot;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">understanding</span> <span class="o">=</span> <span class="s2">&quot;inferior&quot;</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">no_money_letter</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">Hey Boss: </span>
+
+<span class="s2">Just so you know, I did all the crimes.  Like 100 of them. So many crimes.  </span>
+
+<span class="s2">We should probably delete this e-mail before we get sued.</span>
+
+<span class="s2">xoxoxo,</span>
+
+<span class="s2">Lackey.</span>
+
+<span class="s2">&quot;&quot;&quot;</span>
+
+<span class="n">invoice</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+
+<span class="s2">Crime, INC.</span>
+
+<span class="s2">For services rendered: </span>
+
+<span class="s2">Tax Fraud            100.00</span>
+
+<span class="s2">Price-fixing           9.99</span>
+
+<span class="s2">Insider trading       20.00</span>
+
+<span class="s2">TOTAL                129.99              </span>
+
+<span class="s2">&quot;&quot;&quot;</span>
+
+<span class="n">money_letter</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+
+<span class="s2">Dear Boss:</span>
+
+<span class="s2">Remember all those crimes I&#39;ve committed?  They made the firm $1,280,012.05.  Maybe a raise?</span>
+
+<span class="s2">xoxoxo,</span>
+
+<span class="s2">Lackey</span>
+
+<span class="s2">&quot;&quot;&quot;</span>
+
+<span class="n">docs</span> <span class="o">=</span> <span class="p">[</span><span class="n">money_letter</span><span class="p">,</span> <span class="n">no_money_letter</span><span class="p">,</span> <span class="n">invoice</span><span class="p">]</span>
 </pre></div>
 
     </div>
@@ -1228,17 +1249,7 @@ h6:hover .anchor-link {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Here's what you need to know about this code.</p>
-<ol>
-<li><p>Functions belonging to a class are called <strong>methods</strong>.  You can tell that they belong to the class because they are indented under the class declaration in the first line.</p>
-</li>
-<li><p>Every method takes a special parameter to refer to the object on which it is called as the very first parameter.  Here, we're using <code>self</code> for that, which is the Python convention, but you could use anything else.  When you call these methods, you don't supply the value for the self parameter.  We'll see how to call them in a moment.</p>
-</li>
-<li><p>Every class has an <code>__init__</code> method.  The two underscores on either side of the name show you it's a special method (known as "magic methods" in Python slang... there are a number of those, but init is the most important).  This is the method that gets called when you <strong>initialize</strong> a class, that is, create an instance of that class.</p>
-</li>
-<li><p>All those references to <code>self.temperment</code> are creating (the first time something is assigned to it) and either mutating or examining an <strong>attribute</strong> (also called a property) of a particular instance.  Let's look at some examples of instances.</p>
-</li>
-</ol>
+<p>Now let's search this!  I'll show you some code, and then, per usual, we'll walk through it.</p>
 
 </div>
 </div>
@@ -1248,107 +1259,131 @@ h6:hover .anchor-link {
 <div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">goodboy</span> <span class="o">=</span> <span class="n">Dog</span><span class="p">()</span>
-<span class="n">doberman</span> <span class="o">=</span> <span class="n">Dog</span><span class="p">(</span><span class="s2">&quot;vicious&quot;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">re</span>
+
+<span class="n">pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;\d*,?\d*,?\d{0,3}\.\d\d&#39;</span>
+
+<span class="n">matches</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">docs</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">doc</span><span class="p">):</span>
+        <span class="n">matches</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>
 </pre></div>
 
     </div>
 </div>
 </div>
 
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>We've created two different instances of <code>Dog</code> and each of them has its own set of instance properties.  Let's prove that by calling the bark method.</p>
-
-</div>
-</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">doberman</span><span class="o">.</span><span class="n">bark</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">match</span> <span class="ow">in</span> <span class="n">matches</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">match</span><span class="p">)</span>
 </pre></div>
 
     </div>
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>
+
+Dear Boss:
+
+Remember all those crimes I&#39;ve committed?  They made the firm $1,280,012.05.  Maybe a raise?
+
+xoxoxo,
+
+Lackey
+
+
+
+
+Crime, INC.
+
+For services rendered: 
+
+Tax Fraud            100.00
+
+Price-fixing           9.99
+
+Insider trading       20.00
+
+TOTAL                129.99              
+
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>You see what we did there?  We used one search to match both the dollar amount <code>$1,280,012.05</code> and dollar amounts like <code>100.00</code> and <code>9.99</code> while <em>not</em> matching <code>100</code> in the first example letter, which doesn't look like a dollar amount.  Try doing that with Google or Control-F (I think old versions of MS Word used to have something resembling regex capacity, but I can't find that in any online documentation anymore.  Sorry law review editors, but you might try saving into plain text formats in order to try tasks like searching for citations...)</p>
+<p>Let's look at the code.</p>
+
+<pre><code>import re
+
+pattern = r'\d*,?\d*,?\d{0,3}\.\d\d'
+
+matches = []
+
+for doc in docs:
+    if re.search(pattern, doc):
+        matches.append(doc)</code></pre>
+<p>Most of that code is pretty self-explanatory, but the one part that's new is the line where we define the pattern and has this wild <code>r'\d*,?\d*,?\d{0,3}\.\d\d'</code> thing that sort of looks like Klingon.  Unsurprisingly, that's a regular expression pattern.</p>
+<p>One very useful way to build regular expressions is to use an application that lets you enter in sample text and try out different regular expressions to see what they match.  My favorite is the free webapp <a href="https://regex101.com/">Regex101</a>. The neat thing about Regex101 is that it lets you save your examples and share them (using the little menu hamburger icon thingey on the left).  So I've created a saved version of this search with our sample text that shows exactly how it works.  <a href="https://regex101.com/r/zu8XzP/1/">Check it out here!</a></p>
+<p>But before we get to our complicated pattern, let's start simpler.  Regular expressions are basically just amped up search strings, and we know how to search, right?  We can use ordinary strings as regexes as well.</p>
+<p>First, let's abstract out our search into a function, then let's look at some simple examples.</p>
+
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">goodboy</span><span class="o">.</span><span class="n">bark</span><span class="p">(</span><span class="s2">&quot;quiet&quot;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">search_docs</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">doclist</span><span class="p">):</span>
+    <span class="n">matches</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">doclist</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">doc</span><span class="p">):</span>
+            <span class="n">matches</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">matches</span>
 </pre></div>
 
     </div>
 </div>
 </div>
 
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Here are a few things you can observe from those examples:</p>
-<ol>
-<li><p>We instantiate a class by calling it as if it were a function.  We can pass parameters into its <code>__init__</code> method that way too.</p>
-</li>
-<li><p><code>doberman</code> and <code>goodboy</code> have different <code>temperament</code> properties, hence they make different sounds when we call their <code>bark()</code> methods.</p>
-</li>
-<li><p>We call a method on an instance by putting a period after the instance's name and before the method call.  We don't pass the instance into the call, but we do pass any other parameters (like <code>volume</code> here) that we want.</p>
-</li>
-<li><p>Instances are totally separate.  Nothing we do to <code>goodboy</code> affects <code>doberman</code> or vice versa.</p>
-</li>
-</ol>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>We can also modify existing instance attributes, and we can access them directly with the same dot notation.  Let's look at, then modify, doberman's attributes.</p>
-
-</div>
-</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">doberman</span><span class="o">.</span><span class="n">temperament</span><span class="p">)</span>
-</pre></div>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">wise_statements</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Dogs are ok, I guess&quot;</span><span class="p">,</span> 
+                    <span class="s2">&quot;Cats are better than dogs&quot;</span><span class="p">,</span> 
+                    <span class="s2">&quot;Professor Gowder has the best cat.&quot;</span><span class="p">,</span>
+                   <span class="s2">&quot;If you have a cat, you are cool.&quot;</span><span class="p">]</span>
 
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">doberman</span><span class="o">.</span><span class="n">meet_cat</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">doberman</span><span class="o">.</span><span class="n">temperament</span><span class="p">)</span>
+<span class="n">search_docs</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;cat&quot;</span><span class="p">,</span> <span class="n">wise_statements</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -1361,150 +1396,15 @@ h6:hover .anchor-link {
 
 <div class="output_area">
 
-    <div class="prompt"></div>
+    <div class="prompt output_prompt">Out[5]:</div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>timid
-</pre>
-</div>
-</div>
 
-</div>
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[&#39;Professor Gowder has the best cat.&#39;, &#39;If you have a cat, you are cool.&#39;]</pre>
 </div>
 
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">doberman</span><span class="o">.</span><span class="n">understanding</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>inferior
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">doberman</span><span class="o">.</span><span class="n">bark</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>WIMPER?
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">doberman</span><span class="o">.</span><span class="n">temperament</span> <span class="o">=</span> <span class="s2">&quot;vicious&quot;</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">doberman</span><span class="o">.</span><span class="n">bark</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>SNARL!!!
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">goodboy</span><span class="o">.</span><span class="n">bark</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>WOOF.
-</pre>
-</div>
 </div>
 
 </div>
@@ -1514,7 +1414,278 @@ h6:hover .anchor-link {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>As I said, this is the bare minimum to understand what's going on when you see OOP code.  This will benefit you in the next lesson, where we'll look at some OOP code to run a simulation. It will also benefit you in interacting with Python libraries which often expect you to know how to instantiate an object, call methods on it, and access its properties.</p>
+<p>Ok, the first thing you should notice is that the regex pattern is a normal string, but with a lowercase r prepended to it.  The reason for the lowercase r is that it tells Python to ignore special characters in the string---instead of processing those characters in Python-ey ways, it'll process them in regex-ey ways.  You can just treat this as a rule: put a lowercase r before the string when you're making a regex pattern, and if you want the nitty-gritty technical details of why, look <a href="https://stackoverflow.com/questions/12871066/what-exactly-is-a-raw-string-regex-and-how-can-you-use-it">here</a>.</p>
+<p>The second thing you should notice is that this successfully searched for the wise statements with "cat" in lowercase, but not capitalized: regex is case sensitive.  How to make it case-insensitive?</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">search_docs</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;(?i)cat&#39;</span><span class="p">,</span> <span class="n">wise_statements</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[6]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[&#39;Cats are better than dogs&#39;,
+ &#39;Professor Gowder has the best cat.&#39;,
+ &#39;If you have a cat, you are cool.&#39;]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>What we've done there is insert a special character sequence before the c, that said what we have to do afterward.  Specifically, we've inserted a special character that means "match in either case."  There are other ways we could have done this.  For example:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">search_docs</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;[cC]at&#39;</span><span class="p">,</span> <span class="n">wise_statements</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[7]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[&#39;Cats are better than dogs&#39;,
+ &#39;Professor Gowder has the best cat.&#39;,
+ &#39;If you have a cat, you are cool.&#39;]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>By enclosing characters in brackets, we tell regex "match any of these characters" so that regex means "match either <code>C</code> or <code>c</code>, followed by <code>at</code>"  It achieves exactly the same thing as the previous one.</p>
+<p>But there's a problem...</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">wise_statements</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;When looking at data, it&#39;s always a good idea to start with a scatterplot&quot;</span><span class="p">)</span>
+
+<span class="n">search_docs</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;[cC]at&#39;</span><span class="p">,</span> <span class="n">wise_statements</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[8]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[&#39;Cats are better than dogs&#39;,
+ &#39;Professor Gowder has the best cat.&#39;,
+ &#39;If you have a cat, you are cool.&#39;,
+ &#34;When looking at data, it&#39;s always a good idea to start with a scatterplot&#34;]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>What happened??  Well, the word "scatterplot" has the three letter sequence "cat" in it, so it matched.  Ooops.  How to fix it?</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">search_docs</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\b[cC]at\b&#39;</span><span class="p">,</span> <span class="n">wise_statements</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[9]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[&#39;Professor Gowder has the best cat.&#39;, &#39;If you have a cat, you are cool.&#39;]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The \b symbol says "there has to be a word boundary here" Basically, a word boundary means "not a letter or number," and the end of the string counts.  So this pattern now says "Match the word cat, capitalized or not, and not adjacent to any other letters or numbers."  This rules out "scatterplot."</p>
+<p>Unfortunately, it also rules out "Cats"!  Because that has an s after it!  That's not what we wanted.  Time to make it a bit more complicated...</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">search_docs</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\b[cC]ats?\b&#39;</span><span class="p">,</span> <span class="n">wise_statements</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[10]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[&#39;Cats are better than dogs&#39;,
+ &#39;Professor Gowder has the best cat.&#39;,
+ &#39;If you have a cat, you are cool.&#39;]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The question mark means "either zero or one of this character."  So now our pattern says "match the word cat or cats, not embedded in any other words, and capitalized or not."</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Now that you have some idea of how regular expressions work---by mixing up special characters and normal characters to describe a pattern for a string---we can understand the one we started off with.</p>
+
+<pre><code>r'\d*,?\d*,?\d{0,3}\.\d\d'</code></pre>
+<p>Here's a piece-by-piece translation of that.</p>
+<ul>
+<li><p><code>\d</code> any digit character (0, 1, 2...9)</p>
+</li>
+<li><p><code>*</code> apply the preceding character any number of times, including zero so <code>\d*</code> means "any number of digits</p>
+</li>
+<li><p><code>,?</code> maybe a comma</p>
+</li>
+<li><p>then we have any number of digits and maybe a comma again.  This is a little imprecise, our regex would match weird stuff like <code>1,000000,000.00</code> but I don't really expect to see such a thing in a search of something like litigation documents.</p>
+</li>
+<li><p><code>\d{0,3}</code>  This means "match any digit between 0 and 3 times."  Again, it is a little imprecise.  Our regex would match weird things like <code>.00</code> on its own.  But again, I wouldn't expect to see such a thing in most realistic cases.</p>
+</li>
+<li><p><code>\.</code>  This just means "match a period."  The problem is that a period is a special character in regex language (it means "any character"), so we need to <em>escape</em> it with a backslash to tell the regex engine that we don't mean the special character, we mean the literal period.</p>
+</li>
+<li><p><code>\d\d</code> two digits.</p>
+</li>
+</ul>
+<p>Put together, our regex says "match any number of digits, maybe followed by a comma, followed by any number of digits, maybe followed by a comma, followed by 0-3 digits, followed by a period and two digits."  Which is a pretty good stab at something that looks like a dollar amount.</p>
+<p><strong>now here's an exercise for you:</strong>  You see those places up above where I said this regex is imprecise?  Try and find a regex that gets rid of the imprecision by not accepting funky numbers like <code>1,000000,000.00</code> and <code>.00</code> on its own.</p>
+<p>To help you out, I've put the imprecise regex and our bad examples into a <a href="https://regex101.com/r/nuqA6i/1/">regex101 sample</a>.  Try playing with it until you get it working.</p>
+<p>...</p>
+<p>...</p>
+<p>...</p>
+<p>...</p>
+<p>...</p>
+<p>...</p>
+<p>...</p>
+<p>...</p>
+<p>...</p>
+<p>...</p>
+<p>...</p>
+<p>If you want to see my solution, which also gets rid of the arbitrary limitation of only working with small dollar amounts, take a look at <a href="https://regex101.com/r/7SCGT1/3">this regex101</a>... but <strong>try on your own first.</strong>  You don't get good at this stuff without practicing, and hunting down the information you don't know in order to solve problems.  (Incidentally, I'm deliberately making you hunt down information you don't know to fill in gaps to solve the problem sets too.  This is how problem sets work, actually---they're more student-search-driven instructional tools than testing tools.)</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Regular expressions are a special language, built into but not part of the Python language---just about every other programming language also supports them, usually with identical or near-identical syntax (although some languages also give you special super-powerful syntax---the Perl programming language is particularly famous for its over-the-top regular expression capacity). And they're a great superpower!</p>
+<p>If you want to learn more about them, I highly recommend the <a href="https://regexone.com/">Regexone</a> tutorial.  One of the questions in our first problem set will probably require regular expressions (you could do it without, but it would be much harder), and going through that tutorial may help you.  I also recommend the official Python <a href="https://docs.python.org/3.7/howto/regex.html">regex howto</a></p>
+<p>For more comprehensive but less readable documentation, <a href="https://www.regular-expressions.info/">regular-expressions.info</a> has a ton of stuff.  And always try out your regular expressions in something like regex101!</p>
 
 </div>
 </div>
@@ -1552,272 +1723,6 @@ h6:hover .anchor-link {
 </script>
                 </article>
             </aside><!-- /#featured -->
-                <section id="content" class="body">
-                    <h1>Other articles</h1>
-                    <hr />
-                    <ol id="posts-list" class="hfeed">
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/regular-expressions.html" rel="bookmark"
-                           title="Permalink to Regular Expressions">Regular Expressions</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2019-01-18T00:00:00-06:00">
-                Published: Fri 18 January 2019
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/paul-gowder.html">Paul Gowder</a>
-        </address>
-<p>In <a href="/category/lessons.html">Lessons</a>.</p>
-<p>tags: <a href="/tag/python.html">python</a> <a href="/tag/programming.html">programming</a> <a href="/tag/week3.html">week3</a> <a href="/tag/regex.html">regex</a> <a href="/tag/strings.html">strings</a> </p>
-</footer><!-- /.post-info -->                
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Regular expressions (or "regex"/"regexes") are one of the most powerful programming tools for lawyers. Essentially, regular expressions are a powerful specialized programming language built into other languages like Python, which allow you to express complicated text searching operations.</p>
-<p>The utility of this for lawyers should be obvious: lawyers have to deal with lots and lots and lots of documents, and sometimes need to search through those documents for specific information. If those documents are in electronic form, regular expressions can provide you with a much more powerful way of searching than what is built into ordinary applications.</p>
-                <a class="readmore" href="/regular-expressions.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/dealing-with-errors.html" rel="bookmark"
-                           title="Permalink to Dealing with Errors">Dealing with Errors</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2018-12-31T00:00:00-06:00">
-                Published: Mon 31 December 2018
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/paul-gowder.html">Paul Gowder</a>
-        </address>
-<p>In <a href="/category/lessons.html">Lessons</a>.</p>
-<p>tags: <a href="/tag/python.html">python</a> <a href="/tag/programming.html">programming</a> <a href="/tag/week2.html">week2</a> </p>
-</footer><!-- /.post-info -->                
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>An unavoidable fact of life for people who write code is error messages.  You're happily programming along, and then, all of a sudden, you get a massive screen of terrifying text telling you that <em>you screwed up!!</em></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-                <a class="readmore" href="/dealing-with-errors.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/complex-data-types.html" rel="bookmark"
-                           title="Permalink to Complex Data Types">Complex Data Types</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2018-12-22T00:00:00-06:00">
-                Published: Sat 22 December 2018
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/paul-gowder.html">Paul Gowder</a>
-        </address>
-<p>In <a href="/category/lessons.html">Lessons</a>.</p>
-<p>tags: <a href="/tag/python.html">python</a> <a href="/tag/programming.html">programming</a> <a href="/tag/week1.html">week1</a> </p>
-</footer><!-- /.post-info -->                
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Some kinds of data can store other kinds of data.</p>
-<h2 id="Lists">Lists<a class="anchor-link" href="#Lists">&#182;</a></h2><p>We've actually seen the most common complex data type a few times before, I just haven't pointed it out to you. We make a list by enclosing the elements of a list in square brackets.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-                <a class="readmore" href="/complex-data-types.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/more-loops-and-control-flow.html" rel="bookmark"
-                           title="Permalink to More Loops and Control Flow">More Loops and Control Flow</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2018-12-21T00:00:00-06:00">
-                Published: Fri 21 December 2018
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/paul-gowder.html">Paul Gowder</a>
-        </address>
-<p>In <a href="/category/lessons.html">Lessons</a>.</p>
-<p>tags: <a href="/tag/python.html">python</a> <a href="/tag/programming.html">programming</a> <a href="/tag/week1.html">week1</a> </p>
-</footer><!-- /.post-info -->                
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>In this lesson, we'll think about more ways to direct Python to do things repeatedly, or conditionally.</p>
-<p>Let's start with more loops. I showed you the while loop before, remember?</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-                <a class="readmore" href="/more-loops-and-control-flow.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/simple-data-types-draft.html" rel="bookmark"
-                           title="Permalink to Simple Data Types (draft)">Simple Data Types (draft)</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2018-12-21T00:00:00-06:00">
-                Published: Fri 21 December 2018
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/paul-gowder.html">Paul Gowder</a>
-        </address>
-<p>In <a href="/category/lessons.html">Lessons</a>.</p>
-<p>tags: <a href="/tag/python.html">python</a> <a href="/tag/programming.html">programming</a> <a href="/tag/week1.html">week1</a> </p>
-</footer><!-- /.post-info -->                
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>In Python, the data you work with (like the things assigned to variables) have <em>types</em>, which specify the kinds of data they are and the things you can do with them.</p>
-<p>A good way to understand this is to think about the difference between letters and numbers. While we can write both down, there are different things we can do to them.  It wouldn't make sense (except in an algebra context) to multiply and divide letters; it would't make sense to talk about a capital and a lowercase number 3.</p>
-                <a class="readmore" href="/simple-data-types-draft.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/functions-and-scope.html" rel="bookmark"
-                           title="Permalink to Functions and Scope">Functions and Scope</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2018-12-20T00:00:00-06:00">
-                Published: Thu 20 December 2018
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/paul-gowder.html">Paul Gowder</a>
-        </address>
-<p>In <a href="/category/lessons.html">Lessons</a>.</p>
-<p>tags: <a href="/tag/python.html">python</a> <a href="/tag/programming.html">programming</a> <a href="/tag/week1.html">week1</a> </p>
-</footer><!-- /.post-info -->                
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Recall how in the first Python lesson we looked at the <code>while</code> loop and saw how it allows us to repeat instructions to the computer as many times as you want.</p>
-<p>The next step up from a loop is a function, which allows us to wrap up a series of commands into a single command on its own. Let's take a look at an example.</p>
-                <a class="readmore" href="/functions-and-scope.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/getting-data-from-the-internet-with-python.html" rel="bookmark"
-                           title="Permalink to Getting Data from the Internet With Python">Getting Data from the Internet With Python</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2018-12-06T00:00:00-06:00">
-                Published: Thu 06 December 2018
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/paul-gowder.html">Paul Gowder</a>
-        </address>
-<p>In <a href="/category/lessons.html">Lessons</a>.</p>
-<p>tags: <a href="/tag/python.html">python</a> <a href="/tag/programming.html">programming</a> <a href="/tag/networking.html">networking</a> <a href="/tag/internet.html">internet</a> <a href="/tag/week2.html">week2</a> </p>
-</footer><!-- /.post-info -->                <p>In addition to reading files locally, you can also read them over the internet. </p>
-<p>When you use a web browser like Chrome to go to a URL ("uniform resource locator," or web address) like https://sociologicalgobbledygook.com, what you're actually doing is sending a request using the HTTPS protocol (which …</p>
-                <a class="readmore" href="/getting-data-from-the-internet-with-python.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/files-and-how-computers-represent-data.html" rel="bookmark"
-                           title="Permalink to Files and How Computers Represent Data">Files and How Computers Represent Data</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2018-11-30T00:00:00-06:00">
-                Published: Fri 30 November 2018
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/paul-gowder.html">Paul Gowder</a>
-        </address>
-<p>In <a href="/category/lessons.html">Lessons</a>.</p>
-<p>tags: <a href="/tag/python.html">python</a> <a href="/tag/programming.html">programming</a> <a href="/tag/week2.html">week2</a> </p>
-</footer><!-- /.post-info -->                
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>In this lesson, we're going to learn how to open files and work with data from the disk. We'll start with the mechanical process of opening text files, and then move on to learn a little bit more about different kinds of data you'll see.</p>
-<p>Here's the basic method of opening and reading text files. Suppose I have a file called hello.txt in my working directory.  (Your working directory is the directory you run Python from on your hard drive.  For those of you using Azure Notebooks, this should be your library, but talk to me if you see a file there and can't read it from Python.)</p>
-                <a class="readmore" href="/files-and-how-computers-represent-data.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/introduction-to-exploring-data-in-python.html" rel="bookmark"
-                           title="Permalink to Introduction to Exploring Data in Python">Introduction to Exploring Data in Python</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2018-11-25T00:00:00-06:00">
-                Published: Sun 25 November 2018
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/paul-gowder.html">Paul Gowder</a>
-        </address>
-<p>In <a href="/category/lessons.html">Lessons</a>.</p>
-<p>tags: <a href="/tag/python.html">python</a> <a href="/tag/data.html">data</a> <a href="/tag/exploratory_data_analysis.html">exploratory_data_analysis</a> <a href="/tag/visualization.html">visualization</a> </p>
-</footer><!-- /.post-info -->                
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Introduction-to-Exploring-Data-in-Python">Introduction to Exploring Data in Python<a class="anchor-link" href="#Introduction-to-Exploring-Data-in-Python">&#182;</a></h1><p>In this lesson, we're going to learn about how to get a feel for data in Python, using basic tools to look at our data.</p>
-<p>First, however, let's make sure we have the right version of a library we need called Seaborn.  Run the code in the next block and make sure that you get the right version.</p>
-                <a class="readmore" href="/introduction-to-exploring-data-in-python.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-                </ol><!-- /#posts-list -->
-<p class="paginator">
-    Page 1 / 2
-        <a href="/tag/python2.html">&raquo;</a>
-</p>
-                </section><!-- /#content -->
         <section id="extras" class="body">
                 <div class="blogroll">
                         <h2>links</h2>

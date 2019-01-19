@@ -21,17 +21,17 @@
 
             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="/dealing-with-errors.html">Dealing with Errors</a></h1>
+                    <h1 class="entry-title"><a href="/object-oriented-programming.html">Object-Oriented Programming</a></h1>
 <footer class="post-info">
-        <abbr class="published" title="2018-12-31T00:00:00-06:00">
-                Published: Mon 31 December 2018
+        <abbr class="published" title="2019-01-18T00:00:00-06:00">
+                Published: Fri 18 January 2019
         </abbr>
 
         <address class="vcard author">
                 By                         <a class="url fn" href="/author/paul-gowder.html">Paul Gowder</a>
         </address>
 <p>In <a href="/category/lessons.html">Lessons</a>.</p>
-<p>tags: <a href="/tag/python.html">python</a> <a href="/tag/programming.html">programming</a> <a href="/tag/week2.html">week2</a> </p>
+<p>tags: <a href="/tag/python.html">python</a> <a href="/tag/programming.html">programming</a> <a href="/tag/week3.html">week3</a> <a href="/tag/object-oriented.html">object-oriented</a> </p>
 </footer><!-- /.post-info --><style type="text/css">/*!
 *
 * IPython notebook
@@ -1184,7 +1184,12 @@ h6:hover .anchor-link {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>An unavoidable fact of life for people who write code is error messages.  You're happily programming along, and then, all of a sudden, you get a massive screen of terrifying text telling you that <em>you screwed up!!</em></p>
+<p><strong>Object-oriented programming</strong> (OOP) isn't all that special, it's just a particular style of programming that Python is particularly well designed for.  This is a short lesson, we won't cover the theory of OOP, or features you might hear about elsewhere like "inheritance"---see your reading in the P4E book for more.</p>
+<p>However, we have to say something about OOP in order to enable you to work with many Python libraries, which expect you to be able to instantiate objects and work with them.  So here's the short version.</p>
+<p>OOP is another kind of mental model for programming. It mostly is useful for organizing the abstractions in your code.  One of the key ideas is that groups of related data and functionality can be tied together in the form of objects.</p>
+<p>A <strong>class</strong> is an abstract description of a kind of object. A class declaration will say what kind of things an object of that sort can do.</p>
+<p>An <strong>instance</strong> is an actual object that you create and make use of in the computer's memory.</p>
+<p>Let's look at a trivial example of a class</p>
 
 </div>
 </div>
@@ -1194,33 +1199,28 @@ h6:hover .anchor-link {
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">([</span><span class="s2">&quot;cat&quot;</span><span class="p">,</span> <span class="s2">&quot;dog&quot;</span><span class="p">,</span> <span class="s2">&quot;bear&quot;</span><span class="p">][</span><span class="mi">3</span><span class="p">])</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Dog</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">temperament</span><span class="o">=</span><span class="s2">&quot;normal&quot;</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">temperament</span> <span class="o">=</span> <span class="n">temperament</span>
+        
+    <span class="k">def</span> <span class="nf">bark</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">volume</span><span class="o">=</span><span class="s2">&quot;loud&quot;</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">temperament</span> <span class="o">==</span> <span class="s2">&quot;vicious&quot;</span><span class="p">:</span>
+            <span class="n">sound</span> <span class="o">=</span> <span class="s2">&quot;snarl!!!&quot;</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">temperament</span> <span class="o">==</span> <span class="s2">&quot;timid&quot;</span><span class="p">:</span>
+            <span class="n">sound</span> <span class="o">=</span> <span class="s2">&quot;wimper?&quot;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">sound</span> <span class="o">=</span> <span class="s2">&quot;woof.&quot;</span>
+        <span class="k">if</span> <span class="n">volume</span> <span class="o">==</span> <span class="s2">&quot;loud&quot;</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">sound</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">sound</span><span class="p">)</span>
+            
+    <span class="k">def</span> <span class="nf">meet_cat</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">temperament</span> <span class="o">=</span> <span class="s2">&quot;timid&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">understanding</span> <span class="o">=</span> <span class="s2">&quot;inferior&quot;</span>
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">IndexError</span>                                Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-1-642bdd2024de&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>print<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">&#34;cat&#34;</span><span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">&#34;dog&#34;</span><span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">&#34;bear&#34;</span><span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">[</span><span class="ansi-cyan-fg">3</span><span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">)</span>
-
-<span class="ansi-red-fg">IndexError</span>: list index out of range</pre>
-</div>
-</div>
-
 </div>
 </div>
 
@@ -1228,16 +1228,18 @@ h6:hover .anchor-link {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The first thing you should do when you see an error is <em>be grateful</em>.  Error messages are a good thing. Because you've asked the computer how to do something that it doesn't understand how to do, and if you don't get an error message, either the program would have to</p>
-<p>a) silently fail---that is, not do anything, and not tell you why, making it much harder to debug when your program doesn't work, or</p>
-<p>b) much, much worse: make some kind of guess about what you're trying to do, and do that.</p>
-<p>Option b in particular can be a massive disaster. For example, the error generated by the code above was a result of my asking the list to fetch an item that it didn't exist. Remember: Python indices start at 0, so in <code>["cat", "dog", "bear"]</code> the only indices that exist are 0, 1, and 2.</p>
-<p>Some languages will actually let you access the index of their list-like data structures that is out of their range, and then just give you the contents of whatever is in memory at that location---which could (if the operating system sucks) be memory belonging to a different program, or it could be information that you don't want to be accessed in the current program.<br>
-Imagine, for example, that your program just holds a list of user information and also holds passwords, and you have some function that users can call to get at the user information, but you accidentally started counting at 1 instead of 0 (a common "off-by-one error") when you wrote the program. All of a sudden, users try to get the last item in their list, and they get a password back instead... maybe someone else's!  This is a contrived example, but it's not all that different from stuff that <a href="https://motherboard.vice.com/en_us/article/a3mgxb/the-internet-has-a-huge-cc-problem-and-developers-dont-want-to-deal-with-it">really happens in languages like C</a>.</p>
-<p>So, errors are awesome.  (There are still times your programs will go wrong without helping you out with errors, and we'll talk about figuring out what's going on there toward the end of this lesson, but let's start at the start.)  Let's figure out how to deal with them.</p>
-<p>First of all, <strong>look at the type of the error, which is at the very bottom of the error message.</strong>  Typically the last line is always the first place to look, and, in the error above, it should be pretty obvious what happened once you see it.  IndexError means, as expected, that you tried to use an index that doesn't exist.  Note that up above we helpfully get the line that caused the error.</p>
-<p>Let's look at some other common errors.</p>
-<h2 id="Easy-errors">Easy errors<a class="anchor-link" href="#Easy-errors">&#182;</a></h2>
+<p>Here's what you need to know about this code.</p>
+<ol>
+<li><p>Functions belonging to a class are called <strong>methods</strong>.  You can tell that they belong to the class because they are indented under the class declaration in the first line.</p>
+</li>
+<li><p>Every method takes a special parameter to refer to the object on which it is called as the very first parameter.  Here, we're using <code>self</code> for that, which is the Python convention, but you could use anything else.  When you call these methods, you don't supply the value for the self parameter.  We'll see how to call them in a moment.</p>
+</li>
+<li><p>Every class has an <code>__init__</code> method.  The two underscores on either side of the name show you it's a special method (known as "magic methods" in Python slang... there are a number of those, but init is the most important).  This is the method that gets called when you <strong>initialize</strong> a class, that is, create an instance of that class.</p>
+</li>
+<li><p>All those references to <code>self.temperment</code> are creating (the first time something is assigned to it) and either mutating or examining an <strong>attribute</strong> (also called a property) of a particular instance.  Let's look at some examples of instances.</p>
+</li>
+</ol>
+
 </div>
 </div>
 </div>
@@ -1246,8 +1248,107 @@ Imagine, for example, that your program just holds a list of user information an
 <div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;cat&quot;</span><span class="p">,</span> <span class="s2">&quot;dog&quot;</span> <span class="s2">&quot;bear&quot;</span><span class="p">]:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">goodboy</span> <span class="o">=</span> <span class="n">Dog</span><span class="p">()</span>
+<span class="n">doberman</span> <span class="o">=</span> <span class="n">Dog</span><span class="p">(</span><span class="s2">&quot;vicious&quot;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We've created two different instances of <code>Dog</code> and each of them has its own set of instance properties.  Let's prove that by calling the bark method.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">doberman</span><span class="o">.</span><span class="n">bark</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">goodboy</span><span class="o">.</span><span class="n">bark</span><span class="p">(</span><span class="s2">&quot;quiet&quot;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Here are a few things you can observe from those examples:</p>
+<ol>
+<li><p>We instantiate a class by calling it as if it were a function.  We can pass parameters into its <code>__init__</code> method that way too.</p>
+</li>
+<li><p><code>doberman</code> and <code>goodboy</code> have different <code>temperament</code> properties, hence they make different sounds when we call their <code>bark()</code> methods.</p>
+</li>
+<li><p>We call a method on an instance by putting a period after the instance's name and before the method call.  We don't pass the instance into the call, but we do pass any other parameters (like <code>volume</code> here) that we want.</p>
+</li>
+<li><p>Instances are totally separate.  Nothing we do to <code>goodboy</code> affects <code>doberman</code> or vice versa.</p>
+</li>
+</ol>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We can also modify existing instance attributes, and we can access them directly with the same dot notation.  Let's look at, then modify, doberman's attributes.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">doberman</span><span class="o">.</span><span class="n">temperament</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">doberman</span><span class="o">.</span><span class="n">meet_cat</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">doberman</span><span class="o">.</span><span class="n">temperament</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -1264,245 +1365,9 @@ Imagine, for example, that your program just holds a list of user information an
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>cat
-dogbear
+<pre>timid
 </pre>
 </div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Hah!  That was supposed to throw an error, but it turns out that Python has bizarre behavior where if you leave off a comma in a list of strings it just concatenates them. I literally discovered that while writing this lesson. I'll leave it here as an object lesson in why errors are good: if this happened to you in a real program you'd probably get subtly wrong behavior that would be hard to figure out.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span> <span class="mi">3</span><span class="p">]:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-cyan-fg">  File </span><span class="ansi-green-fg">&#34;&lt;ipython-input-3-08a169b2bac7&gt;&#34;</span><span class="ansi-cyan-fg">, line </span><span class="ansi-green-fg">1</span>
-<span class="ansi-red-fg">    for x in [1, 2 3]:</span>
-                   ^
-<span class="ansi-red-fg">SyntaxError</span><span class="ansi-red-fg">:</span> invalid syntax
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Ok, that's more like it!  So what we see here is a syntax error.  That's a nice easy error to fix, because once you learn the language, it's usually just because of a typo.</p>
-<p>Note how the second-to-last line has a convenient little caret (arrow thing) pointing to the spot in the line <em>after</em> where the typo was?  That's sort of a normal thing for this kind of error: Python can't actually figure out where the typo is, but it can figure out where it all of a sudden started getting data in a format it didn't know how to process, so it shows you that.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;the cat &quot;</span> <span class="o">+</span> <span class="s2">&quot;in &quot;</span> <span class="o">+</span> <span class="s2">&quot;the hat)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-cyan-fg">  File </span><span class="ansi-green-fg">&#34;&lt;ipython-input-4-f2a1d13896e4&gt;&#34;</span><span class="ansi-cyan-fg">, line </span><span class="ansi-green-fg">1</span>
-<span class="ansi-red-fg">    print(&#34;the cat &#34; + &#34;in &#34; + &#34;the hat)</span>
-                                        ^
-<span class="ansi-red-fg">SyntaxError</span><span class="ansi-red-fg">:</span> EOL while scanning string literal
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Another common typo: you forgot to put the closing quotation mark in (or you put the wrong quote in, as in the following example:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;the cat &quot;</span> <span class="o">+</span> <span class="s2">&quot;in &quot;</span> <span class="o">+</span> <span class="s1">&#39;the hat&quot;)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-cyan-fg">  File </span><span class="ansi-green-fg">&#34;&lt;ipython-input-5-0277e4720369&gt;&#34;</span><span class="ansi-cyan-fg">, line </span><span class="ansi-green-fg">1</span>
-<span class="ansi-red-fg">    print(&#34;the cat &#34; + &#34;in &#34; + &#39;the hat&#34;)</span>
-                                         ^
-<span class="ansi-red-fg">SyntaxError</span><span class="ansi-red-fg">:</span> EOL while scanning string literal
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Again, if you think through the logic of how Python's computer brain works, you can make sense of the error.  Python saw the opening of a string (in this case, <code>'the hat</code>) but didn't see the end of it. And it got to the end of the line, but it was still looking for more string characters, because it never got a close quote indicating that the string was over!  Hence "EOL while scanning string literal"</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The different colors in the code in the Jupyter notebooks, incidentally, will often help you figure out this kind of syntax error.  Do you see how strings tend to be colored red?  When you see that <code>'the hat")</code> is all red in your syntax highlighter, that should be a clue: the close parens is normally black!</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
-    <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">x</span> <span class="o">*</span> <span class="n">y</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-cyan-fg">  File </span><span class="ansi-green-fg">&#34;&lt;ipython-input-6-845bd4ebbfb0&gt;&#34;</span><span class="ansi-cyan-fg">, line </span><span class="ansi-green-fg">3</span>
-<span class="ansi-red-fg">    print(x * y)</span>
-        ^
-<span class="ansi-red-fg">IndentationError</span><span class="ansi-red-fg">:</span> expected an indented block
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>There's another easy one: you forgot to indent when you were supposed to.  Pretty straightforward.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">my_func</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
-    <span class="n">output</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
-        <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
-            <span class="n">z</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="n">y</span>
-            <span class="n">output</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">output</span>
-
-<span class="c1"># verify the function works as expected before we start blowing it up: </span>
-
-<span class="n">my_func</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[7]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>[0, 0, 0, 0, 1, 2, 0, 2, 4, 0, 3, 6, 0, 4, 8]</pre>
-</div>
-
 </div>
 
 </div>
@@ -1514,7 +1379,7 @@ dogbear
 <div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">my_fuc</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">doberman</span><span class="o">.</span><span class="n">understanding</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -1530,36 +1395,22 @@ dogbear
     <div class="prompt"></div>
 
 
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-8-344d0251a0a9&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>my_fuc<span class="ansi-blue-fg">(</span>range<span class="ansi-blue-fg">(</span><span class="ansi-cyan-fg">5</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span>
-
-<span class="ansi-red-fg">NameError</span>: name &#39;my_fuc&#39; is not defined</pre>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>inferior
+</pre>
 </div>
 </div>
 
 </div>
 </div>
 
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>NameErrors are often going to be typoes.  Sometimes, however, they'll be scope errors, as in the following:</p>
-
-</div>
-</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="n">my_func</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">doberman</span><span class="o">.</span><span class="n">bark</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -1575,194 +1426,35 @@ dogbear
     <div class="prompt"></div>
 
 
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-9-cc741f8cd5ed&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-intense-fg ansi-bold">      1</span> result <span class="ansi-blue-fg">=</span> my_func<span class="ansi-blue-fg">(</span>range<span class="ansi-blue-fg">(</span><span class="ansi-cyan-fg">10</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-fg">----&gt; 2</span><span class="ansi-red-fg"> </span>print<span class="ansi-blue-fg">(</span>output<span class="ansi-blue-fg">)</span>
-
-<span class="ansi-red-fg">NameError</span>: name &#39;output&#39; is not defined</pre>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>WIMPER?
+</pre>
 </div>
 </div>
 
 </div>
 </div>
 
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>This looks like forgetting that <code>output</code> only exists within the scope of the function.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Slightly-more-difficult-errors">Slightly more difficult errors<a class="anchor-link" href="#Slightly-more-difficult-errors">&#182;</a></h2><p>Here's one that I screw up <em>all the time</em>.  (You'll probably see me do it at least once in class this semester.</p>
-
-</div>
-</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">unsorted_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
-
-<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">unsorted_list</span><span class="o">.</span><span class="n">sort</span><span class="p">():</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">doberman</span><span class="o">.</span><span class="n">temperament</span> <span class="o">=</span> <span class="s2">&quot;vicious&quot;</span>
 </pre></div>
 
     </div>
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">TypeError</span>                                 Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-10-505a71766970&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-intense-fg ansi-bold">      1</span> unsorted_list <span class="ansi-blue-fg">=</span> <span class="ansi-blue-fg">[</span><span class="ansi-cyan-fg">3</span><span class="ansi-blue-fg">,</span> <span class="ansi-cyan-fg">4</span><span class="ansi-blue-fg">,</span> <span class="ansi-cyan-fg">1</span><span class="ansi-blue-fg">,</span> <span class="ansi-cyan-fg">6</span><span class="ansi-blue-fg">,</span> <span class="ansi-cyan-fg">9</span><span class="ansi-blue-fg">,</span> <span class="ansi-cyan-fg">10</span><span class="ansi-blue-fg">,</span> <span class="ansi-cyan-fg">5</span><span class="ansi-blue-fg">,</span> <span class="ansi-cyan-fg">2</span><span class="ansi-blue-fg">,</span> <span class="ansi-cyan-fg">8</span><span class="ansi-blue-fg">,</span> <span class="ansi-cyan-fg">7</span><span class="ansi-blue-fg">]</span>
-<span class="ansi-green-intense-fg ansi-bold">      2</span> 
-<span class="ansi-green-fg">----&gt; 3</span><span class="ansi-red-fg"> </span><span class="ansi-green-fg">for</span> x <span class="ansi-green-fg">in</span> unsorted_list<span class="ansi-blue-fg">.</span>sort<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">      4</span>     print<span class="ansi-blue-fg">(</span>x<span class="ansi-blue-fg">)</span>
-
-<span class="ansi-red-fg">TypeError</span>: &#39;NoneType&#39; object is not iterable</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>What happened here?  Take a couple minutes and think about it. Then try some code of your own to see if you can make the error go away.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p><strong>hint</strong>: go back and look over the complex data types lesson from last week. What does the sort method on lists do?</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>Answer coming soon.  Have you thought about it some?  Have you tried out some code to see if you can figure out how to get it to work?</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>And the answer is: the <code>sort()</code> method of lists doesn't return a new, sorted list, it sorts the original list in place. So the code <code>for x in unsorted_list.sort():</code> evaluates <code>unsorted_list.sort()</code> to <code>None</code>, which is what methods that just mutate in place return.  This means that the code I ran really is equivalent to:</p>
-
-<pre><code>for x in None:
-    print(x)</code></pre>
-<p>which obviously makes no sense.</p>
-<p>Worse, because you've mutated <code>unsorted_list</code> it is no longer, well, unsorted, and if you were expecting to have access to its original, unsorted, form later, you will be unhappily surprised.</p>
-
-</div>
-</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">unsorted_list</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">doberman</span><span class="o">.</span><span class="n">bark</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -1779,7 +1471,7 @@ dogbear
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+<pre>SNARL!!!
 </pre>
 </div>
 </div>
@@ -1787,25 +1479,13 @@ dogbear
 </div>
 </div>
 
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>incidentally, here's the right way to do that: use the <code>sorted()</code> function, which returns a new list and doesn't mutate the original</p>
-
-</div>
-</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">unsorted_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
-
-<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">unsorted_list</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">unsorted_list</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">goodboy</span><span class="o">.</span><span class="n">bark</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -1822,17 +1502,7 @@ dogbear
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-[3, 4, 1, 6, 9, 10, 5, 2, 8, 7]
+<pre>WOOF.
 </pre>
 </div>
 </div>
@@ -1844,517 +1514,7 @@ dogbear
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Generally, whenever you see TypeErrors involving <code>NoneType</code> it means that something you thought was going to return a value actually didn't.  Very often, that's because of functions that don't return anything. Sometimes it's also because of functions that were supposed to return something, but couldn't find anything to return, like network requests.</p>
-<p>There are other kinds of type errors though.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">my_func</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">TypeError</span>                                 Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-13-5c6f14bd9907&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>my_func<span class="ansi-blue-fg">(</span><span class="ansi-cyan-fg">3</span><span class="ansi-blue-fg">)</span>
-
-<span class="ansi-green-fg">&lt;ipython-input-7-0985c578d18e&gt;</span> in <span class="ansi-cyan-fg">my_func</span><span class="ansi-blue-fg">(data)</span>
-<span class="ansi-green-intense-fg ansi-bold">      1</span> <span class="ansi-green-fg">def</span> my_func<span class="ansi-blue-fg">(</span>data<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">      2</span>     output <span class="ansi-blue-fg">=</span> <span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">]</span>
-<span class="ansi-green-fg">----&gt; 3</span><span class="ansi-red-fg">     </span><span class="ansi-green-fg">for</span> x <span class="ansi-green-fg">in</span> data<span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">      4</span>         <span class="ansi-green-fg">for</span> y <span class="ansi-green-fg">in</span> range<span class="ansi-blue-fg">(</span><span class="ansi-cyan-fg">3</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">      5</span>             z <span class="ansi-blue-fg">=</span> x <span class="ansi-blue-fg">*</span> y
-
-<span class="ansi-red-fg">TypeError</span>: &#39;int&#39; object is not iterable</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Again, look at the last line first.  Remember that <code>my_func</code> loops over something to try to multiply everything in it by everything in <code>[0, 1, 2]</code>.  So you gotta give it something you can loop over.  And you can't loop over the number 3, this ain't Sesame Street.</p>
-<p>I often get this kind of error by accidentally putting in the name of a function that doesn't take any arguments rather than calling it, i.e., typing <code>some_fancy_function + 5</code> when I mean to type  <code>some_fancy_function() + 5</code></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[14]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">my_func</span><span class="p">(</span><span class="s2">&quot;cat&quot;</span><span class="p">,</span> <span class="s2">&quot;dog&quot;</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">TypeError</span>                                 Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-14-8a28da907df6&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>my_func<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#34;cat&#34;</span><span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">&#34;dog&#34;</span><span class="ansi-blue-fg">)</span>
-
-<span class="ansi-red-fg">TypeError</span>: my_func() takes 1 positional argument but 2 were given</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>This is also a TypeError (don't ask me why): wrong number of arguments to a function.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[15]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">my_func</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">TypeError</span>                                 Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-15-db3ada79940f&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>my_func<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
-
-<span class="ansi-red-fg">TypeError</span>: my_func() missing 1 required positional argument: &#39;data&#39;</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Ditto.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[16]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">my_func</span><span class="p">([</span><span class="s2">&quot;cat&quot;</span><span class="p">,</span> <span class="s2">&quot;dog&quot;</span><span class="p">])</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[16]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>[&#39;&#39;, &#39;cat&#39;, &#39;catcat&#39;, &#39;&#39;, &#39;dog&#39;, &#39;dogdog&#39;]</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>That is <em>not</em> an error, even though it probably wasn't what you were expecting.  The reason is that the <code>*</code> symbol is <em>overloaded</em> in Python: you can use it to multiply numbers, or, if you do string * a number, you get repeated strings.  This is an important reminder: not every mistake will throw an error!</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[17]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="s2">&quot;kitty&quot;</span> <span class="o">*</span> <span class="mi">10</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[17]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>&#39;kittykittykittykittykittykittykittykittykittykitty&#39;</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[18]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">my_func</span><span class="p">([</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">])</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[18]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>[0, 1, 2, 0, 0, 0]</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Another situation where you would expect an error, but you don't get one.  Basically, what's happening here is that Python is silently coercing <code>True</code> to 1 and <code>False</code> to 0 so that they have compatible types to the thing you're trying to <code>*</code> them with, namely, integers.</p>
-<p>This is, arguably, pretty bad behavior. Other languages are much stricter about the types of variables and don't let you make this kind of mistake. But the tradeoff is that those other languages are harder to program in---they make you follow lots more rules in order to get working code.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Actually-difficult-errors">Actually difficult errors<a class="anchor-link" href="#Actually-difficult-errors">&#182;</a></h2><p>I think there are two kinds of really common errors that can take forever to deal with: accidentally renaming things and errors generated from deep within complicated libraries.  (There are also many, many uncommon errors that you will see.</p>
-<p>Both of those are actually fairly difficult to show here, so we'll approach them when we see them in class (or the first time someone generates one of them out of the classroom)... watch this space for more.</p>
-<p>In the meantime, let's talk strategies for fixing silent errors.  Often times, you'll find out that your code is subtly wrong, and you won't know why---it'll just be producing the wrong answer.  Sometimes a freakishly wrong answer.</p>
-<p>The way to think about this task is as an attempt to narrow down where you made the mistake.  For example, suppose you have some complicated buggy function.  Let's say it does some math, and you're mysteriously getting the wrong answer.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[19]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">complicated_sum_all_in_list</span><span class="p">(</span><span class="n">nums</span><span class="p">):</span>
-    <span class="n">length_of_list</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>
-    <span class="n">first_half_of_list</span> <span class="o">=</span> <span class="n">nums</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="nb">round</span><span class="p">(</span><span class="n">length_of_list</span><span class="o">/</span><span class="mi">2</span><span class="p">)]</span>
-    <span class="n">second_half_of_list</span> <span class="o">=</span> <span class="n">nums</span><span class="p">[</span><span class="nb">round</span><span class="p">(</span><span class="n">length_of_list</span><span class="o">/</span><span class="mi">2</span><span class="p">):]</span>
-    <span class="n">answer</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">first_half_of_list</span><span class="p">:</span>
-        <span class="n">answer</span> <span class="o">+=</span> <span class="n">x</span>  <span class="c1"># this is just shorthand for answer = answer + x. it&#39;s not the bug.</span>
-    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">second_half_of_list</span><span class="p">:</span>
-        <span class="n">answer</span> <span class="o">+=</span> <span class="n">x</span>
-    <span class="k">return</span> <span class="n">answer</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[20]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">complicated_sum_all_in_list</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[20]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>14</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>14?  That doesn't look right.  And we can verify that it isn't right by using a non-idiotic way of summing the list, which happens to be built right into Python:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[21]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">sum</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[21]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>15</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Ok, so how did we get the math wrong?  Other than by writing an idiotically complicated function.  Let's assume we can't just look at our code and see what we did.  (Experienced coders will be able to look at that one and see, it's a pretty basic oops.)  What we'd ideally like to to is be able to look inside the execution of the function and see what's happening.</p>
-<p>Fancy programmer types use what's called a <a href="https://docs.python.org/3.7/library/pdb.html">debugger</a> to do this---basically a debugger will let you pause your code at any point, and see what the values of the variables are and so forth.  See <a href="https://davidhamann.de/2017/04/22/debugging-jupyter-notebooks/">this blog post</a> for more on how to use them in Jupyter Notebooks if you want.</p>
-<p>but really, most of the time, simple calls to <code>print()</code> will help.  Let's dig into our function with them.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[22]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">complicated_sum_all_in_list</span><span class="p">(</span><span class="n">nums</span><span class="p">):</span>
-    <span class="n">length_of_list</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>
-    <span class="n">first_half_of_list</span> <span class="o">=</span> <span class="n">nums</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="nb">round</span><span class="p">(</span><span class="n">length_of_list</span><span class="o">/</span><span class="mi">2</span><span class="p">)]</span>
-    <span class="n">second_half_of_list</span> <span class="o">=</span> <span class="n">nums</span><span class="p">[</span><span class="nb">round</span><span class="p">(</span><span class="n">length_of_list</span><span class="o">/</span><span class="mi">2</span><span class="p">):]</span>
-    <span class="n">answer</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">first_half_of_list</span><span class="p">:</span>
-        <span class="n">answer</span> <span class="o">+=</span> <span class="n">x</span>  <span class="c1"># this is just shorthand for answer = answer + x. it&#39;s not the bug.</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">answer</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">second_half_of_list</span><span class="p">:</span>
-        <span class="n">answer</span> <span class="o">+=</span> <span class="n">x</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">answer</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">answer</span>
-<span class="n">complicated_sum_all_in_list</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>2
-5
-9
-14
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[22]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>14</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>We can get a bit more of a clue what's going on already.  We're using print calls to see the incremental answers (sums) being generated by our program, and it looks like the first one is wrong.  Why is the incremental sum starting at 2?  Shouldn't 0 + 1 be equal to 1?</p>
-<p>Let's try more print statements.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[23]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">complicated_sum_all_in_list</span><span class="p">(</span><span class="n">nums</span><span class="p">):</span>
-    <span class="n">length_of_list</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>
-    <span class="n">first_half_of_list</span> <span class="o">=</span> <span class="n">nums</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="nb">round</span><span class="p">(</span><span class="n">length_of_list</span><span class="o">/</span><span class="mi">2</span><span class="p">)]</span>
-    <span class="n">second_half_of_list</span> <span class="o">=</span> <span class="n">nums</span><span class="p">[</span><span class="nb">round</span><span class="p">(</span><span class="n">length_of_list</span><span class="o">/</span><span class="mi">2</span><span class="p">):]</span>
-    <span class="n">answer</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">first_half_of_list</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-        <span class="n">answer</span> <span class="o">+=</span> <span class="n">x</span>  <span class="c1"># this is just shorthand for answer = answer + x. it&#39;s not the bug.</span>
-    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">second_half_of_list</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-        <span class="n">answer</span> <span class="o">+=</span> <span class="n">x</span>
-    <span class="k">return</span> <span class="n">answer</span>
-<span class="n">complicated_sum_all_in_list</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>2
-3
-4
-5
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[23]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>14</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Now what we tried to do is print the numbers that are being added up, and we can see that it's starting with the wrong number.  It's taking the list <code>[1, 2, 3, 4, 5]</code> and only adding <code>[2, 3, 4, 5]</code> together.</p>
-<p>This should give you enough of a clue to figure out what went wrong in the code.  So here's a mini-homework assignment: fix the error in that function!</p>
+<p>As I said, this is the bare minimum to understand what's going on when you see OOP code.  This will benefit you in the next lesson, where we'll look at some OOP code to run a simulation. It will also benefit you in interacting with Python libraries which often expect you to know how to instantiate an object, call methods on it, and access its properties.</p>
 
 </div>
 </div>
@@ -2396,6 +1556,65 @@ dogbear
                     <h1>Other articles</h1>
                     <hr />
                     <ol id="posts-list" class="hfeed">
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/regular-expressions.html" rel="bookmark"
+                           title="Permalink to Regular Expressions">Regular Expressions</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2019-01-18T00:00:00-06:00">
+                Published: Fri 18 January 2019
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/paul-gowder.html">Paul Gowder</a>
+        </address>
+<p>In <a href="/category/lessons.html">Lessons</a>.</p>
+<p>tags: <a href="/tag/python.html">python</a> <a href="/tag/programming.html">programming</a> <a href="/tag/week3.html">week3</a> <a href="/tag/regex.html">regex</a> <a href="/tag/strings.html">strings</a> </p>
+</footer><!-- /.post-info -->                
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Regular expressions (or "regex"/"regexes") are one of the most powerful programming tools for lawyers. Essentially, regular expressions are a powerful specialized programming language built into other languages like Python, which allow you to express complicated text searching operations.</p>
+<p>The utility of this for lawyers should be obvious: lawyers have to deal with lots and lots and lots of documents, and sometimes need to search through those documents for specific information. If those documents are in electronic form, regular expressions can provide you with a much more powerful way of searching than what is built into ordinary applications.</p>
+                <a class="readmore" href="/regular-expressions.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/dealing-with-errors.html" rel="bookmark"
+                           title="Permalink to Dealing with Errors">Dealing with Errors</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2018-12-31T00:00:00-06:00">
+                Published: Mon 31 December 2018
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/paul-gowder.html">Paul Gowder</a>
+        </address>
+<p>In <a href="/category/lessons.html">Lessons</a>.</p>
+<p>tags: <a href="/tag/python.html">python</a> <a href="/tag/programming.html">programming</a> <a href="/tag/week2.html">week2</a> </p>
+</footer><!-- /.post-info -->                
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>An unavoidable fact of life for people who write code is error messages.  You're happily programming along, and then, all of a sudden, you get a massive screen of terrifying text telling you that <em>you screwed up!!</em></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+                <a class="readmore" href="/dealing-with-errors.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
 
             <li><article class="hentry">
                 <header>
@@ -2594,52 +1813,11 @@ dogbear
                 <a class="readmore" href="/introduction-to-programming-and-python.html">read more</a>
                 </div><!-- /.entry-content -->
             </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/introduction-to-python-and-setup.html" rel="bookmark"
-                           title="Permalink to Introduction to Python and setup.">Introduction to Python and setup.</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2018-10-22T00:00:00-05:00">
-                Published: Mon 22 October 2018
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/paul-gowder.html">Paul Gowder</a>
-        </address>
-<p>In <a href="/category/lessons.html">Lessons</a>.</p>
-<p>tags: <a href="/tag/python.html">python</a> <a href="/tag/programming.html">programming</a> <a href="/tag/week1.html">week1</a> <a href="/tag/setup.html">setup</a> </p>
-</footer><!-- /.post-info -->                <p>In this class, we will be using the <a href="https://www.python.org/">Python</a> programming language. In this first week, we will have a basic introduction to Python and to the fundamentals of computer programming. </p>
-<p>Before we get started programming, we have to set up a system to write our code and get the computer …</p>
-                <a class="readmore" href="/introduction-to-python-and-setup.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/simulation-for-fun-and-profit.html" rel="bookmark"
-                           title="Permalink to Simulation for fun and profit">Simulation for fun and profit</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2018-01-16T00:00:00-06:00">
-                Published: Tue 16 January 2018
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/paul-gowder.html">Paul Gowder</a>
-        </address>
-<p>In <a href="/category/lessons.html">Lessons</a>.</p>
-<p>tags: <a href="/tag/programming.html">programming</a> <a href="/tag/conceptual.html">conceptual</a> <a href="/tag/python.html">python</a> </p>
-</footer><!-- /.post-info -->                <p>One really useful thing that you can do with programming skills is simulate things that you don't fully understand. This is something that hard science people do all the time: it turns out that there are some kinds of problems that aren't solvable in a deductive, analytic kind of way …</p>
-                <a class="readmore" href="/simulation-for-fun-and-profit.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
                 </ol><!-- /#posts-list -->
+<p class="paginator">
+    Page 1 / 2
+        <a href="/tag/programming2.html">&raquo;</a>
+</p>
                 </section><!-- /#content -->
         <section id="extras" class="body">
                 <div class="blogroll">

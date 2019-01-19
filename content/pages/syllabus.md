@@ -180,7 +180,7 @@ Coverage: Regular expressions. Simulation and why you might want to do it. A ver
 
 Read Automate the Boring Stuff With Python chapters [6 (strings)](https://automatetheboringstuff.com/chapter6/) and [7 (regular expressions)](https://automatetheboringstuff.com/chapter7/) as well as Python for Everybody pp. 127-140 and 171-184 (chapters 11 and 14). 
 
-On this site, read [Regular Expressions]({filename}../Lessons/regex.ipynb), Object-Oriented Programming (link TBD), and [Simulations]({filename}../Lessons/simulation.md).  
+On this site, read [Regular Expressions]({filename}../Lessons/regex.ipynb), [Object-Oriented Programming]({filename}../Lessons/oop.ipynb), and [Simulations]({filename}../Lessons/simulation.md).  
 
 [Problem set 1]({filename}../psets/pset1.md) due Friday, February 1, at 5pm Central time.
 
