@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
         <meta charset="utf-8" />
-        <title>Sociological Gobbledygook - conceptual</title>
+        <title>P-Values and Bayes Rule</title>
         <link rel="stylesheet" href="https://sociologicalgobbledygook.com/theme/css/main.css" />
         <link rel="stylesheet" href="https://sociologicalgobbledygook.com/theme/css/juptyer-fix.css" />
         <link href="https://sociologicalgobbledygook.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Sociological Gobbledygook Atom Feed" />
@@ -14,14 +14,19 @@
                 <nav><ul>
                     <li><a href="https://sociologicalgobbledygook.com/pages/manifesto.html">Manifesto</a></li>
                     <li><a href="https://sociologicalgobbledygook.com/pages/welcome.html">Welcome!</a></li>
-                    <li><a href="https://sociologicalgobbledygook.com/category/lessons.html">Lessons</a></li>
+                    <li class="active"><a href="https://sociologicalgobbledygook.com/category/lessons.html">Lessons</a></li>
                     <li><a href="https://sociologicalgobbledygook.com/category/psets.html">psets</a></li>
                 </ul></nav>
         </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="https://sociologicalgobbledygook.com/p-values-and-bayes-rule.html" rel="bookmark"
+           title="Permalink to P-Values and Bayes Rule">P-Values and Bayes Rule</a></h1>
+    </header>
 
-            <aside id="featured" class="body">
-                <article>
-                    <h1 class="entry-title"><a href="https://sociologicalgobbledygook.com/p-values-and-bayes-rule.html">P-Values and Bayes Rule</a></h1>
+    <div class="entry-content">
 <footer class="post-info">
         <abbr class="published" title="2018-12-10T00:00:00-06:00">
                 Published: Mon 10 December 2018
@@ -32,7 +37,7 @@
         </address>
 <p>In <a href="https://sociologicalgobbledygook.com/category/lessons.html">Lessons</a>.</p>
 <p>tags: <a href="https://sociologicalgobbledygook.com/tag/statistics.html">statistics</a> <a href="https://sociologicalgobbledygook.com/tag/conceptual.html">conceptual</a> <a href="https://sociologicalgobbledygook.com/tag/week8.html">week8</a> </p>
-</footer><!-- /.post-info --><p>Recall from the previous lesson what a p-value is: it’s the probability of observing a value of your statistic as extreme (as far away from the null hypothesis statistic) as you in fact observed, if the null hypothesis were true.  </p>
+</footer><!-- /.post-info -->      <p>Recall from the previous lesson what a p-value is: it’s the probability of observing a value of your statistic as extreme (as far away from the null hypothesis statistic) as you in fact observed, if the null hypothesis were true.  </p>
 <p>In other words, if you’re doing a (two-sided) z test, your statistic is the mean, your null hypothesis mean is <span class="math">\(\mu\)</span>, and the mean you observe in your sample is <span class="math">\(\bar{x}\)</span>, then the p-value is the probability of getting a mean at least <span class="math">\(\mu - \bar{x}\)</span> units away from the mean when randomly sampling from a normal distribution with mean <span class="math">\(\mu\)</span> and standard deviation estimated by the formula for the standard deviation of a sample. (We’ll talk about that formula later, but if you want a sneak preview, check out <a href="https://www.khanacademy.org/math/statistics-probability/summarizing-quantitative-data/variance-standard-deviation-sample/a/population-and-sample-standard-deviation-review">this Khan Academy article</a>.) If the p-value is below a predetermined level, often 0.05, then we say that there’s a statistically significant result. </p>
 <p>Pause for a moment and ask yourself the following question: <strong>Does that mean the p-value is the probability of incorrectly rejecting the null hypothesis?</strong> Don’t go on until you have an answer, and can explain why you have that answer. This is very important.</p>
 <p>Incidentally, that’s called a "Type I error" in some circles: the error of incorrectly rejecting the null hypothesis, a.k.a. (if you’re sensible and don’t like double negatives) convincing yourself that you’re seeing a real effect when you’re not. So the question above could be rephrased: "Is the p-value the probability of making a Type I error?"  A Type II error is the opposite: failing to reject the null hypothesis when you oughta, or, in other words, seeing a real effect and not realizing it. There’s a particularly good meme that captures this distinction and makes it impossible to forget:</p>
@@ -165,105 +170,11 @@
         "}";
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
-</script>                </article>
-            </aside><!-- /#featured -->
-                <section id="content" class="body">
-                    <h1>Other articles</h1>
-                    <hr />
-                    <ol id="posts-list" class="hfeed">
+</script>
+    </div><!-- /.entry-content -->
 
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="https://sociologicalgobbledygook.com/hypothesis-testing-conceptual-introduction-draft.html" rel="bookmark"
-                           title="Permalink to Hypothesis Testing: Conceptual Introduction (draft)">Hypothesis Testing: Conceptual Introduction (draft)</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2018-12-09T00:00:00-06:00">
-                Published: Sun 09 December 2018
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="https://sociologicalgobbledygook.com/author/paul-gowder.html">Paul Gowder</a>
-        </address>
-<p>In <a href="https://sociologicalgobbledygook.com/category/lessons.html">Lessons</a>.</p>
-<p>tags: <a href="https://sociologicalgobbledygook.com/tag/statistics.html">statistics</a> <a href="https://sociologicalgobbledygook.com/tag/conceptual.html">conceptual</a> </p>
-</footer><!-- /.post-info -->                <p>Now that we understand distributions and the central limit theorem, we’re in a good position to make sense of the notion of a hypothesis test. It’s actually very simple. </p>
-<p>Suppose you do an experiment. Let’s say you want to find out whether a company is engaging in …</p>
-                <a class="readmore" href="https://sociologicalgobbledygook.com/hypothesis-testing-conceptual-introduction-draft.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="https://sociologicalgobbledygook.com/introduction-to-statistical-power.html" rel="bookmark"
-                           title="Permalink to Introduction to Statistical Power">Introduction to Statistical Power</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2018-11-05T00:00:00-06:00">
-                Published: Mon 05 November 2018
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="https://sociologicalgobbledygook.com/author/paul-gowder.html">Paul Gowder</a>
-        </address>
-<p>In <a href="https://sociologicalgobbledygook.com/category/lessons.html">Lessons</a>.</p>
-<p>tags: <a href="https://sociologicalgobbledygook.com/tag/statistics.html">statistics</a> <a href="https://sociologicalgobbledygook.com/tag/conceptual.html">conceptual</a> <a href="https://sociologicalgobbledygook.com/tag/week8.html">week8</a> </p>
-</footer><!-- /.post-info -->                <p>Statistical power is, in terms of practical use, kind of the flip side of a p-value.  </p>
-<p>Remember that a p-value is an attempt to quantify our degree of confidence in not having made a type I error (although <a href="https://sociologicalgobbledygook.com/p-values-and-bayes-rule.html">it is <em>not</em> the probability of having made a type I error …</a></p>
-                <a class="readmore" href="https://sociologicalgobbledygook.com/introduction-to-statistical-power.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="https://sociologicalgobbledygook.com/why-statistics-for-lawyers.html" rel="bookmark"
-                           title="Permalink to Why Statistics for Lawyers?">Why Statistics for Lawyers?</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2018-11-03T00:00:00-05:00">
-                Published: Sat 03 November 2018
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="https://sociologicalgobbledygook.com/author/paul-gowder.html">Paul Gowder</a>
-        </address>
-<p>In <a href="https://sociologicalgobbledygook.com/category/lessons.html">Lessons</a>.</p>
-<p>tags: <a href="https://sociologicalgobbledygook.com/tag/statistics.html">statistics</a> <a href="https://sociologicalgobbledygook.com/tag/week4.html">week4</a> <a href="https://sociologicalgobbledygook.com/tag/conceptual.html">conceptual</a> </p>
-</footer><!-- /.post-info -->                <p>The brunt of this course will be devoted to statistics and exploratory data analysis. </p>
-<p><em>Exploratory data analysis</em> is just looking at data to see what you see.  We will spend some time, for example, looking at how to see the shape of data and what that can tell you about …</p>
-                <a class="readmore" href="https://sociologicalgobbledygook.com/why-statistics-for-lawyers.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="https://sociologicalgobbledygook.com/simulation-for-fun-and-profit.html" rel="bookmark"
-                           title="Permalink to Simulation for fun and profit">Simulation for fun and profit</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2018-01-16T00:00:00-06:00">
-                Published: Tue 16 January 2018
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="https://sociologicalgobbledygook.com/author/paul-gowder.html">Paul Gowder</a>
-        </address>
-<p>In <a href="https://sociologicalgobbledygook.com/category/lessons.html">Lessons</a>.</p>
-<p>tags: <a href="https://sociologicalgobbledygook.com/tag/programming.html">programming</a> <a href="https://sociologicalgobbledygook.com/tag/conceptual.html">conceptual</a> <a href="https://sociologicalgobbledygook.com/tag/python.html">python</a> <a href="https://sociologicalgobbledygook.com/tag/week3.html">week3</a> <a href="https://sociologicalgobbledygook.com/tag/object-oriented.html">object-oriented</a> </p>
-</footer><!-- /.post-info -->                <p>One really useful thing that you can do with programming skills is simulate things that you don't fully understand. This is something that hard science people do all the time: it turns out that there are some kinds of problems that aren't solvable in a deductive, analytic kind of way …</p>
-                <a class="readmore" href="https://sociologicalgobbledygook.com/simulation-for-fun-and-profit.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-                </ol><!-- /#posts-list -->
-                </section><!-- /#content -->
+  </article>
+</section>
         <section id="extras" class="body">
                 <div class="blogroll">
                         <h2>links</h2>

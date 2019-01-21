@@ -1,5 +1,6 @@
 title: Syllabus
 save_as: index.html
+status: hidden
 
 # Introduction to Quantitative & Computational Legal Reasoning  (LAW:8645)
 
@@ -37,6 +38,8 @@ In addition, we'll make use of some videos and exercises from [DataCamp](https:/
 We will also use some free instructional materials from the nonprofit organizations [Software Carpentry](https://software-carpentry.org/lessons/) and (maybe) [Data Carpentry](https://datacarpentry.org/lessons/). 
 
 There will also be copious readings written by me available online on the public-facing website, and some copyrighted stuff that I can't distribute publicly on ICON.
+
+For the contents of this website, it's probably easiest to access them using the week-by-week links below or the [content-based tags](tags.html) build into this website.
 
 I am committed to only assigning resources which are free to students. However, the nature of this material is that sometimes one explanation will just "click" where another might not.  So in addition to the assigned readings, I offer you this list of additional, non-free, readings which you might consult for a different perspective on the material---or for deeper engagement and exploration.  
 
@@ -221,7 +224,7 @@ Focused legal application: audit tests in discrimination cases.
 
 P-values, p-hacking, publication bias, the replication crisis in psychology, power and underpoweredness, multiple comparisons, and other terrible pitfalls of scientific research.  
 
-Read: [P-Values and Bayes Rule]({filename}../Lessons/pvals2.md), Peter Norvig's blog post [Warning Signs in Experimental Design and Interpretation](http://norvig.com/experiment-design.html). 
+Read: [P-Values and Bayes Rule]({filename}../Lessons/pvals2.md), [Power]({filename}../Lessons/power.md), Peter Norvig's blog post [Warning Signs in Experimental Design and Interpretation](http://norvig.com/experiment-design.html). 
 
 Discussion: what are the legal implications of scientific failures?
 

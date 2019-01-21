@@ -1,5 +1,5 @@
-title: Lesson 2.2 The Basics of Probability 
-tags: statistics, week2, probability
+title: The Basics of Probability 
+tags: statistics, week4, probability
 date: 2018-12-08
 
 

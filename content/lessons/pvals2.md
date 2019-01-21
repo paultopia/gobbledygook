@@ -1,5 +1,5 @@
-title: P-Values and Bayes Rule (draft)
-tags: statistics, conceptual
+title: P-Values and Bayes Rule
+tags: statistics, conceptual, week8
 date: 2018-12-10
 
 Recall from the previous lesson what a p-value is: it’s the probability of observing a value of your statistic as extreme (as far away from the null hypothesis statistic) as you in fact observed, if the null hypothesis were true.  

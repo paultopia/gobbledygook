@@ -41,7 +41,9 @@ LINKS = (('University of Iowa College of Law', 'https://law.uiowa.edu/'),
          ('Paul Gowder', 'https://gowder.io'),
          ('Python Documentation', 'http://python.org/'),
          ('Course Github', 'https://github.com/paultopia/quantitative-methods-for-lawyers/'),
-          ('Microsoft Azure Notebooks', 'https://notebooks.azure.com/'),)
+         ('Course Lessons Github', "https://github.com/paultopia/gobbledygook_lessons"),
+          ('Microsoft Azure Notebooks', 'https://notebooks.azure.com/'),
+         ('Lesson Post Tags', 'tags.html'),)
 
 DEFAULT_PAGINATION = 10
 
