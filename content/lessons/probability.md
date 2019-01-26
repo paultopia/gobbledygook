@@ -211,6 +211,23 @@ $$P(A \cap B \cap C) = P(A)P(B | A)P(C | (A \cap B))$$
 
 Think about the probability of drawing a third heart in a row. And then a fourth, and so on.
 
+#### Conditional independence
+
+In the real world, full-fledged independence is pretty rare. But conditional independence---two events being independent conditional on a third variable---is much more common and just as useful.  Here's an example of conditional independence: having multiple concussions and weighing more than 300 pounts  might be independent conditional on being a football player.  That is, given I know someone is a football player, I don't learn anything more about whether they're likely to have multiple concussions from knowing they're really big, or vice versa.  Formally speaking, 
+
+$$P(concussions | football, gigantic) = P(concussions | football)$$ 
+
+and 
+
+$$P(gigantic | football, concussions) = P(gigantic | football)$$ 
+
+The trick is that two variables can be conditionally independent on some third variable without being independent. If I see someone really huge walking around campus, I do learn something about the likelihood of them having had multiple concussions---because really big people are more likely to be football players, and football players are more likely, in turn, to suffer multiple concussions. 
+
+The nice thing about conditional independence is the multiplication rule still works.  That is: 
+
+$$P((gigantic \cap concussions) | football) = P(gigantic | football)P(concussions | football)$$ 
+
+
 ## A Collection of Common Mistakes
 
 There are a bunch of frequent errors that people make with probability. Don't make them.

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
         <meta charset="utf-8" />
-        <title>Lesson 2.2 The Basics of Probability</title>
+        <title>The Basics of Probability</title>
         <link rel="stylesheet" href="https://sociologicalgobbledygook.com/theme/css/main.css" />
         <link rel="stylesheet" href="https://sociologicalgobbledygook.com/theme/css/juptyer-fix.css" />
         <link href="https://sociologicalgobbledygook.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Sociological Gobbledygook Atom Feed" />
@@ -14,6 +14,7 @@
                 <nav><ul>
                     <li><a href="https://sociologicalgobbledygook.com/pages/manifesto.html">Manifesto</a></li>
                     <li><a href="https://sociologicalgobbledygook.com/pages/welcome.html">Welcome!</a></li>
+                    <li><a href="https://sociologicalgobbledygook.com/category/class_examples.html">class_examples</a></li>
                     <li class="active"><a href="https://sociologicalgobbledygook.com/category/lessons.html">Lessons</a></li>
                     <li><a href="https://sociologicalgobbledygook.com/category/psets.html">psets</a></li>
                 </ul></nav>
@@ -22,8 +23,8 @@
   <article>
     <header>
       <h1 class="entry-title">
-        <a href="https://sociologicalgobbledygook.com/lesson-22-the-basics-of-probability.html" rel="bookmark"
-           title="Permalink to Lesson 2.2 The Basics of Probability">Lesson 2.2 The Basics of Probability</a></h1>
+        <a href="https://sociologicalgobbledygook.com/the-basics-of-probability.html" rel="bookmark"
+           title="Permalink to The Basics of Probability">The Basics of Probability</a></h1>
     </header>
 
     <div class="entry-content">
@@ -36,7 +37,7 @@
                 By                         <a class="url fn" href="https://sociologicalgobbledygook.com/author/paul-gowder.html">Paul Gowder</a>
         </address>
 <p>In <a href="https://sociologicalgobbledygook.com/category/lessons.html">Lessons</a>.</p>
-<p>tags: <a href="https://sociologicalgobbledygook.com/tag/statistics.html">statistics</a> <a href="https://sociologicalgobbledygook.com/tag/week2.html">week2</a> <a href="https://sociologicalgobbledygook.com/tag/probability.html">probability</a> </p>
+<p>tags: <a href="https://sociologicalgobbledygook.com/tag/statistics.html">statistics</a> <a href="https://sociologicalgobbledygook.com/tag/week4.html">week4</a> <a href="https://sociologicalgobbledygook.com/tag/probability.html">probability</a> </p>
 </footer><!-- /.post-info -->      <h2>What is Probability?</h2>
 <p>Probability is the mathematical representation of the likelihood of an event under a given set of circumstances (conditions) in a given period of time. We will say, for example, that the probability of winning the jackpot in the lottery from buying one ticket this week is some (very tiny) number like .00000003.  </p>
 <p>We also sometimes use probability language to refer to states of affairs---we might say, for example, that given what I know about the number of buses in town and the color of the bus that hit the plaintiff, the probability that the bus that hit the plaintiff belonged to the Acme Bus Company is .75. (This comes from a very famous thought experiment, described in Charles Nesson, The Evidence or the Event? On Judicial Proof and the Acceptability of Verdicts, 98 Harv. L. Rev. 1357 (1985))  Usually, you won't need to think too hard about the difference between these two ideas. </p>
@@ -159,6 +160,14 @@
 <p>We can also chain this rule, i.e.: </p>
 <div class="math">$$P(A \cap B \cap C) = P(A)P(B | A)P(C | (A \cap B))$$</div>
 <p>Think about the probability of drawing a third heart in a row. And then a fourth, and so on.</p>
+<h4>Conditional independence</h4>
+<p>In the real world, full-fledged independence is pretty rare. But conditional independence---two events being independent conditional on a third variable---is much more common and just as useful.  Here's an example of conditional independence: having multiple concussions and weighing more than 300 pounts  might be independent conditional on being a football player.  That is, given I know someone is a football player, I don't learn anything more about whether they're likely to have multiple concussions from knowing they're really big, or vice versa.  Formally speaking, </p>
+<div class="math">$$P(concussions | football, gigantic) = P(concussions | football)$$</div>
+<p>and </p>
+<div class="math">$$P(gigantic | football, concussions) = P(gigantic | football)$$</div>
+<p>The trick is that two variables can be conditionally independent on some third variable without being independent. If I see someone really huge walking around campus, I do learn something about the likelihood of them having had multiple concussions---because really big people are more likely to be football players, and football players are more likely, in turn, to suffer multiple concussions. </p>
+<p>The nice thing about conditional independence is the multiplication rule still works.  That is: </p>
+<div class="math">$$P((gigantic \cap concussions) | football) = P(gigantic | football)P(concussions | football)$$</div>
 <h2>A Collection of Common Mistakes</h2>
 <p>There are a bunch of frequent errors that people make with probability. Don't make them.</p>
 <h3>Ignoring Base Rates</h3>

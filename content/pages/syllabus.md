@@ -100,7 +100,7 @@ This class is intended in part to produce resources which will be available to t
 
 ## Evaluation
 
-Evaluation will be primarily based on four problem sets. The first two will be computer programming-based, and will be worth 17.5% of the grade each. The third will be probability and statistics based and will be worth 25% of the grade.  The fourth will be comprehensive, with emphasis on the statistics side, and will be worth 30% of the grade.
+Evaluation will be primarily based on four problem sets. The first two will be computer programming-based (with the second possibly including a probability problem or two), and will be worth 17.5% of the grade each. The third will be probability and statistics based and will be worth 25% of the grade.  The fourth will be comprehensive, with emphasis on the statistics side, and will be worth 30% of the grade.
 
 The weird fractions are to accommodate 10% of the grade which will be based on classroom participation and preparation, and which is meant to enforce the flipped classroom format. Students who get full credit for that 10% will complete the simple out-of-class tasks which I will periodically assign, pass the easy in-class pop-quizzes which I will periodically announce, and participate in good faith in collective problem-solving in the classroom. (This is an effort-based 10%, not a performance-based 10%.) 
 
@@ -176,6 +176,7 @@ Between week 1 and week 2, go through chapters 1-3 of DataCamp's [Introduction t
 
 Monday is a holiday (MLK day).  For **Tuesday**, read [Libraries]({filename}../Lessons/libraries.md), [Errors]({filename}../Lessons/errors.ipynb), [Files and Strings]({filename}../Lessons/files-and-strings.ipynb) and [Network Requests]({filename}../Lessons/network_requests.md) on this site. 
 
+In class on Tuesday we worked through an example of accessing the Openstates API, [that example is here]({filename}../class_examples/openstates_example.ipynb).
 
 ### Week 3
 
@@ -191,17 +192,19 @@ On this site, read [Regular Expressions]({filename}../Lessons/regex.ipynb), [Obj
 
 Basic probability math. Bayes rule and conditional probability.
 
-Focused legal application: probabilistic causation in torts.
+Focused legal applications: probabilistic causation in torts, junk science in criminal trials.
 
-Read: the [Arbital Guide to Bayes Rule](https://arbital.com/p/bayes_rule/?l=1zq) (start at the basic version and move up from there as you desire), [the Probability lesson]({filename}../Lessons/probability.md) on this site.
+Read: the [Arbital Guide to Bayes Rule](https://arbital.com/p/bayes_rule/?l=1zq) (at the beginning, where it asks you to pick a level of depth, choose the full/deep presentation), [the Probability lesson]({filename}../Lessons/probability.md) on this site, and chapter 3 (pp. 61-100) of the Finkelstein and Levin Book. [Direct link to F&L assignment via UI Library Proxy Server](https://link-springer-com.proxy.lib.uiowa.edu/chapter/10.1007/978-1-4419-5985-0_3).
 
-Watch: Peter Donnelly's TED talk [How Statistics Fools Juries](https://www.ted.com/talks/peter_donnelly_shows_how_stats_fool_juries)
+Watch: Peter Donnelly's TED talk [How Statistics Fools Juries](https://www.ted.com/talks/peter_donnelly_shows_how_stats_fool_juries), read NBC News ['We are going backward': How the justice system ignores science in the pursuit of convictions](https://www.nbcnews.com/news/us-news/we-are-going-backward-how-justice-system-ignores-science-pursuit-n961256)
 
 ### Week 5
 
 Initial explorations into data with data visualization in Python. Basic properties of data, measures of central tendency, exploratory data analysis.
 
-Read: [Introduction to stats]({filename}../Lessons/intro-stats.md), [Exploring data]({filename}../Lessons/exploratory_intro.ipynb)
+Read: [Introduction to stats]({filename}../Lessons/intro-stats.md), [Key Python Data Libraries]({filename}../Lessons/key-libraries.ipynb), [Exploring data]({filename}../Lessons/exploratory_intro.ipynb), [Common Data Transformations]({filename}../Lessons/data-transformations.ipynb), and Measures of Central Tendency and Variation (link TBD).  [Federal Judicial Center Manual on Scientific Evidence](https://www.fjc.gov/content/reference-manual-scientific-evidence-third-edition-1) pp. 236-240, Finkelstein & Levin [chapter 1](https://link-springer-com.proxy.lib.uiowa.edu/chapter/10.1007/978-1-4419-5985-0_1) (pp. 1-45).  Explore the different data visualizations available with [From Data to Viz](https://www.data-to-viz.com/).
+
+Also go through DataCamp [Intermediate Python for Data Science chapter 2 (dictionaries and pandas)](https://www.datacamp.com/courses/intermediate-python-for-data-science) 
 
 ### Week 6
 
