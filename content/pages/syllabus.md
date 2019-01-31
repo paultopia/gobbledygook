@@ -194,7 +194,7 @@ Basic probability math. Bayes rule and conditional probability.
 
 Focused legal applications: probabilistic causation in torts, junk science in criminal trials.
 
-Read: the [Arbital Guide to Bayes Rule](https://arbital.com/p/bayes_rule/?l=1zq) (at the beginning, where it asks you to pick a level of depth, choose the full/deep presentation), [the Probability lesson]({filename}../Lessons/probability.md) on this site, and chapter 3 (pp. 61-100) of the Finkelstein and Levin Book. [Direct link to F&L assignment via UI Library Proxy Server](https://link-springer-com.proxy.lib.uiowa.edu/chapter/10.1007/978-1-4419-5985-0_3).
+Read: the [Arbital Guide to Bayes Rule](https://arbital.com/p/bayes_rule/?l=1zq) (at the beginning, where it asks you to pick a level of depth, choose the full/deep presentation), [the Probability lesson]({filename}../Lessons/probability.md) on this site, and chapter 3 (pp. 61-100) of the Finkelstein and Levin Book. [Direct link to F&L assignment via UI Library Proxy Server](https://link-springer-com.proxy.lib.uiowa.edu/chapter/10.1007/978-1-4419-5985-0_3).  After reading the F&L assignment read [Abel and Baker Redux]({filename}../Lessons/abelbaker.md).
 
 Watch: Peter Donnelly's TED talk [How Statistics Fools Juries](https://www.ted.com/talks/peter_donnelly_shows_how_stats_fool_juries), read NBC News ['We are going backward': How the justice system ignores science in the pursuit of convictions](https://www.nbcnews.com/news/us-news/we-are-going-backward-how-justice-system-ignores-science-pursuit-n961256)
 
@@ -210,7 +210,7 @@ Also go through DataCamp [Intermediate Python for Data Science chapter 2 (dictio
 
 Probability distributions, central limit theorem, hypothesis testing. 
 
-Read: [Distributions]({filename}../Lessons/distributions.ipynb), [The Normal Distribtion]({filename}../Lessons/normal_clt.ipynb), and [Hypothesis Testing]({filename}../Lessons/hypothesis-testing-intro.md).
+Read: [Distributions]({filename}../Lessons/distributions.ipynb), [The Normal Distribtion]({filename}../Lessons/normal_clt.ipynb), [Hypothesis Testing]({filename}../Lessons/hypothesis-testing-intro.md), and [a Catalogue of Basic Hypothesis Tests]({filename}../Lessons/basic_hypothesis_tests.ipynb).
 
 Also read [A Concrete Introduction to Probability using Python](https://nbviewer.jupyter.org/url/norvig.com/ipython/Probability.ipynb) by Google's director of research, and these two excellent blog posts by a Google data scientist: [Statistics for People in a Hurry](https://towardsdatascience.com/statistics-for-people-in-a-hurry-a9613c0ed0b) and [Never Start With a Hypothesis](https://towardsdatascience.com/hypothesis-testing-decoded-for-movers-and-shakers-bfc2bc34da41).
 
@@ -227,7 +227,7 @@ Focused legal application: audit tests in discrimination cases.
 
 P-values, p-hacking, publication bias, the replication crisis in psychology, power and underpoweredness, multiple comparisons, and other terrible pitfalls of scientific research.  
 
-Read: [P-Values and Bayes Rule]({filename}../Lessons/pvals2.md), [Power]({filename}../Lessons/power.md), Peter Norvig's blog post [Warning Signs in Experimental Design and Interpretation](http://norvig.com/experiment-design.html). 
+Read: [P-Values and Bayes Rule]({filename}../Lessons/pvals2.md), [Power]({filename}../Lessons/power.md), Peter Norvig's blog post [Warning Signs in Experimental Design and Interpretation](http://norvig.com/experiment-design.html).  Also read [Statistics Gone Wrong](https://www.statisticsdonewrong.com/). (I'd like you to read that whole website eventually, but for the beginning of the week, you can focus on the sections on [Statistical Power and Underpowered Statistics](https://www.statisticsdonewrong.com/power.html) and [The P Value and the Base Rate Fallacy](https://www.statisticsdonewrong.com/p-value.html).  
 
 Discussion: what are the legal implications of scientific failures?
 

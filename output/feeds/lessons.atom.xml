@@ -5583,7 +5583,1897 @@ dogbear
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
 &lt;/script&gt;
-</content><category term="python"></category><category term="programming"></category><category term="week2"></category></entry><entry><title>Complex Data Types</title><link href="https://sociologicalgobbledygook.com/complex-data-types.html" rel="alternate"></link><published>2018-12-22T00:00:00-06:00</published><updated>2018-12-22T00:00:00-06:00</updated><author><name>Paul Gowder</name></author><id>tag:sociologicalgobbledygook.com,2018-12-22:/complex-data-types.html</id><summary type="html">
+</content><category term="python"></category><category term="programming"></category><category term="week2"></category></entry><entry><title>Practical Basic Hypothesis Tests</title><link href="https://sociologicalgobbledygook.com/practical-basic-hypothesis-tests.html" rel="alternate"></link><published>2018-12-30T00:00:00-06:00</published><updated>2018-12-30T00:00:00-06:00</updated><author><name>Paul Gowder</name></author><id>tag:sociologicalgobbledygook.com,2018-12-30:/practical-basic-hypothesis-tests.html</id><summary type="html">
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;In this lesson, we're going to very quickly rip through the basic hypothesis tests, their uses, and how to achieve them in Python.  I won't spend a lot of time on this, because the mathematical details are covered in the assigned reading, and, at any rate, I think for practical purposes regression analysis is more important for lawyers.  Also, this is basically AP/undergrad stats material, so you've probably seen it somewhere already.&lt;/p&gt;</summary><content type="html">&lt;style type="text/css"&gt;/*!
+*
+* IPython notebook
+*
+*/
+/* CSS font colors for translated ANSI escape sequences */
+/* The color values are a mix of
+   http://www.xcolors.net/dl/baskerville-ivorylight and
+   http://www.xcolors.net/dl/euphrasia */
+.ansi-black-fg {
+  color: #3E424D;
+}
+.ansi-black-bg {
+  background-color: #3E424D;
+}
+.ansi-black-intense-fg {
+  color: #282C36;
+}
+.ansi-black-intense-bg {
+  background-color: #282C36;
+}
+.ansi-red-fg {
+  color: #E75C58;
+}
+.ansi-red-bg {
+  background-color: #E75C58;
+}
+.ansi-red-intense-fg {
+  color: #B22B31;
+}
+.ansi-red-intense-bg {
+  background-color: #B22B31;
+}
+.ansi-green-fg {
+  color: #00A250;
+}
+.ansi-green-bg {
+  background-color: #00A250;
+}
+.ansi-green-intense-fg {
+  color: #007427;
+}
+.ansi-green-intense-bg {
+  background-color: #007427;
+}
+.ansi-yellow-fg {
+  color: #DDB62B;
+}
+.ansi-yellow-bg {
+  background-color: #DDB62B;
+}
+.ansi-yellow-intense-fg {
+  color: #B27D12;
+}
+.ansi-yellow-intense-bg {
+  background-color: #B27D12;
+}
+.ansi-blue-fg {
+  color: #208FFB;
+}
+.ansi-blue-bg {
+  background-color: #208FFB;
+}
+.ansi-blue-intense-fg {
+  color: #0065CA;
+}
+.ansi-blue-intense-bg {
+  background-color: #0065CA;
+}
+.ansi-magenta-fg {
+  color: #D160C4;
+}
+.ansi-magenta-bg {
+  background-color: #D160C4;
+}
+.ansi-magenta-intense-fg {
+  color: #A03196;
+}
+.ansi-magenta-intense-bg {
+  background-color: #A03196;
+}
+.ansi-cyan-fg {
+  color: #60C6C8;
+}
+.ansi-cyan-bg {
+  background-color: #60C6C8;
+}
+.ansi-cyan-intense-fg {
+  color: #258F8F;
+}
+.ansi-cyan-intense-bg {
+  background-color: #258F8F;
+}
+.ansi-white-fg {
+  color: #C5C1B4;
+}
+.ansi-white-bg {
+  background-color: #C5C1B4;
+}
+.ansi-white-intense-fg {
+  color: #A1A6B2;
+}
+.ansi-white-intense-bg {
+  background-color: #A1A6B2;
+}
+.ansi-default-inverse-fg {
+  color: #FFFFFF;
+}
+.ansi-default-inverse-bg {
+  background-color: #000000;
+}
+.ansi-bold {
+  font-weight: bold;
+}
+.ansi-underline {
+  text-decoration: underline;
+}
+/* The following styles are deprecated an will be removed in a future version */
+.ansibold {
+  font-weight: bold;
+}
+.ansi-inverse {
+  outline: 0.5px dotted;
+}
+/* use dark versions for foreground, to improve visibility */
+.ansiblack {
+  color: black;
+}
+.ansired {
+  color: darkred;
+}
+.ansigreen {
+  color: darkgreen;
+}
+.ansiyellow {
+  color: #c4a000;
+}
+.ansiblue {
+  color: darkblue;
+}
+.ansipurple {
+  color: darkviolet;
+}
+.ansicyan {
+  color: steelblue;
+}
+.ansigray {
+  color: gray;
+}
+/* and light for background, for the same reason */
+.ansibgblack {
+  background-color: black;
+}
+.ansibgred {
+  background-color: red;
+}
+.ansibggreen {
+  background-color: green;
+}
+.ansibgyellow {
+  background-color: yellow;
+}
+.ansibgblue {
+  background-color: blue;
+}
+.ansibgpurple {
+  background-color: magenta;
+}
+.ansibgcyan {
+  background-color: cyan;
+}
+.ansibggray {
+  background-color: gray;
+}
+div.cell {
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  border-radius: 2px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  border-width: 1px;
+  border-style: solid;
+  border-color: transparent;
+  width: 100%;
+  padding: 5px;
+  /* This acts as a spacer between cells, that is outside the border */
+  margin: 0px;
+  outline: none;
+  position: relative;
+  overflow: visible;
+}
+div.cell:before {
+  position: absolute;
+  display: block;
+  top: -1px;
+  left: -1px;
+  width: 5px;
+  height: calc(100% +  2px);
+  content: '';
+  background: transparent;
+}
+div.cell.jupyter-soft-selected {
+  border-left-color: #E3F2FD;
+  border-left-width: 1px;
+  padding-left: 5px;
+  border-right-color: #E3F2FD;
+  border-right-width: 1px;
+  background: #E3F2FD;
+}
+@media print {
+  div.cell.jupyter-soft-selected {
+    border-color: transparent;
+  }
+}
+div.cell.selected,
+div.cell.selected.jupyter-soft-selected {
+  border-color: #ababab;
+}
+div.cell.selected:before,
+div.cell.selected.jupyter-soft-selected:before {
+  position: absolute;
+  display: block;
+  top: -1px;
+  left: -1px;
+  width: 5px;
+  height: calc(100% +  2px);
+  content: '';
+  background: #42A5F5;
+}
+@media print {
+  div.cell.selected,
+  div.cell.selected.jupyter-soft-selected {
+    border-color: transparent;
+  }
+}
+.edit_mode div.cell.selected {
+  border-color: #66BB6A;
+}
+.edit_mode div.cell.selected:before {
+  position: absolute;
+  display: block;
+  top: -1px;
+  left: -1px;
+  width: 5px;
+  height: calc(100% +  2px);
+  content: '';
+  background: #66BB6A;
+}
+@media print {
+  .edit_mode div.cell.selected {
+    border-color: transparent;
+  }
+}
+.prompt {
+  /* This needs to be wide enough for 3 digit prompt numbers: In[100]: */
+  min-width: 14ex;
+  /* This padding is tuned to match the padding on the CodeMirror editor. */
+  padding: 0.4em;
+  margin: 0px;
+  font-family: monospace;
+  text-align: right;
+  /* This has to match that of the the CodeMirror class line-height below */
+  line-height: 1.21429em;
+  /* Don't highlight prompt number selection */
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  /* Use default cursor */
+  cursor: default;
+}
+@media (max-width: 540px) {
+  .prompt {
+    text-align: left;
+  }
+}
+div.inner_cell {
+  min-width: 0;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  /* Old browsers */
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  box-flex: 1;
+  /* Modern browsers */
+  flex: 1;
+}
+/* input_area and input_prompt must match in top border and margin for alignment */
+div.input_area {
+  border: 1px solid #cfcfcf;
+  border-radius: 2px;
+  background: #f7f7f7;
+  line-height: 1.21429em;
+}
+/* This is needed so that empty prompt areas can collapse to zero height when there
+   is no content in the output_subarea and the prompt. The main purpose of this is
+   to make sure that empty JavaScript output_subareas have no height. */
+div.prompt:empty {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+div.unrecognized_cell {
+  padding: 5px 5px 5px 0px;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+div.unrecognized_cell .inner_cell {
+  border-radius: 2px;
+  padding: 5px;
+  font-weight: bold;
+  color: red;
+  border: 1px solid #cfcfcf;
+  background: #eaeaea;
+}
+div.unrecognized_cell .inner_cell a {
+  color: inherit;
+  text-decoration: none;
+}
+div.unrecognized_cell .inner_cell a:hover {
+  color: inherit;
+  text-decoration: none;
+}
+@media (max-width: 540px) {
+  div.unrecognized_cell &gt; div.prompt {
+    display: none;
+  }
+}
+div.code_cell {
+  /* avoid page breaking on code cells when printing */
+}
+@media print {
+  div.code_cell {
+    page-break-inside: avoid;
+  }
+}
+/* any special styling for code cells that are currently running goes here */
+div.input {
+  page-break-inside: avoid;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+@media (max-width: 540px) {
+  div.input {
+    /* Old browsers */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-box-align: stretch;
+    display: -moz-box;
+    -moz-box-orient: vertical;
+    -moz-box-align: stretch;
+    display: box;
+    box-orient: vertical;
+    box-align: stretch;
+    /* Modern browsers */
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+/* input_area and input_prompt must match in top border and margin for alignment */
+div.input_prompt {
+  color: #303F9F;
+  border-top: 1px solid transparent;
+}
+div.input_area &gt; div.highlight {
+  margin: 0.4em;
+  border: none;
+  padding: 0px;
+  background-color: transparent;
+}
+div.input_area &gt; div.highlight &gt; pre {
+  margin: 0px;
+  border: none;
+  padding: 0px;
+  background-color: transparent;
+}
+/* The following gets added to the &lt;head&gt; if it is detected that the user has a
+ * monospace font with inconsistent normal/bold/italic height.  See
+ * notebookmain.js.  Such fonts will have keywords vertically offset with
+ * respect to the rest of the text.  The user should select a better font.
+ * See: https://github.com/ipython/ipython/issues/1503
+ *
+ * .CodeMirror span {
+ *      vertical-align: bottom;
+ * }
+ */
+.CodeMirror {
+  line-height: 1.21429em;
+  /* Changed from 1em to our global default */
+  font-size: 14px;
+  height: auto;
+  /* Changed to auto to autogrow */
+  background: none;
+  /* Changed from white to allow our bg to show through */
+}
+.CodeMirror-scroll {
+  /*  The CodeMirror docs are a bit fuzzy on if overflow-y should be hidden or visible.*/
+  /*  We have found that if it is visible, vertical scrollbars appear with font size changes.*/
+  overflow-y: hidden;
+  overflow-x: auto;
+}
+.CodeMirror-lines {
+  /* In CM2, this used to be 0.4em, but in CM3 it went to 4px. We need the em value because */
+  /* we have set a different line-height and want this to scale with that. */
+  /* Note that this should set vertical padding only, since CodeMirror assumes
+       that horizontal padding will be set on CodeMirror pre */
+  padding: 0.4em 0;
+}
+.CodeMirror-linenumber {
+  padding: 0 8px 0 4px;
+}
+.CodeMirror-gutters {
+  border-bottom-left-radius: 2px;
+  border-top-left-radius: 2px;
+}
+.CodeMirror pre {
+  /* In CM3 this went to 4px from 0 in CM2. This sets horizontal padding only,
+    use .CodeMirror-lines for vertical */
+  padding: 0 0.4em;
+  border: 0;
+  border-radius: 0;
+}
+.CodeMirror-cursor {
+  border-left: 1.4px solid black;
+}
+@media screen and (min-width: 2138px) and (max-width: 4319px) {
+  .CodeMirror-cursor {
+    border-left: 2px solid black;
+  }
+}
+@media screen and (min-width: 4320px) {
+  .CodeMirror-cursor {
+    border-left: 4px solid black;
+  }
+}
+/*
+
+Original style from softwaremaniacs.org (c) Ivan Sagalaev &lt;Maniac@SoftwareManiacs.Org&gt;
+Adapted from GitHub theme
+
+*/
+.highlight-base {
+  color: #000;
+}
+.highlight-variable {
+  color: #000;
+}
+.highlight-variable-2 {
+  color: #1a1a1a;
+}
+.highlight-variable-3 {
+  color: #333333;
+}
+.highlight-string {
+  color: #BA2121;
+}
+.highlight-comment {
+  color: #408080;
+  font-style: italic;
+}
+.highlight-number {
+  color: #080;
+}
+.highlight-atom {
+  color: #88F;
+}
+.highlight-keyword {
+  color: #008000;
+  font-weight: bold;
+}
+.highlight-builtin {
+  color: #008000;
+}
+.highlight-error {
+  color: #f00;
+}
+.highlight-operator {
+  color: #AA22FF;
+  font-weight: bold;
+}
+.highlight-meta {
+  color: #AA22FF;
+}
+/* previously not defined, copying from default codemirror */
+.highlight-def {
+  color: #00f;
+}
+.highlight-string-2 {
+  color: #f50;
+}
+.highlight-qualifier {
+  color: #555;
+}
+.highlight-bracket {
+  color: #997;
+}
+.highlight-tag {
+  color: #170;
+}
+.highlight-attribute {
+  color: #00c;
+}
+.highlight-header {
+  color: blue;
+}
+.highlight-quote {
+  color: #090;
+}
+.highlight-link {
+  color: #00c;
+}
+/* apply the same style to codemirror */
+.cm-s-ipython span.cm-keyword {
+  color: #008000;
+  font-weight: bold;
+}
+.cm-s-ipython span.cm-atom {
+  color: #88F;
+}
+.cm-s-ipython span.cm-number {
+  color: #080;
+}
+.cm-s-ipython span.cm-def {
+  color: #00f;
+}
+.cm-s-ipython span.cm-variable {
+  color: #000;
+}
+.cm-s-ipython span.cm-operator {
+  color: #AA22FF;
+  font-weight: bold;
+}
+.cm-s-ipython span.cm-variable-2 {
+  color: #1a1a1a;
+}
+.cm-s-ipython span.cm-variable-3 {
+  color: #333333;
+}
+.cm-s-ipython span.cm-comment {
+  color: #408080;
+  font-style: italic;
+}
+.cm-s-ipython span.cm-string {
+  color: #BA2121;
+}
+.cm-s-ipython span.cm-string-2 {
+  color: #f50;
+}
+.cm-s-ipython span.cm-meta {
+  color: #AA22FF;
+}
+.cm-s-ipython span.cm-qualifier {
+  color: #555;
+}
+.cm-s-ipython span.cm-builtin {
+  color: #008000;
+}
+.cm-s-ipython span.cm-bracket {
+  color: #997;
+}
+.cm-s-ipython span.cm-tag {
+  color: #170;
+}
+.cm-s-ipython span.cm-attribute {
+  color: #00c;
+}
+.cm-s-ipython span.cm-header {
+  color: blue;
+}
+.cm-s-ipython span.cm-quote {
+  color: #090;
+}
+.cm-s-ipython span.cm-link {
+  color: #00c;
+}
+.cm-s-ipython span.cm-error {
+  color: #f00;
+}
+.cm-s-ipython span.cm-tab {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAMCAYAAAAkuj5RAAAAAXNSR0IArs4c6QAAAGFJREFUSMft1LsRQFAQheHPowAKoACx3IgEKtaEHujDjORSgWTH/ZOdnZOcM/sgk/kFFWY0qV8foQwS4MKBCS3qR6ixBJvElOobYAtivseIE120FaowJPN75GMu8j/LfMwNjh4HUpwg4LUAAAAASUVORK5CYII=);
+  background-position: right;
+  background-repeat: no-repeat;
+}
+div.output_wrapper {
+  /* this position must be relative to enable descendents to be absolute within it */
+  position: relative;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  z-index: 1;
+}
+/* class for the output area when it should be height-limited */
+div.output_scroll {
+  /* ideally, this would be max-height, but FF barfs all over that */
+  height: 24em;
+  /* FF needs this *and the wrapper* to specify full width, or it will shrinkwrap */
+  width: 100%;
+  overflow: auto;
+  border-radius: 2px;
+  -webkit-box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.8);
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.8);
+  display: block;
+}
+/* output div while it is collapsed */
+div.output_collapsed {
+  margin: 0px;
+  padding: 0px;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+div.out_prompt_overlay {
+  height: 100%;
+  padding: 0px 0.4em;
+  position: absolute;
+  border-radius: 2px;
+}
+div.out_prompt_overlay:hover {
+  /* use inner shadow to get border that is computed the same on WebKit/FF */
+  -webkit-box-shadow: inset 0 0 1px #000;
+  box-shadow: inset 0 0 1px #000;
+  background: rgba(240, 240, 240, 0.5);
+}
+div.output_prompt {
+  color: #D84315;
+}
+/* This class is the outer container of all output sections. */
+div.output_area {
+  padding: 0px;
+  page-break-inside: avoid;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+div.output_area .MathJax_Display {
+  text-align: left !important;
+}
+div.output_area 
+div.output_area 
+div.output_area img,
+div.output_area svg {
+  max-width: 100%;
+  height: auto;
+}
+div.output_area img.unconfined,
+div.output_area svg.unconfined {
+  max-width: none;
+}
+div.output_area .mglyph &gt; img {
+  max-width: none;
+}
+/* This is needed to protect the pre formating from global settings such
+   as that of bootstrap */
+.output {
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+@media (max-width: 540px) {
+  div.output_area {
+    /* Old browsers */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-box-align: stretch;
+    display: -moz-box;
+    -moz-box-orient: vertical;
+    -moz-box-align: stretch;
+    display: box;
+    box-orient: vertical;
+    box-align: stretch;
+    /* Modern browsers */
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+div.output_area pre {
+  margin: 0;
+  padding: 1px 0 1px 0;
+  border: 0;
+  vertical-align: baseline;
+  color: black;
+  background-color: transparent;
+  border-radius: 0;
+}
+/* This class is for the output subarea inside the output_area and after
+   the prompt div. */
+div.output_subarea {
+  overflow-x: auto;
+  padding: 0.4em;
+  /* Old browsers */
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  box-flex: 1;
+  /* Modern browsers */
+  flex: 1;
+  max-width: calc(100% - 14ex);
+}
+div.output_scroll div.output_subarea {
+  overflow-x: visible;
+}
+/* The rest of the output_* classes are for special styling of the different
+   output types */
+/* all text output has this class: */
+div.output_text {
+  text-align: left;
+  color: #000;
+  /* This has to match that of the the CodeMirror class line-height below */
+  line-height: 1.21429em;
+}
+/* stdout/stderr are 'text' as well as 'stream', but execute_result/error are *not* streams */
+div.output_stderr {
+  background: #fdd;
+  /* very light red background for stderr */
+}
+div.output_latex {
+  text-align: left;
+}
+/* Empty output_javascript divs should have no height */
+div.output_javascript:empty {
+  padding: 0;
+}
+.js-error {
+  color: darkred;
+}
+/* raw_input styles */
+div.raw_input_container {
+  line-height: 1.21429em;
+  padding-top: 5px;
+}
+pre.raw_input_prompt {
+  /* nothing needed here. */
+}
+input.raw_input {
+  font-family: monospace;
+  font-size: inherit;
+  color: inherit;
+  width: auto;
+  /* make sure input baseline aligns with prompt */
+  vertical-align: baseline;
+  /* padding + margin = 0.5em between prompt and cursor */
+  padding: 0em 0.25em;
+  margin: 0em 0.25em;
+}
+input.raw_input:focus {
+  box-shadow: none;
+}
+p.p-space {
+  margin-bottom: 10px;
+}
+div.output_unrecognized {
+  padding: 5px;
+  font-weight: bold;
+  color: red;
+}
+div.output_unrecognized a {
+  color: inherit;
+  text-decoration: none;
+}
+div.output_unrecognized a:hover {
+  color: inherit;
+  text-decoration: none;
+}
+.rendered_html {
+  color: #000;
+  /* any extras will just be numbers: */
+}
+
+
+
+.rendered_html :link {
+  text-decoration: underline;
+}
+.rendered_html :visited {
+  text-decoration: underline;
+}
+
+
+
+
+
+
+.rendered_html h1:first-child {
+  margin-top: 0.538em;
+}
+.rendered_html h2:first-child {
+  margin-top: 0.636em;
+}
+.rendered_html h3:first-child {
+  margin-top: 0.777em;
+}
+.rendered_html h4:first-child {
+  margin-top: 1em;
+}
+.rendered_html h5:first-child {
+  margin-top: 1em;
+}
+.rendered_html h6:first-child {
+  margin-top: 1em;
+}
+.rendered_html ul:not(.list-inline),
+.rendered_html ol:not(.list-inline) {
+  padding-left: 2em;
+}
+
+
+
+
+
+
+
+
+.rendered_html * + ul {
+  margin-top: 1em;
+}
+.rendered_html * + ol {
+  margin-top: 1em;
+}
+
+
+
+
+
+.rendered_html pre,
+
+
+
+
+.rendered_html tr,
+.rendered_html th,
+
+
+.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
+}
+.rendered_html * + table {
+  margin-top: 1em;
+}
+
+.rendered_html * + p {
+  margin-top: 1em;
+}
+
+.rendered_html * + img {
+  margin-top: 1em;
+}
+.rendered_html img,
+
+.rendered_html img.unconfined,
+
+
+.rendered_html * + .alert {
+  margin-top: 1em;
+}
+[dir="rtl"] 
+div.text_cell {
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+@media (max-width: 540px) {
+  div.text_cell &gt; div.prompt {
+    display: none;
+  }
+}
+div.text_cell_render {
+  /*font-family: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;*/
+  outline: none;
+  resize: none;
+  width: inherit;
+  border-style: none;
+  padding: 0.5em 0.5em 0.5em 0.4em;
+  color: #000;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+a.anchor-link:link {
+  text-decoration: none;
+  padding: 0px 20px;
+  visibility: hidden;
+}
+h1:hover .anchor-link,
+h2:hover .anchor-link,
+h3:hover .anchor-link,
+h4:hover .anchor-link,
+h5:hover .anchor-link,
+h6:hover .anchor-link {
+  visibility: visible;
+}
+.text_cell.rendered .input_area {
+  display: none;
+}
+.text_cell.rendered 
+.text_cell.rendered .rendered_html tr,
+.text_cell.rendered .rendered_html th,
+.text_cell.rendered 
+.text_cell.unrendered .text_cell_render {
+  display: none;
+}
+.text_cell .dropzone .input_area {
+  border: 2px dashed #bababa;
+  margin: -1px;
+}
+.cm-header-1,
+.cm-header-2,
+.cm-header-3,
+.cm-header-4,
+.cm-header-5,
+.cm-header-6 {
+  font-weight: bold;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.cm-header-1 {
+  font-size: 185.7%;
+}
+.cm-header-2 {
+  font-size: 157.1%;
+}
+.cm-header-3 {
+  font-size: 128.6%;
+}
+.cm-header-4 {
+  font-size: 110%;
+}
+.cm-header-5 {
+  font-size: 100%;
+  font-style: italic;
+}
+.cm-header-6 {
+  font-size: 100%;
+  font-style: italic;
+}
+&lt;/style&gt;
+&lt;style type="text/css"&gt;.highlight .hll { background-color: #ffffcc }
+.highlight  { background: #f8f8f8; }
+.highlight .c { color: #408080; font-style: italic } /* Comment */
+.highlight .err { border: 1px solid #FF0000 } /* Error */
+.highlight .k { color: #008000; font-weight: bold } /* Keyword */
+.highlight .o { color: #666666 } /* Operator */
+.highlight .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
+.highlight .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #BC7A00 } /* Comment.Preproc */
+.highlight .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
+.highlight .c1 { color: #408080; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #408080; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #A00000 } /* Generic.Deleted */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #FF0000 } /* Generic.Error */
+.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.highlight .gi { color: #00A000 } /* Generic.Inserted */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.highlight .gt { color: #0044DD } /* Generic.Traceback */
+.highlight .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: #008000 } /* Keyword.Pseudo */
+.highlight .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #B00040 } /* Keyword.Type */
+.highlight .m { color: #666666 } /* Literal.Number */
+.highlight .s { color: #BA2121 } /* Literal.String */
+.highlight .na { color: #7D9029 } /* Name.Attribute */
+.highlight .nb { color: #008000 } /* Name.Builtin */
+.highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+.highlight .no { color: #880000 } /* Name.Constant */
+.highlight .nd { color: #AA22FF } /* Name.Decorator */
+.highlight .ni { color: #999999; font-weight: bold } /* Name.Entity */
+.highlight .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #0000FF } /* Name.Function */
+.highlight .nl { color: #A0A000 } /* Name.Label */
+.highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+.highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
+.highlight .nv { color: #19177C } /* Name.Variable */
+.highlight .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mb { color: #666666 } /* Literal.Number.Bin */
+.highlight .mf { color: #666666 } /* Literal.Number.Float */
+.highlight .mh { color: #666666 } /* Literal.Number.Hex */
+.highlight .mi { color: #666666 } /* Literal.Number.Integer */
+.highlight .mo { color: #666666 } /* Literal.Number.Oct */
+.highlight .sa { color: #BA2121 } /* Literal.String.Affix */
+.highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
+.highlight .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
+.highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+.highlight .s2 { color: #BA2121 } /* Literal.String.Double */
+.highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+.highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
+.highlight .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+.highlight .sx { color: #008000 } /* Literal.String.Other */
+.highlight .sr { color: #BB6688 } /* Literal.String.Regex */
+.highlight .s1 { color: #BA2121 } /* Literal.String.Single */
+.highlight .ss { color: #19177C } /* Literal.String.Symbol */
+.highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.highlight .fm { color: #0000FF } /* Name.Function.Magic */
+.highlight .vc { color: #19177C } /* Name.Variable.Class */
+.highlight .vg { color: #19177C } /* Name.Variable.Global */
+.highlight .vi { color: #19177C } /* Name.Variable.Instance */
+.highlight .vm { color: #19177C } /* Name.Variable.Magic */
+.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */&lt;/style&gt;
+&lt;style type="text/css"&gt;
+/* Temporary definitions which will become obsolete with Notebook release 5.0 */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-bold { font-weight: bold; }
+&lt;/style&gt;&lt;body&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;In this lesson, we're going to very quickly rip through the basic hypothesis tests, their uses, and how to achieve them in Python.  I won't spend a lot of time on this, because the mathematical details are covered in the assigned reading, and, at any rate, I think for practical purposes regression analysis is more important for lawyers.  Also, this is basically AP/undergrad stats material, so you've probably seen it somewhere already.&lt;/p&gt;
+&lt;p&gt;Coverage:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Chi-square&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Fisher's exact test&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Binomial test&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;T-test&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;F-test/Anova&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Basic nonparametric t-test alternative (Wilcoxon/Mann Whitney)&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;There are lots of others, but this is the sort of standard menu of the basic stuff.  For guidelines of which to choose when, see &lt;a href="https://stats.idre.ucla.edu/other/mult-pkg/whatstat/"&gt;this page from UCLA&lt;/a&gt;.&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="Chi-squared"&gt;Chi-squared&lt;a class="anchor-link" href="#Chi-squared"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Use: test relationship between categorical variables, test whether two samples drawn from the same distribution.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Legal example: The population of registered voters/drivers license holders/etc. is X% women and Y% men; the jury pool is A% women and B% men. Should we believe that the potential jurors were selected from the whole population? P-value means how likely would we be to get the observed distribution from the underlying population.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Basic idea: Take a crosstabulation (a.k.a. contingency table) of the sample, and calculate what the expected values of the cells in the table would be from the population.  See if they're crazy different.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Sticking with our jury example, suppose we had the following data on our underlying population and our jury pool:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;|                  | Women | Men  |
+|------------------|-------|------|
+| Not in Jury Pool | 4850  | 4650 |
+| In Jury Pool     | 150   | 350  |&lt;/code&gt;&lt;/pre&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;Here's how we'd do this in Python&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[1]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;scipy.stats&lt;/span&gt; &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="n"&gt;chi2_contingency&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;numpy&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;np&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[2]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;crosstab&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;array&lt;/span&gt;&lt;span class="p"&gt;([[&lt;/span&gt;&lt;span class="mi"&gt;4850&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;4650&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;150&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;350&lt;/span&gt;&lt;span class="p"&gt;]])&lt;/span&gt;
+&lt;span class="n"&gt;chi2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;p&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;dof&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;expected&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;chi2_contingency&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;crosstab&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[3]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;
+
+    &lt;div class="prompt output_prompt"&gt;Out[3]:&lt;/div&gt;
+
+
+
+
+&lt;div class="output_text output_subarea output_execute_result"&gt;
+&lt;pre&gt;6.802875042267758e-20&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;Further reading on chi-squared:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href="https://www.khanacademy.org/math/statistics-probability/inference-categorical-data-chi-square-tests"&gt;Khan Academy&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.chi2_contingency.html"&gt;Scipy documentation&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href="https://machinelearningmastery.com/chi-squared-test-for-machine-learning/"&gt;A lengthier tutorial in Python&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href="https://towardsdatascience.com/running-chi-square-tests-in-python-with-die-roll-data-b9903817c51b"&gt;And another&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3900058/"&gt;A nice article describing some of the assumptions of chi-squared in more detail&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In our example, I might feel comfortable rejecting the null hypothesis that the jury pool came from the underlying population with a p-value that low. Or, same idea different phrasing, I might reject the null hypothesis that gender and being called to jury service are independent.&lt;/p&gt;
+&lt;p&gt;But &lt;em&gt;maybe not&lt;/em&gt;, because chi-squared is known to be sensitive to sample size---big samples can produce really big test statistics, and hence really small p-values, sort of arbitrarily.  So maybe we should think of a different test.&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="Fisher's-exact-test"&gt;Fisher's exact test&lt;a class="anchor-link" href="#Fisher's-exact-test"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Fisher's exact test is an alternative to the chi-squared that used to be a lot less popular before computational power went through the roof.  As the name suggests, it produces better estimates than chi-squared, but at the cost of computational complexity, so even today it's rarely used for big contingency tables (you could use chi-squared for a 4x4 table, a 9x9 table, etc.)  Traditionally, Fisher's exact test is used for small samples that are inappropriate for chi-squared.&lt;/p&gt;
+&lt;p&gt;But it's never wrong to conduct an extra test!  (Well, it's wrong if you're doing research and you don't report them all.  We'll talk about this later.  Report every damn test you conduct.)  So let's try it on our big contingency table here.&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[4]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;scipy.stats&lt;/span&gt; &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="n"&gt;fisher_exact&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[5]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;oddsratio&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;p&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;fisher_exact&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;crosstab&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;
+
+    &lt;div class="prompt"&gt;&lt;/div&gt;
+
+
+&lt;div class="output_subarea output_stream output_stdout output_text"&gt;
+&lt;pre&gt;2.2248886823458282e-20
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;Also significant!&lt;/p&gt;
+&lt;p&gt;Incidentally, that assigning two things to the result of a single function thing that we just did with &lt;code&gt;oddsratio, p = fisher_exact(crosstab)&lt;/code&gt; is known as &lt;em&gt;tuple unpacking&lt;/em&gt;.  the &lt;code&gt;fisher_exact&lt;/code&gt; function actually returns a tuple &lt;code&gt;(oddsratio, pvalue)&lt;/code&gt;, and we can just assign them to distinct variables all in one go.&lt;/p&gt;
+&lt;p&gt;Further reading on Fisher's exact test:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.fisher_exact.html"&gt;Scipy docs&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href="http://davidquigley.com/talks/2015/biostatistics/module_07.1.html#fishers-exact-test"&gt;A biostats person explains chi-squared, binomial, and Fisher tests&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h1 id="Binomial-test"&gt;Binomial test&lt;a class="anchor-link" href="#Binomial-test"&gt;&amp;#182;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;Binomial tests are another count data test, basically the same as Fisher's test except that Fisher's test is based on the hypergeometric distribution, used for sampling without replacement, and the binomial test is based (surprise surprise!) on the binomial distribution, used for sampling with replacement.&lt;/p&gt;
+&lt;p&gt;Binomial tests are used mainly to test for significant difference from a known binomial distribution.  For example, you'd use a binomial test to come to a conclusion about whether a coin is fair---coin flips are distributed according to a binomial distribution.&lt;/p&gt;
+&lt;p&gt;An example legal application would be, perhaps, coming to a conclusion about the prosecution/defense bias of a single judge on granting defense motions to dismiss at the close of the prosecution's case. Given an assumed probability of granting motions to dismiss brought by the defense in the district (based on the observed proportion of same), how likely is it that our judge's motions to dimiss were generated by the same process that generated the district as a whole?&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[6]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;scipy.stats&lt;/span&gt; &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="n"&gt;binom_test&lt;/span&gt;
+
+&lt;span class="n"&gt;overall_district_grant_proportion&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mf"&gt;0.2&lt;/span&gt;
+&lt;span class="n"&gt;our_judge_grant_count&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt;
+&lt;span class="n"&gt;our_judge_total_motions_heard&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;85&lt;/span&gt;
+
+&lt;span class="n"&gt;p&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;binom_test&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;our_judge_grant_count&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;our_judge_total_motions_heard&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;overall_district_grant_proportion&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;
+
+    &lt;div class="prompt"&gt;&lt;/div&gt;
+
+
+&lt;div class="output_subarea output_stream output_stdout output_text"&gt;
+&lt;pre&gt;0.05792939694561368
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;So we probably wouldn't reject the null hypothesis that our judge's motion decisions are generated by a process with the same probability as the population as a whole.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.binom_test.html"&gt;scipy docs&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="T-test"&gt;T-test&lt;a class="anchor-link" href="#T-test"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Use: comparing two means (Sample mean to hypothesized mean, difference in means, etc. --- there are different flavors of the T test for these situations) from samples where you have all the data (not just frequencies), and you have interval data (that is, proper numbers, not just categories.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Basic idea: like the Z test (which is just a hypothesis test based on the normal distribution), but more robust to smaller sample sizes, where the central limit theorem doesn't give you quite as much confidence.  The T distribution has "fatter tails" than the normal distribution, so it'll give you higher p values for the same difference--- it's more conservative.  As sample size increases, the T distribution approaches the normal distribution.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Legal example: suppose we think that African-Americans are being charged higher mortgage origination fees than whites.  We might collect a bunch of closing documents from the two groups and then run a t-test.  (Though note that this wouldn't be nearly enough to establish that actionable discrimination is happening, in part because we would need to control for other variables---wait till we get to the regression section.)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Note that there are slightly different t-tests for independent data (i.e., two different groups of borrowers), and related or "paired" data (a common example given is student exam scores before and after some method of instruction, where each datapoint in the first sample is associated with a particular datapoint in the second).  There are actually &lt;a href="https://support.minitab.com/en-us/minitab-express/1/help-and-how-to/basic-statistics/inference/supporting-topics/tests-of-means/types-of-t-tests/"&gt;others as well&lt;/a&gt;, but those will serve for the most immediately useful ones.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;in scipy.stats, the paired sample version is &lt;a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.ttest_rel.html"&gt;ttest_rel&lt;/a&gt;, and the independent sample version is &lt;a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.ttest_ind.html"&gt;ttest_ind&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;To see an example here, we'll generate some fake data from normal distributions with different means.  (I'm too lazy to type it in.)&lt;/p&gt;
+&lt;p&gt;I'm also going to use numpy's &lt;a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.random.seed.html"&gt;random seed&lt;/a&gt; functionality. What this does is basically picks the point at which pseudo-random numbers are selected---it means that the random draws will still be random enough, but if you run the code from here on in, it'll be the same for you as well, you won't get different random numbers, and hence will get identical results.&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[7]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;random&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;seed&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="n"&gt;fake_white_mean&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;5000&lt;/span&gt;
+
+&lt;span class="n"&gt;fake_black_mean&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;7000&lt;/span&gt;
+
+&lt;span class="n"&gt;shared_stdev&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;2000&lt;/span&gt;
+
+&lt;span class="n"&gt;black_fees&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;random&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;normal&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;fake_black_mean&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;shared_stdev&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;40&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;white_fees&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;random&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;normal&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;fake_white_mean&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;shared_stdev&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;40&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="c1"&gt;# round these samples to whole dollars to make it more realistic&lt;/span&gt;
+
+&lt;span class="n"&gt;black_fees&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;round&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;black_fees&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="n"&gt;white_fees&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;round&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;white_fees&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="c1"&gt;# let&amp;#39;s see what our fake data looks like&lt;/span&gt;
+
+&lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;black_fees&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;white_fees&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;
+
+    &lt;div class="prompt"&gt;&lt;/div&gt;
+
+
+&lt;div class="output_subarea output_stream output_stdout output_text"&gt;
+&lt;pre&gt;[ 9663.  8431.  3909.  6983.  8243.  5560.  7531.  7217.  7009.  6651.
+  7866.  9406.  5070.  9057.  7457.  7890.  4727.  7270.  9969.  4840.
+  3045.  3513.  7532. 11770.  9247. 10345.  7198.  9796.  6458.  8226.
+  6465.  5901.  7265.  6048.  9617.  7390.  7800.  6325.  9513.  5536.]
+[6320. 4298. 3121. 4021. 3391. 4575. 4322. 5624. 6130. 4705. 4948. 5578.
+ 3920. 6416. 6684. 5407. 9789. 6835. 4775. 4276. 4536. 3997. 7258. 3604.
+ 4838. 3941. 7092. 2163. 4275. 4756. 5639. 5922. 4568. 6978. 5630. 9935.
+ 1983. 6241. 2910. 3404.]
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[8]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;scipy.stats&lt;/span&gt; &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="n"&gt;ttest_ind&lt;/span&gt;
+&lt;span class="n"&gt;t&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;p&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;ttest_ind&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;black_fees&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;white_fees&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[9]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;
+
+    &lt;div class="prompt"&gt;&lt;/div&gt;
+
+
+&lt;div class="output_subarea output_stream output_stdout output_text"&gt;
+&lt;pre&gt;6.470058820542905e-07
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;We can very easily reject the null hypothesis that the means of the two groups are the same.  Which, obviously, since I generated the fake data from distributions that big different means.&lt;/p&gt;
+&lt;p&gt;Incidentally, I simulated data that would be expected to work particularly well with a T test: both populations had the same standard deviation (the &lt;code&gt;ttest_ind&lt;/code&gt; function &lt;a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.ttest_ind.html"&gt;gives you an option&lt;/a&gt; to apply a standard correction if that's not true), and both were generated by a normal distribution. You should be careful with T tests if those aren't true, as you could get bogus results.  Also, these are all independent draws---if the data aren't independent, if, for example, the result the third white borrower gets depends in some way on what some other borrower got, then a T test is not appropriate.&lt;/p&gt;
+&lt;p&gt;There are actually some controversial details about whether the underlying data needs to really be from a normal distribution for T tests, but there are nice nonparemetric alternatives (I'll explain what that means in a minute), so a good rule of thumb is that when data deviates too far from a normal distribution, just go with one of those instead.  (Unless you have a large sample. Then you'll be pretty ok in most cases.  Many people say "large" is over 30.)&lt;/p&gt;
+&lt;p&gt;Incidentally, a standard way to see whether or not your data deviates from a normal distribution is to produce what's known as a q-q plot, which plots your data against a theoretical distribution. Unsurprisingly, scipy provides a function &lt;a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.probplot.html"&gt;called probplot&lt;/a&gt; for this.  (Actually, there are technical quibbles about q-q plots vs probability plots, but, for practical purposes, what you want is a plot against a distribution and that's what you get here.)&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[10]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;scipy.stats&lt;/span&gt; &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="n"&gt;probplot&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;matplotlib.pyplot&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;plt&lt;/span&gt;
+&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="k"&gt;matplotlib&lt;/span&gt; inline
+
+
+&lt;span class="n"&gt;probplot&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;black_fees&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;dist&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;norm&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;plot&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;
+
+    &lt;div class="prompt output_prompt"&gt;Out[10]:&lt;/div&gt;
+
+
+
+
+&lt;div class="output_text output_subarea output_execute_result"&gt;
+&lt;pre&gt;((array([-2.11583547, -1.7314906 , -1.50271646, -1.33321868, -1.19520249,
+         -1.07683093, -0.97189321, -0.87669641, -0.78885043, -0.70670905,
+         -0.62908229, -0.55507545, -0.48399287, -0.41527745, -0.34847074,
+         -0.28318561, -0.2190868 , -0.15587657, -0.09328369, -0.03105452,
+          0.03105452,  0.09328369,  0.15587657,  0.2190868 ,  0.28318561,
+          0.34847074,  0.41527745,  0.48399287,  0.55507545,  0.62908229,
+          0.70670905,  0.78885043,  0.87669641,  0.97189321,  1.07683093,
+          1.19520249,  1.33321868,  1.50271646,  1.7314906 ,  2.11583547]),
+  array([ 3045.,  3513.,  3909.,  4727.,  4840.,  5070.,  5536.,  5560.,
+          5901.,  6048.,  6325.,  6458.,  6465.,  6651.,  6983.,  7009.,
+          7198.,  7217.,  7265.,  7270.,  7390.,  7457.,  7531.,  7532.,
+          7800.,  7866.,  7890.,  8226.,  8243.,  8431.,  9057.,  9247.,
+          9406.,  9513.,  9617.,  9663.,  9796.,  9969., 10345., 11770.])),
+ (1996.350828526845, 7343.475, 0.993463585978141))&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;div class="output_area"&gt;
+
+    &lt;div class="prompt"&gt;&lt;/div&gt;
+
+
+
+
+&lt;div class="output_png output_subarea "&gt;
+&lt;img src="data:image/png;base64,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
+"
+&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;Unsurprisingly, this looks like it comes from a normal distribution.  Because, you know, it did. Now let's look at data that clearly isn't coming from a normal distribution.&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[11]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;notnormal&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;random&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;pareto&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;40&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;probplot&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;notnormal&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;dist&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;norm&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;plot&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;
+
+    &lt;div class="prompt output_prompt"&gt;Out[11]:&lt;/div&gt;
+
+
+
+
+&lt;div class="output_text output_subarea output_execute_result"&gt;
+&lt;pre&gt;((array([-2.11583547, -1.7314906 , -1.50271646, -1.33321868, -1.19520249,
+         -1.07683093, -0.97189321, -0.87669641, -0.78885043, -0.70670905,
+         -0.62908229, -0.55507545, -0.48399287, -0.41527745, -0.34847074,
+         -0.28318561, -0.2190868 , -0.15587657, -0.09328369, -0.03105452,
+          0.03105452,  0.09328369,  0.15587657,  0.2190868 ,  0.28318561,
+          0.34847074,  0.41527745,  0.48399287,  0.55507545,  0.62908229,
+          0.70670905,  0.78885043,  0.87669641,  0.97189321,  1.07683093,
+          1.19520249,  1.33321868,  1.50271646,  1.7314906 ,  2.11583547]),
+  array([3.85234168e-02, 5.31611196e-02, 6.86627128e-02, 7.30733709e-02,
+         1.19669848e-01, 1.21156389e-01, 1.73185933e-01, 1.89334618e-01,
+         2.17882621e-01, 2.25542495e-01, 2.80031702e-01, 4.14023103e-01,
+         4.28020360e-01, 4.66862417e-01, 5.10154020e-01, 5.14481113e-01,
+         5.40016698e-01, 5.75708801e-01, 7.88185254e-01, 8.67521072e-01,
+         8.86028410e-01, 9.05241835e-01, 9.80388729e-01, 1.05058445e+00,
+         1.08245257e+00, 1.26028639e+00, 1.28932847e+00, 1.30153316e+00,
+         1.37043459e+00, 1.41558719e+00, 1.48914528e+00, 2.06247690e+00,
+         2.55369576e+00, 2.91547647e+00, 3.04034152e+00, 3.58608557e+00,
+         5.84620851e+00, 7.75864558e+00, 4.26313993e+01, 4.62124490e+01])),
+ (5.665343352727429, 3.4075746687844957, 0.5682366680049432))&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;div class="output_area"&gt;
+
+    &lt;div class="prompt"&gt;&lt;/div&gt;
+
+
+
+
+&lt;div class="output_png output_subarea "&gt;
+&lt;img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAYoAAAEWCAYAAAB42tAoAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAADl0RVh0U29mdHdhcmUAbWF0cGxvdGxpYiB2ZXJzaW9uIDMuMC4wLCBodHRwOi8vbWF0cGxvdGxpYi5vcmcvqOYd8AAAIABJREFUeJzt3XmYXFWZx/HvLyEhGxACYU06AQxgQBZpWQICCUgSFhENAhMFEYkiIIIiMGEGdYRBHVwZH42ioGSURQQXQkiAsG8JhDWAYQmyhbAHQkKWd/44t6lK6KquXqpvddfv8zz1dN1zb9V9uyD19nvOufcoIjAzMyulR94BmJlZbXOiMDOzspwozMysLCcKMzMry4nCzMzKcqIwM7OynCisbkn6tqRL2/jaL0i6rcz+aZKOae5YSW9L2rIt521ljLMkfana57Huz4nCuhRJz0h6N/uyXSjpYkkD8o5rTRExPiIuKbFvQEQ8BZDF/722nqcjPg9JwyWFpLXaGod1b04U1hUdEhEDgI8CjcDZax6gpF7+/27x8zBrj3r5h2TdUEQ8D0wDtof3u1rOlXQ7sATYUtJmkv4q6TVJ8yUdv8bb9JF0maTFku6TtGPTDklnSnoy2/eopMPWeK0kXSjpTUmPSdqvaEfJbp/sr/cPSZoETAS+lVUEf5N0uqQ/r3H8zyT9tLWfxxrv0UPS2ZIWSHpZ0u8lrZftviX7+UYWxx4tncvqixOFdVmShgIHAvcXNX8emASsAywA/gQ8B2wGTADOkzSm6PhDgSuAQcD/AVdL6pXtexL4OLAe8B3gUkmbFr12t+yYDYFzgKskDao0/oiYAkwFfpB1Rx0CXAqMkzQw+x3XAo4Eft/S+5X4PJp8IXuMBrYEBgAXZvv2zn4OzOK4s9LfweqDE4V1RVdLegO4DbgZOK9o38UR8UhErAA2AfYEzoiIpRExF/gNcHTR8XMi4sqIWA78COgD7A4QEVdExAsRsSoiLgP+Cexa9NqXgZ9ExPJs/+PAQe35xSLiRdJf+IdnTeOAVyJiTpmXlfs8mkwEfhQRT0XE28BZwJEel7BK+H8S64o+FREzS+z7V9HzzYDXImJxUdsCUj/+B46PiFWSmqoPJB0NnAYMzw4ZQKoemjwfq99Vc0HTa9vpEuAE4NfA54A/tHB8uc+jyWak+JosIP3737itQVr9cEVh3U3xF/cLwCBJ6xS1NQDPF20PbXqSDX4PAV6QNIz0RX0SsEFEDAQeBlT02s0lFW83ZOdsa7xNrgZ2kLQ9cDCpe6q9XgCGFW03ACuAhSViMHufE4V1WxHxL+AO4L8l9ZG0A3AcaRygyS6SPp11wXwdWAbcBfQnfYEuApB0LB8cJN4I+JqkXpIOBz4MXNvKMBeSxgyK414KXEkaM7knIp5t5Xs254/AqZK2yKbPngdclnXRLQJWrRmHWRMnCuvujiJ1Hb0A/AU4Z41ummuAI4DXSQPhn87GHB4FLgDuJH2ZfwS4fY33vhsYAbwCnAtMiIhXWxnfRcBISW9Iurqo/ZLsnC11O1Xqt9l73QI8DSwFTgaIiCWk+G/P4ti9g85p3YS8cJFZ7ZHUADwGbBIRb+Udj9U3VxRmNSYbKzkN+JOThNUCz3oyqyGS+pO6uhaQpsaa5c5dT2ZmVpa7nszMrKxu0fW04YYbxvDhw/MOw8ysS5kzZ84rETG4peO6RaIYPnw4s2fPzjsMM7MuRdKClo9y15OZmbXAicLMzMpyojAzs7KcKMzMrCwnCjMzK8uJwsysC5o6FYYPhx490s+pHXEz+hK6xfRYM7N6MnUqTJoES5ak7QUL0jbAxIkdfz5XFGZmXczkyYUk0WTJktReDU4UZmZdzLMllrIq1d5eThRmZl1MQ0Pr2tvLicLMrIs591zo12/1tn79Uns1OFGYmXUxEyfClCkwbBhI6eeUKdUZyAbPejIz65ImTqxeYliTKwozMyvLicLMzMpyojAzs7KcKMzMrCwnCjMzK8uJwsysA3TmTfo6m6fHmpm1U2ffpK+zuaIwM2unzr5JX2dzojAza6fOvklfZ3OiMDNrp86+SV9nc6IwM2unzr5JX2dzojAza6fOvklfZ/OsJzOzDtCZN+nrbK4ozMysrNwThaSeku6X9PdsewtJd0uaL+kySb3zjtHMrJ7lniiAU4B5RdvfB34cER8CXgeOyyUqMzMDck4UkoYABwG/ybYFjAGuzA65BPhUPtGZmRnkX1H8BPgWsCrb3gB4IyJWZNvPAZvnEZiZmSW5JQpJBwMvR8ScNr5+kqTZkmYvWrSog6MzM7MmeVYUewKflPQM8CdSl9NPgYGSmqbtDgGeb+7FETElIhojonHw4MGdEa+ZWV3KLVFExFkRMSQihgNHAjdGxETgJmBCdtgxwDU5hWhmZuQ/RtGcM4DTJM0njVlclHM8ZmZ1rSauzI6IWcCs7PlTwK55xmNmZgW1WFGYmVkNcaIwM7OynCjMzKwsJwozMyvLicLMzMpyojAzs7KcKMzMrCwnCjMzK8uJwszMynKiMDOzspwozMysLCcKMzMry4nCzMzKcqIwM7OynCjMzKwsJwozMyvLicLMzMpyojAzs7KcKMzMrCwnCjMzK8uJwszMynKiMDOzspwozMysLCcKMzMry4nCzMzKcqIwM7OynCjMzKwsJwozMysrt0QhqY+keyQ9IOkRSd/J2reQdLek+ZIuk9Q7rxjNzCzfimIZMCYidgR2AsZJ2h34PvDjiPgQ8DpwXI4xmpnVvdwSRSRvZ5u9skcAY4Ars/ZLgE/lEJ6ZmWVyHaOQ1FPSXOBlYAbwJPBGRKzIDnkO2LzEaydJmi1p9qJFizonYDOzOpRrooiIlRGxEzAE2BXYthWvnRIRjRHROHjw4KrFaGZW72pi1lNEvAHcBOwBDJS0VrZrCPB8boGZmVnrEoWk9SXt0BEnljRY0sDseV/gE8A8UsKYkB12DHBNR5zPzMzaZq2WDpA0C/hkduwc4GVJt0fEae0896bAJZJ6khLW5RHxd0mPAn+S9D3gfuCidp7HzMzaocVEAawXEW9J+hLw+4g4R9KD7T1xRDwI7NxM+1Ok8QozM6sBlXQ9rSVpU+CzwN+rHI+ZmdWYShLFd4HpwJMRca+kLYF/VjcsMzOrFS12PUXEFcAVRdtPAZ+pZlBmZlY7WqwoJG0t6QZJD2fbO0g6u/qhmZlZLaik6+nXwFnAcnh/EPrIagZlZma1o5JE0S8i7lmjbUWzR5qZWbdTSaJ4RdJWpBv2IWkC8GJVozIzs5pRyXUUJwJTgG0lPQ88DXyuqlGZmVnNqGTW01PA/pL6Az0iYnH1wzIzs1pRyS08/nONbQAi4rtVisnMzGpIJV1P7xQ97wMcTLp5n5mZ1YFKup4uKN6W9D+kK7XNzKwOtGU9in6kdSLMzKwOVDJG8RDZ1FigJzCYdP8nMzOrA5WMURxc9HwFsLBoTWszM+vmSiYKSYOyp2tOh11XEhHxWvXCMjOzWlGuophD6nJSM/sC2LIqEZmZWU0pmSgiYovODMTMzGpTJWMUSFofGEG6jgKAiLilWkGZmVntqGTW05eAU0hTYucCuwN3AmOqG5qZmdWCSq6jOAX4GLAgIkYDOwNvVDUqMzOrGZUkiqURsRRA0toR8RiwTXXDMjOzWlHJGMVzkgYCVwMzJL0OLKhuWGZmVisqudfTYdnTb0u6CVgPuK6qUZmZWc0od8HdtcD/AVdHxNsAEXFzZwVmZma1odwYxa+Ag4CnJV0u6TBJvTspLjMzqxElE0VEXBMRRwHDgD8DRwPPSvqdpE90VoBmZpavFmc9RcSSiLgsG6s4ANiJDhijkDRU0k2SHpX0iKRTsvZBkmZI+mf2c/32nsvMzNquxUQhaWNJJ0u6nTTzaTrw0Q449wrgGxExknQR34mSRgJnAjdExAjghmzbzMxyUm4w+3jgKNI1E38GTo+IOzrqxBHxIvBi9nyxpHnA5sChwL7ZYZcAs4AzOuq8ZmbWOuWmx+4B/Dfpr/tV1QxC0nDSFd93AxtnSQTgJWDjEq+ZBEwCaGhoqGZ4ZmZ1rdxg9hcjYkYnJIkBpIrl6xHx1hoxBIXV9daMb0pENEZE4+DBg6sZoplZXWvLmtkdRlIvUpKYGhFXZc0LJW2a7d8UeDmv+MzMLMdEIUnARcC8iPhR0a6/Asdkz48Bruns2MzMrKCSpVCb1QFLoe4JfB54SNLcrO3fgfOByyUdR7qn1GfbeR4zM2uHSpdCbQBez54PBJ4F2rUCXkTcRvPLrALs1573NjOzjlNuMHuLiNgSmAkcEhEbRsQGwMHA9Z0VoJmZ5auSMYrdI+Lapo2ImAaMql5IZmZWSypZj+IFSWcDl2bbE4EXqheSmZnVkkoqiqOAwcBfgKuy50dVMygzM6sdlSxc9BpwiqT+EfFOJ8RkZmY1pJKbAo6S9CgwL9veUdIvqh6ZmZnVhEq6nn4MjAVeBYiIB4C9qxmUmZnVjoquzI6If63RtLIKsZiZWQ2qZNbTvySNAiK7N9MpZN1QZmbW/VVSUXwFOJG0VsTzpBXuTqxmUGZm1oKlS2H6dHj44aqfqmxFIakn8PmImFj1SMzMrLz582HatPSYNQvefRdOOgl+/vOqnrZsooiIlZL+jTSgbWZmnWnJkpQQpk2D665LiQJgxAg4/ngYNw723bfqYVQyRnGbpAuBy4D3r6OIiPuqFpWZWT2KgCeeKCSGWbNg2TLo2xdGj4ZTToHx42GrrTo1rEoSxU7Zz+8WtQUwpuPDMTOrM++8AzfemBLDtGnw9NOpfZtt4IQTUmLYe2/o0ye3ECu5Mnt0ZwRiZlYXImDevELVcMst8N570L8/jBkDp5+eupS2aNdKDh2qxUQhaWPgPGCziBgvaSSwR0RcVPXozMy6g8WL4YYbClXDs8+m9pEj4eSTU9Ww116w9tr5xllCJV1PFwO/AyZn20+QxiucKMzMmhORpq02JYbbboPly2HAANh/f5g8GcaOhWHD8o60IpUkig0j4nJJZwFExApJvjLbzKzYm2+mqqGpS+m551L7Rz4CX/96qhr23BN69843zjaoJFG8I2kD0gA2knYH3qxqVGZmtS4CHnywcF3DHXfAihWw7rqpajjnnDTWMGRI3pG2WyWJ4jTgr8BWkm4nrUcxoapRmZnVotdfh5kzC1XDiy+m9h13hG9+M1UNe+wBvXrlG2cHq2TW032S9gG2AQQ8HhHLqx6ZmVneVq2CuXMLVcNdd8HKlTBwIHziEykxjB0Lm22Wd6RVVTJRSPp0iV1bSyIirqpSTGZm+XntNbj++pQYpk+HhQtT+0c/CmeemZLDbrvBWpV0yHQP5X7TQ7KfGwGjgBuz7dHAHaRlUc3MurZVq2DOnELVcM89qW3QIDjggELVsPHGeUeam5KJIiKOBZB0PTAyIl7MtjclTZk1M+uaXnklVQtNVcMrr4AEjY1w9tkpOXzsY9CzZ96R1oRKaqehTUkisxBoqFI8ZmYdb+VKuPfewiD0vfemWUsbbpiqhfHjU/UweHDekdakShLFDZKmA3/Mto8AZlYvJDOzDrBwYaoWrrsujTm8+mqqGnbbDb797TR1dZddXDVUoJJZTydJOozCOtlTIuIv1Q3LzKyVVqyAu+8uXA09Z05q32gjOOiglBgOOAA22CDfOLugShYumpndGLDDk4Ok3wIHAy9HxPZZ2yDSLUKGA88An42I1zv63GbWDbz4YmGsYcaMdJ1Djx7pWob/+q/UpbTzzqnN2qyShYtWSVovIqpxNfbFwIXA74vazgRuiIjzJZ2ZbZ9RhXObWVezfHm6lqFphtLcual9k03g0ENTYvjEJ2D99fONs5upZIzibeAhSTNYfeGir7X35BFxi6ThazQfCuybPb8EmIUThVn9ev75QnfSzJnpnko9e8KoUXDeeSk57LhjGn+wqqgkUVxF514zsXHRLKuXgGYnL0uaBEwCaGjwJCyzbmP5crj99kJyePDB1L755jBhQkoM++8P662Xb5x1pJJEcRnwoez5/IhYWsV4VhMRISlK7JsCTAFobGxs9hgz6yL+9a/Vq4bFi9OVz3vtBd//fkoO22/vqiEn5W7hsRZpwaIvAgtI93kaKul3wOQq3u9poaRNI+LF7OK+l6t0HjPLy7JlaY2GpuTwyCOpfehQOOqolBj22w/WWSffOA0oX1H8EFgH2CIiFgNIWhf4n+xxSpVi+itwDHB+9vOaKp3HzDrTM88UEsMNN6S1onv3ho9/HI49NiWHD3/YVUMNKpcoDga2joj3u3Ui4i1JJwCP0QGJQtIfSQPXG0p6DjiHlCAul3QcqZL5bHvPY2Y5WLYsrQfdNEPpscdS+/DhcPTRKTGMHp1WfbOaVi5RRHGSKGpcWWrcoLUi4qgSu/briPc3s0721FOFxHDTTbBkSVoHep994MtfTslh661rsmqYOjWtUPrss9DQAOeeCxMn5h1VbSiXKB6VdHREFF/jgKTPkSoKM6t3774LN99cuIfSE0+k9q22KnQnjR4N/frlG2cLpk6FSZNSXgNYsCBtg5MFgJopGtIOaXPStNh3gexaeBqBvsBhEfF8p0RYgcbGxpg9e3beYZjVh3/+s5AYbroJli6FPn1SQhg3LiWHESPyjrJVhg9PyWFNw4aloZXuStKciGhs6bhytxl/HthN0hhgu6z52oi4oYNiNLOuYMmSlBCaksOTT6b2ESPSn93jx6eupb59842zHZ59tnXt9aaSmwLeSGHRIjPr7iLg8ccLieHmm9PAdN++MGYMnHpqqhy22irvSDtMQ0PzFYWv5U3qZy0/Myvt7bcLVcO0aYX+lm23ha9+NVUNH/946mLqhs49d/UxCkjDKueem19MtcSJwqweRcC8eYXEcOut8N570L9/utDtjDNS1TB8eN6RdoqmAWvPempeycHsrsSD2WYVWLw4XejW1KXU1AG/3XapYhg3Lt0yY+21842zA3iqa2XaPZhtZl1cBDz8cKFquO22tLjPOuukm+pNnpySQzfriPdU147nisKsO3nzzXRTvaaq4flsFvsOOxSmro4alW6d0U3V61TXtnBFYVYPIuCBBwpVwx13wMqVsO66aQGfpi6lzTfPO9JO46muHc+Jwqyref31tOxnU9Xw0kupfeed4VvfSslh992hV69848yJp7p2PCcKs1q3ahXcf3+harjrrtQ2cCAccEBKDGPHwqab5h1pTfBU147nRGFWi159dfWq4eVsWZZddoF///eUHHbdNS3uY6vxVNeO5//LzGrBypUwZ04hMdxzT6oaBg1K1UJT1bDRRnlH2iVMnOjE0JGcKMzysmhRSgrXXQfTp6cqQoKPfQz+4z9ScmhshJ498460pvgaic7nRGHWWVauhHvvLYw1zJ6dZi0NHpySwvjxaabS4MF5R1qzfI1EPnrkHYBZt7ZwIVxySVoHeqONYI894HvfS2ML3/lOShwvvQR/+AP827/VRZKYOjVd69CjR/o5dWpl+yBVEsWD1JC2J0+ubsz1zhWFWUdasSLNSmpaG/q++1L7xhvDIYcUqoZBg/KNMyflKgJouVrwNRL58JXZZu31wgtpjGHaNLj++nR1dM+eqXpouuBtp53Sn8l1otQ4QrmrpqHlK6p91XXH8pXZZtWyfDnceSdce22qHB54ILVvuil85jMpMey/P6y/fr5x5qRc1dCWiqB4n6+RyEf9/Ilj1h7PPQe/+U1KBBtumFZ0u+CCdNHb+efD3LnpvkoXXQSHH14XSaLUeEK5cYRSV0c3NJTf12TiRJgyJVUQUvo5ZYoHsqvNFYVZc957D26/vTBD6eGHU/uQIXDEEalq2G8/WG+9fOPMSVurhj/8oXxFUEm14GskchARXf6xyy67hFm7LVgQ8atfRXzqUxEDBkRARK9eEaNHR/zgBxEPPRSxalXeUa7m0ksjhg2LkNLPE05YffvSSz94zKWXNv/aUsc21zZsWPp41nwMG1Z+X6nzlvp9ivdZxwNmRwXfsbl/yXfEw4nC2mTp0oiZMyO+8Y2IkSML32gNDRFf/nLE1VdHvPVWp4TSli/8E06I6Nev+S/lpkevXhG9e6/e1q9f869t7thSry91PinFueYx/fr5S78WOVGYNefppyN+8YuIQw6J6N8//RPo3Tti//0jLrgg4pFHWlU1tPULviO+8KXyryn36Nmz7a8t9/pKqgarHZUmCk+PtS6ruSmYsHrbf5+zlI0ev4VnfjGNPRdPY1seB2Dx4C24+t1xXPH2eOYPHc2+Bw/g2mvLv9eBB7LaMQcemK6lW3PgtlivXmnQ9b33Sh8jpa/ZrqZfvw+OJ3hguWupdHps7tVARzxcUeSrLX3OHdFvXqrrZEvmx4n8PP7GQfE26aB3WTumMTZO4cex3VqPRe9eq1r9F3xz3Szt+as8z0d7K4risQpXDV0XXb3rCRgHPA7MB84sd2xbEkVn/0/eEedr7XtUenxLx7WUCEr1R5fa11xXS2v6zfv1i9hgg8J2X96JcVwbP+XkeIIPvb/jCT4UP+XkGM8/oi/v5P7lXI1HS8mqWmMUTgrdQ5dOFEBP4ElgS6A38AAwstTxrU0UnT3Y1hHna+17VHp8S8e1tL8ts19K/TVb+V+5q2IEj8fX+ElMY2wsoU8ExDv0jb9zYJzEz2Ir/pn7l3hnfeHnMevJuoeunij2AKYXbZ8FnFXq+NYmipam73W0jjhfa9+j0uNbOq6l/aW+4KSO7Zrpx9txEH+Ln3NizGfL93c8xtbxY06JA7gu+rCkS3zBf+B3a+cXvllbVZooanIwW9IEYFxEfCnb/jywW0ScVHTMJGASQENDwy4LmrsBTAk9eqR/oh88b1orpqN1xPla+x6VHt/ScS3tb8u9e3r2THfcLt8ebMtjjOM6xjONvbmFPizjHfpxI2O4pf94rl05jkeXbvn+65sbOK60bU2VHNOvHxxzzAcHuFs7KO71FCwvXXowG5gA/KZo+/PAhaWOd0XR9uPbW1F05BjF17+0OCb0viZ+wVfiaQonfpQPx/9wWuzHjOjN0tXev61dJx0xrdV/0VtXh7ueSvMYReXHVfI+bZ711LAqtuPh+N7AH8aLI8ekfhqIxRoQf+HQOGvQL+MvP3nGXS5mVdLVE8VawFPAFhQGs7crdbxnPbXv+PbMemq1N9+MuOqqiOOPjxg6tJB9tt8+4vTTI268MWLZsnacwMwqVWmiqMkxCgBJBwI/Ic2A+m1ElLyRsC+4q2ER8NBDhZvr3X57WtxnnXXSAj7jxqXH0KF5R2pWd7r8ehQRcS1wbd5xWBu88QbMnJkSw3XXpYV9AHbcEb7xjbSYz6hRacTYzGpezSYK60JWrUqL9zRVDXfemaYvrbdeqhqaVnnbbLO8IzWzNnCisLZ57TWYMaNQNSxcmNp33hnOOCMlh913h7X8v5hZV+d/xVaZVavgvvsKVcPdd6e29ddfvWrYZJO8IzWzDuZEYaW98gpcf31KDNOnw6JFqb2xMV1BNn48fOxjrhrMujn/C7eClSth9uzUlTRtGtxzT5q1tMEGMHZsqhjGjoWNNso7UjPrRE4U9e7ll1evGl59Nd27Ytdd4ZxzUtWwyy7p/hpmVpecKOrNypWpUmgaa5gzJ1UNgwenmxCNHw8HHJCqCDMznCjqw0svpWph2rRUPbz+errb3+67w3e/m5LDzjunNjOzNThRdEcrVsBddxWqhvvvT+2bbAKHHpoSw/77w6BB+cZpZl2CE0V38cILhUHoGTPgzTfTuMKoUXDeeSk57LCDqwYzazUniq5q+XK4445C1fDgg6l9s81gwoSUGPbbDwYOzDdOM+vynCi6kueeK1wJPXMmvPVWuoZhr73g+99P01c/8pE0a8nMrIM4UdSy996D224rdCk9/HBqHzIEjjiiUDWsu26+cZpZt+ZEUWsWLCgkhhtugLffTndZ/fjH4Yc/TMlh5EhXDWbWaZwo8rZsGdx6a2GsYd681D5sGHzucykxjBkDAwbkG6eZ1S0nijw89VSharjxRliyBNZeG/bZB44/PiWHbbZx1WBmNcGJojO8+y7cckuhanjiidS+5ZZw7LEpMey7L/Tvn2uYZmbNcaKolvnzC4lh1qyULPr0SQnhxBNTchgxIu8ozcxa5ETRUZYsSQmhKTk8+WRqHzGi0J20zz7Qt2+uYZqZtZYTRVtFpC6kpsRw881pYLpv3zT4fOqp6bqGrbbKO1Izs3ZxomiNd95Jg89NF709/XRq33Zb+OpXU2LYe+/UxWRm1k04UZQTkaarNlUNt96aLoLr3z9d6Hb66Sk5bLFF3pGamVWNE8WaFi9OF7o1VQ3PPpvaR46Ek09OYw177ZWms5qZ1QEnioh0a4ymxHDbbemGewMGpFtxT56cqoaGhrwjNTPLRX0nin/8A77ylXSzPUg31Dv11FQ1jBoFvXvnG5+ZWQ2o70QxZAjstltaG3rcuLRtZmarqe9EseOOcOWVeUdhZlbTclnuTNLhkh6RtEpS4xr7zpI0X9LjksbmEZ+ZmRXkVVE8DHwa+FVxo6SRwJHAdsBmwExJW0fEys4P0czMIKeKIiLmRcTjzew6FPhTRCyLiKeB+cCunRudmZkVyyVRlLE58K+i7eeytg+QNEnSbEmzFy1a1CnBmZnVo6p1PUmaCWzSzK7JEXFNe98/IqYAUwAaGxujve9nZmbNq1qiiIj92/Cy54GhRdtDsjYzM8tJrXU9/RU4UtLakrYARgD35ByTmVldy2t67GGSngP2AP4haTpARDwCXA48ClwHnOgZT2Zm+VJE1+/el7QIWFDFU2wIvFLF9+/q/PmU58+nPH8+pVX7sxkWEYNbOqhbJIpqkzQ7IhpbPrI++fMpz59Pef58SquVz6bWxijMzKzGOFGYmVlZThSVmZJ3ADXOn095/nzK8+dTWk18Nh6jMDOzslxRmJlZWU4UZmZWlhNFBST9UNJjkh6U9BdJA/OOqZaUW1+knkkal62rMl/SmXnHU0sk/VbSy5IezjuWWiRpqKSbJD2a/ds6Jc94nCgqMwPYPiJ2AJ4Azso5nlrTtL7ILXkHUisk9QT+FxgPjASOytZbseRiYFzeQdSwFcA3ImIksDtwYp5PzU0XAAAFL0lEQVT//zhRVCAiro+IFdnmXaSbFVqmzPoi9WxXYH5EPBUR7wF/Iq23YkBE3AK8lncctSoiXoyI+7Lni4F5lFhyoTM4UbTeF4FpeQdhNa/itVXMypE0HNgZuDuvGPJaCrXmVLJ+hqTJpJJwamfGVguqvb6ImX2QpAHAn4GvR8RbecXhRJFpaf0MSV8ADgb2izq8+KSN64vUM6+tYu0iqRcpSUyNiKvyjMVdTxWQNA74FvDJiFiSdzzWJdwLjJC0haTewJGk9VbMWiRJwEXAvIj4Ud7xOFFU5kJgHWCGpLmSfpl3QLWk1Poi9Syb/HASMJ00EHl5tt6KAZL+CNwJbCPpOUnH5R1TjdkT+DwwJvvOmSvpwLyC8S08zMysLFcUZmZWlhOFmZmV5URhZmZlOVGYmVlZThRmZlaWE4XVFEkbFE0HfEnS89nzNyQ92smx7FQ8JVHSJ9t6F1hJz0jasOOia9W5vyBps6Lt3zTdYC7PuKzrcKKwmhIRr0bEThGxE/BL4MfZ852AVR19Pknl7k6wE/B+ooiIv0bE+R0dQyf4AvB+ooiIL0VEpyZd69qcKKwr6Snp19n9+a+X1BdA0laSrpM0R9KtkrbN2odLujFbR+QGSQ1Z+8WSfinpbuAHkvpn6yPcI+l+SYdmV1N/Fzgiq2iOyP4yvzB7j42ztUkeyB6jsvarszgekTSppV9I0rGSnsjO/eui979Y0oSi497Ofg7Ifpf7JD0k6dCi33Xemp9P9h6NwNTs9+graVZz64ZI+lwWx1xJv5LUM3tcLOnh7HyntuO/n3VRThTWlYwA/jcitgPeAD6TtU8BTo6IXYBvAr/I2n8OXJKtIzIV+FnRew0BRkXEacBk4MaI2BUYDfwQ6AX8J3BZVuFctkYsPwNujogdgY8CTVddfzGLoxH4mqQNSv0ykjYFvkO6Cncv0roVLVkKHBYRH81ivSC73UOzn09EXAnMBiZmv8e7JWL5MHAEsGdWwa0EJpKqqs0jYvuI+AjwuwpitG7GNwW0ruTpiJibPZ8DDM/urjkKuKLwfcna2c89SAsqAfwB+EHRe10RESuz5wcAn5T0zWy7D9DQQixjgKMBsvd5M2v/mqTDsudDSV/er5Z4j92AWRGxCEDSZcDWLZxXwHmS9iZ1xW0ObJzt+8Dn08J7FdsP2AW4N/sc+wIvA38DtpT0c+AfwPWteE/rJpworCtZVvR8JenLrAfwRvZXcGu8U/RcpL++V1t8SdJurXlDSfsC+wN7RMQSSbNISactVpBV/JJ6AL2z9onAYGCXiFgu6ZmiczT3+VQcPqn6+sDqjZJ2BMYCXwE+S1qTxeqIu56sS8vu0f+0pMMh3XUz+2IDuIN011ZIX7C3lnib6cDJTV04knbO2heTbgbZnBuAE7Lje0paD1gPeD1LEtuSlrAs525gn2ymVy/g8KJ9z5D+wgf4JKkrjOwcL2dJYjQwrIVztPR7FP8+EyRtlP1OgyQNy2ZE9YiIPwNnk7rZrM44UVh3MBE4TtIDpLGCpiVHTwaOlfQg6U6cpRao/y/SF/GDkh7JtgFuAkY2DWav8ZpTgNGSHiJ184wErgPWkjQPOJ+0bG5JEfEi8G3SXVRvJ91ltsmvSUnkAVIXWlMFNBVozM57NPBYuXNkLgZ+2TSYXSKWR0mJ4Prs85oBbErq2polaS5wKV4vvi757rFmNUJpcazGiDgp71jMirmiMDOzslxRmJlZWa4ozMysLCcKMzMry4nCzMzKcqIwM7OynCjMzKys/wdmHQGXT19apgAAAABJRU5ErkJggg==
+"
+&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;There are tons of other ways to come to some conclusion about the necessary assumptions for t-tests--- scipy contains &lt;a href="https://docs.scipy.org/doc/scipy-0.14.0/reference/generated/scipy.stats.levene.html"&gt;tests for equal variances&lt;/a&gt;, &lt;a href="https://docs.scipy.org/doc/scipy-0.14.0/reference/generated/scipy.stats.shapiro.html"&gt;for normality&lt;/a&gt;, and so on and so on.  But, again, another solid solution is just to use a nonparametric test, which I'll talk about after talking about ANOVA and the F test.&lt;/p&gt;
+&lt;p&gt;Also, the minitab blog has two nice posts about understanding T tests:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href="http://blog.minitab.com/blog/adventures-in-statistics-2/understanding-t-tests-t-values-and-t-distributions"&gt;T Values and Distributions&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href="http://blog.minitab.com/blog/adventures-in-statistics-2/understanding-t-tests-1-sample-2-sample-and-paired-t-tests"&gt;Varieties of T Test&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="F-Test/ANOVA"&gt;F-Test/ANOVA&lt;a class="anchor-link" href="#F-Test/ANOVA"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;This (the one-way ANOVA, which follows the F distribution) is what you use to compare a bunch of means all at once. A significant p-value suggests that there's some difference between them, but doesn't tell you which one. Otherwise, it's basically the same (and rests on similar assumptions).&lt;/p&gt;
+&lt;p&gt;For example, let's think about the current debates in college admissions, in which there's a claim that affirmative action discriminates against Asian-Americans. But also lots of white people claim that affirmative action discriminates again them, and ostensibly benefits other racialized groups.  One way we might take a first pass at figuring out if there's even a real difference is to compare whites, Asian-Americans, and everybody else.  (Again, this doesn't entail that there's discrimination, but it's a starting point.)&lt;/p&gt;
+&lt;p&gt;For our example here, I'm going to try something a little funky.  I'm going to generate a bunch of distributions of fake data, some of them are going to show a difference and some aren't, and then we'll try to detect which ones actually are different and see how accurate we are.&lt;/p&gt;
+&lt;p&gt;Our data will be SAT scores of admitted students to a hypothetical college, so the question will be: is there a difference among these groups in the average SAT score?  The &lt;a href="https://nces.ed.gov/programs/digest/d17/tables/dt17_226.40.asp"&gt;mean and SD SAT score are 1060 and 195, respectively&lt;/a&gt;, so we will start with that as out canonical distribution.  In order to limit ourselves to the actual range of SAT scores (400-1600), we'll use a scipy function to generate a truncated normal, which is actually kind of obnoxious to use, but such is life.&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[12]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;scipy.stats&lt;/span&gt; &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="n"&gt;truncnorm&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;f_oneway&lt;/span&gt;
+
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;make_dumb_truncation_params&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;mean&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;400&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;mean&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt; &lt;span class="mi"&gt;195&lt;/span&gt;
+    &lt;span class="n"&gt;b&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1600&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;mean&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt; &lt;span class="mi"&gt;195&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;b&lt;/span&gt;
+
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;generate_distribution&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+    &lt;span class="n"&gt;hasdiff&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;False&lt;/span&gt;
+    &lt;span class="n"&gt;results&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{}&lt;/span&gt;
+    &lt;span class="n"&gt;sd&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;195&lt;/span&gt;
+    &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;group&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;white&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;asian-american&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;everybody-else&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt;
+        &lt;span class="n"&gt;dieroll&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;random&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;uniform&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+        &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;dieroll&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="mf"&gt;0.9&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;  &lt;span class="c1"&gt;# 10% chance of being different&lt;/span&gt;
+            &lt;span class="n"&gt;noise&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;random&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;uniform&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mf"&gt;0.7&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;1.3&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+            &lt;span class="n"&gt;mean&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;1060&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="n"&gt;noise&lt;/span&gt;
+            &lt;span class="n"&gt;hasdiff&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;True&lt;/span&gt;
+        &lt;span class="k"&gt;else&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+            &lt;span class="n"&gt;mean&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;1060&lt;/span&gt;
+        &lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;b&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;make_dumb_truncation_params&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;mean&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="n"&gt;results&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;group&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;round&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;truncnorm&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;loc&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;mean&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;scale&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;sd&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;rvs&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;500&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;results&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;different&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;hasdiff&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;results&lt;/span&gt;
+
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;test_significance&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;fake_data&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="n"&gt;w&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;fake_data&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;white&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+    &lt;span class="n"&gt;aa&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;fake_data&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;asian-american&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+    &lt;span class="n"&gt;ee&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;fake_data&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;everybody-else&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+    &lt;span class="n"&gt;different&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;fake_data&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;different&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+    &lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;p&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;f_oneway&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;w&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;aa&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;ee&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;significant&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;p&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt; &lt;span class="mf"&gt;0.05&lt;/span&gt;
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;different&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="n"&gt;significant&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;correct result: difference is &lt;/span&gt;&lt;span class="si"&gt;{}&lt;/span&gt;&lt;span class="s2"&gt; and I got a significant result t/f: &lt;/span&gt;&lt;span class="si"&gt;{}&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;different&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;significant&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+    &lt;span class="k"&gt;else&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;INCORRECT result: difference is &lt;/span&gt;&lt;span class="si"&gt;{}&lt;/span&gt;&lt;span class="s2"&gt; and I got a significant result t/f: &lt;/span&gt;&lt;span class="si"&gt;{}&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;different&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;significant&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+    
+    
+    
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[13]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;30&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="n"&gt;test_significance&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;generate_distribution&lt;/span&gt;&lt;span class="p"&gt;())&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;
+
+    &lt;div class="prompt"&gt;&lt;/div&gt;
+
+
+&lt;div class="output_subarea output_stream output_stdout output_text"&gt;
+&lt;pre&gt;correct result: difference is False and I got a significant result t/f: False
+correct result: difference is False and I got a significant result t/f: False
+correct result: difference is False and I got a significant result t/f: False
+correct result: difference is False and I got a significant result t/f: False
+correct result: difference is True and I got a significant result t/f: True
+correct result: difference is False and I got a significant result t/f: False
+correct result: difference is True and I got a significant result t/f: True
+correct result: difference is False and I got a significant result t/f: False
+correct result: difference is False and I got a significant result t/f: False
+correct result: difference is True and I got a significant result t/f: True
+correct result: difference is False and I got a significant result t/f: False
+correct result: difference is True and I got a significant result t/f: True
+correct result: difference is False and I got a significant result t/f: False
+correct result: difference is False and I got a significant result t/f: False
+correct result: difference is False and I got a significant result t/f: False
+correct result: difference is True and I got a significant result t/f: True
+correct result: difference is False and I got a significant result t/f: False
+correct result: difference is False and I got a significant result t/f: False
+correct result: difference is False and I got a significant result t/f: False
+correct result: difference is False and I got a significant result t/f: False
+correct result: difference is True and I got a significant result t/f: True
+INCORRECT result: difference is False and I got a significant result t/f: True
+correct result: difference is False and I got a significant result t/f: False
+correct result: difference is True and I got a significant result t/f: True
+INCORRECT result: difference is False and I got a significant result t/f: True
+correct result: difference is False and I got a significant result t/f: False
+correct result: difference is False and I got a significant result t/f: False
+correct result: difference is True and I got a significant result t/f: True
+correct result: difference is False and I got a significant result t/f: False
+correct result: difference is False and I got a significant result t/f: False
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;We have a non-deterministic test.  Sometimes, data from the same distribution will look very different, sometimes data from different distributions will look the same.  But we did pretty well, two wrong out of 30!&lt;/p&gt;
+&lt;p&gt;There are other flavors of ANOVA too, but we won't worry about them here.&lt;/p&gt;
+&lt;p&gt;Further reading:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.f_oneway.html"&gt;scipy docs&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;another nice &lt;a href="http://blog.minitab.com/blog/adventures-in-statistics-2/understanding-analysis-of-variance-anova-and-the-f-test"&gt;minitab blog post&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="Nonparametric-alternatives-to-the-T-test"&gt;Nonparametric alternatives to the T test&lt;a class="anchor-link" href="#Nonparametric-alternatives-to-the-T-test"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Finally, we'll look at some nonparametric alternatives to the T test.  &lt;em&gt;Nonparametric&lt;/em&gt; means that some statistical tests don't require (or, as stats people say, "assume," but we really mean "require so you don't get the wrong answer") the underlying data fit any particular distribution (like normal).&lt;/p&gt;
+&lt;p&gt;For paired data, we have the Wilcoxon signed rank test, provided by scipy.stats in &lt;a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.wilcoxon.html"&gt;wilcoxon&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;For unpaired data, we have the Wilcoxon ranked sum test, provided by scipy.stats in &lt;a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.ranksums.html"&gt;ranksum&lt;/a&gt;, there is also the &lt;a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.mannwhitneyu.html#scipy.stats.mannwhitneyu"&gt;Mann-Whitney U test&lt;/a&gt; which is basically equivalent, and sometimes it's called the Wilcoxon-Mann-Whitney test.&lt;/p&gt;
+&lt;p&gt;These tests are a little bit harder to understand---they aren't perfect substitutes for the T test, and, under some circumstances, it doesn't make sense to say that they're about equality of means.  (I've read some descriptions according to which the null hypothesis to be constructed is really about difference of medians, I've also seen references to difference in distributions more broadly.  So I won't say much more about it here, except to let you know that it exists, and that &lt;a href="https://data.library.virginia.edu/the-wilcoxon-rank-sum-test/"&gt;this explanation from UVA&lt;/a&gt; looks pretty good.&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+ 
+
+&lt;/body&gt;
+&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = '//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: 'center'," +
+        "    displayIndent: '0em'," +
+        "    showMathMenu: true," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['$','$'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        " linebreaks: { automatic: true, width: '95% container' }, " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
+        "    } " +
+        "}); ";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;
+</content><category term="week6"></category><category term="statistics"></category></entry><entry><title>Complex Data Types</title><link href="https://sociologicalgobbledygook.com/complex-data-types.html" rel="alternate"></link><published>2018-12-22T00:00:00-06:00</published><updated>2018-12-22T00:00:00-06:00</updated><author><name>Paul Gowder</name></author><id>tag:sociologicalgobbledygook.com,2018-12-22:/complex-data-types.html</id><summary type="html">
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -20766,7 +22656,190 @@ h6:hover .anchor-link {
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
 &lt;/script&gt;
-</content><category term="python"></category><category term="programming"></category><category term="week1"></category></entry><entry><title>P-Values and Bayes Rule</title><link href="https://sociologicalgobbledygook.com/p-values-and-bayes-rule.html" rel="alternate"></link><published>2018-12-10T00:00:00-06:00</published><updated>2018-12-10T00:00:00-06:00</updated><author><name>Paul Gowder</name></author><id>tag:sociologicalgobbledygook.com,2018-12-10:/p-values-and-bayes-rule.html</id><summary type="html">&lt;p&gt;Recall from the previous lesson what a p-value is: it’s the probability of observing a value of your statistic as extreme (as far away from the null hypothesis statistic) as you in fact observed, if the null hypothesis were true.  &lt;/p&gt;
+</content><category term="python"></category><category term="programming"></category><category term="week1"></category></entry><entry><title>Abel and Baker Redux: Probability and Description</title><link href="https://sociologicalgobbledygook.com/abel-and-baker-redux-probability-and-description.html" rel="alternate"></link><published>2018-12-10T00:00:00-06:00</published><updated>2018-12-10T00:00:00-06:00</updated><author><name>Paul Gowder</name></author><id>tag:sociologicalgobbledygook.com,2018-12-10:/abel-and-baker-redux-probability-and-description.html</id><summary type="html">&lt;p&gt;Right at the beginning of the F&amp;amp;L readings for this week, you saw a well-known probability puzzler/"paradox."  I'm going to risk angering the copyright gods and quote it in full here: &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Assume that boys and girls are born with equal frequency. Mr. Able says, “I have two children …&lt;/p&gt;&lt;/blockquote&gt;</summary><content type="html">&lt;p&gt;Right at the beginning of the F&amp;amp;L readings for this week, you saw a well-known probability puzzler/"paradox."  I'm going to risk angering the copyright gods and quote it in full here: &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Assume that boys and girls are born with equal frequency. Mr. Able says, “I have two children, and at least one of them is a boy.” What is the probability that the other child is a boy? Mr. Baker says, “I went to the house of a two-child family, and a boy answered the door.” What is the probability that the other child is a boy?&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;The readings then assert to you that the answer to Mr. Able's problem is 1/3, and the answer to Mr. Baker's problem is 1/2. &lt;/p&gt;
+&lt;p&gt;I'll bet you have trouble believing this.  But it's correct.  Here's one way to think about why: &lt;strong&gt;probability statements are really sensitive to how you carve up the problem space&lt;/strong&gt;. &lt;/p&gt;
+&lt;p&gt;The Abel problem could be restated as follows: first, take all the possible families with two kids, and then eliminate those where both are girls.  Then, just from the set of families remaining, what proportion of them have two boys?&lt;/p&gt;
+&lt;p&gt;The Baker problem could be restated as follows: first, take all the possible families with two kids. Of them, go knock on their doors, and, from those doors you knocked on in which a boy answers, in what proportion of them is the second kid a boy?&lt;/p&gt;
+&lt;p&gt;The catch is that the sets you're looking into are different.  In the Abel problem, you're looking at &lt;em&gt;every family that has a boy&lt;/em&gt; and asking how likely it is that those families have two boys. In the Baker problem, you're looking at &lt;em&gt;every family that has a boy AND where that boy happened to answer the door&lt;/em&gt;, and asking how likely it is that those families have two boys.&lt;/p&gt;
+&lt;p&gt;You would expect the size of the set you're looking at in the Baker problem to be smaller. After all, there are some families that have both a boy and a girl for which the girl will happen to answer the door. Intuitively, this should suggest to you that the pool of families for which a boy has answered the door would be smaller and, importantly, more weighted toward families with more boys.  After all, in a boy/girl family, there's only a 50% chance that a boy will answer the door, whereas in a boy/boy family it's guaranteed that a boy will answer. So constructing our set of families where a boy answers means we lose some of the boy/girl families but none of the boy/boy families (we can safely assume no parents answer in any event since parent answering would be independent of which gender of the child answers and what genders there are among children in the family).  The pool will be relatively more full of boys.&lt;/p&gt;
+&lt;h2&gt;Now let's do the math.&lt;/h2&gt;
+&lt;p&gt;Let's formalize the Baker problem with Bayes Rule. Reminder: &lt;/p&gt;
+&lt;div class="math"&gt;$$P(B|A) = \frac{P(A|B) \cdot P(B)}{P(A)}$$&lt;/div&gt;
+&lt;p&gt;What we want to know is the probability of both kids being a boy, conditional on the door being opened by a boy. So, in our equation above, assign both-kids-boy to B, and boy-opened-door to A. &lt;/p&gt;
+&lt;p&gt;And here's what we do know: &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Probability of door being opened by a boy, conditional on both kids being boys --- &lt;span class="math"&gt;\(P(A|B) = 1\)&lt;/span&gt;. &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Probability of both kids being boys --- &lt;span class="math"&gt;\(P(B) = 1/4\)&lt;/span&gt; because the available packages of kids are &lt;span class="math"&gt;\(\{bg, gb, bb, gg\}\)&lt;/span&gt; and they have equal probability, and we know that as mutually exclusive and exhaustive events they must sum to 1.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Probability of the door being opened by a boy, or &lt;span class="math"&gt;\(P(A)\)&lt;/span&gt;.  This one we have to do a little bit more work to construct. Let's reason it through.  We know all of the available packages of kids (that is, events), which are mutually exclusive. And we know the probability of each of those packages appearing (1/4).  We also know the probability of getting a boy to answer the door under each of the packages of kids. So we can just multiply those probabilities out and add them per the rules of probability we've already established. For example, the probability of bg is .25, and the probability of getting a boy answering the door there is 1/2, and so forth.  We ultimately end up with &lt;span class="math"&gt;\(P(A) = .25 \cdot .5 + .25 \cdot .5 + .25 \cdot 1 + .25 \cdot 0 = .5\)&lt;/span&gt;. &lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Now we can plug in: &lt;/p&gt;
+&lt;div class="math"&gt;$$P(B|A) = \frac{1 \cdot .25}{.5} = \frac{1}{2}$$&lt;/div&gt;
+&lt;p&gt;Just as the readings told us. &lt;/p&gt;
+&lt;p&gt;How about the Abel problem?  Well, we don't even need Bayes Rule for this one, we just need to observe that 1/3 of the families with one boy have both boys. But let's do it anyway, just as an exercise. Set B to be, yet again, "family has both boys," and set A to be "family has one boy."&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Probability of a family having one boy, conditional on their having both boys --- &lt;span class="math"&gt;\(P(A|B) = 1\)&lt;/span&gt;, obviously.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Probability of a family having both boys --- &lt;span class="math"&gt;\(P(B) = 1/4\)&lt;/span&gt; because, again, our available packages of kids are &lt;span class="math"&gt;\(\{bg, gb, bb, gg\}\)&lt;/span&gt;, with equal probability, and their probabilities have to all add up to 1.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Probability of a family having one boy --- &lt;span class="math"&gt;\(P(A) = 3/4\)&lt;/span&gt; because of 4 available equal probability packages only one of which has no boys. &lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Again, plug that sucker into Bayes rule: &lt;/p&gt;
+&lt;div class="math"&gt;$$P(B|A) = \frac{1 \cdot .25}{.75} = \frac{1}{3}$$&lt;/div&gt;
+&lt;p&gt;Once again, the readings did not lie to us.&lt;/p&gt;
+&lt;p&gt;We should take several important lessons from forcing ourselves to work out this example all the way.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Clear talking facilitates clear thinking. With any probability statement, precise mathematical formulation is better than words, and more detailed words are better than less detailed words. &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Probability statements are sensitive to the sample space (as the reading points out), or, more colloquially, the set of possible events being looked at.  Make absolutely sure you have a clear idea what that sample space is, and whether it's the correct one or not. &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Almost any supposed paradox that you see can be resolved with aggressive application of Bayes Rule. Bayes Rule is the closest thing we have to a magic wand for fixing screwed-up thinking about probability. &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;When in doubt about some probability statement, simulate it!  You just did a ton of work learning basic coding, it's time to get some payoff from it.  The great thing about simulations is that they force you to make your assumptions explicit by putting them in a form the computer can understand. If you can't define your sample space, you can't ask our good friend Python to simulate it. Often, writing out a simulation will force you to resolve ambiguities in how you structure the problem, and give you the boost you need to understand it yourself.  And if you still aren't quite sure even after writing the simulation out, you can run it and see what happens!&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;I've written a simulation of the Able/Baker problem down below. Before you look at it, you might consider writing your own simulation. But if you don't have time, feel free to run my code with sufficiently large values and see what you get. &lt;/p&gt;
+&lt;p&gt;. &lt;br&gt;
+. &lt;br&gt;
+. &lt;br&gt;
+. &lt;br&gt;
+. &lt;br&gt;
+. &lt;br&gt;
+. &lt;br&gt;
+. &lt;br&gt;
+. &lt;br&gt;
+. &lt;br&gt;
+. &lt;br&gt;
+. &lt;br&gt;
+. &lt;br&gt;
+. &lt;br&gt;
+. &lt;br&gt;
+. &lt;br&gt;
+. &lt;br&gt;
+. &lt;br&gt;
+. &lt;br&gt;
+. &lt;br&gt;
+. &lt;br&gt;
+. &lt;br&gt;
+. &lt;br&gt;
+. &lt;br&gt;
+. &lt;br&gt;
+. &lt;br&gt;
+. &lt;br&gt;
+. &lt;br&gt;
+. &lt;br&gt;
+. &lt;br&gt;
+. &lt;br&gt;
+.   &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;random&lt;/span&gt;
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;abel&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;num_families&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="n"&gt;fams&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[]&lt;/span&gt;
+    &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;fam&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;num_families&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+        &lt;span class="n"&gt;kid1&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;random&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;choice&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;b&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;g&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+        &lt;span class="n"&gt;kid2&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;random&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;choice&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;b&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;g&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+        &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;kid1&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;b&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="ow"&gt;or&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;kid2&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;b&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+            &lt;span class="n"&gt;fams&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;append&lt;/span&gt;&lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="n"&gt;kid1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;kid2&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+    &lt;span class="n"&gt;two_boy_fams&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;fams&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;b&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;b&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)]&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;total fams with a boy&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;len&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;fams&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
+            &lt;span class="s2"&gt;&amp;quot;total fams with two boys&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;len&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;two_boy_fams&lt;/span&gt;&lt;span class="p"&gt;)}&lt;/span&gt;
+
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;baker&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;num_families&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;num_knocks&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;num_knocks&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;num_families&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="k"&gt;raise&lt;/span&gt; &lt;span class="ne"&gt;ValueError&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Can&amp;#39;t knock on more doors than there are households.&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;fams&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[]&lt;/span&gt;
+    &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;fam&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;num_families&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+        &lt;span class="n"&gt;kid1&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;random&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;choice&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;b&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;g&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+        &lt;span class="n"&gt;kid2&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;random&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;choice&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;b&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;g&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+        &lt;span class="n"&gt;fams&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;append&lt;/span&gt;&lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="n"&gt;kid1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;kid2&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+    &lt;span class="n"&gt;random&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;shuffle&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;fams&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;knocks_with_first_boy&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[]&lt;/span&gt;
+    &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;knock&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;num_knocks&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+        &lt;span class="n"&gt;thisfam&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;fams&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;pop&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+        &lt;span class="n"&gt;kid_who_answers&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;random&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;choice&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+        &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;thisfam&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;kid_who_answers&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;b&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+            &lt;span class="n"&gt;otherkid&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;int&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="n"&gt;kid_who_answers&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="c1"&gt;# flips 0 to 1 and 1 to 0.  Actually don&amp;#39;t even need to cast to int, but it looks less dumb&lt;/span&gt;
+            &lt;span class="n"&gt;knocks_with_first_boy&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;append&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;thisfam&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;otherkid&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+    &lt;span class="n"&gt;knocks_with_second_boy&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;knocks_with_first_boy&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;b&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;total knocks where a boy answered&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;len&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;knocks_with_first_boy&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
+            &lt;span class="s2"&gt;&amp;quot;knocks where boy answered and second kid is a boy&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;len&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;knocks_with_second_boy&lt;/span&gt;&lt;span class="p"&gt;)}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;As your reward for reading this far, I'll tell you a secret.  I wasn't sure why the Able/Baker problem came out the way it does either---not until I wrote the simulation code. But, just as I said, writing this code forced me to think about what the sample space for the Baker problem actually is, and hence guided me to the rest of this explanation. Even those of us with years and years of probability experience need a little help sometimes.&lt;/p&gt;
+&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "left",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width &lt; 768) ? "left" : align;
+        indent = (screen.width &lt; 768) ? "0em" : indent;
+        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'blue ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('Typewriter' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_Typewriter');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_Typewriter-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_Typewriter-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_Typewriter-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_Typewriter');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_Typewriter-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_Typewriter-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_Typewriter-italic');" +
+            "});" +
+        "}";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;</content><category term="probability"></category><category term="conceptual"></category><category term="week4"></category></entry><entry><title>P-Values and Bayes Rule</title><link href="https://sociologicalgobbledygook.com/p-values-and-bayes-rule.html" rel="alternate"></link><published>2018-12-10T00:00:00-06:00</published><updated>2018-12-10T00:00:00-06:00</updated><author><name>Paul Gowder</name></author><id>tag:sociologicalgobbledygook.com,2018-12-10:/p-values-and-bayes-rule.html</id><summary type="html">&lt;p&gt;Recall from the previous lesson what a p-value is: it’s the probability of observing a value of your statistic as extreme (as far away from the null hypothesis statistic) as you in fact observed, if the null hypothesis were true.  &lt;/p&gt;
 &lt;p&gt;In other words, if you’re doing a (two-sided …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Recall from the previous lesson what a p-value is: it’s the probability of observing a value of your statistic as extreme (as far away from the null hypothesis statistic) as you in fact observed, if the null hypothesis were true.  &lt;/p&gt;
 &lt;p&gt;In other words, if you’re doing a (two-sided) z test, your statistic is the mean, your null hypothesis mean is &lt;span class="math"&gt;\(\mu\)&lt;/span&gt;, and the mean you observe in your sample is &lt;span class="math"&gt;\(\bar{x}\)&lt;/span&gt;, then the p-value is the probability of getting a mean at least &lt;span class="math"&gt;\(\mu - \bar{x}\)&lt;/span&gt; units away from the mean when randomly sampling from a normal distribution with mean &lt;span class="math"&gt;\(\mu\)&lt;/span&gt; and standard deviation estimated by the formula for the standard deviation of a sample. (We’ll talk about that formula later, but if you want a sneak preview, check out &lt;a href="https://www.khanacademy.org/math/statistics-probability/summarizing-quantitative-data/variance-standard-deviation-sample/a/population-and-sample-standard-deviation-review"&gt;this Khan Academy article&lt;/a&gt;.) If the p-value is below a predetermined level, often 0.05, then we say that there’s a statistically significant result. &lt;/p&gt;
 &lt;p&gt;Pause for a moment and ask yourself the following question: &lt;strong&gt;Does that mean the p-value is the probability of incorrectly rejecting the null hypothesis?&lt;/strong&gt; Don’t go on until you have an answer, and can explain why you have that answer. This is very important.&lt;/p&gt;

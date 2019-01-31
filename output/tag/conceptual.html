@@ -22,7 +22,7 @@
 
             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="https://sociologicalgobbledygook.com/p-values-and-bayes-rule.html">P-Values and Bayes Rule</a></h1>
+                    <h1 class="entry-title"><a href="https://sociologicalgobbledygook.com/abel-and-baker-redux-probability-and-description.html">Abel and Baker Redux: Probability and Description</a></h1>
 <footer class="post-info">
         <abbr class="published" title="2018-12-10T00:00:00-06:00">
                 Published: Mon 10 December 2018
@@ -32,86 +32,134 @@
                 By                         <a class="url fn" href="https://sociologicalgobbledygook.com/author/paul-gowder.html">Paul Gowder</a>
         </address>
 <p>In <a href="https://sociologicalgobbledygook.com/category/lessons.html">Lessons</a>.</p>
-<p>tags: <a href="https://sociologicalgobbledygook.com/tag/statistics.html">statistics</a> <a href="https://sociologicalgobbledygook.com/tag/conceptual.html">conceptual</a> <a href="https://sociologicalgobbledygook.com/tag/week8.html">week8</a> </p>
-</footer><!-- /.post-info --><p>Recall from the previous lesson what a p-value is: it’s the probability of observing a value of your statistic as extreme (as far away from the null hypothesis statistic) as you in fact observed, if the null hypothesis were true.  </p>
-<p>In other words, if you’re doing a (two-sided) z test, your statistic is the mean, your null hypothesis mean is <span class="math">\(\mu\)</span>, and the mean you observe in your sample is <span class="math">\(\bar{x}\)</span>, then the p-value is the probability of getting a mean at least <span class="math">\(\mu - \bar{x}\)</span> units away from the mean when randomly sampling from a normal distribution with mean <span class="math">\(\mu\)</span> and standard deviation estimated by the formula for the standard deviation of a sample. (We’ll talk about that formula later, but if you want a sneak preview, check out <a href="https://www.khanacademy.org/math/statistics-probability/summarizing-quantitative-data/variance-standard-deviation-sample/a/population-and-sample-standard-deviation-review">this Khan Academy article</a>.) If the p-value is below a predetermined level, often 0.05, then we say that there’s a statistically significant result. </p>
-<p>Pause for a moment and ask yourself the following question: <strong>Does that mean the p-value is the probability of incorrectly rejecting the null hypothesis?</strong> Don’t go on until you have an answer, and can explain why you have that answer. This is very important.</p>
-<p>Incidentally, that’s called a "Type I error" in some circles: the error of incorrectly rejecting the null hypothesis, a.k.a. (if you’re sensible and don’t like double negatives) convincing yourself that you’re seeing a real effect when you’re not. So the question above could be rephrased: "Is the p-value the probability of making a Type I error?"  A Type II error is the opposite: failing to reject the null hypothesis when you oughta, or, in other words, seeing a real effect and not realizing it. There’s a particularly good meme that captures this distinction and makes it impossible to forget:</p>
-<p><img src="https://4.bp.blogspot.com/-wmZzvsY_Tec/Vws0f4MJn9I/AAAAAAAAORs/gipKxA7aDboP0gx2vSmyQS_ZoVBPzqaWA/s1600/Type%2BI%2Band%2BII%2Berror.jpg" alt="Type I and Type II errors" width="100%"/></p>
-<p>So, what’s your answer?  I’ll make some more space just to make sure you have a chance to figure it out for yourself...</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>The answer to my question is <strong>no.</strong> Here’s why.</p>
-<p>If you go back to the definition I gave you of p-values, you’ll see that it’s really a conditional probability. The p value is the probability of seeing the data in your sample, conditional on the null hypothesis being true. In symbols: </p>
-<div class="math">$$PValue = P(DataSeen|NullHypothesis)$$</div>
-<p>But what you'd really like to know is the probability of making a Type I error--the probability of making a mistake and declaring that you’ve discovered something that isn’t. Unfortunately, that can be rephrased as <strong>the probability of the null hypothesis being true, conditional on seeing your data!</strong>  In symbols: </p>
-<div class="math">$$P(TypeIError) = P(NullHypothesis|DataSeen)$$</div>
-<p>By now, you should know that you can’t flip conditional probabilities around like that. Yet this is an incredibly common mistake--even actual statistics teachers sometimes slip up and say that the p-value is the probability of making a Type I error.  It isn’t!  Never say this! Never think this! Never respect anyone who does say or think it!</p>
-<p>Here's an intuitive way of thinking about the problem. A statistically significant p-value means "if the null hypothesis were true, it would be unlikely that I'd have seen a sample that looks like that." There are some <a href="https://www.census.gov/popclock/">328 million</a> U.S. citizens, and 535 members of Congress. So, if you randomly sample 100 Americans without replacement, it's really unlikely that they're all going to be members of Congress.  </p>
-<p>How unlikely? Well, we'll want the number of possible samples of 100 members of Congress, divided by the number of possible 100-person samples: that's <span class="math">\({535\choose 100}\)</span> divided by <span class="math">\({328,000,000\choose 100}\)</span> which is... a lot. Let's not try and do this by hand, eh?  (The parens mean, e.g., "535 choose 100"---see <a href="https://math.stackexchange.com/questions/1688391/probability-of-picking-4-red-balls">this explanation</a> of the general process of reasoning here. Here's the <a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.special.comb.html#scipy.special.comb">Python function</a> we're going to use.). This produces a probability so small that we have to use a fancy arbitrary precision math library called <code>mpmath</code> to get it to actually do the division. </p>
-<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.special</span> <span class="kn">import</span> <span class="n">comb</span> 
-<span class="kn">import</span> <span class="nn">mpmath</span> 
-<span class="n">numerator</span> <span class="o">=</span> <span class="n">mpmath</span><span class="o">.</span><span class="n">mpf</span><span class="p">(</span><span class="n">comb</span><span class="p">(</span><span class="mi">535</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="n">exact</span><span class="o">=</span><span class="bp">True</span><span class="p">))</span> 
-<span class="n">denominator</span> <span class="o">=</span> <span class="n">mpmath</span><span class="o">.</span><span class="n">mpf</span><span class="p">(</span><span class="n">comb</span><span class="p">(</span><span class="mi">328000000</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="n">exact</span><span class="o">=</span><span class="bp">True</span><span class="p">))</span> 
-<span class="n">numerator</span><span class="o">/</span><span class="n">denominator</span>
+<p>tags: <a href="https://sociologicalgobbledygook.com/tag/probability.html">probability</a> <a href="https://sociologicalgobbledygook.com/tag/conceptual.html">conceptual</a> <a href="https://sociologicalgobbledygook.com/tag/week4.html">week4</a> </p>
+</footer><!-- /.post-info --><p>Right at the beginning of the F&amp;L readings for this week, you saw a well-known probability puzzler/"paradox."  I'm going to risk angering the copyright gods and quote it in full here: </p>
+<blockquote>
+<p>Assume that boys and girls are born with equal frequency. Mr. Able says, “I have two children, and at least one of them is a boy.” What is the probability that the other child is a boy? Mr. Baker says, “I went to the house of a two-child family, and a boy answered the door.” What is the probability that the other child is a boy?</p>
+</blockquote>
+<p>The readings then assert to you that the answer to Mr. Able's problem is 1/3, and the answer to Mr. Baker's problem is 1/2. </p>
+<p>I'll bet you have trouble believing this.  But it's correct.  Here's one way to think about why: <strong>probability statements are really sensitive to how you carve up the problem space</strong>. </p>
+<p>The Abel problem could be restated as follows: first, take all the possible families with two kids, and then eliminate those where both are girls.  Then, just from the set of families remaining, what proportion of them have two boys?</p>
+<p>The Baker problem could be restated as follows: first, take all the possible families with two kids. Of them, go knock on their doors, and, from those doors you knocked on in which a boy answers, in what proportion of them is the second kid a boy?</p>
+<p>The catch is that the sets you're looking into are different.  In the Abel problem, you're looking at <em>every family that has a boy</em> and asking how likely it is that those families have two boys. In the Baker problem, you're looking at <em>every family that has a boy AND where that boy happened to answer the door</em>, and asking how likely it is that those families have two boys.</p>
+<p>You would expect the size of the set you're looking at in the Baker problem to be smaller. After all, there are some families that have both a boy and a girl for which the girl will happen to answer the door. Intuitively, this should suggest to you that the pool of families for which a boy has answered the door would be smaller and, importantly, more weighted toward families with more boys.  After all, in a boy/girl family, there's only a 50% chance that a boy will answer the door, whereas in a boy/boy family it's guaranteed that a boy will answer. So constructing our set of families where a boy answers means we lose some of the boy/girl families but none of the boy/boy families (we can safely assume no parents answer in any event since parent answering would be independent of which gender of the child answers and what genders there are among children in the family).  The pool will be relatively more full of boys.</p>
+<h2>Now let's do the math.</h2>
+<p>Let's formalize the Baker problem with Bayes Rule. Reminder: </p>
+<div class="math">$$P(B|A) = \frac{P(A|B) \cdot P(B)}{P(A)}$$</div>
+<p>What we want to know is the probability of both kids being a boy, conditional on the door being opened by a boy. So, in our equation above, assign both-kids-boy to B, and boy-opened-door to A. </p>
+<p>And here's what we do know: </p>
+<ul>
+<li>
+<p>Probability of door being opened by a boy, conditional on both kids being boys --- <span class="math">\(P(A|B) = 1\)</span>. </p>
+</li>
+<li>
+<p>Probability of both kids being boys --- <span class="math">\(P(B) = 1/4\)</span> because the available packages of kids are <span class="math">\(\{bg, gb, bb, gg\}\)</span> and they have equal probability, and we know that as mutually exclusive and exhaustive events they must sum to 1.</p>
+</li>
+<li>
+<p>Probability of the door being opened by a boy, or <span class="math">\(P(A)\)</span>.  This one we have to do a little bit more work to construct. Let's reason it through.  We know all of the available packages of kids (that is, events), which are mutually exclusive. And we know the probability of each of those packages appearing (1/4).  We also know the probability of getting a boy to answer the door under each of the packages of kids. So we can just multiply those probabilities out and add them per the rules of probability we've already established. For example, the probability of bg is .25, and the probability of getting a boy answering the door there is 1/2, and so forth.  We ultimately end up with <span class="math">\(P(A) = .25 \cdot .5 + .25 \cdot .5 + .25 \cdot 1 + .25 \cdot 0 = .5\)</span>. </p>
+</li>
+</ul>
+<p>Now we can plug in: </p>
+<div class="math">$$P(B|A) = \frac{1 \cdot .25}{.5} = \frac{1}{2}$$</div>
+<p>Just as the readings told us. </p>
+<p>How about the Abel problem?  Well, we don't even need Bayes Rule for this one, we just need to observe that 1/3 of the families with one boy have both boys. But let's do it anyway, just as an exercise. Set B to be, yet again, "family has both boys," and set A to be "family has one boy."</p>
+<ul>
+<li>
+<p>Probability of a family having one boy, conditional on their having both boys --- <span class="math">\(P(A|B) = 1\)</span>, obviously.</p>
+</li>
+<li>
+<p>Probability of a family having both boys --- <span class="math">\(P(B) = 1/4\)</span> because, again, our available packages of kids are <span class="math">\(\{bg, gb, bb, gg\}\)</span>, with equal probability, and their probabilities have to all add up to 1.</p>
+</li>
+<li>
+<p>Probability of a family having one boy --- <span class="math">\(P(A) = 3/4\)</span> because of 4 available equal probability packages only one of which has no boys. </p>
+</li>
+</ul>
+<p>Again, plug that sucker into Bayes rule: </p>
+<div class="math">$$P(B|A) = \frac{1 \cdot .25}{.75} = \frac{1}{3}$$</div>
+<p>Once again, the readings did not lie to us.</p>
+<p>We should take several important lessons from forcing ourselves to work out this example all the way.</p>
+<ol>
+<li>
+<p>Clear talking facilitates clear thinking. With any probability statement, precise mathematical formulation is better than words, and more detailed words are better than less detailed words. </p>
+</li>
+<li>
+<p>Probability statements are sensitive to the sample space (as the reading points out), or, more colloquially, the set of possible events being looked at.  Make absolutely sure you have a clear idea what that sample space is, and whether it's the correct one or not. </p>
+</li>
+<li>
+<p>Almost any supposed paradox that you see can be resolved with aggressive application of Bayes Rule. Bayes Rule is the closest thing we have to a magic wand for fixing screwed-up thinking about probability. </p>
+</li>
+<li>
+<p>When in doubt about some probability statement, simulate it!  You just did a ton of work learning basic coding, it's time to get some payoff from it.  The great thing about simulations is that they force you to make your assumptions explicit by putting them in a form the computer can understand. If you can't define your sample space, you can't ask our good friend Python to simulate it. Often, writing out a simulation will force you to resolve ambiguities in how you structure the problem, and give you the boost you need to understand it yourself.  And if you still aren't quite sure even after writing the simulation out, you can run it and see what happens!</p>
+</li>
+</ol>
+<p>I've written a simulation of the Able/Baker problem down below. Before you look at it, you might consider writing your own simulation. But if you don't have time, feel free to run my code with sufficiently large values and see what you get. </p>
+<p>. <br>
+. <br>
+. <br>
+. <br>
+. <br>
+. <br>
+. <br>
+. <br>
+. <br>
+. <br>
+. <br>
+. <br>
+. <br>
+. <br>
+. <br>
+. <br>
+. <br>
+. <br>
+. <br>
+. <br>
+. <br>
+. <br>
+. <br>
+. <br>
+. <br>
+. <br>
+. <br>
+. <br>
+. <br>
+. <br>
+. <br>
+.   </p>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+<span class="k">def</span> <span class="nf">abel</span><span class="p">(</span><span class="n">num_families</span><span class="p">):</span>
+    <span class="n">fams</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">fam</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_families</span><span class="p">):</span>
+        <span class="n">kid1</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">([</span><span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;g&quot;</span><span class="p">])</span>
+        <span class="n">kid2</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">([</span><span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;g&quot;</span><span class="p">])</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">kid1</span> <span class="o">==</span> <span class="s2">&quot;b&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">kid2</span> <span class="o">==</span> <span class="s2">&quot;b&quot;</span><span class="p">):</span>
+            <span class="n">fams</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">kid1</span><span class="p">,</span> <span class="n">kid2</span><span class="p">))</span>
+    <span class="n">two_boy_fams</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">fams</span> <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="p">(</span><span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">)]</span>
+    <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;total fams with a boy&quot;</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">fams</span><span class="p">),</span>
+            <span class="s2">&quot;total fams with two boys&quot;</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">two_boy_fams</span><span class="p">)}</span>
+
+<span class="k">def</span> <span class="nf">baker</span><span class="p">(</span><span class="n">num_families</span><span class="p">,</span> <span class="n">num_knocks</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">num_knocks</span> <span class="o">&gt;</span> <span class="n">num_families</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Can&#39;t knock on more doors than there are households.&quot;</span><span class="p">)</span>
+    <span class="n">fams</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">fam</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_families</span><span class="p">):</span>
+        <span class="n">kid1</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">([</span><span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;g&quot;</span><span class="p">])</span>
+        <span class="n">kid2</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">([</span><span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;g&quot;</span><span class="p">])</span>
+        <span class="n">fams</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">kid1</span><span class="p">,</span> <span class="n">kid2</span><span class="p">))</span>
+    <span class="n">random</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">fams</span><span class="p">)</span>
+    <span class="n">knocks_with_first_boy</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">knock</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_knocks</span><span class="p">):</span>
+        <span class="n">thisfam</span> <span class="o">=</span> <span class="n">fams</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+        <span class="n">kid_who_answers</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+        <span class="k">if</span> <span class="n">thisfam</span><span class="p">[</span><span class="n">kid_who_answers</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;b&quot;</span><span class="p">:</span>
+            <span class="n">otherkid</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="ow">not</span> <span class="n">kid_who_answers</span><span class="p">)</span> <span class="c1"># flips 0 to 1 and 1 to 0.  Actually don&#39;t even need to cast to int, but it looks less dumb</span>
+            <span class="n">knocks_with_first_boy</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">thisfam</span><span class="p">[</span><span class="n">otherkid</span><span class="p">])</span>
+    <span class="n">knocks_with_second_boy</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">knocks_with_first_boy</span> <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="s2">&quot;b&quot;</span><span class="p">]</span>
+    <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;total knocks where a boy answered&quot;</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">knocks_with_first_boy</span><span class="p">),</span>
+            <span class="s2">&quot;knocks where boy answered and second kid is a boy&quot;</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">knocks_with_second_boy</span><span class="p">)}</span>
 </pre></div>
 
 
-<p>And we get <code>9.0061113088164994e-584</code> which, in real human speak, is .9 with 584 zeroes between the decimal point and the 9... that is, significantly less likely than picking a particular atom in randomly sampling from every atom in the known universe. </p>
-<p>So if I'm sampling Americans, it's vanishingly unlikely that that I get a sample with 100 members of Congress. <span class="math">\(P(Draw100Congress|Draw100Americans)\)</span> is that tiny number up above.  But it obviously does not follow that <span class="math">\(P(Draw100Americans|Draw100Congress)\)</span> is small. Indeed that second probability statement is 1, or damn close to it (even though the Constitution requires members of Congress be citizens, you might imagine some incredibly unlikely event like someone getting elected to Congress after successfully deceiving the public about his/her citizenship status). In other words, I <em>absolutely cannot</em> infer from the unlikelihood of getting all members of Congress in my sample of Americans that it is unlikely that I had sampled Americans, given that I saw all members of Congress (Incidentally, I adapted this example from Cohen, 1994, <a href="http://psycnet.apa.org/doiLanding?doi=10.1037%2F0003-066X.49.12.997">The Earth is Round (p&lt;.05)</a>, who in turn adapted it from Pollard &amp; Richardson, 1987, <a href="http://psycnet.apa.org/record/1987-30223-001">"On the Probability of Making Type I Errors"</a>.)  </p>
-<p>Here’s why this matters. In reality, many, many studies with a "statistically significant" p-value are likely to nonetheless be Type I errors. The reason is because the actual probability of a Type I error depends on the prior likelihood that the null hypothesis was false in the first place, as well as on how likely it is that you'd see your data (in other words, on the base rate). Let’s flesh this out some more with Bayes Rule. Remember it? </p>
-<div class="math">$$P(B|A) = \frac{P(A|B) \cdot P(B)}{P(A)}$$</div>
-<p>As applied here, plugging in our concepts from above:</p>
-<div class="math">$$P(TypeIError) \frac{PValue \cdot P(NullHypothesis)}{P(DataSeen)}$$</div>
-<p>What does that mean?  Well, first of all, it means that in order to even take a wild guess at how likely it is that we’re making a Type I error, we have to know how likely our null hypothesis is (in Bayesian terms, we have to have a prior probability in our heads about it). If we have strong prior reason to believe our null hypothesis--if our alternative hypothesis, or the research finding we’re trying to test out, is really crazy, then we ought to conclude that it’s more likely that we’re making a Type I error, even in the face of a statistically significant p-value. For example, if you think you’ve provided evidence for psychic abilities, as <a href="https://www.theguardian.com/science/head-quarters/2016/oct/31/did-a-memory-experiment-really-show-evidence-for-psychic-abilities">occasionally shows up in psychology journals</a>, you should probably estimate your probability of making a Type I error as quite high, because your prior on Dr. Xavier running around somewhere controlling stuff <em>with his miiiiiind</em> is pretty small (or at least oughta be).</p>
-<p>Second, you’d need to have some idea of the base rate of the data you observed in your sample (the denominator above). If it’s low, then that makes it more likely that we’re making a Type I error. Recall from our probability lesson that we can calculate that via the <a href="https://en.m.wikipedia.org/wiki/Law_of_total_probability">law of total probability</a> as follows: </p>
-<div class="math">$$P(DataSeen) = P(DataSeen|NullHypothesis) \cdot P(NullHypothesis) + \\P(DataSeen|AlternativeHypothesis) \cdot P(AlternativeHypothesis)$$</div>
-<p>How can that value be low? Well, one important way is that <span class="math">\(P(DataSeen|AlternativeHypothesis)\)</span> could be low. In other words: sure, it might be that it’s really unlikely that you’d see the data you saw if your null hypothesis were true. But what if it’s <em>even more unlikely</em> that you’d see the data you saw if your alternative hypothesis were true?! A low p-value means that the data you saw would come up pretty rarely in that null distribution.  But what if it would come up even more rarely in every other plausible distribution? This is the lesson of our Congress example: <span class="math">\(P(Draw100Congress|Draw100Foreigners)\)</span> is much smaller even than the tiny number we got for <span class="math">\(P(Draw100Congress|Draw100Americans)\)</span>.</p>
-<p>What this suggests is that the construction of the hypotheses really matter. Let's return to the Congress example. Suppose my null hypothesis was "this sample was constructed from the general population of Americans," and the alternative hypothesis was "this sample was constructed from the population of people found in the U.S. Capitol on the day of the State of the Union Address." Well, now, it seems like maybe the composition of our sample tells us something useful.  Because <span class="math">\(P(Draw100Congress|Draw100FromCapitol)\)</span> is probably pretty big, relatively speaking.</p>
-<p>Here’s what this all comes down to: </p>
-<ul>
-<li>Often we don’t really know these other terms that go into the Bayes Rule equation to go from p-values to probabilities of Type I errors. </li>
-<li>Sometimes, prior theories of how the world works (like psychic powers not being real) can give us broad guesses for those other terms, which can give us a rough idea of how confident we should be in our results. This is part of why statistics folks look down on the practice of "data-mining," a.k.a., hunting through data without a theory looking for significant results. </li>
-<li>The only way to be really confident that empirical results are real is by replicating them--by getting significant results again and again from different samples. </li>
-<li>Don’t trust that a result is real just because it has a statistically significant p-value!</li>
-<li>If some expert witness shows you a p-value of 0.05 and says "there's a 95% chance the null is false," you should laugh derisively at them and then fire them if they're your expert or cross examine them into oblivion if they're someone else's.</li>
-</ul>
-<p>Further readings, if you’d like to learn more: </p>
-<ul>
-<li>F. Perry Wilson <a href="https://www.medpagetoday.com/Blogs/TheMethodsMan/52171">The P-Value is a Hoax, But Here's How to Fix it</a>---This is an amazing concrete illustration with actual numbers of the point above about base rates.  Actually, you know what?  That's so good I'm going to quote it at length: </li>
-</ul>
-<blockquote>
-<p>Let's say that there are 100,000 hypotheses out there -- floating in the ether. Some of the hypotheses are true, some are false (this is how science works, right?). It turns out that it's the proportion of true hypotheses that dictates how much of the medical literature is nonsense, not the p-value. Let me prove it.</p>
-<p>Let's say that of our 100,000 hypotheses, 10%, or 10,000 are true. I may be a bit of a pessimist but I think I'm being pretty generous here. OK -- how many false positives will there be? Well, of the 90,000 false hypotheses, 5% (there's the p-value!) will end up appearing true in the study by chance alone. Five percent of 90,000 is 4,500 false positive studies. How many true positives will there be? Well, we have 10,000 true hypotheses -- but not all the studies will be positive. The number of positive studies will depend on how adequately "powered" they are, and power is usually set at around 80%, meaning that 8,000 of those true hypotheses will be discovered to be true when tested, while 2,000 will be missed.</p>
-<p>So of our 100,000 hypotheses, we have a total of 12,500 positive studies. 4,500 of those 12,500 are false positives. That's 36%. [...]</p>
-<p>Let that sink in. Despite the comforting nature of the 0.05 threshold for the p-value, 36% of the positive studies you read may be false.</p>
-<p>This depends critically on the number of true hypotheses by the way. If I drop the number of true hypotheses to 5%, keeping everything else the same, then 55% of the positive studies you read are wrong. It's a disaster.</p>
-</blockquote>
-<p>(n.b.: we'll talk about the "power" thing later on in the class.)</p>
-<ul>
-<li>
-<p>Minitab blog, "<a href="http://blog.minitab.com/blog/adventures-in-statistics-2/how-to-correctly-interpret-p-values">How to Correctly Interpret P Values</a>" (Minitab is a statistical software package, and the editor of its blog is on a lovely quest to comprehensibly explain the whole p-value thing).</p>
-</li>
-<li>
-<p>538 blog post <a href="https://fivethirtyeight.com/features/not-even-scientists-can-easily-explain-p-values/">complaining that nobody can explain p-values comprehensibly</a>. (Mostly included because the best explanation the 538 blogger could find was from Stuart Buck... who is not only a lawyer, he was actually my law school classmate. Lawyers can understand this stuff!) </p>
-</li>
-<li>
-<p>John Ioannidis, "<a href="https://journals.plos.org/plosmedicine/article?id=10.1371/journal.pmed.0020124">Why Most Published Research Findings are False</a>" (sort of a more complicated and less clear version of the Perry Wilson blog post above).</p>
-</li>
-<li>
-<p>David Papineau, "<a href="https://www.the-tls.co.uk/articles/public/thomas-bayes-science-crisis/">Thomas Bayes and the Crisis in Science</a>", Times Literary Supplement.</p>
-</li>
-</ul>
+<p>As your reward for reading this far, I'll tell you a secret.  I wasn't sure why the Able/Baker problem came out the way it does either---not until I wrote the simulation code. But, just as I said, writing this code forced me to think about what the sample space for the Baker problem actually is, and hence guided me to the rest of this explanation. Even those of us with years and years of probability experience need a little help sometimes.</p>
 <script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
     var align = "left",
         indent = "0em",
@@ -172,6 +220,29 @@
                     <h1>Other articles</h1>
                     <hr />
                     <ol id="posts-list" class="hfeed">
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="https://sociologicalgobbledygook.com/p-values-and-bayes-rule.html" rel="bookmark"
+                           title="Permalink to P-Values and Bayes Rule">P-Values and Bayes Rule</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2018-12-10T00:00:00-06:00">
+                Published: Mon 10 December 2018
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="https://sociologicalgobbledygook.com/author/paul-gowder.html">Paul Gowder</a>
+        </address>
+<p>In <a href="https://sociologicalgobbledygook.com/category/lessons.html">Lessons</a>.</p>
+<p>tags: <a href="https://sociologicalgobbledygook.com/tag/statistics.html">statistics</a> <a href="https://sociologicalgobbledygook.com/tag/conceptual.html">conceptual</a> <a href="https://sociologicalgobbledygook.com/tag/week8.html">week8</a> </p>
+</footer><!-- /.post-info -->                <p>Recall from the previous lesson what a p-value is: it’s the probability of observing a value of your statistic as extreme (as far away from the null hypothesis statistic) as you in fact observed, if the null hypothesis were true.  </p>
+<p>In other words, if you’re doing a (two-sided …</p>
+                <a class="readmore" href="https://sociologicalgobbledygook.com/p-values-and-bayes-rule.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
 
             <li><article class="hentry">
                 <header>
