@@ -31,7 +31,7 @@ Introduction to Quantitative and Computational Legal Reasoning is experimental. 
 
 #### Texts
 
-The main readings for this course will be drawn from [Charles Severance, Python for Everybody](https://www.py4e.com/book), which is available for free online, and [Michael Finkelstein & Bruce Levin, Statistics for Lawyers](https://link.springer.com/book/10.1007%2F978-1-4419-5985-0) which should be free to download as PDF through our library's subscription. (You may have to be on the campus network to download it; you might also have to search for it through the library's directory.) We will also (probably) be using some excerpts from the [Federal Judicial Center's Reference Manual on Scientific Evidence](https://www.fjc.gov/content/reference-manual-scientific-evidence-third-edition-1) 
+The main readings for this course will be drawn from [Charles Severance, Python for Everybody](https://www.py4e.com/book), which is available for free online, and [Michael Finkelstein & Bruce Levin, Statistics for Lawyers](https://link.springer.com/book/10.1007%2F978-1-4419-5985-0) which should be free to download as PDF through our library's subscription. (You may have to be on the campus network to download it; you might also have to search for it through the library's directory.) We will also be using some excerpts from the [Federal Judicial Center's Reference Manual on Scientific Evidence](https://www.fjc.gov/content/reference-manual-scientific-evidence-third-edition-1) 
 
 In addition, we'll make use of some videos and exercises from [DataCamp](https://www.datacamp.com/), which has free accounts available for educational purposes; I will explain how to get access on the first day.  
 
@@ -210,7 +210,7 @@ Also go through DataCamp [Intermediate Python for Data Science chapter 2 (dictio
 
 Probability distributions, central limit theorem, hypothesis testing. 
 
-Read: [Distributions]({filename}../Lessons/distributions.ipynb), [The Normal Distribtion]({filename}../Lessons/normal_clt.ipynb), and [Hypothesis Testing]({filename}../Lessons/hypothesis-testing-intro.md).
+Read: [Distributions]({filename}../Lessons/distributions.ipynb), [The Normal Distribtion]({filename}../Lessons/normal_clt.ipynb), and [Hypothesis Testing]({filename}../Lessons/hypothesis-testing-intro.md).  From Finkelstein & Levin, read pp. 101-126.
 
 Also read [A Concrete Introduction to Probability using Python](https://nbviewer.jupyter.org/url/norvig.com/ipython/Probability.ipynb) by Google's director of research, and these two excellent blog posts by a Google data scientist: [Statistics for People in a Hurry](https://towardsdatascience.com/statistics-for-people-in-a-hurry-a9613c0ed0b) and [Never Start With a Hypothesis](https://towardsdatascience.com/hypothesis-testing-decoded-for-movers-and-shakers-bfc2bc34da41).
 
@@ -219,7 +219,9 @@ Problem set 2 due.
 
 ### Week 7
 
-Experiments, random assignment.  Causation and correlation.
+Experiments, random assignment.  Causation and correlation.  This will be a relatively light week, and we may use it to catch-up on prior weeks as well. 
+
+Read: Causation and Confounding on this site (to be added), Devah Pager, *The Use of Field Experiments for Studies of Employment Discrimination: Contributions, Critiques, and Directions for the Future*, 609 Annals of the American Academy of Political and Social Science 104 (2007). We have access to this article via our library's subscription, [this proxy link](https://journals-sagepub-com.proxy.lib.uiowa.edu/doi/abs/10.1177/0002716206294796) should work to download it. Also read the Open Introduction to Statistics pp. 19-26. This book can be [downloaded for free](https://www.openintro.org/stat/textbook.php), but I will probably post an excerpt of the relevant parts on ICON (remind me!). 
 
 Focused legal application: audit tests in discrimination cases.
 
