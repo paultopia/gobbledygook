@@ -221,7 +221,15 @@ Problem set 2 due.
 
 Experiments, random assignment.  Causation and correlation.  This will be a relatively light week, and we may use it to catch-up on prior weeks as well. 
 
-Read: Causation and Confounding on this site (to be added), Devah Pager, *The Use of Field Experiments for Studies of Employment Discrimination: Contributions, Critiques, and Directions for the Future*, 609 Annals of the American Academy of Political and Social Science 104 (2007). We have access to this article via our library's subscription, [this proxy link](https://journals-sagepub-com.proxy.lib.uiowa.edu/doi/abs/10.1177/0002716206294796) should work to download it. Also read the Open Introduction to Statistics pp. 19-26. This book can be [downloaded for free](https://www.openintro.org/stat/textbook.php), but I will probably post an excerpt of the relevant parts on ICON (remind me!). 
+Readings: 
+
+- Causation and Confounding on this site (to be added)
+
+- Devah Pager, *The Use of Field Experiments for Studies of Employment Discrimination: Contributions, Critiques, and Directions for the Future*, 609 Annals of the American Academy of Political and Social Science 104 (2007). We have access to this article via our library's subscription, [this proxy link](https://journals-sagepub-com.proxy.lib.uiowa.edu/doi/abs/10.1177/0002716206294796) should work to download it. 
+
+- The Open Introduction to Statistics pp. 19-26. This book can be [downloaded for free](https://www.openintro.org/stat/textbook.php), but I will probably post an excerpt of the relevant parts on ICON (remind me!).  
+
+- [A collection of edited discrimination tester cases]({filename}../Lessons/tester-cases.md).
 
 Focused legal application: audit tests in discrimination cases.
 
