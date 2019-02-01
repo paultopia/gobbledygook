@@ -159,22 +159,56 @@ I fully expect that we won't get to the material in the last few weeks, unless w
 
 Coverage: Basic ideas of programming, units of computation, functions and loops. Computational logic and legal logic, law as computation. We will front-load the quantity of reading a little heavily to get us started quickly, but it'll ease off as we move on to more conceptually difficult material. (Also, I know the reading seems like a lot, but it goes faster than cases in 1L year!)  In particular, don't feel obliged to fully absorb everything from Python for Everybody on the first reading. Just read it quickly so you get a feel for the terrain, and then more carefully read the stuff posted on this site, then dig back into Python for Everybody to fill out the details.
 
-For **Monday**, read the [Introduction to Python on this site]({filename}../Lessons/python_intro.md) and the [first Python lesson]({filename}../Lessons/basic_intro.ipynb). Read pages 1-55 of Python for Everybody. Also read the [Software Carpentry lesson on loops](http://swcarpentry.github.io/python-novice-inflammation/02-loop/index.html).
+For **Monday**, read: 
+
+- the [Introduction to Python on this site]({filename}../Lessons/python_intro.md) 
+
+- the [first Python lesson]({filename}../Lessons/basic_intro.ipynb). 
+
+- pages 1-55 of Python for Everybody. 
+
+- the [Software Carpentry lesson on loops](http://swcarpentry.github.io/python-novice-inflammation/02-loop/index.html)
 
 In the first day of class, we will get everyone set up with the different services and installation options for the software we need in the course, and, if there's time, demonstrate some basic programming ideas and work through some exercises.
 
 On Monday evening, clone the [course assignments Github repository](https://github.com/paultopia/gobbledygook_lessons) and complete the factorial exercise at the end of the first Python lesson notebook (basic_intro.ipynb); you don't need to turn it in, but let me know if you can't complete it; we'll look at people's solutions on Tuesday and use this as our test to make sure everyone is set up and functional.
 
-For **Tuesday**, read the [functions and scope]({filename}../Lessons/functions.ipynb), [more loops and control flow]({filename}../Lessons/control_flow.ipynb), [simple data types]({filename}../Lessons/simple_data_types.ipynb), and [complex data types]({filename}../Lessons/complex_data_types.ipynb)  lessons on this site. Also read the Software Carpentry lessons on [functions](http://swcarpentry.github.io/python-novice-inflammation/06-func/index.html) and [making choices](http://swcarpentry.github.io/python-novice-inflammation/05-cond/index.html).
+For **Tuesday**, read: 
+
+- [functions and scope]({filename}../Lessons/functions.ipynb)
+
+- [more loops and control flow]({filename}../Lessons/control_flow.ipynb)
+
+- [simple data types]({filename}../Lessons/simple_data_types.ipynb)
+
+- [complex data types]({filename}../Lessons/complex_data_types.ipynb)  
+
+- Software Carpentry lesson on [functions](http://swcarpentry.github.io/python-novice-inflammation/06-func/index.html) 
+
+- Software Carpentry lesson on [making choices](http://swcarpentry.github.io/python-novice-inflammation/05-cond/index.html)
 
 
 ### Week 2
 
 Coverage: using Python to get access to other people's code, libraries. Accessing the filesystem and the internet from Python. Error handling. Strings.
 
-Between week 1 and week 2, go through chapters 1-3 of DataCamp's [Introduction to Python](https://www.datacamp.com/courses/intro-to-python-for-data-science) course. You don't need to do chapter 4 (about the Numpy library) right now, though you can if you want to. Also read pg. 56-126 of Python for Everybody and [my brief notes from week 1]({filename}../Lessons/post-week1-notes.md).
+Monday is a holiday (MLK day).
 
-Monday is a holiday (MLK day).  For **Tuesday**, read [Libraries]({filename}../Lessons/libraries.md), [Errors]({filename}../Lessons/errors.ipynb), [Files and Strings]({filename}../Lessons/files-and-strings.ipynb) and [Network Requests]({filename}../Lessons/network_requests.md) on this site. 
+Readings:
+
+- (video and exercises) chapters 1-3 of DataCamp's [Introduction to Python](https://www.datacamp.com/courses/intro-to-python-for-data-science) course. You don't need to do chapter 4 (about the Numpy library) right now, though you can if you want to. 
+
+- Python for Everybody pg. 55-126 
+
+- [my brief notes from week 1]({filename}../Lessons/post-week1-notes.md).
+
+- [Libraries]({filename}../Lessons/libraries.md)
+
+- [Errors]({filename}../Lessons/errors.ipynb)
+
+- [Files and Strings]({filename}../Lessons/files-and-strings.ipynb)
+
+- [Network Requests]({filename}../Lessons/network_requests.md)
 
 In class on Tuesday we worked through an example of accessing the Openstates API, [that example is here]({filename}../class_examples/openstates_example.ipynb).
 
@@ -182,9 +216,19 @@ In class on Tuesday we worked through an example of accessing the Openstates API
 
 Coverage: Regular expressions. Simulation and why you might want to do it. A very light introduction to object-oriented programming. 
 
-Read Automate the Boring Stuff With Python chapters [6 (strings)](https://automatetheboringstuff.com/chapter6/) and [7 (regular expressions)](https://automatetheboringstuff.com/chapter7/) as well as Python for Everybody pp. 127-140 and 171-184 (chapters 11 and 14). 
+Readings: 
 
-On this site, read [Regular Expressions]({filename}../Lessons/regex.ipynb), [Object-Oriented Programming]({filename}../Lessons/oop.ipynb), and [Simulations]({filename}../Lessons/simulation.md).  
+- Automate the Boring Stuff With Python chapter [6 (strings)](https://automatetheboringstuff.com/chapter6/)
+
+- Automate the Boring Stuff With Python chapter [7 (regular expressions)](https://automatetheboringstuff.com/chapter7/) 
+
+- Python for Everybody pp. 127-140 and 171-184 (chapters 11 and 14). 
+
+- [Regular Expressions]({filename}../Lessons/regex.ipynb)
+
+- [Object-Oriented Programming]({filename}../Lessons/oop.ipynb)
+
+- [Simulations]({filename}../Lessons/simulation.md).  
 
 [Problem set 1]({filename}../psets/pset1.md) due Friday, February 1, at 5pm Central time.
 
@@ -194,25 +238,63 @@ Basic probability math. Bayes rule and conditional probability.
 
 Focused legal applications: probabilistic causation in torts, junk science in criminal trials.
 
-Read: the [Arbital Guide to Bayes Rule](https://arbital.com/p/bayes_rule/?l=1zq) (at the beginning, where it asks you to pick a level of depth, choose the full/deep presentation), [the Probability lesson]({filename}../Lessons/probability.md) on this site, and chapter 3 (pp. 61-100) of the Finkelstein and Levin Book. [Direct link to F&L assignment via UI Library Proxy Server](https://link-springer-com.proxy.lib.uiowa.edu/chapter/10.1007/978-1-4419-5985-0_3).  After reading the F&L assignment read [Abel and Baker Redux]({filename}../Lessons/abelbaker.md).
+Readings: 
 
-Watch: Peter Donnelly's TED talk [How Statistics Fools Juries](https://www.ted.com/talks/peter_donnelly_shows_how_stats_fool_juries), read NBC News ['We are going backward': How the justice system ignores science in the pursuit of convictions](https://www.nbcnews.com/news/us-news/we-are-going-backward-how-justice-system-ignores-science-pursuit-n961256)
+- the [Arbital Guide to Bayes Rule](https://arbital.com/p/bayes_rule/?l=1zq) (at the beginning, where it asks you to pick a level of depth, choose the full/deep presentation)
+
+- [Probability]({filename}../Lessons/probability.md)
+
+- Chapter 3 (pp. 61-100) of the Finkelstein and Levin Book. [Direct link to F&L assignment via UI Library Proxy Server](https://link-springer-com.proxy.lib.uiowa.edu/chapter/10.1007/978-1-4419-5985-0_3)
+
+- After reading the F&L assignment read [Abel and Baker Redux]({filename}../Lessons/abelbaker.md)
+
+- (video) Peter Donnelly's TED talk [How Statistics Fools Juries](https://www.ted.com/talks/peter_donnelly_shows_how_stats_fool_juries)
+
+- NBC News ['We are going backward': How the justice system ignores science in the pursuit of convictions](https://www.nbcnews.com/news/us-news/we-are-going-backward-how-justice-system-ignores-science-pursuit-n961256)
 
 ### Week 5
 
 Initial explorations into data with data visualization in Python. Basic properties of data, measures of central tendency, exploratory data analysis.
 
-Read: [Introduction to stats]({filename}../Lessons/intro-stats.md), [Key Python Data Libraries]({filename}../Lessons/key-libraries.ipynb), [Exploring data]({filename}../Lessons/exploratory_intro.ipynb), [Common Data Transformations]({filename}../Lessons/data-transformations.ipynb), and Measures of Central Tendency and Variation (link TBD).  [Federal Judicial Center Manual on Scientific Evidence](https://www.fjc.gov/content/reference-manual-scientific-evidence-third-edition-1) pp. 236-240, Finkelstein & Levin [chapter 1](https://link-springer-com.proxy.lib.uiowa.edu/chapter/10.1007/978-1-4419-5985-0_1) (pp. 1-45).  Explore the different data visualizations available with [From Data to Viz](https://www.data-to-viz.com/).
+Reading: 
 
-Also go through DataCamp [Intermediate Python for Data Science chapter 2 (dictionaries and pandas)](https://www.datacamp.com/courses/intermediate-python-for-data-science) 
+- [Introduction to stats]({filename}../Lessons/intro-stats.md)
+
+- [Key Python Data Libraries]({filename}../Lessons/key-libraries.ipynb)
+
+- [Exploring data]({filename}../Lessons/exploratory_intro.ipynb)
+
+- [Common Data Transformations]({filename}../Lessons/data-transformations.ipynb)
+
+- Measures of Central Tendency and Variation (link TBD)
+
+- [Federal Judicial Center Manual on Scientific Evidence](https://www.fjc.gov/content/reference-manual-scientific-evidence-third-edition-1) pp. 236-240
+
+- Finkelstein & Levin [chapter 1](https://link-springer-com.proxy.lib.uiowa.edu/chapter/10.1007/978-1-4419-5985-0_1) (pp. 1-45)
+
+- Explore the different data visualizations available with [From Data to Viz](https://www.data-to-viz.com/)
+
+- (video and exercises) DataCamp [Intermediate Python for Data Science chapter 2 (dictionaries and pandas)](https://www.datacamp.com/courses/intermediate-python-for-data-science) 
 
 ### Week 6
 
 Probability distributions, central limit theorem, hypothesis testing. 
 
-Read: [Distributions]({filename}../Lessons/distributions.ipynb), [The Normal Distribtion]({filename}../Lessons/normal_clt.ipynb), [Hypothesis Testing]({filename}../Lessons/hypothesis-testing-intro.md), and [a Catalogue of Basic Hypothesis Tests]({filename}../Lessons/basic_hypothesis_tests.ipynb).  From Finkelstein & Levin, read pp. 101-126.
+Reading: 
 
-Also read [A Concrete Introduction to Probability using Python](https://nbviewer.jupyter.org/url/norvig.com/ipython/Probability.ipynb) by Google's director of research, and these two excellent blog posts by a Google data scientist: [Statistics for People in a Hurry](https://towardsdatascience.com/statistics-for-people-in-a-hurry-a9613c0ed0b) and [Never Start With a Hypothesis](https://towardsdatascience.com/hypothesis-testing-decoded-for-movers-and-shakers-bfc2bc34da41).
+- [Distributions]({filename}../Lessons/distributions.ipynb)
+
+- [The Normal Distribtion]({filename}../Lessons/normal_clt.ipynb)
+
+- [Hypothesis Testing]({filename}../Lessons/hypothesis-testing-intro.md)
+
+- [a Catalogue of Basic Hypothesis Tests]({filename}../Lessons/basic_hypothesis_tests.ipynb)
+
+- Finkelstein & Levin, pp. 101-126.
+
+- [A Concrete Introduction to Probability using Python](https://nbviewer.jupyter.org/url/norvig.com/ipython/Probability.ipynb) by Google's director of research,
+
+- these two excellent blog posts by a Google data scientist: [Statistics for People in a Hurry](https://towardsdatascience.com/statistics-for-people-in-a-hurry-a9613c0ed0b) and [Never Start With a Hypothesis](https://towardsdatascience.com/hypothesis-testing-decoded-for-movers-and-shakers-bfc2bc34da41).
 
 Problem set 2 due.
 
@@ -237,7 +319,15 @@ Focused legal application: audit tests in discrimination cases.
 
 P-values, p-hacking, publication bias, the replication crisis in psychology, power and underpoweredness, multiple comparisons, and other terrible pitfalls of scientific research.  
 
-Read: [P-Values and Bayes Rule]({filename}../Lessons/pvals2.md), [Power]({filename}../Lessons/power.md), Peter Norvig's blog post [Warning Signs in Experimental Design and Interpretation](http://norvig.com/experiment-design.html).  Also read [Statistics Gone Wrong](https://www.statisticsdonewrong.com/). (I'd like you to read that whole website eventually, but for the beginning of the week, you can focus on the sections on [Statistical Power and Underpowered Statistics](https://www.statisticsdonewrong.com/power.html) and [The P Value and the Base Rate Fallacy](https://www.statisticsdonewrong.com/p-value.html).  
+Readings:
+
+- [P-Values and Bayes Rule]({filename}../Lessons/pvals2.md)
+
+- [Power]({filename}../Lessons/power.md)
+
+- Peter Norvig's blog post [Warning Signs in Experimental Design and Interpretation](http://norvig.com/experiment-design.html). 
+
+- [Statistics Gone Wrong](https://www.statisticsdonewrong.com/). (I'd like you to read that whole website eventually, but for the beginning of the week, you can focus on the sections on [Statistical Power and Underpowered Statistics](https://www.statisticsdonewrong.com/power.html) and [The P Value and the Base Rate Fallacy](https://www.statisticsdonewrong.com/p-value.html).  
 
 Discussion: what are the legal implications of scientific failures?
 
