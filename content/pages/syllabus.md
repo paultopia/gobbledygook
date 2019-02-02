@@ -266,8 +266,6 @@ Reading:
 
 - [Common Data Transformations]({filename}../Lessons/data-transformations.ipynb)
 
-- Measures of Central Tendency and Variation (link TBD)
-
 - [Federal Judicial Center Manual on Scientific Evidence](https://www.fjc.gov/content/reference-manual-scientific-evidence-third-edition-1) pp. 236-240
 
 - Finkelstein & Levin [chapter 1](https://link-springer-com.proxy.lib.uiowa.edu/chapter/10.1007/978-1-4419-5985-0_1) (pp. 1-45)
@@ -345,7 +343,12 @@ Problem set 3 due.
 
 ### Week 11
 
-Focus week: re-analyze real-life data. Critique expert witness reports and/or statistical findings in research. 
+Focus week: re-analyze real-life data. Critique expert witness reports and/or statistical findings in research. Bayesian approaches. 
+
+Reading: 
+
+- [The Bayesian New Statistics: Hypothesis testing, estimation, meta-analysis, and power analysis from a Bayesian perspective](https://link-springer-com.proxy.lib.uiowa.edu/article/10.3758%2Fs13423-016-1221-4), 25 Psychonomic Bulletin and Review 178 (2018) (You may skip the sections entitled "Bayesian Hypothesis Test" and "Another example of frequentist and Bayesian approaches to hypothesis testing and estimation" from pp. 186-190. 
+
 
 ### Week 12
 
