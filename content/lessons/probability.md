@@ -11,7 +11,7 @@ We also sometimes use probability language to refer to states of affairs---we mi
 
 We represent probability as a fraction between 0 and 1, where 0 means no chance that an event will happen, and 1 means that an event will definitely happen. If someone starts talking about a probability higher than 1 or lower than 0, they're either clueless or lying.  
 
-Normally, we express probability in decimals like .75 or percentages like 75%.  We can also express them in fractions like 3/4, but it's a little easy to confuse those with *odds* (a different mathematical relationship, derived from probability but much harder to work with, and usually only used by people who run gambling operations in order to confuse their customers and take their money), so we'll (mostly) be avoiding that here. 
+Normally, we express probability in decimals like .75 or percentages like 75%.  We can also express them in fractions like 3/4, but it's a little easy to confuse those with *odds*, which is a different representation of probability, so we'll (mostly) be avoiding fractional probability. 
 
 There are two big theoretical interpretations of probability, the frequentist and the Bayesian.  
 
@@ -358,3 +358,20 @@ The law is shot through with ideas about probability, uncertainty, risk, and cha
 
 - In torts, the Hand formula for breach of the duty of care in negligence cases, BPL, is meant to capture the burden of taking a precaution, balanced against the probability that the loss will occur absent that precaution as well as the cost of the loss. 
 
+## A Footnote on Odds
+
+Odds is the gambling-style representation of probability, like "4 to 1" and so forth. "4 to 1 odds that e" means "the event E is 4 times as likely as Not-E," which translates to ordinary probability language as an 0.8 probability of E. It's easy to convert from odds back to decimal probability.  It's easy to convert back and forth from odds to probability. In order to do so, let's represent odds with a doublecolon (sometimes it gets represented as a fraction, but that just makes the notation super confusing and I refuse to do it) such that A to B odds is A::B. 
+
+To go from odds to probability:
+
+$$A::B = \frac{A}{A + B}$$
+
+So, in our example, "4 to 1 odds" converts to probability as $4::1 = \frac{4}{4 + 1} = frac\{4}{5} = .8$
+
+Actually, odds isn't exactly the same thing as a representation of probability, it's technically defined as a different concept derived from probability.  So we can represent our 4:1 odds as the fraction $\frac{4}{1}$ and actually treat it like a fraction, for example, and simplify it to 4.  Then we could say "odds of 4" which is equivalent to saying "probability of .8."  But I'll just use the double colon notation to keep it clear what's happening.
+
+What odds really are is the probability of the event divided by the probability of not the event.  Which means that conversion from odds to probability is as simply as computing that.  Assign the variable P to the probability of our event, and then odds are just
+
+$$\frac{P}{1-P}$$
+
+For the most part, people in the sciences talk about probability rather than odds. People in gambling talk about odds, and some Bayesian statisticians do as well, mainly because it makes a few computations easier. In this course, we'll almost entirely talk about probability, not odds (with one brief exception toward the end). 
