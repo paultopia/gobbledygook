@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <title>Week 4 recap: Total Probability Rule</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+        <link rel="stylesheet" href="/theme/css/juptyer-fix.css" />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">Sociological Gobbledygook </a></h1>
+                <nav><ul>
+                    <li><a href="/pages/manifesto.html">Manifesto</a></li>
+                    <li><a href="/pages/welcome.html">Welcome!</a></li>
+                    <li><a href="/category/class_examples.html">class_examples</a></li>
+                    <li class="active"><a href="/category/lessons.html">Lessons</a></li>
+                    <li><a href="/category/psets.html">psets</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="/week-4-recap-total-probability-rule.html" rel="bookmark"
+           title="Permalink to Week 4 recap: Total Probability Rule">Week 4 recap: Total Probability Rule</a></h1>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2018-02-05T00:00:00-06:00">
+                Published: Mon 05 February 2018
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/paul-gowder.html">Paul Gowder</a>
+        </address>
+<p>In <a href="/category/lessons.html">Lessons</a>.</p>
+<p>tags: <a href="/tag/probability.html">probability</a> <a href="/tag/conceptual.html">conceptual</a> <a href="/tag/week4.html">week4</a> </p>
+</footer><!-- /.post-info -->      <p>The probability lecture this week kind of hit a wall at one point in our Bayes Rule example.  Here's a clearer explanation.</p>
+<p>Remember, we had an example problem involving figuring out the posterior probability of someone being drunk, given that they blew a positive result on a breathalyzer.  </p>
+<p>The place where we got stuck was when we were trying to do was calculate the probability of blowing a positive breathalyzer, i.e., <span class="math">\(P(blew)\)</span>.  But all we had was the true positive rate, i.e., the probability that the machine would produce a positive result conditional on someone being drunk <span class="math">\(P(blew|drunk)\)</span> and the false positive rate, i.e., the probability that the machine would produce a positive result conditional on someone being sober <span class="math">\(P(blew|sober)\)</span>, as well as the prior probability of being drunk <span class="math">\((.1)\)</span>.  </p>
+<p>We needed <span class="math">\(P(blew)\)</span> because it is the denominator in our Bayes Rule calculation. Here's Bayes Rule again: </p>
+<div class="math">$$P(B|A) = \frac{P(A|B)P(B)}{P(A)}$$</div>
+<p>We were trying to calculate <span class="math">\(P(drunk|blew)\)</span> and, per Bayes rule, that means we need to know the overall probability of a positive result (that's A here). Plugging in our terms, we were trying to figure out.</p>
+<div class="math">$$P(drunk|blew) = \frac{P(blew|drunk)P(drunk)}{P(blew)}$$</div>
+<p>What I asserted to you is that we can use the following calculation to go from what we know to the denominator of that equation: </p>
+<div class="math">$$P(blew) = P(blew|drunk) \cdot P(drunk) + P(blew|sober) \cdot P(sober)$$</div>
+<p>This is known as the law of total probability. <a href="https://en.wikipedia.org/wiki/Law_of_total_probability#Example">Wikipedia gives another good example</a>.  </p>
+<p>Here's a hopefully-more intuitive explanation of why you should believe this.  What we're really doing is partitioning the world.  You can only be drunk or sober, right?  You can't be drunk AND sober, and you can't be neither drunk nor sober.  Drunkenness and soberness are mutually exclusive and exhaustive. </p>
+<p>So what that means is that there are only two ways to blow a positive breathalyzer.  You can either blow a breathalyzer when you're drunk, or you can blow a breathalyzer when you're sober. </p>
+<p>And then what we're asking is for the union of those two events, the "or" question.  The question "what's the probability of blowing a positive breathalyzer test" is just "what's the probability of blowing a positive breathalyzer test and being drunk, OR blowing a positive breathalyzer test and being sober."  And we know those have to be mutually exclusive events (because, yet again, can't be drunk and sober at the same time), so we know that we just add them up.  The addition rule gets us to: </p>
+<div class="math">$$P(blew) = P(blew \cap drunk) + P(blew \cap sober)$$</div>
+<p>Ok, so how do we calculate those?  Well, let's reason through it.  What's the probability of both being drunk and blowing a positive result?  Well, it's gotta be lower than the probability of being drunk (because the probability of A and B always has to be lower than the probability of A alone, or identical to it in the pathological case where the probability of B is 1). The trick is to realize that conditional probabilities encode the information "given that I know A happened, what's the probability of B."  So it stands to reason that if you want to know whether A and B happened, you'd be interested in the probability of A, as well as the conditional probability of B given A.  </p>
+<p>This is what, in the earlier reading, I called "the expanded multiplication rule.  The formula is as follows: </p>
+<div class="math">$$P(A \cap B) = P(A)P(B|A)$$</div>
+<p>To remind you, here's what I said in the first reading to explain this: </p>
+<blockquote>
+<p>The classic example to understand the reasoning behind the expanded multiplication rule is drawing cards. If you draw cards from a normal deck and don't put them back, then the probability of the first card being a heart is just 13/52 = 1/4. What's the probability of drawing a second heart?</p>
+<p>Well, imagine that instead of drawing from the same deck, someone just gave you a second deck of cards with 51 cards in it, 12 of which were hearts. We know the probability of drawing a heart in that second deck, right? 12/51. That world is just the world described by the conditional probability of drawing a second heart given that you've already drawn a first. So what's the probability of drawing a heart out of the normal deck and a heart out of the weird second deck? Easy: 1/4 * 12/51.</p>
+</blockquote>
+<p>So that gets us as far as <span class="math">\(P(A \cap B) = P(A)P(B|A)\)</span>.  And, it should be obvious that  <span class="math">\(P(A \cap B) = P(B \cap A)\)</span> ("A and B" is the same as "B and A"). If we substitute "drunk" and "sober" for A in the two sides of our addition, and substitute "blew" for B, then, by plugging in, we can conclude that </p>
+<div class="math">$$P(blew) = P(blew|drunk) \cdot P(drunk) + P(blew|sober) \cdot P(sober)$$</div>
+<p>Which is the assertation I originally made, expressing the law of total probability, and which allows us to get the denominator of our Bayes Rule calculation.</p>
+<p>Subsequent weeks will not have nearly this much notation.  Do not fear.</p>
+<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "left",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width < 768) ? "left" : align;
+        indent = (screen.width < 768) ? "0em" : indent;
+        linebreak = (screen.width < 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'blue ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('Typewriter' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_Typewriter');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_Typewriter-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_Typewriter-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_Typewriter-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_Typewriter');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_Typewriter-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_Typewriter-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_Typewriter-italic');" +
+            "});" +
+        "}";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+</script>
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://law.uiowa.edu/">University of Iowa College of Law</a></li>
+                            <li><a href="https://gowder.io">Paul Gowder</a></li>
+                            <li><a href="http://python.org/">Python Documentation</a></li>
+                            <li><a href="https://github.com/paultopia/quantitative-methods-for-lawyers/">Course Github</a></li>
+                            <li><a href="https://github.com/paultopia/gobbledygook_lessons">Course Lessons Github</a></li>
+                            <li><a href="https://notebooks.azure.com/">Microsoft Azure Notebooks</a></li>
+                            <li><a href="tags.html">Lesson Post Tags</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+      
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+            <address id="about" class="vcard body">
+                
+
+                All content is (c) 2018-9 by <a href="https://gowder.io">Paul Gowder</a> and licensed under a <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International license</a>.  On the technical side, the site is powered by <a href="http://getpelican.com/">Pelican</a>, the theme is a modified version of one by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>.
+            </address><!-- /#about -->
+
+                
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

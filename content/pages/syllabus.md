@@ -252,6 +252,8 @@ Readings:
 
 - NBC News ['We are going backward': How the justice system ignores science in the pursuit of convictions](https://www.nbcnews.com/news/us-news/we-are-going-backward-how-justice-system-ignores-science-pursuit-n961256)
 
+**[Week 4 recap/further explanation of the probability issue we got stuck on]({filename}../Lessons/totalprob.md)**
+
 ### Week 5
 
 Initial explorations into data with data visualization in Python. Basic properties of data, measures of central tendency, exploratory data analysis.
