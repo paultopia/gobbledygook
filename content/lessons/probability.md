@@ -366,7 +366,7 @@ To go from odds to probability:
 
 $$A::B = \frac{A}{A + B}$$
 
-So, in our example, "4 to 1 odds" converts to probability as $4::1 = \frac{4}{4 + 1} = frac\{4}{5} = .8$
+So, in our example, "4 to 1 odds" converts to probability as $4::1 = \frac{4}{4 + 1} = \frac{4}{5} = .8$
 
 Actually, odds isn't exactly the same thing as a representation of probability, it's technically defined as a different concept derived from probability.  So we can represent our 4:1 odds as the fraction $\frac{4}{1}$ and actually treat it like a fraction, for example, and simplify it to 4.  Then we could say "odds of 4" which is equivalent to saying "probability of .8."  But I'll just use the double colon notation to keep it clear what's happening.
 

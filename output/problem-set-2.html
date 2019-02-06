@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <title>Problem Set 2</title>
+        <link rel="stylesheet" href="https://sociologicalgobbledygook.com/theme/css/main.css" />
+        <link rel="stylesheet" href="https://sociologicalgobbledygook.com/theme/css/juptyer-fix.css" />
+        <link href="https://sociologicalgobbledygook.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Sociological Gobbledygook Atom Feed" />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="https://sociologicalgobbledygook.com/">Sociological Gobbledygook </a></h1>
+                <nav><ul>
+                    <li><a href="https://sociologicalgobbledygook.com/pages/manifesto.html">Manifesto</a></li>
+                    <li><a href="https://sociologicalgobbledygook.com/pages/welcome.html">Welcome!</a></li>
+                    <li><a href="https://sociologicalgobbledygook.com/category/class_examples.html">class_examples</a></li>
+                    <li><a href="https://sociologicalgobbledygook.com/category/lessons.html">Lessons</a></li>
+                    <li class="active"><a href="https://sociologicalgobbledygook.com/category/psets.html">psets</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="https://sociologicalgobbledygook.com/problem-set-2.html" rel="bookmark"
+           title="Permalink to Problem Set 2">Problem Set 2</a></h1>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2018-02-02T00:00:00-06:00">
+                Published: Fri 02 February 2018
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="https://sociologicalgobbledygook.com/author/paul-gowder.html">Paul Gowder</a>
+        </address>
+<p>In <a href="https://sociologicalgobbledygook.com/category/psets.html">psets</a>.</p>
+<p>tags: <a href="https://sociologicalgobbledygook.com/tag/psets.html">psets</a> </p>
+</footer><!-- /.post-info -->      <p>Due Friday, February 22, at 5pm Central time. </p>
+<p>As before, please turn in your answers in a single notebook.  For the questions that require you to write down prose, hopefully by now you've realized that you can change the type of a notebook cell to "markdown" to write regular text rather than Python code. </p>
+<p>In recognition of the fact that the last problem set was a little too difficult, I've lightened this one up a bit. </p>
+<h2>Problem 1 (60 points): Suspicious Persons</h2>
+<p>The Customs and Border Patrol (CBP) is concerned about drug trafficking on the many international flights landing in Cedar Rapids Airport (CID) (humor me).  Accordingly, it consults the research, and develops a Drug Trafficker profile, which combines factors which have been shown to predict drug trafficking.  Let's call those factors <em>Seediness</em>, <em>Sketchiness</em>, and <em>Shadiness</em>. CBP officers identify Seediness, Sketchiness, and Shadiness with perfect accuracy, and Seediness, Sketchiness, and Shadiness are conditionally independent both on drug trafficking and the complement of drug trafficking.</p>
+<p>Based on the evidence available to the CBP: </p>
+<ul>
+<li>
+<p>If an international traveler entering CID is carrying illegal drugs, then <span class="math">\(\alpha %\)</span> (alpha) of the time that person is also Seedy.  That is, out of every 100 people who are carrying drugs, <span class="math">\(\alpha\)</span> of those people are Seedy. </p>
+</li>
+<li>
+<p>If an international traveler entering CID is carrying illegal drugs, then <span class="math">\(\beta %\)</span> (beta) of the time that person is also Sketchy.</p>
+</li>
+<li>
+<p>If an international traveler entering CID is carrying illegal drugs, then <span class="math">\(\gamma %\)</span> (gamma) of the time that person is also Shady.</p>
+</li>
+<li>
+<p>If a person does not have drugs, then they are unlikely to be Seedy, Sketchy, or Shady---the probability of an international traveler entering CID being one of those things conditional on them not carrying illegal drugs is <span class="math">\(\psi\)</span> (psi). (To be completely clear: <span class="math">\(P(Seedy|NotDrugs) = \psi\)</span> and <span class="math">\(P(Sketchy|NotDrugs) = \psi\)</span> and <span class="math">\(P(Shady|NotDrugs) = \psi\)</span>.)</p>
+</li>
+<li>
+<p>Out of all international travelers entering CID, <span class="math">\(\mu %\)</span> (mu) have drugs. </p>
+</li>
+</ul>
+<p>Accordingly, the CBP issues a directive to its border control agents at the Cedar Rapids airport.  Every international traveler entering CID who is Seedy, Sketchy, and Shady must be stopped and searched for drugs.  (It turns out this kind of nonsense is constitutional at borders.) </p>
+<p><strong>Problem 1.A</strong> (20 points): Write a function, <code>search_results(...)</code> which takes appropriate parameters based on the information above and computes the probability that a person who is stopped under the above-described CBP directive is carrying illegal drugs.</p>
+<p><strong>Problem 1.B</strong> (20 points): Explain the math behind your function. </p>
+<p><strong>Problem 1.C.</strong> (20 points): Now suppose Sketchiness is not conditionally independent of Shadiness given non-drug-carrying (it is still conditionally independent given drug-carrying). Would your calculation change?  Briefly explain why and how.</p>
+<h2>Problem 2 (40 points): Benford's Law</h2>
+<p>There's a well-known empirical regularity according to which the first digits in people's real-world income tend to be predominantly lower---i.e., lots more 1s than 9s, and so forth. This is known as Benford's law, and it is often used to detect tax cheats, accounting fraud, and the like.  </p>
+<p>Illustrate Benford's law with a simulation of randomly chosen U.S. incomes.  You should assume that income follows either a lognormal or an exponential distribution (both will work)  Show the resulting distribution of digits with an appropriate data visualization.  </p>
+<p><em>hint</em>: You'll have to tweak the scale on either distribution in order to get it to an appropriate magnitude that represents typical U.S. incomes. Experiment!</p>
+<p><em>bonus</em> For more on Benford's law, see <a href="https://www.forbes.com/sites/danielfisher/2014/05/30/the-simple-mathematical-law-that-financial-fraudsters-cant-beat/#53798c8e4612">this Forbes article</a> and <a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0010541">this academic article paper reporting a simulation study of different distributions</a>.  If you interview for any job involving detecting financial fraud (IRS, SEC, etc.), you can probably make yourself look awesome by knowing about this. </p>
+<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "left",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width < 768) ? "left" : align;
+        indent = (screen.width < 768) ? "0em" : indent;
+        linebreak = (screen.width < 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'blue ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('Typewriter' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_Typewriter');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_Typewriter-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_Typewriter-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_Typewriter-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_Typewriter');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_Typewriter-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_Typewriter-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_Typewriter-italic');" +
+            "});" +
+        "}";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+</script>
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://law.uiowa.edu/">University of Iowa College of Law</a></li>
+                            <li><a href="https://gowder.io">Paul Gowder</a></li>
+                            <li><a href="http://python.org/">Python Documentation</a></li>
+                            <li><a href="https://github.com/paultopia/quantitative-methods-for-lawyers/">Course Github</a></li>
+                            <li><a href="https://github.com/paultopia/gobbledygook_lessons">Course Lessons Github</a></li>
+                            <li><a href="https://notebooks.azure.com/">Microsoft Azure Notebooks</a></li>
+                            <li><a href="tags.html">Lesson Post Tags</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+      
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+            <address id="about" class="vcard body">
+                
+
+                All content is (c) 2018-9 by <a href="https://gowder.io">Paul Gowder</a> and licensed under a <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International license</a>.  On the technical side, the site is powered by <a href="http://getpelican.com/">Pelican</a>, the theme is a modified version of one by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>.
+            </address><!-- /#about -->
+
+                
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>
