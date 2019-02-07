@@ -12,12 +12,41 @@ def extract_title(mdstring):
 def strip_yaml(mdstring):
     return mdstring.partition("\n\n")[-1]
 
-def make_pdf(mdfile):
-    with open(mdfile) as mdf:
-        md = mdf.read()
-    title = extract_title(md)
-    md = "# {} \n\n".format(title) + strip_yaml(md)
-    outfile = os.path.basename(mdfile).split(".")[0] + ".pdf"
-    pypandoc.convert_text(md, 'pdf', format="md", outputfile=outfile)
+def make_link_text(mdfile):
+    retstring = "\n\n[Download lesson PDF]({attach}../images/"
+    filename = os.path.basename(mdfile).split(".")[0] + ".pdf"
+    endstring = ")\n\n"
+    return retstring + filename + endstring
 
-make_pdf("content/Lessons/abelbaker.md")
+def add_link_text(mdfile, mdstring):
+    linktext = make_link_text(mdfile)
+    if not mdstring.endswith(linktext):
+        outstring = mdstring + linktext
+        with open(mdfile, "w") as mdf:
+            mdf.write(outstring)
+
+def remove_link_text(mdfile, mdstring):
+    linktext = make_link_text(mdfile)
+    if mdstring.endswith(linktext):
+        outstring = mdstring.strip(linktext)
+        return outstring
+    return mdstring
+
+def make_pdf_from_md(mdfile):
+    with open(mdfile) as mdf:
+        mdstring = mdf.read()
+    original = mdstring
+    title = extract_title(mdstring)
+    mdstring = remove_link_text(mdfile, mdstring)
+    mdstring = "# {} \n\n".format(title) + strip_yaml(mdstring)
+    mdstring = remove_link_text(mdstring)
+    outfile = os.path.basename(mdfile).split(".")[0] + ".pdf"
+    pypandoc.convert_text(mdstring, 'pdf', format="md", outputfile=outfile)
+    add_link_text(mdfile, original)
+
+
+if __name__ == "__main__":
+    notebooks = glob.glob("content/Lessons/*.md")
+    for notebook in notebooks:
+        make_pdf_from_md(notebook)
+
