@@ -116,3 +116,7 @@ Further readings, if you’d like to learn more:
 - John Ioannidis, "[Why Most Published Research Findings are False](https://journals.plos.org/plosmedicine/article?id=10.1371/journal.pmed.0020124)" (sort of a more complicated and less clear version of the Perry Wilson blog post above).
 
 - David Papineau, "[Thomas Bayes and the Crisis in Science](https://www.the-tls.co.uk/articles/public/thomas-bayes-science-crisis/)", Times Literary Supplement.
+
+
+[Download lesson PDF]({attach}../images/pvals2.pdf)
+

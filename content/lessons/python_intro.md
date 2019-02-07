@@ -25,3 +25,6 @@ The Azure Notebooks environment can be slow and a little awkward. It's better fo
 - If you want to do this, I'll help as much as I can, but you should know how to use the command line for your operating system. If you use Windows, I won't be able to help you as much as if you use a Mac or Linux. For Windows users, you might try setting up the Windows Subsystem for Linux and installing Anaconda through the instructions [in this article](https://medium.com/hugo-ferreiras-blog/using-windows-subsystem-for-linux-for-data-science-9a8e68d7610c), but I can't promise this will work. For Chromebook users, you probably won't be able to install Python locally unless you have a Pixelbook or some other [Chromebook that supports Crostini](https://www.reddit.com/r/Crostini/wiki/getstarted/crostini-enabled-devices). 
 
 - In additional to installing Python, you'll probably want a good development-quality text editor if you get into programming outside of Jupiter notebooks. I recommend [Atom](https://atom.io) or [VS Code](https://code.visualstudio.com), both of which should work on Mac, Windows, or Linux. 
+
+[Download lesson PDF]({attach}../images/python_intro.pdf)
+

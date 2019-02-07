@@ -193,3 +193,7 @@ We will talk about Monty Hall later on in the course, and I'll give you the math
 Incidentally, while object-oriented programming is a good match for simulation, it isn't necessary. To prove it, here's [another Monty Hall simulation](https://github.com/paultopia/math4ls/blob/master/montyhall/src/montyhall/core.cljs) I wrote a couple years in a programming language that doesn't even support object-oriented programming. The part that does the simulation actually comes out shorter than the example above (although the linked code also generates a webpage to see the simulation live, which you can [play with here if you want](http://paul-gowder.com/montyhall/)). If you want to see what the same simulation looks like in another language, go check it out... I'll bet you can understand the broad outlines, even though you've never been exposed to the other language. 
 
 In the remainder of this class, I will liberally use simulation to demonstrate important concepts in probability and statistics. I encourage you to poke around in those simulations, change their assumptions (for example, can you figure out a way to change the rules of Monty Hall to change the player's optimal strategy?  If you can, simulate it to check!), and poke around the edges in order to get a feel for the knowledge they represent. I think you'll find that being able to dig your hands into a probability/statistics process will make it more understandable and intuitive than just looking at some mathematical proof. 
+
+
+[Download lesson PDF]({attach}../images/simulation.pdf)
+

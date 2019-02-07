@@ -79,3 +79,7 @@ $$y = \alpha + \beta_1 x_1 + \beta_2 x_2 $$
 It turns out that (subject to some caveats and pitfalls on which we shall spend some time), the value of $\beta_1$ will be a good estimate of the effect of age on pay raises *holding the number of training courses constant*---so it gives us the apples-to-apples comparison we're looking for. And, within some limits, we can keep adding variables as the employer comes up with more and more excuses for the lower salary.
 
 Anyway, we'll be spending quite a bit of time on regression analysis, this is just a taste for now. You will hopefully be able to see that being able to make sense of these concepts will help you in your practice. This is just an introduction, we'll dig in much deeper in the weeks to come.
+
+
+[Download lesson PDF]({attach}../images/intro-stats.pdf)
+

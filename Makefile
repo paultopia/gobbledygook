@@ -65,6 +65,7 @@ help:
 
 pdfify:
 	python custom_build_scripts/ipynb_to_pdf.py
+	python custom_build_scripts/md_to_pdf.py
 
 html: pdfify
 	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)

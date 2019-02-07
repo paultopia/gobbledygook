@@ -67,3 +67,7 @@ Type S (Sign) and Type M (Magnitude)
 Errors](http://www.stat.columbia.edu/~gelman/research/published/retropower_final.pdf) Perspectives on Psychological Science 9(6): 641-651 (2014) describes the authors' efforts at retrospectively analyzing some underpowered studies in order to see how likely it is that they were drastically incorrect. See also [this discussion](https://stats.stackexchange.com/questions/243412/understanding-gelman-carlin-beyond-power-calculations-2014) of that paper, particularly the comment by a user named "amoeba" right before the answers.
 
 
+
+
+[Download lesson PDF]({attach}../images/power.pdf)
+

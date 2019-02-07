@@ -302,3 +302,7 @@ The Court also finds Hotard’s testimony that an individual’s name would not 
 
 [note 107] Direct evidence as relevant here would be evidence “which, if believed, proves” that race was a motivating factor in Hotard’s decision "without inference or presumption.” See, e.g., Jones v. Robinson Property Group, L.P., 427 F.3d 987, 992 (5th Cir. 2005) (citations omitted).
 
+
+
+[Download lesson PDF]({attach}../images/tester-cases.pdf)
+

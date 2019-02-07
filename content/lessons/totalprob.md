@@ -49,3 +49,7 @@ $$P(blew) = P(blew|drunk) \cdot P(drunk) + P(blew|sober) \cdot P(sober)$$
 Which is the assertation I originally made, expressing the law of total probability, and which allows us to get the denominator of our Bayes Rule calculation.
 
 Subsequent weeks will not have nearly this much notation.  Do not fear.
+
+
+[Download lesson PDF]({attach}../images/totalprob.pdf)
+

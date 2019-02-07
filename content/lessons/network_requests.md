@@ -108,3 +108,7 @@ That's a lot to absorb right now---don't worry, we'll get some more practice wit
 
 - To learn more about Python's built-in JSON library, you can use the [PYMOTW page on the subject](https://pymotw.com/3/json/). 
 
+
+
+[Download lesson PDF]({attach}../images/network_requests.pdf)
+

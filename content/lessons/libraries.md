@@ -67,3 +67,6 @@ However, if you do want to dig into Python programming further and need to insta
 - A common and very obnoxious problem that happens with libraries is having incompatible versions of multiple libraries that need to work together. Usually, to avoid this, Python programmers create what's known as virtual environments, collections of libraries that live together and don't talk to other environments on their machines. This is way beyond the scope of the course (and the ecosystem of tools to do it changes rapidly), but if you get into using a bunch of packages, you should really look into doing this, or you'll get yourself into a mess sooner or later.
 
 - You should usually be careful installing libraries that you don't have confidence in (aren't widely known, etc.). They might execute malicious code. This is a security problem that a lot of people are worrying about, and it's actually been a problem a few times---most recently in a library for the JavaScript programming language, which got millions of downloads and then [got caught stealing bitcoin](https://snyk.io/blog/malicious-code-found-in-npm-package-event-stream/). So be careful. 
+
+[Download lesson PDF]({attach}../images/libraries.pdf)
+

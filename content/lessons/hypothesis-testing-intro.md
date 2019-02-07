@@ -40,3 +40,7 @@ What happens if you take a bunch of samples? For example, suppose you have 20 di
 
 People intentionally or unintentionally cheat like this all the time---it’s called **p-hacking**.  Another way of p-hacking is to not have a "stopping rule"---to analyze the data while you’re collecting it, and then to stop collecting data when you see a significant result. Many scientists "preregister" their studies by publicly committing to the data they will collect and the analyses they will run in advance. This is a good practice to head off p-hacking. [This blog post has a good explanation of p-hacking and preregistration](https://www.methodspace.com/primer-p-hacking/) (And actually, even if you don’t cheat like this, the chances that you incorrectly rejected the null hypothesis even with a p value of 0.05 is still substantially higher than 5%, because of Bayes Rule: see [this blog post](http://blog.minitab.com/blog/adventures-in-statistics-2/not-all-p-values-are-created-equal) for an explanation of why.)
 
+
+
+[Download lesson PDF]({attach}../images/hypothesis-testing-intro.pdf)
+

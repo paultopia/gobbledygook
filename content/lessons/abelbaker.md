@@ -137,3 +137,7 @@ def baker(num_families, num_knocks):
 ```
 
 As your reward for reading this far, I'll tell you a secret.  I wasn't sure why the Able/Baker problem came out the way it does either---not until I wrote the simulation code. But, just as I said, writing this code forced me to think about what the sample space for the Baker problem actually is, and hence guided me to the rest of this explanation. Even those of us with years and years of probability experience need a little help sometimes.
+
+
+[Download lesson PDF]({attach}../images/abelbaker.pdf)
+

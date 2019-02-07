@@ -39,8 +39,7 @@ def make_pdf_from_md(mdfile):
     title = extract_title(mdstring)
     mdstring = remove_link_text(mdfile, mdstring)
     mdstring = "# {} \n\n".format(title) + strip_yaml(mdstring)
-    mdstring = remove_link_text(mdstring)
-    outfile = os.path.basename(mdfile).split(".")[0] + ".pdf"
+    outfile = "content/images/" + os.path.basename(mdfile).split(".")[0] + ".pdf"
     pypandoc.convert_text(mdstring, 'pdf', format="md", outputfile=outfile)
     add_link_text(mdfile, original)
 
