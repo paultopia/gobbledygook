@@ -37837,7 +37837,89 @@ In such a lawsuit, the employer will invariably claim that the older workers are
 &lt;li&gt;
 &lt;p&gt;You should usually be careful installing libraries that you don't have confidence in (aren't widely known, etc.). They might execute malicious code. This is a security problem that a lot of people are worrying about, and it's actually been a problem a few times---most recently in a library for the JavaScript programming language, which got millions of downloads and then &lt;a href="https://snyk.io/blog/malicious-code-found-in-npm-package-event-stream/"&gt;got caught stealing bitcoin&lt;/a&gt;. So be careful. &lt;/p&gt;
 &lt;/li&gt;
-&lt;/ul&gt;</content><category term="python"></category><category term="code"></category><category term="week2"></category></entry><entry><title>Pset 1 answers</title><link href="https://sociologicalgobbledygook.com/pset-1-answers.html" rel="alternate"></link><published>2018-02-04T00:00:00-06:00</published><updated>2018-02-04T00:00:00-06:00</updated><author><name>Paul Gowder</name></author><id>tag:sociologicalgobbledygook.com,2018-02-04:/pset-1-answers.html</id><summary type="html">
+&lt;/ul&gt;</content><category term="python"></category><category term="code"></category><category term="week2"></category></entry><entry><title>Week 4 recap: Total Probability Rule</title><link href="https://sociologicalgobbledygook.com/week-4-recap-total-probability-rule.html" rel="alternate"></link><published>2018-02-05T00:00:00-06:00</published><updated>2018-02-05T00:00:00-06:00</updated><author><name>Paul Gowder</name></author><id>tag:sociologicalgobbledygook.com,2018-02-05:/week-4-recap-total-probability-rule.html</id><summary type="html">&lt;p&gt;The probability lecture this week kind of hit a wall at one point in our Bayes Rule example.  Here's a clearer explanation.&lt;/p&gt;
+&lt;p&gt;Remember, we had an example problem involving figuring out the posterior probability of someone being drunk, given that they blew a positive result on a breathalyzer.  &lt;/p&gt;
+&lt;p&gt;The place …&lt;/p&gt;</summary><content type="html">&lt;p&gt;The probability lecture this week kind of hit a wall at one point in our Bayes Rule example.  Here's a clearer explanation.&lt;/p&gt;
+&lt;p&gt;Remember, we had an example problem involving figuring out the posterior probability of someone being drunk, given that they blew a positive result on a breathalyzer.  &lt;/p&gt;
+&lt;p&gt;The place where we got stuck was when we were trying to do was calculate the probability of blowing a positive breathalyzer, i.e., &lt;span class="math"&gt;\(P(blew)\)&lt;/span&gt;.  But all we had was the true positive rate, i.e., the probability that the machine would produce a positive result conditional on someone being drunk &lt;span class="math"&gt;\(P(blew|drunk)\)&lt;/span&gt; and the false positive rate, i.e., the probability that the machine would produce a positive result conditional on someone being sober &lt;span class="math"&gt;\(P(blew|sober)\)&lt;/span&gt;, as well as the prior probability of being drunk &lt;span class="math"&gt;\((.1)\)&lt;/span&gt;.  &lt;/p&gt;
+&lt;p&gt;We needed &lt;span class="math"&gt;\(P(blew)\)&lt;/span&gt; because it is the denominator in our Bayes Rule calculation. Here's Bayes Rule again: &lt;/p&gt;
+&lt;div class="math"&gt;$$P(B|A) = \frac{P(A|B)P(B)}{P(A)}$$&lt;/div&gt;
+&lt;p&gt;We were trying to calculate &lt;span class="math"&gt;\(P(drunk|blew)\)&lt;/span&gt; and, per Bayes rule, that means we need to know the overall probability of a positive result (that's A here). Plugging in our terms, we were trying to figure out.&lt;/p&gt;
+&lt;div class="math"&gt;$$P(drunk|blew) = \frac{P(blew|drunk)P(drunk)}{P(blew)}$$&lt;/div&gt;
+&lt;p&gt;What I asserted to you is that we can use the following calculation to go from what we know to the denominator of that equation: &lt;/p&gt;
+&lt;div class="math"&gt;$$P(blew) = P(blew|drunk) \cdot P(drunk) + P(blew|sober) \cdot P(sober)$$&lt;/div&gt;
+&lt;p&gt;This is known as the law of total probability. &lt;a href="https://en.wikipedia.org/wiki/Law_of_total_probability#Example"&gt;Wikipedia gives another good example&lt;/a&gt;.  &lt;/p&gt;
+&lt;p&gt;Here's a hopefully-more intuitive explanation of why you should believe this.  What we're really doing is partitioning the world.  You can only be drunk or sober, right?  You can't be drunk AND sober, and you can't be neither drunk nor sober.  Drunkenness and soberness are mutually exclusive and exhaustive. &lt;/p&gt;
+&lt;p&gt;So what that means is that there are only two ways to blow a positive breathalyzer.  You can either blow a breathalyzer when you're drunk, or you can blow a breathalyzer when you're sober. &lt;/p&gt;
+&lt;p&gt;And then what we're asking is for the union of those two events, the "or" question.  The question "what's the probability of blowing a positive breathalyzer test" is just "what's the probability of blowing a positive breathalyzer test and being drunk, OR blowing a positive breathalyzer test and being sober."  And we know those have to be mutually exclusive events (because, yet again, can't be drunk and sober at the same time), so we know that we just add them up.  The addition rule gets us to: &lt;/p&gt;
+&lt;div class="math"&gt;$$P(blew) = P(blew \cap drunk) + P(blew \cap sober)$$&lt;/div&gt;
+&lt;p&gt;Ok, so how do we calculate those?  Well, let's reason through it.  What's the probability of both being drunk and blowing a positive result?  Well, it's gotta be lower than the probability of being drunk (because the probability of A and B always has to be lower than the probability of A alone, or identical to it in the pathological case where the probability of B is 1). The trick is to realize that conditional probabilities encode the information "given that I know A happened, what's the probability of B."  So it stands to reason that if you want to know whether A and B happened, you'd be interested in the probability of A, as well as the conditional probability of B given A.  &lt;/p&gt;
+&lt;p&gt;This is what, in the earlier reading, I called "the expanded multiplication rule.  The formula is as follows: &lt;/p&gt;
+&lt;div class="math"&gt;$$P(A \cap B) = P(A)P(B|A)$$&lt;/div&gt;
+&lt;p&gt;To remind you, here's what I said in the first reading to explain this: &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The classic example to understand the reasoning behind the expanded multiplication rule is drawing cards. If you draw cards from a normal deck and don't put them back, then the probability of the first card being a heart is just 13/52 = 1/4. What's the probability of drawing a second heart?&lt;/p&gt;
+&lt;p&gt;Well, imagine that instead of drawing from the same deck, someone just gave you a second deck of cards with 51 cards in it, 12 of which were hearts. We know the probability of drawing a heart in that second deck, right? 12/51. That world is just the world described by the conditional probability of drawing a second heart given that you've already drawn a first. So what's the probability of drawing a heart out of the normal deck and a heart out of the weird second deck? Easy: 1/4 * 12/51.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;So that gets us as far as &lt;span class="math"&gt;\(P(A \cap B) = P(A)P(B|A)\)&lt;/span&gt;.  And, it should be obvious that  &lt;span class="math"&gt;\(P(A \cap B) = P(B \cap A)\)&lt;/span&gt; ("A and B" is the same as "B and A"). If we substitute "drunk" and "sober" for A in the two sides of our addition, and substitute "blew" for B, then, by plugging in, we can conclude that &lt;/p&gt;
+&lt;div class="math"&gt;$$P(blew) = P(blew|drunk) \cdot P(drunk) + P(blew|sober) \cdot P(sober)$$&lt;/div&gt;
+&lt;p&gt;Which is the assertation I originally made, expressing the law of total probability, and which allows us to get the denominator of our Bayes Rule calculation.&lt;/p&gt;
+&lt;p&gt;Subsequent weeks will not have nearly this much notation.  Do not fear.&lt;/p&gt;
+&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "left",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width &lt; 768) ? "left" : align;
+        indent = (screen.width &lt; 768) ? "0em" : indent;
+        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'blue ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('Typewriter' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_Typewriter');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_Typewriter-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_Typewriter-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_Typewriter-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_Typewriter');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_Typewriter-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_Typewriter-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_Typewriter-italic');" +
+            "});" +
+        "}";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;</content><category term="probability"></category><category term="conceptual"></category><category term="week4"></category></entry><entry><title>Pset 1 answers</title><link href="https://sociologicalgobbledygook.com/pset-1-answers.html" rel="alternate"></link><published>2018-02-04T00:00:00-06:00</published><updated>2018-02-04T00:00:00-06:00</updated><author><name>Paul Gowder</name></author><id>tag:sociologicalgobbledygook.com,2018-02-04:/pset-1-answers.html</id><summary type="html">
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;</summary><content type="html">&lt;style type="text/css"&gt;/*!
 *
