@@ -5,7 +5,10 @@ def extract_title_ipynb(cell0):
     source = cell0["source"]
     pattern = r"Title: (.*)?\n"
     match = re.search(pattern, source)
-    title = match.group(1)
+    try:
+        title = match.group(1)
+    except:
+        title = "(Lesson title not found)"
     newcell = {'cell_type': 'markdown', 'metadata': {}, 'source': '# {}'.format(title)}
     return nbformat.from_dict(newcell)
 
@@ -38,14 +41,8 @@ def make_pdf_from_ipynb(notebook_file):
         tp.write(pdf)
     add_link_to_pdf_ipynb(notebook_file)
 
+if __name__ == "__main__":
+    notebooks = glob.glob("content/Lessons/*.ipynb")
+    for notebook in notebooks:
+        make_pdf_from_ipynb(notebook)
 
-make_pdf_from_ipynb("content/Lessons/errors.ipynb")
-
-
-# next steps:
-
-# 1.  Hook in pandoc just swiping code from API for MD files. (extract yaml stuff at top, maybe just put lines around it and let it be a yaml block)
-
-# 2.  Write some code to shove it all to a directory under images
-
-# 3.  Write some code to append to every file a "get this as a pdf" -- for markdown, just put at bottom, for ipynb, put in cell.  (Can I get crazy and flip it so the PDFs all have "go to html" as well?)
