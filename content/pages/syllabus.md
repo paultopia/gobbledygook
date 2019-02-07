@@ -39,7 +39,7 @@ We will also use some free instructional materials from the nonprofit organizati
 
 There will also be copious readings written by me available online on the public-facing website, and some copyrighted stuff that I can't distribute publicly on ICON.
 
-For the contents of this website, it's probably easiest to access them using the week-by-week links below or the [content-based tags](tags.html) build into this website.
+For the contents of this website, it's probably easiest to access them using the week-by-week links below or the [content-based tags](tags.html) build into this website. There might be formatting glitches with some of the lessons, due to conversion between different file types and html. However, I'm slowly improving that as we go through the course, and, in addition, every lesson will have a link to a downloadable and printable PDF at the bottom which will ordinarily have cleaner formatting (except for long lines of code, which may be cut off in PDF but should be fine on web).  Some lessons should also have downloadable Jupyter notebooks associated with them, which will also be linked at the bottom.
 
 I am committed to only assigning resources which are free to students. However, the nature of this material is that sometimes one explanation will just "click" where another might not.  So in addition to the assigned readings, I offer you this list of additional, non-free, readings which you might consult for a different perspective on the material---or for deeper engagement and exploration.  
 
