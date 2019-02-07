@@ -1,5 +1,223 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Sociological Gobbledygook - psets</title><link href="https://sociologicalgobbledygook.com/" rel="alternate"></link><link href="https://sociologicalgobbledygook.com/feeds/psets.atom.xml" rel="self"></link><id>https://sociologicalgobbledygook.com/</id><updated>2018-02-04T00:00:00-06:00</updated><entry><title>Pset 1 answers</title><link href="https://sociologicalgobbledygook.com/pset-1-answers.html" rel="alternate"></link><published>2018-02-04T00:00:00-06:00</published><updated>2018-02-04T00:00:00-06:00</updated><author><name>Paul Gowder</name></author><id>tag:sociologicalgobbledygook.com,2018-02-04:/pset-1-answers.html</id><summary type="html">
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Sociological Gobbledygook - psets</title><link href="https://sociologicalgobbledygook.com/" rel="alternate"></link><link href="https://sociologicalgobbledygook.com/feeds/psets.atom.xml" rel="self"></link><id>https://sociologicalgobbledygook.com/</id><updated>2018-02-04T00:00:00-06:00</updated><entry><title>Problem Set 1</title><link href="https://sociologicalgobbledygook.com/problem-set-1.html" rel="alternate"></link><published>2018-01-16T00:00:00-06:00</published><updated>2018-01-16T00:00:00-06:00</updated><author><name>Paul Gowder</name></author><id>tag:sociologicalgobbledygook.com,2018-01-16:/problem-set-1.html</id><summary type="html">&lt;p&gt;This problem set is worth 17.5% of the grade in this course. It is due on Friday, February 1, at 5pm, via a dropbox in ICON that I shall set up for the purpose. &lt;/p&gt;
+&lt;p&gt;There are three problems on this set, one relatively small/easy one worth 20 points …&lt;/p&gt;</summary><content type="html">&lt;p&gt;This problem set is worth 17.5% of the grade in this course. It is due on Friday, February 1, at 5pm, via a dropbox in ICON that I shall set up for the purpose. &lt;/p&gt;
+&lt;p&gt;There are three problems on this set, one relatively small/easy one worth 20 points, and two large/difficult ones worth 40 points each; the large problems also contain alternative versions that can be done for half credit.  Subsequent problem sets will probably have more problems in them. &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;How to turn in this problem set&lt;/strong&gt;: each of the problems asks you to write a single Python function which carries out a designated operation.  You should include working code for each of these functions in a single Jupyter Notebook file, entitled &lt;code&gt;lastname_ps1.ipynb&lt;/code&gt; (obviously with your last name), which you will turn in to the dropbox on ICON.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;For each of the problems, you need not package all of your code in a single function. For example, you may write helper functions, import libraries outside of your function, etc.  However, you must turn in a single Jupyter Notebook file with all the code that makes your functions work as well as the functions themselves.  I expect to be able to run all the cells in the notebook you turn in, and, at the end, have a working function for each problem, so that I can call those functions with appropriate input and get the correct result. In all cases, your functions should return &lt;code&gt;None&lt;/code&gt; if they receive inappropriate input. &lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;HONOR CODE&lt;/h2&gt;
+&lt;p&gt;Each student must agree to the following honor code; if you do not agree to this honor code, do not turn in this problem set and drop the course. &lt;/p&gt;
+&lt;p&gt;&lt;em&gt;I will not solicit, receive, or provide any unauthorized assistance on this or any problem set in this course. I understand that unauthorized assistance includes seeing the work of any other student, including code, calculations, data analysis, or answers to problems. Students are permitted to discuss their general strategies for solving problems with one another, help one another understand lesson material or documentation for Python libraries, and the like, or other conversation short of sharing actual answers, calculations, data analysis, or code. Students are not permitted to seek or receive assistance or advice whatsoever from any person not enrolled in this course---this prohibition includes asking for help on public online forums such as stackoverflow.com, although students are free to search such websites and learn from preexisting discussions in which they are not participants.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;If I have any doubt about the permissibility of any kind of assistance, I will seek a ruling from the professor. I will report any violations of this honor code of which I am aware. Violating this honor code is grounds for immediate disenrollment from this course, or other sanctions as provided for by College of Law and University policy on academic dishonesty.&lt;/em&gt;&lt;/p&gt;
+&lt;h2&gt;Problem 1 (20 points): Rock, Paper, Scissors&lt;/h2&gt;
+&lt;p&gt;Write a function named &lt;code&gt;rps&lt;/code&gt; that plays rock, paper, scissors with a human.  It should first select randomly between rock, scissors, and paper, keeping that selection secret, then ask the user for input (no cheating and doing it the other way around!). After the user provides the appropriate input, it should decide who won or if there's a tie by the standard means (rock beats scissors beats paper beats rock) and reveal both its choice and the winner to the user.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Rules and definitions for this problem:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;rps must accept input in uppercase, lowercase, and any weird mixed-up case the user types in, it must also accept input with any number of spaces before or after the word. For example, all of the following are acceptable input:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;rock
+Rock
+ROCK
+            rock
+rOcK
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;If the user tries to enter anything other than rock, paper, or scissors, it should print the message &lt;code&gt;"Please enter rock, paper, or scissors."&lt;/code&gt; and then ask the user for input again.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The response must be of the form &lt;code&gt;"I picked [rock/paper/scissors]. [You/I/Nobody] won!"&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Example correct input and output:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;(arrow symbols designate things the computer prints out)&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;rps()
+# computer picks rock in the background
+-&amp;gt; Pick rock, paper or scissors!
+# User types in &amp;quot;rocK    &amp;quot;
+-&amp;gt; I picked rock. Nobody won!
+
+rps()
+# computer picks paper in the background
+-&amp;gt; Pick rock, paper or scissors!
+# User types in &amp;quot;Scissors&amp;quot;
+-&amp;gt; I picked paper. You won!
+
+rps()
+# computer picks rock in the background
+-&amp;gt; Pick rock, paper or scissors!
+# User types in &amp;quot;sledgehammer&amp;quot;
+-&amp;gt; Please enter rock, paper, or scissors.
+# User types in &amp;quot;hand grenade&amp;quot;
+-&amp;gt; Please enter rock, paper, or scissors.
+# User types in &amp;quot;  scissors &amp;quot;
+-&amp;gt; I picked rock. I won!
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Problem 2 (40 points): Date Calculator&lt;/h2&gt;
+&lt;p&gt;Rule 6 of the Federal Rules of Civil Procedure specifies a procedure for calculating the various dates (like the date to file a reply to a complaint) under the rules. Reduce that procedure to code. &lt;/p&gt;
+&lt;p&gt;Specifically, write a function, named &lt;code&gt;calculate_days&lt;/code&gt;, that takes two parameters: &lt;code&gt;num_days&lt;/code&gt; which is the number of days to count, and &lt;code&gt;start_date&lt;/code&gt; which is the date to begin counting from (for example, the date from which a complaint is served, triggering the clock for a reply). It should return the correct due date under FRCP 6. &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Rules and definitions for this problem:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;start_date&lt;/code&gt; should have a default value of the current date when the script is run, in the time zone of the computer on which it is run. I should, in other words, be able to call &lt;code&gt;calculate_days(10)&lt;/code&gt; and get a FRCP 6-compliant date ten days from the date on which I call the function.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Dates should be passed into the function as strings in the form MM-DD-YYYY, for example, &lt;code&gt;"12-27-2017"&lt;/code&gt;.  It should output dates as strings in plain English in a form like &lt;code&gt;"Tue, January 02, 2018"&lt;/code&gt;. &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Your calculation needs to take into account weekends and federal holidays that have a fixed date (New Years, Christmas, Veterans Day, and Independence day). It does not need to take into account holidays that have a weird date like "the fourth Monday in March" or whatever (e.g. Memorial Day, Thanksgiving). Also, it doesn't need to take into account "observed" holidays, for example, federal workers getting Monday off if Veterans Day happens to fall on a Sunday. &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;However, you can receive five bonus points for correctly handling floating holidays like Memorial Day, and another 5 bonus points for correctly handling holidays where the statute says that if it falls on a Sunday it's observed on a Monday/if it falls on a Saturday, it's observed on a Sunday.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;em&gt;Hint:&lt;/em&gt; look into the built-in Python library &lt;code&gt;datetime&lt;/code&gt;. There are lots of tutorials about how to use it.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Example correct input and output:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;calculate_days(3, "01-16-2019")&lt;/code&gt; should return &lt;code&gt;Mon, January 21, 2019&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;calculate_days(19, "06-15-2019")&lt;/code&gt; should return &lt;code&gt;Fri, July 05, 2019&lt;/code&gt;&lt;/p&gt;
+&lt;h3&gt;Half credit version of problem 2&lt;/h3&gt;
+&lt;p&gt;You may write a version of &lt;code&gt;calculate_days&lt;/code&gt; that does not take into account weekends and holidays for half credit.  The half credit version also does not need to provide output in precisely the format specified above, although it should still output a string that is recognizably a date and is comprehensible to an ordinary lawyer. &lt;/p&gt;
+&lt;h2&gt;Problem 3 (40 points): Cite Finder&lt;/h2&gt;
+&lt;p&gt;Write a function, named &lt;code&gt;cite_finder&lt;/code&gt;, that takes one parameter, &lt;code&gt;case&lt;/code&gt;, a string with a citation to an Illinois Supreme Court case, and returns the following: &lt;/p&gt;
+&lt;p&gt;A.  &lt;code&gt;None&lt;/code&gt;, if the citation does not correspond to an actual case.&lt;/p&gt;
+&lt;p&gt;B. An empty list, if the citation corresponds to an actual case, but the text of that case does not include any citations to the U.S. Supreme Court.&lt;/p&gt;
+&lt;p&gt;C.  A Python &lt;code&gt;list&lt;/code&gt; of unique U.S. Supreme Court citations that appear in the text of the case, if the citation corresponds to an actual case and the case contains any U.S. Supreme Court citation.  &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Rules and definitions for this problem:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;"Unique" means a citation to a specific case from a specific reporter. &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;"Citation to an Illinois Supreme Court case" means a string reflecting a citation to the official reporter of the Illinois Supreme Court, in the form &lt;code&gt;12 Ill. 345&lt;/code&gt; or &lt;code&gt;12 Ill.2d 345&lt;/code&gt;. &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;"U.S. Supreme Court citation" means any full citation (not supra, id, etc.) from the official U.S. Supreme Court reporter as abbreviated &lt;code&gt;U.S.&lt;/code&gt;. Party names, years, and page numbers need not be included. Archaic citations (like to Cranch), S.Ct., and L.Ed. Citations should not be included. Subsequent cites/pin cites to a case of the form &lt;code&gt;123 U.S. at 456&lt;/code&gt; should not be included.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;"Text" of a case includes all opinions (majority, concurrence, dissent, etc.) but does not include syllabus or any other content. &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Your function must use the &lt;a href="https://case.law"&gt;Caselaw Access Project (case.law) API&lt;/a&gt;. &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The list must be sorted using Python’s built-in list sorting functionality with default options.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Each citation must appear only once.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Example correct input and output:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;cite_finder("231 Ill.2d 474")&lt;/code&gt; should return &lt;code&gt;['387 U.S. 136', '419 U.S. 102', '424 U.S. 1', '429 U.S. 252', '508 U.S. 520', '509 U.S. 43']&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;cite_finder("231 Ill.2d 475")&lt;/code&gt; should return &lt;code&gt;None&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;cite_finder("215 Ill.2d 219")&lt;/code&gt; should return &lt;code&gt;['339 U.S. 594', '387 U.S. 136', '467 U.S. 837', '538 U.S. 803']&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Half credit version of problem 3:&lt;/h3&gt;
+&lt;p&gt;You may get half credit on this problem by writing a function, called &lt;code&gt;justice_finder&lt;/code&gt;, which takes an Illinois Supreme Court citation as defined above and returns a list of every justice who wrote an opinion. This must also use the Caselaw Access Project API.&lt;/p&gt;
+&lt;p&gt;Example correct input and output for half-credit version: &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;cite_finder("231 Ill.2d 474")&lt;/code&gt; should return &lt;code&gt;['JUSTICE THOMAS', 'JUSTICE FREEMAN,']&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><category term="psets"></category></entry><entry><title>Problem Set 2</title><link href="https://sociologicalgobbledygook.com/problem-set-2.html" rel="alternate"></link><published>2018-02-02T00:00:00-06:00</published><updated>2018-02-02T00:00:00-06:00</updated><author><name>Paul Gowder</name></author><id>tag:sociologicalgobbledygook.com,2018-02-02:/problem-set-2.html</id><summary type="html">&lt;p&gt;Due Friday, February 22, at 5pm Central time. &lt;/p&gt;
+&lt;p&gt;As before, please turn in your answers in a single notebook.  For the questions that require you to write down prose, hopefully by now you've realized that you can change the type of a notebook cell to "markdown" to write regular text …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Due Friday, February 22, at 5pm Central time. &lt;/p&gt;
+&lt;p&gt;As before, please turn in your answers in a single notebook.  For the questions that require you to write down prose, hopefully by now you've realized that you can change the type of a notebook cell to "markdown" to write regular text rather than Python code. &lt;/p&gt;
+&lt;p&gt;In recognition of the fact that the last problem set was a little too difficult, I've lightened this one up a bit. &lt;/p&gt;
+&lt;h2&gt;Problem 1 (60 points): Suspicious Persons&lt;/h2&gt;
+&lt;p&gt;The Customs and Border Patrol (CBP) is concerned about drug trafficking on the many international flights landing in Cedar Rapids Airport (CID) (humor me).  Accordingly, it consults the research, and develops a Drug Trafficker profile, which combines factors which have been shown to predict drug trafficking.  Let's call those factors &lt;em&gt;Seediness&lt;/em&gt;, &lt;em&gt;Sketchiness&lt;/em&gt;, and &lt;em&gt;Shadiness&lt;/em&gt;. CBP officers identify Seediness, Sketchiness, and Shadiness with perfect accuracy, and Seediness, Sketchiness, and Shadiness are conditionally independent both on drug trafficking and the complement of drug trafficking.&lt;/p&gt;
+&lt;p&gt;Based on the evidence available to the CBP: &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;If an international traveler entering CID is carrying illegal drugs, then &lt;span class="math"&gt;\(\alpha %\)&lt;/span&gt; (alpha) of the time that person is also Seedy.  That is, out of every 100 people who are carrying drugs, &lt;span class="math"&gt;\(\alpha\)&lt;/span&gt; of those people are Seedy. &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;If an international traveler entering CID is carrying illegal drugs, then &lt;span class="math"&gt;\(\beta %\)&lt;/span&gt; (beta) of the time that person is also Sketchy.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;If an international traveler entering CID is carrying illegal drugs, then &lt;span class="math"&gt;\(\gamma %\)&lt;/span&gt; (gamma) of the time that person is also Shady.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;If a person does not have drugs, then they are unlikely to be Seedy, Sketchy, or Shady---the probability of an international traveler entering CID being one of those things conditional on them not carrying illegal drugs is &lt;span class="math"&gt;\(\psi\)&lt;/span&gt; (psi). (To be completely clear: &lt;span class="math"&gt;\(P(Seedy|NotDrugs) = \psi\)&lt;/span&gt; and &lt;span class="math"&gt;\(P(Sketchy|NotDrugs) = \psi\)&lt;/span&gt; and &lt;span class="math"&gt;\(P(Shady|NotDrugs) = \psi\)&lt;/span&gt;.)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Out of all international travelers entering CID, &lt;span class="math"&gt;\(\mu %\)&lt;/span&gt; (mu) have drugs. &lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Accordingly, the CBP issues a directive to its border control agents at the Cedar Rapids airport.  Every international traveler entering CID who is Seedy, Sketchy, and Shady must be stopped and searched for drugs.  (It turns out this kind of nonsense is constitutional at borders.) &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Problem 1.A&lt;/strong&gt; (20 points): Write a function, &lt;code&gt;search_results(...)&lt;/code&gt; which takes appropriate parameters based on the information above and computes the probability that a person who is stopped under the above-described CBP directive is carrying illegal drugs.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Problem 1.B&lt;/strong&gt; (20 points): Explain the math behind your function. &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Problem 1.C.&lt;/strong&gt; (20 points): Now suppose Sketchiness is not conditionally independent of Shadiness given non-drug-carrying (it is still conditionally independent given drug-carrying). Would your calculation change?  Briefly explain why and how.&lt;/p&gt;
+&lt;h2&gt;Problem 2 (40 points): Benford's Law&lt;/h2&gt;
+&lt;p&gt;There's a well-known empirical regularity according to which the first digits in people's real-world income tend to be predominantly lower---i.e., lots more 1s than 9s, and so forth. This is known as Benford's law, and it is often used to detect tax cheats, accounting fraud, and the like.  &lt;/p&gt;
+&lt;p&gt;Illustrate Benford's law with a simulation of randomly chosen U.S. incomes.  You should assume that income follows either a lognormal or an exponential distribution (both will work)  Show the resulting distribution of digits with an appropriate data visualization.  &lt;/p&gt;
+&lt;p&gt;&lt;em&gt;hint&lt;/em&gt;: You'll have to tweak the scale on either distribution in order to get it to an appropriate magnitude that represents typical U.S. incomes. Experiment!&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;bonus&lt;/em&gt; For more on Benford's law, see &lt;a href="https://www.forbes.com/sites/danielfisher/2014/05/30/the-simple-mathematical-law-that-financial-fraudsters-cant-beat/#53798c8e4612"&gt;this Forbes article&lt;/a&gt; and &lt;a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0010541"&gt;this academic article paper reporting a simulation study of different distributions&lt;/a&gt;.  If you interview for any job involving detecting financial fraud (IRS, SEC, etc.), you can probably make yourself look awesome by knowing about this. &lt;/p&gt;
+&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "left",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width &lt; 768) ? "left" : align;
+        indent = (screen.width &lt; 768) ? "0em" : indent;
+        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'blue ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('Typewriter' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_Typewriter');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_Typewriter-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_Typewriter-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_Typewriter-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_Typewriter');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_Typewriter-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_Typewriter-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_Typewriter-italic');" +
+            "});" +
+        "}";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;</content><category term="psets"></category></entry><entry><title>Pset 1 answers</title><link href="https://sociologicalgobbledygook.com/pset-1-answers.html" rel="alternate"></link><published>2018-02-04T00:00:00-06:00</published><updated>2018-02-04T00:00:00-06:00</updated><author><name>Paul Gowder</name></author><id>tag:sociologicalgobbledygook.com,2018-02-04:/pset-1-answers.html</id><summary type="html">
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;</summary><content type="html">&lt;style type="text/css"&gt;/*!
 *
@@ -1339,7 +1557,7 @@ I picked paper. I won!
         &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="kc"&gt;None&lt;/span&gt;
     &lt;span class="k"&gt;while&lt;/span&gt; &lt;span class="n"&gt;check_weekend&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;candidate&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="ow"&gt;or&lt;/span&gt; &lt;span class="n"&gt;check_fixed_holiday&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;candidate&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
         &lt;span class="n"&gt;candidate&lt;/span&gt; &lt;span class="o"&gt;+=&lt;/span&gt; &lt;span class="n"&gt;timedelta&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;candidate&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;strftime&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;%a, %B &lt;/span&gt;&lt;span class="si"&gt;%d&lt;/span&gt;&lt;span class="s2"&gt;, %Y&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;candidate&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;strftime&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="si"&gt;%a&lt;/span&gt;&lt;span class="s2"&gt;, %B &lt;/span&gt;&lt;span class="si"&gt;%d&lt;/span&gt;&lt;span class="s2"&gt;, %Y&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
     &lt;/div&gt;
@@ -1627,222 +1845,4 @@ I picked paper. I won!
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
 &lt;/script&gt;
-</content><category term="psets"></category></entry><entry><title>Problem Set 2</title><link href="https://sociologicalgobbledygook.com/problem-set-2.html" rel="alternate"></link><published>2018-02-02T00:00:00-06:00</published><updated>2018-02-02T00:00:00-06:00</updated><author><name>Paul Gowder</name></author><id>tag:sociologicalgobbledygook.com,2018-02-02:/problem-set-2.html</id><summary type="html">&lt;p&gt;Due Friday, February 22, at 5pm Central time. &lt;/p&gt;
-&lt;p&gt;As before, please turn in your answers in a single notebook.  For the questions that require you to write down prose, hopefully by now you've realized that you can change the type of a notebook cell to "markdown" to write regular text …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Due Friday, February 22, at 5pm Central time. &lt;/p&gt;
-&lt;p&gt;As before, please turn in your answers in a single notebook.  For the questions that require you to write down prose, hopefully by now you've realized that you can change the type of a notebook cell to "markdown" to write regular text rather than Python code. &lt;/p&gt;
-&lt;p&gt;In recognition of the fact that the last problem set was a little too difficult, I've lightened this one up a bit. &lt;/p&gt;
-&lt;h2&gt;Problem 1 (60 points): Suspicious Persons&lt;/h2&gt;
-&lt;p&gt;The Customs and Border Patrol (CBP) is concerned about drug trafficking on the many international flights landing in Cedar Rapids Airport (CID) (humor me).  Accordingly, it consults the research, and develops a Drug Trafficker profile, which combines factors which have been shown to predict drug trafficking.  Let's call those factors &lt;em&gt;Seediness&lt;/em&gt;, &lt;em&gt;Sketchiness&lt;/em&gt;, and &lt;em&gt;Shadiness&lt;/em&gt;. CBP officers identify Seediness, Sketchiness, and Shadiness with perfect accuracy, and Seediness, Sketchiness, and Shadiness are conditionally independent both on drug trafficking and the complement of drug trafficking.&lt;/p&gt;
-&lt;p&gt;Based on the evidence available to the CBP: &lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;If an international traveler entering CID is carrying illegal drugs, then &lt;span class="math"&gt;\(\alpha %\)&lt;/span&gt; (alpha) of the time that person is also Seedy.  That is, out of every 100 people who are carrying drugs, &lt;span class="math"&gt;\(\alpha\)&lt;/span&gt; of those people are Seedy. &lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;If an international traveler entering CID is carrying illegal drugs, then &lt;span class="math"&gt;\(\beta %\)&lt;/span&gt; (beta) of the time that person is also Sketchy.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;If an international traveler entering CID is carrying illegal drugs, then &lt;span class="math"&gt;\(\gamma %\)&lt;/span&gt; (gamma) of the time that person is also Shady.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;If a person does not have drugs, then they are unlikely to be Seedy, Sketchy, or Shady---the probability of an international traveler entering CID being one of those things conditional on them not carrying illegal drugs is &lt;span class="math"&gt;\(\psi\)&lt;/span&gt; (psi). (To be completely clear: &lt;span class="math"&gt;\(P(Seedy|NotDrugs) = \psi\)&lt;/span&gt; and &lt;span class="math"&gt;\(P(Sketchy|NotDrugs) = \psi\)&lt;/span&gt; and &lt;span class="math"&gt;\(P(Shady|NotDrugs) = \psi\)&lt;/span&gt;.)&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Out of all international travelers entering CID, &lt;span class="math"&gt;\(\mu %\)&lt;/span&gt; (mu) have drugs. &lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Accordingly, the CBP issues a directive to its border control agents at the Cedar Rapids airport.  Every international traveler entering CID who is Seedy, Sketchy, and Shady must be stopped and searched for drugs.  (It turns out this kind of nonsense is constitutional at borders.) &lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Problem 1.A&lt;/strong&gt; (20 points): Write a function, &lt;code&gt;search_results(...)&lt;/code&gt; which takes appropriate parameters based on the information above and computes the probability that a person who is stopped under the above-described CBP directive is carrying illegal drugs.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Problem 1.B&lt;/strong&gt; (20 points): Explain the math behind your function. &lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Problem 1.C.&lt;/strong&gt; (20 points): Now suppose Sketchiness is not conditionally independent of Shadiness given non-drug-carrying (it is still conditionally independent given drug-carrying). Would your calculation change?  Briefly explain why and how.&lt;/p&gt;
-&lt;h2&gt;Problem 2 (40 points): Benford's Law&lt;/h2&gt;
-&lt;p&gt;There's a well-known empirical regularity according to which the first digits in people's real-world income tend to be predominantly lower---i.e., lots more 1s than 9s, and so forth. This is known as Benford's law, and it is often used to detect tax cheats, accounting fraud, and the like.  &lt;/p&gt;
-&lt;p&gt;Illustrate Benford's law with a simulation of randomly chosen U.S. incomes.  You should assume that income follows either a lognormal or an exponential distribution (both will work)  Show the resulting distribution of digits with an appropriate data visualization.  &lt;/p&gt;
-&lt;p&gt;&lt;em&gt;hint&lt;/em&gt;: You'll have to tweak the scale on either distribution in order to get it to an appropriate magnitude that represents typical U.S. incomes. Experiment!&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;bonus&lt;/em&gt; For more on Benford's law, see &lt;a href="https://www.forbes.com/sites/danielfisher/2014/05/30/the-simple-mathematical-law-that-financial-fraudsters-cant-beat/#53798c8e4612"&gt;this Forbes article&lt;/a&gt; and &lt;a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0010541"&gt;this academic article paper reporting a simulation study of different distributions&lt;/a&gt;.  If you interview for any job involving detecting financial fraud (IRS, SEC, etc.), you can probably make yourself look awesome by knowing about this. &lt;/p&gt;
-&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-    var align = "left",
-        indent = "0em",
-        linebreak = "false";
-
-    if (false) {
-        align = (screen.width &lt; 768) ? "left" : align;
-        indent = (screen.width &lt; 768) ? "0em" : indent;
-        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
-    }
-
-    var mathjaxscript = document.createElement('script');
-    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-    mathjaxscript.type = 'text/javascript';
-    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
-    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
-        "MathJax.Hub.Config({" +
-        "    config: ['MMLorHTML.js']," +
-        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
-        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
-        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-        "    displayAlign: '"+ align +"'," +
-        "    displayIndent: '"+ indent +"'," +
-        "    showMathMenu: true," +
-        "    messageStyle: 'normal'," +
-        "    tex2jax: { " +
-        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
-        "        displayMath: [ ['$$','$$'] ]," +
-        "        processEscapes: true," +
-        "        preview: 'TeX'," +
-        "    }, " +
-        "    'HTML-CSS': { " +
-        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'blue ! important'} }," +
-        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
-        "    }, " +
-        "}); " +
-        "if ('Typewriter' !== 'default') {" +
-            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_Typewriter');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_Typewriter-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_Typewriter-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_Typewriter-italic');" +
-            "});" +
-            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_Typewriter');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_Typewriter-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_Typewriter-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_Typewriter-italic');" +
-            "});" +
-        "}";
-    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
-}
-&lt;/script&gt;</content><category term="psets"></category></entry><entry><title>Problem Set 1</title><link href="https://sociologicalgobbledygook.com/problem-set-1.html" rel="alternate"></link><published>2018-01-16T00:00:00-06:00</published><updated>2018-01-16T00:00:00-06:00</updated><author><name>Paul Gowder</name></author><id>tag:sociologicalgobbledygook.com,2018-01-16:/problem-set-1.html</id><summary type="html">&lt;p&gt;This problem set is worth 17.5% of the grade in this course. It is due on Friday, February 1, at 5pm, via a dropbox in ICON that I shall set up for the purpose. &lt;/p&gt;
-&lt;p&gt;There are three problems on this set, one relatively small/easy one worth 20 points …&lt;/p&gt;</summary><content type="html">&lt;p&gt;This problem set is worth 17.5% of the grade in this course. It is due on Friday, February 1, at 5pm, via a dropbox in ICON that I shall set up for the purpose. &lt;/p&gt;
-&lt;p&gt;There are three problems on this set, one relatively small/easy one worth 20 points, and two large/difficult ones worth 40 points each; the large problems also contain alternative versions that can be done for half credit.  Subsequent problem sets will probably have more problems in them. &lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;How to turn in this problem set&lt;/strong&gt;: each of the problems asks you to write a single Python function which carries out a designated operation.  You should include working code for each of these functions in a single Jupyter Notebook file, entitled &lt;code&gt;lastname_ps1.ipynb&lt;/code&gt; (obviously with your last name), which you will turn in to the dropbox on ICON.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;For each of the problems, you need not package all of your code in a single function. For example, you may write helper functions, import libraries outside of your function, etc.  However, you must turn in a single Jupyter Notebook file with all the code that makes your functions work as well as the functions themselves.  I expect to be able to run all the cells in the notebook you turn in, and, at the end, have a working function for each problem, so that I can call those functions with appropriate input and get the correct result. In all cases, your functions should return &lt;code&gt;None&lt;/code&gt; if they receive inappropriate input. &lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;HONOR CODE&lt;/h2&gt;
-&lt;p&gt;Each student must agree to the following honor code; if you do not agree to this honor code, do not turn in this problem set and drop the course. &lt;/p&gt;
-&lt;p&gt;&lt;em&gt;I will not solicit, receive, or provide any unauthorized assistance on this or any problem set in this course. I understand that unauthorized assistance includes seeing the work of any other student, including code, calculations, data analysis, or answers to problems. Students are permitted to discuss their general strategies for solving problems with one another, help one another understand lesson material or documentation for Python libraries, and the like, or other conversation short of sharing actual answers, calculations, data analysis, or code. Students are not permitted to seek or receive assistance or advice whatsoever from any person not enrolled in this course---this prohibition includes asking for help on public online forums such as stackoverflow.com, although students are free to search such websites and learn from preexisting discussions in which they are not participants.&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;If I have any doubt about the permissibility of any kind of assistance, I will seek a ruling from the professor. I will report any violations of this honor code of which I am aware. Violating this honor code is grounds for immediate disenrollment from this course, or other sanctions as provided for by College of Law and University policy on academic dishonesty.&lt;/em&gt;&lt;/p&gt;
-&lt;h2&gt;Problem 1 (20 points): Rock, Paper, Scissors&lt;/h2&gt;
-&lt;p&gt;Write a function named &lt;code&gt;rps&lt;/code&gt; that plays rock, paper, scissors with a human.  It should first select randomly between rock, scissors, and paper, keeping that selection secret, then ask the user for input (no cheating and doing it the other way around!). After the user provides the appropriate input, it should decide who won or if there's a tie by the standard means (rock beats scissors beats paper beats rock) and reveal both its choice and the winner to the user.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Rules and definitions for this problem:&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;rps must accept input in uppercase, lowercase, and any weird mixed-up case the user types in, it must also accept input with any number of spaces before or after the word. For example, all of the following are acceptable input:&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;rock
-Rock
-ROCK
-            rock
-rOcK
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;If the user tries to enter anything other than rock, paper, or scissors, it should print the message &lt;code&gt;"Please enter rock, paper, or scissors."&lt;/code&gt; and then ask the user for input again.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;The response must be of the form &lt;code&gt;"I picked [rock/paper/scissors]. [You/I/Nobody] won!"&lt;/code&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Example correct input and output:&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;(arrow symbols designate things the computer prints out)&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;rps()
-# computer picks rock in the background
--&amp;gt; Pick rock, paper or scissors!
-# User types in &amp;quot;rocK    &amp;quot;
--&amp;gt; I picked rock. Nobody won!
-
-rps()
-# computer picks paper in the background
--&amp;gt; Pick rock, paper or scissors!
-# User types in &amp;quot;Scissors&amp;quot;
--&amp;gt; I picked paper. You won!
-
-rps()
-# computer picks rock in the background
--&amp;gt; Pick rock, paper or scissors!
-# User types in &amp;quot;sledgehammer&amp;quot;
--&amp;gt; Please enter rock, paper, or scissors.
-# User types in &amp;quot;hand grenade&amp;quot;
--&amp;gt; Please enter rock, paper, or scissors.
-# User types in &amp;quot;  scissors &amp;quot;
--&amp;gt; I picked rock. I won!
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h2&gt;Problem 2 (40 points): Date Calculator&lt;/h2&gt;
-&lt;p&gt;Rule 6 of the Federal Rules of Civil Procedure specifies a procedure for calculating the various dates (like the date to file a reply to a complaint) under the rules. Reduce that procedure to code. &lt;/p&gt;
-&lt;p&gt;Specifically, write a function, named &lt;code&gt;calculate_days&lt;/code&gt;, that takes two parameters: &lt;code&gt;num_days&lt;/code&gt; which is the number of days to count, and &lt;code&gt;start_date&lt;/code&gt; which is the date to begin counting from (for example, the date from which a complaint is served, triggering the clock for a reply). It should return the correct due date under FRCP 6. &lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Rules and definitions for this problem:&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;code&gt;start_date&lt;/code&gt; should have a default value of the current date when the script is run, in the time zone of the computer on which it is run. I should, in other words, be able to call &lt;code&gt;calculate_days(10)&lt;/code&gt; and get a FRCP 6-compliant date ten days from the date on which I call the function.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Dates should be passed into the function as strings in the form MM-DD-YYYY, for example, &lt;code&gt;"12-27-2017"&lt;/code&gt;.  It should output dates as strings in plain English in a form like &lt;code&gt;"Tue, January 02, 2018"&lt;/code&gt;. &lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Your calculation needs to take into account weekends and federal holidays that have a fixed date (New Years, Christmas, Veterans Day, and Independence day). It does not need to take into account holidays that have a weird date like "the fourth Monday in March" or whatever (e.g. Memorial Day, Thanksgiving). Also, it doesn't need to take into account "observed" holidays, for example, federal workers getting Monday off if Veterans Day happens to fall on a Sunday. &lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;However, you can receive five bonus points for correctly handling floating holidays like Memorial Day, and another 5 bonus points for correctly handling holidays where the statute says that if it falls on a Sunday it's observed on a Monday/if it falls on a Saturday, it's observed on a Sunday.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;em&gt;Hint:&lt;/em&gt; look into the built-in Python library &lt;code&gt;datetime&lt;/code&gt;. There are lots of tutorials about how to use it.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Example correct input and output:&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;calculate_days(3, "01-16-2019")&lt;/code&gt; should return &lt;code&gt;Mon, January 21, 2019&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;calculate_days(19, "06-15-2019")&lt;/code&gt; should return &lt;code&gt;Fri, July 05, 2019&lt;/code&gt;&lt;/p&gt;
-&lt;h3&gt;Half credit version of problem 2&lt;/h3&gt;
-&lt;p&gt;You may write a version of &lt;code&gt;calculate_days&lt;/code&gt; that does not take into account weekends and holidays for half credit.  The half credit version also does not need to provide output in precisely the format specified above, although it should still output a string that is recognizably a date and is comprehensible to an ordinary lawyer. &lt;/p&gt;
-&lt;h2&gt;Problem 3 (40 points): Cite Finder&lt;/h2&gt;
-&lt;p&gt;Write a function, named &lt;code&gt;cite_finder&lt;/code&gt;, that takes one parameter, &lt;code&gt;case&lt;/code&gt;, a string with a citation to an Illinois Supreme Court case, and returns the following: &lt;/p&gt;
-&lt;p&gt;A.  &lt;code&gt;None&lt;/code&gt;, if the citation does not correspond to an actual case.&lt;/p&gt;
-&lt;p&gt;B. An empty list, if the citation corresponds to an actual case, but the text of that case does not include any citations to the U.S. Supreme Court.&lt;/p&gt;
-&lt;p&gt;C.  A Python &lt;code&gt;list&lt;/code&gt; of unique U.S. Supreme Court citations that appear in the text of the case, if the citation corresponds to an actual case and the case contains any U.S. Supreme Court citation.  &lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Rules and definitions for this problem:&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;"Unique" means a citation to a specific case from a specific reporter. &lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;"Citation to an Illinois Supreme Court case" means a string reflecting a citation to the official reporter of the Illinois Supreme Court, in the form &lt;code&gt;12 Ill. 345&lt;/code&gt; or &lt;code&gt;12 Ill.2d 345&lt;/code&gt;. &lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;"U.S. Supreme Court citation" means any full citation (not supra, id, etc.) from the official U.S. Supreme Court reporter as abbreviated &lt;code&gt;U.S.&lt;/code&gt;. Party names, years, and page numbers need not be included. Archaic citations (like to Cranch), S.Ct., and L.Ed. Citations should not be included. Subsequent cites/pin cites to a case of the form &lt;code&gt;123 U.S. at 456&lt;/code&gt; should not be included.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;"Text" of a case includes all opinions (majority, concurrence, dissent, etc.) but does not include syllabus or any other content. &lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Your function must use the &lt;a href="https://case.law"&gt;Caselaw Access Project (case.law) API&lt;/a&gt;. &lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;The list must be sorted using Python’s built-in list sorting functionality with default options.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Each citation must appear only once.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Example correct input and output:&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;code&gt;cite_finder("231 Ill.2d 474")&lt;/code&gt; should return &lt;code&gt;['387 U.S. 136', '419 U.S. 102', '424 U.S. 1', '429 U.S. 252', '508 U.S. 520', '509 U.S. 43']&lt;/code&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;code&gt;cite_finder("231 Ill.2d 475")&lt;/code&gt; should return &lt;code&gt;None&lt;/code&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;code&gt;cite_finder("215 Ill.2d 219")&lt;/code&gt; should return &lt;code&gt;['339 U.S. 594', '387 U.S. 136', '467 U.S. 837', '538 U.S. 803']&lt;/code&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Half credit version of problem 3:&lt;/h3&gt;
-&lt;p&gt;You may get half credit on this problem by writing a function, called &lt;code&gt;justice_finder&lt;/code&gt;, which takes an Illinois Supreme Court citation as defined above and returns a list of every justice who wrote an opinion. This must also use the Caselaw Access Project API.&lt;/p&gt;
-&lt;p&gt;Example correct input and output for half-credit version: &lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;cite_finder("231 Ill.2d 474")&lt;/code&gt; should return &lt;code&gt;['JUSTICE THOMAS', 'JUSTICE FREEMAN,']&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><category term="psets"></category></entry></feed>
+</content><category term="psets"></category></entry></feed>
