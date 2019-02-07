@@ -21,1545 +21,34 @@
 
             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="/object-oriented-programming.html">Object-Oriented Programming</a></h1>
+                    <h1 class="entry-title"><a href="/post-week-1-notes.html">Post-Week 1 Notes</a></h1>
 <footer class="post-info">
-        <abbr class="published" title="2019-01-18T00:00:00-06:00">
-                Published: Fri 18 January 2019
+        <abbr class="published" title="2018-01-15T00:00:00-06:00">
+                Published: Mon 15 January 2018
         </abbr>
 
         <address class="vcard author">
                 By                         <a class="url fn" href="/author/paul-gowder.html">Paul Gowder</a>
         </address>
 <p>In <a href="/category/lessons.html">Lessons</a>.</p>
-<p>tags: <a href="/tag/python.html">python</a> <a href="/tag/programming.html">programming</a> <a href="/tag/week3.html">week3</a> <a href="/tag/object-oriented.html">object-oriented</a> </p>
-</footer><!-- /.post-info --><style type="text/css">/*!
-*
-* IPython notebook
-*
-*/
-/* CSS font colors for translated ANSI escape sequences */
-/* The color values are a mix of
-   http://www.xcolors.net/dl/baskerville-ivorylight and
-   http://www.xcolors.net/dl/euphrasia */
-.ansi-black-fg {
-  color: #3E424D;
-}
-.ansi-black-bg {
-  background-color: #3E424D;
-}
-.ansi-black-intense-fg {
-  color: #282C36;
-}
-.ansi-black-intense-bg {
-  background-color: #282C36;
-}
-.ansi-red-fg {
-  color: #E75C58;
-}
-.ansi-red-bg {
-  background-color: #E75C58;
-}
-.ansi-red-intense-fg {
-  color: #B22B31;
-}
-.ansi-red-intense-bg {
-  background-color: #B22B31;
-}
-.ansi-green-fg {
-  color: #00A250;
-}
-.ansi-green-bg {
-  background-color: #00A250;
-}
-.ansi-green-intense-fg {
-  color: #007427;
-}
-.ansi-green-intense-bg {
-  background-color: #007427;
-}
-.ansi-yellow-fg {
-  color: #DDB62B;
-}
-.ansi-yellow-bg {
-  background-color: #DDB62B;
-}
-.ansi-yellow-intense-fg {
-  color: #B27D12;
-}
-.ansi-yellow-intense-bg {
-  background-color: #B27D12;
-}
-.ansi-blue-fg {
-  color: #208FFB;
-}
-.ansi-blue-bg {
-  background-color: #208FFB;
-}
-.ansi-blue-intense-fg {
-  color: #0065CA;
-}
-.ansi-blue-intense-bg {
-  background-color: #0065CA;
-}
-.ansi-magenta-fg {
-  color: #D160C4;
-}
-.ansi-magenta-bg {
-  background-color: #D160C4;
-}
-.ansi-magenta-intense-fg {
-  color: #A03196;
-}
-.ansi-magenta-intense-bg {
-  background-color: #A03196;
-}
-.ansi-cyan-fg {
-  color: #60C6C8;
-}
-.ansi-cyan-bg {
-  background-color: #60C6C8;
-}
-.ansi-cyan-intense-fg {
-  color: #258F8F;
-}
-.ansi-cyan-intense-bg {
-  background-color: #258F8F;
-}
-.ansi-white-fg {
-  color: #C5C1B4;
-}
-.ansi-white-bg {
-  background-color: #C5C1B4;
-}
-.ansi-white-intense-fg {
-  color: #A1A6B2;
-}
-.ansi-white-intense-bg {
-  background-color: #A1A6B2;
-}
-.ansi-default-inverse-fg {
-  color: #FFFFFF;
-}
-.ansi-default-inverse-bg {
-  background-color: #000000;
-}
-.ansi-bold {
-  font-weight: bold;
-}
-.ansi-underline {
-  text-decoration: underline;
-}
-/* The following styles are deprecated an will be removed in a future version */
-.ansibold {
-  font-weight: bold;
-}
-.ansi-inverse {
-  outline: 0.5px dotted;
-}
-/* use dark versions for foreground, to improve visibility */
-.ansiblack {
-  color: black;
-}
-.ansired {
-  color: darkred;
-}
-.ansigreen {
-  color: darkgreen;
-}
-.ansiyellow {
-  color: #c4a000;
-}
-.ansiblue {
-  color: darkblue;
-}
-.ansipurple {
-  color: darkviolet;
-}
-.ansicyan {
-  color: steelblue;
-}
-.ansigray {
-  color: gray;
-}
-/* and light for background, for the same reason */
-.ansibgblack {
-  background-color: black;
-}
-.ansibgred {
-  background-color: red;
-}
-.ansibggreen {
-  background-color: green;
-}
-.ansibgyellow {
-  background-color: yellow;
-}
-.ansibgblue {
-  background-color: blue;
-}
-.ansibgpurple {
-  background-color: magenta;
-}
-.ansibgcyan {
-  background-color: cyan;
-}
-.ansibggray {
-  background-color: gray;
-}
-div.cell {
-  /* Old browsers */
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-box-align: stretch;
-  display: -moz-box;
-  -moz-box-orient: vertical;
-  -moz-box-align: stretch;
-  display: box;
-  box-orient: vertical;
-  box-align: stretch;
-  /* Modern browsers */
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  border-radius: 2px;
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  border-width: 1px;
-  border-style: solid;
-  border-color: transparent;
-  width: 100%;
-  padding: 5px;
-  /* This acts as a spacer between cells, that is outside the border */
-  margin: 0px;
-  outline: none;
-  position: relative;
-  overflow: visible;
-}
-div.cell:before {
-  position: absolute;
-  display: block;
-  top: -1px;
-  left: -1px;
-  width: 5px;
-  height: calc(100% +  2px);
-  content: '';
-  background: transparent;
-}
-div.cell.jupyter-soft-selected {
-  border-left-color: #E3F2FD;
-  border-left-width: 1px;
-  padding-left: 5px;
-  border-right-color: #E3F2FD;
-  border-right-width: 1px;
-  background: #E3F2FD;
-}
-@media print {
-  div.cell.jupyter-soft-selected {
-    border-color: transparent;
-  }
-}
-div.cell.selected,
-div.cell.selected.jupyter-soft-selected {
-  border-color: #ababab;
-}
-div.cell.selected:before,
-div.cell.selected.jupyter-soft-selected:before {
-  position: absolute;
-  display: block;
-  top: -1px;
-  left: -1px;
-  width: 5px;
-  height: calc(100% +  2px);
-  content: '';
-  background: #42A5F5;
-}
-@media print {
-  div.cell.selected,
-  div.cell.selected.jupyter-soft-selected {
-    border-color: transparent;
-  }
-}
-.edit_mode div.cell.selected {
-  border-color: #66BB6A;
-}
-.edit_mode div.cell.selected:before {
-  position: absolute;
-  display: block;
-  top: -1px;
-  left: -1px;
-  width: 5px;
-  height: calc(100% +  2px);
-  content: '';
-  background: #66BB6A;
-}
-@media print {
-  .edit_mode div.cell.selected {
-    border-color: transparent;
-  }
-}
-.prompt {
-  /* This needs to be wide enough for 3 digit prompt numbers: In[100]: */
-  min-width: 14ex;
-  /* This padding is tuned to match the padding on the CodeMirror editor. */
-  padding: 0.4em;
-  margin: 0px;
-  font-family: monospace;
-  text-align: right;
-  /* This has to match that of the the CodeMirror class line-height below */
-  line-height: 1.21429em;
-  /* Don't highlight prompt number selection */
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  /* Use default cursor */
-  cursor: default;
-}
-@media (max-width: 540px) {
-  .prompt {
-    text-align: left;
-  }
-}
-div.inner_cell {
-  min-width: 0;
-  /* Old browsers */
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-box-align: stretch;
-  display: -moz-box;
-  -moz-box-orient: vertical;
-  -moz-box-align: stretch;
-  display: box;
-  box-orient: vertical;
-  box-align: stretch;
-  /* Modern browsers */
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  /* Old browsers */
-  -webkit-box-flex: 1;
-  -moz-box-flex: 1;
-  box-flex: 1;
-  /* Modern browsers */
-  flex: 1;
-}
-/* input_area and input_prompt must match in top border and margin for alignment */
-div.input_area {
-  border: 1px solid #cfcfcf;
-  border-radius: 2px;
-  background: #f7f7f7;
-  line-height: 1.21429em;
-}
-/* This is needed so that empty prompt areas can collapse to zero height when there
-   is no content in the output_subarea and the prompt. The main purpose of this is
-   to make sure that empty JavaScript output_subareas have no height. */
-div.prompt:empty {
-  padding-top: 0;
-  padding-bottom: 0;
-}
-div.unrecognized_cell {
-  padding: 5px 5px 5px 0px;
-  /* Old browsers */
-  display: -webkit-box;
-  -webkit-box-orient: horizontal;
-  -webkit-box-align: stretch;
-  display: -moz-box;
-  -moz-box-orient: horizontal;
-  -moz-box-align: stretch;
-  display: box;
-  box-orient: horizontal;
-  box-align: stretch;
-  /* Modern browsers */
-  display: flex;
-  flex-direction: row;
-  align-items: stretch;
-}
-div.unrecognized_cell .inner_cell {
-  border-radius: 2px;
-  padding: 5px;
-  font-weight: bold;
-  color: red;
-  border: 1px solid #cfcfcf;
-  background: #eaeaea;
-}
-div.unrecognized_cell .inner_cell a {
-  color: inherit;
-  text-decoration: none;
-}
-div.unrecognized_cell .inner_cell a:hover {
-  color: inherit;
-  text-decoration: none;
-}
-@media (max-width: 540px) {
-  div.unrecognized_cell > div.prompt {
-    display: none;
-  }
-}
-div.code_cell {
-  /* avoid page breaking on code cells when printing */
-}
-@media print {
-  div.code_cell {
-    page-break-inside: avoid;
-  }
-}
-/* any special styling for code cells that are currently running goes here */
-div.input {
-  page-break-inside: avoid;
-  /* Old browsers */
-  display: -webkit-box;
-  -webkit-box-orient: horizontal;
-  -webkit-box-align: stretch;
-  display: -moz-box;
-  -moz-box-orient: horizontal;
-  -moz-box-align: stretch;
-  display: box;
-  box-orient: horizontal;
-  box-align: stretch;
-  /* Modern browsers */
-  display: flex;
-  flex-direction: row;
-  align-items: stretch;
-}
-@media (max-width: 540px) {
-  div.input {
-    /* Old browsers */
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-box-align: stretch;
-    display: -moz-box;
-    -moz-box-orient: vertical;
-    -moz-box-align: stretch;
-    display: box;
-    box-orient: vertical;
-    box-align: stretch;
-    /* Modern browsers */
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-  }
-}
-/* input_area and input_prompt must match in top border and margin for alignment */
-div.input_prompt {
-  color: #303F9F;
-  border-top: 1px solid transparent;
-}
-div.input_area > div.highlight {
-  margin: 0.4em;
-  border: none;
-  padding: 0px;
-  background-color: transparent;
-}
-div.input_area > div.highlight > pre {
-  margin: 0px;
-  border: none;
-  padding: 0px;
-  background-color: transparent;
-}
-/* The following gets added to the <head> if it is detected that the user has a
- * monospace font with inconsistent normal/bold/italic height.  See
- * notebookmain.js.  Such fonts will have keywords vertically offset with
- * respect to the rest of the text.  The user should select a better font.
- * See: https://github.com/ipython/ipython/issues/1503
- *
- * .CodeMirror span {
- *      vertical-align: bottom;
- * }
- */
-.CodeMirror {
-  line-height: 1.21429em;
-  /* Changed from 1em to our global default */
-  font-size: 14px;
-  height: auto;
-  /* Changed to auto to autogrow */
-  background: none;
-  /* Changed from white to allow our bg to show through */
-}
-.CodeMirror-scroll {
-  /*  The CodeMirror docs are a bit fuzzy on if overflow-y should be hidden or visible.*/
-  /*  We have found that if it is visible, vertical scrollbars appear with font size changes.*/
-  overflow-y: hidden;
-  overflow-x: auto;
-}
-.CodeMirror-lines {
-  /* In CM2, this used to be 0.4em, but in CM3 it went to 4px. We need the em value because */
-  /* we have set a different line-height and want this to scale with that. */
-  /* Note that this should set vertical padding only, since CodeMirror assumes
-       that horizontal padding will be set on CodeMirror pre */
-  padding: 0.4em 0;
-}
-.CodeMirror-linenumber {
-  padding: 0 8px 0 4px;
-}
-.CodeMirror-gutters {
-  border-bottom-left-radius: 2px;
-  border-top-left-radius: 2px;
-}
-.CodeMirror pre {
-  /* In CM3 this went to 4px from 0 in CM2. This sets horizontal padding only,
-    use .CodeMirror-lines for vertical */
-  padding: 0 0.4em;
-  border: 0;
-  border-radius: 0;
-}
-.CodeMirror-cursor {
-  border-left: 1.4px solid black;
-}
-@media screen and (min-width: 2138px) and (max-width: 4319px) {
-  .CodeMirror-cursor {
-    border-left: 2px solid black;
-  }
-}
-@media screen and (min-width: 4320px) {
-  .CodeMirror-cursor {
-    border-left: 4px solid black;
-  }
-}
-/*
-
-Original style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiacs.Org>
-Adapted from GitHub theme
-
-*/
-.highlight-base {
-  color: #000;
-}
-.highlight-variable {
-  color: #000;
-}
-.highlight-variable-2 {
-  color: #1a1a1a;
-}
-.highlight-variable-3 {
-  color: #333333;
-}
-.highlight-string {
-  color: #BA2121;
-}
-.highlight-comment {
-  color: #408080;
-  font-style: italic;
-}
-.highlight-number {
-  color: #080;
-}
-.highlight-atom {
-  color: #88F;
-}
-.highlight-keyword {
-  color: #008000;
-  font-weight: bold;
-}
-.highlight-builtin {
-  color: #008000;
-}
-.highlight-error {
-  color: #f00;
-}
-.highlight-operator {
-  color: #AA22FF;
-  font-weight: bold;
-}
-.highlight-meta {
-  color: #AA22FF;
-}
-/* previously not defined, copying from default codemirror */
-.highlight-def {
-  color: #00f;
-}
-.highlight-string-2 {
-  color: #f50;
-}
-.highlight-qualifier {
-  color: #555;
-}
-.highlight-bracket {
-  color: #997;
-}
-.highlight-tag {
-  color: #170;
-}
-.highlight-attribute {
-  color: #00c;
-}
-.highlight-header {
-  color: blue;
-}
-.highlight-quote {
-  color: #090;
-}
-.highlight-link {
-  color: #00c;
-}
-/* apply the same style to codemirror */
-.cm-s-ipython span.cm-keyword {
-  color: #008000;
-  font-weight: bold;
-}
-.cm-s-ipython span.cm-atom {
-  color: #88F;
-}
-.cm-s-ipython span.cm-number {
-  color: #080;
-}
-.cm-s-ipython span.cm-def {
-  color: #00f;
-}
-.cm-s-ipython span.cm-variable {
-  color: #000;
-}
-.cm-s-ipython span.cm-operator {
-  color: #AA22FF;
-  font-weight: bold;
-}
-.cm-s-ipython span.cm-variable-2 {
-  color: #1a1a1a;
-}
-.cm-s-ipython span.cm-variable-3 {
-  color: #333333;
-}
-.cm-s-ipython span.cm-comment {
-  color: #408080;
-  font-style: italic;
-}
-.cm-s-ipython span.cm-string {
-  color: #BA2121;
-}
-.cm-s-ipython span.cm-string-2 {
-  color: #f50;
-}
-.cm-s-ipython span.cm-meta {
-  color: #AA22FF;
-}
-.cm-s-ipython span.cm-qualifier {
-  color: #555;
-}
-.cm-s-ipython span.cm-builtin {
-  color: #008000;
-}
-.cm-s-ipython span.cm-bracket {
-  color: #997;
-}
-.cm-s-ipython span.cm-tag {
-  color: #170;
-}
-.cm-s-ipython span.cm-attribute {
-  color: #00c;
-}
-.cm-s-ipython span.cm-header {
-  color: blue;
-}
-.cm-s-ipython span.cm-quote {
-  color: #090;
-}
-.cm-s-ipython span.cm-link {
-  color: #00c;
-}
-.cm-s-ipython span.cm-error {
-  color: #f00;
-}
-.cm-s-ipython span.cm-tab {
-  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAMCAYAAAAkuj5RAAAAAXNSR0IArs4c6QAAAGFJREFUSMft1LsRQFAQheHPowAKoACx3IgEKtaEHujDjORSgWTH/ZOdnZOcM/sgk/kFFWY0qV8foQwS4MKBCS3qR6ixBJvElOobYAtivseIE120FaowJPN75GMu8j/LfMwNjh4HUpwg4LUAAAAASUVORK5CYII=);
-  background-position: right;
-  background-repeat: no-repeat;
-}
-div.output_wrapper {
-  /* this position must be relative to enable descendents to be absolute within it */
-  position: relative;
-  /* Old browsers */
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-box-align: stretch;
-  display: -moz-box;
-  -moz-box-orient: vertical;
-  -moz-box-align: stretch;
-  display: box;
-  box-orient: vertical;
-  box-align: stretch;
-  /* Modern browsers */
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  z-index: 1;
-}
-/* class for the output area when it should be height-limited */
-div.output_scroll {
-  /* ideally, this would be max-height, but FF barfs all over that */
-  height: 24em;
-  /* FF needs this *and the wrapper* to specify full width, or it will shrinkwrap */
-  width: 100%;
-  overflow: auto;
-  border-radius: 2px;
-  -webkit-box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.8);
-  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.8);
-  display: block;
-}
-/* output div while it is collapsed */
-div.output_collapsed {
-  margin: 0px;
-  padding: 0px;
-  /* Old browsers */
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-box-align: stretch;
-  display: -moz-box;
-  -moz-box-orient: vertical;
-  -moz-box-align: stretch;
-  display: box;
-  box-orient: vertical;
-  box-align: stretch;
-  /* Modern browsers */
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-}
-div.out_prompt_overlay {
-  height: 100%;
-  padding: 0px 0.4em;
-  position: absolute;
-  border-radius: 2px;
-}
-div.out_prompt_overlay:hover {
-  /* use inner shadow to get border that is computed the same on WebKit/FF */
-  -webkit-box-shadow: inset 0 0 1px #000;
-  box-shadow: inset 0 0 1px #000;
-  background: rgba(240, 240, 240, 0.5);
-}
-div.output_prompt {
-  color: #D84315;
-}
-/* This class is the outer container of all output sections. */
-div.output_area {
-  padding: 0px;
-  page-break-inside: avoid;
-  /* Old browsers */
-  display: -webkit-box;
-  -webkit-box-orient: horizontal;
-  -webkit-box-align: stretch;
-  display: -moz-box;
-  -moz-box-orient: horizontal;
-  -moz-box-align: stretch;
-  display: box;
-  box-orient: horizontal;
-  box-align: stretch;
-  /* Modern browsers */
-  display: flex;
-  flex-direction: row;
-  align-items: stretch;
-}
-div.output_area .MathJax_Display {
-  text-align: left !important;
-}
-div.output_area 
-div.output_area 
-div.output_area img,
-div.output_area svg {
-  max-width: 100%;
-  height: auto;
-}
-div.output_area img.unconfined,
-div.output_area svg.unconfined {
-  max-width: none;
-}
-div.output_area .mglyph > img {
-  max-width: none;
-}
-/* This is needed to protect the pre formating from global settings such
-   as that of bootstrap */
-.output {
-  /* Old browsers */
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-box-align: stretch;
-  display: -moz-box;
-  -moz-box-orient: vertical;
-  -moz-box-align: stretch;
-  display: box;
-  box-orient: vertical;
-  box-align: stretch;
-  /* Modern browsers */
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-}
-@media (max-width: 540px) {
-  div.output_area {
-    /* Old browsers */
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-box-align: stretch;
-    display: -moz-box;
-    -moz-box-orient: vertical;
-    -moz-box-align: stretch;
-    display: box;
-    box-orient: vertical;
-    box-align: stretch;
-    /* Modern browsers */
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-  }
-}
-div.output_area pre {
-  margin: 0;
-  padding: 1px 0 1px 0;
-  border: 0;
-  vertical-align: baseline;
-  color: black;
-  background-color: transparent;
-  border-radius: 0;
-}
-/* This class is for the output subarea inside the output_area and after
-   the prompt div. */
-div.output_subarea {
-  overflow-x: auto;
-  padding: 0.4em;
-  /* Old browsers */
-  -webkit-box-flex: 1;
-  -moz-box-flex: 1;
-  box-flex: 1;
-  /* Modern browsers */
-  flex: 1;
-  max-width: calc(100% - 14ex);
-}
-div.output_scroll div.output_subarea {
-  overflow-x: visible;
-}
-/* The rest of the output_* classes are for special styling of the different
-   output types */
-/* all text output has this class: */
-div.output_text {
-  text-align: left;
-  color: #000;
-  /* This has to match that of the the CodeMirror class line-height below */
-  line-height: 1.21429em;
-}
-/* stdout/stderr are 'text' as well as 'stream', but execute_result/error are *not* streams */
-div.output_stderr {
-  background: #fdd;
-  /* very light red background for stderr */
-}
-div.output_latex {
-  text-align: left;
-}
-/* Empty output_javascript divs should have no height */
-div.output_javascript:empty {
-  padding: 0;
-}
-.js-error {
-  color: darkred;
-}
-/* raw_input styles */
-div.raw_input_container {
-  line-height: 1.21429em;
-  padding-top: 5px;
-}
-pre.raw_input_prompt {
-  /* nothing needed here. */
-}
-input.raw_input {
-  font-family: monospace;
-  font-size: inherit;
-  color: inherit;
-  width: auto;
-  /* make sure input baseline aligns with prompt */
-  vertical-align: baseline;
-  /* padding + margin = 0.5em between prompt and cursor */
-  padding: 0em 0.25em;
-  margin: 0em 0.25em;
-}
-input.raw_input:focus {
-  box-shadow: none;
-}
-p.p-space {
-  margin-bottom: 10px;
-}
-div.output_unrecognized {
-  padding: 5px;
-  font-weight: bold;
-  color: red;
-}
-div.output_unrecognized a {
-  color: inherit;
-  text-decoration: none;
-}
-div.output_unrecognized a:hover {
-  color: inherit;
-  text-decoration: none;
-}
-.rendered_html {
-  color: #000;
-  /* any extras will just be numbers: */
-}
-
-
-
-.rendered_html :link {
-  text-decoration: underline;
-}
-.rendered_html :visited {
-  text-decoration: underline;
-}
-
-
-
-
-
-
-.rendered_html h1:first-child {
-  margin-top: 0.538em;
-}
-.rendered_html h2:first-child {
-  margin-top: 0.636em;
-}
-.rendered_html h3:first-child {
-  margin-top: 0.777em;
-}
-.rendered_html h4:first-child {
-  margin-top: 1em;
-}
-.rendered_html h5:first-child {
-  margin-top: 1em;
-}
-.rendered_html h6:first-child {
-  margin-top: 1em;
-}
-.rendered_html ul:not(.list-inline),
-.rendered_html ol:not(.list-inline) {
-  padding-left: 2em;
-}
-
-
-
-
-
-
-
-
-.rendered_html * + ul {
-  margin-top: 1em;
-}
-.rendered_html * + ol {
-  margin-top: 1em;
-}
-
-
-
-
-
-.rendered_html pre,
-
-
-
-
-.rendered_html tr,
-.rendered_html th,
-
-
-.rendered_html tbody tr:nth-child(odd) {
-  background: #f5f5f5;
-}
-.rendered_html tbody tr:hover {
-  background: rgba(66, 165, 245, 0.2);
-}
-.rendered_html * + table {
-  margin-top: 1em;
-}
-
-.rendered_html * + p {
-  margin-top: 1em;
-}
-
-.rendered_html * + img {
-  margin-top: 1em;
-}
-.rendered_html img,
-
-.rendered_html img.unconfined,
-
-
-.rendered_html * + .alert {
-  margin-top: 1em;
-}
-[dir="rtl"] 
-div.text_cell {
-  /* Old browsers */
-  display: -webkit-box;
-  -webkit-box-orient: horizontal;
-  -webkit-box-align: stretch;
-  display: -moz-box;
-  -moz-box-orient: horizontal;
-  -moz-box-align: stretch;
-  display: box;
-  box-orient: horizontal;
-  box-align: stretch;
-  /* Modern browsers */
-  display: flex;
-  flex-direction: row;
-  align-items: stretch;
-}
-@media (max-width: 540px) {
-  div.text_cell > div.prompt {
-    display: none;
-  }
-}
-div.text_cell_render {
-  /*font-family: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;*/
-  outline: none;
-  resize: none;
-  width: inherit;
-  border-style: none;
-  padding: 0.5em 0.5em 0.5em 0.4em;
-  color: #000;
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-}
-a.anchor-link:link {
-  text-decoration: none;
-  padding: 0px 20px;
-  visibility: hidden;
-}
-h1:hover .anchor-link,
-h2:hover .anchor-link,
-h3:hover .anchor-link,
-h4:hover .anchor-link,
-h5:hover .anchor-link,
-h6:hover .anchor-link {
-  visibility: visible;
-}
-.text_cell.rendered .input_area {
-  display: none;
-}
-.text_cell.rendered 
-.text_cell.rendered .rendered_html tr,
-.text_cell.rendered .rendered_html th,
-.text_cell.rendered 
-.text_cell.unrendered .text_cell_render {
-  display: none;
-}
-.text_cell .dropzone .input_area {
-  border: 2px dashed #bababa;
-  margin: -1px;
-}
-.cm-header-1,
-.cm-header-2,
-.cm-header-3,
-.cm-header-4,
-.cm-header-5,
-.cm-header-6 {
-  font-weight: bold;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-.cm-header-1 {
-  font-size: 185.7%;
-}
-.cm-header-2 {
-  font-size: 157.1%;
-}
-.cm-header-3 {
-  font-size: 128.6%;
-}
-.cm-header-4 {
-  font-size: 110%;
-}
-.cm-header-5 {
-  font-size: 100%;
-  font-style: italic;
-}
-.cm-header-6 {
-  font-size: 100%;
-  font-style: italic;
-}
-</style>
-<style type="text/css">.highlight .hll { background-color: #ffffcc }
-.highlight  { background: #f8f8f8; }
-.highlight .c { color: #408080; font-style: italic } /* Comment */
-.highlight .err { border: 1px solid #FF0000 } /* Error */
-.highlight .k { color: #008000; font-weight: bold } /* Keyword */
-.highlight .o { color: #666666 } /* Operator */
-.highlight .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
-.highlight .cm { color: #408080; font-style: italic } /* Comment.Multiline */
-.highlight .cp { color: #BC7A00 } /* Comment.Preproc */
-.highlight .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
-.highlight .c1 { color: #408080; font-style: italic } /* Comment.Single */
-.highlight .cs { color: #408080; font-style: italic } /* Comment.Special */
-.highlight .gd { color: #A00000 } /* Generic.Deleted */
-.highlight .ge { font-style: italic } /* Generic.Emph */
-.highlight .gr { color: #FF0000 } /* Generic.Error */
-.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
-.highlight .gi { color: #00A000 } /* Generic.Inserted */
-.highlight .go { color: #888888 } /* Generic.Output */
-.highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
-.highlight .gs { font-weight: bold } /* Generic.Strong */
-.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
-.highlight .gt { color: #0044DD } /* Generic.Traceback */
-.highlight .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
-.highlight .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
-.highlight .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
-.highlight .kp { color: #008000 } /* Keyword.Pseudo */
-.highlight .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
-.highlight .kt { color: #B00040 } /* Keyword.Type */
-.highlight .m { color: #666666 } /* Literal.Number */
-.highlight .s { color: #BA2121 } /* Literal.String */
-.highlight .na { color: #7D9029 } /* Name.Attribute */
-.highlight .nb { color: #008000 } /* Name.Builtin */
-.highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
-.highlight .no { color: #880000 } /* Name.Constant */
-.highlight .nd { color: #AA22FF } /* Name.Decorator */
-.highlight .ni { color: #999999; font-weight: bold } /* Name.Entity */
-.highlight .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
-.highlight .nf { color: #0000FF } /* Name.Function */
-.highlight .nl { color: #A0A000 } /* Name.Label */
-.highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
-.highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
-.highlight .nv { color: #19177C } /* Name.Variable */
-.highlight .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
-.highlight .w { color: #bbbbbb } /* Text.Whitespace */
-.highlight .mb { color: #666666 } /* Literal.Number.Bin */
-.highlight .mf { color: #666666 } /* Literal.Number.Float */
-.highlight .mh { color: #666666 } /* Literal.Number.Hex */
-.highlight .mi { color: #666666 } /* Literal.Number.Integer */
-.highlight .mo { color: #666666 } /* Literal.Number.Oct */
-.highlight .sa { color: #BA2121 } /* Literal.String.Affix */
-.highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
-.highlight .sc { color: #BA2121 } /* Literal.String.Char */
-.highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
-.highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
-.highlight .s2 { color: #BA2121 } /* Literal.String.Double */
-.highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
-.highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
-.highlight .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
-.highlight .sx { color: #008000 } /* Literal.String.Other */
-.highlight .sr { color: #BB6688 } /* Literal.String.Regex */
-.highlight .s1 { color: #BA2121 } /* Literal.String.Single */
-.highlight .ss { color: #19177C } /* Literal.String.Symbol */
-.highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
-.highlight .fm { color: #0000FF } /* Name.Function.Magic */
-.highlight .vc { color: #19177C } /* Name.Variable.Class */
-.highlight .vg { color: #19177C } /* Name.Variable.Global */
-.highlight .vi { color: #19177C } /* Name.Variable.Instance */
-.highlight .vm { color: #19177C } /* Name.Variable.Magic */
-.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */</style>
-<style type="text/css">
-/* Temporary definitions which will become obsolete with Notebook release 5.0 */
-.ansi-black-fg { color: #3E424D; }
-.ansi-black-bg { background-color: #3E424D; }
-.ansi-black-intense-fg { color: #282C36; }
-.ansi-black-intense-bg { background-color: #282C36; }
-.ansi-red-fg { color: #E75C58; }
-.ansi-red-bg { background-color: #E75C58; }
-.ansi-red-intense-fg { color: #B22B31; }
-.ansi-red-intense-bg { background-color: #B22B31; }
-.ansi-green-fg { color: #00A250; }
-.ansi-green-bg { background-color: #00A250; }
-.ansi-green-intense-fg { color: #007427; }
-.ansi-green-intense-bg { background-color: #007427; }
-.ansi-yellow-fg { color: #DDB62B; }
-.ansi-yellow-bg { background-color: #DDB62B; }
-.ansi-yellow-intense-fg { color: #B27D12; }
-.ansi-yellow-intense-bg { background-color: #B27D12; }
-.ansi-blue-fg { color: #208FFB; }
-.ansi-blue-bg { background-color: #208FFB; }
-.ansi-blue-intense-fg { color: #0065CA; }
-.ansi-blue-intense-bg { background-color: #0065CA; }
-.ansi-magenta-fg { color: #D160C4; }
-.ansi-magenta-bg { background-color: #D160C4; }
-.ansi-magenta-intense-fg { color: #A03196; }
-.ansi-magenta-intense-bg { background-color: #A03196; }
-.ansi-cyan-fg { color: #60C6C8; }
-.ansi-cyan-bg { background-color: #60C6C8; }
-.ansi-cyan-intense-fg { color: #258F8F; }
-.ansi-cyan-intense-bg { background-color: #258F8F; }
-.ansi-white-fg { color: #C5C1B4; }
-.ansi-white-bg { background-color: #C5C1B4; }
-.ansi-white-intense-fg { color: #A1A6B2; }
-.ansi-white-intense-bg { background-color: #A1A6B2; }
-
-.ansi-bold { font-weight: bold; }
-</style><body>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Object-oriented programming</strong> (OOP) isn't all that special, it's just a particular style of programming that Python is particularly well designed for.  This is a short lesson, we won't cover the theory of OOP, or features you might hear about elsewhere like "inheritance"---see your reading in the P4E book for more.</p>
-<p>However, we have to say something about OOP in order to enable you to work with many Python libraries, which expect you to be able to instantiate objects and work with them.  So here's the short version.</p>
-<p>OOP is another kind of mental model for programming. It mostly is useful for organizing the abstractions in your code.  One of the key ideas is that groups of related data and functionality can be tied together in the form of objects.</p>
-<p>A <strong>class</strong> is an abstract description of a kind of object. A class declaration will say what kind of things an object of that sort can do.</p>
-<p>An <strong>instance</strong> is an actual object that you create and make use of in the computer's memory.</p>
-<p>Let's look at a trivial example of a class</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Dog</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">temperament</span><span class="o">=</span><span class="s2">&quot;normal&quot;</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">temperament</span> <span class="o">=</span> <span class="n">temperament</span>
-        
-    <span class="k">def</span> <span class="nf">bark</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">volume</span><span class="o">=</span><span class="s2">&quot;loud&quot;</span><span class="p">):</span>
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">temperament</span> <span class="o">==</span> <span class="s2">&quot;vicious&quot;</span><span class="p">:</span>
-            <span class="n">sound</span> <span class="o">=</span> <span class="s2">&quot;snarl!!!&quot;</span>
-        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">temperament</span> <span class="o">==</span> <span class="s2">&quot;timid&quot;</span><span class="p">:</span>
-            <span class="n">sound</span> <span class="o">=</span> <span class="s2">&quot;wimper?&quot;</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">sound</span> <span class="o">=</span> <span class="s2">&quot;woof.&quot;</span>
-        <span class="k">if</span> <span class="n">volume</span> <span class="o">==</span> <span class="s2">&quot;loud&quot;</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="n">sound</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="n">sound</span><span class="p">)</span>
-            
-    <span class="k">def</span> <span class="nf">meet_cat</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">temperament</span> <span class="o">=</span> <span class="s2">&quot;timid&quot;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">understanding</span> <span class="o">=</span> <span class="s2">&quot;inferior&quot;</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Here's what you need to know about this code.</p>
-<ol>
-<li><p>Functions belonging to a class are called <strong>methods</strong>.  You can tell that they belong to the class because they are indented under the class declaration in the first line.</p>
-</li>
-<li><p>Every method takes a special parameter to refer to the object on which it is called as the very first parameter.  Here, we're using <code>self</code> for that, which is the Python convention, but you could use anything else.  When you call these methods, you don't supply the value for the self parameter.  We'll see how to call them in a moment.</p>
-</li>
-<li><p>Every class has an <code>__init__</code> method.  The two underscores on either side of the name show you it's a special method (known as "magic methods" in Python slang... there are a number of those, but init is the most important).  This is the method that gets called when you <strong>initialize</strong> a class, that is, create an instance of that class.</p>
-</li>
-<li><p>All those references to <code>self.temperment</code> are creating (the first time something is assigned to it) and either mutating or examining an <strong>attribute</strong> (also called a property) of a particular instance.  Let's look at some examples of instances.</p>
-</li>
-</ol>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">goodboy</span> <span class="o">=</span> <span class="n">Dog</span><span class="p">()</span>
-<span class="n">doberman</span> <span class="o">=</span> <span class="n">Dog</span><span class="p">(</span><span class="s2">&quot;vicious&quot;</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>We've created two different instances of <code>Dog</code> and each of them has its own set of instance properties.  Let's prove that by calling the bark method.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">doberman</span><span class="o">.</span><span class="n">bark</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">goodboy</span><span class="o">.</span><span class="n">bark</span><span class="p">(</span><span class="s2">&quot;quiet&quot;</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Here are a few things you can observe from those examples:</p>
-<ol>
-<li><p>We instantiate a class by calling it as if it were a function.  We can pass parameters into its <code>__init__</code> method that way too.</p>
-</li>
-<li><p><code>doberman</code> and <code>goodboy</code> have different <code>temperament</code> properties, hence they make different sounds when we call their <code>bark()</code> methods.</p>
-</li>
-<li><p>We call a method on an instance by putting a period after the instance's name and before the method call.  We don't pass the instance into the call, but we do pass any other parameters (like <code>volume</code> here) that we want.</p>
-</li>
-<li><p>Instances are totally separate.  Nothing we do to <code>goodboy</code> affects <code>doberman</code> or vice versa.</p>
-</li>
-</ol>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>We can also modify existing instance attributes, and we can access them directly with the same dot notation.  Let's look at, then modify, doberman's attributes.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">doberman</span><span class="o">.</span><span class="n">temperament</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">doberman</span><span class="o">.</span><span class="n">meet_cat</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">doberman</span><span class="o">.</span><span class="n">temperament</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>timid
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">doberman</span><span class="o">.</span><span class="n">understanding</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>inferior
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">doberman</span><span class="o">.</span><span class="n">bark</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>WIMPER?
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">doberman</span><span class="o">.</span><span class="n">temperament</span> <span class="o">=</span> <span class="s2">&quot;vicious&quot;</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">doberman</span><span class="o">.</span><span class="n">bark</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>SNARL!!!
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">goodboy</span><span class="o">.</span><span class="n">bark</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>WOOF.
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>As I said, this is the bare minimum to understand what's going on when you see OOP code.  This will benefit you in the next lesson, where we'll look at some OOP code to run a simulation. It will also benefit you in interacting with Python libraries which often expect you to know how to instantiate an object, call methods on it, and access its properties.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><hr>
-<a href="/oop.pdf">Download this lesson in PDF</a></p>
+<p>tags: <a href="/tag/week2.html">week2</a> </p>
+</footer><!-- /.post-info --><p>Well, we've survived our first week of Sociological Gobbledygook (and one room change---which we're keeping, BTW).  We've learned the basic mechanics of programming, and, more importantly, we've worked on building a mental model for how talking to a computer works by completing a number of exercises.  </p>
+<p>For the in-class time in week 2, expect more of the same, lots of exercises---but now they're going to get a little bit more complicated.  I'll also be pushing out the reading for week 3 soon. </p>
+<p>By now, everyone should have a working Azure notebooks setup and a Github account; you should also have received an invitation e-mail to join DataCamp. I encourage you to take advantage of DataCamp beyond the stuff I've assigned: you have free access to all their lessons for the duration of the class period, but it usually costs $30/month, so milk it for all it's worth while you can. And let me know if there are any problems.</p>
+<p>When I add new lessons, we'll have to talk a little bit more about how git works to enable you to pull the changes into your local version of them in Azure notebooks; please remind me to talk about that in class if I haven't gotten instructions posted by the beginning of next week...</p>
+<p>Finally, a quick note: I've noticed a few people taking notes in the class, including snippets of code, in Microsoft Word.  Word is not a great choice for writing code, because it saves in a format that mucks around with the text encoding (and also might screw you up by using things like autocorrect), so there's a good chance that you won't just be able to run code saved in Word anywhere else.  I recommend using a professional-quality text editor ("text editor" is in opposition to "word processor," so also don't use Pages, WordPerfect, Google Docs, OpenOffice, etc.; text editors are also sometimes called "code editors.")</p>
+<p>Another reason to use a good text editor is that they all have packages that you can use to extend their functionality, for example to give them the power to take Python code files and highlight different elements (so, for example, strings are in a different color), auto-complete variable names to avoid typoes, and such.  Also, because they save in "plain text" format (you'll soon learn that there's really no such thing as plain text, but they save in as close as you need to plain text), you can use them to just create code files that you can send directly to a Python interpreter to run on your local machine. This is difficult to do in a word processor.</p>
+<p>Here are my suggestions, and some notes on each of them: </p>
+<ul>
+<li><a href="https://atom.io">Atom</a> is probably the best beginner-friendly free text editor. It's available for all major operating systems. The one downside is that (for programmer-laziness reasons that I'll explain below in case you're curious) it tends to be a big battery drain, so I wouldn't leave it running outside of class/without plugging in.</li>
+<li><a href="https://code.visualstudio.com">VS Code</a> is Microsoft's version of Atom---they're extremely similar (I suspect including similar battery drain problems, though, because of my visceral hatred of all things Microsoft I haven't used it for long enough to see myself), but some people prefer the one over the other. It's also totally cross-platform.</li>
+<li>For Mac users only, <a href="https://www.barebones.com/products/bbedit/">BBEdit</a> is an excellent text editor with a free and a paid version, where the free version works totally fine for any uses you'll need. There's also <a href="https://www.sublimetext.com">Sublime Text</a> which is actually by far the best Mac-specific editor (in my opinion), but is not free---it costs something like 70 bucks, although they will let you use it without paying so long as you're willing to put up with period annoying nag message pop-ups. Many people also use <a href="https://macromates.com">TextMate</a>, but I've never tried it.</li>
+<li>For Windows-specific applications, most people seem to recommend <a href="https://notepad-plus-plus.org">Notepad++</a> which is free. I've never use it (though I think it's installed on some of our university computers), but it's very popular, so it's probably good. Apparently there's also a Sublime Text for Windows (which I just disovered); if it's stable it's doubtless amazing. </li>
+<li>If you're using Linux, you probably already have a text editor you like; if not, talk to me or try <a href="https://wiki.gnome.org/Apps/Gedit">Gedit</a>. </li>
+</ul>
 <hr>
-</div>
-</div>
-</div>
- 
 
-</body>
-<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-    var mathjaxscript = document.createElement('script');
-    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-    mathjaxscript.type = 'text/javascript';
-    mathjaxscript.src = '//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
-        "MathJax.Hub.Config({" +
-        "    config: ['MMLorHTML.js']," +
-        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
-        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
-        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-        "    displayAlign: 'center'," +
-        "    displayIndent: '0em'," +
-        "    showMathMenu: true," +
-        "    tex2jax: { " +
-        "        inlineMath: [ ['$','$'] ], " +
-        "        displayMath: [ ['$$','$$'] ]," +
-        "        processEscapes: true," +
-        "        preview: 'TeX'," +
-        "    }, " +
-        "    'HTML-CSS': { " +
-        " linebreaks: { automatic: true, width: '95% container' }, " +
-        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
-        "    } " +
-        "}); ";
-    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
-}
-</script>
-                </article>
+<p><em>explanation of the battery drain problem:</em> a lot of programmers who don't want to write separate code for different operating systems use a cross-platform framework called <a href="https://electronjs.org">Electron</a> to do it instead. Both Atom and VS Code are written in Electron. The problem with Electron is that it uses web browser technologies to get it to work on both platforms, so, essentially, it just runs a bunch of instances of Chrome in order to display documents. Chrome is a really heavy program that itself draws a ton of power, and Electron apps do it too.  Incidentally, Slack is also an Electron app, so if someone's made you use that and you've noticed it nuking your battery, that's why. </p>                </article>
             </aside><!-- /#featured -->
                 <section id="content" class="body">
                     <h1>Other articles</h1>
@@ -1568,41 +57,207 @@ h6:hover .anchor-link {
 
             <li><article class="hentry">
                 <header>
-                    <h1><a href="/regular-expressions.html" rel="bookmark"
-                           title="Permalink to Regular Expressions">Regular Expressions</a></h1>
+                    <h1><a href="/simulation-for-fun-and-profit.html" rel="bookmark"
+                           title="Permalink to Simulation for fun and profit">Simulation for fun and profit</a></h1>
                 </header>
 
                 <div class="entry-content">
 <footer class="post-info">
-        <abbr class="published" title="2019-01-18T00:00:00-06:00">
-                Published: Fri 18 January 2019
+        <abbr class="published" title="2018-01-16T00:00:00-06:00">
+                Published: Tue 16 January 2018
         </abbr>
 
         <address class="vcard author">
                 By                         <a class="url fn" href="/author/paul-gowder.html">Paul Gowder</a>
         </address>
 <p>In <a href="/category/lessons.html">Lessons</a>.</p>
-<p>tags: <a href="/tag/python.html">python</a> <a href="/tag/programming.html">programming</a> <a href="/tag/week3.html">week3</a> <a href="/tag/regex.html">regex</a> <a href="/tag/strings.html">strings</a> </p>
-</footer><!-- /.post-info -->                
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Regular expressions (or "regex"/"regexes") are one of the most powerful programming tools for lawyers. Essentially, regular expressions are a powerful specialized programming language built into other languages like Python, which allow you to express complicated text searching operations.</p>
-<p>The utility of this for lawyers should be obvious: lawyers have to deal with lots and lots and lots of documents, and sometimes need to search through those documents for specific information. If those documents are in electronic form, regular expressions can provide you with a much more powerful way of searching than what is built into ordinary applications.</p>
-                <a class="readmore" href="/regular-expressions.html">read more</a>
+<p>tags: <a href="/tag/programming.html">programming</a> <a href="/tag/conceptual.html">conceptual</a> <a href="/tag/python.html">python</a> <a href="/tag/week3.html">week3</a> <a href="/tag/object-oriented.html">object-oriented</a> </p>
+</footer><!-- /.post-info -->                <p>One really useful thing that you can do with programming skills is simulate things that you don't fully understand. This is something that hard science people do all the time: it turns out that there are some kinds of problems that aren't solvable in a deductive, analytic kind of way …</p>
+                <a class="readmore" href="/simulation-for-fun-and-profit.html">read more</a>
                 </div><!-- /.entry-content -->
             </article></li>
 
             <li><article class="hentry">
                 <header>
-                    <h1><a href="/dealing-with-errors.html" rel="bookmark"
-                           title="Permalink to Dealing with Errors">Dealing with Errors</a></h1>
+                    <h1><a href="/week-4-recap-total-probability-rule.html" rel="bookmark"
+                           title="Permalink to Week 4 recap: Total Probability Rule">Week 4 recap: Total Probability Rule</a></h1>
                 </header>
 
                 <div class="entry-content">
 <footer class="post-info">
-        <abbr class="published" title="2018-12-31T00:00:00-06:00">
-                Published: Mon 31 December 2018
+        <abbr class="published" title="2018-02-05T00:00:00-06:00">
+                Published: Mon 05 February 2018
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/paul-gowder.html">Paul Gowder</a>
+        </address>
+<p>In <a href="/category/lessons.html">Lessons</a>.</p>
+<p>tags: <a href="/tag/probability.html">probability</a> <a href="/tag/conceptual.html">conceptual</a> <a href="/tag/week4.html">week4</a> </p>
+</footer><!-- /.post-info -->                <p>The probability lecture this week kind of hit a wall at one point in our Bayes Rule example.  Here's a clearer explanation.</p>
+<p>Remember, we had an example problem involving figuring out the posterior probability of someone being drunk, given that they blew a positive result on a breathalyzer.  </p>
+<p>The place …</p>
+                <a class="readmore" href="/week-4-recap-total-probability-rule.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/using-libraries-in-python.html" rel="bookmark"
+                           title="Permalink to Using libraries in Python">Using libraries in Python</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2018-10-03T00:00:00-05:00">
+                Published: Wed 03 October 2018
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/paul-gowder.html">Paul Gowder</a>
+        </address>
+<p>In <a href="/category/lessons.html">Lessons</a>.</p>
+<p>tags: <a href="/tag/python.html">python</a> <a href="/tag/code.html">code</a> <a href="/tag/week2.html">week2</a> </p>
+</footer><!-- /.post-info -->                <p>Programming would be incredibly time consuming if you couldn't reuse code. You've seen the basic form of code reuse already---the function, which allows you to lock up a transformation from some data to some other data, give it a name, and then apply it repeatedly, and to arbitrary data. </p>
+<p>Well …</p>
+                <a class="readmore" href="/using-libraries-in-python.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/introduction-to-python-and-setup.html" rel="bookmark"
+                           title="Permalink to Introduction to Python and setup.">Introduction to Python and setup.</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2018-10-22T00:00:00-05:00">
+                Published: Mon 22 October 2018
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/paul-gowder.html">Paul Gowder</a>
+        </address>
+<p>In <a href="/category/lessons.html">Lessons</a>.</p>
+<p>tags: <a href="/tag/python.html">python</a> <a href="/tag/programming.html">programming</a> <a href="/tag/week1.html">week1</a> <a href="/tag/setup.html">setup</a> </p>
+</footer><!-- /.post-info -->                <p>In this class, we will be using the <a href="https://www.python.org/">Python</a> programming language. In this first week, we will have a basic introduction to Python and to the fundamentals of computer programming. </p>
+<p>Before we get started programming, we have to set up a system to write our code and get the computer …</p>
+                <a class="readmore" href="/introduction-to-python-and-setup.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/why-statistics-for-lawyers.html" rel="bookmark"
+                           title="Permalink to Why Statistics for Lawyers?">Why Statistics for Lawyers?</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2018-11-03T00:00:00-05:00">
+                Published: Sat 03 November 2018
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/paul-gowder.html">Paul Gowder</a>
+        </address>
+<p>In <a href="/category/lessons.html">Lessons</a>.</p>
+<p>tags: <a href="/tag/statistics.html">statistics</a> <a href="/tag/week4.html">week4</a> <a href="/tag/conceptual.html">conceptual</a> </p>
+</footer><!-- /.post-info -->                <p>The brunt of this course will be devoted to statistics and exploratory data analysis. </p>
+<p><em>Exploratory data analysis</em> is just looking at data to see what you see.  We will spend some time, for example, looking at how to see the shape of data and what that can tell you about …</p>
+                <a class="readmore" href="/why-statistics-for-lawyers.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/introduction-to-programming-and-python.html" rel="bookmark"
+                           title="Permalink to Introduction to Programming and Python">Introduction to Programming and Python</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2018-11-04T00:00:00-05:00">
+                Published: Sun 04 November 2018
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/paul-gowder.html">Paul Gowder</a>
+        </address>
+<p>In <a href="/category/lessons.html">Lessons</a>.</p>
+<p>tags: <a href="/tag/week1.html">week1</a> <a href="/tag/python.html">python</a> <a href="/tag/programming.html">programming</a> </p>
+</footer><!-- /.post-info -->                
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In this first week of the course, we're going to cover some core concepts of computer programming. With this, we will build a foundation to do more interesting things in the coming weeks.</p>
+<h2 id="What-is-Computer-Programming?">What is Computer Programming?<a class="anchor-link" href="#What-is-Computer-Programming?">&#182;</a></h2><p>Computers basically just do one thing: they complete very simple operations at astonishing speed.</p>
+<p>For example, suppose you wanted to calculate the thousandth number of the <a href="https://www.mathsisfun.com/numbers/fibonacci-sequence.html">Fibonacci Sequence</a>
+                <a class="readmore" href="/introduction-to-programming-and-python.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/introduction-to-statistical-power.html" rel="bookmark"
+                           title="Permalink to Introduction to Statistical Power">Introduction to Statistical Power</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2018-11-05T00:00:00-06:00">
+                Published: Mon 05 November 2018
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/paul-gowder.html">Paul Gowder</a>
+        </address>
+<p>In <a href="/category/lessons.html">Lessons</a>.</p>
+<p>tags: <a href="/tag/statistics.html">statistics</a> <a href="/tag/conceptual.html">conceptual</a> <a href="/tag/week8.html">week8</a> </p>
+</footer><!-- /.post-info -->                <p>Statistical power is, in terms of practical use, kind of the flip side of a p-value.  </p>
+<p>Remember that a p-value is an attempt to quantify our degree of confidence in not having made a type I error (although <a href="/p-values-and-bayes-rule.html">it is <em>not</em> the probability of having made a type I error …</a></p>
+                <a class="readmore" href="/introduction-to-statistical-power.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/introduction-to-exploring-data-in-python.html" rel="bookmark"
+                           title="Permalink to Introduction to Exploring Data in Python">Introduction to Exploring Data in Python</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2018-11-25T00:00:00-06:00">
+                Published: Sun 25 November 2018
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/paul-gowder.html">Paul Gowder</a>
+        </address>
+<p>In <a href="/category/lessons.html">Lessons</a>.</p>
+<p>tags: <a href="/tag/python.html">python</a> <a href="/tag/data.html">data</a> <a href="/tag/exploratory_data_analysis.html">exploratory_data_analysis</a> <a href="/tag/visualization.html">visualization</a> </p>
+</footer><!-- /.post-info -->                
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Introduction-to-Exploring-Data-in-Python">Introduction to Exploring Data in Python<a class="anchor-link" href="#Introduction-to-Exploring-Data-in-Python">&#182;</a></h1><p>In this lesson, we're going to learn about how to get a feel for data in Python, using basic tools to look at our data.</p>
+<p>First, however, let's make sure we have the right version of a library we need called Seaborn.  Run the code in the next block and make sure that you get the right version.</p>
+                <a class="readmore" href="/introduction-to-exploring-data-in-python.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/files-and-how-computers-represent-data.html" rel="bookmark"
+                           title="Permalink to Files and How Computers Represent Data">Files and How Computers Represent Data</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2018-11-30T00:00:00-06:00">
+                Published: Fri 30 November 2018
         </abbr>
 
         <address class="vcard author">
@@ -1614,216 +269,9 @@ h6:hover .anchor-link {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>An unavoidable fact of life for people who write code is error messages.  You're happily programming along, and then, all of a sudden, you get a massive screen of terrifying text telling you that <em>you screwed up!!</em></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-                <a class="readmore" href="/dealing-with-errors.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/practical-basic-hypothesis-tests.html" rel="bookmark"
-                           title="Permalink to Practical Basic Hypothesis Tests">Practical Basic Hypothesis Tests</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2018-12-30T00:00:00-06:00">
-                Published: Sun 30 December 2018
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/paul-gowder.html">Paul Gowder</a>
-        </address>
-<p>In <a href="/category/lessons.html">Lessons</a>.</p>
-<p>tags: <a href="/tag/week6.html">week6</a> <a href="/tag/statistics.html">statistics</a> </p>
-</footer><!-- /.post-info -->                
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>In this lesson, we're going to very quickly rip through the basic hypothesis tests, their uses, and how to achieve them in Python.  I won't spend a lot of time on this, because the mathematical details are covered in the assigned reading, and, at any rate, I think for practical purposes regression analysis is more important for lawyers.  Also, this is basically AP/undergrad stats material, so you've probably seen it somewhere already.</p>
-                <a class="readmore" href="/practical-basic-hypothesis-tests.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/complex-data-types.html" rel="bookmark"
-                           title="Permalink to Complex Data Types">Complex Data Types</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2018-12-22T00:00:00-06:00">
-                Published: Sat 22 December 2018
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/paul-gowder.html">Paul Gowder</a>
-        </address>
-<p>In <a href="/category/lessons.html">Lessons</a>.</p>
-<p>tags: <a href="/tag/python.html">python</a> <a href="/tag/programming.html">programming</a> <a href="/tag/week1.html">week1</a> </p>
-</footer><!-- /.post-info -->                
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Some kinds of data can store other kinds of data.</p>
-<h2 id="Lists">Lists<a class="anchor-link" href="#Lists">&#182;</a></h2><p>We've actually seen the most common complex data type a few times before, I just haven't pointed it out to you. We make a list by enclosing the elements of a list in square brackets.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-                <a class="readmore" href="/complex-data-types.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/key-python-libraries-for-working-with-data.html" rel="bookmark"
-                           title="Permalink to Key Python Libraries for Working with Data">Key Python Libraries for Working with Data</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2018-12-22T00:00:00-06:00">
-                Published: Sat 22 December 2018
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/paul-gowder.html">Paul Gowder</a>
-        </address>
-<p>In <a href="/category/lessons.html">Lessons</a>.</p>
-<p>tags: <a href="/tag/python.html">python</a> <a href="/tag/programming.html">programming</a> <a href="/tag/statistics.html">statistics</a> <a href="/tag/week5.html">week5</a> </p>
-</footer><!-- /.post-info -->                
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>In this lesson I'm just going to describe the main libraries that we'll see when we work with data in Python.</p>
-<h2 id="Numpy">Numpy<a class="anchor-link" href="#Numpy">&#182;</a></h2><p>Numpy is the first library we work with.  By convention, it's imported with <code>import numpy as np</code>.  Numpy really provides two things to our workflow:</p>
-<ol>
-<li><p>Math that goes faster than unadorned Python could do it---which is important when you're doing statistics, because under the hood computational stats can take a lot of calculations.</p>
-                <a class="readmore" href="/key-python-libraries-for-working-with-data.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/common-data-transformations.html" rel="bookmark"
-                           title="Permalink to Common Data Transformations">Common Data Transformations</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2018-12-21T00:00:00-06:00">
-                Published: Fri 21 December 2018
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/paul-gowder.html">Paul Gowder</a>
-        </address>
-<p>In <a href="/category/lessons.html">Lessons</a>.</p>
-<p>tags: <a href="/tag/statistics.html">statistics</a> <a href="/tag/exploratory.html">exploratory</a> </p>
-</footer><!-- /.post-info -->                
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>It's often useful in performing data analysis to transform some of your variables to fit a common scale; this is especially useful in exploratory data analysis, because these transformations often make it much easier to eyeball the relationship between variables. (Also, some statistical techniques require these transformations.)</p>
-<p>In this short lesson, we'll introduce two common methods of transforming data---the <em>log transform</em>
-                <a class="readmore" href="/common-data-transformations.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/more-loops-and-control-flow.html" rel="bookmark"
-                           title="Permalink to More Loops and Control Flow">More Loops and Control Flow</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2018-12-21T00:00:00-06:00">
-                Published: Fri 21 December 2018
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/paul-gowder.html">Paul Gowder</a>
-        </address>
-<p>In <a href="/category/lessons.html">Lessons</a>.</p>
-<p>tags: <a href="/tag/python.html">python</a> <a href="/tag/programming.html">programming</a> <a href="/tag/week1.html">week1</a> </p>
-</footer><!-- /.post-info -->                
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>In this lesson, we'll think about more ways to direct Python to do things repeatedly, or conditionally.</p>
-<p>Let's start with more loops. I showed you the while loop before, remember?</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-                <a class="readmore" href="/more-loops-and-control-flow.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/simple-data-types-draft.html" rel="bookmark"
-                           title="Permalink to Simple Data Types (draft)">Simple Data Types (draft)</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2018-12-21T00:00:00-06:00">
-                Published: Fri 21 December 2018
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/paul-gowder.html">Paul Gowder</a>
-        </address>
-<p>In <a href="/category/lessons.html">Lessons</a>.</p>
-<p>tags: <a href="/tag/python.html">python</a> <a href="/tag/programming.html">programming</a> <a href="/tag/week1.html">week1</a> </p>
-</footer><!-- /.post-info -->                
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>In Python, the data you work with (like the things assigned to variables) have <em>types</em>, which specify the kinds of data they are and the things you can do with them.</p>
-<p>A good way to understand this is to think about the difference between letters and numbers. While we can write both down, there are different things we can do to them.  It wouldn't make sense (except in an algebra context) to multiply and divide letters; it would't make sense to talk about a capital and a lowercase number 3.</p>
-                <a class="readmore" href="/simple-data-types-draft.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/functions-and-scope.html" rel="bookmark"
-                           title="Permalink to Functions and Scope">Functions and Scope</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2018-12-20T00:00:00-06:00">
-                Published: Thu 20 December 2018
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/paul-gowder.html">Paul Gowder</a>
-        </address>
-<p>In <a href="/category/lessons.html">Lessons</a>.</p>
-<p>tags: <a href="/tag/python.html">python</a> <a href="/tag/programming.html">programming</a> <a href="/tag/week1.html">week1</a> </p>
-</footer><!-- /.post-info -->                
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Recall how in the first Python lesson we looked at the <code>while</code> loop and saw how it allows us to repeat instructions to the computer as many times as you want.</p>
-<p>The next step up from a loop is a function, which allows us to wrap up a series of commands into a single command on its own. Let's take a look at an example.</p>
-                <a class="readmore" href="/functions-and-scope.html">read more</a>
+<p>In this lesson, we're going to learn how to open files and work with data from the disk. We'll start with the mechanical process of opening text files, and then move on to learn a little bit more about different kinds of data you'll see.</p>
+<p>Here's the basic method of opening and reading text files. Suppose I have a file called hello.txt in my working directory.  (Your working directory is the directory you run Python from on your hard drive.  For those of you using Azure Notebooks, this should be your library, but talk to me if you see a file there and can't read it from Python.)</p>
+                <a class="readmore" href="/files-and-how-computers-represent-data.html">read more</a>
                 </div><!-- /.entry-content -->
             </article></li>
                 </ol><!-- /#posts-list -->

@@ -1375,7 +1375,7 @@ I picked paper. I won!
         <span class="k">return</span> <span class="kc">None</span>
     <span class="k">while</span> <span class="n">check_weekend</span><span class="p">(</span><span class="n">candidate</span><span class="p">)</span> <span class="ow">or</span> <span class="n">check_fixed_holiday</span><span class="p">(</span><span class="n">candidate</span><span class="p">):</span>
         <span class="n">candidate</span> <span class="o">+=</span> <span class="n">timedelta</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">candidate</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%a, %B </span><span class="si">%d</span><span class="s2">, %Y&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">candidate</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%a</span><span class="s2">, %B </span><span class="si">%d</span><span class="s2">, %Y&quot;</span><span class="p">)</span>
 </pre></div>
 
     </div>

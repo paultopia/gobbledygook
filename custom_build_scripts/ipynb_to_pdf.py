@@ -3,7 +3,7 @@ warnings.filterwarnings("ignore")
 
 def extract_title_ipynb(cell0):
     source = cell0["source"]
-    pattern = r"Title: (.*)?\n"
+    pattern = r"[Tt]itle: (.*)?\n"
     match = re.search(pattern, source)
     try:
         title = match.group(1)
@@ -12,10 +12,18 @@ def extract_title_ipynb(cell0):
     newcell = {'cell_type': 'markdown', 'metadata': {}, 'source': '# {}'.format(title)}
     return nbformat.from_dict(newcell)
 
+def nameclean(notebook_file):
+    basename = os.path.basename(notebook_file)
+    pdffile = basename.split(".")[0] + ".pdf"
+    oldsource1 = "\n<hr>\n[Download this lesson in PDF]({attach}../images/" + pdffile + ")\n<hr>"
+    oldsource2 = "\n<hr>\n[Download this lesson in PDF]({attach}../images/" + pdffile + ") [Download Jupyter Notebook file]({attach}../images/" + basename + ")\n<hr>"
+    source = "\n<hr>\n[Download this lesson in PDF]({attach}../images/" + pdffile + ") [Download Jupyter Notebook file]({static}" + basename + ")\n<hr>"
+    return oldsource1, oldsource2, source
+
+
 def add_link_to_pdf_ipynb(notebook_file):
     nb = nbformat.read(notebook_file, 4)
-    pdffile = os.path.basename(notebook_file).split(".")[0] + ".pdf"
-    source = "\n<hr>\n[Download this lesson in PDF]({attach}../images/" + pdffile + ")\n<hr>"
+    _, _, source = nameclean(notebook_file)
     if nb.cells[-1]["source"] != source:
         newcell = nbformat.from_dict({'cell_type': 'markdown', 'metadata': {}, 'source': source})
         nb.cells.append(newcell)
@@ -23,9 +31,8 @@ def add_link_to_pdf_ipynb(notebook_file):
 
 def remove_pdf_link_ipynb(notebook_file):
     nb = nbformat.read(notebook_file, 4)
-    pdffile = os.path.basename(notebook_file).split(".")[0] + ".pdf"
-    source = "\n<hr>\n[Download this lesson in PDF]({attach}../images/" + pdffile + ")\n<hr>"
-    if nb.cells[-1]["source"] == source:
+    oldsource1, oldsource2, source = nameclean(notebook_file)
+    while nb.cells[-1]["source"] in [source, oldsource1, oldsource2]:
         nb.cells.pop()
         nbformat.write(nb, notebook_file)
 

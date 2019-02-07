@@ -21,10 +21,10 @@
 
             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="/p-values-and-bayes-rule.html">P-Values and Bayes Rule</a></h1>
+                    <h1 class="entry-title"><a href="/introduction-to-statistical-power.html">Introduction to Statistical Power</a></h1>
 <footer class="post-info">
-        <abbr class="published" title="2018-12-10T00:00:00-06:00">
-                Published: Mon 10 December 2018
+        <abbr class="published" title="2018-11-05T00:00:00-06:00">
+                Published: Mon 05 November 2018
         </abbr>
 
         <address class="vcard author">
@@ -32,83 +32,53 @@
         </address>
 <p>In <a href="/category/lessons.html">Lessons</a>.</p>
 <p>tags: <a href="/tag/statistics.html">statistics</a> <a href="/tag/conceptual.html">conceptual</a> <a href="/tag/week8.html">week8</a> </p>
-</footer><!-- /.post-info --><p>Recall from the previous lesson what a p-value is: it’s the probability of observing a value of your statistic as extreme (as far away from the null hypothesis statistic) as you in fact observed, if the null hypothesis were true.  </p>
-<p>In other words, if you’re doing a (two-sided) z test, your statistic is the mean, your null hypothesis mean is <span class="math">\(\mu\)</span>, and the mean you observe in your sample is <span class="math">\(\bar{x}\)</span>, then the p-value is the probability of getting a mean at least <span class="math">\(\mu - \bar{x}\)</span> units away from the mean when randomly sampling from a normal distribution with mean <span class="math">\(\mu\)</span> and standard deviation estimated by the formula for the standard deviation of a sample. (We’ll talk about that formula later, but if you want a sneak preview, check out <a href="https://www.khanacademy.org/math/statistics-probability/summarizing-quantitative-data/variance-standard-deviation-sample/a/population-and-sample-standard-deviation-review">this Khan Academy article</a>.) If the p-value is below a predetermined level, often 0.05, then we say that there’s a statistically significant result. </p>
-<p>Pause for a moment and ask yourself the following question: <strong>Does that mean the p-value is the probability of incorrectly rejecting the null hypothesis?</strong> Don’t go on until you have an answer, and can explain why you have that answer. This is very important.</p>
-<p>Incidentally, that’s called a "Type I error" in some circles: the error of incorrectly rejecting the null hypothesis, a.k.a. (if you’re sensible and don’t like double negatives) convincing yourself that you’re seeing a real effect when you’re not. So the question above could be rephrased: "Is the p-value the probability of making a Type I error?"  A Type II error is the opposite: failing to reject the null hypothesis when you oughta, or, in other words, seeing a real effect and not realizing it. There’s a particularly good meme that captures this distinction and makes it impossible to forget:</p>
-<p><img src="https://4.bp.blogspot.com/-wmZzvsY_Tec/Vws0f4MJn9I/AAAAAAAAORs/gipKxA7aDboP0gx2vSmyQS_ZoVBPzqaWA/s1600/Type%2BI%2Band%2BII%2Berror.jpg" alt="Type I and Type II errors" width="100%"/></p>
-<p>So, what’s your answer?  I’ll make some more space just to make sure you have a chance to figure it out for yourself...</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>The answer to my question is <strong>no.</strong> Here’s why.</p>
-<p>If you go back to the definition I gave you of p-values, you’ll see that it’s really a conditional probability. The p value is the probability of seeing the data in your sample, conditional on the null hypothesis being true. In symbols: </p>
-<div class="math">$$PValue = P(DataSeen|NullHypothesis)$$</div>
-<p>But what you'd really like to know is the probability of making a Type I error--the probability of making a mistake and declaring that you’ve discovered something that isn’t. Unfortunately, that can be rephrased as <strong>the probability of the null hypothesis being true, conditional on seeing your data!</strong>  In symbols: </p>
-<div class="math">$$P(TypeIError) = P(NullHypothesis|DataSeen)$$</div>
-<p>By now, you should know that you can’t flip conditional probabilities around like that. Yet this is an incredibly common mistake--even actual statistics teachers sometimes slip up and say that the p-value is the probability of making a Type I error.  It isn’t!  Never say this! Never think this! Never respect anyone who does say or think it!</p>
-<p>Here's an intuitive way of thinking about the problem. A statistically significant p-value means "if the null hypothesis were true, it would be unlikely that I'd have seen a sample that looks like that." There are some <a href="https://www.census.gov/popclock/">328 million</a> U.S. citizens, and 535 members of Congress. So, if you randomly sample 100 Americans without replacement, it's really unlikely that they're all going to be members of Congress.  </p>
-<p>How unlikely? Well, we'll want the number of possible samples of 100 members of Congress, divided by the number of possible 100-person samples: that's <span class="math">\({535\choose 100}\)</span> divided by <span class="math">\({328,000,000\choose 100}\)</span> which is... a lot. Let's not try and do this by hand, eh?  (The parens mean, e.g., "535 choose 100"---see <a href="https://math.stackexchange.com/questions/1688391/probability-of-picking-4-red-balls">this explanation</a> of the general process of reasoning here. Here's the <a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.special.comb.html#scipy.special.comb">Python function</a> we're going to use.). This produces a probability so small that we have to use a fancy arbitrary precision math library called <code>mpmath</code> to get it to actually do the division. </p>
-<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.special</span> <span class="kn">import</span> <span class="n">comb</span> 
-<span class="kn">import</span> <span class="nn">mpmath</span> 
-<span class="n">numerator</span> <span class="o">=</span> <span class="n">mpmath</span><span class="o">.</span><span class="n">mpf</span><span class="p">(</span><span class="n">comb</span><span class="p">(</span><span class="mi">535</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="n">exact</span><span class="o">=</span><span class="bp">True</span><span class="p">))</span> 
-<span class="n">denominator</span> <span class="o">=</span> <span class="n">mpmath</span><span class="o">.</span><span class="n">mpf</span><span class="p">(</span><span class="n">comb</span><span class="p">(</span><span class="mi">328000000</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="n">exact</span><span class="o">=</span><span class="bp">True</span><span class="p">))</span> 
-<span class="n">numerator</span><span class="o">/</span><span class="n">denominator</span>
-</pre></div>
-
-
-<p>And we get <code>9.0061113088164994e-584</code> which, in real human speak, is .9 with 584 zeroes between the decimal point and the 9... that is, significantly less likely than picking a particular atom in randomly sampling from every atom in the known universe. </p>
-<p>So if I'm sampling Americans, it's vanishingly unlikely that that I get a sample with 100 members of Congress. <span class="math">\(P(Draw100Congress|Draw100Americans)\)</span> is that tiny number up above.  But it obviously does not follow that <span class="math">\(P(Draw100Americans|Draw100Congress)\)</span> is small. Indeed that second probability statement is 1, or damn close to it (even though the Constitution requires members of Congress be citizens, you might imagine some incredibly unlikely event like someone getting elected to Congress after successfully deceiving the public about his/her citizenship status). In other words, I <em>absolutely cannot</em> infer from the unlikelihood of getting all members of Congress in my sample of Americans that it is unlikely that I had sampled Americans, given that I saw all members of Congress (Incidentally, I adapted this example from Cohen, 1994, <a href="http://psycnet.apa.org/doiLanding?doi=10.1037%2F0003-066X.49.12.997">The Earth is Round (p&lt;.05)</a>, who in turn adapted it from Pollard &amp; Richardson, 1987, <a href="http://psycnet.apa.org/record/1987-30223-001">"On the Probability of Making Type I Errors"</a>.)  </p>
-<p>Here’s why this matters. In reality, many, many studies with a "statistically significant" p-value are likely to nonetheless be Type I errors. The reason is because the actual probability of a Type I error depends on the prior likelihood that the null hypothesis was false in the first place, as well as on how likely it is that you'd see your data (in other words, on the base rate). Let’s flesh this out some more with Bayes Rule. Remember it? </p>
-<div class="math">$$P(B|A) = \frac{P(A|B) \cdot P(B)}{P(A)}$$</div>
-<p>As applied here, plugging in our concepts from above:</p>
-<div class="math">$$P(TypeIError) \frac{PValue \cdot P(NullHypothesis)}{P(DataSeen)}$$</div>
-<p>What does that mean?  Well, first of all, it means that in order to even take a wild guess at how likely it is that we’re making a Type I error, we have to know how likely our null hypothesis is (in Bayesian terms, we have to have a prior probability in our heads about it). If we have strong prior reason to believe our null hypothesis--if our alternative hypothesis, or the research finding we’re trying to test out, is really crazy, then we ought to conclude that it’s more likely that we’re making a Type I error, even in the face of a statistically significant p-value. For example, if you think you’ve provided evidence for psychic abilities, as <a href="https://www.theguardian.com/science/head-quarters/2016/oct/31/did-a-memory-experiment-really-show-evidence-for-psychic-abilities">occasionally shows up in psychology journals</a>, you should probably estimate your probability of making a Type I error as quite high, because your prior on Dr. Xavier running around somewhere controlling stuff <em>with his miiiiiind</em> is pretty small (or at least oughta be).</p>
-<p>Second, you’d need to have some idea of the base rate of the data you observed in your sample (the denominator above). If it’s low, then that makes it more likely that we’re making a Type I error. Recall from our probability lesson that we can calculate that via the <a href="https://en.m.wikipedia.org/wiki/Law_of_total_probability">law of total probability</a> as follows: </p>
-<div class="math">$$P(DataSeen) = P(DataSeen|NullHypothesis) \cdot P(NullHypothesis) + \\P(DataSeen|AlternativeHypothesis) \cdot P(AlternativeHypothesis)$$</div>
-<p>How can that value be low? Well, one important way is that <span class="math">\(P(DataSeen|AlternativeHypothesis)\)</span> could be low. In other words: sure, it might be that it’s really unlikely that you’d see the data you saw if your null hypothesis were true. But what if it’s <em>even more unlikely</em> that you’d see the data you saw if your alternative hypothesis were true?! A low p-value means that the data you saw would come up pretty rarely in that null distribution.  But what if it would come up even more rarely in every other plausible distribution? This is the lesson of our Congress example: <span class="math">\(P(Draw100Congress|Draw100Foreigners)\)</span> is much smaller even than the tiny number we got for <span class="math">\(P(Draw100Congress|Draw100Americans)\)</span>.</p>
-<p>What this suggests is that the construction of the hypotheses really matter. Let's return to the Congress example. Suppose my null hypothesis was "this sample was constructed from the general population of Americans," and the alternative hypothesis was "this sample was constructed from the population of people found in the U.S. Capitol on the day of the State of the Union Address." Well, now, it seems like maybe the composition of our sample tells us something useful.  Because <span class="math">\(P(Draw100Congress|Draw100FromCapitol)\)</span> is probably pretty big, relatively speaking.</p>
-<p>Here’s what this all comes down to: </p>
+</footer><!-- /.post-info --><p>Statistical power is, in terms of practical use, kind of the flip side of a p-value.  </p>
+<p>Remember that a p-value is an attempt to quantify our degree of confidence in not having made a type I error (although <a href="/p-values-and-bayes-rule.html">it is <em>not</em> the probability of having made a type I error</a>), i.e., making a false positive. </p>
+<p>Well, statistical power is about avoiding type II errors, that is, making false negatives. Often, it's said that the statistical power of a test 1 - the probability of making a type II error; equivalently, if a study has 80% power, it means that 80% of the time that we ought to be rejecting the null hypothesis, we do so. </p>
+<p>From that description, we might think that calculating statistical power isn't very useful after we get a result---and that's generally right. The point of power analysis isn't to say "hey, we got a result, what's the chance of incorrectly rejecting the null."  Because power analysis depends on the sample size (among other things, more in a moment), the real point is to figure out what the sample size should be.</p>
+<p>Formally speaking, statistical power is a function of the effect size---the extent to which the treatment makes a difference in the null hypothesis (usually standardized into a measure called <em>Cohen's d</em> to permit comparison across different studies), the number of observations, and alpha, or the significant level you're planning to use for your study. And it's an increasing function of all these things---that is, larger sample size = more power, larger effect size = more power, and higher significance level (if you're willing to accept p-values of 0.1 rather than 0.05) = more power.</p>
+<p>Pause for a moment and think about this. It's important to have an intuition for why this is true. Remember that when we're doing significance testing, we're asking the following question: <em>Is our data so radically different from what we'd expect under the null hypothesis that it's very unlikely we'd have seen it if the null hypothesis were true?</em> And we capture that notion of being radically different in terms of standard deviations of the sampling distribution (aka standard errors): if our statistic in the data is lots of standard deviations away from the null hypothesis statistic, then it's a significant result.</p>
+<p>The question of power, then, just means "before I do the study, how likely is it that I'll see data lots of standard errors away from the mean in my sample, if there's a difference in the population?"  Well, let's reason through this. If we were omnipotent, what levers could we pull in order to change that likelihood? </p>
 <ul>
-<li>Often we don’t really know these other terms that go into the Bayes Rule equation to go from p-values to probabilities of Type I errors. </li>
-<li>Sometimes, prior theories of how the world works (like psychic powers not being real) can give us broad guesses for those other terms, which can give us a rough idea of how confident we should be in our results. This is part of why statistics folks look down on the practice of "data-mining," a.k.a., hunting through data without a theory looking for significant results. </li>
-<li>The only way to be really confident that empirical results are real is by replicating them--by getting significant results again and again from different samples. </li>
-<li>Don’t trust that a result is real just because it has a statistically significant p-value!</li>
-<li>If some expert witness shows you a p-value of 0.05 and says "there's a 95% chance the null is false," you should laugh derisively at them and then fire them if they're your expert or cross examine them into oblivion if they're someone else's.</li>
+<li>
+<p>We could reduce the standard error. And since the standard error is the population standard deviation (estimated by the standard deviation of the sample) divided by the square root of the sample size, that means we need to increase <em>the sample size</em>.</p>
+</li>
+<li>
+<p>We could increase the distance between the observed statistic and the null hypothesis mean, i.e., the <em>effect size</em>.</p>
+</li>
+<li>
+<p>We could decrease the number of standard errors that count as "lots," a.k.a., the <em>significance level</em>.</p>
+</li>
 </ul>
-<p>Further readings, if you’d like to learn more: </p>
+<p>In Python, these calculations can be found in the <a href="http://www.statsmodels.org/dev/stats.html?highlight=power#module-statsmodels.stats.power">statsmodels.stats.power module</a>. I won't give a formal calculation here, although we may talk about power with respect to particular tests and techniques elsewhere in the course. The conceptual framework is more important.</p>
+<h2>Underpoweredness: pervasive and terrible.</h2>
+<p>Since messing around with significance levels is usually a bad idea in null hypothesis significance testing, the main way to increase power is to increase the sample size. But by how much?  This is where researchers get into trouble. </p>
+<p>You see, it's hard to actually do power calculations in real life, because <em>you don't know what the true effect size out in the world is</em>.  How can you know the true effect size? </p>
+<p>Think of a toy study: suppose you were testing the hypothesis that having a garage raises the price of a house. Seems pretty plausible, but by how much?  Does having a garage increase the price of the house by 10,000 dollars?  By 100,000 dollars?  By fifty cents? By 5% of the price? This is effect size. And you don't know it until after you've done the research (and, even then, only if it's correct). </p>
+<p>Unfortunately, many researchers in the real world over-estimate the power of their studies because they over-optimistically estimate their effect sizes. </p>
+<p>This is particularly relevant to survey and experimental research.  Carrying out this research can be super expensive, and so you need to know how many participants you need in order to have a realistic chance of seeing a result. Lots of research in fields like psychology is done with really small groups of participants, and this means that such studies tend to be <em>underpowered</em>---this is not a good thing. Statistical power is also relevant to observational research, but the nice thing about observational research using things like census data is that sample sizes tend to be nice and big. </p>
+<p>As a consumer of research, underpowered studies are quite bad, because they mean that more published research is likely to be garbage. </p>
+<p>To see this, let's think about the problem informally in Bayesian terms. </p>
+<p>Suppose there are two disciplines, highpower and lowpower.  Highpower customarily conducts studies with 80% power.  Lowpower customarily conducts studies with 20% power.  Both disciplines customarily find statistical significance with p=0.05.</p>
+<p>Now let's suppose the base rate of true findings in both fields is 10%.  That is, 10% of the things that researchers test in each field actually has a real effect.  And suppose that both fields conduct 10,000 studies. Finally, let's suppose that in both fields there's a very large <em>publication bias</em>---research papers with negative findings are never published, and research papers with positive findings are always published.  (This is a bit harsh---there is a big publication bias problem, but it's probably not <em>quite that bad</em>. But the simplifying assumption will be enough to do the work.)</p>
+<p>In highpower, of those 10,000 studies, there will be 1000 true effects, and the researchers will find 800 of them. In addition, they'll find 500 false effects (type I errors). </p>
+<p>In lowpower, by contrast, the researchers will only find 200 of the true effects. They'll find the same 500 false effects, because statistical power doesn't affect the false positive rate of an individual study.</p>
+<p>But now you be a consumer of research from those two fields. In highpower, there's a 800/1300 = 62% chance of a given research publication being true. In lowpower, there's only a 200/700 = 29% chance of a given publication being true. So you can't really trust the stuff that shows up in the Journal of Lowerpower at all.</p>
+<p>Moreover, the studies that do get published are likely to over-estimate the sizes of even true effects.  Why?  Well, suppose the true effect size out there in the population for what you're studying is <span class="math">\(\phi\)</span>.  But random sampling error could mean that, in the sample for any given study, you could see an effect size of <span class="math">\(\phi \pm \epsilon\)</span>.  The problem is that because your study is so underpowered, you're much less likely to detect the effect in samples where it's <span class="math">\(\phi - \epsilon\)</span> and much more likely when it's <span class="math">\(\phi + \epsilon\)</span>. And publication bias kicks in again to mean that in the real research literature we're likely to see over-inflated effect sizes.  (And of course <span class="math">\(\epsilon\)</span> is basically going to be proportional to the sampling variance, so you can expect it to be bigger in the small samples that underpowered studies have anyway.)</p>
+<p>With sufficiently small effect sizes, it might even be the case that the sign of the effect could flip, i.e., you think that garages decrease the prices of houses when they really increase it (in our toy equation above suppose <span class="math">\(\epsilon &gt; \phi\)</span>?!)</p>
+<p>Something like this effect is doubtless a major contributor to problems like the replication crisis in psychology research.</p>
+<p>Further reading: </p>
 <ul>
-<li>F. Perry Wilson <a href="https://www.medpagetoday.com/Blogs/TheMethodsMan/52171">The P-Value is a Hoax, But Here's How to Fix it</a>---This is an amazing concrete illustration with actual numbers of the point above about base rates.  Actually, you know what?  That's so good I'm going to quote it at length: </li>
-</ul>
-<blockquote>
-<p>Let's say that there are 100,000 hypotheses out there -- floating in the ether. Some of the hypotheses are true, some are false (this is how science works, right?). It turns out that it's the proportion of true hypotheses that dictates how much of the medical literature is nonsense, not the p-value. Let me prove it.</p>
-<p>Let's say that of our 100,000 hypotheses, 10%, or 10,000 are true. I may be a bit of a pessimist but I think I'm being pretty generous here. OK -- how many false positives will there be? Well, of the 90,000 false hypotheses, 5% (there's the p-value!) will end up appearing true in the study by chance alone. Five percent of 90,000 is 4,500 false positive studies. How many true positives will there be? Well, we have 10,000 true hypotheses -- but not all the studies will be positive. The number of positive studies will depend on how adequately "powered" they are, and power is usually set at around 80%, meaning that 8,000 of those true hypotheses will be discovered to be true when tested, while 2,000 will be missed.</p>
-<p>So of our 100,000 hypotheses, we have a total of 12,500 positive studies. 4,500 of those 12,500 are false positives. That's 36%. [...]</p>
-<p>Let that sink in. Despite the comforting nature of the 0.05 threshold for the p-value, 36% of the positive studies you read may be false.</p>
-<p>This depends critically on the number of true hypotheses by the way. If I drop the number of true hypotheses to 5%, keeping everything else the same, then 55% of the positive studies you read are wrong. It's a disaster.</p>
-</blockquote>
-<p>(n.b.: we'll talk about the "power" thing later on in the class.)</p>
-<ul>
 <li>
-<p>Minitab blog, "<a href="http://blog.minitab.com/blog/adventures-in-statistics-2/how-to-correctly-interpret-p-values">How to Correctly Interpret P Values</a>" (Minitab is a statistical software package, and the editor of its blog is on a lovely quest to comprehensibly explain the whole p-value thing).</p>
+<p>The UCLA Institute for Digital Research and Education has <a href="https://stats.idre.ucla.edu/other/gpower/#">very clear tutorials</a> on using a free program called G*Power to carry out a variety of power analysis tasks. </p>
 </li>
 <li>
-<p>538 blog post <a href="https://fivethirtyeight.com/features/not-even-scientists-can-easily-explain-p-values/">complaining that nobody can explain p-values comprehensibly</a>. (Mostly included because the best explanation the 538 blogger could find was from Stuart Buck... who is not only a lawyer, he was actually my law school classmate. Lawyers can understand this stuff!) </p>
+<p>Katherine S. Button, John P. A. Ioannidis, Claire Mokrysz, Brian A. Nosek, Jonathan Flint, Emma S. J. Robinson &amp; Marcus R. Munafò <a href="https://www.nature.com/articles/nrn3475">Power failure: why small sample size undermines the reliability of neuroscience</a>, Nature Reviews Neuroscience 14: 365–376 (2013) is a detailed description of what can go terribly wrong when power is too low.</p>
 </li>
 <li>
-<p>John Ioannidis, "<a href="https://journals.plos.org/plosmedicine/article?id=10.1371/journal.pmed.0020124">Why Most Published Research Findings are False</a>" (sort of a more complicated and less clear version of the Perry Wilson blog post above).</p>
-</li>
-<li>
-<p>David Papineau, "<a href="https://www.the-tls.co.uk/articles/public/thomas-bayes-science-crisis/">Thomas Bayes and the Crisis in Science</a>", Times Literary Supplement.</p>
+<p>Andrew Gelman &amp; John Carlin, <a href="http://www.stat.columbia.edu/~gelman/research/published/retropower_final.pdf">Beyond Power Calculations: Assessing
+Type S (Sign) and Type M (Magnitude)
+Errors</a> Perspectives on Psychological Science 9(6): 641-651 (2014) describes the authors' efforts at retrospectively analyzing some underpowered studies in order to see how likely it is that they were drastically incorrect. See also <a href="https://stats.stackexchange.com/questions/243412/understanding-gelman-carlin-beyond-power-calculations-2014">this discussion</a> of that paper, particularly the comment by a user named "amoeba" right before the answers.</p>
 </li>
 </ul>
 <script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
@@ -174,14 +144,14 @@
 
             <li><article class="hentry">
                 <header>
-                    <h1><a href="/introduction-to-statistical-power.html" rel="bookmark"
-                           title="Permalink to Introduction to Statistical Power">Introduction to Statistical Power</a></h1>
+                    <h1><a href="/p-values-and-bayes-rule.html" rel="bookmark"
+                           title="Permalink to P-Values and Bayes Rule">P-Values and Bayes Rule</a></h1>
                 </header>
 
                 <div class="entry-content">
 <footer class="post-info">
-        <abbr class="published" title="2018-11-05T00:00:00-06:00">
-                Published: Mon 05 November 2018
+        <abbr class="published" title="2018-12-10T00:00:00-06:00">
+                Published: Mon 10 December 2018
         </abbr>
 
         <address class="vcard author">
@@ -189,9 +159,9 @@
         </address>
 <p>In <a href="/category/lessons.html">Lessons</a>.</p>
 <p>tags: <a href="/tag/statistics.html">statistics</a> <a href="/tag/conceptual.html">conceptual</a> <a href="/tag/week8.html">week8</a> </p>
-</footer><!-- /.post-info -->                <p>Statistical power is, in terms of practical use, kind of the flip side of a p-value.  </p>
-<p>Remember that a p-value is an attempt to quantify our degree of confidence in not having made a type I error (although <a href="/p-values-and-bayes-rule.html">it is <em>not</em> the probability of having made a type I error …</a></p>
-                <a class="readmore" href="/introduction-to-statistical-power.html">read more</a>
+</footer><!-- /.post-info -->                <p>Recall from the previous lesson what a p-value is: it’s the probability of observing a value of your statistic as extreme (as far away from the null hypothesis statistic) as you in fact observed, if the null hypothesis were true.  </p>
+<p>In other words, if you’re doing a (two-sided …</p>
+                <a class="readmore" href="/p-values-and-bayes-rule.html">read more</a>
                 </div><!-- /.entry-content -->
             </article></li>
                 </ol><!-- /#posts-list -->

@@ -21,10 +21,10 @@
 
             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="/abel-and-baker-redux-probability-and-description.html">Abel and Baker Redux: Probability and Description</a></h1>
+                    <h1 class="entry-title"><a href="/week-4-recap-total-probability-rule.html">Week 4 recap: Total Probability Rule</a></h1>
 <footer class="post-info">
-        <abbr class="published" title="2018-12-10T00:00:00-06:00">
-                Published: Mon 10 December 2018
+        <abbr class="published" title="2018-02-05T00:00:00-06:00">
+                Published: Mon 05 February 2018
         </abbr>
 
         <address class="vcard author">
@@ -32,133 +32,32 @@
         </address>
 <p>In <a href="/category/lessons.html">Lessons</a>.</p>
 <p>tags: <a href="/tag/probability.html">probability</a> <a href="/tag/conceptual.html">conceptual</a> <a href="/tag/week4.html">week4</a> </p>
-</footer><!-- /.post-info --><p>Right at the beginning of the F&amp;L readings for this week, you saw a well-known probability puzzler/"paradox."  I'm going to risk angering the copyright gods and quote it in full here: </p>
+</footer><!-- /.post-info --><p>The probability lecture this week kind of hit a wall at one point in our Bayes Rule example.  Here's a clearer explanation.</p>
+<p>Remember, we had an example problem involving figuring out the posterior probability of someone being drunk, given that they blew a positive result on a breathalyzer.  </p>
+<p>The place where we got stuck was when we were trying to do was calculate the probability of blowing a positive breathalyzer, i.e., <span class="math">\(P(blew)\)</span>.  But all we had was the true positive rate, i.e., the probability that the machine would produce a positive result conditional on someone being drunk <span class="math">\(P(blew|drunk)\)</span> and the false positive rate, i.e., the probability that the machine would produce a positive result conditional on someone being sober <span class="math">\(P(blew|sober)\)</span>, as well as the prior probability of being drunk <span class="math">\((.1)\)</span>.  </p>
+<p>We needed <span class="math">\(P(blew)\)</span> because it is the denominator in our Bayes Rule calculation. Here's Bayes Rule again: </p>
+<div class="math">$$P(B|A) = \frac{P(A|B)P(B)}{P(A)}$$</div>
+<p>We were trying to calculate <span class="math">\(P(drunk|blew)\)</span> and, per Bayes rule, that means we need to know the overall probability of a positive result (that's A here). Plugging in our terms, we were trying to figure out.</p>
+<div class="math">$$P(drunk|blew) = \frac{P(blew|drunk)P(drunk)}{P(blew)}$$</div>
+<p>What I asserted to you is that we can use the following calculation to go from what we know to the denominator of that equation: </p>
+<div class="math">$$P(blew) = P(blew|drunk) \cdot P(drunk) + P(blew|sober) \cdot P(sober)$$</div>
+<p>This is known as the law of total probability. <a href="https://en.wikipedia.org/wiki/Law_of_total_probability#Example">Wikipedia gives another good example</a>.  </p>
+<p>Here's a hopefully-more intuitive explanation of why you should believe this.  What we're really doing is partitioning the world.  You can only be drunk or sober, right?  You can't be drunk AND sober, and you can't be neither drunk nor sober.  Drunkenness and soberness are mutually exclusive and exhaustive. </p>
+<p>So what that means is that there are only two ways to blow a positive breathalyzer.  You can either blow a breathalyzer when you're drunk, or you can blow a breathalyzer when you're sober. </p>
+<p>And then what we're asking is for the union of those two events, the "or" question.  The question "what's the probability of blowing a positive breathalyzer test" is just "what's the probability of blowing a positive breathalyzer test and being drunk, OR blowing a positive breathalyzer test and being sober."  And we know those have to be mutually exclusive events (because, yet again, can't be drunk and sober at the same time), so we know that we just add them up.  The addition rule gets us to: </p>
+<div class="math">$$P(blew) = P(blew \cap drunk) + P(blew \cap sober)$$</div>
+<p>Ok, so how do we calculate those?  Well, let's reason through it.  What's the probability of both being drunk and blowing a positive result?  Well, it's gotta be lower than the probability of being drunk (because the probability of A and B always has to be lower than the probability of A alone, or identical to it in the pathological case where the probability of B is 1). The trick is to realize that conditional probabilities encode the information "given that I know A happened, what's the probability of B."  So it stands to reason that if you want to know whether A and B happened, you'd be interested in the probability of A, as well as the conditional probability of B given A.  </p>
+<p>This is what, in the earlier reading, I called "the expanded multiplication rule.  The formula is as follows: </p>
+<div class="math">$$P(A \cap B) = P(A)P(B|A)$$</div>
+<p>To remind you, here's what I said in the first reading to explain this: </p>
 <blockquote>
-<p>Assume that boys and girls are born with equal frequency. Mr. Able says, “I have two children, and at least one of them is a boy.” What is the probability that the other child is a boy? Mr. Baker says, “I went to the house of a two-child family, and a boy answered the door.” What is the probability that the other child is a boy?</p>
+<p>The classic example to understand the reasoning behind the expanded multiplication rule is drawing cards. If you draw cards from a normal deck and don't put them back, then the probability of the first card being a heart is just 13/52 = 1/4. What's the probability of drawing a second heart?</p>
+<p>Well, imagine that instead of drawing from the same deck, someone just gave you a second deck of cards with 51 cards in it, 12 of which were hearts. We know the probability of drawing a heart in that second deck, right? 12/51. That world is just the world described by the conditional probability of drawing a second heart given that you've already drawn a first. So what's the probability of drawing a heart out of the normal deck and a heart out of the weird second deck? Easy: 1/4 * 12/51.</p>
 </blockquote>
-<p>The readings then assert to you that the answer to Mr. Able's problem is 1/3, and the answer to Mr. Baker's problem is 1/2. </p>
-<p>I'll bet you have trouble believing this.  But it's correct.  Here's one way to think about why: <strong>probability statements are really sensitive to how you carve up the problem space</strong>. </p>
-<p>The Abel problem could be restated as follows: first, take all the possible families with two kids, and then eliminate those where both are girls.  Then, just from the set of families remaining, what proportion of them have two boys?</p>
-<p>The Baker problem could be restated as follows: first, take all the possible families with two kids. Of them, go knock on their doors, and, from those doors you knocked on in which a boy answers, in what proportion of them is the second kid a boy?</p>
-<p>The catch is that the sets you're looking into are different.  In the Abel problem, you're looking at <em>every family that has a boy</em> and asking how likely it is that those families have two boys. In the Baker problem, you're looking at <em>every family that has a boy AND where that boy happened to answer the door</em>, and asking how likely it is that those families have two boys.</p>
-<p>You would expect the size of the set you're looking at in the Baker problem to be smaller. After all, there are some families that have both a boy and a girl for which the girl will happen to answer the door. Intuitively, this should suggest to you that the pool of families for which a boy has answered the door would be smaller and, importantly, more weighted toward families with more boys.  After all, in a boy/girl family, there's only a 50% chance that a boy will answer the door, whereas in a boy/boy family it's guaranteed that a boy will answer. So constructing our set of families where a boy answers means we lose some of the boy/girl families but none of the boy/boy families (we can safely assume no parents answer in any event since parent answering would be independent of which gender of the child answers and what genders there are among children in the family).  The pool will be relatively more full of boys.</p>
-<h2>Now let's do the math.</h2>
-<p>Let's formalize the Baker problem with Bayes Rule. Reminder: </p>
-<div class="math">$$P(B|A) = \frac{P(A|B) \cdot P(B)}{P(A)}$$</div>
-<p>What we want to know is the probability of both kids being a boy, conditional on the door being opened by a boy. So, in our equation above, assign both-kids-boy to B, and boy-opened-door to A. </p>
-<p>And here's what we do know: </p>
-<ul>
-<li>
-<p>Probability of door being opened by a boy, conditional on both kids being boys --- <span class="math">\(P(A|B) = 1\)</span>. </p>
-</li>
-<li>
-<p>Probability of both kids being boys --- <span class="math">\(P(B) = 1/4\)</span> because the available packages of kids are <span class="math">\(\{bg, gb, bb, gg\}\)</span> and they have equal probability, and we know that as mutually exclusive and exhaustive events they must sum to 1.</p>
-</li>
-<li>
-<p>Probability of the door being opened by a boy, or <span class="math">\(P(A)\)</span>.  This one we have to do a little bit more work to construct. Let's reason it through.  We know all of the available packages of kids (that is, events), which are mutually exclusive. And we know the probability of each of those packages appearing (1/4).  We also know the probability of getting a boy to answer the door under each of the packages of kids. So we can just multiply those probabilities out and add them per the rules of probability we've already established. For example, the probability of bg is .25, and the probability of getting a boy answering the door there is 1/2, and so forth.  We ultimately end up with <span class="math">\(P(A) = .25 \cdot .5 + .25 \cdot .5 + .25 \cdot 1 + .25 \cdot 0 = .5\)</span>. </p>
-</li>
-</ul>
-<p>Now we can plug in: </p>
-<div class="math">$$P(B|A) = \frac{1 \cdot .25}{.5} = \frac{1}{2}$$</div>
-<p>Just as the readings told us. </p>
-<p>How about the Abel problem?  Well, we don't even need Bayes Rule for this one, we just need to observe that 1/3 of the families with one boy have both boys. But let's do it anyway, just as an exercise. Set B to be, yet again, "family has both boys," and set A to be "family has one boy."</p>
-<ul>
-<li>
-<p>Probability of a family having one boy, conditional on their having both boys --- <span class="math">\(P(A|B) = 1\)</span>, obviously.</p>
-</li>
-<li>
-<p>Probability of a family having both boys --- <span class="math">\(P(B) = 1/4\)</span> because, again, our available packages of kids are <span class="math">\(\{bg, gb, bb, gg\}\)</span>, with equal probability, and their probabilities have to all add up to 1.</p>
-</li>
-<li>
-<p>Probability of a family having one boy --- <span class="math">\(P(A) = 3/4\)</span> because of 4 available equal probability packages only one of which has no boys. </p>
-</li>
-</ul>
-<p>Again, plug that sucker into Bayes rule: </p>
-<div class="math">$$P(B|A) = \frac{1 \cdot .25}{.75} = \frac{1}{3}$$</div>
-<p>Once again, the readings did not lie to us.</p>
-<p>We should take several important lessons from forcing ourselves to work out this example all the way.</p>
-<ol>
-<li>
-<p>Clear talking facilitates clear thinking. With any probability statement, precise mathematical formulation is better than words, and more detailed words are better than less detailed words. </p>
-</li>
-<li>
-<p>Probability statements are sensitive to the sample space (as the reading points out), or, more colloquially, the set of possible events being looked at.  Make absolutely sure you have a clear idea what that sample space is, and whether it's the correct one or not. </p>
-</li>
-<li>
-<p>Almost any supposed paradox that you see can be resolved with aggressive application of Bayes Rule. Bayes Rule is the closest thing we have to a magic wand for fixing screwed-up thinking about probability. </p>
-</li>
-<li>
-<p>When in doubt about some probability statement, simulate it!  You just did a ton of work learning basic coding, it's time to get some payoff from it.  The great thing about simulations is that they force you to make your assumptions explicit by putting them in a form the computer can understand. If you can't define your sample space, you can't ask our good friend Python to simulate it. Often, writing out a simulation will force you to resolve ambiguities in how you structure the problem, and give you the boost you need to understand it yourself.  And if you still aren't quite sure even after writing the simulation out, you can run it and see what happens!</p>
-</li>
-</ol>
-<p>I've written a simulation of the Able/Baker problem down below. Before you look at it, you might consider writing your own simulation. But if you don't have time, feel free to run my code with sufficiently large values and see what you get. </p>
-<p>. <br>
-. <br>
-. <br>
-. <br>
-. <br>
-. <br>
-. <br>
-. <br>
-. <br>
-. <br>
-. <br>
-. <br>
-. <br>
-. <br>
-. <br>
-. <br>
-. <br>
-. <br>
-. <br>
-. <br>
-. <br>
-. <br>
-. <br>
-. <br>
-. <br>
-. <br>
-. <br>
-. <br>
-. <br>
-. <br>
-. <br>
-.   </p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
-<span class="k">def</span> <span class="nf">abel</span><span class="p">(</span><span class="n">num_families</span><span class="p">):</span>
-    <span class="n">fams</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">for</span> <span class="n">fam</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_families</span><span class="p">):</span>
-        <span class="n">kid1</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">([</span><span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;g&quot;</span><span class="p">])</span>
-        <span class="n">kid2</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">([</span><span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;g&quot;</span><span class="p">])</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">kid1</span> <span class="o">==</span> <span class="s2">&quot;b&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">kid2</span> <span class="o">==</span> <span class="s2">&quot;b&quot;</span><span class="p">):</span>
-            <span class="n">fams</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">kid1</span><span class="p">,</span> <span class="n">kid2</span><span class="p">))</span>
-    <span class="n">two_boy_fams</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">fams</span> <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="p">(</span><span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">)]</span>
-    <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;total fams with a boy&quot;</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">fams</span><span class="p">),</span>
-            <span class="s2">&quot;total fams with two boys&quot;</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">two_boy_fams</span><span class="p">)}</span>
-
-<span class="k">def</span> <span class="nf">baker</span><span class="p">(</span><span class="n">num_families</span><span class="p">,</span> <span class="n">num_knocks</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">num_knocks</span> <span class="o">&gt;</span> <span class="n">num_families</span><span class="p">:</span>
-        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Can&#39;t knock on more doors than there are households.&quot;</span><span class="p">)</span>
-    <span class="n">fams</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">for</span> <span class="n">fam</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_families</span><span class="p">):</span>
-        <span class="n">kid1</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">([</span><span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;g&quot;</span><span class="p">])</span>
-        <span class="n">kid2</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">([</span><span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;g&quot;</span><span class="p">])</span>
-        <span class="n">fams</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">kid1</span><span class="p">,</span> <span class="n">kid2</span><span class="p">))</span>
-    <span class="n">random</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">fams</span><span class="p">)</span>
-    <span class="n">knocks_with_first_boy</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">for</span> <span class="n">knock</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_knocks</span><span class="p">):</span>
-        <span class="n">thisfam</span> <span class="o">=</span> <span class="n">fams</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
-        <span class="n">kid_who_answers</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
-        <span class="k">if</span> <span class="n">thisfam</span><span class="p">[</span><span class="n">kid_who_answers</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;b&quot;</span><span class="p">:</span>
-            <span class="n">otherkid</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="ow">not</span> <span class="n">kid_who_answers</span><span class="p">)</span> <span class="c1"># flips 0 to 1 and 1 to 0.  Actually don&#39;t even need to cast to int, but it looks less dumb</span>
-            <span class="n">knocks_with_first_boy</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">thisfam</span><span class="p">[</span><span class="n">otherkid</span><span class="p">])</span>
-    <span class="n">knocks_with_second_boy</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">knocks_with_first_boy</span> <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="s2">&quot;b&quot;</span><span class="p">]</span>
-    <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;total knocks where a boy answered&quot;</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">knocks_with_first_boy</span><span class="p">),</span>
-            <span class="s2">&quot;knocks where boy answered and second kid is a boy&quot;</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">knocks_with_second_boy</span><span class="p">)}</span>
-</pre></div>
-
-
-<p>As your reward for reading this far, I'll tell you a secret.  I wasn't sure why the Able/Baker problem came out the way it does either---not until I wrote the simulation code. But, just as I said, writing this code forced me to think about what the sample space for the Baker problem actually is, and hence guided me to the rest of this explanation. Even those of us with years and years of probability experience need a little help sometimes.</p>
+<p>So that gets us as far as <span class="math">\(P(A \cap B) = P(A)P(B|A)\)</span>.  And, it should be obvious that  <span class="math">\(P(A \cap B) = P(B \cap A)\)</span> ("A and B" is the same as "B and A"). If we substitute "drunk" and "sober" for A in the two sides of our addition, and substitute "blew" for B, then, by plugging in, we can conclude that </p>
+<div class="math">$$P(blew) = P(blew|drunk) \cdot P(drunk) + P(blew|sober) \cdot P(sober)$$</div>
+<p>Which is the assertation I originally made, expressing the law of total probability, and which allows us to get the denominator of our Bayes Rule calculation.</p>
+<p>Subsequent weeks will not have nearly this much notation.  Do not fear.</p>
 <script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
     var align = "left",
         indent = "0em",
@@ -245,14 +144,14 @@
 
             <li><article class="hentry">
                 <header>
-                    <h1><a href="/week-4-recap-total-probability-rule.html" rel="bookmark"
-                           title="Permalink to Week 4 recap: Total Probability Rule">Week 4 recap: Total Probability Rule</a></h1>
+                    <h1><a href="/abel-and-baker-redux-probability-and-description.html" rel="bookmark"
+                           title="Permalink to Abel and Baker Redux: Probability and Description">Abel and Baker Redux: Probability and Description</a></h1>
                 </header>
 
                 <div class="entry-content">
 <footer class="post-info">
-        <abbr class="published" title="2018-02-05T00:00:00-06:00">
-                Published: Mon 05 February 2018
+        <abbr class="published" title="2018-12-10T00:00:00-06:00">
+                Published: Mon 10 December 2018
         </abbr>
 
         <address class="vcard author">
@@ -260,10 +159,10 @@
         </address>
 <p>In <a href="/category/lessons.html">Lessons</a>.</p>
 <p>tags: <a href="/tag/probability.html">probability</a> <a href="/tag/conceptual.html">conceptual</a> <a href="/tag/week4.html">week4</a> </p>
-</footer><!-- /.post-info -->                <p>The probability lecture this week kind of hit a wall at one point in our Bayes Rule example.  Here's a clearer explanation.</p>
-<p>Remember, we had an example problem involving figuring out the posterior probability of someone being drunk, given that they blew a positive result on a breathalyzer.  </p>
-<p>The place …</p>
-                <a class="readmore" href="/week-4-recap-total-probability-rule.html">read more</a>
+</footer><!-- /.post-info -->                <p>Right at the beginning of the F&amp;L readings for this week, you saw a well-known probability puzzler/"paradox."  I'm going to risk angering the copyright gods and quote it in full here: </p>
+<blockquote>
+<p>Assume that boys and girls are born with equal frequency. Mr. Able says, “I have two children …</p></blockquote>
+                <a class="readmore" href="/abel-and-baker-redux-probability-and-description.html">read more</a>
                 </div><!-- /.entry-content -->
             </article></li>
                 </ol><!-- /#posts-list -->
