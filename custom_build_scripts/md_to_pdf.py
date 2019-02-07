@@ -28,7 +28,7 @@ def add_link_text(mdfile, mdstring):
 def remove_link_text(mdfile, mdstring):
     linktext = make_link_text(mdfile)
     if mdstring.endswith(linktext):
-        outstring = mdstring.strip(linktext)
+        outstring = mdstring.split(linktext)[0]
         return outstring
     return mdstring
 
@@ -37,8 +37,8 @@ def make_pdf_from_md(mdfile):
         mdstring = mdf.read()
     original = mdstring
     title = extract_title(mdstring)
-    mdstring = remove_link_text(mdfile, mdstring)
     mdstring = "# {} \n\n".format(title) + strip_yaml(mdstring)
+    mdstring = remove_link_text(mdfile, mdstring)
     outfile = "content/images/" + os.path.basename(mdfile).split(".")[0] + ".pdf"
     pypandoc.convert_text(mdstring, 'pdf', format="md", outputfile=outfile)
     add_link_text(mdfile, original)
