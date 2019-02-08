@@ -339,9 +339,19 @@ Regression analysis. Linear regression
 
 Focused legal application: statistical evidence of discrimination.
 
+Readings: 
+
+- [Regression Introduction]({filename}../Lessons/regression-intro.ipynb)
+
+- Federal Judicial Center reference manual on scientific evidence, appendix to reference guide on multiple regression, pp. 333-356.
+
 ### Week 10
 
 How regression analysis can go horribly wrong.  Assumptions of regression.  Failures of regression assumptions. Simpson's paradox.
+
+Readings: 
+
+- Federal Judicial Center reference manual, reference guide on multiple regression, pp. 303-332.
 
 Problem set 3 due.
 
