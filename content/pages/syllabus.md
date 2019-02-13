@@ -276,6 +276,8 @@ Reading:
 
 - (video and exercises) DataCamp [Intermediate Python for Data Science chapter 2 (dictionaries and pandas)](https://www.datacamp.com/courses/intermediate-python-for-data-science) 
 
+**[Week 5 recap is here.]({filename}../Lessons/week5recap.md)**
+
 ### Week 6
 
 Probability distributions, central limit theorem, hypothesis testing. 

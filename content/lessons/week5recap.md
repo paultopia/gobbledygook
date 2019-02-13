@@ -50,7 +50,7 @@ Incidentally, for a discussion of how lawyers appear to be susceptible to screwi
 
 ## Scavenger hunt
 
-Our second major task this week was to do a [Data Scavenger Hunt]{{filename}../class_examples/scavenger.md).  Things started a little bumpy, because lots of people had trouble getting the data loaded, mainly due to the diversity of platforms in the class.  (And also because I went around to help windows users, and didn't notice that many were actually using the Azure version, and hence didn't have their local downloads... sorry about that.)
+Our second major task this week was to do a [Data Scavenger Hunt]({filename}../class_examples/scavenger.md).  Things started a little bumpy, because lots of people had trouble getting the data loaded, mainly due to the diversity of platforms in the class.  (And also because I went around to help windows users, and didn't notice that many were actually using the Azure version, and hence didn't have their local downloads... sorry about that.)
 
 We're going to finish this on Monday, and then I'll post some solutions after we're done.  
 
