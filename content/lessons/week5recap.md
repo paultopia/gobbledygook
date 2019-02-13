@@ -1,8 +1,10 @@
-title: Week 5 recap 
+title: Week 5 Recap 
 tags: probability, datasets, week5, week6
 date: 2019-02-13
 
 In week 5, we began by continuing our probability lecture from last week, and then, as an exercise, tried to prove the correct answer to the Monty Hall problem using Bayes Rule. 
+
+## Monty Redux
 
 Here's that solution again.  Remember our formula for Bayes Rule: 
 
@@ -14,9 +16,15 @@ Let's start with the numerator of our fraction on the right side of the formula.
 
 As usual, the denominator takes a bit more work to figure out.  What's the unconditional probability of Monty opening door R?  Well, we need to use the law of total probability again.  Since the only three states of the universe are car-behind-Q, car-behind-R, and car-behind-S, we need to calculate 
 
-$$P(R-open|car-Q)P(car-Q) + P(R-open|car-R)P(car-R) + P(R-open|car-S)P(car-S)$$
+$$P(R-open|car-Q)P(car-Q) \\+ P(R-open|car-R)P(car-R) \\+ P(R-open|car-S)P(car-S)$$
 
-We have already concluded that $P(R-open|car-Q) = \frac{1}{2}$ --- remember, that's just the evidence we have, we already used it in the numerator.  And we know that Monty can't open the door with the car behind it, so we know that $P(R-open|car-R) = 0$. The third term is a little difficult to figure out---and this, I suspect, is where all the mathematicians who [wrote angrily to Marilyn vos Savant](https://priceonomics.com/the-time-everyone-corrected-the-worlds-smartest/) went wrong. Here's a mistake you might make: since all Monty has to do is open a door without the car behind it, and neither Q nor S has the car behind it, $P(R-open|car-S) = \frac{1}{2}$. If you think that, you'll end up with a denominator of $\frac{1}{3}$ and an ultimate, incorrect but intuitive, calculation of $P(B|A) = \frac{1}{2}$.  But this would be wrong.  The thing you need to remember is that we've been writing out the problem in shorthand.  Monty's decision as to which door to open was made not only with knowledge of where the car is, but also with knowledge of which door the player picked.  So the longhand version of the calculation for our denominator is actually: 
+- We know that the second term in each of those multiplications is $\frac{1}{3}$ because the prior on each door having the car is a third. 
+
+- We have already concluded that $P(R-open|car-Q) = \frac{1}{2}$ --- remember, that's just the evidence we have, we already used it in the numerator.  
+
+- We know that Monty can't open the door with the car behind it, so we know that $P(R-open|car-R) = 0$. 
+
+The third term is a little difficult to figure out---and this, I suspect, is where all the mathematicians who [wrote angrily to Marilyn vos Savant](https://priceonomics.com/the-time-everyone-corrected-the-worlds-smartest/) went wrong. Here's a mistake you might make: since all Monty has to do is open a door without the car behind it, and neither Q nor S has the car behind it, $P(R-open|car-S) = \frac{1}{2}$. If you think that, you'll end up with a denominator of $\frac{1}{3}$ and an ultimate, incorrect but intuitive, calculation of $P(B|A) = \frac{1}{2}$.  But this would be wrong.  The thing you need to remember is that we've been writing out the problem in shorthand.  Monty's decision as to which door to open was made not only with knowledge of where the car is, but also with knowledge of which door the player picked.  So the longhand version of the calculation for our denominator is actually: 
 
 $$P(R-open|car-Q, picked-Q)P(car-Q) + P(R-open|car-R, picked-Q)P(car-R) + P(R-open|car-S, picked-Q)P(car-S)$$
 
@@ -36,14 +44,14 @@ $$\frac{\frac{1}{2}\frac{1}{3}}{\frac{1}{2}}$$
 
 simplify by canceling the $\frac{1}{2}$ -s and you get the correct answer.
 
-We know that the second term in each of those multiplications is $\frac{1}{3}$ because the prior on each door having the car is a third. 
-
 We learned that most of the work in applying Bayes Rule is figuring out how to define the events for which we're trying to make probability judgments---how to formalize our idea of what we started out knowing, what we've learned (our evidence), and what we're trying to figure out.  
 
 Incidentally, for a discussion of how lawyers appear to be susceptible to screwing up Bayes Rule, an article called [Miss Rate Neglect in Legal Evidence](https://academic-oup-com.proxy.lib.uiowa.edu/lpr/article/15/4/239/2580528) reports on a number of experiements with legally trained subjects where they do things like inappropriately flip around conditional probabilities. 
 
-ergonomics---I'm going to spin-up a special password protected web server where you can just generate a http request to get the data. 
+## Scavenger hunt
 
-Monty hall
+Our second major task this week was to do a [Data Scavenger Hunt]{{filename}../class_examples/scavenger.md).  Things started a little bumpy, because lots of people had trouble getting the data loaded, mainly due to the diversity of platforms in the class.  (And also because I went around to help windows users, and didn't notice that many were actually using the Azure version, and hence didn't have their local downloads... sorry about that.)
 
-Scavenger hunt: I've posted the instructions for the scavenger hunt under the class examples tab on this website, and will post code and comments on how to get there after we look at it again in the beginning of week 6. 
+We're going to finish this on Monday, and then I'll post some solutions after we're done.  
+
+I'm also going to fix this the ergonomics of getting data.  Watch this space---by next week there will be a special private class webserver set up which you'll just be able to directly download data from.  I'll have a class password for it, which I'll give out/post over ICON.  I haven't gotten an address for this yet, but if you assume the address is `https://some.address.com`, the password is `PASS`, and the data to load is in `filename.csv` then you'll just be able to load any data in the class by calling `pd.read_csv("https://some.address.com/data?file=filename.csv&password=PASS")`.  This should at least nicely dispose of data acquisition glitches, as we'll be spending a lot of time in the rest of the class working with datasets.
