@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <title>Sociological Gobbledygook - datasets</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+        <link rel="stylesheet" href="/theme/css/juptyer-fix.css" />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">Sociological Gobbledygook </a></h1>
+                <nav><ul>
+                    <li><a href="/pages/manifesto.html">Manifesto</a></li>
+                    <li><a href="/pages/welcome.html">Welcome!</a></li>
+                    <li><a href="/category/class_examples.html">class_examples</a></li>
+                    <li><a href="/category/lessons.html">Lessons</a></li>
+                    <li><a href="/category/psets.html">psets</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+
+            <aside id="featured" class="body">
+                <article>
+                    <h1 class="entry-title"><a href="/week-5-recap.html">Week 5 Recap</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2019-02-13T00:00:00-06:00">
+                Published: Wed 13 February 2019
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/paul-gowder.html">Paul Gowder</a>
+        </address>
+<p>In <a href="/category/lessons.html">Lessons</a>.</p>
+<p>tags: <a href="/tag/probability.html">probability</a> <a href="/tag/datasets.html">datasets</a> <a href="/tag/week5.html">week5</a> <a href="/tag/week6.html">week6</a> </p>
+</footer><!-- /.post-info --><p>In week 5, we began by continuing our probability lecture from last week, and then, as an exercise, tried to prove the correct answer to the Monty Hall problem using Bayes Rule. </p>
+<h2>Monty Redux</h2>
+<p>Here's that solution again.  Remember our formula for Bayes Rule: </p>
+<div class="math">$$P(B|A) = \frac{P(A|B)P(B)}{P(A)}$$</div>
+<p>Here, all the work is in figuring out what A and B are, and then plugging in.  As a guide to figuring out A and B, remember that conceptually what we're trying to do is update our estimate of the likelihood that the car is behind the door we already picked, given our new evidence (that Monty opened a specific other door).  For convenience, we can label the door we picked as Q, the door Monty opened as R, and the door that was neither picked nor opened as Z, and then what we're after is the conditional probability that the car is behind Q given that Monty opened R. Then it makes the most sense to formalize B as car is behind Q, and A as Monty opened R. </p>
+<p>Let's start with the numerator of our fraction on the right side of the formula.  What's <span class="math">\(P(A|B)\)</span>?  Well, if the car is behind Q, then Monty has a choice between opening door R or door S, and assuming he doesn't want to give away any more free information about where the car is, we have to assume that he picks one of the two at random.  So <span class="math">\(P(A|B) = \frac{1}{2}\)</span>. And <span class="math">\(P(B)\)</span> is just our prior on door Q having the car, which is <span class="math">\(\frac{1}{3}\)</span>.  (I'm using fractions here because they're all really simple fractions and it makes the arithmetic easier at the end, but these are still probabilities, not odds.) </p>
+<p>As usual, the denominator takes a bit more work to figure out.  What's the unconditional probability of Monty opening door R?  Well, we need to use the law of total probability again.  Since the only three states of the universe are car-behind-Q, car-behind-R, and car-behind-S, we need to calculate </p>
+<div class="math">$$P(R-open|car-Q)P(car-Q) \\+ P(R-open|car-R)P(car-R) \\+ P(R-open|car-S)P(car-S)$$</div>
+<ul>
+<li>
+<p>We know that the second term in each of those multiplications is <span class="math">\(\frac{1}{3}\)</span> because the prior on each door having the car is a third. </p>
+</li>
+<li>
+<p>We have already concluded that <span class="math">\(P(R-open|car-Q) = \frac{1}{2}\)</span> --- remember, that's just the evidence we have, we already used it in the numerator.  </p>
+</li>
+<li>
+<p>We know that Monty can't open the door with the car behind it, so we know that <span class="math">\(P(R-open|car-R) = 0\)</span>. </p>
+</li>
+</ul>
+<p>The third term is a little difficult to figure out---and this, I suspect, is where all the mathematicians who <a href="https://priceonomics.com/the-time-everyone-corrected-the-worlds-smartest/">wrote angrily to Marilyn vos Savant</a> went wrong. Here's a mistake you might make: since all Monty has to do is open a door without the car behind it, and neither Q nor S has the car behind it, <span class="math">\(P(R-open|car-S) = \frac{1}{2}\)</span>. If you think that, you'll end up with a denominator of <span class="math">\(\frac{1}{3}\)</span> and an ultimate, incorrect but intuitive, calculation of <span class="math">\(P(B|A) = \frac{1}{2}\)</span>.  But this would be wrong.  The thing you need to remember is that we've been writing out the problem in shorthand.  Monty's decision as to which door to open was made not only with knowledge of where the car is, but also with knowledge of which door the player picked.  So the longhand version of the calculation for our denominator is actually: </p>
+<div class="math">$$P(R-open|car-Q, picked-Q)P(car-Q) + P(R-open|car-R, picked-Q)P(car-R) + P(R-open|car-S, picked-Q)P(car-S)$$</div>
+<p>And the other rule that we can't forget is that Monty also can't open a door that the player picked.  So the player picked Q---if the car is behind S, the only door Monty can open is R. <span class="math">\(P(R-open|car-S, picked-Q) = 1\)</span>.  </p>
+<p>This gives us the denominator: </p>
+<div class="math">$$\frac{1}{2}\frac{1}{3} + 0 + \frac{1}{3}$$</div>
+<p>which we can easily simplify: </p>
+<div class="math">$$\frac{1}{6} + \frac{2}{6} = \frac{1}{2}$$</div>
+<p>meaning that our overall Bayes Rule formula is: </p>
+<div class="math">$$\frac{\frac{1}{2}\frac{1}{3}}{\frac{1}{2}}$$</div>
+<p>simplify by canceling the <span class="math">\(\frac{1}{2}\)</span> -s and you get the correct answer.</p>
+<p>We learned that most of the work in applying Bayes Rule is figuring out how to define the events for which we're trying to make probability judgments---how to formalize our idea of what we started out knowing, what we've learned (our evidence), and what we're trying to figure out.  </p>
+<p>Incidentally, for a discussion of how lawyers appear to be susceptible to screwing up Bayes Rule, an article called <a href="https://academic-oup-com.proxy.lib.uiowa.edu/lpr/article/15/4/239/2580528">Miss Rate Neglect in Legal Evidence</a> reports on a number of experiements with legally trained subjects where they do things like inappropriately flip around conditional probabilities. </p>
+<h2>Scavenger hunt</h2>
+<p>Our second major task this week was to do a <a href="/in-class-exercise-data-scavenger-hunt.html">Data Scavenger Hunt</a>.  Things started a little bumpy, because lots of people had trouble getting the data loaded, mainly due to the diversity of platforms in the class.  (And also because I went around to help windows users, and didn't notice that many were actually using the Azure version, and hence didn't have their local downloads... sorry about that.)</p>
+<p>We're going to finish this on Monday, and then I'll post some solutions after we're done.  </p>
+<p>I have also fixed the ergonomics of getting data. There's a private web server for this class at <a href="https://gobbledygook.herokuapp.com/">https://gobbledygook.herokuapp.com/</a>.  I'll give you a password for it in class (and will also post it on ICON).  Whenever you need to load a dataset, you will just be able to use Pandas to load it directly from this server.  Here's how.  Assume the password is PASSWORD and the file you're trying to load is FILENAME.CSV.  Then if you have Pandas imported as <code>pd</code>, the code <code>df=pd.read_csv("https://gobbledygook.herokuapp.com/data?file=FILENAME.CSV&amp;password=PASSWORD")</code> will save the dataset as a Pandas dataframe to the variable <code>df</code>.  No more mess with Windows file paths and local downloads vs. Azure notebooks or downloading files from ICON or any of that nonsense. </p>
+<p>We'll be using a variety of datasets in the rest of this class, so get used to that command.  Also, the server might start up slowly sometimes, so if it looks like it's hanging when you try to load a dataset, just wait 30 seconds or so and it'll be fine. </p>
+<p>(Incidentally, this method of authenticating users by passing passwords in GET request parameters is a <a href="https://security.stackexchange.com/questions/147188/is-it-bad-practice-to-use-get-method-as-login-username-password-for-administrato">terrible idea</a>, it's totally insecure. Don't do it for anything you ever build. I'm just doing it here because we don't need real security, just minimal privacy against casual misuse.  And also because I'm going to tear down the server the moment class is over.)</p>
+<p><a href="/week5recap.pdf">Download lesson PDF</a></p>
+<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "left",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width < 768) ? "left" : align;
+        indent = (screen.width < 768) ? "0em" : indent;
+        linebreak = (screen.width < 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'blue ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('Typewriter' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_Typewriter');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_Typewriter-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_Typewriter-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_Typewriter-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_Typewriter');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_Typewriter-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_Typewriter-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_Typewriter-italic');" +
+            "});" +
+        "}";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+</script>                </article>
+            </aside><!-- /#featured -->
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://law.uiowa.edu/">University of Iowa College of Law</a></li>
+                            <li><a href="https://gowder.io">Paul Gowder</a></li>
+                            <li><a href="http://python.org/">Python Documentation</a></li>
+                            <li><a href="https://github.com/paultopia/quantitative-methods-for-lawyers/">Course Github</a></li>
+                            <li><a href="https://github.com/paultopia/gobbledygook_lessons">Course Lessons Github</a></li>
+                            <li><a href="https://notebooks.azure.com/">Microsoft Azure Notebooks</a></li>
+                            <li><a href="tags.html">Lesson Post Tags</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+      
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+            <address id="about" class="vcard body">
+                
+
+                All content is (c) 2018-9 by <a href="https://gowder.io">Paul Gowder</a> and licensed under a <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International license</a>.  On the technical side, the site is powered by <a href="http://getpelican.com/">Pelican</a>, the theme is a modified version of one by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>.
+            </address><!-- /#about -->
+
+                
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

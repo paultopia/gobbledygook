@@ -26,7 +26,7 @@ $$P(R-open|car-Q)P(car-Q) \\+ P(R-open|car-R)P(car-R) \\+ P(R-open|car-S)P(car-S
 
 The third term is a little difficult to figure out---and this, I suspect, is where all the mathematicians who [wrote angrily to Marilyn vos Savant](https://priceonomics.com/the-time-everyone-corrected-the-worlds-smartest/) went wrong. Here's a mistake you might make: since all Monty has to do is open a door without the car behind it, and neither Q nor S has the car behind it, $P(R-open|car-S) = \frac{1}{2}$. If you think that, you'll end up with a denominator of $\frac{1}{3}$ and an ultimate, incorrect but intuitive, calculation of $P(B|A) = \frac{1}{2}$.  But this would be wrong.  The thing you need to remember is that we've been writing out the problem in shorthand.  Monty's decision as to which door to open was made not only with knowledge of where the car is, but also with knowledge of which door the player picked.  So the longhand version of the calculation for our denominator is actually: 
 
-$$P(R-open|car-Q, picked-Q)P(car-Q) + P(R-open|car-R, picked-Q)P(car-R) + P(R-open|car-S, picked-Q)P(car-S)$$
+$$P(R-open|car-Q, picked-Q)P(car-Q) \\+ P(R-open|car-R, picked-Q)P(car-R) \\+ P(R-open|car-S, picked-Q)P(car-S)$$
 
 And the other rule that we can't forget is that Monty also can't open a door that the player picked.  So the player picked Q---if the car is behind S, the only door Monty can open is R. $P(R-open|car-S, picked-Q) = 1$.  
 
@@ -59,3 +59,7 @@ I have also fixed the ergonomics of getting data. There's a private web server f
 We'll be using a variety of datasets in the rest of this class, so get used to that command.  Also, the server might start up slowly sometimes, so if it looks like it's hanging when you try to load a dataset, just wait 30 seconds or so and it'll be fine. 
 
 (Incidentally, this method of authenticating users by passing passwords in GET request parameters is a [terrible idea](https://security.stackexchange.com/questions/147188/is-it-bad-practice-to-use-get-method-as-login-username-password-for-administrato), it's totally insecure. Don't do it for anything you ever build. I'm just doing it here because we don't need real security, just minimal privacy against casual misuse.  And also because I'm going to tear down the server the moment class is over.)
+
+
+[Download lesson PDF]({attach}../images/week5recap.pdf)
+
