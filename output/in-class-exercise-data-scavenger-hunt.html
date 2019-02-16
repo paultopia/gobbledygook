@@ -3,26 +3,27 @@
 <head>
         <meta charset="utf-8" />
         <title>In-Class Exercise: Data Scavenger Hunt</title>
-        <link rel="stylesheet" href="/theme/css/main.css" />
-        <link rel="stylesheet" href="/theme/css/juptyer-fix.css" />
+        <link rel="stylesheet" href="https://sociologicalgobbledygook.com/theme/css/main.css" />
+        <link rel="stylesheet" href="https://sociologicalgobbledygook.com/theme/css/juptyer-fix.css" />
+        <link href="https://sociologicalgobbledygook.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Sociological Gobbledygook Atom Feed" />
 </head>
 
 <body id="index" class="home">
         <header id="banner" class="body">
-                <h1><a href="/">Sociological Gobbledygook </a></h1>
+                <h1><a href="https://sociologicalgobbledygook.com/">Sociological Gobbledygook </a></h1>
                 <nav><ul>
-                    <li><a href="/pages/manifesto.html">Manifesto</a></li>
-                    <li><a href="/pages/welcome.html">Welcome!</a></li>
-                    <li class="active"><a href="/category/class_examples.html">class_examples</a></li>
-                    <li><a href="/category/lessons.html">Lessons</a></li>
-                    <li><a href="/category/psets.html">psets</a></li>
+                    <li><a href="https://sociologicalgobbledygook.com/pages/manifesto.html">Manifesto</a></li>
+                    <li><a href="https://sociologicalgobbledygook.com/pages/welcome.html">Welcome!</a></li>
+                    <li class="active"><a href="https://sociologicalgobbledygook.com/category/class_examples.html">class_examples</a></li>
+                    <li><a href="https://sociologicalgobbledygook.com/category/lessons.html">Lessons</a></li>
+                    <li><a href="https://sociologicalgobbledygook.com/category/psets.html">psets</a></li>
                 </ul></nav>
         </header><!-- /#banner -->
 <section id="content" class="body">
   <article>
     <header>
       <h1 class="entry-title">
-        <a href="/in-class-exercise-data-scavenger-hunt.html" rel="bookmark"
+        <a href="https://sociologicalgobbledygook.com/in-class-exercise-data-scavenger-hunt.html" rel="bookmark"
            title="Permalink to In-Class Exercise: Data Scavenger Hunt">In-Class Exercise: Data Scavenger Hunt</a></h1>
     </header>
 
@@ -33,10 +34,10 @@
         </abbr>
 
         <address class="vcard author">
-                By                         <a class="url fn" href="/author/paul-gowder.html">Paul Gowder</a>
+                By                         <a class="url fn" href="https://sociologicalgobbledygook.com/author/paul-gowder.html">Paul Gowder</a>
         </address>
-<p>In <a href="/category/class_examples.html">class_examples</a>.</p>
-<p>tags: <a href="/tag/data.html">data</a> <a href="/tag/week5.html">week5</a> </p>
+<p>In <a href="https://sociologicalgobbledygook.com/category/class_examples.html">class_examples</a>.</p>
+<p>tags: <a href="https://sociologicalgobbledygook.com/tag/data.html">data</a> <a href="https://sociologicalgobbledygook.com/tag/week5.html">week5</a> </p>
 </footer><!-- /.post-info -->      <h2>Pandas Filtering</h2>
 <p>Before we do our scavenger hunt, here's a piece of useful information you should know: you can filter rows of a Pandas dataframe using something that returns a boolean.</p>
 <p>For example, suppose you have a DataFrame called copdf with police officer names in a column called "name" and the number of tickets they've written in a column called "tickets."  You could use the code <code>copdf[copdf.tickets&gt;100].name</code> to get the names of all the cops with more than 100 tickets. (However, be careful about changing subsets of DataFrame like that---sometimes Pandas will change the original DataFrame when you make a change to a subset.  It's a good idea to <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.copy.html">explicitly copy a dataframe</a> before doing any changes to a subset of it that you don't want to leak into the original.) </p>

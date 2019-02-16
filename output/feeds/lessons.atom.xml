@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Sociological Gobbledygook - Lessons</title><link href="https://sociologicalgobbledygook.com/" rel="alternate"></link><link href="https://sociologicalgobbledygook.com/feeds/lessons.atom.xml" rel="self"></link><id>https://sociologicalgobbledygook.com/</id><updated>2019-01-18T00:00:00-06:00</updated><entry><title>Post-Week 1 Notes</title><link href="https://sociologicalgobbledygook.com/post-week-1-notes.html" rel="alternate"></link><published>2018-01-15T00:00:00-06:00</published><updated>2018-01-15T00:00:00-06:00</updated><author><name>Paul Gowder</name></author><id>tag:sociologicalgobbledygook.com,2018-01-15:/post-week-1-notes.html</id><summary type="html">&lt;p&gt;Well, we've survived our first week of Sociological Gobbledygook (and one room change---which we're keeping, BTW).  We've learned the basic mechanics of programming, and, more importantly, we've worked on building a mental model for how talking to a computer works by completing a number of exercises.  &lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Sociological Gobbledygook - Lessons</title><link href="https://sociologicalgobbledygook.com/" rel="alternate"></link><link href="https://sociologicalgobbledygook.com/feeds/lessons.atom.xml" rel="self"></link><id>https://sociologicalgobbledygook.com/</id><updated>2019-02-13T00:00:00-06:00</updated><entry><title>Post-Week 1 Notes</title><link href="https://sociologicalgobbledygook.com/post-week-1-notes.html" rel="alternate"></link><published>2018-01-15T00:00:00-06:00</published><updated>2018-01-15T00:00:00-06:00</updated><author><name>Paul Gowder</name></author><id>tag:sociologicalgobbledygook.com,2018-01-15:/post-week-1-notes.html</id><summary type="html">&lt;p&gt;Well, we've survived our first week of Sociological Gobbledygook (and one room change---which we're keeping, BTW).  We've learned the basic mechanics of programming, and, more importantly, we've worked on building a mental model for how talking to a computer works by completing a number of exercises.  &lt;/p&gt;
 &lt;p&gt;For the in-class time …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Well, we've survived our first week of Sociological Gobbledygook (and one room change---which we're keeping, BTW).  We've learned the basic mechanics of programming, and, more importantly, we've worked on building a mental model for how talking to a computer works by completing a number of exercises.  &lt;/p&gt;
 &lt;p&gt;For the in-class time in week 2, expect more of the same, lots of exercises---but now they're going to get a little bit more complicated.  I'll also be pushing out the reading for week 3 soon. &lt;/p&gt;
 &lt;p&gt;By now, everyone should have a working Azure notebooks setup and a Github account; you should also have received an invitation e-mail to join DataCamp. I encourage you to take advantage of DataCamp beyond the stuff I've assigned: you have free access to all their lessons for the duration of the class period, but it usually costs $30/month, so milk it for all it's worth while you can. And let me know if there are any problems.&lt;/p&gt;
@@ -35919,4 +35919,99 @@ for doc in docs:
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
 &lt;/script&gt;
-</content><category term="python"></category><category term="programming"></category><category term="week3"></category><category term="regex"></category><category term="strings"></category></entry></feed>
+</content><category term="python"></category><category term="programming"></category><category term="week3"></category><category term="regex"></category><category term="strings"></category></entry><entry><title>Week 5 Recap</title><link href="https://sociologicalgobbledygook.com/week-5-recap.html" rel="alternate"></link><published>2019-02-13T00:00:00-06:00</published><updated>2019-02-13T00:00:00-06:00</updated><author><name>Paul Gowder</name></author><id>tag:sociologicalgobbledygook.com,2019-02-13:/week-5-recap.html</id><summary type="html">&lt;p&gt;In week 5, we began by continuing our probability lecture from last week, and then, as an exercise, tried to prove the correct answer to the Monty Hall problem using Bayes Rule. &lt;/p&gt;
+&lt;h2&gt;Monty Redux&lt;/h2&gt;
+&lt;p&gt;Here's that solution again.  Remember our formula for Bayes Rule: &lt;/p&gt;
+&lt;div class="math"&gt;$$P(B|A) = \frac{P(A …&lt;/div&gt;</summary><content type="html">&lt;p&gt;In week 5, we began by continuing our probability lecture from last week, and then, as an exercise, tried to prove the correct answer to the Monty Hall problem using Bayes Rule. &lt;/p&gt;
+&lt;h2&gt;Monty Redux&lt;/h2&gt;
+&lt;p&gt;Here's that solution again.  Remember our formula for Bayes Rule: &lt;/p&gt;
+&lt;div class="math"&gt;$$P(B|A) = \frac{P(A|B)P(B)}{P(A)}$$&lt;/div&gt;
+&lt;p&gt;Here, all the work is in figuring out what A and B are, and then plugging in.  As a guide to figuring out A and B, remember that conceptually what we're trying to do is update our estimate of the likelihood that the car is behind the door we already picked, given our new evidence (that Monty opened a specific other door).  For convenience, we can label the door we picked as Q, the door Monty opened as R, and the door that was neither picked nor opened as Z, and then what we're after is the conditional probability that the car is behind Q given that Monty opened R. Then it makes the most sense to formalize B as car is behind Q, and A as Monty opened R. &lt;/p&gt;
+&lt;p&gt;Let's start with the numerator of our fraction on the right side of the formula.  What's &lt;span class="math"&gt;\(P(A|B)\)&lt;/span&gt;?  Well, if the car is behind Q, then Monty has a choice between opening door R or door S, and assuming he doesn't want to give away any more free information about where the car is, we have to assume that he picks one of the two at random.  So &lt;span class="math"&gt;\(P(A|B) = \frac{1}{2}\)&lt;/span&gt;. And &lt;span class="math"&gt;\(P(B)\)&lt;/span&gt; is just our prior on door Q having the car, which is &lt;span class="math"&gt;\(\frac{1}{3}\)&lt;/span&gt;.  (I'm using fractions here because they're all really simple fractions and it makes the arithmetic easier at the end, but these are still probabilities, not odds.) &lt;/p&gt;
+&lt;p&gt;As usual, the denominator takes a bit more work to figure out.  What's the unconditional probability of Monty opening door R?  Well, we need to use the law of total probability again.  Since the only three states of the universe are car-behind-Q, car-behind-R, and car-behind-S, we need to calculate &lt;/p&gt;
+&lt;div class="math"&gt;$$P(R-open|car-Q)P(car-Q) \\+ P(R-open|car-R)P(car-R) \\+ P(R-open|car-S)P(car-S)$$&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;We know that the second term in each of those multiplications is &lt;span class="math"&gt;\(\frac{1}{3}\)&lt;/span&gt; because the prior on each door having the car is a third. &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;We have already concluded that &lt;span class="math"&gt;\(P(R-open|car-Q) = \frac{1}{2}\)&lt;/span&gt; --- remember, that's just the evidence we have, we already used it in the numerator.  &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;We know that Monty can't open the door with the car behind it, so we know that &lt;span class="math"&gt;\(P(R-open|car-R) = 0\)&lt;/span&gt;. &lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The third term is a little difficult to figure out---and this, I suspect, is where all the mathematicians who &lt;a href="https://priceonomics.com/the-time-everyone-corrected-the-worlds-smartest/"&gt;wrote angrily to Marilyn vos Savant&lt;/a&gt; went wrong. Here's a mistake you might make: since all Monty has to do is open a door without the car behind it, and neither Q nor S has the car behind it, &lt;span class="math"&gt;\(P(R-open|car-S) = \frac{1}{2}\)&lt;/span&gt;. If you think that, you'll end up with a denominator of &lt;span class="math"&gt;\(\frac{1}{3}\)&lt;/span&gt; and an ultimate, incorrect but intuitive, calculation of &lt;span class="math"&gt;\(P(B|A) = \frac{1}{2}\)&lt;/span&gt;.  But this would be wrong.  The thing you need to remember is that we've been writing out the problem in shorthand.  Monty's decision as to which door to open was made not only with knowledge of where the car is, but also with knowledge of which door the player picked.  So the longhand version of the calculation for our denominator is actually: &lt;/p&gt;
+&lt;div class="math"&gt;$$P(R-open|car-Q, picked-Q)P(car-Q) \\+ P(R-open|car-R, picked-Q)P(car-R) \\+ P(R-open|car-S, picked-Q)P(car-S)$$&lt;/div&gt;
+&lt;p&gt;And the other rule that we can't forget is that Monty also can't open a door that the player picked.  So the player picked Q---if the car is behind S, the only door Monty can open is R. &lt;span class="math"&gt;\(P(R-open|car-S, picked-Q) = 1\)&lt;/span&gt;.  &lt;/p&gt;
+&lt;p&gt;This gives us the denominator: &lt;/p&gt;
+&lt;div class="math"&gt;$$\frac{1}{2}\frac{1}{3} + 0 + \frac{1}{3}$$&lt;/div&gt;
+&lt;p&gt;which we can easily simplify: &lt;/p&gt;
+&lt;div class="math"&gt;$$\frac{1}{6} + \frac{2}{6} = \frac{1}{2}$$&lt;/div&gt;
+&lt;p&gt;meaning that our overall Bayes Rule formula is: &lt;/p&gt;
+&lt;div class="math"&gt;$$\frac{\frac{1}{2}\frac{1}{3}}{\frac{1}{2}}$$&lt;/div&gt;
+&lt;p&gt;simplify by canceling the &lt;span class="math"&gt;\(\frac{1}{2}\)&lt;/span&gt; -s and you get the correct answer.&lt;/p&gt;
+&lt;p&gt;We learned that most of the work in applying Bayes Rule is figuring out how to define the events for which we're trying to make probability judgments---how to formalize our idea of what we started out knowing, what we've learned (our evidence), and what we're trying to figure out.  &lt;/p&gt;
+&lt;p&gt;Incidentally, for a discussion of how lawyers appear to be susceptible to screwing up Bayes Rule, an article called &lt;a href="https://academic-oup-com.proxy.lib.uiowa.edu/lpr/article/15/4/239/2580528"&gt;Miss Rate Neglect in Legal Evidence&lt;/a&gt; reports on a number of experiements with legally trained subjects where they do things like inappropriately flip around conditional probabilities. &lt;/p&gt;
+&lt;h2&gt;Scavenger hunt&lt;/h2&gt;
+&lt;p&gt;Our second major task this week was to do a &lt;a href="https://sociologicalgobbledygook.com/in-class-exercise-data-scavenger-hunt.html"&gt;Data Scavenger Hunt&lt;/a&gt;.  Things started a little bumpy, because lots of people had trouble getting the data loaded, mainly due to the diversity of platforms in the class.  (And also because I went around to help windows users, and didn't notice that many were actually using the Azure version, and hence didn't have their local downloads... sorry about that.)&lt;/p&gt;
+&lt;p&gt;We're going to finish this on Monday, and then I'll post some solutions after we're done.  &lt;/p&gt;
+&lt;p&gt;I have also fixed the ergonomics of getting data. There's a private web server for this class at &lt;a href="https://gobbledygook.herokuapp.com/"&gt;https://gobbledygook.herokuapp.com/&lt;/a&gt;.  I'll give you a password for it in class (and will also post it on ICON).  Whenever you need to load a dataset, you will just be able to use Pandas to load it directly from this server.  Here's how.  Assume the password is PASSWORD and the file you're trying to load is FILENAME.CSV.  Then if you have Pandas imported as &lt;code&gt;pd&lt;/code&gt;, the code &lt;code&gt;df=pd.read_csv("https://gobbledygook.herokuapp.com/data?file=FILENAME.CSV&amp;amp;password=PASSWORD")&lt;/code&gt; will save the dataset as a Pandas dataframe to the variable &lt;code&gt;df&lt;/code&gt;.  No more mess with Windows file paths and local downloads vs. Azure notebooks or downloading files from ICON or any of that nonsense. &lt;/p&gt;
+&lt;p&gt;We'll be using a variety of datasets in the rest of this class, so get used to that command.  Also, the server might start up slowly sometimes, so if it looks like it's hanging when you try to load a dataset, just wait 30 seconds or so and it'll be fine. &lt;/p&gt;
+&lt;p&gt;(Incidentally, this method of authenticating users by passing passwords in GET request parameters is a &lt;a href="https://security.stackexchange.com/questions/147188/is-it-bad-practice-to-use-get-method-as-login-username-password-for-administrato"&gt;terrible idea&lt;/a&gt;, it's totally insecure. Don't do it for anything you ever build. I'm just doing it here because we don't need real security, just minimal privacy against casual misuse.  And also because I'm going to tear down the server the moment class is over.)&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://sociologicalgobbledygook.com/week5recap.pdf"&gt;Download lesson PDF&lt;/a&gt;&lt;/p&gt;
+&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "left",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width &lt; 768) ? "left" : align;
+        indent = (screen.width &lt; 768) ? "0em" : indent;
+        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'blue ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('Typewriter' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_Typewriter');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_Typewriter-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_Typewriter-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_Typewriter-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_Typewriter');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_Typewriter-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_Typewriter-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_Typewriter-italic');" +
+            "});" +
+        "}";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;</content><category term="probability"></category><category term="datasets"></category><category term="week5"></category><category term="week6"></category></entry></feed>
