@@ -309,7 +309,7 @@ Experiments, random assignment.  Causation and correlation.  This will be a rela
 
 Readings: 
 
-- Causation and Confounding on this site (to be added)
+- [Causation and Counterfactuals]({filename}../Lessons/causation_counterfactuals.md)
 
 - Devah Pager, *The Use of Field Experiments for Studies of Employment Discrimination: Contributions, Critiques, and Directions for the Future*, 609 Annals of the American Academy of Political and Social Science 104 (2007). We have access to this article via our library's subscription, [this proxy link](https://journals-sagepub-com.proxy.lib.uiowa.edu/doi/abs/10.1177/0002716206294796) should work to download it. 
 

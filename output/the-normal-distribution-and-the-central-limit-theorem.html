@@ -1190,9 +1190,9 @@ h6:hover .anchor-link {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The main reason scientists like the normal distribution so much is because of a little thing called the <strong>central limit theorem (CLT)</strong>.</p>
-<p>I'm not going to walk you through a tedious proof of the CLT; instead, we'll just look at some graphs and talk about some intuition.</p>
-<p>The core idea of the CLT is this: imagine there is a quantity of interest out there in the world, and it is distributed according to any arbitrary distribution, and you want to know the mean. For example, suppose you are interested in knowing the average income in the United States. We known, empirically, that incomes tend to be distributed according to a lognormal distribution.</p>
+<p>The main reason scientists like the normal distribution so much is because of a two little ideas called <strong>the law of large numbers</strong> (LLN) and the <strong>central limit theorem</strong> (CLT).</p>
+<p>I'm not going to walk you through proofs of these; instead, we'll just look at some graphs and talk about some intuition.</p>
+<p>The core idea of the LLN and CLT working together is this: imagine there is a quantity of interest out there in the world, and it is distributed according to any arbitrary distribution, and you want to know the mean. For example, suppose you are interested in knowing the average income in the United States. We known, empirically, that incomes tend to be distributed according to a lognormal distribution.</p>
 <p>One sensible way we might choose to figure out the mean income in the United States is by drawing a random sample.</p>
 <p>So, suppose we have a pretty good list of every person in the country and their phone numbers. We might randomly pick, say, a thousand of them to call.  If we were doing this course in a heavily math-ey approach, we might here say "the expected value of the sampling mean is equal to the population mean," and we might talk about a proof of that, and use a bunch of <a href="https://www.stat.berkeley.edu/~stark/Java/Html/SampleDist.htm">complicated vocabulary</a>. Here, I'm just going to draw out some intuition.</p>
 <p>Hold in your head a picture of the log-normal distribution. Like this:</p>
@@ -1240,7 +1240,7 @@ h6:hover .anchor-link {
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>[&lt;matplotlib.lines.Line2D at 0x11067af60&gt;]</pre>
+<pre>[&lt;matplotlib.lines.Line2D at 0x1095fb240&gt;]</pre>
 </div>
 
 </div>
@@ -1361,7 +1361,7 @@ h6:hover .anchor-link {
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Unsurprisingly, where there's more space under the graph, there's also more dots. And this should allow you to see intuitively how we ought to expect the average x value of the random observations of a variable with that distribution, or, indeed, any distribution, to typically be close to the average x value of the entite universe of possible observations (the population).</p>
-<p>That, in a nutshell, is why random sampling.</p>
+<p>That, in a nutshell, is the LLN, and is why random sampling.</p>
 
 </div>
 </div>
@@ -1413,7 +1413,7 @@ h6:hover .anchor-link {
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x1108e3438&gt;</pre>
+<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x1098f7e48&gt;</pre>
 </div>
 
 </div>
@@ -1568,7 +1568,7 @@ h6:hover .anchor-link {
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x110a647f0&gt;</pre>
+<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x109d7ff28&gt;</pre>
 </div>
 
 </div>
@@ -1595,7 +1595,7 @@ h6:hover .anchor-link {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>That's right.  It looks super normal, and it's centered on the population mean.  This is the central limit theorem in action: when we take random samples from a population, <em>even if the distribution itself isn't normal</em>, the distribution <em>of the sample means</em> will be normally distributed with a mean equal to the population mean.</p>
+<p>That's right.  It looks super normal, and it's centered on the population mean.  This is the central limit theorem in action: when we take random samples from a population, <em>even if the distribution itself isn't normal</em>, the distribution <em>of the sample means</em> will be normally distributed with a mean approximately equal to the population mean.</p>
 <p>This is why we can estimate the mean of some property of a population just by sampling it---why, for example, the media can get a pretty good guess about who will win an election by asking a bunch of people at random.</p>
 <p>Incidentally, the central limit theorem works better for larger sample sizes, and for larger numbers of samples.  So if we did just a handful of tiny little samples:</p>
 
