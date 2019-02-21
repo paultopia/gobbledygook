@@ -333,6 +333,8 @@ Readings:
 
 - [Statistics Gone Wrong](https://www.statisticsdonewrong.com/). (I'd like you to read that whole website eventually, but for the beginning of the week, you can focus on the sections on [Statistical Power and Underpowered Statistics](https://www.statisticsdonewrong.com/power.html) and [The P Value and the Base Rate Fallacy](https://www.statisticsdonewrong.com/p-value.html).  
 
+- Fun reading: [P-values explained with puppies](https://hackernoon.com/explaining-p-values-with-puppies-af63d68005d0).
+
 Discussion: what are the legal implications of scientific failures?
 
 ### Week 9
