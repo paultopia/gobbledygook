@@ -79,3 +79,6 @@ Because we don't have the ability to create otherwise identical worlds in which 
 - *Reverse causation* sometimes we think X causes Y, but actually Y causes X.   
 
 This week, we'll be talking about experimental research; for several weeks thereafter, we'll be talking about the various ways people get around the problems of doing observational research. For now, if you'd like to read more, [here's a good summary of the basic causal issues in observational science](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2780010/).
+
+[Download lesson PDF]({attach}../images/causation_counterfactuals.pdf)
+

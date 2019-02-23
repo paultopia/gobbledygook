@@ -299,13 +299,12 @@ Reading:
 - these two excellent blog posts by a Google data scientist: [Statistics for People in a Hurry](https://towardsdatascience.com/statistics-for-people-in-a-hurry-a9613c0ed0b) and [Never Start With a Hypothesis](https://towardsdatascience.com/hypothesis-testing-decoded-for-movers-and-shakers-bfc2bc34da41).
 
 
-[Problem set 2]({filename}../psets/pset2.md) due Friday, February 22, at 5pm Central time.
-
+[Problem set 2]({filename}../psets/pset2.md** due Friday, February 22, at 5pm Central time.
 
 
 ### Week 7
 
-Experiments, random assignment.  Causation and correlation.  This will be a relatively light week, and we may use it to catch-up on prior weeks as well. 
+Experiments, random assignment.  Causation and correlation.  Focused legal application: audit tests in discrimination cases.
 
 Readings: 
 
@@ -317,9 +316,36 @@ Readings:
 
 - [A collection of edited discrimination tester cases]({filename}../Lessons/tester-cases.md).
 
-Focused legal application: audit tests in discrimination cases.
+**Note to students:** I'd like you to fill out a quick [three-question mid-semester survey](https://goo.gl/forms/VzoKHXP4GbITcfvn1) sometime this week. It's anonymous, and I could really use your feedback to make sure we're on course in this experimental class.
+
 
 ### Week 8
+
+Focus week: statistical extrapolation and simulation in the law. Shonubi case. 
+
+Readings: 
+
+- [United States v. Shonubi]({attach}../images/shonubi.pdf) (Edited version kindly supplied by Josh Fischman of UVA.).
+
+- Commentary on Shonubi, posted on ICON. 
+
+We'll spend this week catching up further, if necessary, discussing the Shonubi case, and replicating the data analysis used by experts in that case (approximately---we don't have quite the identical dataset).  As time permits, I'll introduce the basic concepts of linear regression for next week.
+
+### Week 9
+
+Regression analysis. Linear regression. Statistical evidence of discrimination.
+
+Readings: 
+
+- [Regression Introduction]({filename}../Lessons/regression-intro.ipynb)
+
+- Federal Judicial Center reference manual on scientific evidence, appendix to reference guide on multiple regression, pp. 333-356.
+
+- F&L pg. 369-371, bottom of 376-380, bottom of 385-393. 
+
+- [ATA Airlines, Inc. v. Federal Express Corp.]({attach}../images/ata_v_fedex.pdf), 665 F.3d 882 (7th Cir., 2011), as edited.
+
+### Week 10
 
 P-values, p-hacking, publication bias, the replication crisis in psychology, power and underpoweredness, multiple comparisons, and other terrible pitfalls of scientific research.  
 
@@ -337,29 +363,20 @@ Readings:
 
 Discussion: what are the legal implications of scientific failures?
 
-### Week 9
 
-Regression analysis. Linear regression
-
-Focused legal application: statistical evidence of discrimination.
-
-Readings: 
-
-- [Regression Introduction]({filename}../Lessons/regression-intro.ipynb)
-
-- Federal Judicial Center reference manual on scientific evidence, appendix to reference guide on multiple regression, pp. 333-356.
-
-### Week 10
+### Week 11
 
 How regression analysis can go horribly wrong.  Assumptions of regression.  Failures of regression assumptions. Simpson's paradox.
 
 Readings: 
 
+- Regressions gone wrong (to be posted)
+
 - Federal Judicial Center reference manual, reference guide on multiple regression, pp. 303-332.
 
 Problem set 3 due.
 
-### Week 11
+### Week 12
 
 Focus week: re-analyze real-life data. Critique expert witness reports and/or statistical findings in research. Bayesian approaches. 
 
@@ -368,17 +385,13 @@ Reading:
 - [The Bayesian New Statistics: Hypothesis testing, estimation, meta-analysis, and power analysis from a Bayesian perspective](https://link-springer-com.proxy.lib.uiowa.edu/article/10.3758%2Fs13423-016-1221-4), 25 Psychonomic Bulletin and Review 178 (2018) (You may skip the sections entitled "Bayesian Hypothesis Test" and "Another example of frequentist and Bayesian approaches to hypothesis testing and estimation" from pp. 186-190. 
 
 
-### Week 12
+### Week 13
 
 Research design, alternatives to regression (like logistic regression), practicalities of good research
 
-### Week 13
-
-Machine learning: what is it that fancy data science people actually do with their time?  Prediction vs inference and statistical epistemology.
-
 ### Week 14
 
-Algorithmic accountability. Discrimination by computer, and legal implications of statistical discrimination (intentional racial profiling and unintentional racial profiling).  Natural language processing, if time permits. 
+Machine learning: what is it that fancy data science people actually do with their time?  Prediction vs inference and statistical epistemology. Algorithmic accountability. Discrimination by computer, and legal implications of statistical discrimination (intentional racial profiling and unintentional racial profiling).  
 
 ### Final exam period
 
