@@ -299,7 +299,7 @@ Reading:
 - these two excellent blog posts by a Google data scientist: [Statistics for People in a Hurry](https://towardsdatascience.com/statistics-for-people-in-a-hurry-a9613c0ed0b) and [Never Start With a Hypothesis](https://towardsdatascience.com/hypothesis-testing-decoded-for-movers-and-shakers-bfc2bc34da41).
 
 
-[Problem set 2]({filename}../psets/pset2.md** due Friday, February 22, at 5pm Central time.
+[Problem set 2]({filename}../psets/pset2.md) due Friday, February 22, at 5pm Central time.
 
 
 ### Week 7
