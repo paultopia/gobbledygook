@@ -45,7 +45,7 @@ LINKS = (('University of Iowa College of Law', 'https://law.uiowa.edu/'),
           ('Microsoft Azure Notebooks', 'https://notebooks.azure.com/'),
          ('Lesson Post Tags', 'tags.html'),)
 
-DEFAULT_PAGINATION = 10
+DEFAULT_PAGINATION = False
 
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True
