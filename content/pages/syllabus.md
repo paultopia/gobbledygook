@@ -380,10 +380,15 @@ Problem set 3 due.
 
 Focus week: re-analyze real-life data. Critique expert witness reports and/or statistical findings in research. Bayesian approaches. 
 
+We're going to spend one of the days this week on another in-class exercise, and a second seminar-style continuing our ongoing discussion of the relationship between legal standards of proof and statistical standards of proof.
+
 Reading: 
 
 - [The Bayesian New Statistics: Hypothesis testing, estimation, meta-analysis, and power analysis from a Bayesian perspective](https://link-springer-com.proxy.lib.uiowa.edu/article/10.3758%2Fs13423-016-1221-4), 25 Psychonomic Bulletin and Review 178 (2018) (You may skip the sections entitled "Bayesian Hypothesis Test" and "Another example of frequentist and Bayesian approaches to hypothesis testing and estimation" from pp. 186-190. 
 
+- Kiel Brennan-Marquez, [Plausible Cause](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2827733)
+
+- Jonah Gelbach, *Estimation Evidence* (will be posted on ICON). 
 
 ### Week 13
 
