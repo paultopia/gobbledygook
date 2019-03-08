@@ -26,6 +26,7 @@ Introduction to Quantitative and Computational Legal Reasoning is experimental. 
 
 - [Separate assignments Github repository](https://github.com/paultopia/gobbledygook_lessons) (for ease of finding assignments)
 
+(Currently the Github repositories are way behind, and Jupyter notebooks for ongoing lessons are downloadable directly from this website instead. I'll probably rationalize the repositories after we're all done with this semester.)
 
 ## Readings 
 
@@ -342,6 +343,8 @@ Readings:
 - Federal Judicial Center reference manual on scientific evidence, appendix to reference guide on multiple regression, pp. 333-356.
 
 - F&L pg. 369-371, bottom of 376-380, bottom of 385-393. 
+
+- Lindsey Kuper, [Understanding the regression line with standard units](http://composition.al/blog/2018/08/31/understanding-the-regression-line-with-standard-units/)
 
 - [ATA Airlines, Inc. v. Federal Express Corp.]({attach}../images/ata_v_fedex.pdf), 665 F.3d 882 (7th Cir., 2011), as edited.
 
