@@ -350,6 +350,22 @@ Readings:
 
 ### Week 10
 
+Applications and reinforcement. Slow-down week, solidify our existing knowledge by thinking about a concrete use of statistics in law: determining disparate impact in Title VII cases.
+
+Readings: 
+
+- [Stewart v. St. Louis]({attach}../images/stewart.pdf)
+
+- [Ricci v. DeStefano excerpts]({attach}../images/ricci.pdf)
+
+- [Excerpts from 29 C.F.R. 1607]({attach}../images/29cfr1607.pdf) for reference/skim, no need to carefully read the whole thing.
+
+**Homework** to be done before this week begins: look at the hypothetical dataset *mickel.csv*, and use the techniques we've learned in class to come to some conclusion about whether discrimination is occurring in the provision of public benefits in this disability services agency context. We'll go over this assignment in class at the end of week 9.
+
+**Problem set 3 due Friday, March 29, at 5pm**
+
+### Week 11
+
 P-values, p-hacking, publication bias, the replication crisis in psychology, power and underpoweredness, multiple comparisons, and other terrible pitfalls of scientific research.  
 
 Readings:
@@ -367,7 +383,7 @@ Readings:
 Discussion: what are the legal implications of scientific failures?
 
 
-### Week 11
+### Week 12
 
 How regression analysis can go horribly wrong.  Assumptions of regression.  Failures of regression assumptions. Simpson's paradox.
 
@@ -379,7 +395,7 @@ Readings:
 
 Problem set 3 due.
 
-### Week 12
+### Week 13
 
 Focus week: re-analyze real-life data. Critique expert witness reports and/or statistical findings in research. Bayesian approaches. 
 
@@ -393,13 +409,13 @@ Reading:
 
 - Jonah Gelbach, *Estimation Evidence* (will be posted on ICON). 
 
-### Week 13
-
-Research design, alternatives to regression (like logistic regression), practicalities of good research
-
 ### Week 14
 
-Machine learning: what is it that fancy data science people actually do with their time?  Prediction vs inference and statistical epistemology. Algorithmic accountability. Discrimination by computer, and legal implications of statistical discrimination (intentional racial profiling and unintentional racial profiling).  
+Research design, alternatives to regression (like logistic regression), practicalities of good research. Causal models, 
+
+TIME PERMITTING: Discussion of machine learning: what is it that fancy data science people actually do with their time?  Prediction vs inference. Algorithmic accountability. Discrimination by computer, and legal implications of statistical discrimination (intentional racial profiling and unintentional racial profiling). 
+
+
 
 ### Final exam period
 
