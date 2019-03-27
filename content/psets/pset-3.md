@@ -2,7 +2,7 @@ title: Problem Set 3
 tags: psets
 date: 2018-02-23
 
-Due Friday, March 22, at 5pm Central time. 
+Due Friday, March 29, at 5pm Central time. 
 
 As before, please turn in your answers in a single notebook, emailed to Diana Dewalle. 
 

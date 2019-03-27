@@ -346,7 +346,9 @@ Readings:
 
 - Lindsey Kuper, [Understanding the regression line with standard units](http://composition.al/blog/2018/08/31/understanding-the-regression-line-with-standard-units/)
 
-- [ATA Airlines, Inc. v. Federal Express Corp.]({attach}../images/ata_v_fedex.pdf), 665 F.3d 882 (7th Cir., 2011), as edited.
+- [ATA Airlines, Inc. v. Federal Express Corp.]({attach}../images/ata_v_fedex.pdf), 665 F.3d 882 (7th Cir., 2011**, as edited.
+
+**See [Post week 9 notes here]({filename}../Lessons/post-week9-notes.md).**
 
 ### Week 10
 
@@ -362,7 +364,7 @@ Readings:
 
 **Homework** to be done before this week begins: look at the hypothetical dataset *mickel.csv*, and use the techniques we've learned in class to come to some conclusion about whether discrimination is occurring in the provision of public benefits in this disability services agency context. We'll go over this assignment in class at the end of week 9.
 
-**Problem set 3 due Friday, March 29, at 5pm**
+**[Problem set 3]({filename}../psets/pset-3.md) due Friday, March 29, at 5pm**
 
 ### Week 11
 
@@ -392,6 +394,8 @@ Readings:
 - Regressions gone wrong (to be posted)
 
 - Federal Judicial Center reference manual, reference guide on multiple regression, pp. 303-332.
+
+- Blog posts/tutorials by "Statistics by Jim": [Confounding Variables](https://statisticsbyjim.com/regression/confounding-variables-bias/), [Classical Assumptions of OLS](https://statisticsbyjim.com/regression/ols-linear-regression-assumptions/)
 
 Problem set 3 due.
 

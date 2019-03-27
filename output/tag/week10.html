@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <title>Sociological Gobbledygook - week10</title>
+        <link rel="stylesheet" href="https://sociologicalgobbledygook.com/theme/css/main.css" />
+        <link rel="stylesheet" href="https://sociologicalgobbledygook.com/theme/css/juptyer-fix.css" />
+        <link href="https://sociologicalgobbledygook.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Sociological Gobbledygook Atom Feed" />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="https://sociologicalgobbledygook.com/">Sociological Gobbledygook </a></h1>
+                <nav><ul>
+                    <li><a href="https://sociologicalgobbledygook.com/pages/manifesto.html">Manifesto</a></li>
+                    <li><a href="https://sociologicalgobbledygook.com/pages/welcome.html">Welcome!</a></li>
+                    <li><a href="https://sociologicalgobbledygook.com/category/class_examples.html">class_examples</a></li>
+                    <li><a href="https://sociologicalgobbledygook.com/category/lessons.html">Lessons</a></li>
+                    <li><a href="https://sociologicalgobbledygook.com/category/psets.html">psets</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+
+            <aside id="featured" class="body">
+                <article>
+                    <h1 class="entry-title"><a href="https://sociologicalgobbledygook.com/post-week-9-notes.html">Post-Week 9 Notes</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2019-03-14T00:00:00-05:00">
+                Published: Thu 14 March 2019
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="https://sociologicalgobbledygook.com/author/paul-gowder.html">Paul Gowder</a>
+        </address>
+<p>In <a href="https://sociologicalgobbledygook.com/category/lessons.html">Lessons</a>.</p>
+<p>tags: <a href="https://sociologicalgobbledygook.com/tag/week10.html">week10</a> <a href="https://sociologicalgobbledygook.com/tag/week9.html">week9</a> </p>
+</footer><!-- /.post-info --><p>Two notes following week 9 (our intro to regressions).</p>
+<p><strong>First</strong>, a couple students asked whether you need to center and scale (standardize) data to make it work with linear regression.  I think I had a brain freeze and gave an inconsistent answer, so let me clarify here: no, you don't.  Even if you're doing multiple regression, and the different right-side variables are on wildly different scales. </p>
+<p>To get some intuition for why this is the case, and why wildly different scales won't distort regression results the same way that outliers do, think about a graph again. When we do a linear regression, each variable is its own dimension, and so each coefficient is optimized to minimize the squared residuals <em>along its dimension</em>.  For example, if you are trying to test whether distance from a university is associated with rental prices, you might run a regression that has, say, number of miles from nearest university and median income of the census tract on the right side and rent on the left side (this is kind of a crappy regression, because you'd want lots of other things that might confound the relationship here, like number of bedrooms, and also because as usual you'd probably want to take a close look at the income variable over its range and make sure it doesn't need to be transformed, but let's run with it for purposes of illustration).  Each point in the ultimate regression plane will be located in four-dimensional space: it'll have a value for miles, income, and rent. Let's say rent is on the y axis, income (in thousands/year) is on the x axis, and miles are on the z axis, and represent your regression model as <span class="math">\(y=\alpha \cdot x + \beta \cdot z + \epsilon\)</span>.</p>
+<p>Now let's imagine that we've fit a regression, and we've found coefficients for it, hypothetically, <span class="math">\(y= -100 \cdot x + 50 \cdot z + \epsilon\)</span>.  In other words, for every additional mile away from a university, rent goes down by a hundred bucks, and for every thousand dollars/year median income in the census tract it goes up by fifty bucks. Then imagine that you go back into your dataset and change it to be hundreds of dollars of income/year (i.e., multiply every income by 10). Effectively, what this amounts to is scaling the z axis in the regression, so the plane would stay the same shape, but the points for income would change, they'd all be divided by 10, and you'd end up with the same model with different coefficients. But that would've affect the coefficients along the other dimensions. </p>
+<p>Another good way to see this, actually, is just to play with some data yourself.  Go and get the data from my rule of law book, for example and do a regression with, say, property rights, political pluralism, and GDP on the right side, note the coefficients and p-values, and then standardize the variables (or just multiply them by something, or add something to them, or do anything else you can dream of).  See what kinds of transformations change the t-scores and p-values and what don't.  (They'll all change the coefficients.)</p>
+<p>For example, run the following code: </p>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">statsmodels.formula.api</span> <span class="kn">as</span> <span class="nn">sm</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;http://rulelaw.net/downloads/rol-scores.csv&quot;</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s2">&quot;gdp&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;2012GDP&quot;</span><span class="p">]</span> <span class="c1"># just to fix a glitch with columns starting with numbers</span>
+<span class="n">model1</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">ols</span><span class="p">(</span><span class="n">formula</span><span class="o">=</span><span class="s1">&#39;pol_plur ~ assoc_org + free_expr + gdp&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="n">model1</span><span class="o">.</span><span class="n">summary</span><span class="p">())</span>
+
+<span class="n">df</span><span class="p">[</span><span class="s2">&quot;bigorg&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;assoc_org&quot;</span><span class="p">]</span> <span class="o">*</span> <span class="mi">100</span>
+
+<span class="n">model2</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">ols</span><span class="p">(</span><span class="n">formula</span><span class="o">=</span><span class="s1">&#39;pol_plur ~ bigorg + free_expr + gdp&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="n">model2</span><span class="o">.</span><span class="n">summary</span><span class="p">())</span>
+
+<span class="n">df</span><span class="p">[</span><span class="s2">&quot;shiftbigorg&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;bigorg&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="mi">50000</span>
+<span class="n">model3</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">ols</span><span class="p">(</span><span class="n">formula</span><span class="o">=</span><span class="s1">&#39;pol_plur ~ shiftbigorg + free_expr + gdp&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="n">model3</span><span class="o">.</span><span class="n">summary</span><span class="p">())</span>
+</pre></div>
+
+
+<p>What you'll notice is that the statistically meaningful stuff, i.e., the t-scores and p-values on the right-side variables, r-squared, etc., don't actually change under these transformations. (If you want to test your intuition further, try to figure out why the coefficient on the intercept and the coefficient on the variable we're messing with, each of which doesn't much matter, each change on exactly one of those...)</p>
+<p>That being said, standardizing doesn't hurt, and it can help with interpreting coefficients by having everything be on the same scale for a sorta apples-to-apples comparison.  Also, when you're messing around with interaction terms (which I haven't taught you yet, but I will, planning to discuss in part 2 of our regressions material around week 12...) or polynomial regressions there are sometimes meaningful reasons to do it. See more discussion <a href="https://statisticsbyjim.com/regression/standardize-variables-regression/">here</a>.</p>
+<p><strong>Second</strong>, with our reorganization/slow-down of the syllabus in response to mid-semester-feedback requests, we won't get to as much of the problems with models material as I was expecting before pset 3 is due.  Accordingly, problem 2.3 might be more difficult than I'd intended. So if you'd like, instead of doing 2.3, you can repeat 2.2 with a different (but plausible) method of analysis, like a different regression model or hypothesis test.  </p>
+<p><a href="https://sociologicalgobbledygook.com/post-week9-notes.pdf">Download lesson PDF</a></p>
+<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "left",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width < 768) ? "left" : align;
+        indent = (screen.width < 768) ? "0em" : indent;
+        linebreak = (screen.width < 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'blue ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('Typewriter' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_Typewriter');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_Typewriter-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_Typewriter-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_Typewriter-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_Typewriter');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_Typewriter-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_Typewriter-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_Typewriter-italic');" +
+            "});" +
+        "}";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+</script>                </article>
+            </aside><!-- /#featured -->
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://law.uiowa.edu/">University of Iowa College of Law</a></li>
+                            <li><a href="https://gowder.io">Paul Gowder</a></li>
+                            <li><a href="http://python.org/">Python Documentation</a></li>
+                            <li><a href="https://github.com/paultopia/quantitative-methods-for-lawyers/">Course Github</a></li>
+                            <li><a href="https://github.com/paultopia/gobbledygook_lessons">Course Lessons Github</a></li>
+                            <li><a href="https://notebooks.azure.com/">Microsoft Azure Notebooks</a></li>
+                            <li><a href="tags.html">Lesson Post Tags</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+      
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+            <address id="about" class="vcard body">
+                
+
+                All content is (c) 2018-9 by <a href="https://gowder.io">Paul Gowder</a> and licensed under a <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International license</a>.  On the technical side, the site is powered by <a href="http://getpelican.com/">Pelican</a>, the theme is a modified version of one by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>.
+            </address><!-- /#about -->
+
+                
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

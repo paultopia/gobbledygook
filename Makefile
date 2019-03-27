@@ -76,12 +76,17 @@ clean:
 regenerate:
 	$(PELICAN) -r $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)
 
+simplebuild:
+	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)
+
 serve:
 ifdef PORT
 	cd $(OUTPUTDIR) && $(PY) -m pelican.server $(PORT)
 else
 	cd $(OUTPUTDIR) && $(PY) -m pelican.server
 endif
+
+preview: simplebuild serve
 
 serve-global:
 ifdef SERVER

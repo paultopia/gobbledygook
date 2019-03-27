@@ -38,3 +38,6 @@ What you'll notice is that the statistically meaningful stuff, i.e., the t-score
 That being said, standardizing doesn't hurt, and it can help with interpreting coefficients by having everything be on the same scale for a sorta apples-to-apples comparison.  Also, when you're messing around with interaction terms (which I haven't taught you yet, but I will, planning to discuss in part 2 of our regressions material around week 12...) or polynomial regressions there are sometimes meaningful reasons to do it. See more discussion [here](https://statisticsbyjim.com/regression/standardize-variables-regression/).
 
 **Second**, with our reorganization/slow-down of the syllabus in response to mid-semester-feedback requests, we won't get to as much of the problems with models material as I was expecting before pset 3 is due.  Accordingly, problem 2.3 might be more difficult than I'd intended. So if you'd like, instead of doing 2.3, you can repeat 2.2 with a different (but plausible) method of analysis, like a different regression model or hypothesis test.  
+
+[Download lesson PDF]({attach}../images/post-week9-notes.pdf)
+
