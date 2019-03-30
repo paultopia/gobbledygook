@@ -22,11 +22,9 @@ Introduction to Quantitative and Computational Legal Reasoning is experimental. 
 
 - Course website: [https://sociologicalgobbledygook.com/](https://sociologicalgobbledygook.com/) 
 
-- [Course Github repository](https://github.com/paultopia/quantitative-methods-for-lawyers) (I will explain how to use this in the beginning of the semester, currently it's a bit messy)
+- [Course Github repository](https://github.com/paultopia/gobbledygook/) 
 
-- [Separate assignments Github repository](https://github.com/paultopia/gobbledygook_lessons) (for ease of finding assignments)
-
-(Currently the Github repositories are way behind, and Jupyter notebooks for ongoing lessons are downloadable directly from this website instead. I'll probably rationalize the repositories after we're all done with this semester.)
+Note that lessons are downloadable directly from this website, including (where lessons are in that format) Jupyter notebooks that you can execute on your own machine and/or on Azure, Google CoLab, etc., but also in PDF. 
 
 ## Readings 
 
