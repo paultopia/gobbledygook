@@ -362,7 +362,7 @@ Readings:
 
 **Homework** to be done before this week begins: look at the hypothetical dataset *mickel.csv*, and use the techniques we've learned in class to come to some conclusion about whether discrimination is occurring in the provision of public benefits in this disability services agency context. We'll go over this assignment in class at the end of week 9.
 
-**[Problem set 3]({filename}../psets/pset-3.md) due Friday, March 29, at 5pm**
+**[Problem set 3]({filename}../psets/pset-3.md) due Friday, March 29, at 5pm** (Now extended to the Monday after.)
 
 ### Week 11
 
@@ -389,13 +389,12 @@ How regression analysis can go horribly wrong.  Assumptions of regression.  Fail
 
 Readings: 
 
-- Regressions gone wrong (to be posted)
+- [Regressions gone wrong]({filename}../Lessons/regression_problems.ipynb)
 
 - Federal Judicial Center reference manual, reference guide on multiple regression, pp. 303-332.
 
 - Blog posts/tutorials by "Statistics by Jim": [Confounding Variables](https://statisticsbyjim.com/regression/confounding-variables-bias/), [Classical Assumptions of OLS](https://statisticsbyjim.com/regression/ols-linear-regression-assumptions/)
 
-Problem set 3 due.
 
 ### Week 13
 
