@@ -9,7 +9,7 @@ SITENAME = 'Sociological Gobbledygook'
 MARKUP = ('md', 'ipynb')
 PLUGIN_PATHS = ['./plugins']
 PLUGINS = ["render_math", "ipynb.markup"]
-IGNORE_FILES = [".ipynb_checkpoints"]
+IGNORE_FILES = [".ipynb_checkpoints", "*.sqlite3"]
 IPYNB_USE_METACELL = True
 
 THEME = 'notmyidea-mod'
