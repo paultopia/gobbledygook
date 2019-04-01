@@ -14,7 +14,7 @@ Instead, all your code will run in the cloud. We'll be using a free service by M
 
 In addition, I will ask you to make use of the free [Github](https://github.com/) service to "clone" (copy) assignments, which will be in notebook files that you can just run on Azure, as well as to turn those assignments in. Also, you will sign up for [DataCamp](https://www.datacamp.com), I've set up free access for the duration of the class.
 
-We'll get set up with all this stuff on the first day of class. **Please bring a computer to class every day**.  Macs, Windows computers, and Linux computers will all work fine (though if you're a Linux user, you might be too advanced for this class).  We can make Chromebooks work too if need be (but it is far from ideal). Anything else, talk to me. 
+We'll get set up with all this stuff on the first day of class. **Please bring a computer to class every day**.  Macs, Windows computers, and Linux computers will all work fine (though if you're a Linux user, you might be too advanced for this class).  We can make Chromebooks work too if need be (but it is far from ideal). 
 
 ### Advanced user note
 
