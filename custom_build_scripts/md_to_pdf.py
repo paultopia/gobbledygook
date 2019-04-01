@@ -66,5 +66,6 @@ if __name__ == "__main__":
     lessons = paths_to_tweak("md")
     if lessons:
         for lesson in lessons:
+            print("making markdown: " + lesson)
             make_pdf_from_md(lesson)
 

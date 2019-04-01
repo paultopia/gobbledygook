@@ -6,7 +6,7 @@ In this class, we will be using the [Python](https://www.python.org/) programmin
 
 Before we get started programming, we have to set up a system to write our code and get the computer to read it. Most introductory Python texts, including the texts we'll be working with, ask you to install an "interpreter"---a program on your own computer that can read and execute Python code. We won't be doing that here.
 
-Instead, all your code will run in the cloud. We'll be using a free service by Microsoft called [Azure Notebooks](https://notebooks.azure.com/). This service will let you type in and execute your code online, through your web browser. This has some very large advantages: 
+Instead, all your code will run in the cloud. We'll be using a free service by Microsoft called [Azure Notebooks](https://notebooks.azure.com/). This service will let you type in and execute your code online, through your web browser. (later update: this turns out not to work very well, and we'll revise it for next year) This has some very large advantages: 
 
 - You don't have to install anything locally, which can be problematic (especially for Windows users), and I don't have to try to debug your local installations.
 
