@@ -1,4 +1,4 @@
-import re, os, glob, pypandoc
+import re, os, glob, pypandoc, subprocess
 
 def extract_title(mdstring):
     pattern = r"[Tt]itle: (.*)?\n"
@@ -44,8 +44,27 @@ def make_pdf_from_md(mdfile):
     add_link_text(mdfile, original)
 
 
+def get_changes(extension):
+    startdir = os.getcwd()
+    os.chdir("content/Lessons")
+    changes = subprocess.getoutput("changes " + extension).split("\n")
+    os.chdir(startdir)
+    return changes
+
+def paths_to_tweak(extension):
+    out = []
+    changed_files = get_changes(extension)
+    paths = glob.glob("content/Lessons/*." + extension)
+    for path in paths:
+        base = os.path.basename(path)
+        if base in changed_files:
+            out.append(path)
+    return out
+
+
 if __name__ == "__main__":
-    notebooks = glob.glob("content/Lessons/*.md")
-    for notebook in notebooks:
-        make_pdf_from_md(notebook)
+    lessons = paths_to_tweak("md")
+    if lessons:
+        for lesson in lessons:
+            make_pdf_from_md(lesson)
 
