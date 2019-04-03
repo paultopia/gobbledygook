@@ -420,4 +420,4 @@ TIME PERMITTING: Discussion of machine learning: what is it that fancy data scie
 
 ### Final exam period
 
-Problem set 4 due (no standard final exam). 
+**[Problem set 4]({filename}../psets/pset4.md) due (no standard final exam) on May 9, the last day of exams.**
