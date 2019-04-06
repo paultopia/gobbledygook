@@ -2,7 +2,7 @@ title: Makeup Assignment: Research Design
 tags: psets
 date: 2019-04-06
 
-In lieu of the makeup session for the class we missed---which, it turns out, conflicts with every schedule under the sun---please complete the following short assignment.  This assignment will be graded on a pass-fail basis, based on effort (moderate effort, not extreme effort---I don't want this to take more than 3 hours), and will be a part of the participation grade of the course. 
+In lieu of the makeup session for the class we missed---which, it turns out, conflicts with every schedule under the sun---please complete the following short assignment.  This assignment will be graded on a pass-fail basis, based on effort (moderate effort, not extreme effort---I don't want this to take more than 3 hours), and will be a part of the participation grade of the course. This will be due on the last day of class, the same time as the last problem set---and you should include it in your last PSET answers.
 
 1.  Read Friederike Mengel, Jan Sauermann and Ulf Zölitz, ["Gender Bias in Teaching Evaluations,"](https://academic.oup.com/jeea/article/17/2/535/4850534) *Journal of the European Economic Association* 2019. You need not read it super-closely, and don't have to pay attention to the mathematical details. (If you're curious about this issue, you should also read Anne Boring, Kellie Ottoboni, and Philip B. Stark, ["Student evaluations of teaching (mostly) do not measure teaching effectiveness,"](https://www.scienceopen.com/document_file/25ff22be-8a1b-4c97-9d88-084c8d98187a/ScienceOpen/3507_XE6680747344554310733.pdf) *ScienceOpen* 2016, but that isn't part of the assignment---it's just bonus!)
 
