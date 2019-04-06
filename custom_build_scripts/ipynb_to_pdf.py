@@ -1,4 +1,4 @@
-import nbformat, nbconvert, warnings, re, os, glob
+import nbformat, nbconvert, subprocess, warnings, re, os, glob
 warnings.filterwarnings("ignore")
 
 def extract_title_ipynb(cell0):

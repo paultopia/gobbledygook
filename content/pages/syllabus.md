@@ -393,26 +393,33 @@ Readings:
 
 - Federal Judicial Center reference manual, reference guide on multiple regression, pp. 303-332.
 
-- Blog posts/tutorials by "Statistics by Jim": [Confounding Variables](https://statisticsbyjim.com/regression/confounding-variables-bias/), [Classical Assumptions of OLS](https://statisticsbyjim.com/regression/ols-linear-regression-assumptions/)
+- Blog posts/tutorials by "Statistics by Jim": [Confounding Variables](https://statisticsbyjim.com/regression/confounding-variables-bias/), [Classical Assumptions of OLS](https://statisticsbyjim.com/regression/ols-linear-regression-assumptions/**
 
 
 ### Week 13
 
-Focus week: re-analyze real-life data. Critique expert witness reports and/or statistical findings in research. Bayesian approaches. 
+Focus week: statistics, probability and legal proof.  Bayesian approaches. 
 
-We're going to spend one of the days this week on another in-class exercise, and a second seminar-style continuing our ongoing discussion of the relationship between legal standards of proof and statistical standards of proof.
+This week will be seminar-style.  There will be some reading from academic articles, and Professor Sullivan will come and join us for Monday to talk through probability and proof.  On Tuesday, we will continue the discussion, and perhaps do an exercise, as time permits. 
 
 Reading: 
+
+**For Monday***
+
+- Jonah Gelbach, *Estimation Evidence* (posted on ICON), pages 1-31. 
+
+- Sean Sullivan, [A Likelihood Story: The Theory of Legal Fact-Finding](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2837155) p. 11-37.
+
+**For Tuesday***
 
 - [The Bayesian New Statistics: Hypothesis testing, estimation, meta-analysis, and power analysis from a Bayesian perspective](https://link-springer-com.proxy.lib.uiowa.edu/article/10.3758%2Fs13423-016-1221-4), 25 Psychonomic Bulletin and Review 178 (2018) (You may skip the sections entitled "Bayesian Hypothesis Test" and "Another example of frequentist and Bayesian approaches to hypothesis testing and estimation" from pp. 186-190. 
 
 - Kiel Brennan-Marquez, [Plausible Cause](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2827733)
 
-- Jonah Gelbach, *Estimation Evidence* (will be posted on ICON). 
 
 ### Week 14
 
-Research design, alternatives to regression (like logistic regression), practicalities of good research. Causal models, 
+Research design, alternatives to regression (like logistic regression), practicalities of good research. Look at some real-life expert witness reports, if possible.
 
 TIME PERMITTING: Discussion of machine learning: what is it that fancy data science people actually do with their time?  Prediction vs inference. Algorithmic accountability. Discrimination by computer, and legal implications of statistical discrimination (intentional racial profiling and unintentional racial profiling). 
 
