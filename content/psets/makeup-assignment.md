@@ -1,0 +1,11 @@
+title: Makeup Assignment: Research Design
+tags: psets
+date: 2019-04-06
+
+In lieu of the makeup session for the class we missed---which, it turns out, conflicts with every schedule under the sun---please complete the following short assignment.  This assignment will be graded on a pass-fail basis, based on effort (moderate effort, not extreme effort---I don't want this to take more than 3 hours), and will be a part of the participation grade of the course. 
+
+1.  Read Friederike Mengel, Jan Sauermann and Ulf Zölitz, ["Gender Bias in Teaching Evaluations,"](https://academic.oup.com/jeea/article/17/2/535/4850534) *Journal of the European Economic Association* 2019. You need not read it super-closely, and don't have to pay attention to the mathematical details. (If you're curious about this issue, you should also read Anne Boring, Kellie Ottoboni, and Philip B. Stark, ["Student evaluations of teaching (mostly) do not measure teaching effectiveness,"](https://www.scienceopen.com/document_file/25ff22be-8a1b-4c97-9d88-084c8d98187a/ScienceOpen/3507_XE6680747344554310733.pdf) *ScienceOpen* 2016, but that isn't part of the assignment---it's just bonus!)
+
+2.  With what you learned from that article in mind, consider a hypothetical disparate impact discrimination lawsuit brought by a woman denied tenure at a university on the on the basis of a process which includes an examination of student teaching evaluations. Write a paragraph or two describing what kind of data the plaintiff might like to collect and how they might like to analyze it in order to make our a prima facie case of disparate impact discrimination.  Bear in mind that student evaluations aren't the only thing that goes into these kinds of tenure processes. 
+
+3.  Write a paragraph or two about what a cautious university counsel ought to do (preferably before any such litigation is brought) in order to validate the use of these evaluations. Assume the university wishes to use criterion-related validity evidence, as described in Stewart v. City of St. Louis. What data should the university collect, and how should it be analyzed?  (Hint: the articles noted above have some ideas about what kinds of things would be evidence of teaching effectiveness.)
