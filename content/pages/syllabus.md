@@ -423,6 +423,13 @@ Research design, alternatives to regression (like logistic regression), practica
 
 TIME PERMITTING: Discussion of machine learning: what is it that fancy data science people actually do with their time?  Prediction vs inference. Algorithmic accountability. Discrimination by computer, and legal implications of statistical discrimination (intentional racial profiling and unintentional racial profiling). 
 
+Reading: 
+
+- Adam M. Lauretig and Bear F. Braumoeller, ["Statistics and International Security,"](http://www.oxfordhandbooks.com/view/10.1093/oxfordhb/9780198777854.001.0001/oxfordhb-9780198777854-e-10) in The Oxford Handbook of International Security (2018). (Don't worry if you don't understand all the social science jargon, just read for general concepts.)
+
+- Harini Suresh and John V. Guttag, ["A Framework for Understanding Unintended Consequences of Machine Learning"](https://arxiv.org/abs/1901.10002) 
+
+- Andrew D. Martin, Kevin M. Quinn, Theodore W. Ruger, and Pauline T. Kim. ["Competing Approaches to Predicting Supreme Court Decision Making."](https://deepblue.lib.umich.edu/bitstream/handle/2027.42/116229/pop04.pdf?sequence=1&isAllowed=y) Perspectives on Politics 2004.
 
 
 ### Final exam period
