@@ -427,8 +427,6 @@ Reading:
 
 - Galit Shmueli, ["To Explain or to Predict?"](https://projecteuclid.org/euclid.ss/1294167961), Statistical Science 2010.
 
-
-
 - Harini Suresh and John V. Guttag, ["A Framework for Understanding Unintended Consequences of Machine Learning"](https://arxiv.org/abs/1901.10002) 
 
 Optional, bonus (but HIGHLY recommended) reading:
