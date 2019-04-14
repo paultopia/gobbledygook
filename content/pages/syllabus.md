@@ -421,11 +421,13 @@ Reading:
 
 ### Week 14
 
-Research design, alternatives to regression (like logistic regression), practicalities of good research. Look at some real-life expert witness reports, if possible.
+Research design, practicalities of good research. Look at some real-life expert witness reports, if possible.
 
 TIME PERMITTING: Discussion of machine learning: what is it that fancy data science people actually do with their time?  Prediction vs inference. Algorithmic accountability. Discrimination by computer, and legal implications of statistical discrimination (intentional racial profiling and unintentional racial profiling). 
 
 Reading: 
+
+- [Prediction vs. Inference]({filename}../Lessons/prediction.md)
 
 - Galit Shmueli, ["To Explain or to Predict?"](https://projecteuclid.org/euclid.ss/1294167961), Statistical Science 2010.
 
