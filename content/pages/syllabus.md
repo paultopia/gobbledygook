@@ -421,15 +421,17 @@ Reading:
 
 ### Week 14
 
-Research design, practicalities of good research. Look at some real-life expert witness reports, if possible.
+Look at real-life expert witness reports, how arguments about quantitative methodology are used in court.
 
-TIME PERMITTING: Discussion of machine learning: what is it that fancy data science people actually do with their time?  Prediction vs inference. Algorithmic accountability. Discrimination by computer, and legal implications of statistical discrimination (intentional racial profiling and unintentional racial profiling). 
+From statistics to machine learning: what is it that fancy data science people actually do with their time?  Prediction vs inference. Algorithmic accountability. Discrimination by computer, and legal implications of statistical discrimination (intentional racial profiling and unintentional racial profiling). 
 
 Reading: 
 
+- Example expert witness reports: excerpts from one plaintiff and one defendant report in ongoing litigation around Harvard admissions (a claim that they discriminate against Asian-Americans). On ICON.  Note: these documents are a bit choppy, as I tried to edit the PDFs to limit it to a handful of points of contention by deleting pages, so ignore any discontinuities. Please come to class prepared to comment on one question in particular: should any data analysis include people admitted as legacies or athletes? 
+
 - [Prediction vs. Inference]({filename}../Lessons/prediction.md)
 
-- Galit Shmueli, ["To Explain or to Predict?"](https://projecteuclid.org/euclid.ss/1294167961), Statistical Science 2010.
+- Galit Shmueli, ["To Explain or to Predict?"](https://projecteuclid.org/euclid.ss/1294167961), Statistical Science 2010. (skim)
 
 - Harini Suresh and John V. Guttag, ["A Framework for Understanding Unintended Consequences of Machine Learning"](https://arxiv.org/abs/1901.10002) 
 
