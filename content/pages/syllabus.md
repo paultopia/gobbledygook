@@ -88,9 +88,18 @@ The nature of this class is such that we will not be able to limit ourselves jus
 
 - [Github](https://github.com)
 
-- [DataCamp](https://www.datacamp.com)
+- [DataCamp](https://www.datacamp.com) (NO LONGER: SEE NOTE BELOW)
+
+<hr>
+
+**NOTE ON DATACAMP**
+
+In April 2019, it came to light that a DataCamp executive sexually assaulted an employee in 2017; numerous instructors for DataCamp as well as community organizations at large have noted that the organization's response has been wholly inadequate. [See this post](https://blog.rladies.org/post/statement-about-datacamp/) and [this one](https://juliasilge.com/blog/datacamp-misconduct/) for more details. In light of these events, and in solidarity with the women who have noted the ways in which DataCamp's response to the incident replicate toxic patterns of corporate responses to women's complaints of workplace discrimination and misconduct, a number of members of the data science community have declined to support the use of DataCamp products. This seems to me to be the right choice. Consequently, I no longer endorse or recommend DataCamp material; future iterations of this course will replace all DataCamp assignments with alternative sources for the same information. 
+
+<hr>
 
 I'll walk you through getting access to these resources on the first day of class.
+
 
 In addition, every session will be recorded on Panopto and available on ICON; we'll also use ICON to administer some quizzes (probably), turn in assignments, and distribute materials which (for copyright reasons, etc.) we're not allowed to distribute outside of the class. Also, you will use the discussion feature of ICON to share information and ask questions out of class.
 
@@ -195,7 +204,7 @@ Monday is a holiday (MLK day).
 
 Readings:
 
-- (video and exercises) chapters 1-3 of DataCamp's [Introduction to Python](https://www.datacamp.com/courses/intro-to-python-for-data-science) course. You don't need to do chapter 4 (about the Numpy library) right now, though you can if you want to. 
+- (video and exercises) chapters 1-3 of DataCamp's [Introduction to Python](https://www.datacamp.com/courses/intro-to-python-for-data-science) course. You don't need to do chapter 4 (about the Numpy library) right now, though you can if you want to. (UPDATE: no longer recommended, for reasons noted above; will be replaced before next semester.)
 
 - Python for Everybody pg. 55-126 
 
@@ -273,7 +282,7 @@ Reading:
 
 - Explore the different data visualizations available with [From Data to Viz](https://www.data-to-viz.com/)
 
-- (video and exercises) DataCamp [Intermediate Python for Data Science chapter 2 (dictionaries and pandas)](https://www.datacamp.com/courses/intermediate-python-for-data-science) 
+- (video and exercises) DataCamp [Intermediate Python for Data Science chapter 2 (dictionaries and pandas)](https://www.datacamp.com/courses/intermediate-python-for-data-science)  (UPDATE: no longer recommended, for reasons noted above; will be replaced before next semester.)
 
 **[Week 5 recap is here.]({filename}../Lessons/week5recap.md)**
 
