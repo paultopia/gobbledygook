@@ -157,6 +157,10 @@ By the end of the course, you should be able to:
 
 - Reason about probability and statistics at a sufficient level to be an informed consumer of quantitative claims.
 
+- Identify the confusions in the following (from oral argument in [Department of Commerce v. New York](https://www.scotusblog.com/case-files/cases/department-of-commerce-v-new-york/): 
+
+![Gorsuch oops]({filename}../images.gorsuch.png)
+
 ## Coverage by Week
 
 The first few weeks will be spent on computation; subsequent weeks will be spent on data analysis and statistics. As we get further into the future, the below becomes more subject to change, obviously. (From week 3 onward, reading is still being added.)
