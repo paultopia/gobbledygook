@@ -32,7 +32,7 @@ Note that lessons are downloadable directly from this website, including (where 
 
 The main readings for this course will be drawn from [Charles Severance, Python for Everybody](https://www.py4e.com/book), which is available for free online, and [Michael Finkelstein & Bruce Levin, Statistics for Lawyers](https://link.springer.com/book/10.1007%2F978-1-4419-5985-0) which should be free to download as PDF through our library's subscription. (You may have to be on the campus network to download it; you might also have to search for it through the library's directory.) We will also be using some excerpts from the [Federal Judicial Center's Reference Manual on Scientific Evidence](https://www.fjc.gov/content/reference-manual-scientific-evidence-third-edition-1) 
 
-In addition, we'll make use of some videos and exercises from [DataCamp](https://www.datacamp.com/), which has free accounts available for educational purposes; I will explain how to get access on the first day.  
+In addition, [Code Basics](https://www.youtube.com/channel/UCh9nVJoWXmFb7sLApWGcLPQ) or http://codebasicshub.com/ has some great tutorials that explain some of the topics of our class. 
 
 We will also use some free instructional materials from the nonprofit organizations [Software Carpentry](https://software-carpentry.org/lessons/) and (maybe) [Data Carpentry](https://datacarpentry.org/lessons/). 
 
