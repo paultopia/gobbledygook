@@ -108,7 +108,7 @@ This class is intended in part to produce resources which will be available to t
 
 ## Evaluation
 
-Evaluation will be primarily based on four problem sets. The first two will be computer programming-based (with the second possibly including a probability problem or two), and will be worth 17.5% of the grade each. The third will be probability and statistics based and will be worth 25% of the grade.  The fourth will be comprehensive, with emphasis on the statistics side, and will be worth 30% of the grade.
+Evaluation will be primarily based on four problem sets. The first two will be computer programming-based (with the second possibly including a probability problem or two), and will be worth 17.5% of the grade each. The third will be probability and statistics based and will be worth 25% of the grade.  The fourth will be comprehensive, with emphasis on the statistics side, and will be worth 30% of the grade. I strongly encourage you to read and seek to understand the problem set as soon as they are posted. For first-time users, these types of problems require multiple iterations and problem-shooting as issues arise after you draft the answers. 
 
 The weird fractions are to accommodate 10% of the grade which will be based on classroom participation and preparation, and which is meant to enforce the flipped classroom format. Students who get full credit for that 10% will complete the simple out-of-class tasks which I will periodically assign, pass the easy in-class pop-quizzes which I will periodically announce, and participate in good faith in collective problem-solving in the classroom. (This is an effort-based 10%, not a performance-based 10%.) 
 
@@ -242,7 +242,7 @@ Readings:
 
 - [Simulations]({filename}../Lessons/simulation.md).  
 
-[Problem set 1]({filename}../psets/pset1.md) due Friday, February 1, at 5pm Central time.
+[Problem set 1]({filename}../psets/pset1.md) due Monday, February 4, at 8pm Central time.
 
 ### Week 4
 
@@ -311,7 +311,7 @@ Reading:
 - these two excellent blog posts by a Google data scientist: [Statistics for People in a Hurry](https://towardsdatascience.com/statistics-for-people-in-a-hurry-a9613c0ed0b) and [Never Start With a Hypothesis](https://towardsdatascience.com/hypothesis-testing-decoded-for-movers-and-shakers-bfc2bc34da41).
 
 
-[Problem set 2]({filename}../psets/pset2.md) due Friday, February 22, at 5pm Central time.
+[Problem set 2]({filename}../psets/pset2.md) due Monday, February 25, at 8pm Central time.
 
 
 ### Week 7
@@ -375,7 +375,7 @@ Readings:
 
 **Homework** to be done before this week begins: look at the hypothetical dataset *mickel.csv*, and use the techniques we've learned in class to come to some conclusion about whether discrimination is occurring in the provision of public benefits in this disability services agency context. We'll go over this assignment in class at the end of week 9.
 
-**[Problem set 3]({filename}../psets/pset-3.md) due Friday, March 29, at 5pm** (Now extended to the Monday after.)
+**[Problem set 3]({filename}../psets/pset-3.md) due Monday, April 1 at 8pm CST*
 
 ### Week 11
 
