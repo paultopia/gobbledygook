@@ -32,7 +32,7 @@ Note that lessons are downloadable directly from this website, including (where 
 
 The main readings for this course will be drawn from [Charles Severance, Python for Everybody](https://www.py4e.com/book), which is available for free online, and [Michael Finkelstein & Bruce Levin, Statistics for Lawyers](https://link.springer.com/book/10.1007%2F978-1-4419-5985-0) which should be free to download as PDF through our library's subscription. (You may have to be on the campus network to download it; you might also have to search for it through the library's directory.) We will also be using some excerpts from the [Federal Judicial Center's Reference Manual on Scientific Evidence](https://www.fjc.gov/content/reference-manual-scientific-evidence-third-edition-1) 
 
-In addition, [Code Basics](https://www.youtube.com/channel/UCh9nVJoWXmFb7sLApWGcLPQ) or http://codebasicshub.com/ has some great tutorials that explain some of the topics of our class. 
+In addition, [Code Basics](https://www.youtube.com/channel/UCh9nVJoWXmFb7sLApWGcLPQ) or http://codebasicshub.com/ has some helpful tutorials that explain some of the topics of our class. 
 
 We will also use some free instructional materials from the nonprofit organizations [Software Carpentry](https://software-carpentry.org/lessons/) and (maybe) [Data Carpentry](https://datacarpentry.org/lessons/). 
 
@@ -88,13 +88,11 @@ The nature of this class is such that we will not be able to limit ourselves jus
 
 - [Github](https://github.com)
 
-- [DataCamp](https://www.datacamp.com) (NO LONGER: SEE NOTE BELOW)
+- [Code Basics](https://www.youtube.com/channel/UCh9nVJoWXmFb7sLApWGcLPQ)
 
 <hr>
 
-**NOTE ON DATACAMP**
-
-In April 2019, it came to light that a DataCamp executive sexually assaulted an employee in 2017; numerous instructors for DataCamp as well as community organizations at large have noted that the organization's response has been wholly inadequate. [See this post](https://blog.rladies.org/post/statement-about-datacamp/) and [this one](https://juliasilge.com/blog/datacamp-misconduct/) for more details. In light of these events, and in solidarity with the women who have noted the ways in which DataCamp's response to the incident replicate toxic patterns of corporate responses to women's complaints of workplace discrimination and misconduct, a number of members of the data science community have declined to support the use of DataCamp products. This seems to me to be the right choice. Consequently, I no longer endorse or recommend DataCamp material; future iterations of this course will replace all DataCamp assignments with alternative sources for the same information. 
+ 
 
 <hr>
 
