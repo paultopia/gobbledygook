@@ -1,12 +1,11 @@
-title: Syllabus
-save_as: index.html
-status: hidden
+title: Archived Syllabus (2019) 
+Date: 2018-10-19
 
-**WORK IN PROGRESS** --- this is now the 2020 edition syllabus, which I am currently building.  Please check back here in the coming days as material will be shuffled around a bit. You can also go look at [last year's syllabus]({filename}syllabus-2019.md).
+**This is an archived version of the syllabus from the first iteration of the course.** I've left it here for the purposes of maintaining a record.
 
 # Introduction to Quantitative & Computational Legal Reasoning  (LAW:8645)
 
-Spring 2020; Monday + Tuesday 2:00-3:30; Classroom 265.
+Spring 2019; Monday + Tuesday 12:40-2:10; Classroom 125.
 
 Professor: Paul Gowder (Office: 408. Email: paul-gowder@uiowa.edu. Phone: 319-384-3202.).
 
@@ -18,7 +17,7 @@ This course will review basic principles of probability, statistics, and computa
 
 This course is not advised for students with substantial statistical or computational backgrounds---it is designed as a beginner course. Nor will it prepare students to be competent empirical researchers or computer programmers---the goal is to give students the capacity to critically evaluate and understand statistical reasoning, and to use computational methods to do so (as well as in their legal practices more generally). Focus will be on breadth rather than depth, as well as legal applications.
 
-Introduction to Quantitative and Computational Legal Reasoning is experimental. This syllabus is not a contract; I reserve the right to make radical changes in how the course operates throughout the semester, depending on how student learning progresses. (However, as this is version 2 of the course, you can expect the changes to be a bit less radical compared to last year.)
+Introduction to Quantitative and Computational Legal Reasoning is experimental. This syllabus is not a contract; I reserve the right to make radical changes in how the course operates throughout the semester, depending on how student learning progresses.
 
 ## Course Materials
 
@@ -34,7 +33,7 @@ Note that lessons are downloadable directly from this website, including (where 
 
 The main readings for this course will be drawn from [Charles Severance, Python for Everybody](https://www.py4e.com/book), which is available for free online, and [Michael Finkelstein & Bruce Levin, Statistics for Lawyers](https://link.springer.com/book/10.1007%2F978-1-4419-5985-0) which should be free to download as PDF through our library's subscription. (You may have to be on the campus network to download it; you might also have to search for it through the library's directory.) We will also be using some excerpts from the [Federal Judicial Center's Reference Manual on Scientific Evidence](https://www.fjc.gov/content/reference-manual-scientific-evidence-third-edition-1) 
 
-In addition, we'll make use of some videos and exercises online, which I will talk about on the first day. (*temporary note to self: hackerrank?)
+In addition, we'll make use of some videos and exercises from [DataCamp](https://www.datacamp.com/), which has free accounts available for educational purposes; I will explain how to get access on the first day.  
 
 We will also use some free instructional materials from the nonprofit organizations [Software Carpentry](https://software-carpentry.org/lessons/) and (maybe) [Data Carpentry](https://datacarpentry.org/lessons/). 
 
@@ -82,26 +81,41 @@ Please bring a computer to every class. Mac, Linux, or Windows computers will wo
 
 The coverage, pace, and workload in this class will be a continuing work in progress. Because this class isn't taught a lot in law schools, there is not much collective wisdom on how to do it successfully, and I expect to have to adapt the assignments and the pace to accommodate how readily the class takes to the material. So don't expect the assignments at the bottom of this document to be stable. They will change. Possibly lots. I haven't even written the assignments beyond a few weeks out, because I expect that they'd need to be radically changed. In other words, **this course is experimental**---I'll do my best to make it worth your while, but I disclaim all warranties about how well it will work this first time around. 
 
-## Class technological resources
+### Class Platforms
 
-This class will use the University's [Interactive Data Analytics Service](https://its.uiowa.edu/interactive) (IDAS).  You do not need to request access to this, I've made arrangements to get accounts for the whole class, and I'll walk you through getting access to this resource on the first day of class.
+The nature of this class is such that we will not be able to limit ourselves just to resources provided by the University of Iowa. We will avail ourselves of a variety of other platforms through the semester, including: 
 
-In addition, every session will be recorded on Panopto; and we'll use ICON to  and distribute materials which (for copyright reasons, etc.) we're not allowed to distribute outside of the class. Also, you will use the discussion feature of ICON to share information and ask questions out of class.
+- [Microsoft Azure Notebooks](https://notebooks.azure.com)
 
-This class is intended in part to produce resources which will be available to the legal profession at large in order to help your fellow lawyers understand code and stats as well; accordingly, many of the reading assignments will be to lessons posted on this website at sociologicalgobbledygook.com. Those assignments will also be available on the course GitHub repository; you will find it useful to get the assignments there in order to execute and mess around with the code yourself. I'll explain how GitHub works on the first day of class too.
+- [Github](https://github.com)
+
+- [DataCamp](https://www.datacamp.com) (NO LONGER: SEE NOTE BELOW)
+
+<hr>
+
+**NOTE ON DATACAMP**
+
+In April 2019, it came to light that a DataCamp executive sexually assaulted an employee in 2017; numerous instructors for DataCamp as well as community organizations at large have noted that the organization's response has been wholly inadequate. [See this post](https://blog.rladies.org/post/statement-about-datacamp/) and [this one](https://juliasilge.com/blog/datacamp-misconduct/) for more details. In light of these events, and in solidarity with the women who have noted the ways in which DataCamp's response to the incident replicate toxic patterns of corporate responses to women's complaints of workplace discrimination and misconduct, a number of members of the data science community have declined to support the use of DataCamp products. This seems to me to be the right choice. Consequently, I no longer endorse or recommend DataCamp material; future iterations of this course will replace all DataCamp assignments with alternative sources for the same information. 
+
+<hr>
+
+I'll walk you through getting access to these resources on the first day of class.
+
+
+In addition, every session will be recorded on Panopto and available on ICON; we'll also use ICON to administer some quizzes (probably), turn in assignments, and distribute materials which (for copyright reasons, etc.) we're not allowed to distribute outside of the class. Also, you will use the discussion feature of ICON to share information and ask questions out of class.
+
+This class is intended in part to produce resources which will be available to the legal profession at large in order to help your fellow lawyers understand code and stats as well; accordingly, many of the reading assignments will be to lessons posted on this website at sociologicalgobbledygook.com. Those assignments will also be available on the course GitHub repository; you will find it useful to get the assignments there in order to execute and mess around with the code yourself. 
 
 
 ## Evaluation
 
 Evaluation will be primarily based on four problem sets. The first two will be computer programming-based (with the second possibly including a probability problem or two), and will be worth 17.5% of the grade each. The third will be probability and statistics based and will be worth 25% of the grade.  The fourth will be comprehensive, with emphasis on the statistics side, and will be worth 30% of the grade.
 
-The weird fractions are to accommodate 10% of the grade which will be based on classroom participation and preparation, and which is meant to enforce the flipped classroom format. Students who get full credit for that 10% will complete the simple out-of-class tasks which I will periodically assign and participate in good faith in collective problem-solving in the classroom. (This is an effort-based 10%, not a performance-based 10%.) 
+The weird fractions are to accommodate 10% of the grade which will be based on classroom participation and preparation, and which is meant to enforce the flipped classroom format. Students who get full credit for that 10% will complete the simple out-of-class tasks which I will periodically assign, pass the easy in-class pop-quizzes which I will periodically announce, and participate in good faith in collective problem-solving in the classroom. (This is an effort-based 10%, not a performance-based 10%.) 
 
 Under the policy described in Student Handbook section B.3 ("The curve is not applicable in upper-level seminars and other upper- level classes in which a student's grade is based primarily on the student’s performance on graded skills-oriented tasks (including writing) other than a final exam."), this course will not be curved.
 
 In order to ensure that students in this course aren’t disadvantaged by unfamiliarity with the format or a collection of too-hard problem sets on which everyone struggles, there will be a floor for the distribution of grades for this course: at the lowest, the median grade for this course will be the official law school median of 3.3. In other words, you can’t do worse than the standard curve would otherwise dictate. But you can do better. 
-
-Last year's problem sets are available on this website, along with answers to them; looking them over will give you an idea of the approximate challenges that you'll be asked to complete.
 
 ### Collaboration
 
@@ -121,13 +135,13 @@ Also, please contact me or the dean of students as soon as humanly possible if y
 
 ## Office Hours, Contacts, etc.
 
-I will maintain office hours (TBD). I'm also happy to make appointments at other times, and you're always free to drop by when my door is open. I'm very good at replying to e-mail and very bad at checking telephone messages.
+I will maintain office hours Mon., Tue. 10-30am to noon, and 2:30-3:30pm. I'm also happy to make appointments at other times, and you're always free to drop by when my door is open. I'm very good at replying to e-mail and very bad at checking telephone messages.
 
 That being said, I **very strongly encourage you to ask substantive questions in a way that will be accessible to your fellow students**.  This means using the copious time that will be made available in class time for that purpose, as well as making use of the discussion forum on ICON (in which I will very actively participate).  If you have a question, it's almost certainly the case that several other people do too.
 
 ## Some schedule notes
 
-(DATE) is Martin Luther King Day.  No classes then, obviously. Spring Break is (DATES).
+Monday, Jan 21 is Martin Luther King Day.  No classes then, obviously. Spring Break is March 16-24.
 
 
 ### Learning outcomes
@@ -195,7 +209,7 @@ Monday is a holiday (MLK day).
 
 Readings:
 
-- (ADD HOMEWORK AND EXERCISES ON PYTHON HERE, VIDEOS, HACKERRANK, ETC.)
+- (video and exercises) chapters 1-3 of DataCamp's [Introduction to Python](https://www.datacamp.com/courses/intro-to-python-for-data-science) course. You don't need to do chapter 4 (about the Numpy library) right now, though you can if you want to. (UPDATE: no longer recommended, for reasons noted above; will be replaced before next semester.)
 
 - Python for Everybody pg. 55-126 
 
@@ -229,9 +243,7 @@ Readings:
 
 - [Simulations]({filename}../Lessons/simulation.md).  
 
-Problem set 1 due (DATE), at 5pm Central time.
-
-See last year's [Problem set 1]({filename}../psets/pset1.md).
+[Problem set 1]({filename}../psets/pset1.md) due Friday, February 1, at 5pm Central time.
 
 ### Week 4
 
@@ -245,7 +257,7 @@ Readings:
 
 - [Probability]({filename}../Lessons/probability.md)
 
-- Chapter 3 (pp. 61-100) of the Finkelstein and Levin Book. [Direct link to F&L assignment via UI Library Proxy Server](https://link-springer-com.proxy.lib.uiowa.edu/chapter/10.1007/978-1-4419-5985-0_3) 
+- Chapter 3 (pp. 61-100) of the Finkelstein and Levin Book. [Direct link to F&L assignment via UI Library Proxy Server](https://link-springer-com.proxy.lib.uiowa.edu/chapter/10.1007/978-1-4419-5985-0_3)
 
 - After reading the F&L assignment read [Abel and Baker Redux]({filename}../Lessons/abelbaker.md)
 
@@ -253,7 +265,7 @@ Readings:
 
 - NBC News ['We are going backward': How the justice system ignores science in the pursuit of convictions](https://www.nbcnews.com/news/us-news/we-are-going-backward-how-justice-system-ignores-science-pursuit-n961256)
 
-- A note from last year on a [4 recap/further explanation of the probability issue the class that year got stuck on]({filename}../Lessons/totalprob.md)**
+**[Week 4 recap/further explanation of the probability issue we got stuck on]({filename}../Lessons/totalprob.md)**
 
 ### Week 5
 
@@ -277,7 +289,7 @@ Reading:
 
 - (video and exercises) DataCamp [Intermediate Python for Data Science chapter 2 (dictionaries and pandas)](https://www.datacamp.com/courses/intermediate-python-for-data-science)  (UPDATE: no longer recommended, for reasons noted above; will be replaced before next semester.)
 
-- [Week 5 recap from last year.]({filename}../Lessons/week5recap.md)**
+**[Week 5 recap is here.]({filename}../Lessons/week5recap.md)**
 
 ### Week 6
 
