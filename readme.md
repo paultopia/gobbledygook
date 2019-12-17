@@ -30,3 +30,22 @@ The **notmyidea-mod** directory contains the templates for the HTML pages.  Agai
 - [ ] Devise a non-arbitrary ontology to rationalize the tagging system.
 - [ ] Fix the CSS for tables in Jupyter notebooks converted to HTML so they aren't misaligned and horrifically ugly. 
 - [ ] Add a script to force-refresh cloudflare cache on every deploy so as to prevent outdated site being served to students.
+
+
+----
+
+Notes to self (students ignore)
+
+Currently searching for datacamp replacement.  
+Dataquest free lessons: https://www.dataquest.io/directory/
+Pandas on codeacademy: https://www.codecademy.com/learn/data-processing-pandas 
+Bunch of nice pandas resources: https://www.dataschool.io/best-python-pandas-resources/ 
+Some guy's course (he's got good SEO but is it any good?): https://medium.com/dunder-data/intro-to-pandas-free-course-20486c0f9e76 
+
+
+Hacker rank python challenges for daily practice: 
+
+https://www.hackerrank.com/challenges/py-if-else/ 
+actually assign all the intro ones for week one: https://www.hackerrank.com/domains/python?filters%5Bsubdomains%5D%5B%5D=py-introduction 
+
+
