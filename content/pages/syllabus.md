@@ -2,7 +2,7 @@ title: Syllabus
 save_as: index.html
 status: hidden
 
-**WORK IN PROGRESS** --- this is now the 2020 edition syllabus, which I am currently building.  Please check back here in the coming days as material will be shuffled around a bit. You can also go look at [last year's syllabus]({filename}syllabus-2019.md).
+**WORK IN PROGRESS** --- this is now the 2020 edition syllabus, which I am currently building.  Please check back here in the coming days as material will be shuffled around a bit. You can also go look at [last year's syllabus]({filename}../archive/syllabus-2019.md).
 
 # Introduction to Quantitative & Computational Legal Reasoning  (LAW:8645)
 
@@ -151,7 +151,7 @@ By the end of the course, you should be able to:
 
 - Identify the confusions in the following (from oral argument in [Department of Commerce v. New York](https://www.scotusblog.com/case-files/cases/department-of-commerce-v-new-york/): 
 
-![Gorsuch oops]({filename}../images.gorsuch.png)
+![Gorsuch oops]({filename}../images/gorsuch.png)
 
 ## Coverage by Week
 
@@ -236,7 +236,7 @@ Readings:
 
 **[Problem set 1]({filename}../psets/pset1-2020.md) due Friday, February 7, at 5pm Central time.****
 
-See last year's [Problem set 1]({filename}../psets/2019/pset1.md), which you can do for practice if you'd like.  After doing that practice, you can check out [my answers to it]({filename}../psets/2019/pset1_answers.ipynb).
+See last year's [Problem set 1]({filename}../archive/pset1.md), which you can do for practice if you'd like.  After doing that practice, you can check out [my answers to it]({filename}../archive/pset1_answers.ipynb).
 
 No week 3 practice homework because the problem set is due.
 
@@ -335,7 +335,7 @@ Reading:
 
 Problem set 2 due (DATE) at 5pm Central time. 
 
-[See last year's problem set 2]({filename}../psets/2019/pset2.md), which, as before, you should do for practice; afterward you can [look at my answers]({filename}../psets/2019/pset2_answers.ipynb).
+[See last year's problem set 2]({filename}../archive/pset2.md), which, as before, you should do for practice; afterward you can [look at my answers]({filename}../archive/pset2_answers.ipynb).
 
 
 ### Week 7
@@ -402,7 +402,7 @@ Readings:
 
 **Homework** to be done before this week begins: look at the hypothetical dataset *mickel.csv*, and use the techniques we've learned in class to come to some conclusion about whether discrimination is occurring in the provision of public benefits in this disability services agency context. We'll go over this assignment in class at the end of week 9.
 
-**Problem Set 3 due (DATE) at 5pm Central.**  See [last year's problem set 3]({filename}../psets/2019/pset-3.md).
+**Problem Set 3 due (DATE) at 5pm Central.**  See [last year's problem set 3]({filename}../archive/pset-3.md).
 
 ### Week 11
 
@@ -487,4 +487,4 @@ Optional, bonus (but HIGHLY recommended) reading:
 
 **Problem set 4** due on (DATE), the last day of exams, at 5pm Central.  
 
-See [last year's problem set 4]({filename}../psets/2019/pset4.md) and [a makeup assignment the class did]({filename}../psets/2019/makeup-assignment.md). 
+See [last year's problem set 4]({filename}../archive/pset4.md) and [a makeup assignment the class did]({filename}../archive/makeup-assignment.md). 
