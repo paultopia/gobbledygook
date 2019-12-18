@@ -1,22 +1,33 @@
 title: Syllabus
 save_as: index.html
 
-**WORK IN PROGRESS** --- this is now the 2020 edition syllabus, which I am currently building.  Please check back here in the coming days as material will be shuffled around a bit. 
-
 # Introduction to Quantitative & Computational Legal Reasoning  (LAW:8645)
 
 Spring 2020; Monday + Tuesday 2:00-3:30; Classroom 265.
 
-Professor: Paul Gowder (Office: 408. Email: paul-gowder@uiowa.edu. Phone: 319-384-3202.).
+Professor: Paul Gowder 
 
-Assistant: Diana DeWalle (Office: 469. Email: diana-dewalle@uiowa.edu. Phone: 319-335-9036.).
+- Office: 408
+
+- Email: paul-gowder@uiowa.edu
+
+- Phone: 319-384-3202
+
+- Office Hours: Mon., Tue. 11am-1pm, and by appointment
+
+Assistant: Diana DeWalle 
+
+- Office: 469
+
+- Email: diana-dewalle@uiowa.edu 
+
+- Phone: 319-335-9036
 
 ## Welcome
 
 Welcome to Introduction to Quantitative and Computational Legal Reasoning, informally named "Sociological Gobbledygook" in honor of [Chief Justice Roberts's slightly math-phobic remark at oral argument in Gill v. Whitford](https://fivethirtyeight.com/features/the-supreme-court-is-allergic-to-math/).  This course is offered at the University of Iowa College of Law in Spring 2020, by [Paul Gowder](https://gowder.io), and has previously been offered in Spring 2019: you can go look at [last year's syllabus]({filename}../archive/syllabus-2019.md) if you're curious.
 
 This is a totally open-source course. There is a [Github repository](https://github.com/paultopia/gobbledygook) which contains all of our materials and discussions. Please feel free to make a suggestion or start a conversation in the issues, or even make a pull request. For unstructured navigation of this website, you can use the [list of tags](/tags.html) that describe the subject matter of our lessons.
-
 
 ## Course Summary
 
@@ -53,9 +64,7 @@ For the contents of this website, it's probably easiest to access them using the
 
 I am committed to only assigning resources which are free to students. However, the nature of this material is that sometimes one explanation will just "click" where another might not.  So in addition to the assigned readings, I offer you this list of additional, non-free, readings which you might consult for a different perspective on the material---or for deeper engagement and exploration.  
 
-
 #### Statistics
-
 
 I really like the Aspen textbook by Lawless, Robbennolt and Ulen, [Empirical Methods in Law](http://www.aspenlawschool.com/books/empirical_methods/). It has very good clear explanations of a number of research methods topics, and is not overly math-y. If you want to dig deeper into stats and empirical research in law, I highly recommend it.  I also recommend Lee Epstein & Andrew Martin, [An Introduction to Empirical Legal Research](https://global.oup.com/academic/product/an-introduction-to-empirical-legal-research-9780199669066?cc=us&lang=en&). 
 
@@ -71,7 +80,6 @@ Some other books that might be of interest to you, though I haven't reviewed the
 
 - Uri Bram, Thinking Statistically
 
-
 #### Python Programming
 
 My favorite introductory Python book (not free) is John Guttag, [Introduction to Computation and Programming Using Python](https://mitpress.mit.edu/books/introduction-computation-and-programming-using-python-revised-and-expanded-edition).  This book is also the basis for a wonderful electronic [course by almost the same name from MIT on EdX](https://www.edx.org/course/introduction-to-computer-science-and-programming-using-python) --- and you can go through the course for free, and without buying the book.  I really do think that course (and the second course in the same series) is an amazing way to learn Python, and programming in general.
@@ -79,7 +87,6 @@ My favorite introductory Python book (not free) is John Guttag, [Introduction to
 Blessedly, there are a lot of good introductory Python programming books out there which are also available online for free. One of my favorites is Al Sweigart, [Automate the Boring Stuff with Python](https://automatetheboringstuff.com). For more advanced (and non-free) learning, I really love Luciano Ramalho's [Fluent Python](http://shop.oreilly.com/product/0636920032519.do), although by the time you need that you should be looking at building fairly substantial programs. 
 
 It is better to use a Python book that is based on Python 3, not Python 2. 
-
 
 #### General Learning
 
@@ -91,7 +98,7 @@ This course is structured as a vaguely "flipped" lab-style process. You will lar
 
 Please bring a computer to every class. Mac, Linux, or Windows computers will work best. Chromebooks and tablets will work less well, though we can get them to work if need be. 
 
-The coverage, pace, and workload in this class will be a continuing work in progress. Because this class isn't taught a lot in law schools, there is not much collective wisdom on how to do it successfully, and I expect to have to adapt the assignments and the pace to accommodate how readily the class takes to the material. So don't expect the assignments at the bottom of this document to be stable. They will change. Possibly lots. I haven't even written the assignments beyond a few weeks out, because I expect that they'd need to be radically changed. In other words, **this course is experimental**---I'll do my best to make it worth your while, but I disclaim all warranties about how well it will work this first time around. 
+The coverage, pace, and workload in this class will be a continuing work in progress. Because this class isn't taught a lot in law schools, there is not much collective wisdom on how to do it successfully, and I expect to have to adapt the assignments and the pace to accommodate how readily the class takes to the material. So don't expect the syllabus to stay stable as we move through the course. 
 
 ## Class technological resources
 
@@ -114,6 +121,8 @@ In order to ensure that students in this course aren’t disadvantaged by unfami
 
 Last year's problem sets are available on this website, along with answers to them; looking them over will give you an idea of the approximate challenges that you'll be asked to complete.
 
+All problem sets will be turned in via email to Diana Dewalle. The only place your name should appear in problem sets is in the filename.
+
 ### Collaboration
 
 Problem sets should be your own work. You are allowed to discuss the general approach to problem sets with one another, but you are not allowed to show one another your math or code. 
@@ -122,7 +131,7 @@ For example: "I solved that problem by writing a loop over the list of cases" is
 
 Students will be asked to agree to an honor code.
 
-Collaboration on in-class tasks and on homework assignments that are not one of the official problem sets is highly encouraged and probably necessary. 
+Collaboration on in-class tasks and on homework assignments that are not one of the official problem sets is highly encouraged and probably necessary. However, you should try to do the homework assignments on your own first before consulting with your classmates, in order to maximize your learning. (Struggle and frustration are normal, expected, and healthy.)
 
 ## Technology, Bugs, and Accommodations
 
@@ -132,13 +141,15 @@ Also, please contact me or the dean of students as soon as humanly possible if y
 
 ## Office Hours, Contacts, etc.
 
-I will maintain office hours (TBD). I'm also happy to make appointments at other times, and you're always free to drop by when my door is open. I'm very good at replying to e-mail and very bad at checking telephone messages.
+I will maintain office hours (Mon., Tue. 11am-1pm, and by appointment). I'm also happy to make appointments at other times, and you're always free to drop by when my door is open. I'm very good at replying to e-mail and very bad at checking telephone messages.
 
 That being said, I **very strongly encourage you to ask substantive questions in a way that will be accessible to your fellow students**.  This means using the copious time that will be made available in class time for that purpose, as well as making use of the discussion forum on ICON (in which I will very actively participate).  If you have a question, it's almost certainly the case that several other people do too.
 
 ## Some schedule notes
 
-(DATE) is Martin Luther King Day.  No classes then, obviously. Spring Break is (DATES).
+Spring Break is March 14-22. No class then, obviously. 
+
+Problem sets are due on the following Fridays, each at 5pm Central: Feb 7 (week 3), Feb 28 (week 6), Apr. 3 (week 10) and May 8 (in the middle of finals period).
 
 
 ### Learning outcomes
@@ -161,29 +172,17 @@ By the end of the course, you should be able to:
 
 ## Coverage by Week
 
-The first few weeks will be spent on computation; subsequent weeks will be spent on data analysis and statistics. As we get further into the future, the below becomes more subject to change, obviously. (From week 3 onward, reading is still being added.)
+The first few weeks will be spent on computation; subsequent weeks will be spent on data analysis and statistics. As we get further into the future, the below becomes more subject to change, obviously. 
 
-I fully expect that we won't get to the material in the last few weeks, unless we somehow move at rocket speed. They're more aspirational topics. Everything past week 3 will probably be shuffled around several times as I see how fast the class progresses.
-
-### Week 1 
+### Week 1 (Jan 21)
 
 Coverage: Basic ideas of programming, units of computation, functions and loops. Computational logic and legal logic, law as computation. We will front-load the quantity of reading a little heavily to get us started quickly, but it'll ease off as we move on to more conceptually difficult material. (Also, I know the reading seems like a lot, but it goes faster than cases in 1L year!)  In particular, don't feel obliged to fully absorb everything from Python for Everybody on the first reading. Just read it quickly so you get a feel for the terrain, and then more carefully read the stuff posted on this site, then dig back into Python for Everybody to fill out the details.
 
-For **Monday**, read: 
+Read: 
 
 - the [Introduction to Python on this site]({filename}../Lessons/python_intro.md) 
 
 - the [first Python lesson]({filename}../Lessons/basic_intro.ipynb). 
-
-- pages 1-55 of Python for Everybody. 
-
-- the [Software Carpentry lesson on loops](http://swcarpentry.github.io/python-novice-inflammation/02-loop/index.html)
-
-In the first day of class, we will get everyone set up with the different services and installation options for the software we need in the course, and, if there's time, demonstrate some basic programming ideas and work through some exercises.
-
-On Monday evening, clone the [course assignments Github repository](https://github.com/paultopia/gobbledygook_lessons) and complete the factorial exercise at the end of the first Python lesson notebook (basic_intro.ipynb); you don't need to turn it in, but let me know if you can't complete it; we'll look at people's solutions on Tuesday and use this as our test to make sure everyone is set up and functional.
-
-For **Tuesday**, read: 
 
 - [functions and scope]({filename}../Lessons/functions.ipynb)
 
@@ -197,10 +196,20 @@ For **Tuesday**, read:
 
 - Software Carpentry lesson on [making choices](http://swcarpentry.github.io/python-novice-inflammation/05-cond/index.html)
 
+- the [Software Carpentry lesson on loops](http://swcarpentry.github.io/python-novice-inflammation/02-loop/index.html)
+
+- pages 1-55 of Python for Everybody. 
+
+Like I said, I know this is a lot of reading. Don't worry, there won't be nearly so much as we move forward. 
+
+In the first day of class, we will get everyone set up with the different services and installation options for the software we need in the course, and, if there's time, demonstrate some basic programming ideas and work through some exercises.
+
 
 For **Week 1 practice homework**, do the "Introduction" problems (click the introduction checkbox on the right of the screen) in the [HackerRank Python Domain](https://www.hackerrank.com/domains/python).
 
-### Week 2
+I'd also like you to complete the factorial exercise at the end of the [first Python lesson]({filename}../Lessons/basic_intro.ipynb); you don't need to turn it in, but let me know if you can't complete it; we'll look at people's solutions next week and use this as our test to make sure everyone is set up and functional.
+
+### Week 2 (Jan 27, 28)
 
 Coverage: using Python to get access to other people's code, libraries. Accessing the filesystem and the internet from Python. Error handling. Strings.
 
@@ -208,7 +217,7 @@ Readings:
 
 - Python for Everybody pg. 55-126 
 
-- [my brief notes from week 1]({filename}../Lessons/post-week1-notes.md).
+- [my brief notes from week 1 in 2019]({filename}../Lessons/post-week1-notes.md) (some of this may be a little obsolete, like references to some of the specific resources we used last year, such as Microsoft Azure).
 
 - [Libraries]({filename}../Lessons/libraries.md)
 
@@ -222,7 +231,7 @@ In class on Tuesday for this week last year we worked through an example of acce
 
 For **Week 2 practice homework**, do the "Basic Data Types" problems (click the Basic Data Types checkbox on the right of the screen) in the [HackerRank Python Domain](https://www.hackerrank.com/domains/python), *except* the "List Comprehensions," and "Lists" problems, which you can skip (we'll try to do those in class).
 
-### Week 3
+### Week 3 (Feb 3, 4)
 
 Coverage: Regular expressions. Simulation and why you might want to do it. A very light introduction to object-oriented programming. 
 
@@ -246,7 +255,7 @@ See last year's [Problem set 1]({filename}../archive/pset1.md), which you can do
 
 No week 3 practice homework because the problem set is due.
 
-### Week 4
+### Week 4 (Feb 10, 11)
 
 Basic probability math. Bayes rule and conditional probability.
 
@@ -284,7 +293,7 @@ For **Week 4 practice homework**, go to the "Strings" problems in the [HackerRan
 
 - "Capitalize!"
 
-### Week 5
+### Week 5 (Feb 17, 18)
 
 Initial explorations into data with data visualization in Python. Basic properties of data, measures of central tendency, exploratory data analysis.
 
@@ -319,7 +328,7 @@ For **Week 5 practice homework**, do the "Errors and Exceptions" problems in the
 - "Validating and Parsing Email Addresses"
 
 
-### Week 6
+### Week 6 (Feb 24, 25)
 
 Probability distributions, central limit theorem, hypothesis testing. 
 
@@ -339,12 +348,12 @@ Reading:
 
 - these two excellent blog posts by a Google data scientist: [Statistics for People in a Hurry](https://towardsdatascience.com/statistics-for-people-in-a-hurry-a9613c0ed0b) and [Never Start With a Hypothesis](https://towardsdatascience.com/hypothesis-testing-decoded-for-movers-and-shakers-bfc2bc34da41).
 
-Problem set 2 due (DATE) at 5pm Central time. 
+Problem set 2 due Friday, Feb. 28, at 5pm Central time. 
 
 [See last year's problem set 2]({filename}../archive/pset2.md), which, as before, you should do for practice; afterward you can [look at my answers]({filename}../archive/pset2_answers.ipynb).
 
 
-### Week 7
+### Week 7 (Mar 2, 3)
 
 Experiments, random assignment.  Causation and correlation.  Focused legal application: audit tests in discrimination cases.
 
@@ -360,7 +369,7 @@ Readings:
 
 For **Week 7 practice homework**, do the "Debugging" problems in the [HackerRank Python Domain](https://www.hackerrank.com/domains/python). 
 
-### Week 8
+### Week 8 (Mar 9, 10)
 
 Focus week: statistical extrapolation and simulation in the law. Shonubi case. 
 
@@ -374,7 +383,7 @@ We'll spend this week catching up further, if necessary, discussing the Shonubi 
 
 For **Week 8 practice homework**, do the [Multiples of 3 and 5](https://projecteuler.net/problem=1) and [Smallest multiple](https://projecteuler.net/problem=5) problems on Project Euler. (Note, you don't need to submit code on that site, just write the code to get the correct math answer.)
 
-### Week 9
+### Week 9 (Mar 23, 24)
 
 Regression analysis. Linear regression. Statistical evidence of discrimination.
 
@@ -394,7 +403,7 @@ Readings:
 
 For **Week 9 practice homework** do [Even Fibonacci numbers](https://projecteuler.net/problem=2) from Project Euler.
 
-### Week 10
+### Week 10 (Mar 30, 31)
 
 Applications and reinforcement. Slow-down week, solidify our existing knowledge by thinking about a concrete use of statistics in law: determining disparate impact in Title VII cases.
 
@@ -408,7 +417,7 @@ Readings:
 
 **Homework** to be done before this week begins: look at the hypothetical dataset *mickel.csv*, and use the techniques we've learned in class to come to some conclusion about whether discrimination is occurring in the provision of public benefits in this disability services agency context. We'll go over this assignment in class at the end of week 9.
 
-**Problem Set 3 due (DATE) at 5pm Central.**  See [last year's problem set 3]({filename}../archive/pset-3.md).
+**Problem Set 3 due Fri, Apr. 3, at 5pm Central.**  See [last year's problem set 3]({filename}../archive/pset-3.md).
 
 ### Week 11
 
@@ -491,6 +500,6 @@ Optional, bonus (but HIGHLY recommended) reading:
 
 ### Final exam period
 
-**Problem set 4** due on (DATE), the last day of exams, at 5pm Central.  
+**Problem set 4** due on Friday, May 8, during the exam period, at 5pm Central.
 
 See [last year's problem set 4]({filename}../archive/pset4.md) and [a makeup assignment the class did]({filename}../archive/makeup-assignment.md). 
