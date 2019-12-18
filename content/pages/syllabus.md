@@ -236,7 +236,7 @@ Readings:
 
 **[Problem set 1]({filename}../psets/pset1-2020.md) due Friday, February 7, at 5pm Central time.****
 
-See last year's [Problem set 1]({filename}../psets/pset1.md), which you can do for practice if you'd like.
+See last year's [Problem set 1]({filename}../psets/2019/pset1.md), which you can do for practice if you'd like.  After doing that practice, you can check out [my answers to it]({filename}../psets/2019/pset1_answers.ipynb).
 
 No week 3 practice homework because the problem set is due.
 
@@ -335,7 +335,7 @@ Reading:
 
 Problem set 2 due (DATE) at 5pm Central time. 
 
-[See last year's problem set 2]({filename}../psets/pset2.md).
+[See last year's problem set 2]({filename}../psets/2019/pset2.md), which, as before, you should do for practice; afterward you can [look at my answers]({filename}../psets/2019/pset2_answers.ipynb).
 
 
 ### Week 7
@@ -402,7 +402,7 @@ Readings:
 
 **Homework** to be done before this week begins: look at the hypothetical dataset *mickel.csv*, and use the techniques we've learned in class to come to some conclusion about whether discrimination is occurring in the provision of public benefits in this disability services agency context. We'll go over this assignment in class at the end of week 9.
 
-**Problem Set 3 due (DATE) at 5pm Central.**  See [last year's problem set 3]({filename}../psets/pset-3.md).
+**Problem Set 3 due (DATE) at 5pm Central.**  See [last year's problem set 3]({filename}../psets/2019/pset-3.md).
 
 ### Week 11
 
@@ -487,4 +487,4 @@ Optional, bonus (but HIGHLY recommended) reading:
 
 **Problem set 4** due on (DATE), the last day of exams, at 5pm Central.  
 
-See [last year's problem set 4]({filename}../psets/pset4.md) and [a makeup assignment the class did]({filename}../psets/makeup-assignment.md). 
+See [last year's problem set 4]({filename}../psets/2019/pset4.md) and [a makeup assignment the class did]({filename}../psets/2019/makeup-assignment.md). 
