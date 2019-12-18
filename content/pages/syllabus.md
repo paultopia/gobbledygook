@@ -20,31 +20,36 @@ This course is not advised for students with substantial statistical or computat
 
 Introduction to Quantitative and Computational Legal Reasoning is experimental. This syllabus is not a contract; I reserve the right to make radical changes in how the course operates throughout the semester, depending on how student learning progresses. (However, as this is version 2 of the course, you can expect the changes to be a bit less radical compared to last year.)
 
-## Course Materials
+## Course Resources
 
 - Course website: [https://sociologicalgobbledygook.com/](https://sociologicalgobbledygook.com/) 
 
 - [Course Github repository](https://github.com/paultopia/gobbledygook/) 
 
-Note that lessons are downloadable directly from this website, including (where lessons are in that format) Jupyter notebooks that you can execute on your own machine and/or on Azure, Google CoLab, etc., but also in PDF. 
+Note that lessons are downloadable directly from this website, including (where lessons are in that format) Jupyter notebooks that you can execute on the IDAS service (about which below), but also in PDF. 
 
 ## Readings 
 
-#### Texts
+### Texts
 
-The main readings for this course will be drawn from [Charles Severance, Python for Everybody](https://www.py4e.com/book), which is available for free online, and [Michael Finkelstein & Bruce Levin, Statistics for Lawyers](https://link.springer.com/book/10.1007%2F978-1-4419-5985-0) which should be free to download as PDF through our library's subscription. (You may have to be on the campus network to download it; you might also have to search for it through the library's directory.) We will also be using some excerpts from the [Federal Judicial Center's Reference Manual on Scientific Evidence](https://www.fjc.gov/content/reference-manual-scientific-evidence-third-edition-1) 
+The main readings for this course will be on this website.  There may be a little bit of copyrighted stuff that I can't distribute publicly on ICON.
 
-In addition, we'll make use of some videos and exercises online, which I will talk about on the first day. (*temporary note to self: hackerrank?)
+In addition, there will be supplemental readings drawn from [Charles Severance, Python for Everybody](https://www.py4e.com/book), which is available for free online, and [Michael Finkelstein & Bruce Levin, Statistics for Lawyers](https://link.springer.com/book/10.1007%2F978-1-4419-5985-0) which should be free to download as PDF through our library's subscription. (You may have to be on the campus network to download it; you might also have to search for it through the library's directory.) We will also be using some excerpts from the [Federal Judicial Center's Reference Manual on Scientific Evidence](https://www.fjc.gov/content/reference-manual-scientific-evidence-third-edition-1) 
+
+We'll make use of some videos and exercises online. We'll talk more about this on the first day, but I will be assigning you mini-online-introductory courses to do in order to get practice with programming, from [Dataquest](https://dataquest.io)'s free tier (maybe) and from [Hackerrank](https://www.hackerrank.com/) and [Project Euler](https://projecteuler.net/). You'll want to grab accounts at those places.
 
 We will also use some free instructional materials from the nonprofit organizations [Software Carpentry](https://software-carpentry.org/lessons/) and (maybe) [Data Carpentry](https://datacarpentry.org/lessons/). 
 
-There will also be copious readings written by me available online on the public-facing website, and some copyrighted stuff that I can't distribute publicly on ICON.
+For the contents of this website, it's probably easiest to access them using the week-by-week links below or the [content-based tags](tags.html) build into this website. There might be formatting glitches with some of the lessons, due to conversion between different file types and html, but every lesson will have a link to a downloadable and printable PDF at the bottom which will ordinarily have cleaner formatting (except for long lines of code, which may be cut off in PDF but should be fine on web).  Some lessons should also have downloadable Jupyter notebooks associated with them, which will also be linked at the bottom.
 
-For the contents of this website, it's probably easiest to access them using the week-by-week links below or the [content-based tags](tags.html) build into this website. There might be formatting glitches with some of the lessons, due to conversion between different file types and html. However, I'm slowly improving that as we go through the course, and, in addition, every lesson will have a link to a downloadable and printable PDF at the bottom which will ordinarily have cleaner formatting (except for long lines of code, which may be cut off in PDF but should be fine on web).  Some lessons should also have downloadable Jupyter notebooks associated with them, which will also be linked at the bottom.
+
+### Bonus Reading Suggestions
 
 I am committed to only assigning resources which are free to students. However, the nature of this material is that sometimes one explanation will just "click" where another might not.  So in addition to the assigned readings, I offer you this list of additional, non-free, readings which you might consult for a different perspective on the material---or for deeper engagement and exploration.  
 
-### Bonus Reading Suggestions: Statistics
+
+#### Statistics
+
 
 I really like the Aspen textbook by Lawless, Robbennolt and Ulen, [Empirical Methods in Law](http://www.aspenlawschool.com/books/empirical_methods/). It has very good clear explanations of a number of research methods topics, and is not overly math-y. If you want to dig deeper into stats and empirical research in law, I highly recommend it.  I also recommend Lee Epstein & Andrew Martin, [An Introduction to Empirical Legal Research](https://global.oup.com/academic/product/an-introduction-to-empirical-legal-research-9780199669066?cc=us&lang=en&). 
 
@@ -61,7 +66,7 @@ Some other books that might be of interest to you, though I haven't reviewed the
 - Uri Bram, Thinking Statistically
 
 
-### Bonus Reading Suggestions: Python Programming
+#### Python Programming
 
 My favorite introductory Python book (not free) is John Guttag, [Introduction to Computation and Programming Using Python](https://mitpress.mit.edu/books/introduction-computation-and-programming-using-python-revised-and-expanded-edition).  This book is also the basis for a wonderful electronic [course by almost the same name from MIT on EdX](https://www.edx.org/course/introduction-to-computer-science-and-programming-using-python) --- and you can go through the course for free, and without buying the book.  I really do think that course (and the second course in the same series) is an amazing way to learn Python, and programming in general.
 
@@ -70,13 +75,13 @@ Blessedly, there are a lot of good introductory Python programming books out the
 It is better to use a Python book that is based on Python 3, not Python 2. 
 
 
-### Bonus Reading Suggestions: General Learning
+#### General Learning
 
 I highly recommend Barbara Oakley's book [A Mind for Numbers](https://barbaraoakley.com/books/a-mind-for-numbers/), which is basically a self-help book on the psychology of learning difficult things---which can help you not just in math-y classes but in law school and other classes in general. There's an online course based on her book on Coursera, called [Learning How to Learn](https://www.coursera.org/learn/learning-how-to-learn); I've never looked at that course but everyone who has done so has raved about it. 
 
 ## How Class Will Go
 
-This course is structured as a "flipped class": there won't be many (or possibly any) lectures (or Socratic interrogation). Rather, you will consume the talking kind of instruction outside of the classroom, primarily through readings and through some third-party videos. Classroom time will mostly be a lab format: I will demonstrate the practical usage of the things you've learned about outside of class, and (more commonly) assign exercises for you to carry out, with the opportunity to work together to figure them out and with me looming over your shoulder to help. 
+This course is structured as a vaguely "flipped" lab-style process. You will largely consume the talking-ish "content" kind of instruction outside of the classroom, primarily through readings. In classroom time, I will demonstrate the practical usage of the things you've learned about outside of class, maybe do a teeny tiny and (more commonly) assign exercises for you to carry out, with the opportunity to work together to figure them out and with me looming over your shoulder to help. 
 
 Please bring a computer to every class. Mac, Linux, or Windows computers will work best. Chromebooks and tablets will work less well, though we can get them to work if need be. 
 
@@ -95,7 +100,7 @@ This class is intended in part to produce resources which will be available to t
 
 Evaluation will be primarily based on four problem sets. The first two will be computer programming-based (with the second possibly including a probability problem or two), and will be worth 17.5% of the grade each. The third will be probability and statistics based and will be worth 25% of the grade.  The fourth will be comprehensive, with emphasis on the statistics side, and will be worth 30% of the grade.
 
-The weird fractions are to accommodate 10% of the grade which will be based on classroom participation and preparation, and which is meant to enforce the flipped classroom format. Students who get full credit for that 10% will complete the simple out-of-class tasks which I will periodically assign and participate in good faith in collective problem-solving in the classroom. (This is an effort-based 10%, not a performance-based 10%.) 
+The weird fractions are to accommodate 10% of the grade which will be based on classroom participation and preparation, and which is meant to enforce the lab-style classroom format. Students who get full credit for that 10% will complete the simple out-of-class tasks which I will periodically assign and participate in good faith in collective problem-solving in the classroom. (This is an effort-based 10%, not a performance-based 10%.) 
 
 Under the policy described in Student Handbook section B.3 ("The curve is not applicable in upper-level seminars and other upper- level classes in which a student's grade is based primarily on the student’s performance on graded skills-oriented tasks (including writing) other than a final exam."), this course will not be curved.
 
@@ -187,6 +192,8 @@ For **Tuesday**, read:
 - Software Carpentry lesson on [making choices](http://swcarpentry.github.io/python-novice-inflammation/05-cond/index.html)
 
 
+For **Week 1 practice homework**, do the "Introduction" problems (click the introduction checkbox on the right of the screen) in the [HackerRank Python Domain](https://www.hackerrank.com/domains/python).
+
 ### Week 2
 
 Coverage: using Python to get access to other people's code, libraries. Accessing the filesystem and the internet from Python. Error handling. Strings.
@@ -209,7 +216,9 @@ Readings:
 
 - [Network Requests]({filename}../Lessons/network_requests.md)
 
-In class on Tuesday we worked through an example of accessing the Openstates API, [that example is here]({filename}../class_examples/openstates_example.ipynb).
+In class on Tuesday for this week last year we worked through an example of accessing the Openstates API. We'll probably do that exercise again this year, and when it's done you can take a look at [the example here]({filename}../class_examples/openstates_example.ipynb).
+
+For **Week 2 practice homework**, do the "Basic Data Types" problems (click the Basic Data Types checkbox on the right of the screen) in the [HackerRank Python Domain](https://www.hackerrank.com/domains/python), *except* the "List Comprehensions," and "Lists" problems, which you can skip (we'll try to do those in class).
 
 ### Week 3
 
@@ -233,6 +242,8 @@ Problem set 1 due (DATE), at 5pm Central time.
 
 See last year's [Problem set 1]({filename}../psets/pset1.md).
 
+No week 3 practice homework because the problem set is due.
+
 ### Week 4
 
 Basic probability math. Bayes rule and conditional probability.
@@ -255,6 +266,22 @@ Readings:
 
 - A note from last year on a [4 recap/further explanation of the probability issue the class that year got stuck on]({filename}../Lessons/totalprob.md)**
 
+For **Week 4 practice homework**, go to the "Strings" problems in the [HackerRank Python Domain](https://www.hackerrank.com/domains/python) and do: 
+
+- "sWAP cASE"
+
+- "String Split and Join"
+
+- "Mutations"
+
+- "Find a string"
+
+- "String Validators" 
+
+- "Text Wrap" and 
+
+- "Capitalize!"
+
 ### Week 5
 
 Initial explorations into data with data visualization in Python. Basic properties of data, measures of central tendency, exploratory data analysis.
@@ -275,9 +302,20 @@ Reading:
 
 - Explore the different data visualizations available with [From Data to Viz](https://www.data-to-viz.com/)
 
-- (video and exercises) DataCamp [Intermediate Python for Data Science chapter 2 (dictionaries and pandas)](https://www.datacamp.com/courses/intermediate-python-for-data-science)  (UPDATE: no longer recommended, for reasons noted above; will be replaced before next semester.)
+- (TBD: Pandas tutorial)
 
 - [Week 5 recap from last year.]({filename}../Lessons/week5recap.md)**
+
+For **Week 5 practice homework**, do the "Errors and Exceptions" problems in the [HackerRank Python Domain](https://www.hackerrank.com/domains/python), then go to the "Regular Expressions and Parsing" section and do: 
+
+- "Detect Floating Point Number"
+
+- "Re.split()"
+
+- "Validating phone numbers"
+
+- "Validating and Parsing Email Addresses"
+
 
 ### Week 6
 
@@ -299,8 +337,9 @@ Reading:
 
 - these two excellent blog posts by a Google data scientist: [Statistics for People in a Hurry](https://towardsdatascience.com/statistics-for-people-in-a-hurry-a9613c0ed0b) and [Never Start With a Hypothesis](https://towardsdatascience.com/hypothesis-testing-decoded-for-movers-and-shakers-bfc2bc34da41).
 
+Problem set 2 due (DATE) at 5pm Central time. 
 
-[Problem set 2]({filename}../psets/pset2.md) due Friday, February 22, at 5pm Central time.
+[See last year's problem set 2]({filename}../psets/pset2.md).
 
 
 ### Week 7
@@ -317,8 +356,7 @@ Readings:
 
 - [A collection of edited discrimination tester cases]({filename}../Lessons/tester-cases.md).
 
-**Note to students:** I'd like you to fill out a quick [three-question mid-semester survey](https://goo.gl/forms/VzoKHXP4GbITcfvn1) sometime this week. It's anonymous, and I could really use your feedback to make sure we're on course in this experimental class.
-
+For **Week 7 practice homework**, do the "Debugging" problems in the [HackerRank Python Domain](https://www.hackerrank.com/domains/python). 
 
 ### Week 8
 
@@ -331,6 +369,8 @@ Readings:
 - Commentary on Shonubi, posted on ICON. 
 
 We'll spend this week catching up further, if necessary, discussing the Shonubi case, and replicating the data analysis used by experts in that case (approximately---we don't have quite the identical dataset).  As time permits, I'll introduce the basic concepts of linear regression for next week.
+
+For **Week 8 practice homework**, do the [Multiples of 3 and 5](https://projecteuler.net/problem=1) and [Smallest multiple](https://projecteuler.net/problem=5) problems on Project Euler. (Note, you don't need to submit code on that site, just write the code to get the correct math answer.)
 
 ### Week 9
 
@@ -348,7 +388,9 @@ Readings:
 
 - [ATA Airlines, Inc. v. Federal Express Corp.]({attach}../images/ata_v_fedex.pdf), 665 F.3d 882 (7th Cir., 2011**, as edited.
 
-**See [Post week 9 notes here]({filename}../Lessons/post-week9-notes.md).**
+**See [Post week 9 notes from last year here]({filename}../Lessons/post-week9-notes.md).**
+
+For **Week 9 practice homework** do [Even Fibonacci numbers](https://projecteuler.net/problem=2) from Project Euler.
 
 ### Week 10
 
@@ -364,7 +406,7 @@ Readings:
 
 **Homework** to be done before this week begins: look at the hypothetical dataset *mickel.csv*, and use the techniques we've learned in class to come to some conclusion about whether discrimination is occurring in the provision of public benefits in this disability services agency context. We'll go over this assignment in class at the end of week 9.
 
-**[Problem set 3]({filename}../psets/pset-3.md) due Friday, March 29, at 5pm** (Now extended to the Monday after.)
+**Problem Set 3 due (DATE) at 5pm Central.**  See [last year's problem set 3]({filename}../psets/pset-3.md).
 
 ### Week 11
 
@@ -384,6 +426,7 @@ Readings:
 
 Discussion: what are the legal implications of scientific failures?
 
+For **Week 11 practice homework** do [Power Digit Sum](https://projecteuler.net/problem=16) from Project Euler.
 
 ### Week 12
 
@@ -446,4 +489,6 @@ Optional, bonus (but HIGHLY recommended) reading:
 
 ### Final exam period
 
-**[Problem set 4]({filename}../psets/pset4.md) and [Makeup Assignment]({filename}../psets/makeup-assignment.md) due (no standard final exam) on May 9, the last day of exams.** Please turn these two assignments in together, in one file. 
+**Problem set 4** due on (DATE), the last day of exams, at 5pm Central.  
+
+See [last year's problem set 4]({filename}../psets/pset4.md) and [a makeup assignment the class did]({filename}../psets/makeup-assignment.md). 
