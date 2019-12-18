@@ -198,11 +198,7 @@ For **Week 1 practice homework**, do the "Introduction" problems (click the intr
 
 Coverage: using Python to get access to other people's code, libraries. Accessing the filesystem and the internet from Python. Error handling. Strings.
 
-Monday is a holiday (MLK day).
-
 Readings:
-
-- (ADD HOMEWORK AND EXERCISES ON PYTHON HERE, VIDEOS, HACKERRANK, ETC.)
 
 - Python for Everybody pg. 55-126 
 
@@ -236,11 +232,11 @@ Readings:
 
 - [Object-Oriented Programming]({filename}../Lessons/oop.ipynb)
 
-- [Simulations]({filename}../Lessons/simulation.md).  
+- [Simulations]({filename}../Lessons/simulation.md**.  
 
-Problem set 1 due (DATE), at 5pm Central time.
+**[Problem set 1]({filename}../psets/pset1-2020.md) due Friday, February 7, at 5pm Central time.****
 
-See last year's [Problem set 1]({filename}../psets/pset1.md).
+See last year's [Problem set 1]({filename}../psets/pset1.md), which you can do for practice if you'd like.
 
 No week 3 practice homework because the problem set is due.
 
