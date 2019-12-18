@@ -1,5 +1,5 @@
 title: Archived Syllabus (2019) 
-Date: 2018-10-19
+Date: 2002-01-01
 
 **This is an archived version of the syllabus from the first iteration of the course.** I've left it here for the purposes of maintaining a record.
 
@@ -160,7 +160,7 @@ By the end of the course, you should be able to:
 
 - Identify the confusions in the following (from oral argument in [Department of Commerce v. New York](https://www.scotusblog.com/case-files/cases/department-of-commerce-v-new-york/): 
 
-![Gorsuch oops]({filename}../images.gorsuch.png)
+![Gorsuch oops]({filename}../images/gorsuch.png)
 
 ## Coverage by Week
 
@@ -243,7 +243,7 @@ Readings:
 
 - [Simulations]({filename}../Lessons/simulation.md).  
 
-[Problem set 1]({filename}../psets/pset1.md) due Friday, February 1, at 5pm Central time.
+[Problem set 1]({filename}pset1.md) due Friday, February 1, at 5pm Central time.
 
 ### Week 4
 
@@ -312,7 +312,7 @@ Reading:
 - these two excellent blog posts by a Google data scientist: [Statistics for People in a Hurry](https://towardsdatascience.com/statistics-for-people-in-a-hurry-a9613c0ed0b) and [Never Start With a Hypothesis](https://towardsdatascience.com/hypothesis-testing-decoded-for-movers-and-shakers-bfc2bc34da41).
 
 
-[Problem set 2]({filename}../psets/pset2.md) due Friday, February 22, at 5pm Central time.
+[Problem set 2]({filename}pset2.md) due Friday, February 22, at 5pm Central time.
 
 
 ### Week 7
@@ -376,7 +376,7 @@ Readings:
 
 **Homework** to be done before this week begins: look at the hypothetical dataset *mickel.csv*, and use the techniques we've learned in class to come to some conclusion about whether discrimination is occurring in the provision of public benefits in this disability services agency context. We'll go over this assignment in class at the end of week 9.
 
-**[Problem set 3]({filename}../psets/pset-3.md) due Friday, March 29, at 5pm** (Now extended to the Monday after.)
+**[Problem set 3]({filename}pset-3.md) due Friday, March 29, at 5pm** (Now extended to the Monday after.)
 
 ### Week 11
 
@@ -458,4 +458,4 @@ Optional, bonus (but HIGHLY recommended) reading:
 
 ### Final exam period
 
-**[Problem set 4]({filename}../psets/pset4.md) and [Makeup Assignment]({filename}../psets/makeup-assignment.md) due (no standard final exam) on May 9, the last day of exams.** Please turn these two assignments in together, in one file. 
+**[Problem set 4]({filename}pset4.md) and [Makeup Assignment]({filename}makeup-assignment.md) due (no standard final exam) on May 9, the last day of exams.** Please turn these two assignments in together, in one file. 

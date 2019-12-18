@@ -1,8 +1,7 @@
 title: Syllabus
 save_as: index.html
-status: hidden
 
-**WORK IN PROGRESS** --- this is now the 2020 edition syllabus, which I am currently building.  Please check back here in the coming days as material will be shuffled around a bit. You can also go look at [last year's syllabus]({filename}../archive/syllabus-2019.md).
+**WORK IN PROGRESS** --- this is now the 2020 edition syllabus, which I am currently building.  Please check back here in the coming days as material will be shuffled around a bit. 
 
 # Introduction to Quantitative & Computational Legal Reasoning  (LAW:8645)
 
@@ -11,6 +10,13 @@ Spring 2020; Monday + Tuesday 2:00-3:30; Classroom 265.
 Professor: Paul Gowder (Office: 408. Email: paul-gowder@uiowa.edu. Phone: 319-384-3202.).
 
 Assistant: Diana DeWalle (Office: 469. Email: diana-dewalle@uiowa.edu. Phone: 319-335-9036.).
+
+## Welcome
+
+Welcome to Introduction to Quantitative and Computational Legal Reasoning, informally named "Sociological Gobbledygook" in honor of [Chief Justice Roberts's slightly math-phobic remark at oral argument in Gill v. Whitford](https://fivethirtyeight.com/features/the-supreme-court-is-allergic-to-math/).  This course is offered at the University of Iowa College of Law in Spring 2020, by [Paul Gowder](https://gowder.io), and has previously been offered in Spring 2019: you can go look at [last year's syllabus]({filename}../archive/syllabus-2019.md) if you're curious.
+
+This is a totally open-source course. There is a [Github repository](https://github.com/paultopia/gobbledygook) which contains all of our materials and discussions. Please feel free to make a suggestion or start a conversation in the issues, or even make a pull request. For unstructured navigation of this website, you can use the [list of tags](/tags.html) that describe the subject matter of our lessons.
+
 
 ## Course Summary
 

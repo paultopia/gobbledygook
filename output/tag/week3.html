@@ -3,38 +3,36 @@
 <head>
         <meta charset="utf-8" />
         <title>Sociological Gobbledygook - week3</title>
-        <link rel="stylesheet" href="https://sociologicalgobbledygook.com/theme/css/main.css" />
-        <link rel="stylesheet" href="https://sociologicalgobbledygook.com/theme/css/juptyer-fix.css" />
-        <link href="https://sociologicalgobbledygook.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Sociological Gobbledygook Atom Feed" />
+        <link rel="stylesheet" href="/theme/css/main.css" />
+        <link rel="stylesheet" href="/theme/css/juptyer-fix.css" />
 </head>
 
 <body id="index" class="home">
         <header id="banner" class="body">
-                <h1><a href="https://sociologicalgobbledygook.com/">Sociological Gobbledygook </a></h1>
+                <h1><a href="/">Sociological Gobbledygook </a></h1>
                 <nav><ul>
-                    <li><a href="https://sociologicalgobbledygook.com/pages/manifesto.html">Manifesto</a></li>
-                    <li><a href="https://sociologicalgobbledygook.com/pages/archived-syllabus-2019.html">Archived Syllabus (2019)</a></li>
-                    <li><a href="https://sociologicalgobbledygook.com/pages/welcome.html">Welcome!</a></li>
-                    <li><a href="https://sociologicalgobbledygook.com/category/2019.html">2019</a></li>
-                    <li><a href="https://sociologicalgobbledygook.com/category/class_examples.html">class_examples</a></li>
-                    <li><a href="https://sociologicalgobbledygook.com/category/lessons.html">Lessons</a></li>
-                    <li><a href="https://sociologicalgobbledygook.com/category/psets.html">psets</a></li>
+                    <li><a href="/pages/manifesto.html">Manifesto</a></li>
+                    <li><a href="/pages/syllabus.html">Syllabus</a></li>
+                    <li><a href="/category/archive.html">archive</a></li>
+                    <li><a href="/category/class_examples.html">class_examples</a></li>
+                    <li><a href="/category/lessons.html">Lessons</a></li>
+                    <li><a href="/category/psets.html">psets</a></li>
                 </ul></nav>
         </header><!-- /#banner -->
 
             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="https://sociologicalgobbledygook.com/simulation-for-fun-and-profit.html">Simulation for fun and profit</a></h1>
+                    <h1 class="entry-title"><a href="/simulation-for-fun-and-profit.html">Simulation for fun and profit</a></h1>
 <footer class="post-info">
         <abbr class="published" title="2018-01-16T00:00:00-06:00">
                 Published: Tue 16 January 2018
         </abbr>
 
         <address class="vcard author">
-                By                         <a class="url fn" href="https://sociologicalgobbledygook.com/author/paul-gowder.html">Paul Gowder</a>
+                By                         <a class="url fn" href="/author/paul-gowder.html">Paul Gowder</a>
         </address>
-<p>In <a href="https://sociologicalgobbledygook.com/category/lessons.html">Lessons</a>.</p>
-<p>tags: <a href="https://sociologicalgobbledygook.com/tag/programming.html">programming</a> <a href="https://sociologicalgobbledygook.com/tag/conceptual.html">conceptual</a> <a href="https://sociologicalgobbledygook.com/tag/python.html">python</a> <a href="https://sociologicalgobbledygook.com/tag/week3.html">week3</a> <a href="https://sociologicalgobbledygook.com/tag/object-oriented.html">object-oriented</a> </p>
+<p>In <a href="/category/lessons.html">Lessons</a>.</p>
+<p>tags: <a href="/tag/programming.html">programming</a> <a href="/tag/conceptual.html">conceptual</a> <a href="/tag/python.html">python</a> <a href="/tag/week3.html">week3</a> <a href="/tag/object-oriented.html">object-oriented</a> </p>
 </footer><!-- /.post-info --><p>One really useful thing that you can do with programming skills is simulate things that you don't fully understand. This is something that hard science people do all the time: it turns out that there are some kinds of problems that aren't solvable in a deductive, analytic kind of way, but if you can write a simulation of some of the broad influences on the problem, then you can sometimes get a good idea what's going on. </p>
 <p>For example, John Conway's famous <a href="https://en.m.wikipedia.org/wiki/Conway's_Game_of_Life">Game of Life</a> can be understood as a representation of an evolutionary process and has been the object of tons of study via computer simulation.  </p>
 <p>In statistics there are many many examples of simulation that actually help people learn more about data.  For example, there's a technique called the "bootstrap" that involves taking your data and generating synthetic samples from it via simulation, which statisticans can use to squeeze out more information from the original data.  There's also a wide array of techniques called <a href="https://en.m.wikipedia.org/wiki/Monte_Carlo_method">Monte Carlo</a> simulations in statistics that can be used to do freakishly powerful stuff. Simulation is great.</p>
@@ -165,7 +163,7 @@ for strategy in strategies:
 <p>We will talk about Monty Hall later on in the course, and I'll give you the mathematical reasoning behind the correct strategy. </p>
 <p>Incidentally, while object-oriented programming is a good match for simulation, it isn't necessary. To prove it, here's <a href="https://github.com/paultopia/math4ls/blob/master/montyhall/src/montyhall/core.cljs">another Monty Hall simulation</a> I wrote a couple years in a programming language that doesn't even support object-oriented programming. The part that does the simulation actually comes out shorter than the example above (although the linked code also generates a webpage to see the simulation live, which you can <a href="http://paul-gowder.com/montyhall/">play with here if you want</a>). If you want to see what the same simulation looks like in another language, go check it out... I'll bet you can understand the broad outlines, even though you've never been exposed to the other language. </p>
 <p>In the remainder of this class, I will liberally use simulation to demonstrate important concepts in probability and statistics. I encourage you to poke around in those simulations, change their assumptions (for example, can you figure out a way to change the rules of Monty Hall to change the player's optimal strategy?  If you can, simulate it to check!), and poke around the edges in order to get a feel for the knowledge they represent. I think you'll find that being able to dig your hands into a probability/statistics process will make it more understandable and intuitive than just looking at some mathematical proof. </p>
-<p><a href="https://sociologicalgobbledygook.com/simulation.pdf">Download lesson PDF</a></p>                </article>
+<p><a href="/simulation.pdf">Download lesson PDF</a></p>                </article>
             </aside><!-- /#featured -->
                 <section id="content" class="body">
                     <h1>Contents: </h1>
@@ -174,7 +172,7 @@ for strategy in strategies:
 
             <li><article class="hentry">
                 <header>
-                    <h1><a href="https://sociologicalgobbledygook.com/object-oriented-programming.html" rel="bookmark"
+                    <h1><a href="/object-oriented-programming.html" rel="bookmark"
                            title="Permalink to Object-Oriented Programming">Object-Oriented Programming</a></h1>
                 </header>
 
@@ -185,22 +183,22 @@ for strategy in strategies:
         </abbr>
 
         <address class="vcard author">
-                By                         <a class="url fn" href="https://sociologicalgobbledygook.com/author/paul-gowder.html">Paul Gowder</a>
+                By                         <a class="url fn" href="/author/paul-gowder.html">Paul Gowder</a>
         </address>
-<p>In <a href="https://sociologicalgobbledygook.com/category/lessons.html">Lessons</a>.</p>
-<p>tags: <a href="https://sociologicalgobbledygook.com/tag/python.html">python</a> <a href="https://sociologicalgobbledygook.com/tag/programming.html">programming</a> <a href="https://sociologicalgobbledygook.com/tag/week3.html">week3</a> <a href="https://sociologicalgobbledygook.com/tag/object-oriented.html">object-oriented</a> </p>
+<p>In <a href="/category/lessons.html">Lessons</a>.</p>
+<p>tags: <a href="/tag/python.html">python</a> <a href="/tag/programming.html">programming</a> <a href="/tag/week3.html">week3</a> <a href="/tag/object-oriented.html">object-oriented</a> </p>
 </footer><!-- /.post-info -->                
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Object-oriented programming</strong> (OOP) isn't all that special, it's just a particular style of programming that Python is particularly well designed for.  This is a short lesson, we won't cover the theory of OOP, or features you might hear about elsewhere like "inheritance"---see your reading in the P4E book for more.</p>
-                <a class="readmore" href="https://sociologicalgobbledygook.com/object-oriented-programming.html">read more</a>
+                <a class="readmore" href="/object-oriented-programming.html">read more</a>
                 </div><!-- /.entry-content -->
             </article></li>
 
             <li><article class="hentry">
                 <header>
-                    <h1><a href="https://sociologicalgobbledygook.com/regular-expressions.html" rel="bookmark"
+                    <h1><a href="/regular-expressions.html" rel="bookmark"
                            title="Permalink to Regular Expressions">Regular Expressions</a></h1>
                 </header>
 
@@ -211,17 +209,17 @@ for strategy in strategies:
         </abbr>
 
         <address class="vcard author">
-                By                         <a class="url fn" href="https://sociologicalgobbledygook.com/author/paul-gowder.html">Paul Gowder</a>
+                By                         <a class="url fn" href="/author/paul-gowder.html">Paul Gowder</a>
         </address>
-<p>In <a href="https://sociologicalgobbledygook.com/category/lessons.html">Lessons</a>.</p>
-<p>tags: <a href="https://sociologicalgobbledygook.com/tag/python.html">python</a> <a href="https://sociologicalgobbledygook.com/tag/programming.html">programming</a> <a href="https://sociologicalgobbledygook.com/tag/week3.html">week3</a> <a href="https://sociologicalgobbledygook.com/tag/regex.html">regex</a> <a href="https://sociologicalgobbledygook.com/tag/strings.html">strings</a> </p>
+<p>In <a href="/category/lessons.html">Lessons</a>.</p>
+<p>tags: <a href="/tag/python.html">python</a> <a href="/tag/programming.html">programming</a> <a href="/tag/week3.html">week3</a> <a href="/tag/regex.html">regex</a> <a href="/tag/strings.html">strings</a> </p>
 </footer><!-- /.post-info -->                
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Regular expressions (or "regex"/"regexes") are one of the most powerful programming tools for lawyers. Essentially, regular expressions are a powerful specialized programming language built into other languages like Python, which allow you to express complicated text searching operations.</p>
 <p>The utility of this for lawyers should be obvious: lawyers have to deal with lots and lots and lots of documents, and sometimes need to search through those documents for specific information. If those documents are in electronic form, regular expressions can provide you with a much more powerful way of searching than what is built into ordinary applications.</p>
-                <a class="readmore" href="https://sociologicalgobbledygook.com/regular-expressions.html">read more</a>
+                <a class="readmore" href="/regular-expressions.html">read more</a>
                 </div><!-- /.entry-content -->
             </article></li>
                 </ol><!-- /#posts-list -->
