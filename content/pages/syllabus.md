@@ -27,7 +27,9 @@ Assistant: Diana DeWalle
 
 Welcome to Introduction to Quantitative and Computational Legal Reasoning, informally named "Sociological Gobbledygook" in honor of [Chief Justice Roberts's slightly math-phobic remark at oral argument in Gill v. Whitford](https://fivethirtyeight.com/features/the-supreme-court-is-allergic-to-math/).  This course is offered at the University of Iowa College of Law in Spring 2020, by [Paul Gowder](https://gowder.io), and has previously been offered in Spring 2019: you can go look at [last year's syllabus]({filename}../archive/syllabus-2019.md) if you're curious.
 
-This is a totally open-source course. There is a [Github repository](https://github.com/paultopia/gobbledygook) which contains all of our materials and discussions. Please feel free to make a suggestion or start a conversation in the issues, or even make a pull request. For unstructured navigation of this website, you can use the [list of tags](/tags.html) that describe the subject matter of our lessons.
+This is a totally open-source course. There is a [Github repository](https://github.com/paultopia/gobbledygook) which contains all of our materials and discussions. Please feel free to make a suggestion or start a conversation in the issues, or even make a pull request. For unstructured navigation of this website, you can use the [list of tags](/tags.html** that describe the subject matter of our lessons.
+
+**Note**: If you're accessing this syllabus in PDF form on ICON, some of the links may not work, and it may not be fully updated. The canonical syllabus will always appear in HTML form on [https://sociologicalgobbledygook.com](https://sociologicalgobbledygook.com). Much of the language below (like "this website") assumes that you are accessing the syllabus from there.
 
 ## Course Summary
 
@@ -55,9 +57,9 @@ In addition, there will be supplemental readings drawn from [Charles Severance, 
 
 We'll make use of some videos and exercises online. We'll talk more about this on the first day, but I will be assigning you mini-online-introductory courses to do in order to get practice with programming, from [Dataquest](https://dataquest.io)'s free tier (maybe) and from [Hackerrank](https://www.hackerrank.com/) and [Project Euler](https://projecteuler.net/). You'll want to grab accounts at those places.
 
-We will also use some free instructional materials from the nonprofit organizations [Software Carpentry](https://software-carpentry.org/lessons/) and (maybe) [Data Carpentry](https://datacarpentry.org/lessons/). 
+We will also use some free instructional materials from the nonprofit organizations [Software Carpentry](https://software-carpentry.org/lessons/) and [Data Carpentry](https://datacarpentry.org/lessons/). 
 
-For the contents of this website, it's probably easiest to access them using the week-by-week links below or the [content-based tags](tags.html) build into this website. There might be formatting glitches with some of the lessons, due to conversion between different file types and html, but every lesson will have a link to a downloadable and printable PDF at the bottom which will ordinarily have cleaner formatting (except for long lines of code, which may be cut off in PDF but should be fine on web).  Some lessons should also have downloadable Jupyter notebooks associated with them, which will also be linked at the bottom.
+For the contents of this website, it's probably easiest to access them using the week-by-week links below or the [content-based tags](tags.html) built into this website. There might be formatting glitches with some of the lessons, due to conversion between different file types and html, but every lesson will have a link to a downloadable and printable PDF at the bottom which will ordinarily have cleaner formatting (except for long lines of code, which may be cut off in PDF but should be fine on web).  Some lessons should also have downloadable Jupyter notebooks associated with them, which will also be linked at the bottom.
 
 
 ### Bonus Reading Suggestions
@@ -247,7 +249,7 @@ Readings:
 
 - [Object-Oriented Programming]({filename}../Lessons/oop.ipynb)
 
-- [Simulations]({filename}../Lessons/simulation.md**.  
+- [Simulations]({filename}../Lessons/simulation.md)  
 
 **[Problem set 1]({filename}../psets/pset1-2020.md) due Friday, February 7, at 5pm Central time.****
 
@@ -275,7 +277,7 @@ Readings:
 
 - NBC News ['We are going backward': How the justice system ignores science in the pursuit of convictions](https://www.nbcnews.com/news/us-news/we-are-going-backward-how-justice-system-ignores-science-pursuit-n961256)
 
-- A note from last year on a [4 recap/further explanation of the probability issue the class that year got stuck on]({filename}../Lessons/totalprob.md)**
+- A note from last year on a [week 4 recap/further explanation of the probability issue the class that year got stuck on]({filename}../Lessons/totalprob.md)
 
 For **Week 4 practice homework**, go to the "Strings" problems in the [HackerRank Python Domain](https://www.hackerrank.com/domains/python) and do: 
 
@@ -313,9 +315,15 @@ Reading:
 
 - Explore the different data visualizations available with [From Data to Viz](https://www.data-to-viz.com/)
 
-- (TBD: Pandas tutorial)
+- Skim over the following two Data Carpentry lessons, paying special attention to the parts about Pandas (and ignoring the parts about SQL and visualization libraries, except insofar as they involve Pandas): 
 
-- [Week 5 recap from last year.]({filename}../Lessons/week5recap.md)**
+    - [Data Analysis and Visualization in Python for Ecologists](https://datacarpentry.org/python-ecology-lesson/) 
+  
+    - [Data Analysis and Visualization with Python for Social Scientists](https://datacarpentry.org/python-socialsci/)
+
+- (TBD: other Pandas tutorial material)
+
+- [Week 5 recap from last year.]({filename}../Lessons/week5recap.md)
 
 For **Week 5 practice homework**, do the "Errors and Exceptions" problems in the [HackerRank Python Domain](https://www.hackerrank.com/domains/python), then go to the "Regular Expressions and Parsing" section and do: 
 
@@ -342,13 +350,17 @@ Reading:
 
 - [a Catalogue of Basic Hypothesis Tests]({filename}../Lessons/basic_hypothesis_tests.ipynb)
 
-- Finkelstein & Levin, pp. 101-126.
+- Finkelstein & Levin, pp. 101-126
 
 - [A Concrete Introduction to Probability using Python](https://nbviewer.jupyter.org/url/norvig.com/ipython/Probability.ipynb) by Google's director of research,
 
-- these two excellent blog posts by a Google data scientist: [Statistics for People in a Hurry](https://towardsdatascience.com/statistics-for-people-in-a-hurry-a9613c0ed0b) and [Never Start With a Hypothesis](https://towardsdatascience.com/hypothesis-testing-decoded-for-movers-and-shakers-bfc2bc34da41).
+- these two excellent blog posts by a Google data scientist: 
 
-Problem set 2 due Friday, Feb. 28, at 5pm Central time. 
+    - [Statistics for People in a Hurry](https://towardsdatascience.com/statistics-for-people-in-a-hurry-a9613c0ed0b) 
+    
+    - [Never Start With a Hypothesis](https://towardsdatascience.com/hypothesis-testing-decoded-for-movers-and-shakers-bfc2bc34da41)
+
+**Problem set 2 due Friday, Feb. 28, at 5pm Central time.**
 
 [See last year's problem set 2]({filename}../archive/pset2.md), which, as before, you should do for practice; afterward you can [look at my answers]({filename}../archive/pset2_answers.ipynb).
 
@@ -361,13 +373,13 @@ Readings:
 
 - [Causation and Counterfactuals]({filename}../Lessons/causation_counterfactuals.md)
 
-- Devah Pager, *The Use of Field Experiments for Studies of Employment Discrimination: Contributions, Critiques, and Directions for the Future*, 609 Annals of the American Academy of Political and Social Science 104 (2007). We have access to this article via our library's subscription, [this proxy link](https://journals-sagepub-com.proxy.lib.uiowa.edu/doi/abs/10.1177/0002716206294796) should work to download it. 
+- Devah Pager, *The Use of Field Experiments for Studies of Employment Discrimination: Contributions, Critiques, and Directions for the Future*, 609 Annals of the American Academy of Political and Social Science 104 (2007). We have access to this article via our library's subscription, [this proxy link](https://journals-sagepub-com.proxy.lib.uiowa.edu/doi/abs/10.1177/0002716206294796) should work to download it.
 
-- The Open Introduction to Statistics pp. 19-26. This book can be [downloaded for free](https://www.openintro.org/stat/textbook.php), but I will probably post an excerpt of the relevant parts on ICON (remind me!).  
+- The Open Introduction to Statistics pp. 19-26. This book can be [downloaded for free](https://www.openintro.org/stat/textbook.php), but I will probably post an excerpt of the relevant parts on ICON (remind me!).
 
-- [A collection of edited discrimination tester cases]({filename}../Lessons/tester-cases.md).
+- [A collection of edited discrimination tester cases]({filename}../Lessons/tester-cases.md)
 
-For **Week 7 practice homework**, do the "Debugging" problems in the [HackerRank Python Domain](https://www.hackerrank.com/domains/python). 
+For **Week 7 practice homework**, do the "Debugging" problems in the [HackerRank Python Domain](https://www.hackerrank.com/domains/python)
 
 ### Week 8 (Mar 9, 10)
 
@@ -375,9 +387,9 @@ Focus week: statistical extrapolation and simulation in the law. Shonubi case.
 
 Readings: 
 
-- [United States v. Shonubi]({attach}../images/shonubi.pdf) (Edited version kindly supplied by Josh Fischman of UVA.).
+- [United States v. Shonubi]({attach}../images/shonubi.pdf) (Edited version kindly supplied by Josh Fischman of UVA.)
 
-- Commentary on Shonubi, posted on ICON. 
+- Commentary on Shonubi, posted on ICON
 
 We'll spend this week catching up further, if necessary, discussing the Shonubi case, and replicating the data analysis used by experts in that case (approximately---we don't have quite the identical dataset).  As time permits, I'll introduce the basic concepts of linear regression for next week.
 
@@ -391,17 +403,17 @@ Readings:
 
 - [Regression Introduction]({filename}../Lessons/regression-intro.ipynb)
 
-- Federal Judicial Center reference manual on scientific evidence, appendix to reference guide on multiple regression, pp. 333-356.
+- Federal Judicial Center reference manual on scientific evidence, appendix to reference guide on multiple regression, pp. 333-356
 
-- F&L pg. 369-371, bottom of 376-380, bottom of 385-393. 
+- F&L pg. 369-371, bottom of 376-380, bottom of 385-393
 
 - Lindsey Kuper, [Understanding the regression line with standard units](http://composition.al/blog/2018/08/31/understanding-the-regression-line-with-standard-units/)
 
-- [ATA Airlines, Inc. v. Federal Express Corp.]({attach}../images/ata_v_fedex.pdf), 665 F.3d 882 (7th Cir., 2011**, as edited.
+- [ATA Airlines, Inc. v. Federal Express Corp.]({attach}../images/ata_v_fedex.pdf), 665 F.3d 882 (7th Cir., 2011), as edited
 
-**See [Post week 9 notes from last year here]({filename}../Lessons/post-week9-notes.md).**
+- [Post week 9 notes from last year]({filename}../Lessons/post-week9-notes.md)
 
-For **Week 9 practice homework** do [Even Fibonacci numbers](https://projecteuler.net/problem=2) from Project Euler.
+For **Week 9 practice homework** do [Even Fibonacci numbers](https://projecteuler.net/problem=2) from Project Euler.  Also, look at the hypothetical dataset *mickel.csv*, and use the techniques we've learned in class to come to some conclusion about whether discrimination is occurring in the provision of public benefits in this disability services agency context. We'll go over this assignment in class at an appropriate time.
 
 ### Week 10 (Mar 30, 31)
 
@@ -413,11 +425,11 @@ Readings:
 
 - [Ricci v. DeStefano excerpts]({attach}../images/ricci.pdf)
 
-- [Excerpts from 29 C.F.R. 1607]({attach}../images/29cfr1607.pdf) for reference/skim, no need to carefully read the whole thing.
+- [Excerpts from 29 C.F.R. 1607]({attach}../images/29cfr1607.pdf) for reference/skim, no need to carefully read the whole thing
 
-**Homework** to be done before this week begins: look at the hypothetical dataset *mickel.csv*, and use the techniques we've learned in class to come to some conclusion about whether discrimination is occurring in the provision of public benefits in this disability services agency context. We'll go over this assignment in class at the end of week 9.
+**Problem Set 3 due Fri, Apr. 3, at 5pm Central.**  
 
-**Problem Set 3 due Fri, Apr. 3, at 5pm Central.**  See [last year's problem set 3]({filename}../archive/pset-3.md).
+See [last year's problem set 3]({filename}../archive/pset-3.md).
 
 ### Week 11
 
@@ -429,15 +441,19 @@ Readings:
 
 - [Power]({filename}../Lessons/power.md)
 
-- Peter Norvig's blog post [Warning Signs in Experimental Design and Interpretation](http://norvig.com/experiment-design.html). 
+- Peter Norvig's blog post [Warning Signs in Experimental Design and Interpretation](http://norvig.com/experiment-design.html)
 
-- [Statistics Gone Wrong](https://www.statisticsdonewrong.com/). (I'd like you to read that whole website eventually, but for the beginning of the week, you can focus on the sections on [Statistical Power and Underpowered Statistics](https://www.statisticsdonewrong.com/power.html) and [The P Value and the Base Rate Fallacy](https://www.statisticsdonewrong.com/p-value.html).  
+- [Statistics Gone Wrong](https://www.statisticsdonewrong.com/). I'd like you to read that whole website eventually, but for the beginning of the week, you can focus on the sections on:
 
-- Fun reading: [P-values explained with puppies](https://hackernoon.com/explaining-p-values-with-puppies-af63d68005d0).
+    - [Statistical Power and Underpowered Statistics](https://www.statisticsdonewrong.com/power.html) 
+    
+    - [The P Value and the Base Rate Fallacy](https://www.statisticsdonewrong.com/p-value.html)  
+
+- Fun reading: [P-values explained with puppies](https://hackernoon.com/explaining-p-values-with-puppies-af63d68005d0)
 
 Discussion: what are the legal implications of scientific failures?
 
-For **Week 11 practice homework** do [Power Digit Sum](https://projecteuler.net/problem=16) from Project Euler.
+For **Week 11 practice homework** do [Power Digit Sum](https://projecteuler.net/problem=16) from Project Euler.  This will be the last of our practice homeworks, as I know that you're going to start freaking out about exams by now.
 
 ### Week 12
 
@@ -447,9 +463,13 @@ Readings:
 
 - [Regressions gone wrong]({filename}../Lessons/regression_problems.ipynb)
 
-- Federal Judicial Center reference manual, reference guide on multiple regression, pp. 303-332.
+- Federal Judicial Center reference manual, reference guide on multiple regression, pp. 303-332
 
-- Blog posts/tutorials by "Statistics by Jim": [Confounding Variables](https://statisticsbyjim.com/regression/confounding-variables-bias/), [Classical Assumptions of OLS](https://statisticsbyjim.com/regression/ols-linear-regression-assumptions/**
+- The following two blog posts/tutorials by "Statistics by Jim": 
+
+    - [Confounding Variables](https://statisticsbyjim.com/regression/confounding-variables-bias/)
+    
+    - [Classical Assumptions of OLS](https://statisticsbyjim.com/regression/ols-linear-regression-assumptions/)
 
 
 ### Week 13
@@ -462,17 +482,17 @@ Reading:
 
 **For Monday***
 
-- Jonah Gelbach, *Estimation Evidence* (posted on ICON), pages 1-31. 
+- Jonah Gelbach, *Estimation Evidence* (posted on ICON), pages 1-31 
 
-- Sean Sullivan, [A Likelihood Story: The Theory of Legal Fact-Finding](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2837155) p. 11-37.
+- Sean Sullivan, [A Likelihood Story: The Theory of Legal Fact-Finding](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2837155) p. 11-37
 
 **For Tuesday***
 
 - Kiel Brennan-Marquez, [Plausible Cause](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2827733)
 
-- [The Bayesian New Statistics: Hypothesis testing, estimation, meta-analysis, and power analysis from a Bayesian perspective](https://link-springer-com.proxy.lib.uiowa.edu/article/10.3758%2Fs13423-016-1221-4), 25 Psychonomic Bulletin and Review 178 (2018) (You may skip the sections entitled "Bayesian Hypothesis Test" and "Another example of frequentist and Bayesian approaches to hypothesis testing and estimation" from pp. 186-190.  
+- [The Bayesian New Statistics: Hypothesis testing, estimation, meta-analysis, and power analysis from a Bayesian perspective](https://link-springer-com.proxy.lib.uiowa.edu/article/10.3758%2Fs13423-016-1221-4), 25 Psychonomic Bulletin and Review 178 (2018) (You may skip the sections entitled "Bayesian Hypothesis Test" and "Another example of frequentist and Bayesian approaches to hypothesis testing and estimation" from pp. 186-190  
 
-- Optional bonus reading: I've added [a more basic-level explanation of some of the ideas in the above article]({filename}../Lessons/confidence-and-bayes.ipynb) to this website.
+- Optional bonus reading: I've added [a more basic-level explanation of some of the ideas in the above article]({filename}../Lessons/confidence-and-bayes.ipynb) to this website
 
 
 ### Week 14
@@ -493,13 +513,13 @@ Reading:
 
 Optional, bonus (but HIGHLY recommended) reading:
 
-- Adam M. Lauretig and Bear F. Braumoeller, ["Statistics and International Security,"](http://www.oxfordhandbooks.com/view/10.1093/oxfordhb/9780198777854.001.0001/oxfordhb-9780198777854-e-10) in The Oxford Handbook of International Security (2018). 
+- Adam M. Lauretig and Bear F. Braumoeller, ["Statistics and International Security,"](http://www.oxfordhandbooks.com/view/10.1093/oxfordhb/9780198777854.001.0001/oxfordhb-9780198777854-e-10) in The Oxford Handbook of International Security (2018) 
 
-- Andrew D. Martin, Kevin M. Quinn, Theodore W. Ruger, and Pauline T. Kim. ["Competing Approaches to Predicting Supreme Court Decision Making."](https://deepblue.lib.umich.edu/bitstream/handle/2027.42/116229/pop04.pdf?sequence=1&isAllowed=y) Perspectives on Politics 2004.
+- Andrew D. Martin, Kevin M. Quinn, Theodore W. Ruger, and Pauline T. Kim. ["Competing Approaches to Predicting Supreme Court Decision Making."](https://deepblue.lib.umich.edu/bitstream/handle/2027.42/116229/pop04.pdf?sequence=1&isAllowed=y) Perspectives on Politics 2004
 
 
 ### Final exam period
 
-**Problem set 4** due on Friday, May 8, during the exam period, at 5pm Central.
+**Problem set 4 due on Friday, May 8, during the exam period, at 5pm Central.**
 
 See [last year's problem set 4]({filename}../archive/pset4.md) and [a makeup assignment the class did]({filename}../archive/makeup-assignment.md). 
