@@ -3,27 +3,28 @@
 <head>
         <meta charset="utf-8" />
         <title>Prediction vs. Inference</title>
-        <link rel="stylesheet" href="/theme/css/main.css" />
-        <link rel="stylesheet" href="/theme/css/juptyer-fix.css" />
+        <link rel="stylesheet" href="https://sociologicalgobbledygook.com/theme/css/main.css" />
+        <link rel="stylesheet" href="https://sociologicalgobbledygook.com/theme/css/juptyer-fix.css" />
+        <link href="https://sociologicalgobbledygook.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Sociological Gobbledygook Atom Feed" />
 </head>
 
 <body id="index" class="home">
         <header id="banner" class="body">
-                <h1><a href="/">Sociological Gobbledygook </a></h1>
+                <h1><a href="https://sociologicalgobbledygook.com/">Sociological Gobbledygook </a></h1>
                 <nav><ul>
-                    <li><a href="/pages/manifesto.html">Manifesto</a></li>
-                    <li><a href="/pages/syllabus.html">Syllabus</a></li>
-                    <li><a href="/category/archive.html">archive</a></li>
-                    <li><a href="/category/class_examples.html">class_examples</a></li>
-                    <li class="active"><a href="/category/lessons.html">Lessons</a></li>
-                    <li><a href="/category/psets.html">psets</a></li>
+                    <li><a href="https://sociologicalgobbledygook.com/pages/manifesto.html">Manifesto</a></li>
+                    <li><a href="https://sociologicalgobbledygook.com/pages/syllabus.html">Syllabus</a></li>
+                    <li><a href="https://sociologicalgobbledygook.com/category/archive.html">archive</a></li>
+                    <li><a href="https://sociologicalgobbledygook.com/category/class_examples.html">class_examples</a></li>
+                    <li class="active"><a href="https://sociologicalgobbledygook.com/category/lessons.html">Lessons</a></li>
+                    <li><a href="https://sociologicalgobbledygook.com/category/psets.html">psets</a></li>
                 </ul></nav>
         </header><!-- /#banner -->
 <section id="content" class="body">
   <article>
     <header>
       <h1 class="entry-title">
-        <a href="/prediction-vs-inference.html" rel="bookmark"
+        <a href="https://sociologicalgobbledygook.com/prediction-vs-inference.html" rel="bookmark"
            title="Permalink to Prediction vs. Inference">Prediction vs. Inference</a></h1>
     </header>
 
@@ -34,10 +35,10 @@
         </abbr>
 
         <address class="vcard author">
-                By                         <a class="url fn" href="/author/paul-gowder.html">Paul Gowder</a>
+                By                         <a class="url fn" href="https://sociologicalgobbledygook.com/author/paul-gowder.html">Paul Gowder</a>
         </address>
-<p>In <a href="/category/lessons.html">Lessons</a>.</p>
-<p>tags: <a href="/tag/conceptual.html">conceptual</a> <a href="/tag/week14.html">week14</a> </p>
+<p>In <a href="https://sociologicalgobbledygook.com/category/lessons.html">Lessons</a>.</p>
+<p>tags: <a href="https://sociologicalgobbledygook.com/tag/conceptual.html">conceptual</a> <a href="https://sociologicalgobbledygook.com/tag/week14.html">week14</a> </p>
 </footer><!-- /.post-info -->      <p>So far, our statistics material in this course has fallen into two buckets. The first, and most straightforward, is <em>descriptive statistics</em>, that is, just describing what our data looks like---mean, median, correlation, that kind of stuff.  The second is "inferential statistics," that is, use of statistics to make inferences about unknown population parameters (often on the basis of some kind of causal theory). <a href="https://statisticsbyjim.com/basics/descriptive-inferential-statistics/">Here's a nice Statistics by Jim explanation of the difference</a>.</p>
 <p>But there's a third major use for statistics, which is prediction. Fundamentally, prediction is about what's known as "out of sample data"---that is, data that you haven't seen, and figuring out what values to attribute to it.</p>
 <p>The easiest way to think about prediction is to think of a linear regression again.  If you have a simple linear regression, like, house prices on square feet, that doesn't just help you test a causal hypothesis.  It helps you predict the prices of future houses, just from their square footage alone. Once you get your regression line, you can just multiply the number of feet by the coefficient you get from your regression, add the value of the intercept, and, on the basis of your data, you've got your best prediction of the value of the house.</p>
@@ -53,7 +54,7 @@
 <p>That last problem is the issue of "algorithmic bias." It is particularly dangerous in a number of legal contexts. For example, suppose the police predict likelihood of being arrested in order to figure out who they should focus their attentions on.  And suppose likelihood of being arrested is affected by race, because of preexisting racial biases in the criminal justice system. Then the police "heat list" just replicates existing racial injustices. That's truly extremely bad! But, according to many researchers and activists, this is a real problem that exists in real-world policing technologies. For example, there's an <a href="https://www.theguardian.com/us-news/2018/sep/07/imprisoned-by-algorithms-the-dark-side-of-california-ending-cash-bail">oft-expressed</a> worry <a href="https://www.eff.org/deeplinks/2018/12/eff-urges-california-place-meaningful-restrictions-use-pretrial-risk-assessment">about California's recent replacement of cash bail with actuarial "risk assessment."</a>  In the criminal justice context, as the linked EFF statement hints, there are also substantial worries about transparency and due process, in light of the potential use of commercial models that might not be fully available to the defendant.</p>
 <p>Algorithmic bias is an <em>extremely</em> active research area, in machine learning as well as in law. In law, one of my favorite reads on the subject is <em>The Rise of Big Data Policing: Surveillance, Race, and the Future of Law Enforcement</em>, by Andrew Guthrie Ferguson. I also like Kristian Lum &amp; William Isaac, "<a href="https://rss.onlinelibrary.wiley.com/doi/full/10.1111/j.1740-9713.2016.00960.x">To Predict and Serve?</a>" <em>Significance</em> 13(5):14-19 (2016). On the relationship between the prediction/inference dichotomy and algorithmic bias (i.e., arguments that predictive models ought to be aimed at causal inference in order to avoid bias), see Joshua R. Loftus, Chris Russell, Matt J. Kusner, Ricardo Silva, <a href="https://arxiv.org/abs/1805.05859">Causal Reasoning for Algorithmic Fairness</a>, and Chelsea Barabas, Karthik Dinakar, Joichi Ito, Madars Virza, Jonathan Zittrain, <a href="https://arxiv.org/abs/1712.08238">Interventions over Predictions: Reframing the Ethical Debate for Actuarial Risk Assessment</a>.  But as I said, this is a super-active research area, and the landscape changes at very high speed. </p>
 <p>Anyway, we'll talk about more of this stuff in class.  I just wanted to give you a taste.</p>
-<p><a href="/prediction.pdf">Download lesson PDF</a></p>
+<p><a href="https://sociologicalgobbledygook.com/prediction.pdf">Download lesson PDF</a></p>
     </div><!-- /.entry-content -->
 
   </article>

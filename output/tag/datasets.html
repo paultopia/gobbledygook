@@ -3,36 +3,37 @@
 <head>
         <meta charset="utf-8" />
         <title>Sociological Gobbledygook - datasets</title>
-        <link rel="stylesheet" href="/theme/css/main.css" />
-        <link rel="stylesheet" href="/theme/css/juptyer-fix.css" />
+        <link rel="stylesheet" href="https://sociologicalgobbledygook.com/theme/css/main.css" />
+        <link rel="stylesheet" href="https://sociologicalgobbledygook.com/theme/css/juptyer-fix.css" />
+        <link href="https://sociologicalgobbledygook.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Sociological Gobbledygook Atom Feed" />
 </head>
 
 <body id="index" class="home">
         <header id="banner" class="body">
-                <h1><a href="/">Sociological Gobbledygook </a></h1>
+                <h1><a href="https://sociologicalgobbledygook.com/">Sociological Gobbledygook </a></h1>
                 <nav><ul>
-                    <li><a href="/pages/manifesto.html">Manifesto</a></li>
-                    <li><a href="/pages/syllabus.html">Syllabus</a></li>
-                    <li><a href="/category/archive.html">archive</a></li>
-                    <li><a href="/category/class_examples.html">class_examples</a></li>
-                    <li><a href="/category/lessons.html">Lessons</a></li>
-                    <li><a href="/category/psets.html">psets</a></li>
+                    <li><a href="https://sociologicalgobbledygook.com/pages/manifesto.html">Manifesto</a></li>
+                    <li><a href="https://sociologicalgobbledygook.com/pages/syllabus.html">Syllabus</a></li>
+                    <li><a href="https://sociologicalgobbledygook.com/category/archive.html">archive</a></li>
+                    <li><a href="https://sociologicalgobbledygook.com/category/class_examples.html">class_examples</a></li>
+                    <li><a href="https://sociologicalgobbledygook.com/category/lessons.html">Lessons</a></li>
+                    <li><a href="https://sociologicalgobbledygook.com/category/psets.html">psets</a></li>
                 </ul></nav>
         </header><!-- /#banner -->
 
             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="/week-5-recap.html">Week 5 Recap</a></h1>
+                    <h1 class="entry-title"><a href="https://sociologicalgobbledygook.com/week-5-recap.html">Week 5 Recap</a></h1>
 <footer class="post-info">
         <abbr class="published" title="2019-02-13T00:00:00-06:00">
                 Published: Wed 13 February 2019
         </abbr>
 
         <address class="vcard author">
-                By                         <a class="url fn" href="/author/paul-gowder.html">Paul Gowder</a>
+                By                         <a class="url fn" href="https://sociologicalgobbledygook.com/author/paul-gowder.html">Paul Gowder</a>
         </address>
-<p>In <a href="/category/lessons.html">Lessons</a>.</p>
-<p>tags: <a href="/tag/probability.html">probability</a> <a href="/tag/datasets.html">datasets</a> <a href="/tag/week5.html">week5</a> <a href="/tag/week6.html">week6</a> </p>
+<p>In <a href="https://sociologicalgobbledygook.com/category/lessons.html">Lessons</a>.</p>
+<p>tags: <a href="https://sociologicalgobbledygook.com/tag/probability.html">probability</a> <a href="https://sociologicalgobbledygook.com/tag/datasets.html">datasets</a> <a href="https://sociologicalgobbledygook.com/tag/week5.html">week5</a> <a href="https://sociologicalgobbledygook.com/tag/week6.html">week6</a> </p>
 </footer><!-- /.post-info --><p>In week 5, we began by continuing our probability lecture from last week, and then, as an exercise, tried to prove the correct answer to the Monty Hall problem using Bayes Rule. </p>
 <h2>Monty Redux</h2>
 <p>Here's that solution again.  Remember our formula for Bayes Rule: </p>
@@ -65,12 +66,12 @@
 <p>We learned that most of the work in applying Bayes Rule is figuring out how to define the events for which we're trying to make probability judgments---how to formalize our idea of what we started out knowing, what we've learned (our evidence), and what we're trying to figure out.  </p>
 <p>Incidentally, for a discussion of how lawyers appear to be susceptible to screwing up Bayes Rule, an article called <a href="https://academic-oup-com.proxy.lib.uiowa.edu/lpr/article/15/4/239/2580528">Miss Rate Neglect in Legal Evidence</a> reports on a number of experiements with legally trained subjects where they do things like inappropriately flip around conditional probabilities. </p>
 <h2>Scavenger hunt</h2>
-<p>Our second major task this week was to do a <a href="/in-class-exercise-data-scavenger-hunt.html">Data Scavenger Hunt</a>.  Things started a little bumpy, because lots of people had trouble getting the data loaded, mainly due to the diversity of platforms in the class.  (And also because I went around to help windows users, and didn't notice that many were actually using the Azure version, and hence didn't have their local downloads... sorry about that.)</p>
+<p>Our second major task this week was to do a <a href="https://sociologicalgobbledygook.com/in-class-exercise-data-scavenger-hunt.html">Data Scavenger Hunt</a>.  Things started a little bumpy, because lots of people had trouble getting the data loaded, mainly due to the diversity of platforms in the class.  (And also because I went around to help windows users, and didn't notice that many were actually using the Azure version, and hence didn't have their local downloads... sorry about that.)</p>
 <p>We're going to finish this on Monday, and then I'll post some solutions after we're done.  </p>
 <p>I have also fixed the ergonomics of getting data. There's a private web server for this class at <a href="https://gobbledygook.herokuapp.com/">https://gobbledygook.herokuapp.com/</a>.  I'll give you a password for it in class (and will also post it on ICON).  Whenever you need to load a dataset, you will just be able to use Pandas to load it directly from this server.  Here's how.  Assume the password is PASSWORD and the file you're trying to load is FILENAME.CSV.  Then if you have Pandas imported as <code>pd</code>, the code <code>df=pd.read_csv("https://gobbledygook.herokuapp.com/data?file=FILENAME.CSV&amp;password=PASSWORD")</code> will save the dataset as a Pandas dataframe to the variable <code>df</code>.  No more mess with Windows file paths and local downloads vs. Azure notebooks or downloading files from ICON or any of that nonsense. </p>
 <p>We'll be using a variety of datasets in the rest of this class, so get used to that command.  Also, the server might start up slowly sometimes, so if it looks like it's hanging when you try to load a dataset, just wait 30 seconds or so and it'll be fine. </p>
 <p>(Incidentally, this method of authenticating users by passing passwords in GET request parameters is a <a href="https://security.stackexchange.com/questions/147188/is-it-bad-practice-to-use-get-method-as-login-username-password-for-administrato">terrible idea</a>, it's totally insecure. Don't do it for anything you ever build. I'm just doing it here because we don't need real security, just minimal privacy against casual misuse.  And also because I'm going to tear down the server the moment class is over.)</p>
-<p><a href="/week5recap.pdf">Download lesson PDF</a></p>
+<p><a href="https://sociologicalgobbledygook.com/week5recap.pdf">Download lesson PDF</a></p>
 <script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
     var align = "left",
         indent = "0em",
