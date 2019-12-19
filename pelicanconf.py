@@ -40,9 +40,9 @@ AUTHOR_FEED_RSS = None
 LINKS = (('University of Iowa College of Law', 'https://law.uiowa.edu/'),
          ('Paul Gowder', 'https://gowder.io'),
          ('Python Documentation', 'http://python.org/'),
-         ('Course Github', 'https://github.com/paultopia/quantitative-methods-for-lawyers/'),
-         ('Course Lessons Github', "https://github.com/paultopia/gobbledygook_lessons"),
-          ('Microsoft Azure Notebooks', 'https://notebooks.azure.com/'),
+         ('Course Github', 'https://github.com/paultopia/gobbledygook'),
+         ('UIowa IDAS access', "http://notebooks.hpc.uiowa.edu"),
+         ('UIowa IDAS documentation', 'https://wiki.uiowa.edu/display/hpcdocs/Interactive+Data+Analytics+Service+Documentation'),
          ('Lesson Post Tags', 'tags.html'),)
 
 DEFAULT_PAGINATION = False

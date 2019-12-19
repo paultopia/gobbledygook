@@ -104,7 +104,7 @@ The coverage, pace, and workload in this class will be a continuing work in prog
 
 ## Class technological resources
 
-This class will use the University's [Interactive Data Analytics Service](https://its.uiowa.edu/interactive) (IDAS).  You do not need to request access to this, I've made arrangements to get accounts for the whole class, and I'll walk you through getting access to this resource on the first day of class.
+This class will use the University's [Interactive Data Analytics Service](https://its.uiowa.edu/interactive) (IDAS).  You do not need to request access to this, I've made arrangements to get accounts for the whole class, and I'll walk you through getting access to this resource on the first day of class. (You can also see the links on the bottom of this page.)
 
 In addition, every session will be recorded on Panopto; and we'll use ICON to  and distribute materials which (for copyright reasons, etc.) we're not allowed to distribute outside of the class. Also, you will use the discussion feature of ICON to share information and ask questions out of class.
 
@@ -168,9 +168,9 @@ By the end of the course, you should be able to:
 
 - Reason about probability and statistics at a sufficient level to be an informed consumer of quantitative claims.
 
-- Identify the confusions in the following (from oral argument in [Department of Commerce v. New York](https://www.scotusblog.com/case-files/cases/department-of-commerce-v-new-york/): 
+- Identify the confusions in the following, from oral argument in [Department of Commerce v. New York](https://www.scotusblog.com/case-files/cases/department-of-commerce-v-new-york/): 
 
-![Gorsuch oops]({filename}../images/gorsuch.png)
+![embedded image: Justice Gorsuch makes a statistical oops]({filename}../images/gorsuch.png)
 
 ## Coverage by Week
 
