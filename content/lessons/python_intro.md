@@ -6,19 +6,19 @@ In this class, we will be using the [Python](https://www.python.org/) programmin
 
 Before we get started programming, we have to set up a system to write our code and get the computer to read it. Most introductory Python texts, including the texts we'll be working with, ask you to install an "interpreter"---a program on your own computer that can read and execute Python code. We won't be doing that here.
 
-Instead, all your code will run in the cloud. We'll be using a free service by Microsoft called [Azure Notebooks](https://notebooks.azure.com/). This service will let you type in and execute your code online, through your web browser. (later update: this turns out not to work very well, and we'll revise it for next year) This has some very large advantages: 
+Instead, all your code will run in the cloud. The University of Iowa has a system that allows us to have access to a running Python environment online. This system will let you type in and execute your code online, through your web browser. This has some very large advantages: 
 
 - You don't have to install anything locally, which can be problematic (especially for Windows users), and I don't have to try to debug your local installations.
 
-- Azure Notebooks runs on notebook software called [Jupyter](http://jupyter.org/) which is built for data analysis (all the cool data scientist kiddos use it), so it has lots of nice facilities for exploring data and code incrementally, visualizing data, displaying tables, etc. 
-
-In addition, I will ask you to make use of the free [Github](https://github.com/) service to "clone" (copy) assignments, which will be in notebook files that you can just run on Azure, as well as to turn those assignments in. Also, you will sign up for [DataCamp](https://www.datacamp.com), I've set up free access for the duration of the class.
+- The system runs on notebook software called [Jupyter](http://jupyter.org/) which is built for data analysis (all the cool data scientist kiddos use it), so it has lots of nice facilities for exploring data and code incrementally, visualizing data, displaying tables, etc. 
 
 We'll get set up with all this stuff on the first day of class. **Please bring a computer to class every day**.  Macs, Windows computers, and Linux computers will all work fine (though if you're a Linux user, you might be too advanced for this class).  We can make Chromebooks work too if need be (but it is far from ideal). 
 
+When we set up, you'll be going to [https://notebooks.hpc.uiowa.edu/](https://notebooks.hpc.uiowa.edu/) and logging in with your HawkIDs.  Note that you will need to be set up to [use Duo two-step security](https://its.uiowa.edu/duo) to get this to work.
+
 ### Advanced user note
 
-The Azure Notebooks environment can be slow and a little awkward. It's better for beginners than installing Python locally, because of issues different operating systems and occasionally causing conflicts with other versions of things.  However, if you want to install locally, here's what you should use: 
+You can, if you choose, also install a local Python environment. If you want to install locally, here's what you should use: 
 
 - Install the [Anaconda Python distribution](https://www.anaconda.com) for your operating system.  This is important: you want to use the **Python 3.7** version of the installer, *not* Python 2.7. 
 
