@@ -194,11 +194,11 @@ Read:
 
 - [complex data types]({filename}../Lessons/complex_data_types.ipynb)  
 
-- Software Carpentry lesson on [functions](http://swcarpentry.github.io/python-novice-inflammation/06-func/index.html) 
+- Software Carpentry lesson on [functions](https://swcarpentry.github.io/python-novice-inflammation/08-func/index.html) 
 
-- Software Carpentry lesson on [making choices](http://swcarpentry.github.io/python-novice-inflammation/05-cond/index.html)
+- Software Carpentry lesson on [making choices](https://swcarpentry.github.io/python-novice-inflammation/07-cond/index.html)
 
-- the [Software Carpentry lesson on loops](http://swcarpentry.github.io/python-novice-inflammation/02-loop/index.html)
+- the [Software Carpentry lesson on loops](https://swcarpentry.github.io/python-novice-inflammation/04-loop/index.html)
 
 - pages 1-55 of Python for Everybody. 
 
