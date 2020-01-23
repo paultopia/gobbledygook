@@ -25,7 +25,7 @@ Assistant: Diana DeWalle
 
 ## Welcome
 
-Welcome to Introduction to Quantitative and Computational Legal Reasoning, informally named "Sociological Gobbledygook" in honor of [Chief Justice Roberts's slightly math-phobic remark at oral argument in Gill v. Whitford](https://fivethirtyeight.com/features/the-supreme-court-is-allergic-to-math/).  This course is offered at the University of Iowa College of Law in Spring 2020, by [Paul Gowder](https://gowder.io), and has previously been offered in Spring 2019: you can go look at [last year's syllabus]({filename}../archive/syllabus-2019.md) if you're curious.
+Welcome to Introduction to Quantitative and Computational Legal Reasoning, informally named "Sociological Gobbledygook" in honor of [Chief Justice Roberts's slightly math-phobic remark at oral argument in Gill v. Whitford](https://fivethirtyeight.com/features/the-supreme-court-is-allergic-to-math/).  This course is offered at the University of Iowa College of Law in Spring 2020, by [Paul Gowder](https://gowder.io), and has previously been offered in Spring 2019: you can go look at [last year's syllabus]({filename}../archive/syllabus-2019.md) if you're curious.  For a little bit more about the motivation for the course, you can check out the [manifesto]({filename}manifesto.md).
 
 This is a totally open-source course. There is a [Github repository](https://github.com/paultopia/gobbledygook) which contains all of our materials and discussions. Please feel free to make a suggestion or start a conversation in the issues, or even make a pull request. For unstructured navigation of this website, you can use the [list of tags](/tags.html** that describe the subject matter of our lessons.
 

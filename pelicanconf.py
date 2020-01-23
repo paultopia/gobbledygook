@@ -11,6 +11,7 @@ PLUGIN_PATHS = ['./plugins']
 PLUGINS = ["render_math", "ipynb.markup"]
 IGNORE_FILES = [".ipynb_checkpoints", "*.sqlite3"]
 IPYNB_USE_METACELL = True
+DISPLAY_PAGES_ON_MENU = False  # KEEP THIS SETTING OR THE SYLLABUS FROM PRIOR YEAR RANDOMLY REAPPEARS (???)
 
 THEME = 'notmyidea-mod'
 
