@@ -211,6 +211,9 @@ For **Week 1 practice homework**, do the "Introduction" problems (click the intr
 
 I'd also like you to complete the factorial exercise at the end of the [first Python lesson]({filename}../Lessons/basic_intro.ipynb); you don't need to turn it in, but let me know if you can't complete it; we'll look at people's solutions next week and use this as our test to make sure everyone is set up and functional.
 
+**Here is the [in-class notebook]({filename}../class_examples/Day12020.ipynb) that we saw on day 1.**  
+
+
 ### Week 2 (Jan 27, 28)
 
 Coverage: using Python to get access to other people's code, libraries. Accessing the filesystem and the internet from Python. Error handling. Strings.
