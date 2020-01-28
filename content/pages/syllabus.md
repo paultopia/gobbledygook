@@ -236,9 +236,11 @@ In class on Tuesday for this week last year we worked through an example of acce
 
 For **Week 2 practice homework**, do the "Basic Data Types" problems (click the Basic Data Types checkbox on the right of the screen) in the [HackerRank Python Domain](https://www.hackerrank.com/domains/python), *except* the "List Comprehensions," and "Lists" problems, which you can skip (we'll try to do those in class).
 
+**Here are our in-class notebooks for week 2**: [Jan 27 (Monday)]({filename}../class_examples/Jan27.ipynb) and [Jan 28 (Tuesday)]({filename}../class_examples/Jan28.ipynb). The due dates for the first two problem sets have also changed, and this change is reflected on the page you're looking at.  I've also moved around the practice homework a bit.
+
 ### Week 3 (Feb 3, 4)
 
-Coverage: Regular expressions. Simulation and why you might want to do it. A very light introduction to object-oriented programming. 
+Coverage: Regular expressions. Simulation and why you might want to do it. A very light introduction to object-oriented programming. (But we're a little behind and so we'll start this week with the networking and API stuff from last week.)
 
 Readings: 
 
@@ -254,11 +256,21 @@ Readings:
 
 - [Simulations]({filename}../Lessons/simulation.md)  
 
-**[Problem set 1]({filename}../psets/pset1-2020.md) due Friday, February 7, at 5pm Central time.****
+For **Week 3 practice homework**, go to the "Strings" problems in the [HackerRank Python Domain](https://www.hackerrank.com/domains/python) and do: 
 
-See last year's [Problem set 1]({filename}../archive/pset1.md), which you can do for practice if you'd like.  After doing that practice, you can check out [my answers to it]({filename}../archive/pset1_answers.ipynb).
+- "sWAP cASE"
 
-No week 3 practice homework because the problem set is due.
+- "String Split and Join"
+
+- "Mutations"
+
+- "Find a string"
+
+- "String Validators" 
+
+- "Text Wrap" and 
+
+- "Capitalize!"
 
 ### Week 4 (Feb 10, 11)
 
@@ -282,21 +294,13 @@ Readings:
 
 - A note from last year on a [week 4 recap/further explanation of the probability issue the class that year got stuck on]({filename}../Lessons/totalprob.md)
 
-For **Week 4 practice homework**, go to the "Strings" problems in the [HackerRank Python Domain](https://www.hackerrank.com/domains/python) and do: 
+**[Problem set 1]({filename}../psets/pset1-2020.md) due Friday, February 14, at 5pm Central time.****
 
-- "sWAP cASE"
+See last year's [Problem set 1]({filename}../archive/pset1.md), which you can do for practice if you'd like.  After doing that practice, you can check out [my answers to it]({filename}../archive/pset1_answers.ipynb).
 
-- "String Split and Join"
+No week 4 practice homework because the problem set is due.
 
-- "Mutations"
 
-- "Find a string"
-
-- "String Validators" 
-
-- "Text Wrap" and 
-
-- "Capitalize!"
 
 ### Week 5 (Feb 17, 18)
 
@@ -363,10 +367,7 @@ Reading:
     
     - [Never Start With a Hypothesis](https://towardsdatascience.com/hypothesis-testing-decoded-for-movers-and-shakers-bfc2bc34da41)
 
-**Problem set 2 due Friday, Feb. 28, at 5pm Central time.**
-
-[See last year's problem set 2]({filename}../archive/pset2.md), which, as before, you should do for practice; afterward you can [look at my answers]({filename}../archive/pset2_answers.ipynb).
-
+For **Week 6 practice homework**, do the "Debugging" problems in the [HackerRank Python Domain](https://www.hackerrank.com/domains/python)
 
 ### Week 7 (Mar 2, 3)
 
@@ -382,7 +383,12 @@ Readings:
 
 - [A collection of edited discrimination tester cases]({filename}../Lessons/tester-cases.md)
 
-For **Week 7 practice homework**, do the "Debugging" problems in the [HackerRank Python Domain](https://www.hackerrank.com/domains/python)
+
+
+**Problem set 2 due Friday, March 6, at 5pm Central time.**
+
+[See last year's problem set 2]({filename}../archive/pset2.md), which, as before, you should do for practice; afterward you can [look at my answers]({filename}../archive/pset2_answers.ipynb).
+
 
 ### Week 8 (Mar 9, 10)
 
