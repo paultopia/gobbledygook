@@ -258,6 +258,8 @@ Readings:
 
 For **Week 3 practice homework**, go to the "Strings" problems in the [HackerRank Python Domain](https://www.hackerrank.com/domains/python) and do: 
 
+**Here are our in-class notebooks for week 3**: [Feb 3 (Monday)]({filename}../class_examples/Feb3.ipynb) and [Feb 4 (Tuesday)]({filename}../class_examples/Feb4.ipynb).
+
 - "sWAP cASE"
 
 - "String Split and Join"
@@ -300,6 +302,7 @@ See last year's [Problem set 1]({filename}../archive/pset1.md), which you can do
 
 No week 4 practice homework because the problem set is due.
 
+**Here are our in-class notebooks for week 4**: [Feb 10 (Monday)]({filename}../class_examples/Feb10.ipynb) (tuesday pending).
 
 
 ### Week 5 (Feb 17, 18)
