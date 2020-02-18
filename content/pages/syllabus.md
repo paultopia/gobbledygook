@@ -302,7 +302,7 @@ See last year's [Problem set 1]({filename}../archive/pset1.md), which you can do
 
 No week 4 practice homework because the problem set is due.
 
-**Here are our in-class notebooks for week 4**: [Feb 10 (Monday)]({filename}../class_examples/Feb10.ipynb); and [Feb 11(Tuesday)]({filename}../class_examples/Feb11.ipynb).**
+**Here are our in-class notebooks for week 4**: [Feb 10 (Monday)]({filename}../class_examples/Feb10.ipynb); and [Feb 11(Tuesday)]({filename}../class_examples/Feb11.ipynb).
 
 
 ### Week 5 (Feb 17, 18)
@@ -345,6 +345,7 @@ For **Week 5 practice homework**, do the "Errors and Exceptions" problems in the
 
 - "Validating and Parsing Email Addresses"
 
+**Here are our in-class notebooks for week 5**: [Feb 17 (Monday)]({filename}../class_examples/Feb17.ipynb); (feb 18 tba)
 
 ### Week 6 (Feb 24, 25)
 
@@ -387,8 +388,7 @@ Readings:
 - [A collection of edited discrimination tester cases]({filename}../Lessons/tester-cases.md)
 
 
-
-**Problem set 2 due Friday, March 6, at 5pm Central time.**
+**[Problem set 2]({filename}../psets/pset2-2020.md) due Friday, March 6, at 5pm Central time.**
 
 [See last year's problem set 2]({filename}../archive/pset2.md), which, as before, you should do for practice; afterward you can [look at my answers]({filename}../archive/pset2_answers.ipynb).
 
