@@ -151,7 +151,7 @@ That being said, I **very strongly encourage you to ask substantive questions in
 
 Spring Break is March 14-22. No class then, obviously. 
 
-Problem sets are due on the following Fridays, each at 5pm Central: Feb 7 (week 3), Feb 28 (week 6), Apr. 3 (week 10) and May 8 (in the middle of finals period).
+Problem sets are due on the following Fridays, each at 5pm Central: Feb 14 (week 4), Mar 6 (week 7), Apr. 3 (week 10) and May 8 (in the middle of finals period).
 
 
 ### Learning outcomes
@@ -296,7 +296,7 @@ Readings:
 
 - A note from last year on a [week 4 recap/further explanation of the probability issue the class that year got stuck on]({filename}../Lessons/totalprob.md)
 
-**[Problem set 1]({filename}../psets/pset1-2020.md) due Friday, February 14, at 5pm Central time.****
+**[Problem set 1]({filename}../psets/pset1-2020.md) due Friday, February 14, at 5pm Central time.**  Here are [my answers to pset 1]({filename}../psets/Ps1-2020-answers.ipynb)
 
 See last year's [Problem set 1]({filename}../archive/pset1.md), which you can do for practice if you'd like.  After doing that practice, you can check out [my answers to it]({filename}../archive/pset1_answers.ipynb).
 
