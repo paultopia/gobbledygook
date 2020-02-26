@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
         <meta charset="utf-8" />
-        <title>Day 1 in-class examples (2020)</title>
+        <title>Problem Set 1: Answers and Explanations</title>
         <link rel="stylesheet" href="https://sociologicalgobbledygook.com/theme/css/main.css" />
         <link rel="stylesheet" href="https://sociologicalgobbledygook.com/theme/css/juptyer-fix.css" />
         <link href="https://sociologicalgobbledygook.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Sociological Gobbledygook Atom Feed" />
@@ -13,30 +13,30 @@
                 <h1><a href="https://sociologicalgobbledygook.com/">Sociological Gobbledygook </a></h1>
                 <nav><ul>
                     <li><a href="https://sociologicalgobbledygook.com/category/archive.html">archive</a></li>
-                    <li class="active"><a href="https://sociologicalgobbledygook.com/category/class_examples.html">class_examples</a></li>
+                    <li><a href="https://sociologicalgobbledygook.com/category/class_examples.html">class_examples</a></li>
                     <li><a href="https://sociologicalgobbledygook.com/category/lessons.html">Lessons</a></li>
-                    <li><a href="https://sociologicalgobbledygook.com/category/psets.html">psets</a></li>
+                    <li class="active"><a href="https://sociologicalgobbledygook.com/category/psets.html">psets</a></li>
                 </ul></nav>
         </header><!-- /#banner -->
 <section id="content" class="body">
   <article>
     <header>
       <h1 class="entry-title">
-        <a href="https://sociologicalgobbledygook.com/day-1-in-class-examples-2020.html" rel="bookmark"
-           title="Permalink to Day 1 in-class examples (2020)">Day 1 in-class examples (2020)</a></h1>
+        <a href="https://sociologicalgobbledygook.com/problem-set-1-answers-and-explanations.html" rel="bookmark"
+           title="Permalink to Problem Set 1: Answers and Explanations">Problem Set 1: Answers and Explanations</a></h1>
     </header>
 
     <div class="entry-content">
 <footer class="post-info">
-        <abbr class="published" title="2020-01-22T00:00:00-06:00">
-                Published: Wed 22 January 2020
+        <abbr class="published" title="2020-02-17T00:00:00-06:00">
+                Published: Mon 17 February 2020
         </abbr>
 
         <address class="vcard author">
                 By                         <a class="url fn" href="https://sociologicalgobbledygook.com/author/paul-gowder.html">Paul Gowder</a>
         </address>
-<p>In <a href="https://sociologicalgobbledygook.com/category/class_examples.html">class_examples</a>.</p>
-<p>tags: <a href="https://sociologicalgobbledygook.com/tag/in_class.html">in_class</a> <a href="https://sociologicalgobbledygook.com/tag/week1.html">week1</a> </p>
+<p>In <a href="https://sociologicalgobbledygook.com/category/psets.html">psets</a>.</p>
+<p>tags: <a href="https://sociologicalgobbledygook.com/tag/psets.html">psets</a> </p>
 </footer><!-- /.post-info -->      <style type="text/css">/*!
 *
 * IPython notebook
@@ -1186,12 +1186,181 @@ h6:hover .anchor-link {
 
 .ansi-bold { font-weight: bold; }
 </style><body>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Problem-1:-Your-First-Class">Problem 1: Your First Class<a class="anchor-link" href="#Problem-1:-Your-First-Class">&#182;</a></h2><p>Write a class, called <code>Citation</code>, which takes the following required parameters: <code>first_page</code> (an integer), <code>last_page</code> (an integer), <code>reporter</code> (a string), and <code>year</code> (an integer), as well as the optional parameter <code>name</code> (a string). That class should have the method <code>cite()</code> which will print out a citation to the case, using all of the information it has.</p>
+<p>For example, I should be able to create a citation in either of the following forms:</p>
+
+<pre><code>my_case1 = Citation(20, 15, "U.S.", 2050)
+
+my_case2 = Citation(20, 15, "U.S.", 2050, name="Gowder v. Fictional Opponent")</code></pre>
+<p>and then if I call <code>print(my_case2.cite())</code> I should get back <code>Gowder v. Fictional Opponent, 20 U.S. 15 (2050)</code>.</p>
+<h3 id="Answer">Answer<a class="anchor-link" href="#Answer">&#182;</a></h3><p>This problem serves two roles: first, it just is meant to reinforce the lesson that we had on object-oriented programming, and to make you write your own class; second, it will give you a class to use on the next problem.  Here's my answer:</p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;hello world!&quot;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Citation</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">first_page</span><span class="p">,</span> <span class="n">last_page</span><span class="p">,</span> <span class="n">reporter</span><span class="p">,</span> <span class="n">year</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">first_page</span> <span class="o">=</span> <span class="n">first_page</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">last_page</span> <span class="o">=</span> <span class="n">last_page</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">reporter</span> <span class="o">=</span> <span class="n">reporter</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">year</span> <span class="o">=</span> <span class="n">year</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        
+    <span class="k">def</span> <span class="nf">cite</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">f</span><span class="s1">&#39;</span><span class="si">{self.name}</span><span class="s1">, </span><span class="si">{self.first_page}</span><span class="s1"> </span><span class="si">{self.reporter}</span><span class="s1"> </span><span class="si">{self.last_page}</span><span class="s1"> (</span><span class="si">{self.year}</span><span class="s1">)&#39;</span>
+        <span class="k">return</span> <span class="n">f</span><span class="s1">&#39;</span><span class="si">{self.first_page}</span><span class="s1"> </span><span class="si">{self.reporter}</span><span class="s1"> </span><span class="si">{self.last_page}</span><span class="s1"> (</span><span class="si">{self.year}</span><span class="s1">)&#39;</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">my_case1</span> <span class="o">=</span> <span class="n">Citation</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="s2">&quot;U.S.&quot;</span><span class="p">,</span> <span class="mi">2050</span><span class="p">)</span>
+
+<span class="n">my_case2</span> <span class="o">=</span> <span class="n">Citation</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="s2">&quot;U.S.&quot;</span><span class="p">,</span> <span class="mi">2050</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Gowder v. Fictional Opponent&quot;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">my_case1</span><span class="o">.</span><span class="n">cite</span><span class="p">())</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>20 U.S. 15 (2050)
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">my_case2</span><span class="o">.</span><span class="n">cite</span><span class="p">())</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Gowder v. Fictional Opponent, 20 U.S. 15 (2050)
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>A couple of quick notes on this code.</p>
+<ol>
+<li><p>There was a small mistake in the problem as written, as I said that your cite method should <em>print</em> a citation to the case, but then the examples I gave showed me calling the print function on the <em>return value</em> of that method.  That was my fault; I will accept versions of the code that return a properly formatted string (as above), or versions that simply print it directly from the method.</p>
+</li>
+<li><p>I used a feature of Python that you haven't seen before called "f-strings" to build up the formatted string.  You are, of course, totally free to use string concatenation (adding up the bits of the string with plus symbols, like <code>str(self.first page) + ' ' + self.reporter + ' ' + str(self.last_page)'</code> etc. etc.) or anything else.  F-strings are just a little more attractive.  <a href="https://realpython.com/python-f-strings/">This web page</a> has a nice explanation of f-strings.</p>
+</li>
+<li><p>The best way to make the name parameter optional is to give it a default value of <code>None</code>, as I did here.  Then you can check to see if it's there (using the fact that <code>None</code> is falsey, that is, it evaluates to <code>False</code> in a conditional) and produce different strings depending on whether it is or not.</p>
+</li>
+<li><p>My <code>cite()</code> method also uses a technique called "early return."  This is where, in a function, instead of using an <code>if</code>-<code>else</code> structure, you use an <code>if</code>, and then if the conditional is true, you return from inside that conditional (and thus never execute the rest of the function, since a <code>return</code> statement immediately exits the context of the function and goes back to the rest of the code); if not, then the rest of the function continues and returns the alternate path.  Again, this is totally optional; you're free to use an ordinary <code>if</code>-<code>else</code>.</p>
+</li>
+</ol>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Problem-2:-Extracting-Citations">Problem 2: Extracting Citations<a class="anchor-link" href="#Problem-2:-Extracting-Citations">&#182;</a></h2><p>Write a function called <code>scotus_finder()</code> that can take a string with some unknown number of citations to the U.S. Supreme Court in it, and return a list of <code>Citation</code> objects as in the previous problem. Your function should be able to handle cases cited to either the U.S. reporter ("U.S.") or to the Supreme Court reporter ("S.Ct.") (you don't need to handle "L.Ed." or any of the weird old reporters). You do not need to be able to identify the name of the case. You may assume that citations are in the standard form, e.g., <code>123 S.Ct. 456 (2001)</code>.</p>
+<p>For example,</p>
+
+<pre><code>my_string = "The best case in the world is Prince v. The End of the Century, 22 U.S. 50124 (1999), and I like it"
+
+found_cases = scotus_finder(my_string)
+
+print(found_cases[0].cite())</code></pre>
+<p>should print <code>22. U.S. 50124 (1999)</code></p>
+<h3 id="Answer">Answer<a class="anchor-link" href="#Answer">&#182;</a></h3><p>The goal of this problem is to get you comfortable with constructing regular expressions, as well as sorting through the mess of Python library documentation to figure out how to extract multiple matching citations etc.</p>
+<p>The best way to approach this problem is to use a site like regex101 to incrementally build up your solution---write a sample paragraph with several citations of different formats, as well as some other random junky things like stray numbers that you don't want to accidentally identify.  Then, first, figure out how to identify U.S. reporter cites, then figure out how to identify S.Ct. reporter cites, and so forth. Then figure out how to extract the individual bits of the citation.</p>
+<p>Also, you don't need to use just one regular expression!  You can have a separate regex for U.S. reporter citations and for S.Ct. citations.  That might run a nanosecond or two slower, but who cares?</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sample_paragraph</span> <span class="o">=</span> <span class="s2">&quot;The best case in the world is Prince v. The End of the Century, 22 U.S. 50124 (1999), and I like it.  The worst case in the world is Gowder v. Fictional Opponent, 20 U.S. 15 (2050), because Gowder lost, and as we all know, Gowder should never lose. Unless Fictional Opponent is a fictional cat. Another kind of case that could exist is Dean Washburn v. Gowder, 20 S.Ct. 1234 (2020), but the dean would never be mean enough to sue Gowder.&quot;</span>
+
+<span class="n">us_cite</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;(\d+) (U\.S\.) (\d+) \((\d</span><span class="si">{4}</span><span class="s1">)\)&#39;</span>
+<span class="n">sct_cite</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;(\d+) (S\.Ct\.) (\d+) \((\d</span><span class="si">{4}</span><span class="s1">)\)&#39;</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">re</span>
 </pre></div>
 
     </div>
@@ -1204,94 +1373,21 @@ h6:hover .anchor-link {
 <div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">say_cat_a_lot</span><span class="p">():</span>
-    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;CAT!!!&quot;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">us_cites</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">finditer</span><span class="p">(</span><span class="n">us_cite</span><span class="p">,</span> <span class="n">sample_paragraph</span><span class="p">)</span>
 </pre></div>
 
     </div>
 </div>
 </div>
 
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">say_cat_a_lot</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>CAT!!!
-CAT!!!
-CAT!!!
-CAT!!!
-CAT!!!
-CAT!!!
-CAT!!!
-CAT!!!
-CAT!!!
-CAT!!!
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Hey, this is my text answer to the question.  Go look at my code in the next cell!  Give me my a +++++++</p>
-
-</div>
-</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">read_the_paper</span><span class="p">():</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I opened the file!&quot;</span><span class="p">)</span>
-
-<span class="k">def</span> <span class="nf">find_the_sees</span><span class="p">():</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;found one!  bahahaha!!&quot;</span><span class="p">)</span>
-
-<span class="k">def</span> <span class="nf">check_if_eg</span><span class="p">():</span>
-    <span class="k">return</span> <span class="kc">False</span>
-    
-<span class="k">def</span> <span class="nf">identify_bad_commas</span><span class="p">():</span>
-    <span class="n">read_the_paper</span><span class="p">()</span>
-    <span class="n">find_the_sees</span><span class="p">()</span>
-    <span class="k">if</span> <span class="n">check_if_eg</span><span class="p">():</span>
-        <span class="n">needs_comma</span> <span class="o">=</span> <span class="kc">True</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">needs_comma</span> <span class="o">=</span> <span class="kc">False</span>
-    <span class="k">return</span> <span class="n">needs_comma</span>
-
-<span class="k">def</span> <span class="nf">insert_comma</span><span class="p">(</span><span class="n">citation</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">citation</span> <span class="o">==</span> <span class="kc">True</span><span class="p">:</span>
-        <span class="k">return</span> <span class="s1">&#39;,&#39;</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="k">return</span> <span class="s1">&#39;&#39;</span>
-    
-    
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">make_citation_from_match</span><span class="p">(</span><span class="n">match</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">Citation</span><span class="p">(</span><span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>
 </pre></div>
 
     </div>
@@ -1304,8 +1400,15 @@ CAT!!!
 <div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">caps_and_periods</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">text</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&quot;.....&quot;</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">scotus_finder</span><span class="p">(</span><span class="n">paragraph</span><span class="p">):</span>
+    <span class="n">out</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">us_matches</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">finditer</span><span class="p">(</span><span class="n">us_cite</span><span class="p">,</span> <span class="n">paragraph</span><span class="p">)</span>
+    <span class="n">sct_matches</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">finditer</span><span class="p">(</span><span class="n">sct_cite</span><span class="p">,</span> <span class="n">paragraph</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">us_matches</span><span class="p">:</span>
+        <span class="n">out</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">make_citation_from_match</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">sct_matches</span><span class="p">:</span>
+        <span class="n">out</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">make_citation_from_match</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">out</span>
 </pre></div>
 
     </div>
@@ -1318,113 +1421,29 @@ CAT!!!
 <div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">caps_and_periods</span><span class="p">(</span><span class="s2">&quot;cat&quot;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sample_results</span> <span class="o">=</span> <span class="n">scotus_finder</span><span class="p">(</span><span class="n">sample_paragraph</span><span class="p">)</span>
 </pre></div>
 
     </div>
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[10]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>&#39;CAT.....&#39;</pre>
 </div>
-
-</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The above is a totally correct answer (I didn't say that you had to print anything), but it would be useful to prove it.  So let's just loop over the results and see what we got.</p>
 
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">caps_and_periods</span><span class="p">(</span><span class="s2">&quot;dog, as if dogs matter&quot;</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[11]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>&#39;DOG, AS IF DOGS MATTER.....&#39;</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">addcats</span><span class="p">(</span><span class="n">moretext</span><span class="p">):</span>
-    <span class="k">return</span> <span class="s2">&quot;CATS CATS CATS are the best &quot;</span> <span class="o">+</span> <span class="n">moretext</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">lame_animal</span> <span class="o">=</span> <span class="s2">&quot;dog&quot;</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[14]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">big_lame_animal</span> <span class="o">=</span> <span class="n">caps_and_periods</span><span class="p">(</span><span class="n">lame_animal</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[15]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">big_lame_animal</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">sample_results</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">cite</span><span class="p">())</span>
 </pre></div>
 
     </div>
@@ -1441,9 +1460,230 @@ CAT!!!
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>DOG.....
+<pre>22 U.S. 50124 (1999)
+20 U.S. 15 (2050)
+20 S.Ct. 1234 (2020)
 </pre>
 </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This answer leverages careful reading of the Python documentation on the re module.  In particular, notice that it uses <code>re.finditer()</code> rather than <code>re.findall()</code> because the former returns match objects while the latter only returns strings, and match objects allow us to use capture groups in order to extract the individual bits that we need to use our <code>Citation</code> object that we created in the previous problem.</p>
+<p>You may have noticed that the documentation for <code>re.finditer()</code> says it returns an "iterator" rather than a list.  I hope you looked that up if it looked unfamiliar. For your information, however, an iterator is basically a list where individual items aren't loaded into memory until you try to access them. So you can still loop over an iterator just like a list, like I did above, but printing it and the like won't give you the contents.</p>
+<p>You may also notice that I created a helper function, <code>make_citation_from_match()</code>, so that I didn't have to put all of the logic in one big complicated function.  That's often a good idea, just to make things easier to read and to debug.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Problem-3:-Fun-with-APIs">Problem 3: Fun with APIs<a class="anchor-link" href="#Problem-3:-Fun-with-APIs">&#182;</a></h2><p>Using the <a href="https://case.law/api/">Caselaw Access Project API</a>, find answers to the following question; please show your code as well as your answer:</p>
+<p>What is the citation for the most recent case in Iowa that uses the word "feline?"</p>
+<h3 id="Answer">Answer<a class="anchor-link" href="#Answer">&#182;</a></h3><p>This problem requires making use of the API, figuring out how to read its documentation and process its results.</p>
+<p>Note that you don't even need an API key to access this data.  If you look at the documentation, <a href="https://case.law/api/#access-limits">you can see</a> that unregistered users can access everything except for full text cases from non-whitelisted jurisisdictions, and we don't need full text...</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">endpoint</span> <span class="o">=</span> <span class="s1">&#39;https://api.case.law/v1/cases/?search=feline&amp;jurisdiction=iowa&#39;</span>
+
+<span class="n">felines</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">endpoint</span><span class="p">)</span>
+
+<span class="n">results</span> <span class="o">=</span> <span class="n">felines</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Now, here, if we actually look at the results, the format is pretty easy to make sense of.  We can actually eyeball the below and see that the correct answer is <strong>461 N.W.2d 478</strong> --- or, if you want to be all full-fledged, <strong>In the Interest of N.M.W., 461 N.W.2d 478 (1990)</strong>.</p>
+<p>Practice makes it easy to eyeball results like this and see how deep you need to drill down to get particular information, by the way, but take a look at our video and in-class example from Feb 10 if you need a more structured method.</p>
+<p>But let's use code to get our answer.  Looking at the results also gives us a clue as to how to figure out the most recent case: the dates are in the format YYYY-MM-DD.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">results</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[13]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>{&#39;count&#39;: 2,
+ &#39;next&#39;: None,
+ &#39;previous&#39;: None,
+ &#39;facets&#39;: {},
+ &#39;results&#39;: [{&#39;id&#39;: 10603516,
+   &#39;url&#39;: &#39;https://api.case.law/v1/cases/10603516/&#39;,
+   &#39;name&#39;: &#39;In the Interest of N.M.W., A Child. Appeal of B.W., Mother&#39;,
+   &#39;name_abbreviation&#39;: &#39;In the Interest of N.M.W.&#39;,
+   &#39;decision_date&#39;: &#39;1990-08-30&#39;,
+   &#39;docket_number&#39;: &#39;No. 89-1620&#39;,
+   &#39;first_page&#39;: &#39;478&#39;,
+   &#39;last_page&#39;: &#39;483&#39;,
+   &#39;citations&#39;: [{&#39;cite&#39;: &#39;461 N.W.2d 478&#39;, &#39;type&#39;: &#39;official&#39;}],
+   &#39;volume&#39;: {&#39;volume_number&#39;: &#39;461&#39;,
+    &#39;url&#39;: &#39;https://api.case.law/v1/volumes/32044061417150/&#39;,
+    &#39;barcode&#39;: &#39;32044061417150&#39;},
+   &#39;reporter&#39;: {&#39;url&#39;: &#39;https://api.case.law/v1/reporters/892/&#39;,
+    &#39;full_name&#39;: &#39;North Western Reporter 2d&#39;,
+    &#39;id&#39;: 892},
+   &#39;court&#39;: {&#39;name&#39;: &#39;Iowa Court of Appeals&#39;,
+    &#39;url&#39;: &#39;https://api.case.law/v1/courts/iowa-ct-app/&#39;,
+    &#39;id&#39;: 18945,
+    &#39;name_abbreviation&#39;: &#39;Iowa Ct. App.&#39;,
+    &#39;slug&#39;: &#39;iowa-ct-app&#39;},
+   &#39;jurisdiction&#39;: {&#39;slug&#39;: &#39;iowa&#39;,
+    &#39;id&#39;: 45,
+    &#39;name_long&#39;: &#39;Iowa&#39;,
+    &#39;url&#39;: &#39;https://api.case.law/v1/jurisdictions/iowa/&#39;,
+    &#39;name&#39;: &#39;Iowa&#39;,
+    &#39;whitelisted&#39;: False},
+   &#39;frontend_url&#39;: &#39;https://cite.case.law/nw2d/461/478/&#39;,
+   &#39;preview&#39;: [&#34;the bathroom, the cats had defecated along the bathtub and some of N.M.W.’s clothing was stuck to the &lt;em class=&#39;search_highlight&#39;&gt;feline&lt;/em&gt;&#34;,
+    &#34;the bathroom, the cats had defecated along the bathtub and some of N.M.W.’s clothing was stuck to the &lt;em class=&#39;search_highlight&#39;&gt;feline&lt;/em&gt;&#34;,
+    &#34;home where the cats defecated along the bathtub where some of the child’s clothing was stuck to the &lt;em class=&#39;search_highlight&#39;&gt;feline&lt;/em&gt;&#34;]},
+  {&#39;id&#39;: 4446653,
+   &#39;url&#39;: &#39;https://api.case.law/v1/cases/4446653/&#39;,
+   &#39;name&#39;: &#39;State of Iowa, appellee, v. Thomas Zbornik, appellant&#39;,
+   &#39;name_abbreviation&#39;: &#39;State v. Zbornik&#39;,
+   &#39;decision_date&#39;: &#39;1957-02-05&#39;,
+   &#39;docket_number&#39;: &#39;No. 49080&#39;,
+   &#39;first_page&#39;: &#39;450&#39;,
+   &#39;last_page&#39;: &#39;458&#39;,
+   &#39;citations&#39;: [{&#39;cite&#39;: &#39;248 Iowa 450&#39;, &#39;type&#39;: &#39;official&#39;},
+    {&#39;cite&#39;: &#39;80 N.W.2d 735&#39;, &#39;type&#39;: &#39;parallel&#39;}],
+   &#39;volume&#39;: {&#39;volume_number&#39;: &#39;248&#39;,
+    &#39;url&#39;: &#39;https://api.case.law/v1/volumes/32044078640489/&#39;,
+    &#39;barcode&#39;: &#39;32044078640489&#39;},
+   &#39;reporter&#39;: {&#39;url&#39;: &#39;https://api.case.law/v1/reporters/474/&#39;,
+    &#39;full_name&#39;: &#39;Iowa Reports&#39;,
+    &#39;id&#39;: 474},
+   &#39;court&#39;: {&#39;name&#39;: &#39;Iowa Supreme Court&#39;,
+    &#39;url&#39;: &#39;https://api.case.law/v1/courts/iowa/&#39;,
+    &#39;id&#39;: 9299,
+    &#39;name_abbreviation&#39;: &#39;Iowa&#39;,
+    &#39;slug&#39;: &#39;iowa&#39;},
+   &#39;jurisdiction&#39;: {&#39;slug&#39;: &#39;iowa&#39;,
+    &#39;id&#39;: 45,
+    &#39;name_long&#39;: &#39;Iowa&#39;,
+    &#39;url&#39;: &#39;https://api.case.law/v1/jurisdictions/iowa/&#39;,
+    &#39;name&#39;: &#39;Iowa&#39;,
+    &#39;whitelisted&#39;: False},
+   &#39;frontend_url&#39;: &#39;https://cite.case.law/iowa/248/450/&#39;,
+   &#39;preview&#39;: [&#34;There is no showing what was meant by the police “kitty” or in fact whether such a pseudo-&lt;em class=&#39;search_highlight&#39;&gt;feline&lt;/em&gt; existed&#34;]}]}</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>There are lots of different ways we could figure out which case is most recent by code.  For example, we could use the <code>datetime</code> library to <a href="https://stackabuse.com/converting-strings-to-datetime-in-python/">parse these strings into Python's internal date representation</a> and then compare by that.  However, that's a lot of work, we'd have to burn our eyeballs out looking at the terrible date format codes that all the programmers use and such.  Meh.  Let's just write a function to compare them as strings.  After all, Python is pretty good at comparing strings, and we can do some experiments to see what the behavior is like:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="s2">&quot;2020-01-02&quot;</span> <span class="o">&gt;</span> <span class="s2">&quot;2019-12-30&quot;</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[14]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>True</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="s2">&quot;2020-01-02&quot;</span> <span class="o">&gt;</span> <span class="s2">&quot;2020-01-03&quot;</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[15]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>False</pre>
+</div>
+
 </div>
 
 </div>
@@ -1455,7 +1695,7 @@ CAT!!!
 <div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">addcats</span><span class="p">(</span><span class="n">big_lame_animal</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="s2">&quot;2020-01-02&quot;</span> <span class="o">&lt;</span> <span class="s2">&quot;2020-01-03&quot;</span>
 </pre></div>
 
     </div>
@@ -1474,7 +1714,7 @@ CAT!!!
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&#39;CATS CATS CATS are the best DOG.....&#39;</pre>
+<pre>True</pre>
 </div>
 
 </div>
@@ -1488,9 +1728,7 @@ CAT!!!
 <div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">mylist</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;dogs&#39;</span><span class="p">,</span> <span class="s1">&#39;bears&#39;</span><span class="p">,</span> <span class="s1">&#39;dinos&#39;</span><span class="p">]</span>
-<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">mylist</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">addcats</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="s2">&quot;2020-01-02&quot;</span> <span class="o">&lt;</span> <span class="s2">&quot;2020-02-01&quot;</span>
 </pre></div>
 
     </div>
@@ -1503,29 +1741,53 @@ CAT!!!
 
 <div class="output_area">
 
-    <div class="prompt"></div>
+    <div class="prompt output_prompt">Out[17]:</div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>CATS CATS CATS are the best dogs
-CATS CATS CATS are the best bears
-CATS CATS CATS are the best dinos
-</pre>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>True</pre>
+</div>
+
+</div>
+
 </div>
 </div>
 
 </div>
-</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>That looks like correct behavior, right?  What we're doing here (cheating horribly, in some cosmic sense) is making use of the apparent fact that Python's version of alphabetical order can also handle digits, and appears to count higher digits as higher.  So when we compare two dates in the <em>very convenient</em> year-month-date format that the CAP API gives us, they're already in a natural ordering where most recent dates come first!  Yay!</p>
+<p>The other trick that we can use is that the Python list sorting functions have an optional parameter that allows you to take a list of some kind of complex data structure (like a dictionary) and sort it by the results of some function called on each item of those functions.  Usually, people use what are called "anonymous functions" or "lambda functions" to do this, and the example of sorting a list called <code>student_tuples</code> in the documentation demonstrates that technique. But, since we haven't talked about that Python feature, I'll just use a perfectly standard function to do it.</p>
+<p>Remember, a sorted list starts with the lowest one, so since we want the most recent, we want the last item, indexed by <code>-1</code> in a list.</p>
 
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">mylist</span><span class="p">:</span>
-    <span class="k">if</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;d&#39;</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">addcats</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">get_year</span><span class="p">(</span><span class="n">case</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">case</span><span class="p">[</span><span class="s2">&quot;decision_date&quot;</span><span class="p">]</span>
+
+<span class="n">answer</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">results</span><span class="p">[</span><span class="s2">&quot;results&quot;</span><span class="p">],</span> <span class="n">key</span><span class="o">=</span><span class="n">get_year</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="s1">&#39;citations&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;cite&#39;</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">answer</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -1542,8 +1804,7 @@ CATS CATS CATS are the best dinos
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>CATS CATS CATS are the best dogs
-CATS CATS CATS are the best dinos
+<pre>461 N.W.2d 478
 </pre>
 </div>
 </div>
@@ -1551,6 +1812,113 @@ CATS CATS CATS are the best dinos
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The sharp-eyed among you, however, will have done even less work than this, because you'll have noticed that the CAP API allows you to get results that come out sorted anyway.  (Go look at the documentation under "searching" if you don't believe me!</p>
+<p>Hence, the following is an alternate (and much more compact) way to get the same result:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">concise_endpoint</span> <span class="o">=</span> <span class="s1">&#39;https://api.case.law/v1/cases/?search=feline&amp;jurisdiction=iowa&amp;ordering=-decision_date&#39;</span>
+<span class="n">concise_answer</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">concise_endpoint</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s1">&#39;results&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;citations&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;cite&#39;</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">concise_answer</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>461 N.W.2d 478
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Problem-4:-Fun-with-APIs-continued">Problem 4: Fun with APIs continued<a class="anchor-link" href="#Problem-4:-Fun-with-APIs-continued">&#182;</a></h2><p>Using the same API as before:  How many total times has the word "pork" been used in cases from the Iowa state courts in the CAP database?  (Note: <em>not</em> number of cases, I want number of uses of the word.)</p>
+<h3 id="Answer">Answer<a class="anchor-link" href="#Answer">&#182;</a></h3><p>As you know, I cancelled this problem.  But actually, I shouldn't have.  It's a lot easier than I let your fellow students convince me that it was!</p>
+<p>When I wrote the problem, I had actually intended you to use the ngrams function of the CAP API, which... directly returns the answer you want, without even having to read individual cases, search for terms, etc.</p>
+<p>I got a bunch of panicked students coming to see me who were trying to do full case searches, and were having trouble accessing full text, were receiving results that came in different chunks ("paginated" API people sometimes say, where you have to use a "cursor" to get at the next one), etc. etc.  And I had visions of having people have to figure out how to get elevated API privileges to get full texts, writing complicated functions to get the next page of results, etc. etc. etc.  And so I cancelled the problem.</p>
+<p>But then I sat down and decided to do it myself for this answer... only to have my memory triggered, and realize that the CAP api literally provides this functionality.  Let's do it in just one line (after already importing the requests library), just to be egregiously fancy!</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">total_pork_utterances</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">([</span><span class="n">y</span><span class="p">[</span><span class="s1">&#39;count&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;https://api.case.law/v1/ngrams/?q=pork&amp;jurisdiction=iowa&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s1">&#39;results&#39;</span><span class="p">][</span><span class="s1">&#39;pork&#39;</span><span class="p">][</span><span class="s1">&#39;iowa&#39;</span><span class="p">]])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">total_pork_utterances</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>420
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>I swear I didn't deliberately look for something with the answer "420."</p>
+<p>Anyway, a good homework assignment for yourself would be to try to understand that one really complicated line of code that I just ran.  Look up "list comprehensions" in Python for a start.</p>
+
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
