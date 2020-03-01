@@ -345,7 +345,7 @@ For **Week 5 practice homework**, do the "Errors and Exceptions" problems in the
 
 - "Validating and Parsing Email Addresses"
 
-**Here are our in-class notebooks for week 5**: [Feb 17 (Monday)]({filename}../class_examples/Feb17.ipynb); (feb 18 tba)
+**Here are our in-class notebooks for week 5**: [Feb 17 (Monday)]({filename}../class_examples/Feb17.ipynb); for Feb 18, instead look in the class exercises for the answers to the data scavenger hunt.
 
 ### Week 6 (Feb 24, 25)
 
@@ -372,6 +372,8 @@ Reading:
     - [Never Start With a Hypothesis](https://towardsdatascience.com/hypothesis-testing-decoded-for-movers-and-shakers-bfc2bc34da41)
 
 For **Week 6 practice homework**, do the "Debugging" problems in the [HackerRank Python Domain](https://www.hackerrank.com/domains/python)
+
+**Here is our one in-class notebook for week 6**: [Feb 25 (Tuesday)]({filename}../class_examples/Feb25.ipynb); Feb 24 was a lecture without a notebook.
 
 ### Week 7 (Mar 2, 3)
 
