@@ -394,6 +394,7 @@ Readings:
 
 [See last year's problem set 2]({filename}../archive/pset2.md), which, as before, you should do for practice; afterward you can [look at my answers]({filename}../archive/pset2_answers.ipynb).
 
+**Here are our in-class notebooks for week 7**: [Mar 2 (Monday)]({filename}../class_examples/Mar2.ipynb); plus a [supplemental tutorial on installing third-party libraries]({filename}../Lessons/install-lib.ipynb); March 3 tba. 
 
 ### Week 8 (Mar 9, 10)
 
