@@ -390,11 +390,11 @@ Readings:
 - [A collection of edited discrimination tester cases]({filename}../Lessons/tester-cases.md)
 
 
-**[Problem set 2]({filename}../psets/pset2-2020.md) due Friday, March 6, at 5pm Central time.**
+**[Problem set 2]({filename}../psets/pset2-2020.md) due Friday, March 6, at 5pm Central time.** Here are [my answers to pset 2]({filename}../psets/Ps2-2020-answers.ipynb)
 
 [See last year's problem set 2]({filename}../archive/pset2.md), which, as before, you should do for practice; afterward you can [look at my answers]({filename}../archive/pset2_answers.ipynb).
 
-**Here are our in-class notebooks for week 7**: [Mar 2 (Monday)]({filename}../class_examples/Mar2.ipynb); plus a [supplemental tutorial on installing third-party libraries]({filename}../Lessons/install-lib.ipynb); March 3 tba. 
+**Here are our in-class notebooks for week 7**: [Mar 2 (Monday)]({filename}../class_examples/Mar2.ipynb); plus a [supplemental tutorial on installing third-party libraries]({filename}../Lessons/install-lib.ipynb); [March 3]({filename}../class_examples/Mar3.ipynb). 
 
 ### Week 8 (Mar 9, 10)
 
@@ -442,7 +442,7 @@ Readings:
 
 - [Excerpts from 29 C.F.R. 1607]({attach}../images/29cfr1607.pdf) for reference/skim, no need to carefully read the whole thing
 
-**Problem Set 3 due Fri, Apr. 3, at 5pm Central.**  
+**[Problem set 3]({filename}../psets/pset3-2020.md) due Fri, Apr. 3, at 5pm Central.**  
 
 See [last year's problem set 3]({filename}../archive/pset-3.md).
 
