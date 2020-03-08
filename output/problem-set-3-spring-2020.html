@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <title>Problem Set 3, Spring 2020</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+        <link rel="stylesheet" href="/theme/css/juptyer-fix.css" />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">Sociological Gobbledygook </a></h1>
+                <nav><ul>
+                    <li><a href="/category/archive.html">archive</a></li>
+                    <li><a href="/category/class_examples.html">class_examples</a></li>
+                    <li><a href="/category/lessons.html">Lessons</a></li>
+                    <li class="active"><a href="/category/psets.html">psets</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="/problem-set-3-spring-2020.html" rel="bookmark"
+           title="Permalink to Problem Set 3, Spring 2020">Problem Set 3, Spring 2020</a></h1>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2020-03-07T00:00:00-06:00">
+                Published: Sat 07 March 2020
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/paul-gowder.html">Paul Gowder</a>
+        </address>
+<p>In <a href="/category/psets.html">psets</a>.</p>
+<p>tags: <a href="/tag/psets.html">psets</a> </p>
+</footer><!-- /.post-info -->      <p>This problem set is worth 25% of the grade in this course. It is due on Friday, April 3, at 5pm, via email to Diana Dewalle. </p>
+<p><strong>How to turn in this problem set</strong>: As before, please turn in all your code, and, if you have any prose to write, your prose (formatted as markdown cells), for all of the problems in a single Jupyter Notebook file, entitled <code>lastname_ps1.ipynb</code> (obviously with your last name), which you will turn in to the dropbox on ICON.  <strong>The filename should be the only place with your name in it.</strong> Diana Dewalle will anonymize the files by replacing the name with a number before sending them to me to grade.</p>
+<p>For each of the problems, you need not package all of your code in a single function. For example, you may write helper functions, import libraries outside of your function, etc.  However, you must turn in a single Jupyter Notebook file with all the code that makes your functions work as well as the functions themselves.  I expect to be able to run all the cells in the notebook you turn in, and, at the end, have a working function for each problem, so that I can call those functions with appropriate input and get the correct result. In all cases, your functions should return <code>None</code> if they receive inappropriate input.</p>
+<h2>HONOR CODE</h2>
+<p>Each student must agree to the following honor code; if you do not agree to this honor code, do not turn in this problem set and drop the course.</p>
+<p><em>I will not solicit, receive, or provide any unauthorized assistance on this or any problem set in this course. I understand that unauthorized assistance includes seeing the work of any other student, including code, calculations, data analysis, or answers to problems. Students are permitted to discuss their general strategies for solving problems with one another, help one another understand lesson material or documentation for Python libraries, and the like, or other conversation short of sharing actual answers, calculations, data analysis, or code. Students are not permitted to seek or receive assistance or advice whatsoever from any person not enrolled in this course---this prohibition includes asking for help on public online forums such as stackoverflow.com, although students are free to search such websites and learn from preexisting discussions in which they are not participants.</em></p>
+<p><em>If I have any doubt about the permissibility of any kind of assistance, I will seek a ruling from the professor. I will report any violations of this honor code of which I am aware. Violating this honor code is grounds for immediate disenrollment from this course, or other sanctions as provided for by College of Law and University policy on academic dishonesty.</em></p>
+<h2>Problem 1 (50 points)</h2>
+<p>In your data folder is a file named "executions.csv."  It is a dataset covering executions in the United States.  There is also a dataset named "StandYourGround.csv" which is a dataset covering cases in which people raised Stand Your Ground law defenses.</p>
+<h3>1.a (10 points)</h3>
+<p>Read McCleskey v. Kemp, 481 U.S. 297 (1987).  Does the executions.csv dataset you've been provided support or undermine the overall theory of discrimination in that case?  Explain why.</p>
+<h3>1.b. (40 points)</h3>
+<p>Using regression analysis, defend a conclusion as to whether the Stand Your Ground dataset includes evidence of racial discrimination.  </p>
+<p>Note, because you have a binary dependent variable, you will probably want to use logistic regression, a variation on regression analysis that just uses a slightly different equation, but otherwise works the same.  We've mentioned this in class but haven't dug in; for present purposes you can just swap logistic regression code in for linear regression code following <a href="http://blog.yhat.com/posts/logistic-regression-python-rodeo.html">this tutorial online</a>. </p>
+<h2>Problem 2 (50 points)</h2>
+<p>Consider the following Mystery Code, which is buggy: </p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">mystery_math_01</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">*</span> <span class="n">y</span> <span class="o">/</span> <span class="n">z</span>
+
+<span class="k">def</span> <span class="nf">mystery_math_02</span><span class="p">(</span><span class="n">alpha</span><span class="p">,</span> <span class="n">bravo</span><span class="p">,</span> <span class="n">charlie</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">alpha</span> <span class="o">*</span> <span class="n">bravo</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">charlie</span> <span class="o">*</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">bravo</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">mystery_function</span><span class="p">(</span><span class="n">kevin</span><span class="p">,</span> <span class="n">joe</span><span class="p">,</span> <span class="n">nick</span><span class="p">):</span>
+    <span class="n">lizzo</span> <span class="o">=</span> <span class="n">mystery_math_02</span><span class="p">(</span><span class="n">kevin</span><span class="p">,</span> <span class="n">nick</span><span class="p">,</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">joe</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">mystery_math_01</span><span class="p">(</span><span class="n">kevin</span><span class="p">,</span> <span class="n">nick</span><span class="p">,</span> <span class="n">lizzo</span><span class="p">)</span>
+</pre></div>
+
+
+<p>the names are deliberately nonsensical.</p>
+<h2>2.a. (25 points)</h2>
+<p>What is <code>mystery_function</code> trying (but currently failing) to do?  Explain. </p>
+<h2>2.b. (25 points)</h2>
+<p>Fix the bug in that code!  Then run the code with an example and confirm that it's really doing the thing that you thought it was supposed to be doing in the previous question.  <em>Hint</em>: you can check it against an example in a lesson you've already had.</p>
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://law.uiowa.edu/">University of Iowa College of Law</a></li>
+                            <li><a href="https://gowder.io">Paul Gowder</a></li>
+                            <li><a href="http://python.org/">Python Documentation</a></li>
+                            <li><a href="https://github.com/paultopia/gobbledygook">Course Github</a></li>
+                            <li><a href="http://notebooks.hpc.uiowa.edu">UIowa IDAS access</a></li>
+                            <li><a href="https://wiki.uiowa.edu/display/hpcdocs/Interactive+Data+Analytics+Service+Documentation">UIowa IDAS documentation</a></li>
+                            <li><a href="tags.html">Lesson Post Tags</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+      
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+            <address id="about" class="vcard body">
+                
+
+                All local content is (c) 2018-9 by <a href="https://gowder.io">Paul Gowder</a> and licensed under a <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International license</a> except where some other author is noted.  On the technical side, the site is powered by <a href="http://getpelican.com/">Pelican</a>, the theme is a modified version of one by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>.
+            </address><!-- /#about -->
+
+                
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>
