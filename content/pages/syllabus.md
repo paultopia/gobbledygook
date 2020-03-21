@@ -3,6 +3,15 @@ save_as: index.html
 
 # Introduction to Quantitative & Computational Legal Reasoning  (LAW:8645)
 
+**Revisions for coronavirus shutdown**
+
+- We are losing a week of class.  Accordingly, I have cancelled what was originally schedule for week 13.  The schedule below is revised accordingly.  
+
+- In order that we can minimize the burden on students who have had their lives disrupted, I have consolidated the last two problem sets, which will now be due on May 8.
+
+----
+
+
 Spring 2020; Monday + Tuesday 2:00-3:30; Classroom 265.
 
 Professor: Paul Gowder 
@@ -149,9 +158,9 @@ That being said, I **very strongly encourage you to ask substantive questions in
 
 ## Some schedule notes
 
-Spring Break is March 14-22. No class then, obviously. 
+Spring Break is March 14-22. No class then, obviously. (**Addendum: also no class the week after, for transition week**)
 
-Problem sets are due on the following Fridays, each at 5pm Central: Feb 14 (week 4), Mar 6 (week 7), Apr. 3 (week 10) and May 8 (in the middle of finals period).
+Problem sets are due on the following Fridays, each at 5pm Central: Feb 14 (week 4), Mar 6 (week 7), and May 8 (combined problem sets 3 and 4, in the middle of finals period).
 
 
 ### Learning outcomes
@@ -430,7 +439,7 @@ Readings:
 
 For **Week 9 practice homework** do [Even Fibonacci numbers](https://projecteuler.net/problem=2) from Project Euler.  Also, look at the hypothetical dataset *mickel.csv*, and use the techniques we've learned in class to come to some conclusion about whether discrimination is occurring in the provision of public benefits in this disability services agency context. We'll go over this assignment in class at an appropriate time.
 
-### Week 10 (Mar 30, 31)
+### Week 10 (April 6, 7, revised schedule) 
 
 Applications and reinforcement. Slow-down week, solidify our existing knowledge by thinking about a concrete use of statistics in law: determining disparate impact in Title VII cases.
 
@@ -442,11 +451,9 @@ Readings:
 
 - [Excerpts from 29 C.F.R. 1607]({attach}../images/29cfr1607.pdf) for reference/skim, no need to carefully read the whole thing
 
-**[Problem set 3]({filename}../psets/pset3-2020.md) due Fri, Apr. 3, at 5pm Central.**  
+No practice problems this week.
 
-See [last year's problem set 3]({filename}../archive/pset-3.md).
-
-### Week 11
+### Week 11 (April 13, 14)
 
 P-values, p-hacking, publication bias, the replication crisis in psychology, power and underpoweredness, multiple comparisons, and other terrible pitfalls of scientific research.  
 
@@ -470,7 +477,7 @@ Discussion: what are the legal implications of scientific failures?
 
 For **Week 11 practice homework** do [Power Digit Sum](https://projecteuler.net/problem=16) from Project Euler.  This will be the last of our practice homeworks, as I know that you're going to start freaking out about exams by now.
 
-### Week 12
+### Week 12 (April 20, 21)
 
 How regression analysis can go horribly wrong.  Assumptions of regression.  Failures of regression assumptions. Simpson's paradox.
 
@@ -487,30 +494,8 @@ Readings:
     - [Classical Assumptions of OLS](https://statisticsbyjim.com/regression/ols-linear-regression-assumptions/)
 
 
-### Week 13
 
-Focus week: statistics, probability and legal proof.  Bayesian approaches. 
-
-This week will be seminar-style.  There will be some reading from academic articles, and Professor Sullivan will come and join us for Monday to talk through probability and proof.  On Tuesday, we will continue the discussion, and perhaps do an exercise, as time permits. 
-
-Reading: 
-
-**For Monday***
-
-- Jonah Gelbach, *Estimation Evidence* (posted on ICON), pages 1-31 
-
-- Sean Sullivan, [A Likelihood Story: The Theory of Legal Fact-Finding](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2837155) p. 11-37
-
-**For Tuesday***
-
-- Kiel Brennan-Marquez, [Plausible Cause](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2827733)
-
-- [The Bayesian New Statistics: Hypothesis testing, estimation, meta-analysis, and power analysis from a Bayesian perspective](https://link-springer-com.proxy.lib.uiowa.edu/article/10.3758%2Fs13423-016-1221-4), 25 Psychonomic Bulletin and Review 178 (2018) (You may skip the sections entitled "Bayesian Hypothesis Test" and "Another example of frequentist and Bayesian approaches to hypothesis testing and estimation" from pp. 186-190  
-
-- Optional bonus reading: I've added [a more basic-level explanation of some of the ideas in the above article]({filename}../Lessons/confidence-and-bayes.ipynb) to this website
-
-
-### Week 14
+### Week 14 (April 27, 28)
 
 Look at real-life expert witness reports, how arguments about quantitative methodology are used in court.
 
@@ -535,6 +520,7 @@ Optional, bonus (but HIGHLY recommended) reading:
 
 ### Final exam period
 
-**Problem set 4 due on Friday, May 8, during the exam period, at 5pm Central.**
 
-See [last year's problem set 4]({filename}../archive/pset4.md) and [a makeup assignment the class did]({filename}../archive/makeup-assignment.md). 
+**[Consolidated Problem sets 3 and 4]({filename}../psets/final-pset-2020.md) due on Friday, May 8, during the exam period, at 5pm Central.**
+
+See [last year's problem set 3]({filename}../archive/pset-3.md), [last year's problem set 4]({filename}../archive/pset4.md) and [a makeup assignment the class did]({filename}../archive/makeup-assignment.md). 
