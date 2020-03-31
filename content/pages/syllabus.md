@@ -473,6 +473,8 @@ Readings:
 
 - Fun reading: [P-values explained with puppies](https://hackernoon.com/explaining-p-values-with-puppies-af63d68005d0)
 
+- [Some rules of thumb for controlling]({filename}../Lessons/controlling_rules_of_thumb.md)
+
 Discussion: what are the legal implications of scientific failures?
 
 For **Week 11 practice homework** do [Power Digit Sum](https://projecteuler.net/problem=16) from Project Euler.  This will be the last of our practice homeworks, as I know that you're going to start freaking out about exams by now.
